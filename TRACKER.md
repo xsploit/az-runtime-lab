@@ -1618,3 +1618,21 @@ Revalidated native24479 and both sources stopped. Screenshot confirms deck1 BASE
   including sentinel,65,600raw bytes/queue. Not the large PCM memory target.
 - Evidence: analysis/AZ-TASK-QUEUE-CAPACITY.md. Ordinary queue-full page loss
   hypothesis deprioritized; last-source disposal/initial paths remain. Pi untouched.
+
+### Source disposal and usage checkpoint (2026-09-13)
+
+- Previous turn progress: dynamic task-queue growth verified, nine cases passed,
+  private commitb1b1afb pushed. Queue-full-loss hypothesis deprioritized.
+- Last-source helper22043f0 identified as TrashBox::push. Active lifetime guard
+  queues source for later deletion; absent/negative gate invokes deleting virtual
+  method immediately. Reference zero is not a universal completed-deletion barrier.
+- Eight original TrashBox/gate cases pass, full fixture/global comparisons.
+  Concrete source destructor, deferred consumer and concurrent shutdown still open.
+- User checked in at23% remaining; account tool confirms77% used. Recommended
+  diminishing speculative research and prioritizing next native Pi validation.
+- Performance checkpoint: measured visual-content cadence about29.6→58.8Hz;
+  short-run PCM experiment saves~460MiB startup/~334–363MiB two-track PSS, CPU
+  roughly unchanged. Memory experiment is isolated, not promoted to visible build;
+  long-session sustained savings and full controller/mixer operation remain open.
+- Evidence: analysis/AZ-SOURCE-DISPOSAL.md and source-disposal oracle/artifacts.
+  Pi untouched; full firmware objective remains incomplete.

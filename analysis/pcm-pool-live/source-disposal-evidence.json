@@ -1,0 +1,19 @@
+{
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "ranges": [
+    {
+      "start": "0x218d5e0",
+      "end_exclusive": "0x218d640"
+    },
+    {
+      "start": "0x22043f0",
+      "end_exclusive": "0x2204d94"
+    },
+    {
+      "start": "0x22040e0",
+      "end_exclusive": "0x2204234"
+    }
+  ],
+  "identity_string": "bool meow::TrashBox::push(meow::TrashBox::Trash*)",
+  "scope": "Normal lifetime gate and deferred versus immediate disposal; concrete source deletion and consumer not resolved."
+}

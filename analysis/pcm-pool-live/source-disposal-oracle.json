@@ -1,0 +1,80 @@
+{
+  "scope": "Original AZ TrashBox push and lifetime guard acquisition under QEMU.\n\nControls guard lifetime, valid TrashBox token, sequential tagged nodes and\nnonnull virtual-deletion targets. Allocation, notification and deleting virtual\ncalls are observers; actual source-specific destruction and concurrency omitted.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "source_sha256": "987a5c5f51c2889933f369dd9346ea110e2ed948ad2ef21ef1680fcd093218d2",
+  "tests": 8,
+  "results": [
+    {
+      "case": "guard_absent",
+      "lifetime_count": null,
+      "deferred": false,
+      "immediate_delete_observed": true,
+      "returned": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "guard_closing",
+      "lifetime_count": -1,
+      "deferred": false,
+      "immediate_delete_observed": true,
+      "returned": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "guard_other_negative",
+      "lifetime_count": -2,
+      "deferred": false,
+      "immediate_delete_observed": true,
+      "returned": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "deferred_spare",
+      "lifetime_count": 3,
+      "deferred": true,
+      "immediate_delete_observed": false,
+      "returned": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "deferred_allocated",
+      "lifetime_count": 3,
+      "deferred": true,
+      "immediate_delete_observed": false,
+      "returned": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "guard_zero_active",
+      "lifetime_count": 0,
+      "deferred": true,
+      "immediate_delete_observed": false,
+      "returned": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "null_source_guard_absent",
+      "lifetime_count": null,
+      "deferred": false,
+      "immediate_delete_observed": false,
+      "returned": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "null_source_guard_active",
+      "lifetime_count": 3,
+      "deferred": false,
+      "immediate_delete_observed": false,
+      "returned": false,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    }
+  ]
+}
