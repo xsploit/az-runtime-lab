@@ -26,7 +26,9 @@ value is not a count of removed entries and does not prove all matching readers
 were destroyed: the clear routine has a policy-dependent retention path.
 
 The promise/future machinery and submission alone are **not a verified barrier**.
-This pass has not proved that detachFiles waits for every worker, cancels pending
+A subsequent ownership trace in `AZ-DETACH-PROMISE-LIFETIME.md` establishes that
+the normal queued path drops its local future reference without joining the
+worker. This pass has not proved that another path waits for every worker, cancels pending
 decodes, drains completion tasks, or excludes every further payload access.
 Do not use returning from detachFiles as safe PCM reclamation evidence yet.
 

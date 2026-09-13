@@ -22,8 +22,417 @@
         "0x77f610",
         "0x766500"
       ]
+    },
+    {
+      "table": "0x25fa008",
+      "typeinfo": "0x25f9820",
+      "name": "St23_Sp_counted_ptr_inplaceINSt13__future_base13_State_baseV2ESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE",
+      "slots": [
+        "0x7661e8",
+        "0x766450",
+        "0x7661f0",
+        "0x766910"
+      ]
+    },
+    {
+      "table": "0x25f9a70",
+      "typeinfo": "0x25f8f28",
+      "name": "NSt13__future_base13_State_baseV2E",
+      "slots": [
+        "0x766170",
+        "0x7663f0",
+        "0x765fc8",
+        "0x765fd0"
+      ]
+    },
+    {
+      "table": "0x25f8da8",
+      "typeinfo": "0x25f85f8",
+      "name": "NSt13__future_base7_ResultIbEE",
+      "slots": [
+        "0x767650",
+        "0x767060",
+        "0x767070",
+        "0x0"
+      ]
     }
   ],
+  "direct_call_maps": {
+    "0x77efc8": {
+      "end_exclusive": "0x77f610",
+      "direct_bl_calls": [
+        {
+          "site": "0x77eff4",
+          "target": "0x77af10",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f04c",
+          "target": "0x77a6e8",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f058",
+          "target": "0x424d40",
+          "import_symbol": "_Znwm"
+        },
+        {
+          "site": "0x77f098",
+          "target": "0x424d40",
+          "import_symbol": "_Znwm"
+        },
+        {
+          "site": "0x77f0a0",
+          "target": "0x423f30",
+          "import_symbol": "_ZNSt13__future_base12_Result_baseC2Ev"
+        },
+        {
+          "site": "0x77f148",
+          "target": "0x77a6e8",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f154",
+          "target": "0x2221120",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f1c4",
+          "target": "0x6eec80",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f20c",
+          "target": "0x77a6e8",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f23c",
+          "target": "0x6c2d78",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f258",
+          "target": "0x2221120",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f2a8",
+          "target": "0x6c2d78",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f2cc",
+          "target": "0x77e6a8",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f2d4",
+          "target": "0x77e6a8",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f344",
+          "target": "0x77af10",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f360",
+          "target": "0x426260",
+          "import_symbol": "__cxa_guard_acquire"
+        },
+        {
+          "site": "0x77f378",
+          "target": "0x426840",
+          "import_symbol": "__cxa_guard_release"
+        },
+        {
+          "site": "0x77f390",
+          "target": "0x426eb0",
+          "import_symbol": "__cxa_atexit"
+        },
+        {
+          "site": "0x77f3f8",
+          "target": "0x77e260",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f410",
+          "target": "0x77ee90",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f438",
+          "target": "0x232e6f0",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f44c",
+          "target": "0x2333ce0",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f45c",
+          "target": "0x2313bf0",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f470",
+          "target": "0x2313bf0",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f480",
+          "target": "0x2333ce0",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f490",
+          "target": "0x2313a90",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f4a0",
+          "target": "0x22003e0",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f4a8",
+          "target": "0x22fc600",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f4b0",
+          "target": "0x22fc600",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f4b8",
+          "target": "0x22fc600",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f4c0",
+          "target": "0x22fc600",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f4c8",
+          "target": "0x22fc600",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f4d0",
+          "target": "0x232e6f0",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f4dc",
+          "target": "0x425670",
+          "import_symbol": "_ZSt20__throw_future_errori"
+        },
+        {
+          "site": "0x77f4e4",
+          "target": "0x425670",
+          "import_symbol": "_ZSt20__throw_future_errori"
+        },
+        {
+          "site": "0x77f4f0",
+          "target": "0x22fc600",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f4f8",
+          "target": "0x6c2d78",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f504",
+          "target": "0x77e930",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f510",
+          "target": "0x77e6a8",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f530",
+          "target": "0x424d10",
+          "import_symbol": "_Unwind_Resume"
+        },
+        {
+          "site": "0x77f53c",
+          "target": "0x22fc600",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f54c",
+          "target": "0x22fc600",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f55c",
+          "target": "0x22fc600",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f56c",
+          "target": "0x6c2d78",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f580",
+          "target": "0x6742d8",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f59c",
+          "target": "0x77e6a8",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f5b4",
+          "target": "0x77e6a8",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f5d0",
+          "target": "0x6742d8",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f5e8",
+          "target": "0x22fc600",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77f5fc",
+          "target": "0x6742d8",
+          "import_symbol": null
+        }
+      ]
+    },
+    "0x77e6a8": {
+      "end_exclusive": "0x77e8fc",
+      "direct_bl_calls": [
+        {
+          "site": "0x77e6ec",
+          "target": "0x426950",
+          "import_symbol": "_ZSt15future_categoryv"
+        },
+        {
+          "site": "0x77e724",
+          "target": "0x4267c0",
+          "import_symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_replaceEmmPKcm"
+        },
+        {
+          "site": "0x77e764",
+          "target": "0x425730",
+          "import_symbol": "_ZNSt11logic_errorC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE"
+        },
+        {
+          "site": "0x77e778",
+          "target": "0x424e50",
+          "import_symbol": "_ZdlPv"
+        },
+        {
+          "site": "0x77e78c",
+          "target": "0x424e50",
+          "import_symbol": "_ZdlPv"
+        },
+        {
+          "site": "0x77e7ac",
+          "target": "0x426470",
+          "import_symbol": "__cxa_allocate_exception"
+        },
+        {
+          "site": "0x77e7c4",
+          "target": "0x426560",
+          "import_symbol": "__cxa_init_primary_exception"
+        },
+        {
+          "site": "0x77e7d0",
+          "target": "0x425b90",
+          "import_symbol": "_ZNSt11logic_errorC2ERKS_"
+        },
+        {
+          "site": "0x77e7e8",
+          "target": "0x427770",
+          "import_symbol": "_ZNSt15__exception_ptr13exception_ptrC1EPv"
+        },
+        {
+          "site": "0x77e800",
+          "target": "0x425520",
+          "import_symbol": "_ZNSt15__exception_ptr13exception_ptr4swapERS0_"
+        },
+        {
+          "site": "0x77e808",
+          "target": "0x425580",
+          "import_symbol": "_ZNSt15__exception_ptr13exception_ptrD1Ev"
+        },
+        {
+          "site": "0x77e810",
+          "target": "0x425580",
+          "import_symbol": "_ZNSt15__exception_ptr13exception_ptrD1Ev"
+        },
+        {
+          "site": "0x77e818",
+          "target": "0x425820",
+          "import_symbol": "_ZNSt12future_errorD1Ev"
+        },
+        {
+          "site": "0x77e89c",
+          "target": "0x425ec0",
+          "import_symbol": "_ZNSt13__future_base12_Result_baseD2Ev"
+        },
+        {
+          "site": "0x77e8a8",
+          "target": "0x426660",
+          "import_symbol": "_ZdlPvm"
+        },
+        {
+          "site": "0x77e8bc",
+          "target": "0x6742d8",
+          "import_symbol": null
+        },
+        {
+          "site": "0x77e8d4",
+          "target": "0x4240c0",
+          "import_symbol": "_ZNSt28__atomic_futex_unsigned_base19_M_futex_notify_allEPj"
+        }
+      ]
+    },
+    "0x77ee90": {
+      "end_exclusive": "0x77ef9c",
+      "direct_bl_calls": [
+        {
+          "site": "0x77ef38",
+          "target": "0x425cf0",
+          "import_symbol": "pthread_once"
+        },
+        {
+          "site": "0x77ef4c",
+          "target": "0x425670",
+          "import_symbol": "_ZSt20__throw_future_errori"
+        },
+        {
+          "site": "0x77ef8c",
+          "target": "0x4240c0",
+          "import_symbol": "_ZNSt28__atomic_futex_unsigned_base19_M_futex_notify_allEPj"
+        },
+        {
+          "site": "0x77ef98",
+          "target": "0x424820",
+          "import_symbol": "_ZSt20__throw_system_errori"
+        }
+      ]
+    }
+  },
+  "futex_imports": {
+    "0x4240c0": "_ZNSt28__atomic_futex_unsigned_base19_M_futex_notify_allEPj",
+    "0x426f40": "_ZNSt28__atomic_futex_unsigned_base19_M_futex_wait_untilEPjjbNSt6chrono8durationIlSt5ratioILl1ELl1EEEENS2_IlS3_ILl1ELl1000000000EEEE"
+  },
   "diagnostic": {
     "address": "0x25fa850",
     "text": "singleThreadedChecker.isOK()"
@@ -72,7 +481,43 @@
     {
       "start": "0x765af8",
       "end_exclusive": "0x765b34"
+    },
+    {
+      "start": "0x77f2ac",
+      "end_exclusive": "0x77f358"
+    },
+    {
+      "start": "0x77f3dc",
+      "end_exclusive": "0x77f3ec"
+    },
+    {
+      "start": "0x77e6a8",
+      "end_exclusive": "0x77e8fc"
+    },
+    {
+      "start": "0x77ee90",
+      "end_exclusive": "0x77ef9c"
+    },
+    {
+      "start": "0x765fc8",
+      "end_exclusive": "0x765fd8"
+    },
+    {
+      "start": "0x766170",
+      "end_exclusive": "0x7661a8"
+    },
+    {
+      "start": "0x7661f0",
+      "end_exclusive": "0x766204"
+    },
+    {
+      "start": "0x766910",
+      "end_exclusive": "0x766914"
+    },
+    {
+      "start": "0x6742d8",
+      "end_exclusive": "0x674380"
     }
   ],
-  "scope": "Static constructor/task/clear trace; does not prove promise wait, worker barrier, cancellation completeness or shutdown quiescence."
+  "scope": "Static constructor/task/clear/reference-release trace. Direct calls are not a transitive or indirect-call inventory. See AZ-DETACH-PROMISE-LIFETIME.md for normal queued-path non-join evidence; no cancellation completeness or shutdown quiescence claim."
 }

@@ -1545,3 +1545,17 @@ Revalidated native24479 and both sources stopped. Screenshot confirms deck1 BASE
 - Evidence: analysis/AZ-READER-CACHE-DETACH.md, collector and clear oracle.
   No Pi access or reclaim deployment. Initial requests, full cancellation/drain,
   policy retention and remaining PCM-return ownership still open; full goal active.
+
+### detachFiles does not join its queued worker clear (2026-09-13)
+
+- Previous goal turn progress:12reader-cache clear cases and detach task mapped.
+- Identified plain promise State_baseV2/control/result tables. Queued worker owns
+  moved promise; caller normal tail releases its local future reference and moves
+  to the next unit without reading ready/result state or joining the worker.
+- Resolved PLT symbols:4240c0 is futex notify-all,426f40 wait-until. Cleanup helper
+  builds abandoned-promise error/marks ready/notifies; it is not a future wait.
+  Inspected plain-state disposal also contains no worker join.
+- Evidence: analysis/AZ-DETACH-PROMISE-LIFETIME.md, expanded detach collector.
+  No claim that all helpers are nonblocking or that external barriers are absent.
+- No Pi access or reclaim deployment. Need explicit worker/callback drain ordering
+  plus initial requests and remaining pool-return ownership. Full goal active.
