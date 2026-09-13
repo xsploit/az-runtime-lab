@@ -1636,3 +1636,18 @@ Revalidated native24479 and both sources stopped. Screenshot confirms deck1 BASE
   long-session sustained savings and full controller/mixer operation remain open.
 - Evidence: analysis/AZ-SOURCE-DISPOSAL.md and source-disposal oracle/artifacts.
   Pi untouched; full firmware objective remains incomplete.
+
+### Native long-session test preparation (2026-09-13)
+
+- Previous goal turn progress: TrashBox lifetime gate traced/tested and checkpoint
+  saved privately at45eede1; user confirmed interest in value at23% remaining.
+- Added read-only explicit-PID session recorder for PSS/RSS/swap, CPU and paging.
+  Rejects wrong identity, preserves partial evidence, never overwrites output,
+  starts/stops nothing and does not access target memory or SSH.
+- Five local tests passed, including early exit and identity mismatch. These are
+  recorder checks, not new AZ performance measurements.
+- Documented matched baseline/template long-session protocol, separating resource
+  evidence from transport/audio/controller/rendering checks. Workload automation
+  and native execution are explicitly not claimed complete. Pi still off.
+- Evidence: analysis/AZ-LONG-SESSION-VALIDATION.md, record-process-session.py,
+  test-process-session-recorder.py and session-recorder-selftest.json.

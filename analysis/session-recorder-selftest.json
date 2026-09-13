@@ -1,0 +1,7 @@
+{
+  "scope": "Local-only recorder checks. Results are not AZ or Pi performance evidence.",
+  "tests": 5,
+  "passed": true,
+  "failures": 0,
+  "errors": 0
+}
