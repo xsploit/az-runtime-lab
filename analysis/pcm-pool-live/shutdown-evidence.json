@@ -1,12 +1,66 @@
 {
   "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "vtables": {
+    "0x25f9d70": [
+      "0x771ee0",
+      "0x771fe0",
+      "0x691c70",
+      "0x68f050",
+      "0x68f6e0",
+      "0x68f0e8",
+      "0x22093b0",
+      "0x220ad30",
+      "0x769310",
+      "0x70e4f8",
+      "0x70e500",
+      "0x22107b0"
+    ],
+    "0x25f9ec8": [
+      "0x771528",
+      "0x7716f0",
+      "0x691c70",
+      "0x68f050",
+      "0x68f6e0",
+      "0x68f0e8",
+      "0x22093b0",
+      "0x220ad30",
+      "0x76a070",
+      "0x70e4f8",
+      "0x70e500",
+      "0x22107b0"
+    ],
+    "0x25f9e08": [
+      "0x771ef0",
+      "0x771f20",
+      "0x2210a40"
+    ],
+    "0x25f9f60": [
+      "0x7716e8",
+      "0x771718",
+      "0x2210a40"
+    ],
+    "0x25f8e30": [
+      "0x77ecc8",
+      "0x77eda8",
+      "0x77f610"
+    ],
+    "0x25f8d78": [
+      "0x76ebf0",
+      "0x76ecd0",
+      "0x77d5f0"
+    ]
+  },
   "imported_symbols": {
     "0x425830": "pthread_cancel",
     "0x426a40": "pthread_mutex_unlock",
     "0x426f90": "pthread_mutex_lock",
     "0x426b50": "pthread_join",
     "0x424700": "clock_gettime",
-    "0x427030": "nanosleep"
+    "0x427030": "nanosleep",
+    "0x4262e0": "pthread_create",
+    "0x425160": "pthread_detach",
+    "0x423e50": "pthread_self",
+    "0x424730": "pthread_setname_np"
   },
   "ranges": [
     {
@@ -44,7 +98,59 @@
     {
       "start": "0x231e850",
       "end_exclusive": "0x231e8c8"
+    },
+    {
+      "start": "0x232d740",
+      "end_exclusive": "0x232d824"
+    },
+    {
+      "start": "0x2347340",
+      "end_exclusive": "0x23474e8"
+    },
+    {
+      "start": "0x2375330",
+      "end_exclusive": "0x2375414"
+    },
+    {
+      "start": "0x232c180",
+      "end_exclusive": "0x232c230"
+    },
+    {
+      "start": "0x22107b0",
+      "end_exclusive": "0x2210958"
+    },
+    {
+      "start": "0x2210a40",
+      "end_exclusive": "0x2210a48"
+    },
+    {
+      "start": "0x70e4f8",
+      "end_exclusive": "0x70e508"
+    },
+    {
+      "start": "0x220d350",
+      "end_exclusive": "0x220d480"
+    },
+    {
+      "start": "0x220d170",
+      "end_exclusive": "0x220d320"
+    },
+    {
+      "start": "0x2211550",
+      "end_exclusive": "0x221161c"
+    },
+    {
+      "start": "0x77ecc8",
+      "end_exclusive": "0x77eda8"
+    },
+    {
+      "start": "0x76ebf0",
+      "end_exclusive": "0x76ecd0"
+    },
+    {
+      "start": "0x7764d0",
+      "end_exclusive": "0x776520"
     }
   ],
-  "scope": "Static stop/destructor ordering plus separate controlled thread-stop oracle. Does not establish live thread quiescence, complete queue draining or safe PCM reclamation."
+  "scope": "Static stop/destructor, normal worker exit and task disposal ordering plus separate controlled stop/entry oracles. Does not establish live thread quiescence, complete queue draining or safe PCM reclamation."
 }

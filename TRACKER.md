@@ -1572,3 +1572,19 @@ Revalidated native24479 and both sources stopped. Screenshot confirms deck1 BASE
   if their helpers return; normal worker exit publication still needs tracing.
 - Evidence: analysis/AZ-PCM-SHUTDOWN.md, stop oracle and shutdown collector.
   No Pi access, real cancellation or reclaim deployment. Full goal stays active.
+
+### Normal worker exit and pending-task disposal (2026-09-13)
+
+- Previous goal turn made progress: shutdown research/tests committed and verified
+  on private GitHub main. This turn remained PC-only; Pi stays off.
+- Traced pthread entry: successful-start run returns before handle clearing;
+  failed startup wait skips run but still clears handles. Optional self-deletion
+  and registry-owner release occur after clearing, before trampoline return.
+- Seven original-entry/TLS-lookup QEMU cases pass, checking full fixtures and
+  callback-time live/zero handles with controlled OS/owner/destructor substitutes.
+- Scheduler/PageFiller exit callbacks are bare returns; exit can skip queued work.
+  Later queue destruction invokes task destructor, not execute. Pending reader
+  cache-clear destruction reaches abandoned-promise cleanup, not clear fulfillment.
+- Evidence: analysis/AZ-PCM-WORKER-EXIT.md, expanded shutdown collector and oracle.
+  Next: captured onPageFilled destructor759260 and remaining initial/return paths.
+  No live cancellation or reclamation claim; full firmware goal remains active.

@@ -1,0 +1,64 @@
+{
+  "scope": "Execute original AZ thread entry and existing-node TLS lookup under QEMU.\n\nThread run, owner acquisition, startup wait, naming, affinity and destruction\nare controlled substitutes. No real thread, cancellation or queue runs here.\nFull fixtures and callback-time handle observations check normal-path ordering.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "source_sha256": "3c5acde013686ed1372242e18e730270fcbf1e9d085b37898751fae159709f87",
+  "tests": 7,
+  "results": [
+    {
+      "case": "normal",
+      "run_called": true,
+      "self_delete": false,
+      "owner_refs": 2,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "last_owner_ref",
+      "run_called": true,
+      "self_delete": false,
+      "owner_refs": 1,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "self_delete",
+      "run_called": true,
+      "self_delete": true,
+      "owner_refs": 2,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "self_delete_last_ref",
+      "run_called": true,
+      "self_delete": true,
+      "owner_refs": 1,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "startup_wait_false",
+      "run_called": false,
+      "self_delete": false,
+      "owner_refs": 2,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "named_affinity",
+      "run_called": true,
+      "self_delete": false,
+      "owner_refs": 2,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "wait_false_self_delete",
+      "run_called": false,
+      "self_delete": true,
+      "owner_refs": 1,
+      "whole_fixture_matched": true,
+      "passed": true
+    }
+  ]
+}
