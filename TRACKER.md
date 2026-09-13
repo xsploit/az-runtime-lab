@@ -1500,3 +1500,17 @@ Revalidated native24479 and both sources stopped. Screenshot confirms deck1 BASE
   Evidence: analysis/AZ-PCM-CLUSTER-WRITER.md and cluster-writer-oracle.json.
 - No Pi access or deployment. Continue caller ownership/cancellation tracing;
   broader firmware goal remains active.
+
+### Cleaner callbacks and synchronous allocation triggers (2026-09-13)
+
+- Previous goal turn progress: 14 writer cases verified and pushed privately.
+- Linked both direct retirement callers through freeSomeClusters7750f8 and its
+  freePartsOfTrack7748d0 call. Constructor binds7750f8 to scheduler+378 twice,
+  installing callbacks at PageBuffer+120 (cluster pool) and+98 (page pool).
+- Resolved binding builder/manager/invoker. Empty or unusable pool entry invokes
+  cleanup synchronously from commander785b10 or its track reservation77c778;
+  each retries the deque after cleanup returns. No dispatch occurs in invoker.
+- This narrows but does not prove writer serialization: resolve commander table
+  25f9f88 slot+10 callers next. Completion dispatch alone is insufficient.
+- Evidence: analysis/AZ-PCM-CLEANER-CALLBACKS.md and new hash-pinned collector.
+  No Pi access, reclaim patch or runtime memory-saving claim. Full goal active.

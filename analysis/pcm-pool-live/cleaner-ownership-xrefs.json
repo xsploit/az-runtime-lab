@@ -1,0 +1,101 @@
+{
+  "scope": "Hash-pinned static evidence for AZ cleaner callback registration and triggers.\n\nDirect references and short ADRP+ADD candidates are not a whole-program\nindirect-call or concurrency proof. Candidate register survival is reviewed in\nthe accompanying bounded disassembly, not inferred by this scanner.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "references": {
+    "0x7748d0": {
+      "direct_calls": [
+        "0x775bd4"
+      ],
+      "pointer_references": []
+    },
+    "0x7750f8": {
+      "direct_calls": [],
+      "pointer_references": []
+    },
+    "0x77c778": {
+      "direct_calls": [
+        "0x785b88"
+      ],
+      "pointer_references": []
+    },
+    "0x785b10": {
+      "direct_calls": [],
+      "pointer_references": [
+        "0x25f9f98"
+      ]
+    }
+  },
+  "address_materialization_candidates": [
+    {
+      "adrp": "0x7769cc",
+      "add": "0x7769d4",
+      "target": "0x7750f8"
+    }
+  ],
+  "commander_vtable": {
+    "address": "0x25f9f88",
+    "slots": [
+      "0x7660b0",
+      "0x766438",
+      "0x785b10",
+      "0x7660a0",
+      "0x782978",
+      "0xfffffffffffffff8",
+      "0x25f96a0"
+    ]
+  },
+  "ranges": [
+    {
+      "start": "0x7768a4",
+      "end_exclusive": "0x7768f8"
+    },
+    {
+      "start": "0x7769c8",
+      "end_exclusive": "0x776a48"
+    },
+    {
+      "start": "0x76fba0",
+      "end_exclusive": "0x76fbf4"
+    },
+    {
+      "start": "0x770f50",
+      "end_exclusive": "0x770fc8"
+    },
+    {
+      "start": "0x7660c0",
+      "end_exclusive": "0x7660e4"
+    },
+    {
+      "start": "0x767240",
+      "end_exclusive": "0x7672dc"
+    },
+    {
+      "start": "0x77c778",
+      "end_exclusive": "0x77c84c"
+    },
+    {
+      "start": "0x77cac4",
+      "end_exclusive": "0x77cb18"
+    },
+    {
+      "start": "0x785b10",
+      "end_exclusive": "0x785b8c"
+    },
+    {
+      "start": "0x785d28",
+      "end_exclusive": "0x785d78"
+    },
+    {
+      "start": "0x774cf4",
+      "end_exclusive": "0x774d30"
+    },
+    {
+      "start": "0x775954",
+      "end_exclusive": "0x775990"
+    },
+    {
+      "start": "0x775bc8",
+      "end_exclusive": "0x775be8"
+    }
+  ]
+}
