@@ -1651,3 +1651,18 @@ Revalidated native24479 and both sources stopped. Screenshot confirms deck1 BASE
   and native execution are explicitly not claimed complete. Pi still off.
 - Evidence: analysis/AZ-LONG-SESSION-VALIDATION.md, record-process-session.py,
   test-process-session-recorder.py and session-recorder-selftest.json.
+
+### User prioritizes complete controls and effects (2026-09-13)
+
+- User clarified letacy's RX3 suggestion was a lead, not an automatic priority
+  switch; explained AZ remains target and RX3 helps fill hardware-DSP gaps.
+- User authorized full effects/controller setup. Prioritize usable basic native
+  controls, retain preferred BiteDJ mappings, then finish full effects integration.
+- Added XML-driven persistent ERP transport state for decks1/2 Play/Cue/keylock,
+  including simultaneous held buttons and disconnect release snapshot. Five
+  offline tests passed; existing navigation checks pass. Not delivered to hardware.
+- Identified explicit native Pi NATIVE_NAVIGATION rejection still in launchers;
+  copied QEMU discovery is not a ready Pi controller bridge. Deck3/4 transport
+  selection, jogs, continuous delivery and physical controls remain unverified.
+- Evidence/acceptance plan: analysis/FLX6-AZ-COMPLETION-PLAN.md and
+  flx6_transport.py / test_flx6_transport.py / flx6-transport-tests.json.
