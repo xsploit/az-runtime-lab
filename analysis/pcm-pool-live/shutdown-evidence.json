@@ -1,0 +1,50 @@
+{
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "imported_symbols": {
+    "0x425830": "pthread_cancel",
+    "0x426a40": "pthread_mutex_unlock",
+    "0x426f90": "pthread_mutex_lock",
+    "0x426b50": "pthread_join",
+    "0x424700": "clock_gettime",
+    "0x427030": "nanosleep"
+  },
+  "ranges": [
+    {
+      "start": "0x771878",
+      "end_exclusive": "0x7719f4"
+    },
+    {
+      "start": "0x771528",
+      "end_exclusive": "0x771644"
+    },
+    {
+      "start": "0x771648",
+      "end_exclusive": "0x7716dc"
+    },
+    {
+      "start": "0x771d18",
+      "end_exclusive": "0x771dac"
+    },
+    {
+      "start": "0x231cbf0",
+      "end_exclusive": "0x231cc04"
+    },
+    {
+      "start": "0x23383f0",
+      "end_exclusive": "0x23384f0"
+    },
+    {
+      "start": "0x231ecb0",
+      "end_exclusive": "0x231ed54"
+    },
+    {
+      "start": "0x232d830",
+      "end_exclusive": "0x232d874"
+    },
+    {
+      "start": "0x231e850",
+      "end_exclusive": "0x231e8c8"
+    }
+  ],
+  "scope": "Static stop/destructor ordering plus separate controlled thread-stop oracle. Does not establish live thread quiescence, complete queue draining or safe PCM reclamation."
+}

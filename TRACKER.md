@@ -1559,3 +1559,16 @@ Revalidated native24479 and both sources stopped. Screenshot confirms deck1 BASE
   No claim that all helpers are nonblocking or that external barriers are absent.
 - No Pi access or reclaim deployment. Need explicit worker/callback drain ordering
   plus initial requests and remaining pool-return ownership. Full goal active.
+
+### Scheduler/worker stop ordering and forced-stop semantics (2026-09-13)
+
+- Previous goal turn progress: detached worker future is released without join.
+- Scheduler destructor signals itself/all units, waits up to requested3000ms,
+  then destroys units. PageFiller destructor requests8000ms stop before readers.
+-8original stop/cancel helper QEMU cases pass with simulated OS/wait events.
+  Stop trusts observed handle state rather than wait return. Forced path requests
+  pthread_cancel, clears both handle fields even on cancel error, and returnsfalse.
+- Handlezero alone is not a drain proof. Destructor diagnostics fall through
+  if their helpers return; normal worker exit publication still needs tracing.
+- Evidence: analysis/AZ-PCM-SHUTDOWN.md, stop oracle and shutdown collector.
+  No Pi access, real cancellation or reclaim deployment. Full goal stays active.

@@ -1,0 +1,88 @@
+{
+  "scope": "Original AZ thread-stop control flow with simulated OS and worker events.\n\nExecutes stop helper 0x23383f0 and cancellation helper 0x232d830. Mutex, wake,\nwait, logging and pthread_cancel are deterministic substitutes. No OS thread is\nstarted or cancelled; this verifies state/return semantics, not safe termination.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "tests": 8,
+  "results": [
+    {
+      "case": "already_stopped",
+      "timeout_argument": 3000,
+      "forced_cancel": false,
+      "wait_return": 0,
+      "cancel_return": 0,
+      "stop_return": true,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "cooperative",
+      "timeout_argument": 3000,
+      "forced_cancel": false,
+      "wait_return": 1,
+      "cancel_return": 0,
+      "stop_return": true,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "timeout",
+      "timeout_argument": 3000,
+      "forced_cancel": true,
+      "wait_return": 0,
+      "cancel_return": 0,
+      "stop_return": false,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "zero_timeout",
+      "timeout_argument": 0,
+      "forced_cancel": true,
+      "wait_return": 0,
+      "cancel_return": 0,
+      "stop_return": false,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "negative_timeout_cooperative",
+      "timeout_argument": -1,
+      "forced_cancel": false,
+      "wait_return": 1,
+      "cancel_return": 0,
+      "stop_return": true,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "cancel_reports_error",
+      "timeout_argument": 8000,
+      "forced_cancel": true,
+      "wait_return": 0,
+      "cancel_return": 22,
+      "stop_return": false,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "wait_success_but_handle_live",
+      "timeout_argument": 3000,
+      "forced_cancel": true,
+      "wait_return": 1,
+      "cancel_return": 0,
+      "stop_return": false,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "wait_false_but_handle_cleared",
+      "timeout_argument": 3000,
+      "forced_cancel": false,
+      "wait_return": 0,
+      "cancel_return": 0,
+      "stop_return": true,
+      "whole_fixture_matched": true,
+      "passed": true
+    }
+  ],
+  "source_sha256": "09bec8613c9232ca87e043f04e99098b1c503ce959f72c73e627da337e799212"
+}
