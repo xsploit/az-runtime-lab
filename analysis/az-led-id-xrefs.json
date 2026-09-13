@@ -1,0 +1,50 @@
+[
+  {
+    "start": "0x20426a8",
+    "end": "0x20426c0",
+    "register": 1,
+    "value": "0x1dd13c6e4639cdd",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x204271c",
+    "end": "0x2042734",
+    "register": 1,
+    "value": "0x5ac673002904dd",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x215e8dc",
+    "end": "0x215e8ec",
+    "register": 1,
+    "value": "0x5ac673002904dd",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x215e8f8",
+    "end": "0x215e910",
+    "register": 1,
+    "value": "0x5ac673002904dd",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x215e994",
+    "end": "0x215e9a4",
+    "register": 1,
+    "value": "0x1dd13c6e4639cdd",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x215e9b0",
+    "end": "0x215e9c8",
+    "register": 1,
+    "value": "0x1dd13c6e4639cdd",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "samples": 360,
+  "changes": 0,
+  "changes_per_second": 0.0,
+  "original_affinity": [
+    14,
+    15,
+    16,
+    17
+  ],
+  "temporary_affinity": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "scope": "Single later six-second segment, main thread only. Different song position; no controlled repeated benchmark.",
+  "valid_performance_comparison": false,
+  "reason": "Post-capture screenshot confirms track ended at00:00; zero changes are not performance evidence."
+}

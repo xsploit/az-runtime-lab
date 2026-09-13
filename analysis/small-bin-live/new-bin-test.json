@@ -1,0 +1,21 @@
+{
+  "pid": 23797,
+  "start_id": "2714223",
+  "library_sha256": "92cd363f8cfc949abfea4cb9e024d885f863ae48704ed66e944c539fa4d4f695",
+  "sequence": 800,
+  "overflow": 0,
+  "rows": [
+    {
+      "caller": 4198308,
+      "size": 13000,
+      "kind": 4,
+      "count": 400,
+      "success": 400,
+      "failed": 0,
+      "first_result": 140734783029248,
+      "last_result": 140734776737792,
+      "caller_hex": "0x400fa4"
+    }
+  ],
+  "scope": "Returned allocation calls in (12288,14336]; frees not traced, not live allocations. First/last addresses are historical."
+}

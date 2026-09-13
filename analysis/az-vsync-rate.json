@@ -1,0 +1,11 @@
+{
+  "factory_call": "0x2101dd8",
+  "factory": "0x212f880",
+  "constructor": "0x212f768",
+  "rate_load": "0x2101dd4",
+  "rate_constant": "0x2e33a40",
+  "rate_hz": 59.24,
+  "period_ms": 16.88048615800135,
+  "synthetic_current_hz": 60,
+  "note": "Static native constructor path; does not prove live callback rate or rendering throughput"
+}

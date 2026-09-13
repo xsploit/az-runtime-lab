@@ -1,0 +1,16 @@
+[
+  {
+    "adrp": "0x2100ad0",
+    "add": "0x2100ad8",
+    "target": "0x2e33a88",
+    "label": "spi2",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2100ad4",
+    "add": "0x2100adc",
+    "target": "0x2e33a70",
+    "label": "spi5",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

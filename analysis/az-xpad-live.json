@@ -1,0 +1,23 @@
+{
+  "pid": 408341,
+  "scope": "Live AZ native RX feedback only, no pointer events",
+  "observations": [
+    {
+      "RX85_low": 4,
+      "RX87": 64,
+      "visible": "1/2 X-PAD segment highlighted",
+      "screenshot": "xpad-area4-value64.png"
+    },
+    {
+      "RX85_low": 1,
+      "RX87": 128,
+      "visible": "1/16 X-PAD segment highlighted",
+      "screenshot": "xpad-area1-value128.png"
+    }
+  ],
+  "limits": [
+    "Two fields changed together; static callback chain supplies touch-area attribution",
+    "Continuous value scale not established by these Echo-mode screenshots",
+    "Blue infinity-BEAT label unchanged; do not assume it is a numeric readout or a defect until its purpose is traced"
+  ]
+}

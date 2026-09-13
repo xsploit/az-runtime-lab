@@ -1,0 +1,48 @@
+{
+  "sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Static setting listener through mixer adapter to TX bitfield; live native mode toggle and software EQ synchronization still unverified.",
+  "listener": {
+    "type": "usecase::mixer::Mixer",
+    "typeinfo": "0x26d8ea8",
+    "eq_iso_listener_vtable": "0x26d9028",
+    "listener_subobject_offset": 8,
+    "thunk": "0xa8ac78",
+    "callback": "0xa8a910",
+    "setting_wrapper_offset": "0x328",
+    "identifier_offset_in_wrapper": 32,
+    "identifier_comparison": "incoming Identifier pointer at x1 matches wrapper+32",
+    "enum_mapping": {
+      "0": 0,
+      "1": 1,
+      "other": "logs then falls back to 0"
+    },
+    "forwarder": "0xa8a7b8",
+    "adapter_pointer_offset": "0x38",
+    "adapter_virtual_slot": 3
+  },
+  "adapter": {
+    "type": "device_adapter::mixer::Mixer",
+    "vtable": "0x2e42208",
+    "slot3": "0x2134518",
+    "state_byte_offset": "0x14",
+    "operation": "store low byte of w1"
+  },
+  "tx": {
+    "builder": "0x215a2f8",
+    "adapter_pointer_in_builder_owner": "0x70",
+    "field_insertion": "0x215a3a4..0x215a3ac",
+    "caller": "0x215c138..0x215c14c",
+    "builder_output_argument": "packet+4",
+    "absolute_byte_offset": 8,
+    "bit_shift": 4,
+    "bit_width": 2,
+    "values": {
+      "0": "eq",
+      "1": "isolator",
+      "2": "unknown",
+      "3": "unknown"
+    },
+    "checksum": "existing TX CRC over bytes 0..103 stored little-endian at104..105"
+  },
+  "distinction": "usecase::mixer::MasterEq listens to a different application_setting::MasterEq; not the channel EQ/ISO setting."
+}

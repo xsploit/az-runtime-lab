@@ -1,0 +1,8 @@
+{
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "cases": 32,
+  "mismatches": 0,
+  "method": "Original writer and getter under QEMU, constructed HuiLed object",
+  "scope": "States 0..3, changed/unchanged ancillary data, repeated updates; no optional color adapter",
+  "limitation": "No refresh scheduler, full player or physical LEDs tested"
+}

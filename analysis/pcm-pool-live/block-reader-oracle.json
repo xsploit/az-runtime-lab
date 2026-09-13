@@ -1,0 +1,143 @@
+{
+  "scope": "Execute original AZ Track::readFromBlocks and exitRead under local QEMU.\n\nSynthetic two-block/two-page geometry, 1764 stereo frames per page. No live Pi,\nthreads, runtime patches or replacement copy routine. Checks full fixture and\nreturned frame count. A separate one-shot interleaving case removes the block's\ncluster pointer between its initial check and read-lock acquisition; this models\na completed writer detachment, not simultaneous hardware concurrency.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "tests": 15,
+  "results": [
+    {
+      "case": "scalar",
+      "position": 0,
+      "requested_frames": 64,
+      "returned_frames": 64,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "aligned_vector",
+      "position": 1,
+      "requested_frames": 64,
+      "returned_frames": 64,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "odd_length",
+      "position": 1,
+      "requested_frames": 65,
+      "returned_frames": 65,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "page_boundary",
+      "position": 1762,
+      "requested_frames": 8,
+      "returned_frames": 8,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "block_boundary",
+      "position": 3526,
+      "requested_frames": 8,
+      "returned_frames": 8,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "existing_reader",
+      "position": 0,
+      "requested_frames": 64,
+      "returned_frames": 64,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "writer_first",
+      "position": 0,
+      "requested_frames": 64,
+      "returned_frames": 0,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "writer_second",
+      "position": 3526,
+      "requested_frames": 8,
+      "returned_frames": 2,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "missing_first_cluster",
+      "position": 0,
+      "requested_frames": 64,
+      "returned_frames": 0,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "missing_first_page",
+      "position": 0,
+      "requested_frames": 64,
+      "returned_frames": 0,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "missing_second_page",
+      "position": 1762,
+      "requested_frames": 8,
+      "returned_frames": 2,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "missing_second_cluster",
+      "position": 3526,
+      "requested_frames": 8,
+      "returned_frames": 2,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "past_available_end",
+      "position": 7054,
+      "requested_frames": 8,
+      "returned_frames": 2,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "beyond_block_count",
+      "position": 7056,
+      "requested_frames": 8,
+      "returned_frames": 0,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": false
+    },
+    {
+      "case": "detached_before_lock",
+      "position": 0,
+      "requested_frames": 64,
+      "returned_frames": 0,
+      "passed": true,
+      "whole_fixture_matched": true,
+      "synthetic_interleaving": true
+    }
+  ],
+  "source_sha256": "bfd6e9526c48ad6dd5eca0367f7a4b8c0e44852d85ad4b4a9ab684b8f2f162d3"
+}

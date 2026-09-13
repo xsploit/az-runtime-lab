@@ -1,0 +1,49 @@
+{
+  "scope": "Two actual MP3 decks playing separately in each application on Pi5,20-second application CPU/RSS samples. Not a matched rendering/audio-backend benchmark.",
+  "tracks": [
+    "Estara.mp3",
+    "notorious_b.i.g._-_dead_wrong_acapella.mp3"
+  ],
+  "bitedj": {
+    "pid": 3813,
+    "seconds": 20.00047640799994,
+    "cpu_one_core_percent": 6.349848744062996,
+    "before": {
+      "cpu_ticks": 1913,
+      "rss_kib": 592432,
+      "threads": 43
+    },
+    "after": {
+      "cpu_ticks": 2040,
+      "rss_kib": 598704,
+      "threads": 43
+    }
+  },
+  "az": {
+    "pid": 3147,
+    "seconds": 20.00064340400013,
+    "cpu_one_core_percent": 44.698562038319224,
+    "before": {
+      "cpu_ticks": 1670,
+      "rss_kib": 1015200,
+      "threads": 235
+    },
+    "after": {
+      "cpu_ticks": 2564,
+      "rss_kib": 1014384,
+      "threads": 235
+    }
+  },
+  "visual_verification": {
+    "bitedj": "Both tracks visible; remaining times4:08 ->3:48 and2:59 ->2:39. Settings/Device page remained visible despite attempted Play page click; overview waveforms visible, main waveforms not visible.",
+    "az": "Both tracks visible;4:08.519 ->3:48.159 and2:59.675 ->2:39.315; both main waveforms visible."
+  },
+  "limitations": [
+    "BiteDJ Settings view vs AZ WAVEFORM view,1920x1200 Wayland vs1280x800 Xvfb. Do not interpret ratios as overall performance or FPS.",
+    "BiteDJ used Network stream clock due no hardware output; AZ paced null ALSA. No FLX6/headphone or live underrun test.",
+    "AZ software mixer/CFX/EQ not attached in this player comparison.",
+    "Application CPU/RSS only; excludes compositor/display/launcher/companion costs.",
+    "Initial AZ attempt loaded only deck1 and was excluded. First BiteDJ repeat aborted on invalid Sway mouse button syntax; restored before subsequent run. Metadata HTTP endpoint unavailable; playback verified by screenshot timers instead.",
+    "BiteDJ startup logs report analysis-cache path and database-lock warnings; no claim entire library/analyzer workflow is fixed."
+  ]
+}

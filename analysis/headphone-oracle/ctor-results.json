@@ -1,0 +1,88 @@
+{
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "relocations": [
+    {
+      "address": "0x5aa3c",
+      "original": "0x59ec0",
+      "target": "native_base"
+    },
+    {
+      "address": "0x5aa60",
+      "original": "0x3b1188",
+      "target": "fixture_string"
+    },
+    {
+      "address": "0x5aae8",
+      "original": "0x3b0d70",
+      "target": "fixture_string"
+    },
+    {
+      "address": "0x5aafc",
+      "original": "0x3b1188",
+      "target": "fixture_string"
+    },
+    {
+      "address": "0x5ab60",
+      "original": "0x3b0d70",
+      "target": "fixture_string"
+    },
+    {
+      "address": "0x5ab6c",
+      "original": "0x3b1188",
+      "target": "fixture_string"
+    },
+    {
+      "address": "0x5abd0",
+      "original": "0x3b0d70",
+      "target": "fixture_string"
+    },
+    {
+      "address": "0x5abe4",
+      "original": "0x3b1188",
+      "target": "fixture_string"
+    },
+    {
+      "address": "0x5ac50",
+      "original": "0x3b0d70",
+      "target": "fixture_string"
+    },
+    {
+      "address": "0x5ac68",
+      "original": "0x3b1188",
+      "target": "fixture_string"
+    },
+    {
+      "address": "0x5acdc",
+      "original": "0x3b0d70",
+      "target": "fixture_string"
+    },
+    {
+      "address": "0x5acfc",
+      "original": "0x59e50",
+      "target": "fixture_exception"
+    },
+    {
+      "address": "0x5ad00",
+      "original": "0xeebc",
+      "target": "fixture_exception"
+    }
+  ],
+  "scope": "Native constructor with original base constructor; temporary string bookkeeping stubbed, exceptions abort",
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "PASS 10000 constructors, full 256-byte state including untouched padding\n",
+      "stderr": ""
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "PASS 10000 constructors, full 256-byte state including untouched padding\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "PASS 10000 constructors, full 256-byte state including untouched padding\n",
+      "stderr": ""
+    }
+  }
+}

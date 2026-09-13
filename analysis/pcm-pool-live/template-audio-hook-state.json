@@ -1,0 +1,51 @@
+{
+  "pid": 30460,
+  "starttime": "3287824",
+  "smaps_rollup_kib": {
+    "Rss": 474736,
+    "Pss": 472081,
+    "Pss_Dirty": 465376,
+    "Pss_Anon": 424464,
+    "Pss_File": 6705,
+    "Pss_Shmem": 40912,
+    "Shared_Clean": 4576,
+    "Shared_Dirty": 32,
+    "Private_Clean": 4768,
+    "Private_Dirty": 465360,
+    "Referenced": 474608,
+    "Anonymous": 424464,
+    "KSM": 0,
+    "LazyFree": 0,
+    "AnonHugePages": 0,
+    "ShmemPmdMapped": 0,
+    "FilePmdMapped": 0,
+    "Shared_Hugetlb": 0,
+    "Private_Hugetlb": 0,
+    "Swap": 0,
+    "SwapPss": 0,
+    "Locked": 0
+  },
+  "template_vmas": 33850,
+  "lab_pcm_installed": 1,
+  "lab_pcm_init_error": 0,
+  "lab_pcm_allocations": 33850,
+  "lab_pcm_releases": 0,
+  "lab_pcm_reallocations": 0,
+  "store": {
+    "arena": 140733047734272,
+    "stride": 16384,
+    "capacity": 33850,
+    "next": 33850,
+    "live": 33850
+  },
+  "template_pages": {
+    "present": 0,
+    "private_anonymous": 0,
+    "file_backed": 0,
+    "swapped": 0
+  },
+  "guard_instructions": [
+    "0xd503201f",
+    "0xd503201f"
+  ]
+}

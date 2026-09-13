@@ -1,0 +1,41 @@
+{
+  "count": 3,
+  "records": [
+    {
+      "ready": 1,
+      "kind": 1,
+      "size": 16777216,
+      "argument2": 0,
+      "caller": 94123763544659,
+      "result": 140194258881856
+    },
+    {
+      "ready": 1,
+      "kind": 2,
+      "size": 16777216,
+      "argument2": 8,
+      "caller": 94123763544742,
+      "result": 140194233712832
+    },
+    {
+      "ready": 1,
+      "kind": 3,
+      "size": 33554432,
+      "argument2": 140194258881856,
+      "caller": 94123763544835,
+      "result": 140194191771520
+    }
+  ],
+  "installation": {
+    "installed": 7,
+    "error": 0,
+    "page": 94123763556352,
+    "permissions": 3
+  },
+  "checked": [
+    "malloc/calloc/realloc forwarded; zeroing and preservation verified",
+    "C++ allocation success, exceptions and nothrow behavior unaffected",
+    "all successful allocations freed",
+    "original import-page permissions restored"
+  ]
+}

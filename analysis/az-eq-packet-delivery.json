@@ -1,0 +1,1334 @@
+{
+  "scope": "Private PC QEMU: CRC-valid mixer receive packet to native HUI EQ state. Not audio/DSP validation.",
+  "cases": [
+    {
+      "requested": [
+        1,
+        511,
+        1023,
+        256,
+        512,
+        768,
+        7,
+        513,
+        1000,
+        1022,
+        100,
+        900
+      ],
+      "observed": [
+        {
+          "channel": 0,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b00",
+          "component": "0x7f5e053045c0",
+          "owner": "0x7f5e05304500",
+          "value": 0.0009775171056389809,
+          "raw": 1,
+          "adapter": "0x7f5e052f8cc0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 0,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca800",
+          "component": "0x7f5e053048c0",
+          "owner": "0x7f5e05304800",
+          "value": 0.4995112419128418,
+          "raw": 511,
+          "adapter": "0x7f5e052f8d20",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 0,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3600",
+          "component": "0x7f5e05304bc0",
+          "owner": "0x7f5e05304b00",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e052f8d80",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b01",
+          "component": "0x7f5e053059c0",
+          "owner": "0x7f5e05305900",
+          "value": 0.2502443790435791,
+          "raw": 256,
+          "adapter": "0x7f5e052f8f40",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca801",
+          "component": "0x7f5e05305cc0",
+          "owner": "0x7f5e05305c00",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e052f8fa0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3601",
+          "component": "0x7f5e05305fc0",
+          "owner": "0x7f5e05305f00",
+          "value": 0.7507331371307373,
+          "raw": 768,
+          "adapter": "0x7f5e05301000",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b02",
+          "component": "0x7f5e05306dc0",
+          "owner": "0x7f5e05306d00",
+          "value": 0.006842619739472866,
+          "raw": 7,
+          "adapter": "0x7f5e053011c0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca802",
+          "component": "0x7f5e053070c0",
+          "owner": "0x7f5e05307000",
+          "value": 0.5014662742614746,
+          "raw": 513,
+          "adapter": "0x7f5e05301220",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3602",
+          "component": "0x7f5e053073c0",
+          "owner": "0x7f5e05307300",
+          "value": 0.9775171279907227,
+          "raw": 1000,
+          "adapter": "0x7f5e05301280",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b03",
+          "component": "0x7f5e0530f1c0",
+          "owner": "0x7f5e0530f100",
+          "value": 0.9990224838256836,
+          "raw": 1022,
+          "adapter": "0x7f5e05301440",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca803",
+          "component": "0x7f5e0530f4c0",
+          "owner": "0x7f5e0530f400",
+          "value": 0.09775171428918839,
+          "raw": 100,
+          "adapter": "0x7f5e053014a0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3603",
+          "component": "0x7f5e0530f7c0",
+          "owner": "0x7f5e0530f700",
+          "value": 0.8797653913497925,
+          "raw": 900,
+          "adapter": "0x7f5e05301500",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        }
+      ],
+      "observation_latency_seconds": 0.05038035300094634
+    },
+    {
+      "requested": [
+        900,
+        100,
+        1022,
+        1000,
+        513,
+        7,
+        768,
+        512,
+        256,
+        1023,
+        511,
+        1
+      ],
+      "observed": [
+        {
+          "channel": 0,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b00",
+          "component": "0x7f5e053045c0",
+          "owner": "0x7f5e05304500",
+          "value": 0.8797653913497925,
+          "raw": 900,
+          "adapter": "0x7f5e052f8cc0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 0,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca800",
+          "component": "0x7f5e053048c0",
+          "owner": "0x7f5e05304800",
+          "value": 0.09775171428918839,
+          "raw": 100,
+          "adapter": "0x7f5e052f8d20",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 0,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3600",
+          "component": "0x7f5e05304bc0",
+          "owner": "0x7f5e05304b00",
+          "value": 0.9990224838256836,
+          "raw": 1022,
+          "adapter": "0x7f5e052f8d80",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b01",
+          "component": "0x7f5e053059c0",
+          "owner": "0x7f5e05305900",
+          "value": 0.9775171279907227,
+          "raw": 1000,
+          "adapter": "0x7f5e052f8f40",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca801",
+          "component": "0x7f5e05305cc0",
+          "owner": "0x7f5e05305c00",
+          "value": 0.5014662742614746,
+          "raw": 513,
+          "adapter": "0x7f5e052f8fa0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3601",
+          "component": "0x7f5e05305fc0",
+          "owner": "0x7f5e05305f00",
+          "value": 0.006842619739472866,
+          "raw": 7,
+          "adapter": "0x7f5e05301000",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b02",
+          "component": "0x7f5e05306dc0",
+          "owner": "0x7f5e05306d00",
+          "value": 0.7507331371307373,
+          "raw": 768,
+          "adapter": "0x7f5e053011c0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca802",
+          "component": "0x7f5e053070c0",
+          "owner": "0x7f5e05307000",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e05301220",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3602",
+          "component": "0x7f5e053073c0",
+          "owner": "0x7f5e05307300",
+          "value": 0.2502443790435791,
+          "raw": 256,
+          "adapter": "0x7f5e05301280",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b03",
+          "component": "0x7f5e0530f1c0",
+          "owner": "0x7f5e0530f100",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e05301440",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca803",
+          "component": "0x7f5e0530f4c0",
+          "owner": "0x7f5e0530f400",
+          "value": 0.4995112419128418,
+          "raw": 511,
+          "adapter": "0x7f5e053014a0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3603",
+          "component": "0x7f5e0530f7c0",
+          "owner": "0x7f5e0530f700",
+          "value": 0.0009775171056389809,
+          "raw": 1,
+          "adapter": "0x7f5e05301500",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        }
+      ],
+      "observation_latency_seconds": 0.05034747900208458
+    },
+    {
+      "requested": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "observed": [
+        {
+          "channel": 0,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b00",
+          "component": "0x7f5e053045c0",
+          "owner": "0x7f5e05304500",
+          "value": 0.0,
+          "raw": 0,
+          "adapter": "0x7f5e052f8cc0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 0,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca800",
+          "component": "0x7f5e053048c0",
+          "owner": "0x7f5e05304800",
+          "value": 0.0,
+          "raw": 0,
+          "adapter": "0x7f5e052f8d20",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 0,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3600",
+          "component": "0x7f5e05304bc0",
+          "owner": "0x7f5e05304b00",
+          "value": 0.0,
+          "raw": 0,
+          "adapter": "0x7f5e052f8d80",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b01",
+          "component": "0x7f5e053059c0",
+          "owner": "0x7f5e05305900",
+          "value": 0.0,
+          "raw": 0,
+          "adapter": "0x7f5e052f8f40",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca801",
+          "component": "0x7f5e05305cc0",
+          "owner": "0x7f5e05305c00",
+          "value": 0.0,
+          "raw": 0,
+          "adapter": "0x7f5e052f8fa0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3601",
+          "component": "0x7f5e05305fc0",
+          "owner": "0x7f5e05305f00",
+          "value": 0.0,
+          "raw": 0,
+          "adapter": "0x7f5e05301000",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b02",
+          "component": "0x7f5e05306dc0",
+          "owner": "0x7f5e05306d00",
+          "value": 0.0,
+          "raw": 0,
+          "adapter": "0x7f5e053011c0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca802",
+          "component": "0x7f5e053070c0",
+          "owner": "0x7f5e05307000",
+          "value": 0.0,
+          "raw": 0,
+          "adapter": "0x7f5e05301220",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3602",
+          "component": "0x7f5e053073c0",
+          "owner": "0x7f5e05307300",
+          "value": 0.0,
+          "raw": 0,
+          "adapter": "0x7f5e05301280",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b03",
+          "component": "0x7f5e0530f1c0",
+          "owner": "0x7f5e0530f100",
+          "value": 0.0,
+          "raw": 0,
+          "adapter": "0x7f5e05301440",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca803",
+          "component": "0x7f5e0530f4c0",
+          "owner": "0x7f5e0530f400",
+          "value": 0.0,
+          "raw": 0,
+          "adapter": "0x7f5e053014a0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3603",
+          "component": "0x7f5e0530f7c0",
+          "owner": "0x7f5e0530f700",
+          "value": 0.0,
+          "raw": 0,
+          "adapter": "0x7f5e05301500",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        }
+      ],
+      "observation_latency_seconds": 0.05036809598095715
+    },
+    {
+      "requested": [
+        1023,
+        1023,
+        1023,
+        1023,
+        1023,
+        1023,
+        1023,
+        1023,
+        1023,
+        1023,
+        1023,
+        1023
+      ],
+      "observed": [
+        {
+          "channel": 0,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b00",
+          "component": "0x7f5e053045c0",
+          "owner": "0x7f5e05304500",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e052f8cc0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 0,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca800",
+          "component": "0x7f5e053048c0",
+          "owner": "0x7f5e05304800",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e052f8d20",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 0,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3600",
+          "component": "0x7f5e05304bc0",
+          "owner": "0x7f5e05304b00",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e052f8d80",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b01",
+          "component": "0x7f5e053059c0",
+          "owner": "0x7f5e05305900",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e052f8f40",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca801",
+          "component": "0x7f5e05305cc0",
+          "owner": "0x7f5e05305c00",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e052f8fa0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3601",
+          "component": "0x7f5e05305fc0",
+          "owner": "0x7f5e05305f00",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e05301000",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b02",
+          "component": "0x7f5e05306dc0",
+          "owner": "0x7f5e05306d00",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e053011c0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca802",
+          "component": "0x7f5e053070c0",
+          "owner": "0x7f5e05307000",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e05301220",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3602",
+          "component": "0x7f5e053073c0",
+          "owner": "0x7f5e05307300",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e05301280",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b03",
+          "component": "0x7f5e0530f1c0",
+          "owner": "0x7f5e0530f100",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e05301440",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca803",
+          "component": "0x7f5e0530f4c0",
+          "owner": "0x7f5e0530f400",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e053014a0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3603",
+          "component": "0x7f5e0530f7c0",
+          "owner": "0x7f5e0530f700",
+          "value": 1.0,
+          "raw": 1023,
+          "adapter": "0x7f5e05301500",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        }
+      ],
+      "observation_latency_seconds": 0.05035807105014101
+    },
+    {
+      "requested": [
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512
+      ],
+      "observed": [
+        {
+          "channel": 0,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b00",
+          "component": "0x7f5e053045c0",
+          "owner": "0x7f5e05304500",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e052f8cc0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 0,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca800",
+          "component": "0x7f5e053048c0",
+          "owner": "0x7f5e05304800",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e052f8d20",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 0,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3600",
+          "component": "0x7f5e05304bc0",
+          "owner": "0x7f5e05304b00",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e052f8d80",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b01",
+          "component": "0x7f5e053059c0",
+          "owner": "0x7f5e05305900",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e052f8f40",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca801",
+          "component": "0x7f5e05305cc0",
+          "owner": "0x7f5e05305c00",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e052f8fa0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 1,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3601",
+          "component": "0x7f5e05305fc0",
+          "owner": "0x7f5e05305f00",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e05301000",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b02",
+          "component": "0x7f5e05306dc0",
+          "owner": "0x7f5e05306d00",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e053011c0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca802",
+          "component": "0x7f5e053070c0",
+          "owner": "0x7f5e05307000",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e05301220",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 2,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3602",
+          "component": "0x7f5e053073c0",
+          "owner": "0x7f5e05307300",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e05301280",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "high",
+          "hui_id": "0x7dcb7936b7ed2b03",
+          "component": "0x7f5e0530f1c0",
+          "owner": "0x7f5e0530f100",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e05301440",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "mid",
+          "hui_id": "0xa6518fb8028ca803",
+          "component": "0x7f5e0530f4c0",
+          "owner": "0x7f5e0530f400",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e053014a0",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        },
+        {
+          "channel": 3,
+          "band": "low",
+          "hui_id": "0xdacc2ca9faed3603",
+          "component": "0x7f5e0530f7c0",
+          "owner": "0x7f5e0530f700",
+          "value": 0.5004887580871582,
+          "raw": 512,
+          "adapter": "0x7f5e05301500",
+          "adapter_vtable": "0x2e63960",
+          "default_adapter": {
+            "raw_denominator": 1023,
+            "scale": 1.0,
+            "range_min": 0.0,
+            "range_max": 1.0
+          }
+        }
+      ],
+      "observation_latency_seconds": 0.05035855999449268
+    }
+  ],
+  "pid": 555628,
+  "initial": {
+    "registry_table": "0x7f5e14fa7300",
+    "bucket_count": 101,
+    "controls": [
+      {
+        "channel": 0,
+        "band": "high",
+        "hui_id": "0x7dcb7936b7ed2b00",
+        "component": "0x7f5e053045c0",
+        "owner": "0x7f5e05304500",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f5e052f8cc0",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 0,
+        "band": "mid",
+        "hui_id": "0xa6518fb8028ca800",
+        "component": "0x7f5e053048c0",
+        "owner": "0x7f5e05304800",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f5e052f8d20",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 0,
+        "band": "low",
+        "hui_id": "0xdacc2ca9faed3600",
+        "component": "0x7f5e05304bc0",
+        "owner": "0x7f5e05304b00",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f5e052f8d80",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 1,
+        "band": "high",
+        "hui_id": "0x7dcb7936b7ed2b01",
+        "component": "0x7f5e053059c0",
+        "owner": "0x7f5e05305900",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f5e052f8f40",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 1,
+        "band": "mid",
+        "hui_id": "0xa6518fb8028ca801",
+        "component": "0x7f5e05305cc0",
+        "owner": "0x7f5e05305c00",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f5e052f8fa0",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 1,
+        "band": "low",
+        "hui_id": "0xdacc2ca9faed3601",
+        "component": "0x7f5e05305fc0",
+        "owner": "0x7f5e05305f00",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f5e05301000",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 2,
+        "band": "high",
+        "hui_id": "0x7dcb7936b7ed2b02",
+        "component": "0x7f5e05306dc0",
+        "owner": "0x7f5e05306d00",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f5e053011c0",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 2,
+        "band": "mid",
+        "hui_id": "0xa6518fb8028ca802",
+        "component": "0x7f5e053070c0",
+        "owner": "0x7f5e05307000",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f5e05301220",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 2,
+        "band": "low",
+        "hui_id": "0xdacc2ca9faed3602",
+        "component": "0x7f5e053073c0",
+        "owner": "0x7f5e05307300",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f5e05301280",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 3,
+        "band": "high",
+        "hui_id": "0x7dcb7936b7ed2b03",
+        "component": "0x7f5e0530f1c0",
+        "owner": "0x7f5e0530f100",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f5e05301440",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 3,
+        "band": "mid",
+        "hui_id": "0xa6518fb8028ca803",
+        "component": "0x7f5e0530f4c0",
+        "owner": "0x7f5e0530f400",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f5e053014a0",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 3,
+        "band": "low",
+        "hui_id": "0xdacc2ca9faed3603",
+        "component": "0x7f5e0530f7c0",
+        "owner": "0x7f5e0530f700",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f5e05301500",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      }
+    ]
+  },
+  "bad_crc_no_change": true,
+  "passed": true,
+  "launcher_status": 0
+}

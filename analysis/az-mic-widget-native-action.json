@@ -1,0 +1,60 @@
+{
+  "class": "gui::mixer_settings::BeatFxMicWidgetController",
+  "typeinfo": "0x29f2238",
+  "primary_vtable": "0x29f22c0",
+  "button_listener_slot3": "0x19ebcc0",
+  "identifier_storage_to_setting": {
+    "0x3b86458": 0,
+    "0x3b86460": 1,
+    "0x3b86468": 2
+  },
+  "action": "Compares *x1 to each 64-bit stored identifier; matching branch loads controller+40 and calls0x19ebd70(setting, pointer_to_value, 0). Unknown identifier returns.",
+  "validation": "Known validator accepts unsigned0..2. Invalid input falls back to value at setting+40, rather than simply rejecting:0x19ebfb4..19ebfe4. Alternate validator is invoked at0x19ebfa4; false also enters fallback.",
+  "submission": {
+    "direct": "downstream virtual+40 false ->0x89d878(payload)",
+    "queued": "virtual+40 true -> allocate72 bytes; vtable0x2636300; copy payload at+24; submit via virtual+48; optional wake callback",
+    "task_type": "meow::AsyncTaskBoxBase::AsyncTask<Setting::updateItem<beat_effect::MicSelect> lambda>",
+    "task_execute": "vtable slot2=0x89dcb0 adds24 to task pointer then branches0x89d878, matching direct path",
+    "payload_offsets": {
+      "0": "identifier",
+      "8": "bool true",
+      "16": "setting framework pointer",
+      "24": "enum value",
+      "32": "listener pointer (null from widget)"
+    },
+    "remaining": "resolve concrete scheduler predicate and listener notification/persistence semantics"
+  },
+  "scope": "Static named button-to-setting path resolved; live native invocation and concrete object discovery remain unverified.",
+  "evidence": [
+    "az-mic-widget-action.asm",
+    "az-mic-setting-submit.asm",
+    "az-mic-update-execute.asm",
+    "xdjaz-inheritance.json",
+    "az-mixer-widget-id-init.asm"
+  ],
+  "identifier_initialization": {
+    "function": "0x543940",
+    "constructor": "0x2344a50",
+    "entries": [
+      {
+        "storage": "0x3b86458",
+        "name": "mic1Button",
+        "string": "0x29f21d0",
+        "call": "0x543994"
+      },
+      {
+        "storage": "0x3b86460",
+        "name": "mic2Button",
+        "string": "0x29f21e0",
+        "call": "0x5439c4"
+      },
+      {
+        "storage": "0x3b86468",
+        "name": "micBothButton",
+        "string": "0x29f21f0",
+        "call": "0x5439e4"
+      }
+    ],
+    "note": "These are constructed named identifiers compared by stored word, not demonstrated numeric HUI EasyIDs. Resolve through native identifier construction/lifetime rather than reuse PC pointer values."
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "scope": "Execute original AZ page return/retention instructions locally under QEMU.\n\nSingle-thread synthetic fixtures, not the full player. Deque allocation returns\nfixed writable fixture blocks; delete records its argument; memmove is a local\nimplementation. Track range publication is recorded, not executed. Diagnostic,\nexception, concurrent reader and scheduler behavior is outside this test.\nTemporary proprietary instruction extracts are deleted on exit.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "tests": 14,
+  "results": [
+    {
+      "case": "push",
+      "passed": true,
+      "entry": "0x7734d0",
+      "expected_boolean": null,
+      "allocations": 0,
+      "fixture_sha256": "61fe6402e9ef1dfc0e63c58be33d473d07b18ef254d8a50bb0eadac7efe5024e",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "push_node_boundary",
+      "passed": true,
+      "entry": "0x7734d0",
+      "expected_boolean": null,
+      "allocations": 1,
+      "fixture_sha256": "4fc04ab8dd0510fda00555c74207a4d016a3f4975a980387645de9e185245f49",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "push_map_growth",
+      "passed": true,
+      "entry": "0x7734d0",
+      "expected_boolean": null,
+      "allocations": 2,
+      "fixture_sha256": "84e93178c3a72f307ed7d7f64a7073647abd2aa0cc5b90a2d66eff25696b04bd",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "cluster_accept",
+      "passed": true,
+      "entry": "0x77cf98",
+      "expected_boolean": 1,
+      "allocations": 0,
+      "fixture_sha256": "8110f7ac2b0cf043defc680b411d02b33703839164d34b2f2b72db14ec857c9a",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "cluster_unreserved",
+      "passed": true,
+      "entry": "0x77cf98",
+      "expected_boolean": 0,
+      "allocations": 0,
+      "fixture_sha256": "16571e3241fe5c2202135734cbc82a859588de7a30ffbc08381136d4c53280b9",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "cluster_occupied",
+      "passed": true,
+      "entry": "0x77cf98",
+      "expected_boolean": 0,
+      "allocations": 0,
+      "fixture_sha256": "125393b9b96b5801868cd429dad1415119db7a7b5d9f0297e0bf9a21e668f1f5",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "cluster_reject_boundary",
+      "passed": true,
+      "entry": "0x77cf98",
+      "expected_boolean": 0,
+      "allocations": 1,
+      "fixture_sha256": "204f1ec6b7cac585a3451bb01f7da4e5258e73f508d8fc7ee8a562ed9a0eda75",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "track_accept",
+      "passed": true,
+      "entry": "0x77d128",
+      "expected_boolean": null,
+      "allocations": 0,
+      "fixture_sha256": "2ef1f660000dc969fc47d9420da5376a89924284044bd5459fe35fd2bd803655",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "track_identity_mismatch",
+      "passed": true,
+      "entry": "0x77d128",
+      "expected_boolean": null,
+      "allocations": 0,
+      "fixture_sha256": "fd41a7232d718a871126a07ec5868a9de9d24a1c11c919d19712a6236e628a34",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "track_generation_mismatch",
+      "passed": true,
+      "entry": "0x77d128",
+      "expected_boolean": null,
+      "allocations": 0,
+      "fixture_sha256": "06f476a07bb25a06d4e45e672b745d5f3ed3b56c023ba364a252126160ee19c1",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "track_reject",
+      "passed": true,
+      "entry": "0x77d128",
+      "expected_boolean": null,
+      "allocations": 0,
+      "fixture_sha256": "207a86787ebe1234e545850e913a840841a21fb9d0db6c7d99683eefff5e8e9a",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "cluster_trim_tail",
+      "passed": true,
+      "entry": "0x773620",
+      "expected_boolean": null,
+      "allocations": 0,
+      "fixture_sha256": "944dade08c6ed6175188579174ced8a6b51a7656f6ce51a0bdb0ef715be93444",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "cluster_trim_all",
+      "passed": true,
+      "entry": "0x773620",
+      "expected_boolean": null,
+      "allocations": 0,
+      "fixture_sha256": "bd9795bf5fb5907aa1eb825220e90669f4701c4d7afe6c95707bd1af3d7114d4",
+      "payloads_and_guards_unchanged": true
+    },
+    {
+      "case": "cluster_trim_empty",
+      "passed": true,
+      "entry": "0x773620",
+      "expected_boolean": null,
+      "allocations": 0,
+      "fixture_sha256": "6d614193b4d09564f382975f8bfea3b2e60eb430f30d1f5a46b9b2cfe88228ec",
+      "payloads_and_guards_unchanged": true
+    }
+  ],
+  "source_sha256": "4bc94a4f1155c0449e6965515d5692f2b0522de5c81e643bf48c9c44d236272e"
+}

@@ -1,0 +1,10 @@
+{
+  "xdjaz": {
+    "path": "runtime-lab/xdjaz/rootfs/home/root/scripts/device-mount.sh",
+    "sha256": "3e23045d9bbe3117d97802c208c3c2c95dae8139de6a4b76f8c44fd369d3933f"
+  },
+  "cdj3000x": {
+    "path": "runtime-lab/cdj3000x/rootfs/home/root/scripts/device-mount.sh",
+    "sha256": "086dca7c63d11dd8bb5cac093caaa0511b38b923605621e789020a15f638c90a"
+  }
+}

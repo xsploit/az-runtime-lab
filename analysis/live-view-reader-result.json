@@ -1,0 +1,21 @@
+{
+  "pid": 464771,
+  "before": {
+    "kind": "other",
+    "identity": 140600445225920,
+    "current": 140595643058176,
+    "nested": 140595635809280,
+    "pid": 464771,
+    "observed_at": 272332.395946295
+  },
+  "browse": {
+    "kind": "browse",
+    "identity": 140600445225440,
+    "current": 140595640608768,
+    "nested": 140595635809280,
+    "pid": 464771,
+    "observed_at": 272341.397714055
+  },
+  "exit_rejection": "Player session ended",
+  "scope": "Read-only session observation; native navigation packets; no physical controller"
+}

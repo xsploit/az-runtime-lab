@@ -1,0 +1,10 @@
+Linux pflx 6.18.48-pflx-rt+ #1 SMP PREEMPT_RT Sun Aug 30 04:37:26 PDT 2026 aarch64 GNU/Linux
+gcc (Debian 14.2.0-19) 14.2.0
+temp=53.8'C
+throttled=0x0
+               total        used        free      shared  buff/cache   available
+Mem:           4.0Gi       898Mi       2.8Gi        59Mi       513Mi       3.1Gi
+Swap:             0B          0B          0B
+    PID COMMAND           RSS
+   1162 mixxx           524960
+performance

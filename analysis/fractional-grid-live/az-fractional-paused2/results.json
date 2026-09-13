@@ -1,0 +1,93 @@
+{
+  "pid": 14542,
+  "identity": "1773536",
+  "results": [
+    {
+      "phase": "original",
+      "before": {
+        "time": 18674.583936238,
+        "positions": [
+          6768959,
+          568933
+        ],
+        "enabled": 0,
+        "counters": {
+          "lab_grid_updates": 70008,
+          "lab_grid_draws": 128084,
+          "lab_grid_fallbacks": 0
+        }
+      },
+      "after": {
+        "time": 18675.453466746,
+        "positions": [
+          6768959,
+          568933
+        ],
+        "enabled": 0,
+        "counters": {
+          "lab_grid_updates": 70112,
+          "lab_grid_draws": 128084,
+          "lab_grid_fallbacks": 0
+        }
+      }
+    },
+    {
+      "phase": "candidate",
+      "before": {
+        "time": 18675.961121333,
+        "positions": [
+          6768959,
+          568933
+        ],
+        "enabled": 1,
+        "counters": {
+          "lab_grid_updates": 70170,
+          "lab_grid_draws": 128168,
+          "lab_grid_fallbacks": 0
+        }
+      },
+      "after": {
+        "time": 18676.888534015,
+        "positions": [
+          6768959,
+          568933
+        ],
+        "enabled": 1,
+        "counters": {
+          "lab_grid_updates": 70280,
+          "lab_grid_draws": 128388,
+          "lab_grid_fallbacks": 0
+        }
+      }
+    },
+    {
+      "phase": "restored",
+      "before": {
+        "time": 18677.415028481,
+        "positions": [
+          6768959,
+          568933
+        ],
+        "enabled": 0,
+        "counters": {
+          "lab_grid_updates": 70340,
+          "lab_grid_draws": 128420,
+          "lab_grid_fallbacks": 0
+        }
+      },
+      "after": {
+        "time": 18678.287844591,
+        "positions": [
+          6768959,
+          568933
+        ],
+        "enabled": 0,
+        "counters": {
+          "lab_grid_updates": 70444,
+          "lab_grid_draws": 128420,
+          "lab_grid_fallbacks": 0
+        }
+      }
+    }
+  ]
+}

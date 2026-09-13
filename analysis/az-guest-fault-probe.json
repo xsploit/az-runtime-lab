@@ -1,0 +1,9 @@
+{
+  "pid": 280393,
+  "bounded_seconds": 50,
+  "launcher": "guest alive before scheduled teardown; launcher exit0",
+  "debugger": "remote closed at teardown, batch exit1; no signal stop captured",
+  "fault_reproduced": false,
+  "limitations": "Single bounded debugger run, not proof of stability; debugger overhead can change scheduling. No new fault pointers captured.",
+  "evidence": "az-guest-fault-capture.log"
+}

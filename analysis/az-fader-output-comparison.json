@@ -1,0 +1,261 @@
+{
+  "intervals": [
+    {
+      "raw_faders": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "start_frame": 1935552,
+      "end_frame": 2023744,
+      "measured_start_frame": 1957602,
+      "measured_end_frame": 2012719,
+      "channels": [
+        {
+          "channel": 1,
+          "peak": 0.04576227813959122,
+          "rms": 0.03235950699323044
+        },
+        {
+          "channel": 2,
+          "peak": 0.045762281864881516,
+          "rms": 0.03235950716530949
+        },
+        {
+          "channel": 3,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 4,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 5,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 6,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 7,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 8,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 9,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 10,
+          "peak": 0.0,
+          "rms": 0.0
+        }
+      ]
+    },
+    {
+      "raw_faders": [
+        1023,
+        1023,
+        1023,
+        1023
+      ],
+      "start_frame": 2023744,
+      "end_frame": 2111936,
+      "measured_start_frame": 2045794,
+      "measured_end_frame": 2100911,
+      "channels": [
+        {
+          "channel": 1,
+          "peak": 0.04576227813959122,
+          "rms": 0.03236166040426886
+        },
+        {
+          "channel": 2,
+          "peak": 0.04576227813959122,
+          "rms": 0.032361660373063365
+        },
+        {
+          "channel": 3,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 4,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 5,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 6,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 7,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 8,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 9,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 10,
+          "peak": 0.0,
+          "rms": 0.0
+        }
+      ]
+    },
+    {
+      "raw_faders": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "start_frame": 2111936,
+      "end_frame": 2200192,
+      "measured_start_frame": 2133986,
+      "measured_end_frame": 2189167,
+      "channels": [
+        {
+          "channel": 1,
+          "peak": 0.045762285590171814,
+          "rms": 0.03235957645326871
+        },
+        {
+          "channel": 2,
+          "peak": 0.045762281864881516,
+          "rms": 0.032359576383735725
+        },
+        {
+          "channel": 3,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 4,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 5,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 6,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 7,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 8,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 9,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 10,
+          "peak": 0.0,
+          "rms": 0.0
+        }
+      ]
+    },
+    {
+      "raw_faders": [
+        1023,
+        1023,
+        1023,
+        1023
+      ],
+      "start_frame": 2200192,
+      "end_frame": 2288384,
+      "measured_start_frame": 2222242,
+      "measured_end_frame": 2277359,
+      "channels": [
+        {
+          "channel": 1,
+          "peak": 0.04576227813959122,
+          "rms": 0.032362162337600746
+        },
+        {
+          "channel": 2,
+          "peak": 0.04576227813959122,
+          "rms": 0.032362162311406116
+        },
+        {
+          "channel": 3,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 4,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 5,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 6,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 7,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 8,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 9,
+          "peak": 0.0,
+          "rms": 0.0
+        },
+        {
+          "channel": 10,
+          "peak": 0.0,
+          "rms": 0.0
+        }
+      ]
+    }
+  ],
+  "limitation": "FIFO enqueue and raw capture offsets; no dispatcher receipt acknowledgement. Single deck tone, all four faders changed together; does not prove hardware mixer semantics."
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "phase": "grid-only",
+    "before": {
+      "time": 20942.996624197,
+      "positions": [
+        1640955,
+        1581814
+      ]
+    },
+    "cpu_without_capture": 46.98517152686046,
+    "after": {
+      "time": 20956.326508883,
+      "positions": [
+        2228091,
+        2168950
+      ]
+    },
+    "source_rate": 44046.59258729984,
+    "transport_valid": true
+  },
+  {
+    "phase": "grid-and-smooth-curve",
+    "before": {
+      "time": 20956.887076092,
+      "positions": [
+        2252859,
+        2193718
+      ]
+    },
+    "cpu_without_capture": 47.23531690171937,
+    "after": {
+      "time": 20970.221028245,
+      "positions": [
+        2840827,
+        2781686
+      ]
+    },
+    "source_rate": 44095.55346032396,
+    "transport_valid": true
+  },
+  {
+    "phase": "grid-only-restored",
+    "before": {
+      "time": 20970.783064332,
+      "positions": [
+        2866363,
+        2807222
+      ]
+    },
+    "cpu_without_capture": 47.24205777154038,
+    "after": {
+      "time": 20984.11562005,
+      "positions": [
+        3454011,
+        3394870
+      ]
+    },
+    "source_rate": 44076.1705729566,
+    "transport_valid": true
+  }
+]

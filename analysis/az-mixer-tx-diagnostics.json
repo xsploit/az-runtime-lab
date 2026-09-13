@@ -1,0 +1,10 @@
+[
+  {
+    "address": "0x2e4a658",
+    "text": "static device_adapter::subcpu_comm::Format<FieldType, luminanceScale, colorScale>* device_adapter::subcpu_comm::Format<FieldType, luminanceScale, colorScale>::interpret(const meow::RawArrayRef<unsigned char>&, bool) [with FieldType = device_adapter::subcpu_comm::mixer_control_ucom::TxFormatField; int luminanceScale = 3; int colorScale = 256]"
+  },
+  {
+    "address": "0x2e44670",
+    "text": "data size mismatch"
+  }
+]

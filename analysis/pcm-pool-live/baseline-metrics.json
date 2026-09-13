@@ -1,0 +1,93 @@
+{
+  "mode": "baseline",
+  "launcher_exit": 0,
+  "samples": [
+    {
+      "pid": 28074,
+      "starttime": "3160177",
+      "smaps_rollup_kib": {
+        "Rss": 31120,
+        "Pss": 29589,
+        "Pss_Dirty": 24304,
+        "Pss_Anon": 11040,
+        "Pss_File": 5285,
+        "Pss_Shmem": 13264,
+        "Shared_Clean": 2640,
+        "Shared_Dirty": 0,
+        "Private_Clean": 4176,
+        "Private_Dirty": 24304,
+        "Referenced": 30880,
+        "Anonymous": 11040,
+        "KSM": 0,
+        "LazyFree": 0,
+        "AnonHugePages": 0,
+        "ShmemPmdMapped": 0,
+        "FilePmdMapped": 0,
+        "Shared_Hugetlb": 0,
+        "Private_Hugetlb": 0,
+        "Swap": 0,
+        "SwapPss": 0,
+        "Locked": 0
+      },
+      "template_vmas": 0
+    },
+    {
+      "pid": 28074,
+      "starttime": "3160177",
+      "smaps_rollup_kib": {
+        "Rss": 942352,
+        "Pss": 939629,
+        "Pss_Dirty": 932672,
+        "Pss_Anon": 891808,
+        "Pss_File": 6957,
+        "Pss_Shmem": 40864,
+        "Shared_Clean": 4688,
+        "Shared_Dirty": 32,
+        "Private_Clean": 4976,
+        "Private_Dirty": 932656,
+        "Referenced": 941792,
+        "Anonymous": 891808,
+        "KSM": 0,
+        "LazyFree": 0,
+        "AnonHugePages": 0,
+        "ShmemPmdMapped": 0,
+        "FilePmdMapped": 0,
+        "Shared_Hugetlb": 0,
+        "Private_Hugetlb": 0,
+        "Swap": 0,
+        "SwapPss": 0,
+        "Locked": 0
+      },
+      "template_vmas": 0
+    },
+    {
+      "pid": 28074,
+      "starttime": "3160177",
+      "smaps_rollup_kib": {
+        "Rss": 946208,
+        "Pss": 943485,
+        "Pss_Dirty": 936528,
+        "Pss_Anon": 895600,
+        "Pss_File": 6957,
+        "Pss_Shmem": 40928,
+        "Shared_Clean": 4688,
+        "Shared_Dirty": 32,
+        "Private_Clean": 4976,
+        "Private_Dirty": 936512,
+        "Referenced": 945760,
+        "Anonymous": 895600,
+        "KSM": 0,
+        "LazyFree": 0,
+        "AnonHugePages": 0,
+        "ShmemPmdMapped": 0,
+        "FilePmdMapped": 0,
+        "Shared_Hugetlb": 0,
+        "Private_Hugetlb": 0,
+        "Swap": 0,
+        "SwapPss": 0,
+        "Locked": 0
+      },
+      "template_vmas": 0
+    }
+  ]
+}

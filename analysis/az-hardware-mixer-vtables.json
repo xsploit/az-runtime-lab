@@ -1,0 +1,80 @@
+[
+  {
+    "type": "device_adapter::subcpu_comm::mixer_control_ucom::RxDataDispatcher",
+    "tables": [
+      {
+        "address": "0x2e48338",
+        "offset_to_top": 0,
+        "slots": [
+          "0x2155860",
+          "0x2155af8",
+          "0x2154ec0",
+          "0x21550a8",
+          "0x2154dd8",
+          "0x21550b0",
+          "0x21550c0",
+          "0x21550d0",
+          "0x21550e0",
+          "0x21550f0",
+          "0x2155100"
+        ]
+      },
+      {
+        "address": "0x2e483a0",
+        "offset_to_top": -8,
+        "slots": [
+          "0x2155938",
+          "0x2155a10",
+          "0x21550b8",
+          "0x21550c8",
+          "0x21550d8",
+          "0x21550e8",
+          "0x21550f8",
+          "0x2155108"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "device_adapter::subcpu_comm::mixer_control_ucom::TxDataBuilder::Command",
+    "tables": [
+      {
+        "address": "0x2e4a420",
+        "offset_to_top": 0,
+        "slots": [
+          "0x215cb40",
+          "0x215cb50",
+          "0x215caf0",
+          "0x215caf8",
+          "0x215cb08",
+          "0x215cb18",
+          "0x215cb20"
+        ]
+      },
+      {
+        "address": "0x2e4a468",
+        "offset_to_top": -8,
+        "slots": [
+          "0x215cb48",
+          "0x215cb58",
+          "0x215cb30"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "device_adapter::subcpu_comm::mixer_control_ucom::TxDataBuilder",
+    "tables": [
+      {
+        "address": "0x2e4a490",
+        "offset_to_top": 0,
+        "slots": [
+          "0x215d3c0",
+          "0x215cc90",
+          "0x215bfe0",
+          "0x215cae8"
+        ]
+      }
+    ]
+  }
+]

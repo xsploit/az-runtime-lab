@@ -1,0 +1,473 @@
+{
+  "new": {
+    "pid": 23902,
+    "start_id": "2716792",
+    "library_sha256": "92cd363f8cfc949abfea4cb9e024d885f863ae48704ed66e944c539fa4d4f695",
+    "sequence": 14,
+    "overflow": 0,
+    "rows": [
+      {
+        "caller": 14242428,
+        "size": 12360,
+        "kind": 4,
+        "count": 5,
+        "success": 5,
+        "failed": 0,
+        "first_result": 140731457675264,
+        "last_result": 140731507310592,
+        "caller_hex": "0xd9527c"
+      },
+      {
+        "caller": 34611148,
+        "size": 14000,
+        "kind": 4,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140732435398656,
+        "last_result": 140732435398656,
+        "caller_hex": "0x2101fcc"
+      },
+      {
+        "caller": 8054416,
+        "size": 14120,
+        "kind": 4,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140732435412992,
+        "last_result": 140732435412992,
+        "caller_hex": "0x7ae690"
+      }
+    ],
+    "scope": "Returned allocation calls in (12288,14336]; frees not traced, not live allocations. First/last addresses are historical."
+  },
+  "c": {
+    "pid": 23902,
+    "start_id": "2716792",
+    "library_sha256": "bcde02adb8a66a231911f97d142e7e29934b7fb357f95f56f2d1b40497cb80e1",
+    "sequence": 67924,
+    "overflow": 0,
+    "rows": [
+      {
+        "caller": 7830272,
+        "size": 14128,
+        "kind": 1,
+        "count": 33850,
+        "success": 33850,
+        "failed": 0,
+        "first_result": 140732435427328,
+        "last_result": 140731457660928,
+        "caller_hex": "0x777b00"
+      },
+      {
+        "caller": 37550704,
+        "size": 14080,
+        "kind": 1,
+        "count": 14,
+        "success": 14,
+        "failed": 0,
+        "first_result": 140729356900352,
+        "last_result": 140729356900352,
+        "caller_hex": "0x23cfa70"
+      },
+      {
+        "caller": 37370156,
+        "size": 14080,
+        "kind": 2,
+        "count": 14,
+        "success": 14,
+        "failed": 0,
+        "first_result": 140729357015040,
+        "last_result": 140728582369280,
+        "caller_hex": "0x23a392c"
+      },
+      {
+        "caller": 37550704,
+        "size": 12648,
+        "kind": 1,
+        "count": 8,
+        "success": 8,
+        "failed": 0,
+        "first_result": 140731507525632,
+        "last_result": 140729356900352,
+        "caller_hex": "0x23cfa70"
+      },
+      {
+        "caller": 37370156,
+        "size": 12648,
+        "kind": 2,
+        "count": 8,
+        "success": 8,
+        "failed": 0,
+        "first_result": 140729356771328,
+        "last_result": 140729357000704,
+        "caller_hex": "0x23a392c"
+      },
+      {
+        "caller": 14336408,
+        "size": 14112,
+        "kind": 1,
+        "count": 5,
+        "success": 5,
+        "failed": 0,
+        "first_result": 140731457689600,
+        "last_result": 140731507324928,
+        "caller_hex": "0xdac198"
+      },
+      {
+        "caller": 14336452,
+        "size": 14112,
+        "kind": 1,
+        "count": 5,
+        "success": 5,
+        "failed": 0,
+        "first_result": 140731457703936,
+        "last_result": 140731507339264,
+        "caller_hex": "0xdac1c4"
+      },
+      {
+        "caller": 14336492,
+        "size": 14112,
+        "kind": 1,
+        "count": 5,
+        "success": 5,
+        "failed": 0,
+        "first_result": 140731457718272,
+        "last_result": 140731507353600,
+        "caller_hex": "0xdac1ec"
+      },
+      {
+        "caller": 14336540,
+        "size": 14112,
+        "kind": 1,
+        "count": 5,
+        "success": 5,
+        "failed": 0,
+        "first_result": 140731507081216,
+        "last_result": 140731507367936,
+        "caller_hex": "0xdac21c"
+      },
+      {
+        "caller": 37395624,
+        "size": 13000,
+        "kind": 1,
+        "count": 4,
+        "success": 4,
+        "failed": 0,
+        "first_result": 140731507525632,
+        "last_result": 140731507525632,
+        "caller_hex": "0x23a9ca8"
+      },
+      {
+        "caller": 37393568,
+        "size": 12480,
+        "kind": 1,
+        "count": 4,
+        "success": 4,
+        "failed": 0,
+        "first_result": 140729356900352,
+        "last_result": 140729356900352,
+        "caller_hex": "0x23a94a0"
+      },
+      {
+        "caller": 37550704,
+        "size": 12544,
+        "kind": 1,
+        "count": 3,
+        "success": 3,
+        "failed": 0,
+        "first_result": 140731507525632,
+        "last_result": 140731507525632,
+        "caller_hex": "0x23cfa70"
+      },
+      {
+        "caller": 37370156,
+        "size": 12544,
+        "kind": 2,
+        "count": 3,
+        "success": 3,
+        "failed": 0,
+        "first_result": 140729356800000,
+        "last_result": 140729356828672,
+        "caller_hex": "0x23a392c"
+      },
+      {
+        "caller": 37681944,
+        "size": 13024,
+        "kind": 1,
+        "count": 3,
+        "success": 3,
+        "failed": 0,
+        "first_result": 140731507525632,
+        "last_result": 140729356886016,
+        "caller_hex": "0x23efb18"
+      },
+      {
+        "caller": 37550704,
+        "size": 13056,
+        "kind": 1,
+        "count": 2,
+        "success": 2,
+        "failed": 0,
+        "first_result": 140731507382272,
+        "last_result": 140731507382272,
+        "caller_hex": "0x23cfa70"
+      },
+      {
+        "caller": 37370156,
+        "size": 13056,
+        "kind": 2,
+        "count": 2,
+        "success": 2,
+        "failed": 0,
+        "first_result": 140731507410944,
+        "last_result": 140731507453952,
+        "caller_hex": "0x23a392c"
+      },
+      {
+        "caller": 37550704,
+        "size": 13248,
+        "kind": 1,
+        "count": 2,
+        "success": 2,
+        "failed": 0,
+        "first_result": 140731507382272,
+        "last_result": 140731507525632,
+        "caller_hex": "0x23cfa70"
+      },
+      {
+        "caller": 37370156,
+        "size": 13248,
+        "kind": 2,
+        "count": 2,
+        "success": 2,
+        "failed": 0,
+        "first_result": 140731507425280,
+        "last_result": 140729356756992,
+        "caller_hex": "0x23a392c"
+      },
+      {
+        "caller": 37681944,
+        "size": 13056,
+        "kind": 1,
+        "count": 2,
+        "success": 2,
+        "failed": 0,
+        "first_result": 140731507468288,
+        "last_result": 140731507511296,
+        "caller_hex": "0x23efb18"
+      },
+      {
+        "caller": 37550704,
+        "size": 13024,
+        "kind": 1,
+        "count": 2,
+        "success": 2,
+        "failed": 0,
+        "first_result": 140731507525632,
+        "last_result": 140731507525632,
+        "caller_hex": "0x23cfa70"
+      },
+      {
+        "caller": 37370156,
+        "size": 13024,
+        "kind": 2,
+        "count": 2,
+        "success": 2,
+        "failed": 0,
+        "first_result": 140729356843008,
+        "last_result": 140729356857344,
+        "caller_hex": "0x23a392c"
+      },
+      {
+        "caller": 7830416,
+        "size": 13376,
+        "kind": 3,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140732023891968,
+        "last_result": 140732023891968,
+        "caller_hex": "0x777b90"
+      },
+      {
+        "caller": 37550704,
+        "size": 13824,
+        "kind": 1,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140731507382272,
+        "last_result": 140731507382272,
+        "caller_hex": "0x23cfa70"
+      },
+      {
+        "caller": 37370156,
+        "size": 13824,
+        "kind": 2,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140731507396608,
+        "last_result": 140731507396608,
+        "caller_hex": "0x23a392c"
+      },
+      {
+        "caller": 37550704,
+        "size": 12864,
+        "kind": 1,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140731507382272,
+        "last_result": 140731507382272,
+        "caller_hex": "0x23cfa70"
+      },
+      {
+        "caller": 37370156,
+        "size": 12864,
+        "kind": 2,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140731507439616,
+        "last_result": 140731507439616,
+        "caller_hex": "0x23a392c"
+      },
+      {
+        "caller": 37681944,
+        "size": 13824,
+        "kind": 1,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140731507382272,
+        "last_result": 140731507382272,
+        "caller_hex": "0x23efb18"
+      },
+      {
+        "caller": 37681944,
+        "size": 13248,
+        "kind": 1,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140731507482624,
+        "last_result": 140731507482624,
+        "caller_hex": "0x23efb18"
+      },
+      {
+        "caller": 37681944,
+        "size": 12864,
+        "kind": 1,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140731507496960,
+        "last_result": 140731507496960,
+        "caller_hex": "0x23efb18"
+      },
+      {
+        "caller": 37550704,
+        "size": 13892,
+        "kind": 1,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140731507525632,
+        "last_result": 140731507525632,
+        "caller_hex": "0x23cfa70"
+      },
+      {
+        "caller": 37370156,
+        "size": 13892,
+        "kind": 2,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140729356713984,
+        "last_result": 140729356713984,
+        "caller_hex": "0x23a392c"
+      },
+      {
+        "caller": 37550704,
+        "size": 13340,
+        "kind": 1,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140731507525632,
+        "last_result": 140731507525632,
+        "caller_hex": "0x23cfa70"
+      },
+      {
+        "caller": 37370156,
+        "size": 13340,
+        "kind": 2,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140729356728320,
+        "last_result": 140729356728320,
+        "caller_hex": "0x23a392c"
+      },
+      {
+        "caller": 36811344,
+        "size": 13376,
+        "kind": 3,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140731507525632,
+        "last_result": 140731507525632,
+        "caller_hex": "0x231b250"
+      },
+      {
+        "caller": 37550704,
+        "size": 12312,
+        "kind": 1,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140731507525632,
+        "last_result": 140731507525632,
+        "caller_hex": "0x23cfa70"
+      },
+      {
+        "caller": 37370156,
+        "size": 12312,
+        "kind": 2,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140729356742656,
+        "last_result": 140729356742656,
+        "caller_hex": "0x23a392c"
+      },
+      {
+        "caller": 37550704,
+        "size": 13440,
+        "kind": 1,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140729356900352,
+        "last_result": 140729356900352,
+        "caller_hex": "0x23cfa70"
+      },
+      {
+        "caller": 37370156,
+        "size": 13440,
+        "kind": 2,
+        "count": 1,
+        "success": 1,
+        "failed": 0,
+        "first_result": 140729356914688,
+        "last_result": 140729356914688,
+        "caller_hex": "0x23a392c"
+      }
+    ],
+    "scope": "Returned allocation calls in (12288,14336]; frees not traced, not live allocations. First/last addresses are historical."
+  }
+}

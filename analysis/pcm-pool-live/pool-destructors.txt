@@ -1,0 +1,494 @@
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8:
+  768800:      	ldp	x0, x26, [x19, #0x10]
+  768804:      	add	x1, x0, #0xc
+  768808:      	cbz	x0, 0x768830
+  76880c:      	ldaxr	w2, [x1]
+  768810:      	sub	w3, w2, #0x1
+  768814:      	stlxr	w4, w3, [x1]
+  768818:      	cbnz	w4, 0x76880c
+  76881c:      	cmp	w2, #0x1
+  768820:      	b.ne	0x768830
+  768824:      	ldr	x1, [x0]
+  768828:      	ldr	x1, [x1, #0x18]
+  76882c:      	blr	x1
+  768830:      	mov	x0, x19
+  768834:      	bl	0x22fc600
+  768838:      	mov	x0, x19
+  76883c:      	mov	x1, #0x20               // =32
+  768840:      	mov	x19, x26
+  768844:      	bl	0x426660
+  768848:      	cbnz	x26, 0x768800
+  76884c:      	ldr	x0, [x20, #0x10]
+  768850:      	ldr	w27, [x23, #0x10]
+  768854:      	cmp	w27, w21
+  768858:      	b.hi	0x768950
+  76885c:      	ldr	w1, [x23, #0x8]
+  768860:      	add	w26, w27, #0x1
+  768864:      	cmp	w26, w1
+  768868:      	b.le	0x7688a8
+  76886c:      	add	w19, w26, w26, lsr #31
+  768870:      	add	w19, w26, w19, asr #1
+  768874:      	add	w19, w19, #0x8
+  768878:      	and	w19, w19, #0xfffffff8
+  76887c:      	cmp	w1, w19
+  768880:      	b.eq	0x7688a8
+  768884:      	cmp	w19, #0x0
+  768888:      	b.le	0x768958
+  76888c:      	sbfiz	x1, x19, #3, #32
+  768890:      	cbz	x0, 0x768974
+  768894:      	bl	0x4244a0
+  768898:      	ldr	w27, [x23, #0x10]
+  76889c:      	str	x0, [x20, #0x10]
+  7688a0:      	add	w26, w27, #0x1
+  7688a4:      	str	w19, [x23, #0x8]
+  7688a8:      	str	w26, [x23, #0x10]
+  7688ac:      	str	xzr, [x0, w27, sxtw #3]
+  7688b0:      	sub	w21, w21, #0x1
+  7688b4:      	sub	x24, x24, #0x8
+  7688b8:      	cmn	w21, #0x1
+  7688bc:      	b.ne	0x7687e8
+  7688c0:      	ldp	x23, x24, [sp, #0x30]
+  7688c4:      	ldp	x25, x26, [sp, #0x40]
+  7688c8:      	ldr	x27, [sp, #0x50]
+  7688cc:      	str	wzr, [x20, #0x28]
+  7688d0:      	mov	x0, x22
+  7688d4:      	bl	0x232c110
+  7688d8:      	mov	x0, x22
+  7688dc:      	bl	0x232c0d0
+  7688e0:      	ldr	x0, [x20, #0x10]
+  7688e4:      	bl	0x424af0
+  7688e8:      	mov	x0, x20
+  7688ec:      	bl	0x2394de0
+  7688f0:      	mov	x0, x20
+  7688f4:      	mov	x1, #0x60               // =96
+  7688f8:      	ldp	x19, x20, [sp, #0x10]
+  7688fc:      	ldp	x21, x22, [sp, #0x20]
+  768900:      	ldp	x29, x30, [sp], #0x60
+  768904:      	b	0x426660
+  768908:      	ldp	x0, x26, [x19, #0x10]
+  76890c:      	cbz	x0, 0x768930
+  768910:      	ldr	w1, [x0, #0xc]
+  768914:      	subs	w2, w1, #0x1
+  768918:      	str	w2, [x0, #0xc]
+  76891c:      	b.ne	0x768930
+  768920:      	ldr	x1, [x0]
+  768924:      	ldr	x1, [x1, #0x18]
+  768928:      	blr	x1
+  76892c:      	nop
+  768930:      	mov	x0, x19
+  768934:      	bl	0x22fc600
+  768938:      	mov	x0, x19
+  76893c:      	mov	x1, #0x20               // =32
+  768940:      	mov	x19, x26
+  768944:      	bl	0x426660
+  768948:      	cbnz	x26, 0x768908
+  76894c:      	b	0x76884c
+  768950:      	str	xzr, [x0, x24]
+  768954:      	b	0x7688b0
+  768958:      	bl	0x424af0
+  76895c:      	ldr	w27, [x23, #0x10]
+  768960:      	str	xzr, [x20, #0x10]
+  768964:      	mov	x0, #0x0                // =0
+  768968:      	add	w26, w27, #0x1
+  76896c:      	str	w19, [x23, #0x8]
+  768970:      	b	0x7688a8
+  768974:      	mov	x0, x1
+  768978:      	bl	0x424fd0
+  76897c:      	str	x0, [x20, #0x10]
+  768980:      	b	0x7688a4
+  768984:      	udf	#0x0
+  768988:      	stp	x29, x30, [sp, #-0x70]!
+  76898c:      	mov	x29, sp
+  768990:      	stp	x19, x20, [sp, #0x10]
+  768994:      	mov	x19, x0
+  768998:      	adrp	x0, 0x25f9000
+  76899c:      	stp	x21, x22, [sp, #0x20]
+  7689a0:      	add	x0, x0, #0xc00
+  7689a4:      	ldp	x20, x21, [x19, #0x140]
+  7689a8:      	str	x23, [sp, #0x30]
+  7689ac:      	str	x0, [x19]
+  7689b0:      	cmp	x20, x21
+  7689b4:      	b.eq	0x7689d8
+  7689b8:      	ldr	x1, [x20]
+  7689bc:      	mov	x0, x20
+  7689c0:      	add	x20, x20, #0xd8
+  7689c4:      	ldr	x1, [x1]
+  7689c8:      	blr	x1
+  7689cc:      	cmp	x21, x20
+  7689d0:      	b.ne	0x7689b8
+  7689d4:      	ldr	x21, [x19, #0x140]
+  7689d8:      	cbz	x21, 0x7689e4
+  7689dc:      	mov	x0, x21
+  7689e0:      	bl	0x424e50
+  7689e4:      	add	x1, x19, #0x120
+  7689e8:      	ldr	x3, [x1, #0x10]
+  7689ec:      	cbz	x3, 0x7689fc
+  7689f0:      	mov	w2, #0x3                // =3
+  7689f4:      	mov	x0, x1
+  7689f8:      	blr	x3
+  7689fc:      	add	x21, x19, #0x108
+  768a00:      	b	0x768a1c
+  768a04:      	ldr	x0, [x20, #0x10]
+  768a08:      	cbz	x0, 0x768a10
+  768a0c:      	bl	0x424e50
+  768a10:      	mov	x0, x20
+  768a14:      	mov	x1, #0x30               // =48
+  768a18:      	bl	0x426660
+  768a1c:      	ldr	w1, [x21, #0x10]
+  768a20:      	ldr	x0, [x19, #0x108]
+  768a24:      	cmp	w1, #0x0
+  768a28:      	b.le	0x768a78
+  768a2c:      	sub	w3, w1, #0x1
+  768a30:      	ldr	x20, [x0, w3, sxtw #3]
+  768a34:      	str	w3, [x21, #0x10]
+  768a38:      	cbnz	x20, 0x768a04
+  768a3c:      	sxtw	x2, w1
+  768a40:      	sub	w1, w1, #0x2
+  768a44:      	sub	x2, x2, #0x2
+  768a48:      	add	x4, x0, #0x8
+  768a4c:      	sub	x2, x2, w3, uxtw
+  768a50:      	sxtw	x1, w1
+  768a54:      	cmp	x1, x2
+  768a58:      	b.eq	0x768a78
+  768a5c:      	str	w1, [x21, #0x10]
+  768a60:      	sub	x1, x1, #0x1
+  768a64:      	ldr	x20, [x4, x1, lsl #3]
+  768a68:      	cbnz	x20, 0x768a04
+  768a6c:      	cmp	x1, x2
+  768a70:      	b.ne	0x768a5c
+  768a74:      	nop
+  768a78:      	bl	0x424af0
+  768a7c:      	ldr	x0, [x19, #0xb8]
+  768a80:      	cbz	x0, 0x768ab0
+  768a84:      	ldr	x21, [x19, #0x100]
+  768a88:      	ldr	x20, [x19, #0xe0]
+  768a8c:      	add	x21, x21, #0x8
+  768a90:      	cmp	x20, x21
+  768a94:      	b.hs	0x768aac
+  768a98:      	ldr	x0, [x20], #0x8
+  768a9c:      	bl	0x424e50
+  768aa0:      	cmp	x21, x20
+  768aa4:      	b.hi	0x768a98
+  768aa8:      	ldr	x0, [x19, #0xb8]
+  768aac:      	bl	0x424e50
+  768ab0:      	add	x1, x19, #0x98
+  768ab4:      	ldr	x3, [x1, #0x10]
+  768ab8:      	cbz	x3, 0x768ac8
+  768abc:      	mov	w2, #0x3                // =3
+  768ac0:      	mov	x0, x1
+  768ac4:      	blr	x3
+  768ac8:      	adrp	x21, 0x25ee000
+  768acc:      	add	x21, x21, #0xca8
+  768ad0:      	adrp	x22, 0x25c1000
+  768ad4:      	add	x21, x21, #0x4f8
+  768ad8:      	add	x23, x19, #0x80
+  768adc:      	add	x22, x22, #0xd70
+  768ae0:      	b	0x768bd8
+  768ae4:      	ldr	x0, [x20]
+  768ae8:      	ldr	w1, [x20, #0x8]
+  768aec:      	cmp	x0, #0x0
+  768af0:      	ccmp	w1, #0x0, #0x4, ne
+  768af4:      	b.le	0x768c3c
+  768af8:      	ldurb	w2, [x0, #-0x8]
+  768afc:      	cmp	w2, #0xaf
+  768b00:      	b.ne	0x768ca0
+  768b04:      	ldurb	w2, [x0, #-0x7]
+  768b08:      	cmp	w2, #0xaf
+  768b0c:      	b.ne	0x768ca0
+  768b10:      	ldurb	w2, [x0, #-0x6]
+  768b14:      	cmp	w2, #0xaf
+  768b18:      	b.ne	0x768ca0
+  768b1c:      	ldurb	w2, [x0, #-0x5]
+  768b20:      	cmp	w2, #0xaf
+  768b24:      	b.ne	0x768ca0
+  768b28:      	ldurb	w2, [x0, #-0x4]
+  768b2c:      	cmp	w2, #0xaf
+  768b30:      	b.ne	0x768ca0
+  768b34:      	ldurb	w2, [x0, #-0x3]
+  768b38:      	cmp	w2, #0xaf
+  768b3c:      	b.ne	0x768ca0
+  768b40:      	ldurb	w2, [x0, #-0x2]
+  768b44:      	cmp	w2, #0xaf
+  768b48:      	b.ne	0x768ca0
+  768b4c:      	ldurb	w2, [x0, #-0x1]
+  768b50:      	cmp	w2, #0xaf
+  768b54:      	b.ne	0x768ca0
+  768b58:      	sbfiz	x1, x1, #3, #32
+  768b5c:      	ldrb	w2, [x0, x1]
+  768b60:      	cmp	w2, #0xef
+  768b64:      	b.ne	0x768ca0
+  768b68:      	add	x1, x0, x1
+  768b6c:      	ldrb	w2, [x1, #0x1]
+  768b70:      	cmp	w2, #0xef
+  768b74:      	b.ne	0x768ca0
+  768b78:      	ldrb	w2, [x1, #0x2]
+  768b7c:      	cmp	w2, #0xef
+  768b80:      	b.ne	0x768ca0
+  768b84:      	ldrb	w2, [x1, #0x3]
+  768b88:      	cmp	w2, #0xef
+  768b8c:      	b.ne	0x768ca0
+  768b90:      	ldrb	w2, [x1, #0x4]
+  768b94:      	cmp	w2, #0xef
+  768b98:      	b.ne	0x768ca0
+  768b9c:      	ldrb	w2, [x1, #0x5]
+  768ba0:      	cmp	w2, #0xef
+  768ba4:      	b.ne	0x768ca0
+  768ba8:      	ldrb	w2, [x1, #0x6]
+  768bac:      	cmp	w2, #0xef
+  768bb0:      	b.ne	0x768ca0
+  768bb4:      	ldrb	w1, [x1, #0x7]
+  768bb8:      	cmp	w1, #0xef
+  768bbc:      	b.ne	0x768ca0
+  768bc0:      	subs	x0, x0, #0x8
+  768bc4:      	b.eq	0x768bcc
+  768bc8:      	bl	0x424af0
+  768bcc:      	mov	x0, x20
+  768bd0:      	mov	x1, #0x10               // =16
+  768bd4:      	bl	0x426660
+  768bd8:      	ldr	w1, [x23, #0x10]
+  768bdc:      	ldr	x0, [x19, #0x80]
+  768be0:      	cmp	w1, #0x0
+  768be4:      	b.le	0x768c44
+  768be8:      	sub	w3, w1, #0x1
+  768bec:      	ldr	x20, [x0, w3, sxtw #3]
+  768bf0:      	str	w3, [x23, #0x10]
+  768bf4:      	cbnz	x20, 0x768ae4
+  768bf8:      	sxtw	x2, w1
+  768bfc:      	sub	w1, w1, #0x2
+  768c00:      	sub	x2, x2, #0x2
+  768c04:      	add	x4, x0, #0x8
+  768c08:      	sub	x2, x2, w3, uxtw
+  768c0c:      	sxtw	x1, w1
+  768c10:      	cmp	x2, x1
+  768c14:      	b.eq	0x768c44
+  768c18:      	str	w1, [x23, #0x10]
+  768c1c:      	sub	x1, x1, #0x1
+  768c20:      	ldr	x20, [x4, x1, lsl #3]
+  768c24:      	cbz	x20, 0x768c10
+  768c28:      	ldr	x0, [x20]
+  768c2c:      	ldr	w1, [x20, #0x8]
+  768c30:      	cmp	x0, #0x0
+  768c34:      	ccmp	w1, #0x0, #0x4, ne
+  768c38:      	b.gt	0x768af8
+  768c3c:      	cbnz	x0, 0x768bc0
+  768c40:      	b	0x768bcc
+  768c44:      	bl	0x424af0
+  768c48:      	ldr	x0, [x19, #0x30]
+  768c4c:      	cbz	x0, 0x768c80
+  768c50:      	ldr	x21, [x19, #0x78]
+  768c54:      	ldr	x20, [x19, #0x58]
+  768c58:      	add	x21, x21, #0x8
+  768c5c:      	cmp	x20, x21
+  768c60:      	b.hs	0x768c7c
+  768c64:      	nop
+  768c68:      	ldr	x0, [x20], #0x8
+  768c6c:      	bl	0x424e50
+  768c70:      	cmp	x21, x20
+  768c74:      	b.hi	0x768c68
+  768c78:      	ldr	x0, [x19, #0x30]
+  768c7c:      	bl	0x424e50
+  768c80:      	mov	x0, x19
+  768c84:      	mov	x1, #0x158              // =344
+  768c88:      	bl	0x426660
+  768c8c:      	ldp	x19, x20, [sp, #0x10]
+  768c90:      	ldp	x21, x22, [sp, #0x20]
+  768c94:      	ldr	x23, [sp, #0x30]
+  768c98:      	ldp	x29, x30, [sp], #0x70
+  768c9c:      	ret
+  768ca0:      	mov	x1, x22
+  768ca4:      	add	x0, sp, #0x50
+  768ca8:      	bl	0x2333ce0
+  768cac:      	add	x0, sp, #0x50
+  768cb0:      	add	x8, sp, #0x58
+  768cb4:      	mov	x1, x21
+  768cb8:      	bl	0x2313bf0
+  768cbc:      	adrp	x1, 0x25c1000
+  768cc0:      	add	x8, sp, #0x60
+  768cc4:      	add	x1, x1, #0xd38
+  768cc8:      	add	x0, sp, #0x58
+  768ccc:      	bl	0x2313bf0
+  768cd0:      	adrp	x1, 0x25c1000
+  768cd4:      	add	x0, sp, #0x48
+  768cd8:      	add	x1, x1, #0xd50
+  768cdc:      	bl	0x2333ce0
+  768ce0:      	add	x1, sp, #0x48
+  768ce4:      	add	x8, sp, #0x68
+  768ce8:      	add	x0, sp, #0x60
+  768cec:      	bl	0x2313a90
+  768cf0:      	mov	w2, #0x1                // =1
+  768cf4:      	add	x0, sp, #0x68
+  768cf8:      	mov	w1, w2
+  768cfc:      	bl	0x22003e0
+  768d00:      	add	x0, sp, #0x68
+  768d04:      	bl	0x22fc600
+  768d08:      	add	x0, sp, #0x48
+  768d0c:      	bl	0x22fc600
+  768d10:      	add	x0, sp, #0x60
+  768d14:      	bl	0x22fc600
+  768d18:      	add	x0, sp, #0x58
+  768d1c:      	bl	0x22fc600
+  768d20:      	add	x0, sp, #0x50
+  768d24:      	bl	0x22fc600
+  768d28:      	ldr	x0, [x20]
+  768d2c:      	cbnz	x0, 0x768bc0
+  768d30:      	b	0x768bcc
+  768d34:      	b	0x768d58
+  768d38:      	add	x0, sp, #0x68
+  768d3c:      	bl	0x22fc600
+  768d40:      	add	x0, sp, #0x48
+  768d44:      	bl	0x22fc600
+  768d48:      	add	x0, sp, #0x60
+  768d4c:      	bl	0x22fc600
+  768d50:      	add	x0, sp, #0x58
+  768d54:      	bl	0x22fc600
+  768d58:      	add	x0, sp, #0x50
+  768d5c:      	bl	0x22fc600
+  768d60:      	bl	0x427760
+  768d64:      	b	0x768d48
+  768d68:      	b	0x768d40
+  768d6c:      	b	0x768d50
+  768d70:      	stp	x29, x30, [sp, #-0x70]!
+  768d74:      	mov	x29, sp
+  768d78:      	stp	x19, x20, [sp, #0x10]
+  768d7c:      	mov	x19, x0
+  768d80:      	adrp	x0, 0x25f9000
+  768d84:      	stp	x21, x22, [sp, #0x20]
+  768d88:      	add	x0, x0, #0xc00
+  768d8c:      	ldp	x20, x21, [x19, #0x140]
+  768d90:      	str	x23, [sp, #0x30]
+  768d94:      	str	x0, [x19]
+  768d98:      	cmp	x20, x21
+  768d9c:      	b.eq	0x768dc0
+  768da0:      	ldr	x1, [x20]
+  768da4:      	mov	x0, x20
+  768da8:      	add	x20, x20, #0xd8
+  768dac:      	ldr	x1, [x1]
+  768db0:      	blr	x1
+  768db4:      	cmp	x21, x20
+  768db8:      	b.ne	0x768da0
+  768dbc:      	ldr	x21, [x19, #0x140]
+  768dc0:      	cbz	x21, 0x768dcc
+  768dc4:      	mov	x0, x21
+  768dc8:      	bl	0x424e50
+  768dcc:      	add	x1, x19, #0x120
+  768dd0:      	ldr	x3, [x1, #0x10]
+  768dd4:      	cbz	x3, 0x768de4
+  768dd8:      	mov	w2, #0x3                // =3
+  768ddc:      	mov	x0, x1
+  768de0:      	blr	x3
+  768de4:      	add	x21, x19, #0x108
+  768de8:      	b	0x768e04
+  768dec:      	ldr	x0, [x20, #0x10]
+  768df0:      	cbz	x0, 0x768df8
+  768df4:      	bl	0x424e50
+  768df8:      	mov	x0, x20
+  768dfc:      	mov	x1, #0x30               // =48
+  768e00:      	bl	0x426660
+  768e04:      	ldr	w1, [x21, #0x10]
+  768e08:      	ldr	x0, [x19, #0x108]
+  768e0c:      	cmp	w1, #0x0
+  768e10:      	b.le	0x768e60
+  768e14:      	sub	w3, w1, #0x1
+  768e18:      	ldr	x20, [x0, w3, sxtw #3]
+  768e1c:      	str	w3, [x21, #0x10]
+  768e20:      	cbnz	x20, 0x768dec
+  768e24:      	sxtw	x2, w1
+  768e28:      	sub	w1, w1, #0x2
+  768e2c:      	sub	x2, x2, #0x2
+  768e30:      	add	x4, x0, #0x8
+  768e34:      	sub	x2, x2, w3, uxtw
+  768e38:      	sxtw	x1, w1
+  768e3c:      	cmp	x1, x2
+  768e40:      	b.eq	0x768e60
+  768e44:      	str	w1, [x21, #0x10]
+  768e48:      	sub	x1, x1, #0x1
+  768e4c:      	ldr	x20, [x4, x1, lsl #3]
+  768e50:      	cbnz	x20, 0x768dec
+  768e54:      	cmp	x1, x2
+  768e58:      	b.ne	0x768e44
+  768e5c:      	nop
+  768e60:      	bl	0x424af0
+  768e64:      	ldr	x0, [x19, #0xb8]
+  768e68:      	cbz	x0, 0x768e98
+  768e6c:      	ldr	x21, [x19, #0x100]
+  768e70:      	ldr	x20, [x19, #0xe0]
+  768e74:      	add	x21, x21, #0x8
+  768e78:      	cmp	x20, x21
+  768e7c:      	b.hs	0x768e94
+  768e80:      	ldr	x0, [x20], #0x8
+  768e84:      	bl	0x424e50
+  768e88:      	cmp	x21, x20
+  768e8c:      	b.hi	0x768e80
+  768e90:      	ldr	x0, [x19, #0xb8]
+  768e94:      	bl	0x424e50
+  768e98:      	add	x1, x19, #0x98
+  768e9c:      	ldr	x3, [x1, #0x10]
+  768ea0:      	cbz	x3, 0x768eb0
+  768ea4:      	mov	w2, #0x3                // =3
+  768ea8:      	mov	x0, x1
+  768eac:      	blr	x3
+  768eb0:      	adrp	x21, 0x25ee000
+  768eb4:      	add	x21, x21, #0xca8
+  768eb8:      	adrp	x22, 0x25c1000
+  768ebc:      	add	x21, x21, #0x4f8
+  768ec0:      	add	x23, x19, #0x80
+  768ec4:      	add	x22, x22, #0xd70
+  768ec8:      	b	0x768fc0
+  768ecc:      	ldr	x0, [x20]
+  768ed0:      	ldr	w1, [x20, #0x8]
+  768ed4:      	cmp	x0, #0x0
+  768ed8:      	ccmp	w1, #0x0, #0x4, ne
+  768edc:      	b.le	0x769024
+  768ee0:      	ldurb	w2, [x0, #-0x8]
+  768ee4:      	cmp	w2, #0xaf
+  768ee8:      	b.ne	0x76907c
+  768eec:      	ldurb	w2, [x0, #-0x7]
+  768ef0:      	cmp	w2, #0xaf
+  768ef4:      	b.ne	0x76907c
+  768ef8:      	ldurb	w2, [x0, #-0x6]
+  768efc:      	cmp	w2, #0xaf
+  768f00:      	b.ne	0x76907c
+  768f04:      	ldurb	w2, [x0, #-0x5]
+  768f08:      	cmp	w2, #0xaf
+  768f0c:      	b.ne	0x76907c
+  768f10:      	ldurb	w2, [x0, #-0x4]
+  768f14:      	cmp	w2, #0xaf
+  768f18:      	b.ne	0x76907c
+  768f1c:      	ldurb	w2, [x0, #-0x3]
+  768f20:      	cmp	w2, #0xaf
+  768f24:      	b.ne	0x76907c
+  768f28:      	ldurb	w2, [x0, #-0x2]
+  768f2c:      	cmp	w2, #0xaf
+  768f30:      	b.ne	0x76907c
+  768f34:      	ldurb	w2, [x0, #-0x1]
+  768f38:      	cmp	w2, #0xaf
+  768f3c:      	b.ne	0x76907c
+  768f40:      	sbfiz	x1, x1, #3, #32
+  768f44:      	ldrb	w2, [x0, x1]
+  768f48:      	cmp	w2, #0xef
+  768f4c:      	b.ne	0x76907c
+  768f50:      	add	x1, x0, x1
+  768f54:      	ldrb	w2, [x1, #0x1]
+  768f58:      	cmp	w2, #0xef
+  768f5c:      	b.ne	0x76907c
+  768f60:      	ldrb	w2, [x1, #0x2]
+  768f64:      	cmp	w2, #0xef
+  768f68:      	b.ne	0x76907c
+  768f6c:      	ldrb	w2, [x1, #0x3]
+  768f70:      	cmp	w2, #0xef
+  768f74:      	b.ne	0x76907c
+  768f78:      	ldrb	w2, [x1, #0x4]
+  768f7c:      	cmp	w2, #0xef
+  768f80:      	b.ne	0x76907c
+  768f84:      	ldrb	w2, [x1, #0x5]
+  768f88:      	cmp	w2, #0xef
+  768f8c:      	b.ne	0x76907c
+  768f90:      	ldrb	w2, [x1, #0x6]
+  768f94:      	cmp	w2, #0xef
+  768f98:      	b.ne	0x76907c
+  768f9c:      	ldrb	w1, [x1, #0x7]

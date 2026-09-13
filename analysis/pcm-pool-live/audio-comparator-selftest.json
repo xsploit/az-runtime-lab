@@ -1,0 +1,13 @@
+[
+  {
+    "lag": 137,
+    "exact_match": true
+  },
+  {
+    "lag": -97,
+    "exact_match": true
+  },
+  {
+    "one_changed_sample_detected": true
+  }
+]

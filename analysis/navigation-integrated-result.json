@@ -1,0 +1,18 @@
+{
+  "guest_pid": 492811,
+  "launcher_exit": 0,
+  "input_packets": 13,
+  "navigation_packets": 14,
+  "rx_received_packets": 14,
+  "rejected": 0,
+  "shutdown_release_packets": 1,
+  "socket_removed": true,
+  "guest_exited": true,
+  "screenshot": "xdjaz/navigation-integrated-loaded.png",
+  "visual_review": "Native WAVEFORM screen shows LAB-TONE-440Hz.wav on deck 1, paused at 10 seconds.",
+  "test_note": "Replay finished sends, then its diagnostic print raised TypeError due to duplicate event keyword. Service and receiver logs independently verify all 14 packets including release. No restart or replay repeated.",
+  "limits": [
+    "Synthetic fixture and MIDI datagrams only; no physical controller or audio performance validation.",
+    "Beat FX was not configured in this run; unsupported-state feedback is expected."
+  ]
+}

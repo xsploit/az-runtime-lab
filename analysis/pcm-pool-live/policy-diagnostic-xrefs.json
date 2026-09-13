@@ -1,0 +1,123 @@
+{
+  "targets": {
+    "0x25f1b08": "pcmbuf::pagebuf::ParallelBufferingUnitList<StaticConfig>::Unit& pcmbuf::pagebuf::ParallelBufferingUnitList<StaticConfig>::refUnitFor(const pcmbuf::pagebuf::BufferingClient&) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::pagebuf::ParallelBufferingUnitList<StaticConfig>::Unit = pcmbuf::pagebuf::ParallelBufferingUnit<pcmbuf::pagebuf::DefaultPageStaticConfig>]",
+    "0x25f0be8": "bool pcmbuf::pagebuf::BufferCleaner<StaticConfig>::freePartsOfTrack(pcmbuf::pagebuf::BufferCleaner<StaticConfig>::Track&) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::pagebuf::BufferCleaner<StaticConfig>::Track = pcmbuf::pagebuf::Track<pcmbuf::pagebuf::DefaultPageStaticConfig>]",
+    "0x25f0eb8": "void pcmbuf::pagebuf::BufferCleaner<StaticConfig>::freeSomeClusters() [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig]",
+    "0x25f2620": "pcmbuf::pagebuf::BufferCleaner<StaticConfig>::Track* pcmbuf::pagebuf::BufferCleaner<StaticConfig>::resetNonReferencedTrack(pcmbuf::SourceId, bool) const [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::pagebuf::BufferCleaner<StaticConfig>::Track = pcmbuf::pagebuf::Track<pcmbuf::pagebuf::DefaultPageStaticConfig>; pcmbuf::SourceId = trackid::TrackID]",
+    "0x25f0920": "void pcmbuf::pagebuf::Pool<ObjectT>::push(ObjectT*) [with ObjectT = pcmbuf::pagebuf::Page<pcmbuf::pagebuf::DefaultPageStaticConfig>]",
+    "0x25f3420": "pcmbuf::BufferingClientID pcmbuf::pagebuf::BufferingClientList::regClient(pcmbuf::BufferingClientType, int, pcmbuf::ILoader::Listener*, const pcmbuf::BufferingProperty&)",
+    "0x25f2548": "pcmbuf::pagebuf::Track<StaticConfig>* pcmbuf::pagebuf::PageBuffer<StaticConfig>::prepareTrackFor(const SourceId&) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::SourceId = trackid::TrackID]",
+    "0x25f67c8": "void pcmbuf::pagebuf::Page<StaticConfig>::write(meow::IArrayInputStream<typename StaticConfig::InternalDataT, meow::ContextualUnit<36916648590029877, meow::UnitType<long long int, 66685906108733364> > >&, meow::source_time::Sample) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; typename StaticConfig::InternalDataT = meow::Float2; meow::source_time::Sample = meow::ContextualUnit<36916648590029877, meow::UnitType<long long int, 66685906108733364> >]",
+    "0x25f2820": "int pcmbuf::pagebuf::LockedRange<StaticConfig>::findNextElement() [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig]",
+    "0x25f3f10": "void pcmbuf::pagebuf::LockedRange<StaticConfig>::diff(const SourceId&, const juce::Range<int>&, juce::Range<int>&, juce::Range<int>&) const [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::SourceId = trackid::TrackID]",
+    "0x25f4000": "void pcmbuf::pagebuf::LockedRange<StaticConfig>::unlock(pcmbuf::SourceId, juce::Range<int>) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::SourceId = trackid::TrackID]",
+    "0x25f4240": "void pcmbuf::pagebuf::LockedRange<StaticConfig>::lock(pcmbuf::SourceId, juce::Range<int>) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::SourceId = trackid::TrackID]",
+    "0x25f45c0": "pcmbuf::LockedRangeID pcmbuf::pagebuf::LockedRangeList<StaticConfig>::regNewRange() [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::LockedRangeID = meow::UnitType<int, 59746029022935937>]",
+    "0x25f4480": "meow::AsyncTaskBoxBase::AsyncTask<ExecT>* meow::AsyncTaskBoxBase::createTask(ExecT&&) [with ExecT = pcmbuf::pagebuf::BufferingScheduler<StaticConfig>::getLicenseToLockRange(int) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::LockedRangeID = meow::UnitType<int, 59746029022935937>]::<lambda()>]"
+  },
+  "candidates": [
+    {
+      "adrp": "0x77352c",
+      "add": "0x773534",
+      "target": "0x25f0920",
+      "label": "void pcmbuf::pagebuf::Pool<ObjectT>::push(ObjectT*) [with ObjectT = pcmbuf::pagebuf::Page<pcmbuf::pagebuf::DefaultPageStaticConfig>]"
+    },
+    {
+      "adrp": "0x774f5c",
+      "add": "0x774f6c",
+      "target": "0x25f0be8",
+      "label": "bool pcmbuf::pagebuf::BufferCleaner<StaticConfig>::freePartsOfTrack(pcmbuf::pagebuf::BufferCleaner<StaticConfig>::Track&) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::pagebuf::BufferCleaner<StaticConfig>::Track = pcmbuf::pagebuf::Track<pcmbuf::pagebuf::DefaultPageStaticConfig>]"
+    },
+    {
+      "adrp": "0x7755cc",
+      "add": "0x7755d8",
+      "target": "0x25f0eb8",
+      "label": "void pcmbuf::pagebuf::BufferCleaner<StaticConfig>::freeSomeClusters() [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig]"
+    },
+    {
+      "adrp": "0x775a44",
+      "add": "0x775a4c",
+      "target": "0x25f0eb8",
+      "label": "void pcmbuf::pagebuf::BufferCleaner<StaticConfig>::freeSomeClusters() [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig]"
+    },
+    {
+      "adrp": "0x779bbc",
+      "add": "0x779bc4",
+      "target": "0x25f1b08",
+      "label": "pcmbuf::pagebuf::ParallelBufferingUnitList<StaticConfig>::Unit& pcmbuf::pagebuf::ParallelBufferingUnitList<StaticConfig>::refUnitFor(const pcmbuf::pagebuf::BufferingClient&) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::pagebuf::ParallelBufferingUnitList<StaticConfig>::Unit = pcmbuf::pagebuf::ParallelBufferingUnit<pcmbuf::pagebuf::DefaultPageStaticConfig>]"
+    },
+    {
+      "adrp": "0x77b370",
+      "add": "0x77b378",
+      "target": "0x25f2548",
+      "label": "pcmbuf::pagebuf::Track<StaticConfig>* pcmbuf::pagebuf::PageBuffer<StaticConfig>::prepareTrackFor(const SourceId&) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::SourceId = trackid::TrackID]"
+    },
+    {
+      "adrp": "0x77b804",
+      "add": "0x77b810",
+      "target": "0x25f2620",
+      "label": "pcmbuf::pagebuf::BufferCleaner<StaticConfig>::Track* pcmbuf::pagebuf::BufferCleaner<StaticConfig>::resetNonReferencedTrack(pcmbuf::SourceId, bool) const [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::pagebuf::BufferCleaner<StaticConfig>::Track = pcmbuf::pagebuf::Track<pcmbuf::pagebuf::DefaultPageStaticConfig>; pcmbuf::SourceId = trackid::TrackID]"
+    },
+    {
+      "adrp": "0x77bc74",
+      "add": "0x77bc7c",
+      "target": "0x25f2620",
+      "label": "pcmbuf::pagebuf::BufferCleaner<StaticConfig>::Track* pcmbuf::pagebuf::BufferCleaner<StaticConfig>::resetNonReferencedTrack(pcmbuf::SourceId, bool) const [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::pagebuf::BufferCleaner<StaticConfig>::Track = pcmbuf::pagebuf::Track<pcmbuf::pagebuf::DefaultPageStaticConfig>; pcmbuf::SourceId = trackid::TrackID]"
+    },
+    {
+      "adrp": "0x77c1b8",
+      "add": "0x77c1c0",
+      "target": "0x25f2820",
+      "label": "int pcmbuf::pagebuf::LockedRange<StaticConfig>::findNextElement() [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig]"
+    },
+    {
+      "adrp": "0x77da14",
+      "add": "0x77da20",
+      "target": "0x25f3420",
+      "label": "pcmbuf::BufferingClientID pcmbuf::pagebuf::BufferingClientList::regClient(pcmbuf::BufferingClientType, int, pcmbuf::ILoader::Listener*, const pcmbuf::BufferingProperty&)"
+    },
+    {
+      "adrp": "0x77fffc",
+      "add": "0x780004",
+      "target": "0x25f3f10",
+      "label": "void pcmbuf::pagebuf::LockedRange<StaticConfig>::diff(const SourceId&, const juce::Range<int>&, juce::Range<int>&, juce::Range<int>&) const [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::SourceId = trackid::TrackID]"
+    },
+    {
+      "adrp": "0x7800d8",
+      "add": "0x7800e0",
+      "target": "0x25f3f10",
+      "label": "void pcmbuf::pagebuf::LockedRange<StaticConfig>::diff(const SourceId&, const juce::Range<int>&, juce::Range<int>&, juce::Range<int>&) const [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::SourceId = trackid::TrackID]"
+    },
+    {
+      "adrp": "0x7806ac",
+      "add": "0x7806b4",
+      "target": "0x25f4000",
+      "label": "void pcmbuf::pagebuf::LockedRange<StaticConfig>::unlock(pcmbuf::SourceId, juce::Range<int>) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::SourceId = trackid::TrackID]"
+    },
+    {
+      "adrp": "0x780758",
+      "add": "0x780760",
+      "target": "0x25f4240",
+      "label": "void pcmbuf::pagebuf::LockedRange<StaticConfig>::lock(pcmbuf::SourceId, juce::Range<int>) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::SourceId = trackid::TrackID]"
+    },
+    {
+      "adrp": "0x780dbc",
+      "add": "0x780dc8",
+      "target": "0x25f4480",
+      "label": "meow::AsyncTaskBoxBase::AsyncTask<ExecT>* meow::AsyncTaskBoxBase::createTask(ExecT&&) [with ExecT = pcmbuf::pagebuf::BufferingScheduler<StaticConfig>::getLicenseToLockRange(int) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::LockedRangeID = meow::UnitType<int, 59746029022935937>]::<lambda()>]"
+    },
+    {
+      "adrp": "0x780f00",
+      "add": "0x780f0c",
+      "target": "0x25f45c0",
+      "label": "pcmbuf::LockedRangeID pcmbuf::pagebuf::LockedRangeList<StaticConfig>::regNewRange() [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::LockedRangeID = meow::UnitType<int, 59746029022935937>]"
+    },
+    {
+      "adrp": "0x785398",
+      "add": "0x7853a0",
+      "target": "0x25f67c8",
+      "label": "void pcmbuf::pagebuf::Page<StaticConfig>::write(meow::IArrayInputStream<typename StaticConfig::InternalDataT, meow::ContextualUnit<36916648590029877, meow::UnitType<long long int, 66685906108733364> > >&, meow::source_time::Sample) [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; typename StaticConfig::InternalDataT = meow::Float2; meow::source_time::Sample = meow::ContextualUnit<36916648590029877, meow::UnitType<long long int, 66685906108733364> >]"
+    }
+  ],
+  "scope": "Find diagnostic strings and candidate ADRP/ADD chains; register clobbers not modeled, validate manually."
+}

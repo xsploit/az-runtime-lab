@@ -1,0 +1,176 @@
+{
+  "source": "rx3-research/bitedj-mapping/Pioneer-DDJ-FLX6.midi.xml",
+  "source_sha256": "1df86863293b8c9eb48d1748b6a3e4bd56b2a4f21c5f08c3b5b83bc101fb0301",
+  "quantization": "native10 = midi14 >> 4; retain last-known opposite MIDI half after both seen in session",
+  "controls": [
+    {
+      "status": "0xb0",
+      "cc": "0x7",
+      "channel_index": 0,
+      "band": "HIGH",
+      "half": "msb"
+    },
+    {
+      "status": "0xb0",
+      "cc": "0xb",
+      "channel_index": 0,
+      "band": "MID",
+      "half": "msb"
+    },
+    {
+      "status": "0xb0",
+      "cc": "0xf",
+      "channel_index": 0,
+      "band": "LOW",
+      "half": "msb"
+    },
+    {
+      "status": "0xb0",
+      "cc": "0x27",
+      "channel_index": 0,
+      "band": "HIGH",
+      "half": "lsb"
+    },
+    {
+      "status": "0xb0",
+      "cc": "0x2b",
+      "channel_index": 0,
+      "band": "MID",
+      "half": "lsb"
+    },
+    {
+      "status": "0xb0",
+      "cc": "0x2f",
+      "channel_index": 0,
+      "band": "LOW",
+      "half": "lsb"
+    },
+    {
+      "status": "0xb1",
+      "cc": "0x7",
+      "channel_index": 1,
+      "band": "HIGH",
+      "half": "msb"
+    },
+    {
+      "status": "0xb1",
+      "cc": "0xb",
+      "channel_index": 1,
+      "band": "MID",
+      "half": "msb"
+    },
+    {
+      "status": "0xb1",
+      "cc": "0xf",
+      "channel_index": 1,
+      "band": "LOW",
+      "half": "msb"
+    },
+    {
+      "status": "0xb1",
+      "cc": "0x27",
+      "channel_index": 1,
+      "band": "HIGH",
+      "half": "lsb"
+    },
+    {
+      "status": "0xb1",
+      "cc": "0x2b",
+      "channel_index": 1,
+      "band": "MID",
+      "half": "lsb"
+    },
+    {
+      "status": "0xb1",
+      "cc": "0x2f",
+      "channel_index": 1,
+      "band": "LOW",
+      "half": "lsb"
+    },
+    {
+      "status": "0xb2",
+      "cc": "0x7",
+      "channel_index": 2,
+      "band": "HIGH",
+      "half": "msb"
+    },
+    {
+      "status": "0xb2",
+      "cc": "0xb",
+      "channel_index": 2,
+      "band": "MID",
+      "half": "msb"
+    },
+    {
+      "status": "0xb2",
+      "cc": "0xf",
+      "channel_index": 2,
+      "band": "LOW",
+      "half": "msb"
+    },
+    {
+      "status": "0xb2",
+      "cc": "0x27",
+      "channel_index": 2,
+      "band": "HIGH",
+      "half": "lsb"
+    },
+    {
+      "status": "0xb2",
+      "cc": "0x2b",
+      "channel_index": 2,
+      "band": "MID",
+      "half": "lsb"
+    },
+    {
+      "status": "0xb2",
+      "cc": "0x2f",
+      "channel_index": 2,
+      "band": "LOW",
+      "half": "lsb"
+    },
+    {
+      "status": "0xb3",
+      "cc": "0x7",
+      "channel_index": 3,
+      "band": "HIGH",
+      "half": "msb"
+    },
+    {
+      "status": "0xb3",
+      "cc": "0xb",
+      "channel_index": 3,
+      "band": "MID",
+      "half": "msb"
+    },
+    {
+      "status": "0xb3",
+      "cc": "0xf",
+      "channel_index": 3,
+      "band": "LOW",
+      "half": "msb"
+    },
+    {
+      "status": "0xb3",
+      "cc": "0x27",
+      "channel_index": 3,
+      "band": "HIGH",
+      "half": "lsb"
+    },
+    {
+      "status": "0xb3",
+      "cc": "0x2b",
+      "channel_index": 3,
+      "band": "MID",
+      "half": "lsb"
+    },
+    {
+      "status": "0xb3",
+      "cc": "0x2f",
+      "channel_index": 3,
+      "band": "LOW",
+      "half": "lsb"
+    }
+  ],
+  "scope": "Binding preservation and transport conversion, not identical DSP response or physical hardware verification."
+}

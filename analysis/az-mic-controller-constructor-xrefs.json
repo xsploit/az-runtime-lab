@@ -1,0 +1,37 @@
+[
+  {
+    "adrp": "0x19eac84",
+    "add": "0x19eac98",
+    "target": "0x29f22c0",
+    "label": "BeatFxMicWidgetController primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19eae20",
+    "add": "0x19eae24",
+    "target": "0x29f22c0",
+    "label": "BeatFxMicWidgetController primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19eaf94",
+    "add": "0x19eafa8",
+    "target": "0x29f22c0",
+    "label": "BeatFxMicWidgetController primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19eb11c",
+    "add": "0x19eb130",
+    "target": "0x29f22c0",
+    "label": "BeatFxMicWidgetController primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19eb2d8",
+    "add": "0x19eb2dc",
+    "target": "0x29f22c0",
+    "label": "BeatFxMicWidgetController primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

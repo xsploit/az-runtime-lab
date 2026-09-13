@@ -1,0 +1,39 @@
+{
+  "pid": 330290,
+  "controller": "0x7f22a8186880",
+  "breakpoint": "0x19f4e7c",
+  "native_action": "19f3b10 with aButton3b864e8",
+  "setting_before": 1,
+  "meaning_before": "THRU",
+  "action_returned": true,
+  "tx_transitions": [
+    [
+      0,
+      [
+        "thru",
+        "thru",
+        "thru",
+        "thru"
+      ]
+    ],
+    [
+      1116,
+      [
+        "a",
+        "thru",
+        "thru",
+        "thru"
+      ]
+    ]
+  ],
+  "bridge_log": [
+    "{\"event\": \"ready\", \"midi_socket\": \"/tmp/az-live-mixer-02h643w4/midi.sock\"}",
+    "{\"event\": \"snapshot\", \"assign\": [-1, 0, 0, 0], \"cue\": 1, \"gains\": [1.0, 1.0, 1.0, 1.0]}",
+    "{\"event\": \"stopped\", \"valid_tx\": 9743, \"invalid_tx\": 0, \"midi_messages\": 0, \"snapshots\": 1, \"trailing_bytes\": 0}"
+  ],
+  "audio_mixer_log": [
+    "{\"control_frame\":107584,\"ramp_frames\":441}"
+  ],
+  "scope": "Native UI\u2192typed setting\u2192TX\u2192continuous bridge\u2192M1 accepted by DSP stream; audio endpoint correctness separately verified synthetically",
+  "lab_state": "channel0 nowA; returnTHRU in next guarded run"
+}

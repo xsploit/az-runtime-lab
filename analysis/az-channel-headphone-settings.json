@@ -1,0 +1,62 @@
+{
+  "scope": "Original AZ static listener paths; downstream concrete object identity/TX serialization and live behavior pending",
+  "CrossFaderAssign": {
+    "listener_vtable": "0x26cf618",
+    "base_offset": 24,
+    "slot2_thunk": "0xa75778",
+    "body": "0xa75428",
+    "setting_member": 80,
+    "identifier_check": "compares incoming ID with setting wrapper+32",
+    "mapping_table": "0x26cf748",
+    "mapping": [
+      1,
+      0,
+      2
+    ],
+    "destination": "application object+40 interface slot2",
+    "invalid": "diagnostic then0",
+    "hardware_candidate": "device_adapter::mixer::Channel slot2=0x21344f0 writes+8; constructor identity still to confirm"
+  },
+  "HeadphonesMonoSplit": {
+    "listener_vtable": "0x26d5378",
+    "base_offset": 8,
+    "slot2_thunk": "0xa82910",
+    "body": "0xa825b0",
+    "setting_member": 48,
+    "mapping": {
+      "0": 0,
+      "1": 1
+    },
+    "destination": "application object+40 interface slot2",
+    "hardware_candidate": "HeadphoneOut slot2=0x21344c8 writes+8"
+  },
+  "LinkVolume": {
+    "listener_vtable": "0x26d53a0",
+    "base_offset": 24,
+    "slot2_thunk": "0xa825a8",
+    "body": "0xa82260",
+    "mapping_table": "0x26d5438",
+    "mapping": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "destination": "application object+40 interface slot3",
+    "hardware_candidate": "HeadphoneOut slot3=0x21344d0 writes+9"
+  },
+  "limits": [
+    "Enum display labels not yet mapped",
+    "These are settings/routing, not continuous gain or Sound Color controls",
+    "Do not bypass setting validation/thread dispatch with direct callbacks"
+  ],
+  "tx_serialization": {
+    "entry": "0x215c14c calls0x215a2f8 with packet+4",
+    "channel_layout": "Mixer ctor stores Channel vtable at640/736/832/928. Fields+8 map to TX6 bits6/4/2/0, two bits each; internal channel order0..3",
+    "headphone_identity": "Ctor2130dc4..dcc materializes2e420f8 HeadphoneOut vtable and stores Mixer+1296. Mixer getter slot14 at2134560 returns+1296.",
+    "mode": "HeadphoneOut+8=Mixer1304 \u2192 TX8 bits6..7 via215a3b0..c0",
+    "link_volume": "HeadphoneOut+9=Mixer1305 \u2192 TX9 full byte via215a3c8..cc",
+    "scope": "Static concrete device layout and serialization proven; application construction/readback and audible routing pending"
+  },
+  "decoder_validation": "16 packet tests pass, exhaustive256byte extraction preserves raw fields even with invalid checksum; consumers must check checksum_valid."
+}

@@ -1,0 +1,7 @@
+{
+  "source": "usb-duplicate-detector/cleanup-review/live-audit/export.pdb",
+  "sha256": "da0cbe8463e36541fea4d96964c8cfb186db1b4cedcdd5e1d60bddf8f7528bf5",
+  "scope": "Metadata-only copy of user export for offline browser test. Referenced music and analysis files not copied; playback not expected.",
+  "result": "Run234073 opened EMPTY Folder view; exported-library mode not established",
+  "image": "xdjaz/export-browser.png"
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "adrp": "0xce607c",
+    "add": "0xce6080",
+    "target": "0x2791680",
+    "label": "UsecaseTrackLoader registry name",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

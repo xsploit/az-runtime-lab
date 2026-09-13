@@ -1,0 +1,43 @@
+{
+  "events": [
+    {
+      "label": "folder",
+      "group": 2,
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/flx6-nav-folder.png"
+    },
+    {
+      "label": "back-sidebar",
+      "group": 2,
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/flx6-nav-back-sidebar.png"
+    },
+    {
+      "label": "waveform",
+      "group": 1,
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/flx6-nav-waveform.png"
+    },
+    {
+      "label": "view-opens",
+      "group": 2,
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/flx6-nav-view-opens.png"
+    },
+    {
+      "label": "view-repeat",
+      "group": 2,
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/flx6-nav-view-repeat.png"
+    }
+  ],
+  "scope": "Saved XML message adapter, known local USB fixture; screenshots require visual review. No physical device or PcControlView coverage.",
+  "pid": 174713,
+  "visual_review": {
+    "waveform": "WAVEFORM heading, unloaded decks",
+    "view-opens": "BROWSE heading, local USB tracks",
+    "view-repeat": "BROWSE remains open",
+    "folder": "BROWSE heading, sidebar selected; filename label folder is misleading",
+    "back-sidebar": "Same sidebar focus; Back focus transition NOT demonstrated"
+  },
+  "limitations": [
+    "Explicit visibility arguments supplied by scripted scenario; fresh raw group measured alongside, not automatic universal page detection",
+    "No physical FLX6",
+    "Startup focus/press timing needs investigation; initial folder focus not achieved"
+  ]
+}

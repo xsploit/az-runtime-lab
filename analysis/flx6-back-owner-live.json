@@ -1,0 +1,56 @@
+{
+  "pid": 446511,
+  "observations": [
+    {
+      "label": "tracks",
+      "group": 2,
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/flx6-owner-tracks.png"
+    },
+    {
+      "label": "rotated",
+      "group": 2,
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/flx6-owner-rotated.png"
+    },
+    {
+      "label": "back",
+      "group": 2,
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/flx6-owner-back.png"
+    },
+    {
+      "label": "enter-again",
+      "group": 2,
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/flx6-owner-enter-again.png"
+    },
+    {
+      "label": "waveform",
+      "group": 1,
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/flx6-owner-waveform.png"
+    },
+    {
+      "label": "view",
+      "group": 2,
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/flx6-owner-view.png"
+    },
+    {
+      "label": "view-repeat",
+      "group": 2,
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/flx6-owner-view-repeat.png"
+    }
+  ],
+  "scope": "Scripted local USB context with explicit visibility; images need review; no physical controller",
+  "visual_review": {
+    "tracks": "440Hz row blue, track list focused",
+    "rotated": "660Hz row blue after B6/40/+1",
+    "back": "Sidebar Folder blue, 660Hz row gray; focus moved backward",
+    "enter-again": "660Hz row blue again, selection preserved",
+    "waveform": "Waveform page after explicit native browse toggle",
+    "view": "View opens Folder track list with660Hz selected",
+    "view-repeat": "Repeated preferred View leaves Folder open"
+  },
+  "limitations": [
+    "Page visibility was explicitly supplied for this scripted local USB scenario; TX group2 also includes PcControlView",
+    "Physical FLX6 not connected",
+    "BiteDJ optional accelerated scrolling requires visible track-list state and is not implemented in this adapter",
+    "No EQ/remaining FX or audio performance claim"
+  ]
+}

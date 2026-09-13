@@ -1,0 +1,24 @@
+{
+  "experiment": "Local Library activation; fixture visible with 00:10 duration",
+  "trace_bytes": 7275904,
+  "register_blocks": 476,
+  "pcs": {
+    "0x21b9b90": 26,
+    "0x21b9bcc": 26,
+    "0x21b9bd4": 26,
+    "0x21b9be0": 26,
+    "0x21b9be8": 1,
+    "0x21b9bf0": 1,
+    "0x21b9c18": 2,
+    "0x21b9c2c": 104,
+    "0x21b9c40": 104,
+    "0x21b9c4c": 1,
+    "0x21b9c54": 104,
+    "0x21b9c5c": 1,
+    "0x21b9c64": 26,
+    "0x21b9c6c": 26,
+    "0x21b9c08": 2
+  },
+  "mount_region_blocks": 0,
+  "limitation": "TB chaining means counts are not call counts; no deck load injected"
+}

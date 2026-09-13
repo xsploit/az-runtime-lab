@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AZ waveform comparison</title>
+<meta name="description" content="Compare original and fractional beat-grid drawing in native Raspberry Pi captures.">
+<style>
+:root { color-scheme:dark; --bg:#0c1014; --surface:#151b21; --line:#34414d; --text:#ecf2f8; --muted:#aab7c4; --accent:#58d9ee; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui,sans-serif; }
+main { max-width:1400px; margin:auto; padding:32px 24px; }
+header { display:flex; align-items:baseline; gap:20px; flex-wrap:wrap; margin-bottom:22px; }
+h1 { font-size:clamp(24px,3vw,34px); line-height:1.2; margin:0; letter-spacing:-.03em; font-weight:650; }
+header span { color:var(--muted); font-size:14px; }
+p { margin:8px 0 18px; color:var(--muted); }
+.pair { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.panel { min-width:0; }
+.panel-head { display:flex; gap:12px; align-items:center; margin-bottom:12px; }
+.letter { color:var(--accent); font-weight:650; font-size:18px; }
+select,button { font:inherit; color:inherit; background:var(--surface); border:1px solid var(--line); border-radius:7px; min-height:44px; padding:8px 12px; }
+select { width:100%; min-width:0; }
+button { cursor:pointer; }
+button:hover { border-color:var(--accent); }
+button:disabled { opacity:.5; cursor:wait; }
+button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.screen { display:flex; align-items:center; justify-content:center; min-width:0; background:#000; aspect-ratio:640/190; border:1px solid #26313a; }
+video { display:block; width:100%; max-width:640px; height:auto; }
+.caption { margin:10px 0 0; color:var(--muted); font-size:14px; min-height:44px; }
+.controls { display:flex; flex-wrap:wrap; align-items:center; gap:10px; padding:18px 0 12px; }
+.primary { background:var(--accent); color:#04232b; border-color:var(--accent); min-width:118px; font-weight:600; }
+.controls label { display:flex; align-items:center; gap:8px; font-size:14px; }
+.controls select { width:auto; }
+input[type=checkbox] { accent-color:var(--accent); width:18px; height:18px; }
+.timeline { display:grid; grid-template-columns:auto 1fr auto; gap:16px; align-items:center; padding:4px 0 10px; }
+input[type=range] { width:100%; min-width:0; accent-color:var(--accent); height:30px; }
+output,.time { font-variant-numeric:tabular-nums; font-size:14px; }
+.status { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; color:var(--muted); font-size:14px; min-height:30px; }
+.error { color:#ffb2a7; }
+.notes { border-top:1px solid var(--line); margin-top:24px; padding-top:18px; }
+summary { cursor:pointer; width:fit-content; font-size:16px; }
+.notes p,.notes li { font-size:14px; }
+.notes ul { padding-left:22px; }
+table { border-collapse:collapse; width:100%; max-width:850px; font-size:14px; margin:16px 0; }
+th,td { padding:10px; border-bottom:1px solid var(--line); text-align:left; }
+th { color:var(--muted); font-weight:500; }
+td { font-variant-numeric:tabular-nums; }
+.table-wrap { overflow:auto; }
+.hint { font-size:14px; margin:10px 0 0; }
+main:fullscreen { max-width:none; width:100%; overflow:auto; background:var(--bg); padding:32px; }
+main:fullscreen .pair { max-width:1320px; margin:auto; }
+@media(max-width:800px) { main { padding:20px 14px; } .pair { grid-template-columns:1fr; gap:20px; } .caption { min-height:0; } header { margin-bottom:16px; } .timeline { gap:10px; } .controls { gap:8px; } }
+@media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+<main id="comparison">
+  <header><h1>AZ waveform comparison</h1><span>Pi capture · silent · 60 fps recording</span></header>
+  <div class="pair">
+    <section class="panel" aria-label="Video A">
+      <div class="panel-head"><label for="select-a" class="letter">A</label><select id="select-a" aria-label="Choose video A"></select></div>
+      <div class="screen"><video id="video-a" muted playsinline preload="auto" aria-label="Comparison video A"></video></div>
+      <p id="caption-a" class="caption"></p>
+    </section>
+    <section class="panel" aria-label="Video B">
+      <div class="panel-head"><label for="select-b" class="letter">B</label><select id="select-b" aria-label="Choose video B"></select></div>
+      <div class="screen"><video id="video-b" muted playsinline preload="auto" aria-label="Comparison video B"></video></div>
+      <p id="caption-b" class="caption"></p>
+    </section>
+  </div>
+  <div class="controls" aria-label="Linked playback controls">
+    <button type="button" class="primary" id="play" disabled>Play both</button>
+    <button type="button" id="restart" disabled>Restart</button>
+    <button type="button" id="back" disabled aria-label="Step both videos backward by one sixtieth of a second">Frame −</button>
+    <button type="button" id="forward" disabled aria-label="Step both videos forward by one sixtieth of a second">Frame +</button>
+    <label>Speed <select id="speed"><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label>
+    <label><input type="checkbox" id="loop" checked> Loop</label>
+    <button type="button" id="fullscreen">Full screen</button>
+  </div>
+  <div class="timeline">
+    <output id="clock" for="scrub">0.00 s</output>
+    <input id="scrub" type="range" min="0" max="6" step="0.001" value="0" aria-label="Seek both videos" disabled>
+    <span class="time" id="duration">6.00 s</span>
+  </div>
+  <div class="status"><span id="status" role="status" aria-live="polite">Loading videos…</span><span id="skew">Playback clocks aligned</span></div>
+  <p class="hint">Same zoom, different song sections in the three grid-test clips. Controls align clip time, not beats.</p>
+  <details class="notes">
+    <summary>Measurements and capture notes</summary>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Native grid test</th><th>Original</th><th>Fractional</th><th>Restored</th></tr></thead>
+      <tbody>
+        <tr><td>Beat-line image changes / second</td><td>37.11</td><td>57.33</td><td>37.27</td></tr>
+        <tr><td>CPU, % of one core, without recorder</td><td>40.24</td><td>45.99</td><td>39.24</td></tr>
+        <tr><td>Backward grid steps observed</td><td>0</td><td>0</td><td>0</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li>Original and restored use whole-pixel grid placement. Fractional spreads line coverage across neighboring pixels. All three use the faster scrolling experiment.</li>
+      <li>The earlier 59 Hz clip shows a different deck and song position. Its comparison is qualitative; the table does not describe that clip.</li>
+      <li>Native capture is 640 × 190, before desktop scaling and the physical display. MP4 compression and browser scaling can soften thin colored edges. No frame interpolation was added.</li>
+      <li>Linked playback starts both clips together. The clock difference is shown; no hidden resynchronizing seeks occur during playback. Frame steps move 1/60 second.</li>
+      <li>Loops and the shared timeline use the shorter clip's duration. These recordings contain no audio and do not establish audible playback quality.</li>
+    </ul>
+  </details>
+</main>
+<script id="clips" type="application/json">__CLIP_DATA__</script>
+<script>
+__PLAYER_SCRIPT__
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "pid": 327308,
+  "transport": "nonblocking128byteUnixdatagrams",
+  "bridge_log": [
+    "{\"event\": \"ready\", \"midi_socket\": \"/tmp/az-live-mixer-ar9m7rjn/midi.sock\"}",
+    "{\"event\": \"stopped\", \"valid_tx\": 6160, \"invalid_tx\": 0, \"midi_messages\": 0, \"snapshots\": 0, \"trailing_bytes\": 0}"
+  ],
+  "teardown": "scheduled screenshot succeeded; routing and mixer exit0",
+  "scope": "Real AZ continuous TX received with bounded launch; 40002-packet synthetic stress test proves no diagnostic cap; no long-duration/Pi/physical MIDI timing claim",
+  "deadline_fix": "bridge bound=launcher duration+30"
+}

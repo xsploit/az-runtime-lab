@@ -1,0 +1,50 @@
+{
+  "pid": 458486,
+  "manager": "0x7f267d759e00",
+  "nested": "0x7f267d4dec00",
+  "observations": [
+    {
+      "label": "initial",
+      "current": "0x7f267dbc6800",
+      "identity": "0x7f27a877cbc0",
+      "browse_name": "0x7f27a877c9e0",
+      "pc_control_name": "0x7f27a877caa0",
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/view-identity-initial.png"
+    },
+    {
+      "label": "folder",
+      "current": "0x7f267d972800",
+      "identity": "0x7f27a877c9e0",
+      "browse_name": "0x7f27a877c9e0",
+      "pc_control_name": "0x7f27a877caa0",
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/view-identity-folder.png"
+    },
+    {
+      "label": "waveform",
+      "current": "0x7f267f6f3200",
+      "identity": "0x7f27a877cbf0",
+      "browse_name": "0x7f27a877c9e0",
+      "pc_control_name": "0x7f27a877caa0",
+      "image": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/view-identity-waveform.png"
+    }
+  ],
+  "scope": "Read-only repeated memory samples; screenshot review required; not an atomic snapshot",
+  "visual_review": {
+    "initial": "SOURCE page, USB1 selected",
+    "folder": "FOLDER page,440Hz track selected",
+    "waveform": "WAVEFORM page, unloaded decks"
+  },
+  "verified": [
+    "manager vtable29cb4a0 and nested getter198f468 matched at each sample",
+    "Folder identity equals live BrowseView global3baf670",
+    "Folder identity differs from live PcControlView global3baf678",
+    "Source and Waveform identities differ from Browse and from each other"
+  ],
+  "limitations": [
+    "PcControlView not entered in this run",
+    "Repeated reads reject observed changes but are not synchronized with GUI thread",
+    "Heap scan is discovery-only:4.35GB scanned,39 mapping chunks unreadable; not suitable for repeated production polling",
+    "Process/session identity must be pinned before reusing a manager pointer",
+    "Production bridge and focus/acceleration integration remain"
+  ]
+}

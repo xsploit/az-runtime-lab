@@ -1,0 +1,13 @@
+{
+  "pid": 226762,
+  "model": "CDJ3000X1.40",
+  "fixture": "CDJ_ERP_FIXTURE=1",
+  "play": "03:02.923 -> 02:45.436 remaining with waveform advance",
+  "cue": "returned to03:03.227",
+  "screenshots": [
+    "erp-play.png",
+    "erp-play-progress.png",
+    "erp-cue.png"
+  ],
+  "scope": "Native UI transport verified with MP3; null audio sink, no listening/audio capture; other controls untested"
+}

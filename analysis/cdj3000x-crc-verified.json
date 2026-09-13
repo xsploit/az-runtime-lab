@@ -1,0 +1,12 @@
+{
+  "native_range": "0x225f958..0x225fae8",
+  "packets": 10000,
+  "result": "10000 packets matched native CRC instructions",
+  "scope": "Extracted CRC instructions only; full validator and live transport not tested",
+  "polynomial_reflected": "0x8408",
+  "init": "0xffff",
+  "xorout": "0xffff",
+  "coverage_bytes": 62,
+  "checksum_offset": 62,
+  "byte_order": "little"
+}

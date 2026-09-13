@@ -1,0 +1,1860 @@
+{
+  "binary_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Demangled type-name candidates and pointer references; not reconstructed source or proven class layouts",
+  "types": [
+    {
+      "encoded": "N12midi_adapter12IHuiListenerE",
+      "type": "midi_adapter::IHuiListener",
+      "address": "0x25d36c0",
+      "file_offset": "0x21d36c0",
+      "references": [
+        "0x25d36e8"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_22IHuiTouchPad1DObserverEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiTouchPad1DObserver>",
+      "address": "0x25d3790",
+      "file_offset": "0x21d3790",
+      "references": [
+        "0x25d37d8"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_18IHuiButtonObserverEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiButtonObserver>",
+      "address": "0x25d37e8",
+      "file_offset": "0x21d37e8",
+      "references": [
+        "0x25d3828"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_19IHuiEncoderObserverEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiEncoderObserver>",
+      "address": "0x25d3838",
+      "file_offset": "0x21d3838",
+      "references": [
+        "0x25d3878"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_15IHuiJogObserverEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiJogObserver>",
+      "address": "0x25d3888",
+      "file_offset": "0x21d3888",
+      "references": [
+        "0x25d38c8"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_27IHuiSelectingSwitchObserverEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiSelectingSwitchObserver>",
+      "address": "0x25d38d8",
+      "file_offset": "0x21d38d8",
+      "references": [
+        "0x25d3920"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_18IHuiSliderObserverEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiSliderObserver>",
+      "address": "0x25d3930",
+      "file_offset": "0x21d3930",
+      "references": [
+        "0x25d3970"
+      ]
+    },
+    {
+      "encoded": "N4meow18IHuiSliderObserverE",
+      "type": "meow::IHuiSliderObserver",
+      "address": "0x25d3980",
+      "file_offset": "0x21d3980",
+      "references": [
+        "0x25d39a8"
+      ]
+    },
+    {
+      "encoded": "N4meow22IHuiTouchPad1DObserverE",
+      "type": "meow::IHuiTouchPad1DObserver",
+      "address": "0x25d39c8",
+      "file_offset": "0x21d39c8",
+      "references": [
+        "0x25d39f0"
+      ]
+    },
+    {
+      "encoded": "N4meow18IHuiButtonObserverE",
+      "type": "meow::IHuiButtonObserver",
+      "address": "0x25d3a10",
+      "file_offset": "0x21d3a10",
+      "references": [
+        "0x25d3a38"
+      ]
+    },
+    {
+      "encoded": "N4meow19IHuiEncoderObserverE",
+      "type": "meow::IHuiEncoderObserver",
+      "address": "0x25d3a58",
+      "file_offset": "0x21d3a58",
+      "references": [
+        "0x25d3a80"
+      ]
+    },
+    {
+      "encoded": "N4meow15IHuiJogObserverE",
+      "type": "meow::IHuiJogObserver",
+      "address": "0x25d3aa0",
+      "file_offset": "0x21d3aa0",
+      "references": [
+        "0x25d3ac8"
+      ]
+    },
+    {
+      "encoded": "N4meow27IHuiSelectingSwitchObserverE",
+      "type": "meow::IHuiSelectingSwitchObserver",
+      "address": "0x25d3ae8",
+      "file_offset": "0x21d3ae8",
+      "references": [
+        "0x25d3b18"
+      ]
+    },
+    {
+      "encoded": "N14device_adapter5mixer15IBeatFxListenerE",
+      "type": "device_adapter::mixer::IBeatFxListener",
+      "address": "0x25d5ff0",
+      "file_offset": "0x21d5ff0",
+      "references": [
+        "0x25d6028"
+      ]
+    },
+    {
+      "encoded": "N12midi_adapter24IHuiEventAdapterListenerE",
+      "type": "midi_adapter::IHuiEventAdapterListener",
+      "address": "0x25d6030",
+      "file_offset": "0x21d6030",
+      "references": [
+        "0x25d6068"
+      ]
+    },
+    {
+      "encoded": "N12midi_adapter39IOperationSendableMixerBeatEffectSelectE",
+      "type": "midi_adapter::IOperationSendableMixerBeatEffectSelect",
+      "address": "0x25e4eb0",
+      "file_offset": "0x21e4eb0",
+      "references": [
+        "0x25e4ef8"
+      ]
+    },
+    {
+      "encoded": "N12midi_adapter16BeatEffectSelectE",
+      "type": "midi_adapter::BeatEffectSelect",
+      "address": "0x25e4f00",
+      "file_offset": "0x21e4f00",
+      "references": [
+        "0x25e4f30"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework7Setting4ItemIN19application_setting11beat_effect4BankEEE",
+      "type": "meow::setting_framework::Setting::Item<application_setting::beat_effect::Bank>",
+      "address": "0x2621448",
+      "file_offset": "0x2221448",
+      "references": [
+        "0x26214a8"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework7Setting4ItemIN19application_setting11beat_effect8QuantizeEEE",
+      "type": "meow::setting_framework::Setting::Item<application_setting::beat_effect::Quantize>",
+      "address": "0x2621a98",
+      "file_offset": "0x2221a98",
+      "references": [
+        "0x2621af8"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework7Setting4ItemIN19application_setting11beat_effect13ChannelSelectEEE",
+      "type": "meow::setting_framework::Setting::Item<application_setting::beat_effect::ChannelSelect>",
+      "address": "0x2622350",
+      "file_offset": "0x2222350",
+      "references": [
+        "0x26223b8"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_17setting_framework13IItemListenerIN19application_setting11beat_effect4BankEEEEE",
+      "type": "meow::ExistenceCheckable<meow::setting_framework::IItemListener<application_setting::beat_effect::Bank> >",
+      "address": "0x26224b8",
+      "file_offset": "0x22224b8",
+      "references": [
+        "0x2622530"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_17setting_framework13IItemListenerIN19application_setting11beat_effect13ChannelSelectEEEEE",
+      "type": "meow::ExistenceCheckable<meow::setting_framework::IItemListener<application_setting::beat_effect::ChannelSelect> >",
+      "address": "0x2622720",
+      "file_offset": "0x2222720",
+      "references": [
+        "0x26227a8"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_17setting_framework13IItemListenerIN19application_setting11beat_effect9MicSelectEEEEE",
+      "type": "meow::ExistenceCheckable<meow::setting_framework::IItemListener<application_setting::beat_effect::MicSelect> >",
+      "address": "0x2622910",
+      "file_offset": "0x2222910",
+      "references": [
+        "0x2622990"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_17setting_framework13IItemListenerIN19application_setting11beat_effect8QuantizeEEEEE",
+      "type": "meow::ExistenceCheckable<meow::setting_framework::IItemListener<application_setting::beat_effect::Quantize> >",
+      "address": "0x2622b80",
+      "file_offset": "0x2222b80",
+      "references": [
+        "0x2622c00"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework7Setting4ItemIN19application_setting11beat_effect9XYPadHoldEEE",
+      "type": "meow::setting_framework::Setting::Item<application_setting::beat_effect::XYPadHold>",
+      "address": "0x2622c10",
+      "file_offset": "0x2222c10",
+      "references": [
+        "0x2622c70"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_17setting_framework13IItemListenerIN19application_setting11beat_effect10TypeSelectEEEEE",
+      "type": "meow::ExistenceCheckable<meow::setting_framework::IItemListener<application_setting::beat_effect::TypeSelect> >",
+      "address": "0x2622d70",
+      "file_offset": "0x2222d70",
+      "references": [
+        "0x2622df0"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_17setting_framework13IItemListenerIN19application_setting11beat_effect9XYPadHoldEEEEE",
+      "type": "meow::ExistenceCheckable<meow::setting_framework::IItemListener<application_setting::beat_effect::XYPadHold> >",
+      "address": "0x2622fe0",
+      "file_offset": "0x2222fe0",
+      "references": [
+        "0x2623060"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework7Setting4ItemIN19application_setting11beat_effect9MicSelectEEE",
+      "type": "meow::setting_framework::Setting::Item<application_setting::beat_effect::MicSelect>",
+      "address": "0x2623328",
+      "file_offset": "0x2223328",
+      "references": [
+        "0x2623388"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework7Setting4ItemIN19application_setting11beat_effect10TypeSelectEEE",
+      "type": "meow::setting_framework::Setting::Item<application_setting::beat_effect::TypeSelect>",
+      "address": "0x2623928",
+      "file_offset": "0x2223928",
+      "references": [
+        "0x2623990"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework13IItemListenerIN19application_setting11beat_effect4BankEEE",
+      "type": "meow::setting_framework::IItemListener<application_setting::beat_effect::Bank>",
+      "address": "0x2629290",
+      "file_offset": "0x2229290",
+      "references": [
+        "0x26292f0"
+      ]
+    },
+    {
+      "encoded": "N19application_setting11SettingBaseINS_11beat_effect4BankEEE",
+      "type": "application_setting::SettingBase<application_setting::beat_effect::Bank>",
+      "address": "0x2629310",
+      "file_offset": "0x2229310",
+      "references": [
+        "0x2629358"
+      ]
+    },
+    {
+      "encoded": "N19application_setting11beat_effect11BankSettingE",
+      "type": "application_setting::beat_effect::BankSetting",
+      "address": "0x2629368",
+      "file_offset": "0x2229368",
+      "references": [
+        "0x26293a8"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework13IItemListenerIN19application_setting11beat_effect13ChannelSelectEEE",
+      "type": "meow::setting_framework::IItemListener<application_setting::beat_effect::ChannelSelect>",
+      "address": "0x26293b8",
+      "file_offset": "0x22293b8",
+      "references": [
+        "0x2629420"
+      ]
+    },
+    {
+      "encoded": "N19application_setting11SettingBaseINS_11beat_effect13ChannelSelectEEE",
+      "type": "application_setting::SettingBase<application_setting::beat_effect::ChannelSelect>",
+      "address": "0x2629440",
+      "file_offset": "0x2229440",
+      "references": [
+        "0x2629490"
+      ]
+    },
+    {
+      "encoded": "N19application_setting11beat_effect20ChannelSelectSettingE",
+      "type": "application_setting::beat_effect::ChannelSelectSetting",
+      "address": "0x26294a0",
+      "file_offset": "0x22294a0",
+      "references": [
+        "0x26294e8"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework13IItemListenerIN19application_setting11beat_effect9MicSelectEEE",
+      "type": "meow::setting_framework::IItemListener<application_setting::beat_effect::MicSelect>",
+      "address": "0x26294f8",
+      "file_offset": "0x22294f8",
+      "references": [
+        "0x2629560"
+      ]
+    },
+    {
+      "encoded": "N19application_setting11SettingBaseINS_11beat_effect9MicSelectEEE",
+      "type": "application_setting::SettingBase<application_setting::beat_effect::MicSelect>",
+      "address": "0x2629580",
+      "file_offset": "0x2229580",
+      "references": [
+        "0x26295d0"
+      ]
+    },
+    {
+      "encoded": "N19application_setting11beat_effect16MicSelectSettingE",
+      "type": "application_setting::beat_effect::MicSelectSetting",
+      "address": "0x26295e0",
+      "file_offset": "0x22295e0",
+      "references": [
+        "0x2629620"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework13IItemListenerIN19application_setting11beat_effect8QuantizeEEE",
+      "type": "meow::setting_framework::IItemListener<application_setting::beat_effect::Quantize>",
+      "address": "0x2629630",
+      "file_offset": "0x2229630",
+      "references": [
+        "0x2629698"
+      ]
+    },
+    {
+      "encoded": "N19application_setting11SettingBaseINS_11beat_effect8QuantizeEEE",
+      "type": "application_setting::SettingBase<application_setting::beat_effect::Quantize>",
+      "address": "0x26296b8",
+      "file_offset": "0x22296b8",
+      "references": [
+        "0x2629708"
+      ]
+    },
+    {
+      "encoded": "N19application_setting11beat_effect15QuantizeSettingE",
+      "type": "application_setting::beat_effect::QuantizeSetting",
+      "address": "0x2629718",
+      "file_offset": "0x2229718",
+      "references": [
+        "0x2629758"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework13IItemListenerIN19application_setting11beat_effect10TypeSelectEEE",
+      "type": "meow::setting_framework::IItemListener<application_setting::beat_effect::TypeSelect>",
+      "address": "0x2629768",
+      "file_offset": "0x2229768",
+      "references": [
+        "0x26297d0"
+      ]
+    },
+    {
+      "encoded": "N19application_setting11SettingBaseINS_11beat_effect10TypeSelectEEE",
+      "type": "application_setting::SettingBase<application_setting::beat_effect::TypeSelect>",
+      "address": "0x26297f0",
+      "file_offset": "0x22297f0",
+      "references": [
+        "0x2629840"
+      ]
+    },
+    {
+      "encoded": "N19application_setting11beat_effect17TypeSelectSettingE",
+      "type": "application_setting::beat_effect::TypeSelectSetting",
+      "address": "0x2629850",
+      "file_offset": "0x2229850",
+      "references": [
+        "0x2629890"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework13IItemListenerIN19application_setting11beat_effect9XYPadHoldEEE",
+      "type": "meow::setting_framework::IItemListener<application_setting::beat_effect::XYPadHold>",
+      "address": "0x26298a0",
+      "file_offset": "0x22298a0",
+      "references": [
+        "0x2629908"
+      ]
+    },
+    {
+      "encoded": "N19application_setting11SettingBaseINS_11beat_effect9XYPadHoldEEE",
+      "type": "application_setting::SettingBase<application_setting::beat_effect::XYPadHold>",
+      "address": "0x2629928",
+      "file_offset": "0x2229928",
+      "references": [
+        "0x2629978"
+      ]
+    },
+    {
+      "encoded": "N19application_setting11beat_effect16XYPadHoldSettingE",
+      "type": "application_setting::beat_effect::XYPadHoldSetting",
+      "address": "0x2629988",
+      "file_offset": "0x2229988",
+      "references": [
+        "0x26299c8"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework7Setting10ItemHolderIN19application_setting11beat_effect4BankEEE",
+      "type": "meow::setting_framework::Setting::ItemHolder<application_setting::beat_effect::Bank>",
+      "address": "0x262ab00",
+      "file_offset": "0x222ab00",
+      "references": [
+        "0x262ab68"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework7Setting10ItemHolderIN19application_setting11beat_effect13ChannelSelectEEE",
+      "type": "meow::setting_framework::Setting::ItemHolder<application_setting::beat_effect::ChannelSelect>",
+      "address": "0x262ab78",
+      "file_offset": "0x222ab78",
+      "references": [
+        "0x262abe8"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework7Setting10ItemHolderIN19application_setting11beat_effect9MicSelectEEE",
+      "type": "meow::setting_framework::Setting::ItemHolder<application_setting::beat_effect::MicSelect>",
+      "address": "0x262abf8",
+      "file_offset": "0x222abf8",
+      "references": [
+        "0x262ac60"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework7Setting10ItemHolderIN19application_setting11beat_effect8QuantizeEEE",
+      "type": "meow::setting_framework::Setting::ItemHolder<application_setting::beat_effect::Quantize>",
+      "address": "0x262ac70",
+      "file_offset": "0x222ac70",
+      "references": [
+        "0x262acd8"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework7Setting10ItemHolderIN19application_setting11beat_effect10TypeSelectEEE",
+      "type": "meow::setting_framework::Setting::ItemHolder<application_setting::beat_effect::TypeSelect>",
+      "address": "0x262ace8",
+      "file_offset": "0x222ace8",
+      "references": [
+        "0x262ad58"
+      ]
+    },
+    {
+      "encoded": "N4meow17setting_framework7Setting10ItemHolderIN19application_setting11beat_effect9XYPadHoldEEE",
+      "type": "meow::setting_framework::Setting::ItemHolder<application_setting::beat_effect::XYPadHold>",
+      "address": "0x262ad68",
+      "file_offset": "0x222ad68",
+      "references": [
+        "0x262add0"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_17setting_framework7Setting7regItemIN19application_setting11beat_effect4BankEJEEEvRKN4juce10IdentifierEPNS3_4ItemIT_EEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::setting_framework::Setting::regItem<application_setting::beat_effect::Bank>(juce::Identifier const&, meow::setting_framework::Setting::Item<application_setting::beat_effect::Bank>*)::{lambda()#1}>",
+      "address": "0x262da98",
+      "file_offset": "0x222da98",
+      "references": [
+        "0x262db48"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_17setting_framework7Setting7regItemIN19application_setting11beat_effect13ChannelSelectEJEEEvRKN4juce10IdentifierEPNS3_4ItemIT_EEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::setting_framework::Setting::regItem<application_setting::beat_effect::ChannelSelect>(juce::Identifier const&, meow::setting_framework::Setting::Item<application_setting::beat_effect::ChannelSelect>*)::{lambda()#1}>",
+      "address": "0x262dbd8",
+      "file_offset": "0x222dbd8",
+      "references": [
+        "0x262dc90"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_17setting_framework7Setting7regItemIN19application_setting11beat_effect9MicSelectEJEEEvRKN4juce10IdentifierEPNS3_4ItemIT_EEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::setting_framework::Setting::regItem<application_setting::beat_effect::MicSelect>(juce::Identifier const&, meow::setting_framework::Setting::Item<application_setting::beat_effect::MicSelect>*)::{lambda()#1}>",
+      "address": "0x262dd20",
+      "file_offset": "0x222dd20",
+      "references": [
+        "0x262ddd8"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_17setting_framework7Setting7regItemIN19application_setting11beat_effect8QuantizeEJEEEvRKN4juce10IdentifierEPNS3_4ItemIT_EEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::setting_framework::Setting::regItem<application_setting::beat_effect::Quantize>(juce::Identifier const&, meow::setting_framework::Setting::Item<application_setting::beat_effect::Quantize>*)::{lambda()#1}>",
+      "address": "0x262de60",
+      "file_offset": "0x222de60",
+      "references": [
+        "0x262df18"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_17setting_framework7Setting7regItemIN19application_setting11beat_effect10TypeSelectEJEEEvRKN4juce10IdentifierEPNS3_4ItemIT_EEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::setting_framework::Setting::regItem<application_setting::beat_effect::TypeSelect>(juce::Identifier const&, meow::setting_framework::Setting::Item<application_setting::beat_effect::TypeSelect>*)::{lambda()#1}>",
+      "address": "0x262dfa8",
+      "file_offset": "0x222dfa8",
+      "references": [
+        "0x262e060"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_17setting_framework7Setting7regItemIN19application_setting11beat_effect9XYPadHoldEJEEEvRKN4juce10IdentifierEPNS3_4ItemIT_EEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::setting_framework::Setting::regItem<application_setting::beat_effect::XYPadHold>(juce::Identifier const&, meow::setting_framework::Setting::Item<application_setting::beat_effect::XYPadHold>*)::{lambda()#1}>",
+      "address": "0x262e0f0",
+      "file_offset": "0x222e0f0",
+      "references": [
+        "0x262e1a8"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_17setting_framework7Setting10updateItemIN19application_setting11beat_effect13ChannelSelectEEEvRKN4juce10IdentifierERKT_bPNS2_13IItemListenerISC_EEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::setting_framework::Setting::updateItem<application_setting::beat_effect::ChannelSelect>(juce::Identifier const&, application_setting::beat_effect::ChannelSelect const&, bool, meow::setting_framework::IItemListener<application_setting::beat_effect::ChannelSelect>*)::{lambda()#1}>",
+      "address": "0x26313c8",
+      "file_offset": "0x22313c8",
+      "references": [
+        "0x2631498"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_17setting_framework7Setting10updateItemIN19application_setting11beat_effect9MicSelectEEEvRKN4juce10IdentifierERKT_bPNS2_13IItemListenerISC_EEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::setting_framework::Setting::updateItem<application_setting::beat_effect::MicSelect>(juce::Identifier const&, application_setting::beat_effect::MicSelect const&, bool, meow::setting_framework::IItemListener<application_setting::beat_effect::MicSelect>*)::{lambda()#1}>",
+      "address": "0x26314a8",
+      "file_offset": "0x22314a8",
+      "references": [
+        "0x2631570"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_17setting_framework7Setting10updateItemIN19application_setting11beat_effect8QuantizeEEEvRKN4juce10IdentifierERKT_bPNS2_13IItemListenerISC_EEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::setting_framework::Setting::updateItem<application_setting::beat_effect::Quantize>(juce::Identifier const&, application_setting::beat_effect::Quantize const&, bool, meow::setting_framework::IItemListener<application_setting::beat_effect::Quantize>*)::{lambda()#1}>",
+      "address": "0x2631580",
+      "file_offset": "0x2231580",
+      "references": [
+        "0x2631648"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_17setting_framework7Setting10updateItemIN19application_setting11beat_effect10TypeSelectEEEvRKN4juce10IdentifierERKT_bPNS2_13IItemListenerISC_EEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::setting_framework::Setting::updateItem<application_setting::beat_effect::TypeSelect>(juce::Identifier const&, application_setting::beat_effect::TypeSelect const&, bool, meow::setting_framework::IItemListener<application_setting::beat_effect::TypeSelect>*)::{lambda()#1}>",
+      "address": "0x2631658",
+      "file_offset": "0x2231658",
+      "references": [
+        "0x2631720"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_17setting_framework7Setting10updateItemIN19application_setting11beat_effect9XYPadHoldEEEvRKN4juce10IdentifierERKT_bPNS2_13IItemListenerISC_EEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::setting_framework::Setting::updateItem<application_setting::beat_effect::XYPadHold>(juce::Identifier const&, application_setting::beat_effect::XYPadHold const&, bool, meow::setting_framework::IItemListener<application_setting::beat_effect::XYPadHold>*)::{lambda()#1}>",
+      "address": "0x2631730",
+      "file_offset": "0x2231730",
+      "references": [
+        "0x26317f8"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_17setting_framework7Setting10updateItemIN19application_setting11beat_effect4BankEEEvRKN4juce10IdentifierERKT_bPNS2_13IItemListenerISC_EEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::setting_framework::Setting::updateItem<application_setting::beat_effect::Bank>(juce::Identifier const&, application_setting::beat_effect::Bank const&, bool, meow::setting_framework::IItemListener<application_setting::beat_effect::Bank>*)::{lambda()#1}>",
+      "address": "0x2631a78",
+      "file_offset": "0x2231a78",
+      "references": [
+        "0x2631b38"
+      ]
+    },
+    {
+      "encoded": "N5boost3any6holderIPN4meow17setting_framework7Setting4ItemIN19application_setting11beat_effect4BankEEEEE",
+      "type": "boost::any::holder<meow::setting_framework::Setting::Item<application_setting::beat_effect::Bank>*>",
+      "address": "0x2632e18",
+      "file_offset": "0x2232e18",
+      "references": [
+        "0x2632e90"
+      ]
+    },
+    {
+      "encoded": "N5boost3any6holderIPN4meow17setting_framework7Setting4ItemIN19application_setting11beat_effect13ChannelSelectEEEEE",
+      "type": "boost::any::holder<meow::setting_framework::Setting::Item<application_setting::beat_effect::ChannelSelect>*>",
+      "address": "0x2632ea0",
+      "file_offset": "0x2232ea0",
+      "references": [
+        "0x2632f20"
+      ]
+    },
+    {
+      "encoded": "N5boost3any6holderIPN4meow17setting_framework7Setting4ItemIN19application_setting11beat_effect9MicSelectEEEEE",
+      "type": "boost::any::holder<meow::setting_framework::Setting::Item<application_setting::beat_effect::MicSelect>*>",
+      "address": "0x2632f30",
+      "file_offset": "0x2232f30",
+      "references": [
+        "0x2632fa8"
+      ]
+    },
+    {
+      "encoded": "N5boost3any6holderIPN4meow17setting_framework7Setting4ItemIN19application_setting11beat_effect8QuantizeEEEEE",
+      "type": "boost::any::holder<meow::setting_framework::Setting::Item<application_setting::beat_effect::Quantize>*>",
+      "address": "0x2632fb8",
+      "file_offset": "0x2232fb8",
+      "references": [
+        "0x2633030"
+      ]
+    },
+    {
+      "encoded": "N5boost3any6holderIPN4meow17setting_framework7Setting4ItemIN19application_setting11beat_effect10TypeSelectEEEEE",
+      "type": "boost::any::holder<meow::setting_framework::Setting::Item<application_setting::beat_effect::TypeSelect>*>",
+      "address": "0x2633040",
+      "file_offset": "0x2233040",
+      "references": [
+        "0x26330b8"
+      ]
+    },
+    {
+      "encoded": "N5boost3any6holderIPN4meow17setting_framework7Setting4ItemIN19application_setting11beat_effect9XYPadHoldEEEEE",
+      "type": "boost::any::holder<meow::setting_framework::Setting::Item<application_setting::beat_effect::XYPadHold>*>",
+      "address": "0x26330c8",
+      "file_offset": "0x22330c8",
+      "references": [
+        "0x2633140"
+      ]
+    },
+    {
+      "encoded": "N7usecase8effector7IBeatFxE",
+      "type": "usecase::effector::IBeatFx",
+      "address": "0x2692240",
+      "file_offset": "0x2292240",
+      "references": [
+        "0x2692268"
+      ]
+    },
+    {
+      "encoded": "N7usecase8effector6BeatFxE",
+      "type": "usecase::effector::BeatFx",
+      "address": "0x2692270",
+      "file_offset": "0x2292270",
+      "references": [
+        "0x2692298"
+      ]
+    },
+    {
+      "encoded": "N7usecase8effector11ISmoothEchoE",
+      "type": "usecase::effector::ISmoothEcho",
+      "address": "0x2693ff8",
+      "file_offset": "0x2293ff8",
+      "references": [
+        "0x2694028"
+      ]
+    },
+    {
+      "encoded": "N7usecase8effector10SmoothEchoE",
+      "type": "usecase::effector::SmoothEcho",
+      "address": "0x2694030",
+      "file_offset": "0x2294030",
+      "references": [
+        "0x2694058"
+      ]
+    },
+    {
+      "encoded": "N7usecase8effector17SmoothEchoTriggerE",
+      "type": "usecase::effector::SmoothEchoTrigger",
+      "address": "0x2697c58",
+      "file_offset": "0x2297c58",
+      "references": [
+        "0x2697c88"
+      ]
+    },
+    {
+      "encoded": "N7usecase8effector9IEffectorE",
+      "type": "usecase::effector::IEffector",
+      "address": "0x2698f88",
+      "file_offset": "0x2298f88",
+      "references": [
+        "0x2698fb0"
+      ]
+    },
+    {
+      "encoded": "N7usecase8effector8EffectorE",
+      "type": "usecase::effector::Effector",
+      "address": "0x2698fb8",
+      "file_offset": "0x2298fb8",
+      "references": [
+        "0x2698fe0"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZN4ccpf12MixerHandler19beatFxOnOffSwitchedEbEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<ccpf::MixerHandler::beatFxOnOffSwitched(bool)::{lambda()#1}>",
+      "address": "0x2952258",
+      "file_offset": "0x2552258",
+      "references": [
+        "0x29522b8"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZN4ccpf12MixerHandler25typeAndOrParameterChangedEN14device_adapter5mixer10BeatFxTypeEsEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<ccpf::MixerHandler::typeAndOrParameterChanged(device_adapter::mixer::BeatFxType, short)::{lambda()#1}>",
+      "address": "0x29522c8",
+      "file_offset": "0x25522c8",
+      "references": [
+        "0x2952358"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZN4ccpf12MixerHandler25typeAndOrParameterChangedEN14device_adapter5mixer10BeatFxTypeERKNS5_10BeatFxTimeEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<ccpf::MixerHandler::typeAndOrParameterChanged(device_adapter::mixer::BeatFxType, device_adapter::mixer::BeatFxTime const&)::{lambda()#1}>",
+      "address": "0x2952368",
+      "file_offset": "0x2552368",
+      "references": [
+        "0x2952408"
+      ]
+    },
+    {
+      "encoded": "N9debug_osd6BeatFx14QuantizeButtonE",
+      "type": "debug_osd::BeatFx::QuantizeButton",
+      "address": "0x2957a40",
+      "file_offset": "0x2557a40",
+      "references": [
+        "0x2957a70"
+      ]
+    },
+    {
+      "encoded": "N9debug_osd6BeatFx18BeatFxTypeComboBoxE",
+      "type": "debug_osd::BeatFx::BeatFxTypeComboBox",
+      "address": "0x2957ab0",
+      "file_offset": "0x2557ab0",
+      "references": [
+        "0x2957ae0"
+      ]
+    },
+    {
+      "encoded": "N9debug_osd6BeatFx20BeatFxTargetComboBoxE",
+      "type": "debug_osd::BeatFx::BeatFxTargetComboBox",
+      "address": "0x2957b20",
+      "file_offset": "0x2557b20",
+      "references": [
+        "0x2957b58"
+      ]
+    },
+    {
+      "encoded": "N9debug_osd6BeatFxE",
+      "type": "debug_osd::BeatFx",
+      "address": "0x2957b98",
+      "file_offset": "0x2557b98",
+      "references": [
+        "0x2957bb8"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZN15hui_intercepter20OperationInterceptor25didChangeButtonPressStateERKNS_10IHuiButtonENS_9EasyID_ExILb0EEEbEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<hui_intercepter::OperationInterceptor::didChangeButtonPressState(meow::IHuiButton const&, meow::EasyID_Ex<false>, bool)::{lambda()#1}>",
+      "address": "0x29596a8",
+      "file_offset": "0x25596a8",
+      "references": [
+        "0x2959748"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZN9debug_osd6BeatFx14QuantizeButton16onSettingChangedERKN4juce10IdentifierERKN19application_setting11beat_effect8QuantizeEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<debug_osd::BeatFx::QuantizeButton::onSettingChanged(juce::Identifier const&, application_setting::beat_effect::Quantize const&)::{lambda()#1}>",
+      "address": "0x2959f10",
+      "file_offset": "0x2559f10",
+      "references": [
+        "0x2959fc0"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZN9debug_osd6BeatFx18BeatFxTypeComboBox16onSettingChangedERKN4juce10IdentifierERKN19application_setting11beat_effect10TypeSelectEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<debug_osd::BeatFx::BeatFxTypeComboBox::onSettingChanged(juce::Identifier const&, application_setting::beat_effect::TypeSelect const&)::{lambda()#1}>",
+      "address": "0x2959fd0",
+      "file_offset": "0x2559fd0",
+      "references": [
+        "0x295a088"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZN9debug_osd6BeatFx20BeatFxTargetComboBox16onSettingChangedERKN4juce10IdentifierERKN19application_setting11beat_effect13ChannelSelectEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<debug_osd::BeatFx::BeatFxTargetComboBox::onSettingChanged(juce::Identifier const&, application_setting::beat_effect::ChannelSelect const&)::{lambda()#1}>",
+      "address": "0x295a098",
+      "file_offset": "0x255a098",
+      "references": [
+        "0x295a158"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_14HuiAdaptedViewINS_21DefaultGuiTaskBoxConfEE25didChangeButtonPressStateERKNS_10IHuiButtonENS_9EasyID_ExILb0EEEbEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiAdaptedView<meow::DefaultGuiTaskBoxConf>::didChangeButtonPressState(meow::IHuiButton const&, meow::EasyID_Ex<false>, bool)::{lambda()#1}>",
+      "address": "0x29c5a00",
+      "file_offset": "0x25c5a00",
+      "references": [
+        "0x29c5aa8"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_14HuiAdaptedViewINS_21DefaultGuiTaskBoxConfEE25didChangeEncoderPushStateERKNS_11IHuiEncoderENS_9EasyID_ExILb0EEEbEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiAdaptedView<meow::DefaultGuiTaskBoxConf>::didChangeEncoderPushState(meow::IHuiEncoder const&, meow::EasyID_Ex<false>, bool)::{lambda()#1}>",
+      "address": "0x29c5ab8",
+      "file_offset": "0x25c5ab8",
+      "references": [
+        "0x29c5b68"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_14HuiAdaptedViewINS_21DefaultGuiTaskBoxConfEE16didRotateEncoderERKNS_11IHuiEncoderENS_9EasyID_ExILb0EEEiiEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiAdaptedView<meow::DefaultGuiTaskBoxConf>::didRotateEncoder(meow::IHuiEncoder const&, meow::EasyID_Ex<false>, int, int)::{lambda()#1}>",
+      "address": "0x29c5b78",
+      "file_offset": "0x25c5b78",
+      "references": [
+        "0x29c5c20"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_24HuiAdaptedViewDispatcherINS_21DefaultGuiTaskBoxConfEE25didChangeButtonPressStateERKNS_10IHuiButtonENS_9EasyID_ExILb0EEEbEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiAdaptedViewDispatcher<meow::DefaultGuiTaskBoxConf>::didChangeButtonPressState(meow::IHuiButton const&, meow::EasyID_Ex<false>, bool)::{lambda()#1}>",
+      "address": "0x29cbfd8",
+      "file_offset": "0x25cbfd8",
+      "references": [
+        "0x29cc090"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_24HuiAdaptedViewDispatcherINS_21DefaultGuiTaskBoxConfEE25didChangeEncoderPushStateERKNS_11IHuiEncoderENS_9EasyID_ExILb0EEEbEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiAdaptedViewDispatcher<meow::DefaultGuiTaskBoxConf>::didChangeEncoderPushState(meow::IHuiEncoder const&, meow::EasyID_Ex<false>, bool)::{lambda()#1}>",
+      "address": "0x29cc0a0",
+      "file_offset": "0x25cc0a0",
+      "references": [
+        "0x29cc158"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_24HuiAdaptedViewDispatcherINS_21DefaultGuiTaskBoxConfEE16didRotateEncoderERKNS_11IHuiEncoderENS_9EasyID_ExILb0EEEiiEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiAdaptedViewDispatcher<meow::DefaultGuiTaskBoxConf>::didRotateEncoder(meow::IHuiEncoder const&, meow::EasyID_Ex<false>, int, int)::{lambda()#1}>",
+      "address": "0x29cc168",
+      "file_offset": "0x25cc168",
+      "references": [
+        "0x29cc218"
+      ]
+    },
+    {
+      "encoded": "N3gui14mixer_settings15BeatFxMicWidgetE",
+      "type": "gui::mixer_settings::BeatFxMicWidget",
+      "address": "0x29f0820",
+      "file_offset": "0x25f0820",
+      "references": [
+        "0x29f0850"
+      ]
+    },
+    {
+      "encoded": "N3gui14mixer_settings25BeatFxMicWidgetControllerE",
+      "type": "gui::mixer_settings::BeatFxMicWidgetController",
+      "address": "0x29f2200",
+      "file_offset": "0x25f2200",
+      "references": [
+        "0x29f2240"
+      ]
+    },
+    {
+      "encoded": "N3gui16IHuiControllableE",
+      "type": "gui::IHuiControllable",
+      "address": "0x2b73448",
+      "file_offset": "0x2773448",
+      "references": [
+        "0x2b73470"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform25EffectValueBarWidgetDelayE",
+      "type": "gui::waveform::EffectValueBarWidgetDelay",
+      "address": "0x2d45e98",
+      "file_offset": "0x2945e98",
+      "references": [
+        "0x2d45ed0"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform26EffectValueBarWidgetFilterE",
+      "type": "gui::waveform::EffectValueBarWidgetFilter",
+      "address": "0x2d48990",
+      "file_offset": "0x2948990",
+      "references": [
+        "0x2d489c8"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform31EffectValueBarWidgetMobiusMax16E",
+      "type": "gui::waveform::EffectValueBarWidgetMobiusMax16",
+      "address": "0x2d4af80",
+      "file_offset": "0x294af80",
+      "references": [
+        "0x2d4afc0"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform31EffectValueBarWidgetMobiusMax32E",
+      "type": "gui::waveform::EffectValueBarWidgetMobiusMax32",
+      "address": "0x2d4ec20",
+      "file_offset": "0x294ec20",
+      "references": [
+        "0x2d4ec60"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform31EffectValueBarWidgetMobiusMax64E",
+      "type": "gui::waveform::EffectValueBarWidgetMobiusMax64",
+      "address": "0x2d530b0",
+      "file_offset": "0x29530b0",
+      "references": [
+        "0x2d530f0"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform32EffectValueBarWidgetMobiusMin1p4E",
+      "type": "gui::waveform::EffectValueBarWidgetMobiusMin1p4",
+      "address": "0x2d57d20",
+      "file_offset": "0x2957d20",
+      "references": [
+        "0x2d57d60"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform32EffectValueBarWidgetMobiusMin1p8E",
+      "type": "gui::waveform::EffectValueBarWidgetMobiusMin1p8",
+      "address": "0x2d5b8e0",
+      "file_offset": "0x295b8e0",
+      "references": [
+        "0x2d5b920"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform25EffectValueBarWidgetTransE",
+      "type": "gui::waveform::EffectValueBarWidgetTrans",
+      "address": "0x2d5fcc0",
+      "file_offset": "0x295fcc0",
+      "references": [
+        "0x2d5fcf8"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform27EffectValueBarWidgetTripletE",
+      "type": "gui::waveform::EffectValueBarWidgetTriplet",
+      "address": "0x2d61b10",
+      "file_offset": "0x2961b10",
+      "references": [
+        "0x2d61b48"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform18BeatFxLengthWidgetE",
+      "type": "gui::waveform::BeatFxLengthWidget",
+      "address": "0x2d63b80",
+      "file_offset": "0x2963b80",
+      "references": [
+        "0x2d63bb0"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform17BeatFxParamWidgetE",
+      "type": "gui::waveform::BeatFxParamWidget",
+      "address": "0x2d6c428",
+      "file_offset": "0x296c428",
+      "references": [
+        "0x2d6c458"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform16BeatFxTimeWidgetE",
+      "type": "gui::waveform::BeatFxTimeWidget",
+      "address": "0x2d6c638",
+      "file_offset": "0x296c638",
+      "references": [
+        "0x2d6c668"
+      ]
+    },
+    {
+      "encoded": "N3gui8waveform18EffectReverbWidgetE",
+      "type": "gui::waveform::EffectReverbWidget",
+      "address": "0x2d6ca70",
+      "file_offset": "0x296ca70",
+      "references": [
+        "0x2d6caa0"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_29IHuiButtonDoubleClickObserverEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiButtonDoubleClickObserver>",
+      "address": "0x2df5c18",
+      "file_offset": "0x29f5c18",
+      "references": [
+        "0x2df5c68"
+      ]
+    },
+    {
+      "encoded": "N4meow29IHuiButtonDoubleClickObserverE",
+      "type": "meow::IHuiButtonDoubleClickObserver",
+      "address": "0x2df5cf8",
+      "file_offset": "0x29f5cf8",
+      "references": [
+        "0x2df5d28"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_23IHuiLedIndicationSourceEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiLedIndicationSource>",
+      "address": "0x2dffac8",
+      "file_offset": "0x29ffac8",
+      "references": [
+        "0x2dffb10"
+      ]
+    },
+    {
+      "encoded": "N4meow23IHuiLedIndicationSourceE",
+      "type": "meow::IHuiLedIndicationSource",
+      "address": "0x2dffb20",
+      "file_offset": "0x29ffb20",
+      "references": [
+        "0x2dffb50"
+      ]
+    },
+    {
+      "encoded": "N4meow25IHuiMeterIndicationSourceIN14device_adapter19JogTopMeterPositionEiEE",
+      "type": "meow::IHuiMeterIndicationSource<device_adapter::JogTopMeterPosition, int>",
+      "address": "0x2e001e8",
+      "file_offset": "0x2a001e8",
+      "references": [
+        "0x2e00240"
+      ]
+    },
+    {
+      "encoded": "N3hui4deck20VinylSpeedAdjustKnobE",
+      "type": "hui::deck::VinylSpeedAdjustKnob",
+      "address": "0x2e01960",
+      "file_offset": "0x2a01960",
+      "references": [
+        "0x2e01990"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_10IHuiButtonEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiButton>",
+      "address": "0x2e03418",
+      "file_offset": "0x2a03418",
+      "references": [
+        "0x2e03450"
+      ]
+    },
+    {
+      "encoded": "N4meow10IHuiButtonE",
+      "type": "meow::IHuiButton",
+      "address": "0x2e03460",
+      "file_offset": "0x2a03460",
+      "references": [
+        "0x2e03480"
+      ]
+    },
+    {
+      "encoded": "N3hui4deck11TempoSlider7DeckSetE",
+      "type": "hui::deck::TempoSlider::DeckSet",
+      "address": "0x2e05e58",
+      "file_offset": "0x2a05e58",
+      "references": [
+        "0x2e05e88"
+      ]
+    },
+    {
+      "encoded": "N3hui4deck11TempoSliderE",
+      "type": "hui::deck::TempoSlider",
+      "address": "0x2e05e98",
+      "file_offset": "0x2a05e98",
+      "references": [
+        "0x2e05ec0"
+      ]
+    },
+    {
+      "encoded": "N3hui4deck4KnobE",
+      "type": "hui::deck::Knob",
+      "address": "0x2e06748",
+      "file_offset": "0x2a06748",
+      "references": [
+        "0x2e06768"
+      ]
+    },
+    {
+      "encoded": "N3hui4deck6SliderE",
+      "type": "hui::deck::Slider",
+      "address": "0x2e06850",
+      "file_offset": "0x2a06850",
+      "references": [
+        "0x2e06870"
+      ]
+    },
+    {
+      "encoded": "N14device_adapter5mixer7IBeatFxE",
+      "type": "device_adapter::mixer::IBeatFx",
+      "address": "0x2e41a58",
+      "file_offset": "0x2a41a58",
+      "references": [
+        "0x2e41a88"
+      ]
+    },
+    {
+      "encoded": "N14device_adapter5mixer6BeatFxE",
+      "type": "device_adapter::mixer::BeatFx",
+      "address": "0x2e41a90",
+      "file_offset": "0x2a41a90",
+      "references": [
+        "0x2e41ab8"
+      ]
+    },
+    {
+      "encoded": "N14device_adapter5mixer10BeatFxTimeE",
+      "type": "device_adapter::mixer::BeatFxTime",
+      "address": "0x2e41fa8",
+      "file_offset": "0x2a41fa8",
+      "references": [
+        "0x2e41fd8"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_14IHuiJogAdapterIttEEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiJogAdapter<unsigned short, unsigned short> >",
+      "address": "0x2e42580",
+      "file_offset": "0x2a42580",
+      "references": [
+        "0x2e425c0"
+      ]
+    },
+    {
+      "encoded": "N4meow14IHuiJogAdapterIttEE",
+      "type": "meow::IHuiJogAdapter<unsigned short, unsigned short>",
+      "address": "0x2e425d0",
+      "file_offset": "0x2a425d0",
+      "references": [
+        "0x2e425f8"
+      ]
+    },
+    {
+      "encoded": "N4meow9IHuiMeterIN14device_adapter19JogTopMeterPositionEiEE",
+      "type": "meow::IHuiMeter<device_adapter::JogTopMeterPosition, int>",
+      "address": "0x2e44900",
+      "file_offset": "0x2a44900",
+      "references": [
+        "0x2e44948"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_21IHuiLedColorConverterEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiLedColorConverter>",
+      "address": "0x2e4e640",
+      "file_offset": "0x2a4e640",
+      "references": [
+        "0x2e4e688"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_17IHuiSliderAdapterEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiSliderAdapter>",
+      "address": "0x2e4e698",
+      "file_offset": "0x2a4e698",
+      "references": [
+        "0x2e4e6d8"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_17IHuiButtonAdapterEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiButtonAdapter>",
+      "address": "0x2e4e6e8",
+      "file_offset": "0x2a4e6e8",
+      "references": [
+        "0x2e4e728"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_18IHuiEncoderAdapterEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiEncoderAdapter>",
+      "address": "0x2e4e738",
+      "file_offset": "0x2a4e738",
+      "references": [
+        "0x2e4e778"
+      ]
+    },
+    {
+      "encoded": "N4meow17IHuiButtonAdapterE",
+      "type": "meow::IHuiButtonAdapter",
+      "address": "0x2e4e788",
+      "file_offset": "0x2a4e788",
+      "references": [
+        "0x2e4e7b0"
+      ]
+    },
+    {
+      "encoded": "N4meow18IHuiEncoderAdapterE",
+      "type": "meow::IHuiEncoderAdapter",
+      "address": "0x2e4e810",
+      "file_offset": "0x2a4e810",
+      "references": [
+        "0x2e4e838"
+      ]
+    },
+    {
+      "encoded": "N4meow17IHuiSliderAdapterE",
+      "type": "meow::IHuiSliderAdapter",
+      "address": "0x2e4e8a8",
+      "file_offset": "0x2a4e8a8",
+      "references": [
+        "0x2e4e8d0"
+      ]
+    },
+    {
+      "encoded": "N4meow21IHuiLedColorConverterE",
+      "type": "meow::IHuiLedColorConverter",
+      "address": "0x2e4e938",
+      "file_offset": "0x2a4e938",
+      "references": [
+        "0x2e4e960"
+      ]
+    },
+    {
+      "encoded": "N4meow16AbstractEffectorE",
+      "type": "meow::AbstractEffector",
+      "address": "0x2e533e0",
+      "file_offset": "0x2a533e0",
+      "references": [
+        "0x2e53408"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_22IHuiTouchPanelObserverEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiTouchPanelObserver>",
+      "address": "0x2e58680",
+      "file_offset": "0x2a58680",
+      "references": [
+        "0x2e586c8"
+      ]
+    },
+    {
+      "encoded": "N4meow22IHuiTouchPanelObserverE",
+      "type": "meow::IHuiTouchPanelObserver",
+      "address": "0x2e58750",
+      "file_offset": "0x2a58750",
+      "references": [
+        "0x2e58778"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_14MouseSimulator4Impl19didChangeTouchStateERKNS_14IHuiTouchPanelENS_9EasyID_ExILb0EEEbN4juce5PointIjEEEUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::MouseSimulator::Impl::didChangeTouchState(meow::IHuiTouchPanel const&, meow::EasyID_Ex<false>, bool, juce::Point<unsigned int>)::{lambda()#1}>",
+      "address": "0x2e58820",
+      "file_offset": "0x2a58820",
+      "references": [
+        "0x2e588c0"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_20IHuiEventInterpreterEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiEventInterpreter>",
+      "address": "0x2e5aa38",
+      "file_offset": "0x2a5aa38",
+      "references": [
+        "0x2e5aa78"
+      ]
+    },
+    {
+      "encoded": "N4meow20IHuiEventInterpreterE",
+      "type": "meow::IHuiEventInterpreter",
+      "address": "0x2e5aa88",
+      "file_offset": "0x2a5aa88",
+      "references": [
+        "0x2e5aab0"
+      ]
+    },
+    {
+      "encoded": "N4meow16TransitionEffectE",
+      "type": "meow::TransitionEffect",
+      "address": "0x2e5b790",
+      "file_offset": "0x2a5b790",
+      "references": [
+        "0x2e5b7b8"
+      ]
+    },
+    {
+      "encoded": "N4meow15RectangleEffectE",
+      "type": "meow::RectangleEffect",
+      "address": "0x2e5b7e8",
+      "file_offset": "0x2a5b7e8",
+      "references": [
+        "0x2e5b810"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_7IHuiJogEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiJog>",
+      "address": "0x2e60d00",
+      "file_offset": "0x2a60d00",
+      "references": [
+        "0x2e60d38"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_10IHuiSliderEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiSlider>",
+      "address": "0x2e60d48",
+      "file_offset": "0x2a60d48",
+      "references": [
+        "0x2e60d80"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_16IHuiEventManagerEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiEventManager>",
+      "address": "0x2e60d90",
+      "file_offset": "0x2a60d90",
+      "references": [
+        "0x2e60dd0"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_7IHuiLedEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiLed>",
+      "address": "0x2e60de0",
+      "file_offset": "0x2a60de0",
+      "references": [
+        "0x2e60e18"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_14IHuiTouchPad1DEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiTouchPad1D>",
+      "address": "0x2e60e28",
+      "file_offset": "0x2a60e28",
+      "references": [
+        "0x2e60e68"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_7IHuiPadEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiPad>",
+      "address": "0x2e60e78",
+      "file_offset": "0x2a60e78",
+      "references": [
+        "0x2e60eb0"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_14IHuiPadAdapterEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiPadAdapter>",
+      "address": "0x2e60ec0",
+      "file_offset": "0x2a60ec0",
+      "references": [
+        "0x2e60f00"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_21IHuiTouchPad1DAdapterEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiTouchPad1DAdapter>",
+      "address": "0x2e60f10",
+      "file_offset": "0x2a60f10",
+      "references": [
+        "0x2e60f58"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_19IHuiSelectingSwitchEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiSelectingSwitch>",
+      "address": "0x2e60f68",
+      "file_offset": "0x2a60f68",
+      "references": [
+        "0x2e60fa8"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_14IHuiTouchPanelEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiTouchPanel>",
+      "address": "0x2e60fb8",
+      "file_offset": "0x2a60fb8",
+      "references": [
+        "0x2e60ff8"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_21IHuiButtonDoubleClickEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiButtonDoubleClick>",
+      "address": "0x2e61008",
+      "file_offset": "0x2a61008",
+      "references": [
+        "0x2e61050"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_11IHuiEncoderEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiEncoder>",
+      "address": "0x2e61060",
+      "file_offset": "0x2a61060",
+      "references": [
+        "0x2e61098"
+      ]
+    },
+    {
+      "encoded": "N4meow18ExistenceCheckableINS_26IHuiSelectingSwitchAdapterEEE",
+      "type": "meow::ExistenceCheckable<meow::IHuiSelectingSwitchAdapter>",
+      "address": "0x2e610a8",
+      "file_offset": "0x2a610a8",
+      "references": [
+        "0x2e610f0"
+      ]
+    },
+    {
+      "encoded": "N4meow16IHuiEventManagerE",
+      "type": "meow::IHuiEventManager",
+      "address": "0x2e61580",
+      "file_offset": "0x2a61580",
+      "references": [
+        "0x2e615a8"
+      ]
+    },
+    {
+      "encoded": "N4meow22HuiObservableComponentINS_18IHuiButtonObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiObservableComponent<meow::IHuiButtonObserver, juce::CriticalSection>",
+      "address": "0x2e616e0",
+      "file_offset": "0x2a616e0",
+      "references": [
+        "0x2e61740"
+      ]
+    },
+    {
+      "encoded": "N4meow21HuiInputComponentBaseINS_17IHuiButtonAdapterENS_18IHuiButtonObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiInputComponentBase<meow::IHuiButtonAdapter, meow::IHuiButtonObserver, juce::CriticalSection>",
+      "address": "0x2e61748",
+      "file_offset": "0x2a61748",
+      "references": [
+        "0x2e617b8"
+      ]
+    },
+    {
+      "encoded": "N4meow21IHuiButtonDoubleClickE",
+      "type": "meow::IHuiButtonDoubleClick",
+      "address": "0x2e61858",
+      "file_offset": "0x2a61858",
+      "references": [
+        "0x2e61880"
+      ]
+    },
+    {
+      "encoded": "N4meow11IHuiEncoderE",
+      "type": "meow::IHuiEncoder",
+      "address": "0x2e618f8",
+      "file_offset": "0x2a618f8",
+      "references": [
+        "0x2e61918"
+      ]
+    },
+    {
+      "encoded": "N4meow22HuiObservableComponentINS_19IHuiEncoderObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiObservableComponent<meow::IHuiEncoderObserver, juce::CriticalSection>",
+      "address": "0x2e61938",
+      "file_offset": "0x2a61938",
+      "references": [
+        "0x2e61998"
+      ]
+    },
+    {
+      "encoded": "N4meow21HuiInputComponentBaseINS_18IHuiEncoderAdapterENS_19IHuiEncoderObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiInputComponentBase<meow::IHuiEncoderAdapter, meow::IHuiEncoderObserver, juce::CriticalSection>",
+      "address": "0x2e619a0",
+      "file_offset": "0x2a619a0",
+      "references": [
+        "0x2e61a18"
+      ]
+    },
+    {
+      "encoded": "N4meow7IHuiJogE",
+      "type": "meow::IHuiJog",
+      "address": "0x2e61ab8",
+      "file_offset": "0x2a61ab8",
+      "references": [
+        "0x2e61ad0"
+      ]
+    },
+    {
+      "encoded": "N4meow22HuiObservableComponentINS_15IHuiJogObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiObservableComponent<meow::IHuiJogObserver, juce::CriticalSection>",
+      "address": "0x2e61af0",
+      "file_offset": "0x2a61af0",
+      "references": [
+        "0x2e61b48"
+      ]
+    },
+    {
+      "encoded": "N4meow21HuiInputComponentBaseINS_14IHuiJogAdapterIttEENS_15IHuiJogObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiInputComponentBase<meow::IHuiJogAdapter<unsigned short, unsigned short>, meow::IHuiJogObserver, juce::CriticalSection>",
+      "address": "0x2e61b50",
+      "file_offset": "0x2a61b50",
+      "references": [
+        "0x2e61bc0"
+      ]
+    },
+    {
+      "encoded": "N4meow7IHuiLedE",
+      "type": "meow::IHuiLed",
+      "address": "0x2e61c18",
+      "file_offset": "0x2a61c18",
+      "references": [
+        "0x2e61c30"
+      ]
+    },
+    {
+      "encoded": "N4meow7IHuiPadE",
+      "type": "meow::IHuiPad",
+      "address": "0x2e61c78",
+      "file_offset": "0x2a61c78",
+      "references": [
+        "0x2e61c90"
+      ]
+    },
+    {
+      "encoded": "N4meow14IHuiPadAdapterE",
+      "type": "meow::IHuiPadAdapter",
+      "address": "0x2e61cb0",
+      "file_offset": "0x2a61cb0",
+      "references": [
+        "0x2e61cd0"
+      ]
+    },
+    {
+      "encoded": "N4meow22HuiObservableComponentINS_15IHuiPadObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiObservableComponent<meow::IHuiPadObserver, juce::CriticalSection>",
+      "address": "0x2e61cf0",
+      "file_offset": "0x2a61cf0",
+      "references": [
+        "0x2e61d48"
+      ]
+    },
+    {
+      "encoded": "N4meow21HuiInputComponentBaseINS_14IHuiPadAdapterENS_15IHuiPadObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiInputComponentBase<meow::IHuiPadAdapter, meow::IHuiPadObserver, juce::CriticalSection>",
+      "address": "0x2e61d50",
+      "file_offset": "0x2a61d50",
+      "references": [
+        "0x2e61dc0"
+      ]
+    },
+    {
+      "encoded": "N4meow14IHuiTouchPanelE",
+      "type": "meow::IHuiTouchPanel",
+      "address": "0x2e61e50",
+      "file_offset": "0x2a61e50",
+      "references": [
+        "0x2e61e70"
+      ]
+    },
+    {
+      "encoded": "N4meow22HuiObservableComponentINS_22IHuiTouchPanelObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiObservableComponent<meow::IHuiTouchPanelObserver, juce::CriticalSection>",
+      "address": "0x2e61e90",
+      "file_offset": "0x2a61e90",
+      "references": [
+        "0x2e61ef0"
+      ]
+    },
+    {
+      "encoded": "N4meow21HuiInputComponentBaseINS_21IHuiTouchPanelAdapterENS_22IHuiTouchPanelObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiInputComponentBase<meow::IHuiTouchPanelAdapter, meow::IHuiTouchPanelObserver, juce::CriticalSection>",
+      "address": "0x2e61ef8",
+      "file_offset": "0x2a61ef8",
+      "references": [
+        "0x2e61f70"
+      ]
+    },
+    {
+      "encoded": "N4meow10IHuiSliderE",
+      "type": "meow::IHuiSlider",
+      "address": "0x2e61fd0",
+      "file_offset": "0x2a61fd0",
+      "references": [
+        "0x2e61ff0"
+      ]
+    },
+    {
+      "encoded": "N4meow23HuiSliderDefaultAdapterE",
+      "type": "meow::HuiSliderDefaultAdapter",
+      "address": "0x2e62010",
+      "file_offset": "0x2a62010",
+      "references": [
+        "0x2e62040"
+      ]
+    },
+    {
+      "encoded": "N4meow22HuiObservableComponentINS_18IHuiSliderObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiObservableComponent<meow::IHuiSliderObserver, juce::CriticalSection>",
+      "address": "0x2e62050",
+      "file_offset": "0x2a62050",
+      "references": [
+        "0x2e620b0"
+      ]
+    },
+    {
+      "encoded": "N4meow21HuiInputComponentBaseINS_17IHuiSliderAdapterENS_18IHuiSliderObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiInputComponentBase<meow::IHuiSliderAdapter, meow::IHuiSliderObserver, juce::CriticalSection>",
+      "address": "0x2e620b8",
+      "file_offset": "0x2a620b8",
+      "references": [
+        "0x2e62128"
+      ]
+    },
+    {
+      "encoded": "N4meow9HuiSliderE",
+      "type": "meow::HuiSlider",
+      "address": "0x2e62138",
+      "file_offset": "0x2a62138",
+      "references": [
+        "0x2e62158"
+      ]
+    },
+    {
+      "encoded": "N4meow19IHuiSelectingSwitchE",
+      "type": "meow::IHuiSelectingSwitch",
+      "address": "0x2e62188",
+      "file_offset": "0x2a62188",
+      "references": [
+        "0x2e621b0"
+      ]
+    },
+    {
+      "encoded": "N4meow26IHuiSelectingSwitchAdapterE",
+      "type": "meow::IHuiSelectingSwitchAdapter",
+      "address": "0x2e621d0",
+      "file_offset": "0x2a621d0",
+      "references": [
+        "0x2e62200"
+      ]
+    },
+    {
+      "encoded": "N4meow22HuiObservableComponentINS_27IHuiSelectingSwitchObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiObservableComponent<meow::IHuiSelectingSwitchObserver, juce::CriticalSection>",
+      "address": "0x2e62220",
+      "file_offset": "0x2a62220",
+      "references": [
+        "0x2e62288"
+      ]
+    },
+    {
+      "encoded": "N4meow21HuiInputComponentBaseINS_26IHuiSelectingSwitchAdapterENS_27IHuiSelectingSwitchObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiInputComponentBase<meow::IHuiSelectingSwitchAdapter, meow::IHuiSelectingSwitchObserver, juce::CriticalSection>",
+      "address": "0x2e62290",
+      "file_offset": "0x2a62290",
+      "references": [
+        "0x2e62318"
+      ]
+    },
+    {
+      "encoded": "N4meow25IHuiMeterIndicationSourceIiiEE",
+      "type": "meow::IHuiMeterIndicationSource<int, int>",
+      "address": "0x2e623b8",
+      "file_offset": "0x2a623b8",
+      "references": [
+        "0x2e623e8"
+      ]
+    },
+    {
+      "encoded": "N4meow25IHuiMeterIndicationSourceIN5boost8optionalIiEEiEE",
+      "type": "meow::IHuiMeterIndicationSource<boost::optional<int>, int>",
+      "address": "0x2e623f0",
+      "file_offset": "0x2a623f0",
+      "references": [
+        "0x2e62438"
+      ]
+    },
+    {
+      "encoded": "N4meow25IHuiMeterIndicationSourceIN4juce5RangeIiEEiEE",
+      "type": "meow::IHuiMeterIndicationSource<juce::Range<int>, int>",
+      "address": "0x2e62440",
+      "file_offset": "0x2a62440",
+      "references": [
+        "0x2e62480"
+      ]
+    },
+    {
+      "encoded": "N4meow9IHuiMeterIiiEE",
+      "type": "meow::IHuiMeter<int, int>",
+      "address": "0x2e62488",
+      "file_offset": "0x2a62488",
+      "references": [
+        "0x2e624a8"
+      ]
+    },
+    {
+      "encoded": "N4meow9IHuiMeterIN5boost8optionalIiEEiEE",
+      "type": "meow::IHuiMeter<boost::optional<int>, int>",
+      "address": "0x2e624b0",
+      "file_offset": "0x2a624b0",
+      "references": [
+        "0x2e624e8"
+      ]
+    },
+    {
+      "encoded": "N4meow9IHuiMeterIN4juce5RangeIiEEiEE",
+      "type": "meow::IHuiMeter<juce::Range<int>, int>",
+      "address": "0x2e624f0",
+      "file_offset": "0x2a624f0",
+      "references": [
+        "0x2e62520"
+      ]
+    },
+    {
+      "encoded": "N4meow14IHuiTouchPad1DE",
+      "type": "meow::IHuiTouchPad1D",
+      "address": "0x2e625d8",
+      "file_offset": "0x2a625d8",
+      "references": [
+        "0x2e625f8"
+      ]
+    },
+    {
+      "encoded": "N4meow21IHuiTouchPad1DAdapterE",
+      "type": "meow::IHuiTouchPad1DAdapter",
+      "address": "0x2e62618",
+      "file_offset": "0x2a62618",
+      "references": [
+        "0x2e62640"
+      ]
+    },
+    {
+      "encoded": "N4meow22HuiObservableComponentINS_22IHuiTouchPad1DObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiObservableComponent<meow::IHuiTouchPad1DObserver, juce::CriticalSection>",
+      "address": "0x2e626a0",
+      "file_offset": "0x2a626a0",
+      "references": [
+        "0x2e62700"
+      ]
+    },
+    {
+      "encoded": "N4meow21HuiInputComponentBaseINS_21IHuiTouchPad1DAdapterENS_22IHuiTouchPad1DObserverEN4juce15CriticalSectionEEE",
+      "type": "meow::HuiInputComponentBase<meow::IHuiTouchPad1DAdapter, meow::IHuiTouchPad1DObserver, juce::CriticalSection>",
+      "address": "0x2e62708",
+      "file_offset": "0x2a62708",
+      "references": [
+        "0x2e62780"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_22HuiObservableComponentINS_18IHuiButtonObserverEN4juce15CriticalSectionEE34sendNotificationToNewObserverAsyncEPS3_EUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiObservableComponent<meow::IHuiButtonObserver, juce::CriticalSection>::sendNotificationToNewObserverAsync(meow::IHuiButtonObserver*)::{lambda()#1}>",
+      "address": "0x2e62b68",
+      "file_offset": "0x2a62b68",
+      "references": [
+        "0x2e62c18"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_22HuiObservableComponentINS_19IHuiEncoderObserverEN4juce15CriticalSectionEE34sendNotificationToNewObserverAsyncEPS3_EUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiObservableComponent<meow::IHuiEncoderObserver, juce::CriticalSection>::sendNotificationToNewObserverAsync(meow::IHuiEncoderObserver*)::{lambda()#1}>",
+      "address": "0x2e62c28",
+      "file_offset": "0x2a62c28",
+      "references": [
+        "0x2e62cd8"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_22HuiObservableComponentINS_15IHuiJogObserverEN4juce15CriticalSectionEE34sendNotificationToNewObserverAsyncEPS3_EUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiObservableComponent<meow::IHuiJogObserver, juce::CriticalSection>::sendNotificationToNewObserverAsync(meow::IHuiJogObserver*)::{lambda()#1}>",
+      "address": "0x2e62ce8",
+      "file_offset": "0x2a62ce8",
+      "references": [
+        "0x2e62d90"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_22HuiObservableComponentINS_15IHuiPadObserverEN4juce15CriticalSectionEE34sendNotificationToNewObserverAsyncEPS3_EUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiObservableComponent<meow::IHuiPadObserver, juce::CriticalSection>::sendNotificationToNewObserverAsync(meow::IHuiPadObserver*)::{lambda()#1}>",
+      "address": "0x2e62da0",
+      "file_offset": "0x2a62da0",
+      "references": [
+        "0x2e62e48"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_22HuiObservableComponentINS_22IHuiTouchPanelObserverEN4juce15CriticalSectionEE34sendNotificationToNewObserverAsyncEPS3_EUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiObservableComponent<meow::IHuiTouchPanelObserver, juce::CriticalSection>::sendNotificationToNewObserverAsync(meow::IHuiTouchPanelObserver*)::{lambda()#1}>",
+      "address": "0x2e62e58",
+      "file_offset": "0x2a62e58",
+      "references": [
+        "0x2e62f08"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_22HuiObservableComponentINS_18IHuiSliderObserverEN4juce15CriticalSectionEE34sendNotificationToNewObserverAsyncEPS3_EUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiObservableComponent<meow::IHuiSliderObserver, juce::CriticalSection>::sendNotificationToNewObserverAsync(meow::IHuiSliderObserver*)::{lambda()#1}>",
+      "address": "0x2e62f18",
+      "file_offset": "0x2a62f18",
+      "references": [
+        "0x2e62fc8"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_22HuiObservableComponentINS_27IHuiSelectingSwitchObserverEN4juce15CriticalSectionEE34sendNotificationToNewObserverAsyncEPS3_EUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiObservableComponent<meow::IHuiSelectingSwitchObserver, juce::CriticalSection>::sendNotificationToNewObserverAsync(meow::IHuiSelectingSwitchObserver*)::{lambda()#1}>",
+      "address": "0x2e62fd8",
+      "file_offset": "0x2a62fd8",
+      "references": [
+        "0x2e63090"
+      ]
+    },
+    {
+      "encoded": "N4meow16AsyncTaskBoxBase9AsyncTaskIZNS_22HuiObservableComponentINS_22IHuiTouchPad1DObserverEN4juce15CriticalSectionEE34sendNotificationToNewObserverAsyncEPS3_EUlvE_EE",
+      "type": "meow::AsyncTaskBoxBase::AsyncTask<meow::HuiObservableComponent<meow::IHuiTouchPad1DObserver, juce::CriticalSection>::sendNotificationToNewObserverAsync(meow::IHuiTouchPad1DObserver*)::{lambda()#1}>",
+      "address": "0x2e630a0",
+      "file_offset": "0x2a630a0",
+      "references": [
+        "0x2e63150"
+      ]
+    },
+    {
+      "encoded": "N4juce17ImageEffectFilterE",
+      "type": "juce::ImageEffectFilter",
+      "address": "0x31423f0",
+      "file_offset": "0x2d423f0",
+      "references": [
+        "0x3142418"
+      ]
+    },
+    {
+      "encoded": "N4juce16DropShadowEffectE",
+      "type": "juce::DropShadowEffect",
+      "address": "0x3142420",
+      "file_offset": "0x2d42420",
+      "references": [
+        "0x3142448"
+      ]
+    },
+    {
+      "encoded": "N4juce10GlowEffectE",
+      "type": "juce::GlowEffect",
+      "address": "0x3142458",
+      "file_offset": "0x2d42458",
+      "references": [
+        "0x3142478"
+      ]
+    }
+  ]
+}

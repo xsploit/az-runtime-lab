@@ -1,0 +1,42 @@
+{
+  "target": "0x7734d0",
+  "direct_calls": [
+    {
+      "address": "0x77367c",
+      "kind": "BL"
+    },
+    {
+      "address": "0x7740d0",
+      "kind": "BL"
+    },
+    {
+      "address": "0x7746a0",
+      "kind": "BL"
+    },
+    {
+      "address": "0x77c880",
+      "kind": "BL"
+    },
+    {
+      "address": "0x77cfdc",
+      "kind": "BL"
+    },
+    {
+      "address": "0x77d0a0",
+      "kind": "BL"
+    },
+    {
+      "address": "0x77d238",
+      "kind": "BL"
+    },
+    {
+      "address": "0x77d550",
+      "kind": "BL"
+    },
+    {
+      "address": "0x77d590",
+      "kind": "BL"
+    }
+  ],
+  "scope": "Only direct branch references; inlined/indirect routes not excluded"
+}

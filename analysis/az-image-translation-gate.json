@@ -1,0 +1,134 @@
+{
+  "source_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Original AArch64 translation-selection fragment under QEMU. Unit-scale, no-shear precondition assumed; pixel filtering not executed.",
+  "samples": 24582,
+  "formula_mismatches": 0,
+  "by_quality": {
+    "0": {
+      "integer": 8194,
+      "filtered": 0
+    },
+    "1": {
+      "integer": 513,
+      "filtered": 7681
+    },
+    "2": {
+      "integer": 513,
+      "filtered": 7681
+    }
+  },
+  "selected": [
+    {
+      "x": -1.0,
+      "quality": 1,
+      "y": 0.0,
+      "path": "integer",
+      "integer_xy": [
+        -1,
+        0
+      ]
+    },
+    {
+      "x": -0.9990234375,
+      "quality": 1,
+      "y": 0.0,
+      "path": "integer",
+      "integer_xy": [
+        -1,
+        0
+      ]
+    },
+    {
+      "x": -0.875,
+      "quality": 1,
+      "y": 0.0,
+      "path": "filtered",
+      "integer_xy": null
+    },
+    {
+      "x": -0.5,
+      "quality": 1,
+      "y": 0.0,
+      "path": "filtered",
+      "integer_xy": null
+    },
+    {
+      "x": -0.125,
+      "quality": 1,
+      "y": 0.0,
+      "path": "filtered",
+      "integer_xy": null
+    },
+    {
+      "x": -0.0009765625,
+      "quality": 1,
+      "y": 0.0,
+      "path": "integer",
+      "integer_xy": [
+        0,
+        0
+      ]
+    },
+    {
+      "x": 0.0,
+      "quality": 1,
+      "y": 0.0,
+      "path": "integer",
+      "integer_xy": [
+        0,
+        0
+      ]
+    },
+    {
+      "x": 0.0009765625,
+      "quality": 1,
+      "y": 0.0,
+      "path": "integer",
+      "integer_xy": [
+        0,
+        0
+      ]
+    },
+    {
+      "x": 0.1240234375,
+      "quality": 1,
+      "y": 0.0,
+      "path": "integer",
+      "integer_xy": [
+        0,
+        0
+      ]
+    },
+    {
+      "x": 0.125,
+      "quality": 1,
+      "y": 0.0,
+      "path": "filtered",
+      "integer_xy": null
+    },
+    {
+      "x": 0.5,
+      "quality": 1,
+      "y": 0.0,
+      "path": "filtered",
+      "integer_xy": null
+    },
+    {
+      "x": 0.875,
+      "quality": 1,
+      "y": 0.0,
+      "path": "filtered",
+      "integer_xy": null
+    },
+    {
+      "x": 1.0,
+      "quality": 1,
+      "y": 0.0,
+      "path": "integer",
+      "integer_xy": [
+        1,
+        0
+      ]
+    }
+  ]
+}

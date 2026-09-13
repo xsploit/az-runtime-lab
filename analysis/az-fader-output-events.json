@@ -1,0 +1,42 @@
+[
+  {
+    "raw_faders": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "start_frame": 1935552,
+    "end_frame": 2023744
+  },
+  {
+    "raw_faders": [
+      1023,
+      1023,
+      1023,
+      1023
+    ],
+    "start_frame": 2023744,
+    "end_frame": 2111936
+  },
+  {
+    "raw_faders": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "start_frame": 2111936,
+    "end_frame": 2200192
+  },
+  {
+    "raw_faders": [
+      1023,
+      1023,
+      1023,
+      1023
+    ],
+    "start_frame": 2200192,
+    "end_frame": 2288384
+  }
+]

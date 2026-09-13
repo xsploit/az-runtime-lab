@@ -1,0 +1,7 @@
+{
+  "path": "runtime-lab/analysis/dsp-oracle/native-channel-eq-tables.bin",
+  "bytes": 16464,
+  "sha256": "128b43f2ef274904136e6570257a6aa6dc38c6fd65642ea102308f8fde5f3a7f",
+  "layout": "3*256*5 float EQ coefficients,256 float isolator gains,4*5 float isolator coefficients",
+  "private": true
+}

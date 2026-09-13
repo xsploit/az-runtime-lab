@@ -1,0 +1,62 @@
+[
+  {
+    "address": "0x91250",
+    "symbol": "mixerengine::BeatEffectTrans::execute(common::Float2 const*, common::Float2*, int)"
+  },
+  {
+    "address": "0x94504",
+    "symbol": "mixerengine::BeatEffectFilter::execute(common::Float2 const*, common::Float2*, int)"
+  },
+  {
+    "address": "0x967fc",
+    "symbol": "mixerengine::BeatEffectVinylBrake::execute(common::Float2 const*, common::Float2*, int)"
+  },
+  {
+    "address": "0x97960",
+    "symbol": "mixerengine::BeatEffectPhaser::execute(common::Float2 const*, common::Float2*, int)"
+  },
+  {
+    "address": "0x9fab8",
+    "symbol": "mixerengine::Compressor::execute(common::Float2*, int)"
+  },
+  {
+    "address": "0x9fc88",
+    "symbol": "mixerengine::Compressor::execute(common::Float2*, int)"
+  },
+  {
+    "address": "0x9fc94",
+    "symbol": "mixerengine::Compressor::execute(common::Float2*, int)"
+  },
+  {
+    "address": "0xb86d4",
+    "symbol": "mixerengine::BeatEffectFlanger::execute(common::Float2 const*, common::Float2*, int)"
+  },
+  {
+    "address": "0xba5e8",
+    "symbol": "mixerengine::Isolator::execute(common::Float2 const*, common::Float2*, int)"
+  },
+  {
+    "address": "0xbdfec",
+    "symbol": "mixerengine::SoundColorFxSpace::execute(common::Float2 const*, common::Float2*, int)"
+  },
+  {
+    "address": "0xbe2f4",
+    "symbol": "mixerengine::SoundColorFxSpace::execute(common::Float2 const*, common::Float2*, int)"
+  },
+  {
+    "address": "0xc0394",
+    "symbol": "mixerengine::SoundColorFxSweep::execute(common::Float2 const*, common::Float2*, int)"
+  },
+  {
+    "address": "0xccf5c",
+    "symbol": "mixerengine::SoundColorFxDubecho::execute(common::Float2 const*, common::Float2*, int)"
+  },
+  {
+    "address": "0xcd240",
+    "symbol": "mixerengine::SoundColorFxDubecho::execute(common::Float2 const*, common::Float2*, int)"
+  },
+  {
+    "address": "0xcd378",
+    "symbol": "mixerengine::SoundColorFxDubecho::execute(common::Float2 const*, common::Float2*, int)"
+  }
+]

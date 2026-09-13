@@ -1,0 +1,15 @@
+{
+  "scope": "isolated headless unloaded startup; last sample about18seconds; not audio or loaded decks",
+  "baseline_pss_mib": 921.3720703125,
+  "template_pss_mib": 461.484375,
+  "reduction_mib": 459.8876953125,
+  "reduction_percent": 49.91335315346826,
+  "full_pool_slots": 33850,
+  "allocated_slots": 33850,
+  "init_error": 0,
+  "mapped_reallocations": 0,
+  "swap_kib": [
+    0,
+    0
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "returncode": 0,
+  "stdout": "{\"cases\":[{\"rate\":1,\"ramps\":[{\"length\":1,\"inverse_bits\":1065353216,\"value_bits\":0},{\"length\":1,\"inverse_bits\":1065353216,\"value_bits\":0},{\"length\":1,\"inverse_bits\":1065353216,\"value_bits\":1065353216},{\"length\":1,\"inverse_bits\":1065353216,\"value_bits\":0}]},{\"rate\":100,\"ramps\":[{\"length\":1,\"inverse_bits\":1065353216,\"value_bits\":0},{\"length\":1,\"inverse_bits\":1065353216,\"value_bits\":0},{\"length\":1,\"inverse_bits\":1065353216,\"value_bits\":1065353216},{\"length\":1,\"inverse_bits\":1065353216,\"value_bits\":0}]},{\"rate\":1000,\"ramps\":[{\"length\":3,\"inverse_bits\":1051372203,\"value_bits\":0},{\"length\":4,\"inverse_bits\":1048576000,\"value_bits\":0},{\"length\":3,\"inverse_bits\":1051372203,\"value_bits\":1065353216},{\"length\":3,\"inverse_bits\":1051372203,\"value_bits\":0}]},{\"rate\":44100,\"ramps\":[{\"length\":147,\"inverse_bits\":1004464476,\"value_bits\":0},{\"length\":191,\"inverse_bits\":1001099114,\"value_bits\":0},{\"length\":147,\"inverse_bits\":1004464476,\"value_bits\":1065353216},{\"length\":147,\"inverse_bits\":1004464476,\"value_bits\":0}]},{\"rate\":48000,\"ramps\":[{\"length\":160,\"inverse_bits\":1003277517,\"value_bits\":0},{\"length\":208,\"inverse_bits\":1000180185,\"value_bits\":0},{\"length\":160,\"inverse_bits\":1003277517,\"value_bits\":1065353216},{\"length\":160,\"inverse_bits\":1003277517,\"value_bits\":0}]},{\"rate\":96000,\"ramps\":[{\"length\":320,\"inverse_bits\":994888909,\"value_bits\":0},{\"length\":417,\"inverse_bits\":991766818,\"value_bits\":0},{\"length\":320,\"inverse_bits\":994888909,\"value_bits\":1065353216},{\"length\":320,\"inverse_bits\":994888909,\"value_bits\":0}]},{\"rate\":192000,\"ramps\":[{\"length\":640,\"inverse_bits\":986500301,\"value_bits\":0},{\"length\":835,\"inverse_bits\":983365875,\"value_bits\":0},{\"length\":640,\"inverse_bits\":986500301,\"value_bits\":1065353216},{\"length\":640,\"inverse_bits\":986500301,\"value_bits\":0}]}],\"passed\":true,\"scope\":\"Original constructor instructions with allocator/string fixtures; numeric/default fields only.\"}\n",
+  "stderr": "",
+  "native_sha256": "32c8fb1f0b489a37746a3e87b4b05026bfb007ffa33c6d401c8a14576d79c276",
+  "relocations": [
+    [
+      "0xb6a28",
+      "bl fixture_string"
+    ],
+    [
+      "0xb6a30",
+      "bl fixture_allocate"
+    ],
+    [
+      "0xb6aa8",
+      "bl fixture_destroy"
+    ],
+    [
+      "0xb6ab4",
+      "bl fixture_string"
+    ],
+    [
+      "0xb6abc",
+      "bl fixture_allocate"
+    ],
+    [
+      "0xb6b34",
+      "bl fixture_destroy"
+    ],
+    [
+      "0xb6b40",
+      "bl fixture_string"
+    ],
+    [
+      "0xb6b48",
+      "bl fixture_allocate"
+    ],
+    [
+      "0xb6bb0",
+      "bl fixture_destroy"
+    ],
+    [
+      "0xb6bbc",
+      "bl fixture_string"
+    ],
+    [
+      "0xb6bc4",
+      "bl fixture_allocate"
+    ],
+    [
+      "0xb6c28",
+      "bl fixture_destroy"
+    ],
+    [
+      "0xb6c58",
+      "bl fixture_cleanup"
+    ],
+    [
+      "0xb6c60",
+      "bl fixture_destroy"
+    ],
+    [
+      "0xb6c6c",
+      "bl fixture_destroy"
+    ],
+    [
+      "0xb6c78",
+      "bl fixture_destroy"
+    ],
+    [
+      "0xb6c84",
+      "bl fixture_destroy"
+    ],
+    [
+      "0xb6ca4",
+      ".word fixture_rate"
+    ]
+  ],
+  "source_hashes": {
+    "delay_constructor_probe.c": "158a9a28cdb2257f3c4c1afa2a4913442ff73c17eea23d0bcf94fd71adb344c4",
+    "run_delay_constructor.py": "7b18bf8dbdfa6079cd77f217394f550b1ca73e6548e1dcd13c757b695f5e072e",
+    "delay-constructor-native.S": "278e37adcc531852e7b59daae582592cdc4edbfc84c61d0acb4b76e82b6787a4"
+  }
+}

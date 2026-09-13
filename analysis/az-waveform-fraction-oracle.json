@@ -1,0 +1,236 @@
+{
+  "sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "method": "Original AArch64 fractional coefficient setup and high-contrast RGB blending under QEMU; two exit branches intercepted. Full renderer and branch selection not executed.",
+  "samples": 6003,
+  "formula_mismatches": 0,
+  "impulse_sum_min": 255,
+  "impulse_sum_max": 346,
+  "negative_samples": 3000,
+  "coefficient_pairs": [
+    [
+      8847,
+      31129
+    ],
+    [
+      12451,
+      28835
+    ],
+    [
+      16056,
+      26214
+    ],
+    [
+      19333,
+      24248
+    ],
+    [
+      22282,
+      22282
+    ],
+    [
+      24248,
+      19333
+    ],
+    [
+      26214,
+      16056
+    ],
+    [
+      28835,
+      12451
+    ],
+    [
+      31129,
+      8847
+    ],
+    [
+      32768,
+      0
+    ]
+  ],
+  "selected": [
+    {
+      "position": -2,
+      "zoom": 1.0,
+      "fraction": 0.7,
+      "coefficients": [
+        16056,
+        26214
+      ],
+      "base_sample": -1.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 124,
+      "blend_impulse_right": 203,
+      "impulse_sum": 327
+    },
+    {
+      "position": -1,
+      "zoom": 1.0,
+      "fraction": 0.85,
+      "coefficients": [
+        12451,
+        28835
+      ],
+      "base_sample": -1.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 96,
+      "blend_impulse_right": 224,
+      "impulse_sum": 320
+    },
+    {
+      "position": 0,
+      "zoom": 1.0,
+      "fraction": 0.0,
+      "coefficients": [
+        32768,
+        0
+      ],
+      "base_sample": 0.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 255,
+      "blend_impulse_right": 0,
+      "impulse_sum": 255
+    },
+    {
+      "position": 1,
+      "zoom": 1.0,
+      "fraction": 0.15,
+      "coefficients": [
+        31129,
+        8847
+      ],
+      "base_sample": 0.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 242,
+      "blend_impulse_right": 68,
+      "impulse_sum": 310
+    },
+    {
+      "position": 2,
+      "zoom": 1.0,
+      "fraction": 0.3,
+      "coefficients": [
+        26214,
+        16056
+      ],
+      "base_sample": 0.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 203,
+      "blend_impulse_right": 124,
+      "impulse_sum": 327
+    },
+    {
+      "position": 3,
+      "zoom": 1.0,
+      "fraction": 0.45,
+      "coefficients": [
+        24248,
+        19333
+      ],
+      "base_sample": 0.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 188,
+      "blend_impulse_right": 150,
+      "impulse_sum": 338
+    },
+    {
+      "position": 4,
+      "zoom": 1.0,
+      "fraction": 0.6,
+      "coefficients": [
+        19333,
+        24248
+      ],
+      "base_sample": 0.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 150,
+      "blend_impulse_right": 188,
+      "impulse_sum": 338
+    },
+    {
+      "position": 5,
+      "zoom": 1.0,
+      "fraction": 0.75,
+      "coefficients": [
+        16056,
+        26214
+      ],
+      "base_sample": 0.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 124,
+      "blend_impulse_right": 203,
+      "impulse_sum": 327
+    },
+    {
+      "position": 6,
+      "zoom": 1.0,
+      "fraction": 0.9,
+      "coefficients": [
+        8847,
+        31129
+      ],
+      "base_sample": 0.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 68,
+      "blend_impulse_right": 242,
+      "impulse_sum": 310
+    },
+    {
+      "position": 7,
+      "zoom": 1.0,
+      "fraction": 0.050000000000000044,
+      "coefficients": [
+        32768,
+        0
+      ],
+      "base_sample": 1.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 255,
+      "blend_impulse_right": 0,
+      "impulse_sum": 255
+    },
+    {
+      "position": 8,
+      "zoom": 1.0,
+      "fraction": 0.19999999999999996,
+      "coefficients": [
+        31129,
+        8847
+      ],
+      "base_sample": 1.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 242,
+      "blend_impulse_right": 68,
+      "impulse_sum": 310
+    },
+    {
+      "position": 9,
+      "zoom": 1.0,
+      "fraction": 0.3500000000000001,
+      "coefficients": [
+        26214,
+        16056
+      ],
+      "base_sample": 1.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 203,
+      "blend_impulse_right": 124,
+      "impulse_sum": 327
+    },
+    {
+      "position": 10,
+      "zoom": 1.0,
+      "fraction": 0.5,
+      "coefficients": [
+        22282,
+        22282
+      ],
+      "base_sample": 1.0,
+      "blend_flat100": 100,
+      "blend_impulse_left": 173,
+      "blend_impulse_right": 173,
+      "impulse_sum": 346
+    }
+  ],
+  "raw_file": "runtime-lab/analysis/az-waveform-fraction-oracle.samples.json"
+}

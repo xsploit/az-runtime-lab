@@ -1,0 +1,29 @@
+{
+  "pid": 30028,
+  "starttime": "3275573",
+  "smaps_rollup_kib": {
+    "Rss": 949840,
+    "Pss": 947124,
+    "Pss_Dirty": 940352,
+    "Pss_Anon": 899424,
+    "Pss_File": 6772,
+    "Pss_Shmem": 40928,
+    "Shared_Clean": 4688,
+    "Shared_Dirty": 32,
+    "Private_Clean": 4784,
+    "Private_Dirty": 940336,
+    "Referenced": 949728,
+    "Anonymous": 899424,
+    "KSM": 0,
+    "LazyFree": 0,
+    "AnonHugePages": 0,
+    "ShmemPmdMapped": 0,
+    "FilePmdMapped": 0,
+    "Shared_Hugetlb": 0,
+    "Private_Hugetlb": 0,
+    "Swap": 0,
+    "SwapPss": 0,
+    "Locked": 0
+  },
+  "template_vmas": 0
+}

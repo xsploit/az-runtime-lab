@@ -1,0 +1,25 @@
+{
+  "frames": 4796672,
+  "seconds": 108.76807256235827,
+  "channel_order": [
+    "masterL",
+    "masterR",
+    "headphonesL",
+    "headphonesR"
+  ],
+  "peak": [
+    0.02264404296875,
+    0.02264404296875,
+    0.0228729248046875,
+    0.0228729248046875
+  ],
+  "rms": [
+    0.0046999348616269575,
+    0.0046999348616269575,
+    0.004905166633870542,
+    0.004905166633870542
+  ],
+  "samples_clipped": 0,
+  "max_reference_error": 0.0,
+  "scope": "Render a private AZ ten-channel capture through the original lab mixer.\n\nDemo routing: all four decks to master at 0.25 gain; deck1 to pre-fader\nheadphones at0.5 gain. Output WAV channels: masterL/R,headphonesL/R.\nNo real-time, FLX6 mapping, effects or native DSP equivalence claim.\n"
+}

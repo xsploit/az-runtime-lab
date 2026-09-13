@@ -1,0 +1,6 @@
+{
+  "cases": 125,
+  "failures": 0,
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Original task 0x101b9d0: counts0..4, channel IDs0..4 (4 unknown), five raw32bit payloads, guarded output array and unchanged manager/task storage. Does not execute on-air decision or scheduling."
+}

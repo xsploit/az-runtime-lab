@@ -1,0 +1,25 @@
+{
+  "binary_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "calls": [
+    {
+      "address": "0x2131554",
+      "target": "0x2131378",
+      "label": "cached-state1 notify"
+    },
+    {
+      "address": "0x2131560",
+      "target": "0x2131448",
+      "label": "cached-state2 notify"
+    },
+    {
+      "address": "0x215466c",
+      "target": "0x21316e0",
+      "label": "state1 update"
+    },
+    {
+      "address": "0x21546bc",
+      "target": "0x2131848",
+      "label": "state2 update"
+    }
+  ]
+}

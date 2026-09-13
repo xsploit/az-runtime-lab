@@ -1,0 +1,127 @@
+[
+  {
+    "instruction": "6c7678",
+    "string_address": "0x25d53c8",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<0>::trim(), this)"
+  },
+  {
+    "instruction": "6c7744",
+    "string_address": "0x25d5408",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<0>::eqIsoHi(), this)"
+  },
+  {
+    "instruction": "6c7810",
+    "string_address": "0x25d5448",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<0>::eqIsoMid(), this)"
+  },
+  {
+    "instruction": "6c78dc",
+    "string_address": "0x25d5490",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<0>::eqIsoLow(), this)"
+  },
+  {
+    "instruction": "6c79a8",
+    "string_address": "0x25d54d8",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<0>::color(), this)"
+  },
+  {
+    "instruction": "6c7a70",
+    "string_address": "0x25d5518",
+    "diagnostic": "linkToObserver<IHuiButton> (huiid::Mixer::Ch<0>::cue(), this)"
+  },
+  {
+    "instruction": "6c7b3c",
+    "string_address": "0x25d5558",
+    "diagnostic": "linkToObserver<IHuiSlider> (huiid::Mixer::Ch<0>::fader(), this)"
+  },
+  {
+    "instruction": "6c7c08",
+    "string_address": "0x25d5598",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<1>::trim(), this)"
+  },
+  {
+    "instruction": "6c7cd4",
+    "string_address": "0x25d55d8",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<1>::eqIsoHi(), this)"
+  },
+  {
+    "instruction": "6c7da0",
+    "string_address": "0x25d5618",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<1>::eqIsoMid(), this)"
+  },
+  {
+    "instruction": "6c7e6c",
+    "string_address": "0x25d5660",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<1>::eqIsoLow(), this)"
+  },
+  {
+    "instruction": "6c7f38",
+    "string_address": "0x25d56a8",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<1>::color(), this)"
+  },
+  {
+    "instruction": "6c8000",
+    "string_address": "0x25d56e8",
+    "diagnostic": "linkToObserver<IHuiButton> (huiid::Mixer::Ch<1>::cue(), this)"
+  },
+  {
+    "instruction": "6c80cc",
+    "string_address": "0x25d5728",
+    "diagnostic": "linkToObserver<IHuiSlider> (huiid::Mixer::Ch<1>::fader(), this)"
+  },
+  {
+    "instruction": "6c8198",
+    "string_address": "0x25d5768",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<2>::trim(), this)"
+  },
+  {
+    "instruction": "6c8264",
+    "string_address": "0x25d57a8",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<2>::eqIsoHi(), this)"
+  },
+  {
+    "instruction": "6c8330",
+    "string_address": "0x25d57e8",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<2>::eqIsoMid(), this)"
+  },
+  {
+    "instruction": "6c83fc",
+    "string_address": "0x25d5830",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<2>::eqIsoLow(), this)"
+  },
+  {
+    "instruction": "6c84c8",
+    "string_address": "0x25d5878",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<2>::color(), this)"
+  },
+  {
+    "instruction": "6c8590",
+    "string_address": "0x25d58b8",
+    "diagnostic": "linkToObserver<IHuiButton> (huiid::Mixer::Ch<2>::cue(), this)"
+  },
+  {
+    "instruction": "6c865c",
+    "string_address": "0x25d58f8",
+    "diagnostic": "linkToObserver<IHuiSlider> (huiid::Mixer::Ch<2>::fader(), this)"
+  },
+  {
+    "instruction": "6c8728",
+    "string_address": "0x25d5938",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<3>::trim(), this)"
+  },
+  {
+    "instruction": "6c87f4",
+    "string_address": "0x25d5978",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<3>::eqIsoHi(), this)"
+  },
+  {
+    "instruction": "6c88c0",
+    "string_address": "0x25d59b8",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<3>::eqIsoMid(), this)"
+  },
+  {
+    "instruction": "6c898c",
+    "string_address": "0x25d5a00",
+    "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<3>::eqIsoLow(), this)"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "before": {
+    "grid_row_colors": {
+      "(0, 0, 0)": 167,
+      "(255, 0, 0)": 8
+    }
+  },
+  "linear": {
+    "grid_row_colors": {
+      "(0, 0, 0)": 160,
+      "(42, 0, 0)": 3,
+      "(212, 0, 0)": 3,
+      "(128, 0, 0)": 3,
+      "(127, 0, 0)": 2,
+      "(213, 0, 0)": 2,
+      "(43, 0, 0)": 2
+    }
+  },
+  "restored": {
+    "grid_row_colors": {
+      "(0, 0, 0)": 167,
+      "(255, 0, 0)": 8
+    }
+  },
+  "scope": "Frozen ended-track grid; x270..445/y150. Static filter A/B/A, not playback cadence."
+}

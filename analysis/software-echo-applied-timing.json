@@ -1,0 +1,1207 @@
+{
+  "scope": "Applied shared software Echo; no native AZ audio or physical validation",
+  "rows": [
+    {
+      "bpm100": 0,
+      "requested_beat": 0,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 0,
+      "echo_beat": 0,
+      "time_ms": 94,
+      "delay_samples": 4145
+    },
+    {
+      "bpm100": 0,
+      "requested_beat": 1,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 1,
+      "echo_beat": 1,
+      "time_ms": 188,
+      "delay_samples": 8291
+    },
+    {
+      "bpm100": 0,
+      "requested_beat": 2,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 2,
+      "echo_beat": 2,
+      "time_ms": 375,
+      "delay_samples": 16538
+    },
+    {
+      "bpm100": 0,
+      "requested_beat": 3,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 3,
+      "echo_beat": 3,
+      "time_ms": 750,
+      "delay_samples": 33075
+    },
+    {
+      "bpm100": 0,
+      "requested_beat": 4,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 4,
+      "echo_beat": 4,
+      "time_ms": 1125,
+      "delay_samples": 49613
+    },
+    {
+      "bpm100": 0,
+      "requested_beat": 5,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 1500,
+      "delay_samples": 66150
+    },
+    {
+      "bpm100": 0,
+      "requested_beat": 6,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 0,
+      "requested_beat": 7,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 0,
+      "requested_beat": 8,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 0,
+      "requested_beat": 9,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 0,
+      "requested_beat": 10,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 0,
+      "requested_beat": 11,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 1,
+      "requested_beat": 0,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 0,
+      "echo_beat": 0,
+      "time_ms": 94,
+      "delay_samples": 4145
+    },
+    {
+      "bpm100": 1,
+      "requested_beat": 1,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 1,
+      "echo_beat": 1,
+      "time_ms": 188,
+      "delay_samples": 8291
+    },
+    {
+      "bpm100": 1,
+      "requested_beat": 2,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 2,
+      "echo_beat": 2,
+      "time_ms": 375,
+      "delay_samples": 16538
+    },
+    {
+      "bpm100": 1,
+      "requested_beat": 3,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 3,
+      "echo_beat": 3,
+      "time_ms": 750,
+      "delay_samples": 33075
+    },
+    {
+      "bpm100": 1,
+      "requested_beat": 4,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 4,
+      "echo_beat": 4,
+      "time_ms": 1125,
+      "delay_samples": 49613
+    },
+    {
+      "bpm100": 1,
+      "requested_beat": 5,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 1500,
+      "delay_samples": 66150
+    },
+    {
+      "bpm100": 1,
+      "requested_beat": 6,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 1,
+      "requested_beat": 7,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 1,
+      "requested_beat": 8,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 1,
+      "requested_beat": 9,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 1,
+      "requested_beat": 10,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 1,
+      "requested_beat": 11,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 3999,
+      "requested_beat": 0,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 0,
+      "echo_beat": 0,
+      "time_ms": 94,
+      "delay_samples": 4145
+    },
+    {
+      "bpm100": 3999,
+      "requested_beat": 1,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 1,
+      "echo_beat": 1,
+      "time_ms": 188,
+      "delay_samples": 8291
+    },
+    {
+      "bpm100": 3999,
+      "requested_beat": 2,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 2,
+      "echo_beat": 2,
+      "time_ms": 375,
+      "delay_samples": 16538
+    },
+    {
+      "bpm100": 3999,
+      "requested_beat": 3,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 3,
+      "echo_beat": 3,
+      "time_ms": 750,
+      "delay_samples": 33075
+    },
+    {
+      "bpm100": 3999,
+      "requested_beat": 4,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 4,
+      "echo_beat": 4,
+      "time_ms": 1125,
+      "delay_samples": 49613
+    },
+    {
+      "bpm100": 3999,
+      "requested_beat": 5,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 1500,
+      "delay_samples": 66150
+    },
+    {
+      "bpm100": 3999,
+      "requested_beat": 6,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 3999,
+      "requested_beat": 7,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 3999,
+      "requested_beat": 8,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 3999,
+      "requested_beat": 9,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 3999,
+      "requested_beat": 10,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 3999,
+      "requested_beat": 11,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 4000,
+      "requested_beat": 0,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 0,
+      "echo_beat": 0,
+      "time_ms": 94,
+      "delay_samples": 4145
+    },
+    {
+      "bpm100": 4000,
+      "requested_beat": 1,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 1,
+      "echo_beat": 1,
+      "time_ms": 188,
+      "delay_samples": 8291
+    },
+    {
+      "bpm100": 4000,
+      "requested_beat": 2,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 2,
+      "echo_beat": 2,
+      "time_ms": 375,
+      "delay_samples": 16538
+    },
+    {
+      "bpm100": 4000,
+      "requested_beat": 3,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 3,
+      "echo_beat": 3,
+      "time_ms": 750,
+      "delay_samples": 33075
+    },
+    {
+      "bpm100": 4000,
+      "requested_beat": 4,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 4,
+      "echo_beat": 4,
+      "time_ms": 1125,
+      "delay_samples": 49613
+    },
+    {
+      "bpm100": 4000,
+      "requested_beat": 5,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 1500,
+      "delay_samples": 66150
+    },
+    {
+      "bpm100": 4000,
+      "requested_beat": 6,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 4000,
+      "requested_beat": 7,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 4000,
+      "requested_beat": 8,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 4000,
+      "requested_beat": 9,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 4000,
+      "requested_beat": 10,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 4000,
+      "requested_beat": 11,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 4001,
+      "requested_beat": 0,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 0,
+      "echo_beat": 0,
+      "time_ms": 94,
+      "delay_samples": 4145
+    },
+    {
+      "bpm100": 4001,
+      "requested_beat": 1,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 1,
+      "echo_beat": 1,
+      "time_ms": 188,
+      "delay_samples": 8291
+    },
+    {
+      "bpm100": 4001,
+      "requested_beat": 2,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 2,
+      "echo_beat": 2,
+      "time_ms": 375,
+      "delay_samples": 16538
+    },
+    {
+      "bpm100": 4001,
+      "requested_beat": 3,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 3,
+      "echo_beat": 3,
+      "time_ms": 750,
+      "delay_samples": 33075
+    },
+    {
+      "bpm100": 4001,
+      "requested_beat": 4,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 4,
+      "echo_beat": 4,
+      "time_ms": 1125,
+      "delay_samples": 49613
+    },
+    {
+      "bpm100": 4001,
+      "requested_beat": 5,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 1500,
+      "delay_samples": 66150
+    },
+    {
+      "bpm100": 4001,
+      "requested_beat": 6,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 4001,
+      "requested_beat": 7,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 4001,
+      "requested_beat": 8,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 4001,
+      "requested_beat": 9,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 4001,
+      "requested_beat": 10,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 4001,
+      "requested_beat": 11,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 3000,
+      "delay_samples": 132300
+    },
+    {
+      "bpm100": 12000,
+      "requested_beat": 0,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 0,
+      "echo_beat": 0,
+      "time_ms": 31,
+      "delay_samples": 1367
+    },
+    {
+      "bpm100": 12000,
+      "requested_beat": 1,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 1,
+      "echo_beat": 1,
+      "time_ms": 63,
+      "delay_samples": 2778
+    },
+    {
+      "bpm100": 12000,
+      "requested_beat": 2,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 2,
+      "echo_beat": 2,
+      "time_ms": 125,
+      "delay_samples": 5513
+    },
+    {
+      "bpm100": 12000,
+      "requested_beat": 3,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 3,
+      "echo_beat": 3,
+      "time_ms": 250,
+      "delay_samples": 11025
+    },
+    {
+      "bpm100": 12000,
+      "requested_beat": 4,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 4,
+      "echo_beat": 4,
+      "time_ms": 375,
+      "delay_samples": 16538
+    },
+    {
+      "bpm100": 12000,
+      "requested_beat": 5,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    },
+    {
+      "bpm100": 12000,
+      "requested_beat": 6,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 1000,
+      "delay_samples": 44100
+    },
+    {
+      "bpm100": 12000,
+      "requested_beat": 7,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 7,
+      "echo_beat": 7,
+      "time_ms": 2000,
+      "delay_samples": 88200
+    },
+    {
+      "bpm100": 12000,
+      "requested_beat": 8,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 8,
+      "echo_beat": 8,
+      "time_ms": 4000,
+      "delay_samples": 176400
+    },
+    {
+      "bpm100": 12000,
+      "requested_beat": 9,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 8,
+      "echo_beat": 8,
+      "time_ms": 4000,
+      "delay_samples": 176400
+    },
+    {
+      "bpm100": 12000,
+      "requested_beat": 10,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 8,
+      "echo_beat": 8,
+      "time_ms": 4000,
+      "delay_samples": 176400
+    },
+    {
+      "bpm100": 12000,
+      "requested_beat": 11,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 8,
+      "echo_beat": 8,
+      "time_ms": 4000,
+      "delay_samples": 176400
+    },
+    {
+      "bpm100": 12800,
+      "requested_beat": 0,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 0,
+      "echo_beat": 0,
+      "time_ms": 29,
+      "delay_samples": 1279
+    },
+    {
+      "bpm100": 12800,
+      "requested_beat": 1,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 1,
+      "echo_beat": 1,
+      "time_ms": 59,
+      "delay_samples": 2602
+    },
+    {
+      "bpm100": 12800,
+      "requested_beat": 2,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 2,
+      "echo_beat": 2,
+      "time_ms": 117,
+      "delay_samples": 5160
+    },
+    {
+      "bpm100": 12800,
+      "requested_beat": 3,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 3,
+      "echo_beat": 3,
+      "time_ms": 234,
+      "delay_samples": 10319
+    },
+    {
+      "bpm100": 12800,
+      "requested_beat": 4,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 4,
+      "echo_beat": 4,
+      "time_ms": 351,
+      "delay_samples": 15479
+    },
+    {
+      "bpm100": 12800,
+      "requested_beat": 5,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 468,
+      "delay_samples": 20639
+    },
+    {
+      "bpm100": 12800,
+      "requested_beat": 6,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 936,
+      "delay_samples": 41278
+    },
+    {
+      "bpm100": 12800,
+      "requested_beat": 7,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 7,
+      "echo_beat": 7,
+      "time_ms": 1872,
+      "delay_samples": 82555
+    },
+    {
+      "bpm100": 12800,
+      "requested_beat": 8,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 8,
+      "echo_beat": 8,
+      "time_ms": 3744,
+      "delay_samples": 165110
+    },
+    {
+      "bpm100": 12800,
+      "requested_beat": 9,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 8,
+      "echo_beat": 8,
+      "time_ms": 3744,
+      "delay_samples": 165110
+    },
+    {
+      "bpm100": 12800,
+      "requested_beat": 10,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 8,
+      "echo_beat": 8,
+      "time_ms": 3744,
+      "delay_samples": 165110
+    },
+    {
+      "bpm100": 12800,
+      "requested_beat": 11,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 8,
+      "echo_beat": 8,
+      "time_ms": 3744,
+      "delay_samples": 165110
+    },
+    {
+      "bpm100": 99999,
+      "requested_beat": 0,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 0,
+      "echo_beat": 0,
+      "time_ms": 4,
+      "delay_samples": 176
+    },
+    {
+      "bpm100": 99999,
+      "requested_beat": 1,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 1,
+      "echo_beat": 1,
+      "time_ms": 8,
+      "delay_samples": 353
+    },
+    {
+      "bpm100": 99999,
+      "requested_beat": 2,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 2,
+      "echo_beat": 2,
+      "time_ms": 15,
+      "delay_samples": 662
+    },
+    {
+      "bpm100": 99999,
+      "requested_beat": 3,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 3,
+      "echo_beat": 3,
+      "time_ms": 30,
+      "delay_samples": 1323
+    },
+    {
+      "bpm100": 99999,
+      "requested_beat": 4,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 4,
+      "echo_beat": 4,
+      "time_ms": 45,
+      "delay_samples": 1985
+    },
+    {
+      "bpm100": 99999,
+      "requested_beat": 5,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 60,
+      "delay_samples": 2646
+    },
+    {
+      "bpm100": 99999,
+      "requested_beat": 6,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 120,
+      "delay_samples": 5292
+    },
+    {
+      "bpm100": 99999,
+      "requested_beat": 7,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 7,
+      "echo_beat": 7,
+      "time_ms": 240,
+      "delay_samples": 10584
+    },
+    {
+      "bpm100": 99999,
+      "requested_beat": 8,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 8,
+      "echo_beat": 8,
+      "time_ms": 480,
+      "delay_samples": 21168
+    },
+    {
+      "bpm100": 99999,
+      "requested_beat": 9,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 9,
+      "echo_beat": 9,
+      "time_ms": 960,
+      "delay_samples": 42336
+    },
+    {
+      "bpm100": 99999,
+      "requested_beat": 10,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 9,
+      "echo_beat": 9,
+      "time_ms": 960,
+      "delay_samples": 42336
+    },
+    {
+      "bpm100": 99999,
+      "requested_beat": 11,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 9,
+      "echo_beat": 9,
+      "time_ms": 960,
+      "delay_samples": 42336
+    },
+    {
+      "bpm100": 100000,
+      "requested_beat": 0,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 0,
+      "echo_beat": 0,
+      "time_ms": 4,
+      "delay_samples": 176
+    },
+    {
+      "bpm100": 100000,
+      "requested_beat": 1,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 1,
+      "echo_beat": 1,
+      "time_ms": 8,
+      "delay_samples": 353
+    },
+    {
+      "bpm100": 100000,
+      "requested_beat": 2,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 2,
+      "echo_beat": 2,
+      "time_ms": 15,
+      "delay_samples": 662
+    },
+    {
+      "bpm100": 100000,
+      "requested_beat": 3,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 3,
+      "echo_beat": 3,
+      "time_ms": 30,
+      "delay_samples": 1323
+    },
+    {
+      "bpm100": 100000,
+      "requested_beat": 4,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 4,
+      "echo_beat": 4,
+      "time_ms": 45,
+      "delay_samples": 1985
+    },
+    {
+      "bpm100": 100000,
+      "requested_beat": 5,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 60,
+      "delay_samples": 2646
+    },
+    {
+      "bpm100": 100000,
+      "requested_beat": 6,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 6,
+      "echo_beat": 6,
+      "time_ms": 120,
+      "delay_samples": 5292
+    },
+    {
+      "bpm100": 100000,
+      "requested_beat": 7,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 7,
+      "echo_beat": 7,
+      "time_ms": 240,
+      "delay_samples": 10584
+    },
+    {
+      "bpm100": 100000,
+      "requested_beat": 8,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 8,
+      "echo_beat": 8,
+      "time_ms": 480,
+      "delay_samples": 21168
+    },
+    {
+      "bpm100": 100000,
+      "requested_beat": 9,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 9,
+      "echo_beat": 9,
+      "time_ms": 960,
+      "delay_samples": 42336
+    },
+    {
+      "bpm100": 100000,
+      "requested_beat": 10,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 9,
+      "echo_beat": 9,
+      "time_ms": 960,
+      "delay_samples": 42336
+    },
+    {
+      "bpm100": 100000,
+      "requested_beat": 11,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 9,
+      "echo_beat": 9,
+      "time_ms": 960,
+      "delay_samples": 42336
+    },
+    {
+      "bpm100": 4294967295,
+      "requested_beat": 0,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    },
+    {
+      "bpm100": 4294967295,
+      "requested_beat": 1,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    },
+    {
+      "bpm100": 4294967295,
+      "requested_beat": 2,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    },
+    {
+      "bpm100": 4294967295,
+      "requested_beat": 3,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    },
+    {
+      "bpm100": 4294967295,
+      "requested_beat": 4,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    },
+    {
+      "bpm100": 4294967295,
+      "requested_beat": 5,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    },
+    {
+      "bpm100": 4294967295,
+      "requested_beat": 6,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    },
+    {
+      "bpm100": 4294967295,
+      "requested_beat": 7,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    },
+    {
+      "bpm100": 4294967295,
+      "requested_beat": 8,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    },
+    {
+      "bpm100": 4294967295,
+      "requested_beat": 9,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    },
+    {
+      "bpm100": 4294967295,
+      "requested_beat": 10,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    },
+    {
+      "bpm100": 4294967295,
+      "requested_beat": 11,
+      "active": 5,
+      "phase": 0,
+      "manager_beat": 5,
+      "echo_beat": 5,
+      "time_ms": 500,
+      "delay_samples": 22050
+    }
+  ],
+  "persistent_stress_blocks": 20000,
+  "next": "Publish applied timing rather than echoing requested E1 beat into AZ feedback"
+}

@@ -1,0 +1,426 @@
+{
+  "sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Static RTTI and contiguous executable-pointer candidates; slot semantics and runtime ownership require tracing.",
+  "classes": [
+    {
+      "type": "gui::browse::SearchView",
+      "typeinfo": "0x29dae60",
+      "tables": [
+        {
+          "address_point": "0x29daee8",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x19bee78",
+            "0x19bf4b8",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x19bfbb0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x248cda0",
+            "0x248ce20",
+            "0x24825c0",
+            "0x249daf0",
+            "0x242cfc0",
+            "0x24ac3a0",
+            "0x242ed80",
+            "0x242cfd0",
+            "0x246d5c0",
+            "0x242cfc0",
+            "0x242cfc0",
+            "0x2482ca0",
+            "0x242cfc0",
+            "0x2433150",
+            "0x242cfc0",
+            "0x24861f0",
+            "0x242efc0",
+            "0x242d0a0",
+            "0x21c81c0",
+            "0x242d000",
+            "0x242d010",
+            "0x242d020",
+            "0x242cff0"
+          ]
+        },
+        {
+          "address_point": "0x29db1e8",
+          "offset_to_top": "0xffffffffffffff30",
+          "functions": [
+            "0x19bf4a0",
+            "0x19bf5d0"
+          ]
+        },
+        {
+          "address_point": "0x29db208",
+          "offset_to_top": "0xfffffffffffffef8",
+          "functions": [
+            "0x19bf498",
+            "0x19bf5a0",
+            "0x197b300"
+          ]
+        },
+        {
+          "address_point": "0x29db230",
+          "offset_to_top": "0xfffffffffffffee8",
+          "functions": [
+            "0x19bf490",
+            "0x19bf600",
+            "0x197bd28",
+            "0x197ad78"
+          ]
+        },
+        {
+          "address_point": "0x29db260",
+          "offset_to_top": "0xfffffffffffffed8",
+          "functions": [
+            "0x19a5b20"
+          ]
+        },
+        {
+          "address_point": "0x29db278",
+          "offset_to_top": "0xfffffffffffffbe8",
+          "functions": [
+            "0x19ab5c0",
+            "0x19ab408"
+          ]
+        },
+        {
+          "address_point": "0x29db298",
+          "offset_to_top": "0xfffffffffffffbe0",
+          "functions": [
+            "0x19aaa28",
+            "0x19af370"
+          ]
+        },
+        {
+          "address_point": "0x29db2b8",
+          "offset_to_top": "0xfffffffffffffbd8",
+          "functions": [
+            "0x19ac048"
+          ]
+        },
+        {
+          "address_point": "0x29db2d0",
+          "offset_to_top": "0xfffffffffffffbd0",
+          "functions": [
+            "0x19aa2c0",
+            "0x19aa088",
+            "0x19c06a8",
+            "0x19aa1b8",
+            "0x19aa108",
+            "0x19a9df0",
+            "0x19a9ec0",
+            "0x19a9de0"
+          ]
+        },
+        {
+          "address_point": "0x29db320",
+          "offset_to_top": "0xfffffffffffffbc8",
+          "functions": [
+            "0x19ab000"
+          ]
+        },
+        {
+          "address_point": "0x29db338",
+          "offset_to_top": "0xfffffffffffffbc0",
+          "functions": [
+            "0x19bfa80",
+            "0x19aa950",
+            "0x19aa958",
+            "0x19aa3e8"
+          ]
+        },
+        {
+          "address_point": "0x29db368",
+          "offset_to_top": "0xfffffffffffffbb8",
+          "functions": [
+            "0x19aa308",
+            "0x19aa0b0"
+          ]
+        },
+        {
+          "address_point": "0x29db388",
+          "offset_to_top": "0xfffffffffffffbb0",
+          "functions": [
+            "0x19ac140"
+          ]
+        },
+        {
+          "address_point": "0x29db3a0",
+          "offset_to_top": "0xfffffffffffffba8",
+          "functions": [
+            "0x19ab540"
+          ]
+        },
+        {
+          "address_point": "0x29db3b8",
+          "offset_to_top": "0xfffffffffffffba0",
+          "functions": [
+            "0x19c0198",
+            "0x19a9ed0"
+          ]
+        },
+        {
+          "address_point": "0x29db3d8",
+          "offset_to_top": "0xfffffffffffffb98",
+          "functions": [
+            "0x19ac050"
+          ]
+        },
+        {
+          "address_point": "0x29db3f0",
+          "offset_to_top": "0xfffffffffffffb90",
+          "functions": [
+            "0x19bf488",
+            "0x19bf4e0",
+            "0x19a9dd8",
+            "0x19aa330"
+          ]
+        },
+        {
+          "address_point": "0x29db420",
+          "offset_to_top": "0xfffffffffffffb88",
+          "functions": [
+            "0x19bf480",
+            "0x19bf570",
+            "0x19af498",
+            "0xa15670",
+            "0x19aa778"
+          ]
+        },
+        {
+          "address_point": "0x29db458",
+          "offset_to_top": "0xfffffffffffffb78",
+          "functions": [
+            "0x19bf478",
+            "0x19bf540",
+            "0x19aa0d8",
+            "0x19af330",
+            "0x19af338",
+            "0x19af340"
+          ]
+        },
+        {
+          "address_point": "0x29db498",
+          "offset_to_top": "0xffffffffffffe900",
+          "functions": [
+            "0x19bf4a8",
+            "0x19bf510",
+            "0x19bcf40",
+            "0x19b8cb0"
+          ]
+        },
+        {
+          "address_point": "0x29db4c8",
+          "offset_to_top": "0xffffffffffffe8f8",
+          "functions": [
+            "0x19bcf68",
+            "0x19bcf80"
+          ]
+        },
+        {
+          "address_point": "0x29db4e8",
+          "offset_to_top": "0xffffffffffffe8f0",
+          "functions": [
+            "0x19bcfc0"
+          ]
+        },
+        {
+          "address_point": "0x29db500",
+          "offset_to_top": "0xffffffffffffe8e8",
+          "functions": [
+            "0x19c01e0"
+          ]
+        },
+        {
+          "address_point": "0x29db518",
+          "offset_to_top": "0xffffffffffffe8e0",
+          "functions": [
+            "0x19bd488"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "gui::browse::BrowseListView",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "gui::source_select::IBrowseSourceSelectListener",
+          "offset_flags": "0x170002"
+        },
+        {
+          "type": "gui::ISoftwareKeyboard::IListener",
+          "offset_flags": "0x170802"
+        },
+        {
+          "type": "gui::status_area::ISearchTextChangedNotify::IListener",
+          "offset_flags": "0x171002"
+        },
+        {
+          "type": "gui::status_area::ISearchBarNotify::IListener",
+          "offset_flags": "0x171802"
+        },
+        {
+          "type": "gui::status_area::ISearchStartButtonNotify::IListener",
+          "offset_flags": "0x172002"
+        }
+      ]
+    },
+    {
+      "type": "gui::BrowseMenuWidgetController",
+      "typeinfo": "0x2b44b90",
+      "tables": [
+        {
+          "address_point": "0x2b44be8",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x1b5ca80",
+            "0x1b5ce30",
+            "0x1b5bb90",
+            "0x19af330",
+            "0x19af338",
+            "0x19af340",
+            "0x1b59f48",
+            "0x1b5ba00"
+          ]
+        },
+        {
+          "address_point": "0x2b44c38",
+          "offset_to_top": "0xfffffffffffffff8",
+          "functions": [
+            "0x1b5a040"
+          ]
+        },
+        {
+          "address_point": "0x2b44c50",
+          "offset_to_top": "0xfffffffffffffff0",
+          "functions": [
+            "0x1b5bab0"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "gui::ToggleImagesButton::Listener",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "gui::browse::IBrowseMenuChecker::IListener",
+          "offset_flags": "0x802"
+        },
+        {
+          "type": "gui::OkCancelPopupWidget::IListener",
+          "offset_flags": "0x1002"
+        }
+      ]
+    },
+    {
+      "type": "gui::status_area::browse::NormalSearchBarWidgetController",
+      "typeinfo": "0x2c4f330",
+      "tables": [
+        {
+          "address_point": "0x2c4f378",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x1c6b7d8",
+            "0x1c6b7e0",
+            "0x1c6b9a0",
+            "0x19af330",
+            "0x19af338",
+            "0x1c6c240",
+            "0x1c6b810",
+            "0x1c6b8b8"
+          ]
+        },
+        {
+          "address_point": "0x2c4f3c8",
+          "offset_to_top": "0xfffffffffffffff8",
+          "functions": [
+            "0x1c6b968",
+            "0x1c6b970",
+            "0x1c6b8b0",
+            "0x1a2bab0",
+            "0x1a2bab8",
+            "0x1c6ba20"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "gui::ToggleImagesButton::Listener",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "juce::TextEditor::Listener",
+          "offset_flags": "0x802"
+        }
+      ]
+    },
+    {
+      "type": "gui::status_area::browse::SearchBarWidgetController",
+      "typeinfo": "0x2c4f7c8",
+      "tables": [
+        {
+          "address_point": "0x2c4f7f0",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x1c6c620",
+            "0x1c6c640",
+            "0x1c6c660",
+            "0x1c6c598"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "gui::status_area::browse::SearchTracksBarWidgetController",
+      "typeinfo": "0x2c50f00",
+      "tables": [
+        {
+          "address_point": "0x2c50f28",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x1c6dc50",
+            "0x1c6dc90",
+            "0x1c6e1a0",
+            "0x19af330",
+            "0x19af338",
+            "0x1c6c240",
+            "0x1c6dcd8",
+            "0x1c6b8b8"
+          ]
+        },
+        {
+          "address_point": "0x2c50f78",
+          "offset_to_top": "0xfffffffffffffff8",
+          "functions": [
+            "0x1c6dd10",
+            "0x1c6dd58",
+            "0x1c6dda8",
+            "0x1a2bab0",
+            "0x1a2bab8",
+            "0x1c6ba20"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "gui::browser_logic::KeywordSearchFacade",
+      "typeinfo": "0x2dbc460",
+      "tables": [
+        {
+          "address_point": "0x2dbc488",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x1eef988",
+            "0x1eef758",
+            "0x1eefbb8"
+          ]
+        }
+      ]
+    }
+  ]
+}

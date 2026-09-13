@@ -1,0 +1,24 @@
+{
+  "alive_at_capture": true,
+  "duration_seconds": 30,
+  "usb_reader_blocks": 242,
+  "mount_progress_blocks": 0,
+  "pcs": {
+    "00000000021b9b90": 13,
+    "00000000021b9bcc": 13,
+    "00000000021b9bd4": 13,
+    "00000000021b9be0": 13,
+    "00000000021b9be8": 1,
+    "00000000021b9bf0": 1,
+    "00000000021b9c18": 2,
+    "00000000021b9c2c": 52,
+    "00000000021b9c40": 52,
+    "00000000021b9c4c": 1,
+    "00000000021b9c54": 52,
+    "00000000021b9c5c": 1,
+    "00000000021b9c64": 13,
+    "00000000021b9c6c": 13,
+    "00000000021b9c08": 2
+  },
+  "scope": "SOURCE screen only; no browser navigation or load press. Trace sees known USB reader, but not targeted MountProgress path."
+}

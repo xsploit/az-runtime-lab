@@ -1,0 +1,174 @@
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000dd3d08:
+ 11b14a0:      	lsl	x1, x19, #3
+ 11b14a4:      	ldr	x2, [x2, #0x50]
+ 11b14a8:      	str	w0, [x22, x1]
+ 11b14ac:      	mov	x0, x20
+ 11b14b0:      	blr	x2
+ 11b14b4:      	ldr	x2, [x20]
+ 11b14b8:      	add	x1, x19, x19, lsl #3
+ 11b14bc:      	ldr	x2, [x2, #0x58]
+ 11b14c0:      	str	w0, [x25, x1, lsl #2]
+ 11b14c4:      	mov	x0, x20
+ 11b14c8:      	blr	x2
+ 11b14cc:      	lsl	x1, x19, #3
+ 11b14d0:      	add	x3, x1, x19
+ 11b14d4:      	lsl	x4, x3, #2
+ 11b14d8:      	ldr	w1, [x22, x1]
+ 11b14dc:      	add	x2, x23, x4
+ 11b14e0:      	str	w0, [x26, x3, lsl #2]
+ 11b14e4:      	sub	w1, w1, #0x1
+
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000dd3d08:
+ 11b1ec8:      	str	w0, [sp, #0x84]
+ 11b1ecc:      	mov	x8, x21
+ 11b1ed0:      	mov	x0, x1
+ 11b1ed4:      	ldr	x1, [x1]
+ 11b1ed8:      	ldr	x1, [x1, #0x50]
+ 11b1edc:      	blr	x1
+ 11b1ee0:      	ldr	x1, [x19]
+ 11b1ee4:      	mov	x0, x1
+ 11b1ee8:      	ldr	x1, [x1]
+ 11b1eec:      	ldr	x1, [x1, #0x58]
+ 11b1ef0:      	blr	x1
+ 11b1ef4:      	ldr	x1, [x19]
+ 11b1ef8:      	str	w0, [sp, #0x88]
+ 11b1efc:      	lsr	w0, w0, #16
+ 11b1f00:      	strh	w0, [sp, #0x8e]
+ 11b1f04:      	and	w0, w0, #0xffff
+ 11b1f08:      	str	w0, [sp, #0x80]
+ 11b1f0c:      	mov	x0, x1
+
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000dd3d08:
+ 11b278c:      	blr	x1
+ 11b2790:      	ldr	x1, [x19]
+ 11b2794:      	and	w21, w0, #0xff
+ 11b2798:      	add	x8, sp, #0xe0
+ 11b279c:      	mov	x0, x19
+ 11b27a0:      	ldr	x1, [x1, #0x50]
+ 11b27a4:      	blr	x1
+ 11b27a8:      	ldr	x1, [x19]
+ 11b27ac:      	mov	x0, x19
+ 11b27b0:      	ldr	x1, [x1, #0x58]
+ 11b27b4:      	blr	x1
+ 11b27b8:      	ldr	x1, [x19]
+ 11b27bc:      	str	w0, [sp, #0x78]
+ 11b27c0:      	lsr	w0, w0, #16
+ 11b27c4:      	strh	w0, [sp, #0x7e]
+ 11b27c8:      	and	w0, w0, #0xffff
+ 11b27cc:      	str	w0, [sp, #0x74]
+ 11b27d0:      	ldr	x1, [x1, #0x60]
+
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000dd3d08:
+ 13e4180:      	stp	x22, x22, [x2, #0x58]
+ 13e4184:      	b.ne	0x13e4d0c
+ 13e4188:      	mov	x0, #0xda80             // =55936
+ 13e418c:      	movk	x0, #0x5ea0, lsl #16
+ 13e4190:      	str	x0, [x20, #0x268]
+ 13e4194:      	ldr	x3, [x3, #0x58]
+ 13e4198:      	str	d9, [x20, #0x270]
+ 13e419c:      	str	x21, [x20, #0x278]
+ 13e41a0:      	mov	w1, #0x5                // =5
+ 13e41a4:      	mov	x0, x21
+ 13e41a8:      	blr	x3
+ 13e41ac:      	str	w0, [x20, #0x280]
+ 13e41b0:      	mov	x1, #0x7fffffffffffffff // =9223372036854775807
+ 13e41b4:      	str	x23, [x20, #0x288]
+ 13e41b8:      	str	xzr, [x20, #0x290]
+ 13e41bc:      	str	wzr, [x19, #0x98]
+ 13e41c0:      	str	x1, [x20, #0x2a0]
+ 13e41c4:      	str	xzr, [x20, #0x2a8]
+
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000dd3d08:
+ 13e41f0:      	cmp	x1, x28
+ 13e41f4:      	b.ne	0x13e4d20
+ 13e41f8:      	mov	x0, #0xda80             // =55936
+ 13e41fc:      	movk	x0, #0x5ea0, lsl #16
+ 13e4200:      	str	x0, [x20, #0x2f0]
+ 13e4204:      	ldr	x3, [x3, #0x58]
+ 13e4208:      	str	d9, [x20, #0x2f8]
+ 13e420c:      	str	x21, [x20, #0x300]
+ 13e4210:      	mov	w1, #0x5                // =5
+ 13e4214:      	mov	x0, x21
+ 13e4218:      	blr	x3
+ 13e421c:      	str	w0, [x20, #0x308]
+ 13e4220:      	add	x0, x20, #0x200
+ 13e4224:      	mov	x2, #0x7fffffffffffffff // =9223372036854775807
+ 13e4228:      	str	x23, [x20, #0x310]
+ 13e422c:      	str	xzr, [x20, #0x318]
+ 13e4230:      	adrp	x3, 0x3b48000
+ 13e4234:      	str	wzr, [x20, #0x320]
+
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000dd3d08:
+ 13e430c:      	stp	d8, d8, [x19, #0xf8]
+ 13e4310:      	b.ne	0x13e47e4
+ 13e4314:      	mov	x0, #0xda80             // =55936
+ 13e4318:      	movk	x0, #0x5ea0, lsl #16
+ 13e431c:      	str	x0, [x19, #0x108]
+ 13e4320:      	ldr	x3, [x3, #0x58]
+ 13e4324:      	str	d9, [x19, #0x110]
+ 13e4328:      	str	x21, [x19, #0x118]
+ 13e432c:      	mov	w1, #0x5                // =5
+ 13e4330:      	mov	x0, x21
+ 13e4334:      	blr	x3
+ 13e4338:      	add	x25, x19, #0x200
+ 13e433c:      	add	x1, x19, #0x148
+ 13e4340:      	mov	x2, #0x7fffffffffffffff // =9223372036854775807
+ 13e4344:      	str	w0, [x19, #0x120]
+ 13e4348:      	stp	x23, xzr, [x19, #0x128]
+ 13e434c:      	add	x0, x19, #0x170
+ 13e4350:      	str	wzr, [x19, #0x138]
+
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000dd3d08:
+ 13e437c:      	cmp	x1, x28
+ 13e4380:      	b.ne	0x13e47d0
+ 13e4384:      	mov	x0, #0xda80             // =55936
+ 13e4388:      	movk	x0, #0x5ea0, lsl #16
+ 13e438c:      	str	x0, [x19, #0x190]
+ 13e4390:      	ldr	x3, [x3, #0x58]
+ 13e4394:      	str	d9, [x19, #0x198]
+ 13e4398:      	str	x21, [x19, #0x1a0]
+ 13e439c:      	mov	w1, #0x5                // =5
+ 13e43a0:      	mov	x0, x21
+ 13e43a4:      	blr	x3
+ 13e43a8:      	str	w0, [x19, #0x1a8]
+ 13e43ac:      	mov	x0, #0x7fffffffffffffff // =9223372036854775807
+ 13e43b0:      	stp	x23, xzr, [x19, #0x1b0]
+ 13e43b4:      	stur	wzr, [x25, #-0x40]
+ 13e43b8:      	ldr	x25, [x22]
+ 13e43bc:      	str	x19, [x22]
+ 13e43c0:      	stp	x0, xzr, [x19, #0x1c8]

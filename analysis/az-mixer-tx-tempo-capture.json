@@ -1,0 +1,607 @@
+{
+  "frames": 32768,
+  "invalid_checksum_indices": [],
+  "availability_masks": {
+    "00": 32736,
+    "10": 7,
+    "e0": 1,
+    "01": 24
+  },
+  "byte_change_counts": {
+    "10": 2,
+    "104": 92,
+    "105": 92,
+    "11": 2,
+    "13": 2,
+    "8": 2,
+    "17": 1,
+    "18": 2,
+    "27": 2,
+    "26": 11,
+    "28": 9,
+    "0": 1,
+    "39": 63,
+    "40": 14,
+    "41": 14,
+    "42": 6,
+    "43": 6,
+    "44": 14,
+    "45": 14,
+    "52": 2,
+    "53": 2,
+    "54": 2,
+    "55": 2,
+    "56": 2,
+    "57": 2,
+    "64": 2,
+    "65": 2,
+    "66": 2,
+    "67": 2,
+    "68": 2,
+    "69": 2,
+    "76": 2,
+    "77": 2,
+    "78": 2,
+    "79": 2,
+    "80": 2,
+    "81": 2,
+    "48": 10,
+    "88": 48,
+    "89": 48
+  },
+  "updates": [
+    {
+      "frame_index": 4465,
+      "mask": "10",
+      "words": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        [
+          4294967295,
+          10000,
+          0
+        ],
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 4466,
+      "mask": "e0",
+      "words": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        [
+          4294967295,
+          10000,
+          0
+        ],
+        [
+          4294967295,
+          10000,
+          0
+        ],
+        [
+          4294967295,
+          10000,
+          0
+        ]
+      ]
+    },
+    {
+      "frame_index": 14320,
+      "mask": "10",
+      "words": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        [
+          4294967295,
+          10510,
+          0
+        ],
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 14878,
+      "mask": "10",
+      "words": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        [
+          4294967295,
+          10510,
+          6
+        ],
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 15833,
+      "mask": "10",
+      "words": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        [
+          15000,
+          10510,
+          6
+        ],
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 20293,
+      "mask": "10",
+      "words": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        [
+          15000,
+          10510,
+          3
+        ],
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 20327,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 20447,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 20571,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 20694,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 20816,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 20940,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 21063,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 21186,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 21309,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 21433,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 21556,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 21681,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 21805,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 21927,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 22049,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 22174,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 22297,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 22421,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 22546,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 22670,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 22794,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 22915,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 23038,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 23163,
+      "mask": "01",
+      "words": [
+        400,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 23381,
+      "mask": "10",
+      "words": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        [
+          15000,
+          10510,
+          17
+        ],
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "frame_index": 28134,
+      "mask": "10",
+      "words": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "records": [
+        [
+          15000,
+          9485,
+          17
+        ],
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "limitation": "Frame indices are not timestamps; diagnostic capture can skip overlapping writes. Numeric fields remain unnamed."
+}

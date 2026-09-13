@@ -1,0 +1,20 @@
+{
+  "frames": 70400,
+  "cue_max_error": 3.714366383911205e-09,
+  "active_difference_rms": 0.056705560850321045,
+  "closed_fader_tail_rms": 0.07307107436315487,
+  "resumed_difference_rms": 0.022501022033415783,
+  "accepted_busy_results": [
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "status": "pass",
+  "scope": "FIFO F1 Space5 postfader, fader closure with source still running, repeated/single Off and resume, Space-Dub transitions; independent cue. PC only."
+}

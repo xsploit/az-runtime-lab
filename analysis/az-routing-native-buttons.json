@@ -1,0 +1,87 @@
+{
+  "scope": "Static identifier initialization + native UI action + typed setting mapping; native thread/lifetime and application object construction must be validated before injection",
+  "CrossFaderAssign": {
+    "controller_vtable": "0x29f6c28",
+    "action_slot3": "0x19f3b10",
+    "update_entry": "0x19f3ff8",
+    "setting_pointer_offset": 40,
+    "buttons": [
+      {
+        "name": "aButton",
+        "identifier": "0x3b864e8",
+        "enum": 0,
+        "tx_raw": 1
+      },
+      {
+        "name": "bButton",
+        "identifier": "0x3b864f0",
+        "enum": 2,
+        "tx_raw": 2
+      },
+      {
+        "name": "thruButton",
+        "identifier": "0x3b864f8",
+        "enum": 1,
+        "tx_raw": 0
+      }
+    ]
+  },
+  "HeadphonesMonoSplit": {
+    "controller_vtable": "0x2a01f60",
+    "action_slot3": "0x1a03a70",
+    "update_entry": "0xaef448",
+    "setting_pointer_offset": 40,
+    "buttons": [
+      {
+        "name": "monoSplitButton",
+        "identifier": "0x3b86630",
+        "enum": 1,
+        "tx_raw": 1
+      },
+      {
+        "name": "stereoButton",
+        "identifier": "0x3b86638",
+        "enum": 0,
+        "tx_raw": 0
+      }
+    ]
+  },
+  "LinkVolume": {
+    "controller_vtable": "0x2a09278",
+    "action_slot3": "0x1a12b20",
+    "update_entry": "0x1a12bf0",
+    "setting_pointer_offset": 40,
+    "buttons": [
+      {
+        "name": "minus9DbButton",
+        "identifier": "0x3b866e0",
+        "enum": 0,
+        "tx_raw": 3,
+        "db": -9
+      },
+      {
+        "name": "minus6DbButton",
+        "identifier": "0x3b866e8",
+        "enum": 1,
+        "tx_raw": 2,
+        "db": -6
+      },
+      {
+        "name": "minus3DbButton",
+        "identifier": "0x3b866f0",
+        "enum": 2,
+        "tx_raw": 1,
+        "db": -3
+      },
+      {
+        "name": "0DbButton",
+        "identifier": "0x3b866f8",
+        "enum": 3,
+        "tx_raw": 0,
+        "db": 0
+      }
+    ]
+  },
+  "evidence": "az-routing-button-name-init.asm verifies global bases and initializer2344a50; each *-ui-action.asm compares these identifiers and submits enum through setting+40",
+  "warning": "Identifiers are runtime constructed JUCE names, not numeric HUI EasyIDs. Link Volume dB must not be applied to global headphone gain without verifying signal-path scope."
+}

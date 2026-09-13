@@ -1,0 +1,202 @@
+[
+  {
+    "start": "0x6cd12c",
+    "end": "0x6cd140",
+    "register": 2,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6cf9b4",
+    "end": "0x6cf9c8",
+    "register": 2,
+    "value": "0x685fe879a480e801",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x18a4d40",
+    "end": "0x18a4d50",
+    "register": 1,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x18a4d60",
+    "end": "0x18a4d6c",
+    "register": 4,
+    "value": "0x685fe879a480e801",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1ff7bfc",
+    "end": "0x1ff7c10",
+    "register": 1,
+    "value": "0x685fe879a480e801",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1ff7c98",
+    "end": "0x1ff7cac",
+    "register": 1,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2043208",
+    "end": "0x2043234",
+    "register": 5,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2046d9c",
+    "end": "0x2046db0",
+    "register": 2,
+    "value": "0x685fe879a480e801",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2046eac",
+    "end": "0x2046ebc",
+    "register": 3,
+    "value": "0x685fe879a480e801",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2048764",
+    "end": "0x2048770",
+    "register": 2,
+    "value": "0x685fe879a480e801",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x204877c",
+    "end": "0x2048788",
+    "register": 3,
+    "value": "0x685fe879a480e801",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2048ae8",
+    "end": "0x2048af8",
+    "register": 2,
+    "value": "0x685fe879a480e801",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2048e40",
+    "end": "0x2048e50",
+    "register": 3,
+    "value": "0x685fe879a480e801",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2049480",
+    "end": "0x204949c",
+    "register": 1,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x20495ac",
+    "end": "0x20495bc",
+    "register": 3,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x204a4a0",
+    "end": "0x204a4ac",
+    "register": 2,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x204a4b8",
+    "end": "0x204a4c4",
+    "register": 3,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x204a824",
+    "end": "0x204a834",
+    "register": 2,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x204ab7c",
+    "end": "0x204ab8c",
+    "register": 3,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2130040",
+    "end": "0x2130050",
+    "register": 1,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x213005c",
+    "end": "0x2130068",
+    "register": 1,
+    "value": "0x685fe879a480e801",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2130650",
+    "end": "0x2130660",
+    "register": 1,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x213066c",
+    "end": "0x2130678",
+    "register": 1,
+    "value": "0x685fe879a480e801",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x21453a4",
+    "end": "0x21453bc",
+    "register": 3,
+    "value": "0x685fe879a480e800",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2145ccc",
+    "end": "0x2145ce4",
+    "register": 3,
+    "value": "0x685fe879a480e801",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  }
+]

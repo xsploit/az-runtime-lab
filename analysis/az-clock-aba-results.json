@@ -1,0 +1,39 @@
+{
+  "relative-before": {
+    "frames": 959,
+    "duration_seconds": 8.0,
+    "changed_samples": 162,
+    "change_rate_hz": 20.125,
+    "interval_ms": {
+      "median": 50.0,
+      "p95": 75.0,
+      "max": 100.0
+    },
+    "note": "Sampled X11 pixel changes, not panel FPS. Verify playback/view and account for capture overhead."
+  },
+  "absolute5924": {
+    "frames": 961,
+    "duration_seconds": 8.008007,
+    "changed_samples": 238,
+    "change_rate_hz": 29.5953787253183,
+    "interval_ms": {
+      "median": 33.334999999999994,
+      "p95": 41.601,
+      "max": 41.789
+    },
+    "note": "Sampled X11 pixel changes, not panel FPS. Verify playback/view and account for capture overhead."
+  },
+  "relative-after": {
+    "frames": 960,
+    "duration_seconds": 8.0,
+    "changed_samples": 160,
+    "change_rate_hz": 19.875,
+    "interval_ms": {
+      "median": 50.0,
+      "p95": 91.66666666666666,
+      "max": 100.0
+    },
+    "note": "Sampled X11 pixel changes, not panel FPS. Verify playback/view and account for capture overhead."
+  },
+  "note": "Same session, original native timer and fast24 throughout; launcher paused only for independent clock writer, then resumed. Two DeadWrong tracks moving. Sampled pixels not panelFPS."
+}

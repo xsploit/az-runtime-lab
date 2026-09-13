@@ -1,0 +1,1122 @@
+[
+  {
+    "type": "combo_system::AudioSystem",
+    "address_point": "0x2604e08",
+    "slots": [
+      {
+        "slot": 0,
+        "function": "0x7af370"
+      },
+      {
+        "slot": 1,
+        "function": "0x7af430"
+      },
+      {
+        "slot": 2,
+        "function": "0x22d2b20"
+      },
+      {
+        "slot": 3,
+        "function": "0x22d3760"
+      },
+      {
+        "slot": 4,
+        "function": "0x22e3ca0"
+      },
+      {
+        "slot": 5,
+        "function": "0x7ae7a8"
+      },
+      {
+        "slot": 6,
+        "function": "0x7aedc8"
+      },
+      {
+        "slot": 7,
+        "function": "0x21b4120"
+      },
+      {
+        "slot": 8,
+        "function": "0x22e7fa0"
+      },
+      {
+        "slot": 9,
+        "function": "0x22d6340"
+      },
+      {
+        "slot": 10,
+        "function": "0x22d63e0"
+      },
+      {
+        "slot": 11,
+        "function": "0x7ae6c8"
+      },
+      {
+        "slot": 12,
+        "function": "0x7ae6d0"
+      },
+      {
+        "slot": 13,
+        "function": "0x22d2550"
+      },
+      {
+        "slot": 14,
+        "function": "0x22d2630"
+      },
+      {
+        "slot": 15,
+        "function": "0x22d2550"
+      },
+      {
+        "slot": 16,
+        "function": "0x22d2550"
+      },
+      {
+        "slot": 17,
+        "function": "0x7ae6d8"
+      },
+      {
+        "slot": 18,
+        "function": "0x7ae6e0"
+      },
+      {
+        "slot": 19,
+        "function": "0x22d2f40"
+      },
+      {
+        "slot": 20,
+        "function": "0x7ae6e8"
+      },
+      {
+        "slot": 21,
+        "function": "0x22d2fd0"
+      },
+      {
+        "slot": 22,
+        "function": "0x7ae708"
+      },
+      {
+        "slot": 23,
+        "function": "0x7ae700"
+      },
+      {
+        "slot": 24,
+        "function": "0x22d2340"
+      },
+      {
+        "slot": 25,
+        "function": "0x22d2ac0"
+      },
+      {
+        "slot": 26,
+        "function": "0x22d39d0"
+      },
+      {
+        "slot": 27,
+        "function": "0x22d2350"
+      },
+      {
+        "slot": 28,
+        "function": "0x22d5ea0"
+      },
+      {
+        "slot": 29,
+        "function": "0x22d5fb0"
+      },
+      {
+        "slot": 30,
+        "function": "0x22d5d60"
+      },
+      {
+        "slot": 31,
+        "function": "0x22d23e0"
+      },
+      {
+        "slot": 32,
+        "function": "0x22d2410"
+      },
+      {
+        "slot": 33,
+        "function": "0x22d23b0"
+      },
+      {
+        "slot": 34,
+        "function": "0x22d2a60"
+      },
+      {
+        "slot": 35,
+        "function": "0x22d2470"
+      },
+      {
+        "slot": 36,
+        "function": "0x22d2380"
+      },
+      {
+        "slot": 37,
+        "function": "0x22d2440"
+      },
+      {
+        "slot": 38,
+        "function": "0x22d24a0"
+      },
+      {
+        "slot": 39,
+        "function": "0x22d24d0"
+      },
+      {
+        "slot": 40,
+        "function": "0x7ae710"
+      },
+      {
+        "slot": 41,
+        "function": "0x7ae718"
+      },
+      {
+        "slot": 42,
+        "function": "0x7ae720"
+      },
+      {
+        "slot": 43,
+        "function": "0x7af260"
+      },
+      {
+        "slot": 44,
+        "function": "0x7ae728"
+      },
+      {
+        "slot": 45,
+        "function": "0x22d2530"
+      },
+      {
+        "slot": 46,
+        "function": "0x22d2510"
+      },
+      {
+        "slot": 47,
+        "function": "0x22d2540"
+      },
+      {
+        "slot": 48,
+        "function": "0x22d2520"
+      },
+      {
+        "slot": 49,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 50,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 51,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 52,
+        "function": "0x22d6070"
+      },
+      {
+        "slot": 53,
+        "function": "0x22d5750"
+      },
+      {
+        "slot": 54,
+        "function": "0x22d2320"
+      },
+      {
+        "slot": 55,
+        "function": "0x22d3ab0"
+      },
+      {
+        "slot": 56,
+        "function": "0x22d2530"
+      },
+      {
+        "slot": 57,
+        "function": "0x22d6190"
+      },
+      {
+        "slot": 58,
+        "function": "0x22d3a50"
+      },
+      {
+        "slot": 59,
+        "function": "0x22d6480"
+      },
+      {
+        "slot": 60,
+        "function": "0x22d37c0"
+      },
+      {
+        "slot": 61,
+        "function": "0x7ae6f0"
+      },
+      {
+        "slot": 62,
+        "function": "0x7af5c0"
+      },
+      {
+        "slot": 63,
+        "function": "0x22d5a10"
+      },
+      {
+        "slot": 64,
+        "function": "0x7ae6f8"
+      },
+      {
+        "slot": 65,
+        "function": "0x22e7f40"
+      },
+      {
+        "slot": 66,
+        "function": "0x7c66d8"
+      },
+      {
+        "slot": 67,
+        "function": "0x7af4e8"
+      },
+      {
+        "slot": 68,
+        "function": "0x7af4f0"
+      },
+      {
+        "slot": 69,
+        "function": "0x7fd920"
+      },
+      {
+        "slot": 70,
+        "function": "0x7ae738"
+      },
+      {
+        "slot": 71,
+        "function": "0x21af560"
+      }
+    ]
+  },
+  {
+    "type": "dj_player::DjPlayerUnit",
+    "address_point": "0x289f878",
+    "slots": [
+      {
+        "slot": 0,
+        "function": "0x14a2270"
+      },
+      {
+        "slot": 1,
+        "function": "0x14a24d8"
+      },
+      {
+        "slot": 2,
+        "function": "0x7af238"
+      },
+      {
+        "slot": 3,
+        "function": "0x22d3760"
+      },
+      {
+        "slot": 4,
+        "function": "0x14a20e8"
+      },
+      {
+        "slot": 5,
+        "function": "0x14abef0"
+      },
+      {
+        "slot": 6,
+        "function": "0x7aedc8"
+      },
+      {
+        "slot": 7,
+        "function": "0x14ab0d0"
+      },
+      {
+        "slot": 8,
+        "function": "0x22d3050"
+      },
+      {
+        "slot": 9,
+        "function": "0x22d6340"
+      },
+      {
+        "slot": 10,
+        "function": "0x22d63e0"
+      },
+      {
+        "slot": 11,
+        "function": "0x7ae6c8"
+      },
+      {
+        "slot": 12,
+        "function": "0x7ae6d0"
+      },
+      {
+        "slot": 13,
+        "function": "0x22d2580"
+      },
+      {
+        "slot": 14,
+        "function": "0x7ae748"
+      },
+      {
+        "slot": 15,
+        "function": "0x7ae750"
+      },
+      {
+        "slot": 16,
+        "function": "0x7ae758"
+      },
+      {
+        "slot": 17,
+        "function": "0x7ae6d8"
+      },
+      {
+        "slot": 18,
+        "function": "0x7ae6e0"
+      },
+      {
+        "slot": 19,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 20,
+        "function": "0x7ae6e8"
+      },
+      {
+        "slot": 21,
+        "function": "0x22d2330"
+      },
+      {
+        "slot": 22,
+        "function": "0x7ae760"
+      },
+      {
+        "slot": 23,
+        "function": "0x7ae768"
+      },
+      {
+        "slot": 24,
+        "function": "0x22d2340"
+      },
+      {
+        "slot": 25,
+        "function": "0x22d2ac0"
+      },
+      {
+        "slot": 26,
+        "function": "0x22d39d0"
+      },
+      {
+        "slot": 27,
+        "function": "0x22d2350"
+      },
+      {
+        "slot": 28,
+        "function": "0x22d5ea0"
+      },
+      {
+        "slot": 29,
+        "function": "0x22d5fb0"
+      },
+      {
+        "slot": 30,
+        "function": "0x22d5d60"
+      },
+      {
+        "slot": 31,
+        "function": "0x22d23e0"
+      },
+      {
+        "slot": 32,
+        "function": "0x22d2410"
+      },
+      {
+        "slot": 33,
+        "function": "0x22d23b0"
+      },
+      {
+        "slot": 34,
+        "function": "0x22d2a60"
+      },
+      {
+        "slot": 35,
+        "function": "0x22d2470"
+      },
+      {
+        "slot": 36,
+        "function": "0x22d2380"
+      },
+      {
+        "slot": 37,
+        "function": "0x22d2440"
+      },
+      {
+        "slot": 38,
+        "function": "0x22d24a0"
+      },
+      {
+        "slot": 39,
+        "function": "0x22d24d0"
+      },
+      {
+        "slot": 40,
+        "function": "0x7ae770"
+      },
+      {
+        "slot": 41,
+        "function": "0x7ae778"
+      },
+      {
+        "slot": 42,
+        "function": "0x7ae780"
+      },
+      {
+        "slot": 43,
+        "function": "0x7af210"
+      },
+      {
+        "slot": 44,
+        "function": "0x7ae788"
+      },
+      {
+        "slot": 45,
+        "function": "0x7ae790"
+      },
+      {
+        "slot": 46,
+        "function": "0x22d2510"
+      },
+      {
+        "slot": 47,
+        "function": "0x7ae798"
+      },
+      {
+        "slot": 48,
+        "function": "0x22d2520"
+      },
+      {
+        "slot": 49,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 50,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 51,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 52,
+        "function": "0x22d6070"
+      },
+      {
+        "slot": 53,
+        "function": "0x22d5750"
+      },
+      {
+        "slot": 54,
+        "function": "0x22d2320"
+      },
+      {
+        "slot": 55,
+        "function": "0x22d3ab0"
+      },
+      {
+        "slot": 56,
+        "function": "0x22d2530"
+      },
+      {
+        "slot": 57,
+        "function": "0x22d6190"
+      },
+      {
+        "slot": 58,
+        "function": "0x22d3a50"
+      },
+      {
+        "slot": 59,
+        "function": "0x22d6480"
+      },
+      {
+        "slot": 60,
+        "function": "0x22d37c0"
+      },
+      {
+        "slot": 61,
+        "function": "0x7ae6f0"
+      },
+      {
+        "slot": 62,
+        "function": "0x7af5c0"
+      },
+      {
+        "slot": 63,
+        "function": "0x22d5a10"
+      },
+      {
+        "slot": 64,
+        "function": "0x7ae6f8"
+      },
+      {
+        "slot": 65,
+        "function": "0x7ae740"
+      },
+      {
+        "slot": 66,
+        "function": "0x14aaf88"
+      },
+      {
+        "slot": 67,
+        "function": "0x14a37f0"
+      },
+      {
+        "slot": 68,
+        "function": "0x14a39e0"
+      },
+      {
+        "slot": 69,
+        "function": "0x14a1ea8"
+      }
+    ]
+  },
+  {
+    "type": "meow::SimpleAudioMixer",
+    "address_point": "0x2e56bf8",
+    "slots": [
+      {
+        "slot": 0,
+        "function": "0x7fd200"
+      },
+      {
+        "slot": 1,
+        "function": "0x7fd2e0"
+      },
+      {
+        "slot": 2,
+        "function": "0x7af238"
+      },
+      {
+        "slot": 3,
+        "function": "0x22d3760"
+      },
+      {
+        "slot": 4,
+        "function": "0x21afae0"
+      },
+      {
+        "slot": 5,
+        "function": "0x21b4620"
+      },
+      {
+        "slot": 6,
+        "function": "0x7aedc8"
+      },
+      {
+        "slot": 7,
+        "function": "0x21b2070"
+      },
+      {
+        "slot": 8,
+        "function": "0x22d3050"
+      },
+      {
+        "slot": 9,
+        "function": "0x22d6340"
+      },
+      {
+        "slot": 10,
+        "function": "0x22d63e0"
+      },
+      {
+        "slot": 11,
+        "function": "0x7ae6c8"
+      },
+      {
+        "slot": 12,
+        "function": "0x7ae6d0"
+      },
+      {
+        "slot": 13,
+        "function": "0x22d2580"
+      },
+      {
+        "slot": 14,
+        "function": "0x7ae748"
+      },
+      {
+        "slot": 15,
+        "function": "0x7ae750"
+      },
+      {
+        "slot": 16,
+        "function": "0x7ae758"
+      },
+      {
+        "slot": 17,
+        "function": "0x7ae6d8"
+      },
+      {
+        "slot": 18,
+        "function": "0x7ae6e0"
+      },
+      {
+        "slot": 19,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 20,
+        "function": "0x7ae6e8"
+      },
+      {
+        "slot": 21,
+        "function": "0x22d2330"
+      },
+      {
+        "slot": 22,
+        "function": "0x7ae760"
+      },
+      {
+        "slot": 23,
+        "function": "0x7ae768"
+      },
+      {
+        "slot": 24,
+        "function": "0x22d2340"
+      },
+      {
+        "slot": 25,
+        "function": "0x22d2ac0"
+      },
+      {
+        "slot": 26,
+        "function": "0x22d39d0"
+      },
+      {
+        "slot": 27,
+        "function": "0x22d2350"
+      },
+      {
+        "slot": 28,
+        "function": "0x22d5ea0"
+      },
+      {
+        "slot": 29,
+        "function": "0x22d5fb0"
+      },
+      {
+        "slot": 30,
+        "function": "0x22d5d60"
+      },
+      {
+        "slot": 31,
+        "function": "0x22d23e0"
+      },
+      {
+        "slot": 32,
+        "function": "0x22d2410"
+      },
+      {
+        "slot": 33,
+        "function": "0x22d23b0"
+      },
+      {
+        "slot": 34,
+        "function": "0x22d2a60"
+      },
+      {
+        "slot": 35,
+        "function": "0x22d2470"
+      },
+      {
+        "slot": 36,
+        "function": "0x22d2380"
+      },
+      {
+        "slot": 37,
+        "function": "0x22d2440"
+      },
+      {
+        "slot": 38,
+        "function": "0x22d24a0"
+      },
+      {
+        "slot": 39,
+        "function": "0x22d24d0"
+      },
+      {
+        "slot": 40,
+        "function": "0x7ae770"
+      },
+      {
+        "slot": 41,
+        "function": "0x7ae778"
+      },
+      {
+        "slot": 42,
+        "function": "0x7ae780"
+      },
+      {
+        "slot": 43,
+        "function": "0x7af210"
+      },
+      {
+        "slot": 44,
+        "function": "0x7ae788"
+      },
+      {
+        "slot": 45,
+        "function": "0x7ae790"
+      },
+      {
+        "slot": 46,
+        "function": "0x22d2510"
+      },
+      {
+        "slot": 47,
+        "function": "0x7ae798"
+      },
+      {
+        "slot": 48,
+        "function": "0x22d2520"
+      },
+      {
+        "slot": 49,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 50,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 51,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 52,
+        "function": "0x22d6070"
+      },
+      {
+        "slot": 53,
+        "function": "0x22d5750"
+      },
+      {
+        "slot": 54,
+        "function": "0x22d2320"
+      },
+      {
+        "slot": 55,
+        "function": "0x22d3ab0"
+      },
+      {
+        "slot": 56,
+        "function": "0x22d2530"
+      },
+      {
+        "slot": 57,
+        "function": "0x22d6190"
+      },
+      {
+        "slot": 58,
+        "function": "0x22d3a50"
+      },
+      {
+        "slot": 59,
+        "function": "0x22d6480"
+      },
+      {
+        "slot": 60,
+        "function": "0x22d37c0"
+      },
+      {
+        "slot": 61,
+        "function": "0x7ae6f0"
+      },
+      {
+        "slot": 62,
+        "function": "0x7af5c0"
+      },
+      {
+        "slot": 63,
+        "function": "0x22d5a10"
+      },
+      {
+        "slot": 64,
+        "function": "0x7ae6f8"
+      },
+      {
+        "slot": 65,
+        "function": "0x7ae740"
+      }
+    ]
+  },
+  {
+    "type": "meow::SimpleAudioSwitcher",
+    "address_point": "0x2e56e18",
+    "slots": [
+      {
+        "slot": 0,
+        "function": "0x21b4ba0"
+      },
+      {
+        "slot": 1,
+        "function": "0x21b4c10"
+      },
+      {
+        "slot": 2,
+        "function": "0x7af238"
+      },
+      {
+        "slot": 3,
+        "function": "0x22d3760"
+      },
+      {
+        "slot": 4,
+        "function": "0x21afba0"
+      },
+      {
+        "slot": 5,
+        "function": "0x7ae7a0"
+      },
+      {
+        "slot": 6,
+        "function": "0x7aedc8"
+      },
+      {
+        "slot": 7,
+        "function": "0x21b2310"
+      },
+      {
+        "slot": 8,
+        "function": "0x22d3050"
+      },
+      {
+        "slot": 9,
+        "function": "0x22d6340"
+      },
+      {
+        "slot": 10,
+        "function": "0x22d63e0"
+      },
+      {
+        "slot": 11,
+        "function": "0x7ae6c8"
+      },
+      {
+        "slot": 12,
+        "function": "0x7ae6d0"
+      },
+      {
+        "slot": 13,
+        "function": "0x22d2580"
+      },
+      {
+        "slot": 14,
+        "function": "0x7ae748"
+      },
+      {
+        "slot": 15,
+        "function": "0x7ae750"
+      },
+      {
+        "slot": 16,
+        "function": "0x7ae758"
+      },
+      {
+        "slot": 17,
+        "function": "0x7ae6d8"
+      },
+      {
+        "slot": 18,
+        "function": "0x7ae6e0"
+      },
+      {
+        "slot": 19,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 20,
+        "function": "0x7ae6e8"
+      },
+      {
+        "slot": 21,
+        "function": "0x22d2330"
+      },
+      {
+        "slot": 22,
+        "function": "0x7ae760"
+      },
+      {
+        "slot": 23,
+        "function": "0x7ae768"
+      },
+      {
+        "slot": 24,
+        "function": "0x22d2340"
+      },
+      {
+        "slot": 25,
+        "function": "0x22d2ac0"
+      },
+      {
+        "slot": 26,
+        "function": "0x22d39d0"
+      },
+      {
+        "slot": 27,
+        "function": "0x22d2350"
+      },
+      {
+        "slot": 28,
+        "function": "0x22d5ea0"
+      },
+      {
+        "slot": 29,
+        "function": "0x22d5fb0"
+      },
+      {
+        "slot": 30,
+        "function": "0x22d5d60"
+      },
+      {
+        "slot": 31,
+        "function": "0x22d23e0"
+      },
+      {
+        "slot": 32,
+        "function": "0x22d2410"
+      },
+      {
+        "slot": 33,
+        "function": "0x22d23b0"
+      },
+      {
+        "slot": 34,
+        "function": "0x22d2a60"
+      },
+      {
+        "slot": 35,
+        "function": "0x22d2470"
+      },
+      {
+        "slot": 36,
+        "function": "0x22d2380"
+      },
+      {
+        "slot": 37,
+        "function": "0x22d2440"
+      },
+      {
+        "slot": 38,
+        "function": "0x22d24a0"
+      },
+      {
+        "slot": 39,
+        "function": "0x22d24d0"
+      },
+      {
+        "slot": 40,
+        "function": "0x7ae770"
+      },
+      {
+        "slot": 41,
+        "function": "0x7ae778"
+      },
+      {
+        "slot": 42,
+        "function": "0x7ae780"
+      },
+      {
+        "slot": 43,
+        "function": "0x7af210"
+      },
+      {
+        "slot": 44,
+        "function": "0x7ae788"
+      },
+      {
+        "slot": 45,
+        "function": "0x7ae790"
+      },
+      {
+        "slot": 46,
+        "function": "0x22d2510"
+      },
+      {
+        "slot": 47,
+        "function": "0x7ae798"
+      },
+      {
+        "slot": 48,
+        "function": "0x22d2520"
+      },
+      {
+        "slot": 49,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 50,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 51,
+        "function": "0x22d2500"
+      },
+      {
+        "slot": 52,
+        "function": "0x22d6070"
+      },
+      {
+        "slot": 53,
+        "function": "0x22d5750"
+      },
+      {
+        "slot": 54,
+        "function": "0x22d2320"
+      },
+      {
+        "slot": 55,
+        "function": "0x22d3ab0"
+      },
+      {
+        "slot": 56,
+        "function": "0x22d2530"
+      },
+      {
+        "slot": 57,
+        "function": "0x22d6190"
+      },
+      {
+        "slot": 58,
+        "function": "0x22d3a50"
+      },
+      {
+        "slot": 59,
+        "function": "0x22d6480"
+      },
+      {
+        "slot": 60,
+        "function": "0x22d37c0"
+      },
+      {
+        "slot": 61,
+        "function": "0x7ae6f0"
+      },
+      {
+        "slot": 62,
+        "function": "0x7af5c0"
+      },
+      {
+        "slot": 63,
+        "function": "0x22d5a10"
+      },
+      {
+        "slot": 64,
+        "function": "0x7ae6f8"
+      },
+      {
+        "slot": 65,
+        "function": "0x7ae740"
+      }
+    ]
+  }
+]

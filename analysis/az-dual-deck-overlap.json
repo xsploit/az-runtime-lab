@@ -1,0 +1,13 @@
+{
+  "pair1": [
+    1,
+    2
+  ],
+  "pair2": [
+    3,
+    4
+  ],
+  "overlapping_active_interval_seconds": 9.999977324263043,
+  "pair_start_difference_seconds": 0.0,
+  "limitation": "Same tone on both decks; distinct-signal crosstalk and external mixing not tested"
+}

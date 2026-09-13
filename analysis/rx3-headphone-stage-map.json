@@ -1,0 +1,83 @@
+{
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "scope": "Static RX3 headphone stage; no native oracle yet and not assumed AZ hardware gain-equivalent",
+  "methods": {
+    "update": "0x5a580",
+    "constructor": "0x5aa28",
+    "setMixRate": "0x5adb8",
+    "setMasterOutCue": "0x5ae60",
+    "setStereoType": "0x5aebc"
+  },
+  "state": {
+    "requested_mode": 200,
+    "active_mode": 204,
+    "mode_transition_phase": 248,
+    "smoothing_blocks": {
+      "level": 24,
+      "master_mix": 72,
+      "cue_mix": 112,
+      "master_cue": 160,
+      "mode_gain": 208
+    }
+  },
+  "mode_behavior": {
+    "active_zero": "OutputL=sumL+R from source atobject+16; OutputR=sumL+R from sourceatobject+4 aftermaster-cue gain; includes scalar runtime gain and calibration",
+    "active_nonzero": "Per-side sum of both sources",
+    "transition": "setStereoType resets mode gain toward0 and phase1; at blockend after fadecomplete copies requested\u2192active, retargets gain1 and phase2; phase2 clearswhencomplete"
+  },
+  "mix_index": "uint16(trunc_u32(0.5f+mix*255.0f)); no explicit input clamp in this method",
+  "calibration_constant": -7.498941898345947,
+  "runtime_gain_address": "0x1149680 unresolved initialization; must not assume1",
+  "curves": {
+    "master_mix": {
+      "address": "0x4197d0",
+      "samples": {
+        "0": 0.0,
+        "1": 0.008064515888690948,
+        "63": 0.5080645084381104,
+        "127": 1.0,
+        "128": 1.0,
+        "191": 1.0,
+        "254": 1.0,
+        "255": 1.0
+      },
+      "min": 0.0,
+      "max": 1.0,
+      "sha256": "8c054eca4200777277d1fda180033f48b50c516b11bc7848834e3f44b2ebd938"
+    },
+    "cue_mix": {
+      "address": "0x419bd0",
+      "samples": {
+        "0": 1.0,
+        "1": 1.0,
+        "63": 1.0,
+        "127": 1.0,
+        "128": 1.0,
+        "191": 0.5161290168762207,
+        "254": 0.008064515888690948,
+        "255": 0.0
+      },
+      "min": 0.0,
+      "max": 1.0,
+      "sha256": "2e65ab6ee200f074ba27184bc7df623c87f5ac7967c5d19ede80ca7d1464b940"
+    }
+  },
+  "smoothing_constants": {
+    "mono_split": {
+      "address": "0x419ff8",
+      "float": 10.158730506896973
+    },
+    "master_cue": {
+      "address": "0x419ffc",
+      "float": 3.299999952316284
+    },
+    "mix_rate": {
+      "address": "0x41a000",
+      "float": 3.299999952316284
+    },
+    "level": {
+      "address": "0x41a004",
+      "float": 3.299999952316284
+    }
+  }
+}

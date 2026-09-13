@@ -1,0 +1,15 @@
+{
+  "frames_per_case": 20480,
+  "normal_master_energy": 24.10131653576831,
+  "cut_master_energy": 0.0,
+  "independent_cue_bit_identical": true,
+  "malformed_command_rejected": true,
+  "unattached_command_rejected": true,
+  "decoded_native_packets": {
+    "normal_energy": 24.10131653576831,
+    "isolator_cut_energy": 0.0,
+    "eq_cut_energy": 0.7962242862285271,
+    "independent_cue_bit_identical": true,
+    "scope": "Synthetic valid RX/TX packets decoded to EQ1, then actual mixer FIFO audio; not a live AZ mode-toggle test."
+  }
+}

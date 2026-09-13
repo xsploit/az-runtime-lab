@@ -1,0 +1,74 @@
+{
+  "binary_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "pid": 395412,
+  "method": "Native RX FIFO, native browse/load; no pointer injection",
+  "fixed": {
+    "effect": 1,
+    "bpm_tenths": 1280,
+    "tap": 1,
+    "time_ms": 375
+  },
+  "observations": [
+    {
+      "rx86": 8,
+      "rx92": 0,
+      "rx93_high": 0,
+      "flags": 0,
+      "display": "2/3 selected",
+      "screenshot": "fx-fraction-rx86-8.png"
+    },
+    {
+      "rx86": 6,
+      "rx92": 0,
+      "rx93_high": 1,
+      "flags": 0,
+      "display": "1/3 selected",
+      "screenshot": "fx-fraction-rx86-6.png"
+    },
+    {
+      "rx86": 7,
+      "rx92": 4,
+      "rx93_high": 1,
+      "flags": 0,
+      "display": "1/2 selected",
+      "screenshot": "fx-fraction-rx86-7.png"
+    },
+    {
+      "rx86": 7,
+      "rx92": 50,
+      "rx93_high": 1,
+      "flags": 4,
+      "display": "Preset strip shifted half a cell, selected region between 1/2 and 2/3",
+      "screenshot": "fx-fraction-adjusted.png"
+    }
+  ],
+  "static": {
+    "update": "0x1ddff78",
+    "state_pointer": "widget+0xf8",
+    "preset_byte": "state+0x54",
+    "adjusted_flag": "state+0x55",
+    "signed_adjustment": "state+0x56",
+    "position_calculation": "0x1ddeeb0..1ddeed8: base position minus trunc(float(adjustment)/100*59)",
+    "preset_to_sprite_slot": {
+      "1": 0,
+      "3": 1,
+      "5": 2,
+      "6": 3,
+      "7": 4,
+      "8": 5,
+      "9": 6,
+      "10": 7,
+      "12": 8,
+      "14": 9,
+      "16": 10,
+      "17": 11
+    }
+  },
+  "limits": [
+    "State offsets to RX chain inferred from matching layout and live response; full upstream store trace remains",
+    "Only presets6,7,8 verified visually; do not infer all musical values from slot indices",
+    "RX93 high semantics unresolved; X-PAD still infinity in these cases",
+    "Flags and signed adjustment changed together in final probe; static calculation supports observed shift",
+    "Feedback not yet coupled to E1/P1 software DSP"
+  ]
+}

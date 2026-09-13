@@ -1,0 +1,41 @@
+{
+  "az": {
+    "path": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/rootfs/home/root/pdj/EP147",
+    "sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6"
+  },
+  "cdj": {
+    "path": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/cdj3000x/rootfs/home/root/pdj/EP145",
+    "sha256": "97413d309b2bc2527bc38644245e7f1cb52e0d8de33dc48bc029048c81e9f378",
+    "display_hz": 49.69,
+    "period_ms": 20.124773596297043,
+    "display_type": "N14device_adapter22MainDisplayUpdateTimerE",
+    "display_vtables": {
+      "0x3040b00": [
+        "0x2277ac8",
+        "0x2277d88",
+        "0x22768f8",
+        "0x22769a8",
+        "0x22773e0",
+        "0x22773c0",
+        "0x2277aa8",
+        "0x2277c58",
+        "0x2277640"
+      ],
+      "0x3040b58": [
+        "0x2277bd0",
+        "0x2277cf8",
+        "0x22776e0"
+      ],
+      "0x3040bb0": [
+        "0x2277618",
+        "0x2277620",
+        "0x2277ab0"
+      ]
+    }
+  },
+  "identical_image_gate": {
+    "az_start": "0x23fadf8",
+    "cdj_start": "0x251aac8",
+    "length": 60
+  }
+}

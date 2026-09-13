@@ -1,0 +1,23 @@
+[
+  {
+    "adrp": "0x2130c04",
+    "add": "0x2130c08",
+    "target": "0x2e422e8",
+    "label": "PlayerInfoReciever primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x21346b4",
+    "add": "0x21346b8",
+    "target": "0x2e422e8",
+    "label": "PlayerInfoReciever primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2134764",
+    "add": "0x2134768",
+    "target": "0x2e422e8",
+    "label": "PlayerInfoReciever primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "deck3_channels": [
+    5,
+    6
+  ],
+  "deck4_channels": [
+    7,
+    8
+  ],
+  "start_difference_seconds": 0.6400000000000006,
+  "overlap_seconds": 9.359977324263042,
+  "limitation": "Same input tone; not a distinct-track crosstalk or four-simultaneous-deck test."
+}

@@ -1,0 +1,68 @@
+{
+  "frames": 4096,
+  "bytes": 524288,
+  "checksum_valid": 4096,
+  "distinct_frames": 10,
+  "availability_masks": {
+    "00": 4096
+  },
+  "first_decoded": {
+    "direction": "tx",
+    "length": 128,
+    "length_valid": true,
+    "deck_shift_bits_raw": [
+      0,
+      0
+    ],
+    "browser_indicator_states_raw": {
+      "PlaylistView": 0,
+      "TagListView": 0
+    },
+    "stored_crc": "0xcc48",
+    "calculated_crc": "0xcc48",
+    "checksum_valid": true,
+    "unnamed_word_updates": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "unnamed_record_updates": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "scope": "Transmit checksum, named raw controls/indicators and conditional raw records; physical LED state meanings unverified."
+  },
+  "last_decoded": {
+    "direction": "tx",
+    "length": 128,
+    "length_valid": true,
+    "deck_shift_bits_raw": [
+      0,
+      0
+    ],
+    "browser_indicator_states_raw": {
+      "PlaylistView": 1,
+      "TagListView": 1
+    },
+    "stored_crc": "0x9281",
+    "calculated_crc": "0x9281",
+    "checksum_valid": true,
+    "unnamed_word_updates": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "unnamed_record_updates": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "scope": "Transmit checksum, named raw controls/indicators and conditional raw records; physical LED state meanings unverified."
+  },
+  "scope": "Bounded first4096 mixer TX frames at idle SOURCE; no audio DSP meaning inferred."
+}

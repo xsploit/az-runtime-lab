@@ -1,0 +1,16 @@
+{
+  "samples": 360,
+  "sample_rate_requested": 60,
+  "seconds_requested": 6,
+  "adjacent_changes": 98,
+  "changed_intervals_fraction": 0.27298050139275765,
+  "changes_per_requested_second": 16.333333333333332,
+  "scope": "Raw Xvfb crop850x170 at180,90 sampled60Hz. Counts changing captured images, not compositor present events or Pi FPS. Sample synchronization, tearing and load can affect counts.",
+  "change_gap_sample_histogram": {
+    "5": 1,
+    "6": 11,
+    "3": 68,
+    "4": 13,
+    "7": 4
+  }
+}

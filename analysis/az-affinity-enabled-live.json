@@ -1,0 +1,13 @@
+{
+  "pid": 195259,
+  "calls": 231,
+  "states": {
+    "reversal=1 cpus=20": 231
+  },
+  "outcome": "probe exited139, Shutdown thread SIGSEGV SI_USER; causality unresolved",
+  "static_enable_stores": [
+    "1865ae8",
+    "1882b3c",
+    "18cea30"
+  ]
+}

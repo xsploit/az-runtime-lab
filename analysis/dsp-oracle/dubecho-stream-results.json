@@ -1,0 +1,17 @@
+{
+  "frames": 35840,
+  "cue_max_error": 3.7143617348522895e-09,
+  "active_difference_rms": 0.011411767071432922,
+  "closed_fader_tail_rms": 0.01785390301729518,
+  "resumed_difference_rms": 0.019482980382190086,
+  "accepted_busy_results": [
+    1,
+    0,
+    1,
+    1,
+    1,
+    1
+  ],
+  "status": "pass",
+  "scope": "FIFO F1 type4 postfader execution, fader closure with source still running, Off tail and resume; independent deck cue. No Pi test."
+}

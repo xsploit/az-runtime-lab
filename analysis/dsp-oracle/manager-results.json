@@ -1,0 +1,130 @@
+{
+  "scope": "Off/Filter manager lifecycle only; all effect virtual calls use deterministic mocks, not actual Filter DSP.",
+  "native_virtual_range": [
+    "0xbbc68",
+    "0xbc4d4"
+  ],
+  "native_sha256": "f4c378deb36bb33917cda87a7170c6df95b4e7e802c3a35d38077fb1466d5408",
+  "data_relocations": {
+    "0xbbd9c": "manager_native+724",
+    "0xbbda0": "manager_native+952",
+    "0xbbda4": "manager_native+1140",
+    "0xbbda8": "manager_native+604",
+    "0xbbff0": "manager_native+1824",
+    "0xbbff4": "manager_native+1800",
+    "0xbbff8": "manager_native+1792",
+    "0xbbffc": "manager_native+1784",
+    "0xbc000": "manager_native+1776",
+    "0xbc004": "manager_native+1768",
+    "0xbc008": "manager_native+324",
+    "0xbc0c0": "manager_native+1696",
+    "0xbc0c4": "manager_native+1688",
+    "0xbc0c8": "manager_native+1680",
+    "0xbc0cc": "manager_native+1672",
+    "0xbc0d0": "manager_native+1664",
+    "0xbc0d4": "manager_native+1656",
+    "0xbc0d8": "manager_native+1400",
+    "0xbc278": "manager_native+1580",
+    "0xbc27c": "manager_native+1752",
+    "0xbc280": "manager_native+1744",
+    "0xbc284": "manager_native+1736",
+    "0xbc288": "manager_native+1728",
+    "0xbc28c": "manager_native+1720",
+    "0xbc290": "manager_native+1760",
+    "0xbc018": "manager_ones",
+    "0xbc4d0": "manager_ones"
+  },
+  "commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "cfx_manager_filter.c",
+      "cfx_manager_compare.c",
+      "manager-native.S",
+      "-lm",
+      "-o",
+      "manager-compare-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "cfx_manager_filter.c",
+      "cfx_manager_compare.c",
+      "-lm",
+      "-o",
+      "manager-compare-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "cfx_manager_filter.c",
+      "cfx_manager_compare.c",
+      "-lm",
+      "-o",
+      "manager-compare-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"block_calls\":13200,\"mismatches\":0,\"max_abs_error\":0,\"accepted_requests\":1896,\"busy_requests_ignored\":1230}\n",
+      "stderr": "",
+      "metrics": {
+        "block_calls": 13200,
+        "mismatches": 0,
+        "max_abs_error": 0,
+        "accepted_requests": 1896,
+        "busy_requests_ignored": 1230
+      }
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"block_calls\":13200,\"mismatches\":0,\"max_abs_error\":0,\"accepted_requests\":1896,\"busy_requests_ignored\":1230}\n",
+      "stderr": "",
+      "metrics": {
+        "block_calls": 13200,
+        "mismatches": 0,
+        "max_abs_error": 0,
+        "accepted_requests": 1896,
+        "busy_requests_ignored": 1230
+      }
+    },
+    "host_asan": {
+      "returncode": 0,
+      "stdout": "{\"block_calls\":13200,\"mismatches\":0,\"max_abs_error\":0,\"accepted_requests\":1896,\"busy_requests_ignored\":1230}\n",
+      "stderr": "",
+      "metrics": {
+        "block_calls": 13200,
+        "mismatches": 0,
+        "max_abs_error": 0,
+        "accepted_requests": 1896,
+        "busy_requests_ignored": 1230
+      }
+    }
+  }
+}

@@ -1,0 +1,465 @@
+{
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "native_ranges": [
+    [
+      "native_calc_play",
+      626852,
+      627048
+    ],
+    [
+      "native_calc_zero",
+      625752,
+      625940
+    ],
+    [
+      "native_nearest",
+      627048,
+      627696
+    ],
+    [
+      "native_duration",
+      626032,
+      626592
+    ],
+    [
+      "native_check_phase",
+      628392,
+      629256
+    ],
+    [
+      "native_quantize_set",
+      624732,
+      625116
+    ],
+    [
+      "native_time_update",
+      625116,
+      625444
+    ],
+    [
+      "native_quantize_check",
+      626592,
+      626736
+    ],
+    [
+      "native_beat_position",
+      626784,
+      626852
+    ],
+    [
+      "native_adjust",
+      744248,
+      744576
+    ],
+    [
+      "echo_execute",
+      749416,
+      750896
+    ]
+  ],
+  "relocations": [
+    {
+      "site": "0x990b4",
+      "replacement": "bl fixture_channel"
+    },
+    {
+      "site": "0x990c8",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x990d4",
+      "replacement": "bl fixture_position"
+    },
+    {
+      "site": "0x990e8",
+      "replacement": "bl fixture_tempo"
+    },
+    {
+      "site": "0x99134",
+      "replacement": "bl ceil"
+    },
+    {
+      "site": "0x99148",
+      "replacement": "bl floor"
+    },
+    {
+      "site": "0x98c64",
+      "replacement": "bl fixture_channel"
+    },
+    {
+      "site": "0x98c78",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98c84",
+      "replacement": "bl fixture_position"
+    },
+    {
+      "site": "0x98c98",
+      "replacement": "bl fixture_tempo"
+    },
+    {
+      "site": "0x98ce0",
+      "replacement": "bl ceil"
+    },
+    {
+      "site": "0x98cf4",
+      "replacement": "bl floor"
+    },
+    {
+      "site": "0x99180",
+      "replacement": "bl fixture_channel"
+    },
+    {
+      "site": "0x9918c",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x99194",
+      "replacement": "bl fixture_beat"
+    },
+    {
+      "site": "0x98d88",
+      "replacement": "bl fixture_channel"
+    },
+    {
+      "site": "0x98d94",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98d9c",
+      "replacement": "bl fixture_beat"
+    },
+    {
+      "site": "0x98dc0",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98dcc",
+      "replacement": "bl fixture_tempo"
+    },
+    {
+      "site": "0x98f20",
+      "replacement": "bl __aeabi_uidiv"
+    },
+    {
+      "site": "0x98f2c",
+      "replacement": "bl __aeabi_uidivmod"
+    },
+    {
+      "site": "0x98f9c",
+      "replacement": ".word phase_tables"
+    },
+    {
+      "site": "0x996b8",
+      "replacement": "bl fixture_channel"
+    },
+    {
+      "site": "0x996c4",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x996cc",
+      "replacement": "bl fixture_beat"
+    },
+    {
+      "site": "0x996dc",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x996e8",
+      "replacement": "bl fixture_reverse"
+    },
+    {
+      "site": "0x99704",
+      "replacement": "bl fixture_scratch"
+    },
+    {
+      "site": "0x99718",
+      "replacement": "bl fixture_spin"
+    },
+    {
+      "site": "0x9972c",
+      "replacement": "bl fixture_scan"
+    },
+    {
+      "site": "0x99740",
+      "replacement": "bl fixture_time"
+    },
+    {
+      "site": "0x998f8",
+      "replacement": "bl native_calc_zero"
+    },
+    {
+      "site": "0x9990c",
+      "replacement": "bl native_nearest"
+    },
+    {
+      "site": "0x99920",
+      "replacement": "bl native_duration"
+    },
+    {
+      "site": "0x999ac",
+      "replacement": "bl native_calc_zero"
+    },
+    {
+      "site": "0x999c0",
+      "replacement": "bl native_nearest"
+    },
+    {
+      "site": "0x999d4",
+      "replacement": "bl native_duration"
+    },
+    {
+      "site": "0x99a04",
+      "replacement": ".word phase_tables"
+    },
+    {
+      "site": "0x9886c",
+      "replacement": "bl native_beat_position"
+    },
+    {
+      "site": "0x98878",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98880",
+      "replacement": "bl fixture_time"
+    },
+    {
+      "site": "0x9891c",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98928",
+      "replacement": "bl fixture_tempo"
+    },
+    {
+      "site": "0x9898c",
+      "replacement": "bl __aeabi_uidiv"
+    },
+    {
+      "site": "0x98994",
+      "replacement": "bl __aeabi_uidiv"
+    },
+    {
+      "site": "0x989d0",
+      "replacement": ".word quant_min_bpm"
+    },
+    {
+      "site": "0x989d4",
+      "replacement": ".word quant_numerators"
+    },
+    {
+      "site": "0x989d8",
+      "replacement": ".word quant_denominators"
+    },
+    {
+      "site": "0x989ec",
+      "replacement": "bl native_beat_position"
+    },
+    {
+      "site": "0x989f8",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98a04",
+      "replacement": "bl fixture_reverse"
+    },
+    {
+      "site": "0x98a20",
+      "replacement": "bl fixture_scratch"
+    },
+    {
+      "site": "0x98a34",
+      "replacement": "bl fixture_spin"
+    },
+    {
+      "site": "0x98a48",
+      "replacement": "bl fixture_scan"
+    },
+    {
+      "site": "0x98a5c",
+      "replacement": "bl fixture_time"
+    },
+    {
+      "site": "0x98b0c",
+      "replacement": "bl native_quantize_set"
+    },
+    {
+      "site": "0x98fb0",
+      "replacement": "bl fixture_channel"
+    },
+    {
+      "site": "0x98fbc",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98fc4",
+      "replacement": "bl fixture_beat"
+    },
+    {
+      "site": "0x98fcc",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98fd0",
+      "replacement": "bl fixture_quantize"
+    },
+    {
+      "site": "0x98fec",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98ff0",
+      "replacement": "bl fixture_quantize"
+    },
+    {
+      "site": "0x99020",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x99024",
+      "replacement": "bl fixture_quantize"
+    },
+    {
+      "site": "0x99070",
+      "replacement": "bl fixture_channel"
+    },
+    {
+      "site": "0x9907c",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x99084",
+      "replacement": "bl fixture_beat"
+    },
+    {
+      "site": "0xb6fe4",
+      "replacement": "bl ceil"
+    },
+    {
+      "site": "0xb7354",
+      "replacement": "bl native_quantize_check"
+    },
+    {
+      "site": "0xb7364",
+      "replacement": "bl native_time_update"
+    },
+    {
+      "site": "0xb7428",
+      "replacement": "bl ceil"
+    },
+    {
+      "site": "0xb7460",
+      "replacement": "bl floor"
+    },
+    {
+      "site": "0xb74ac",
+      "replacement": "bl floor"
+    }
+  ],
+  "compiler_commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DECHO_NATIVE_QUANTIZE",
+      "-DQUANTIZE_PHASE_BUILD",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "quantize_phase_compare.c",
+      "quantize_phase.c",
+      "echo_quantize.c",
+      "echo_audio.c",
+      "echo_control.c",
+      "echo-control-native.S",
+      "quantize-phase-native.S",
+      "-lm",
+      "-o",
+      "quantize-phase-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DECHO_NATIVE_QUANTIZE",
+      "-DQUANTIZE_PHASE_BUILD",
+      "-DHOST_REPLAY",
+      "quantize_phase_compare.c",
+      "quantize_phase.c",
+      "echo_quantize.c",
+      "echo_audio.c",
+      "echo_control.c",
+      "-lm",
+      "-o",
+      "quantize-phase-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DECHO_NATIVE_QUANTIZE",
+      "-DQUANTIZE_PHASE_BUILD",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "quantize_phase_compare.c",
+      "quantize_phase.c",
+      "echo_quantize.c",
+      "echo_audio.c",
+      "echo_control.c",
+      "-lm",
+      "-o",
+      "quantize-phase-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"calls\":7200,\"compared_words\":511200,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"calls\":7200,\"compared_words\":511200,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "{\"calls\":7200,\"compared_words\":511200,\"mismatches\":0}\n",
+      "stderr": ""
+    }
+  },
+  "scope": "Generic native phase timing primitives/check/countdown compared to independent C. Player engine queries are fixtures; no processor audio or outer manager composed.",
+  "source_hashes": {
+    "quantize_phase_compare.c": "13338743f9feed16e9e6ed2860838fa769dcc3202915cb9108dd666c799b4925",
+    "quantize_phase.c": "3f59657e46ca92e11777017a0bb5a79cf86809d202ab3295c540666b28382a3d",
+    "echo_quantize.c": "b59e18af0467c3185fbf7e847e8897890180184d28c463c06b2a8c77933e669c",
+    "echo_audio.c": "9b7a7809acdf13758667e020bc88f8f78977e3478b19301458ac3ef66d5d5caa",
+    "echo_control.c": "c35ffe73ea9617547d19a5a43a41d5706cfdfad618be119bef56ef427397cee6",
+    "quantize_phase.h": "3f0ec4696c5522aab9cce2d81ace5be46c8160f0a28a4db7454e8dcc221474e4",
+    "echo_quantize_compare.c": "f4c67e362e5dee4ff8c25d4163fc490eb68928764e55653ba7ce4ceda36464ec",
+    "echo_quantize.h": "0af2911ad1df201dcbac27dc9b603cd1e1d63225b1ef50ea4e29a446a6832baf",
+    "echo_audio.h": "22272c2243ac600260f46a16e4aa6474641a2aad13cde184a1e6b08060cf4576",
+    "echo_audio_compare.c": "96bb4fa80fa1b3cb6e94ecc123854096405ead9ed7e57e34b2c96a05fb3d9953",
+    "run_quantize_phase.py": "8552e2e8e49e7b839ff267ac437ab2e088b05babf8abe477ca505e48aa37b1df",
+    "quantize-phase-native.S": "f434bbd1a0d7d38ffd00a1e21c1a257ae90cd449154ab097bdb670232d4f8e58"
+  }
+}

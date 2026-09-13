@@ -1,0 +1,10 @@
+{
+  "source": "runtime-lab/xdjaz/mic2-native-action-tx.raw",
+  "decoded_counts": {
+    "both": 1096,
+    "mic2": 8690
+  },
+  "unknown_or_corrupt": 0,
+  "tests": "15 packet tests passed; all256 mic byte values and bad CRC covered",
+  "limitation": "Decoder only, not physical mic DSP or complete software mixer integration"
+}

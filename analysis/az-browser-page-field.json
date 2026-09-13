@@ -1,0 +1,31 @@
+{
+  "frames": 25592,
+  "crc_failures": 0,
+  "pid": 164038,
+  "field": "TX byte26 bits4..5",
+  "observed": {
+    "source": 1,
+    "browse": 2,
+    "waveform": 1,
+    "browse_return": 2,
+    "folder": 2,
+    "taglist": 1
+  },
+  "scope": "Six stable page observations plus static two-view group binding. State2 is a group indicator, not unique BrowseView identity. Freshness helper unit-tested; live automatic View integration pending.",
+  "static_binding": {
+    "id": "0195b2ef924ef657",
+    "selector": 6,
+    "view_names": [
+      "BrowseView",
+      "PcControlView"
+    ],
+    "initializers": {
+      "BrowseView": "65ff24 -> 298dc10",
+      "PcControlView": "65ffc0 -> 298dc50"
+    },
+    "globals": [
+      "3baf670",
+      "3baf678"
+    ]
+  }
+}

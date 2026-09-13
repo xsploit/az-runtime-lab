@@ -1,0 +1,23 @@
+{
+  "player_pid": 443263,
+  "transport": "launcher-owned RX service",
+  "commands": [
+    "five browse press/release pairs",
+    "deck1 load",
+    "P1 0 12300 0 0 1 0",
+    "E1 5 0 3 .5"
+  ],
+  "verified_screen": {
+    "track": "LAB-TONE-440Hz.wav",
+    "deck": 1,
+    "bpm": 123,
+    "mode": "TAP",
+    "effect": "ECHO",
+    "beat": "1/2",
+    "time_ms": 244
+  },
+  "packets": 14,
+  "invalid": 0,
+  "screenshot": "xdjaz/rx-cli-loaded.png",
+  "scope": "Paused PC native firmware fixture; no physical/audio performance claim"
+}

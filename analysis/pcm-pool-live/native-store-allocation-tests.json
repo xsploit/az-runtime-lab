@@ -1,0 +1,105 @@
+{
+  "scope": "Execute original AZ constructor allocation and cleanup with real storage.\n\nExtracted code stays in private temporary directories and is deleted on exit.\nNo attach, player patch, restart or UI operation. Allocation failure reporting is intercepted to exit43; this does not execute\nthe original logger. The constructor snippet stops before owner-vector insertion;\nfull pool construction, application teardown and exception unwind are not tested.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "tests": [
+    {
+      "variant": 0,
+      "case": "shared",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"passed\":true,\"patched\":0,\"case\":\"shared\",\"mapped\":3,\"shared_file_pages_after_constructor\":0,\"heap_fallbacks\":0}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 0,
+      "case": "exhausted",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"passed\":true,\"patched\":0,\"case\":\"exhausted\",\"mapped\":1,\"shared_file_pages_after_constructor\":0,\"heap_fallbacks\":2}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 0,
+      "case": "disabled",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"passed\":true,\"patched\":0,\"case\":\"disabled\",\"mapped\":0,\"shared_file_pages_after_constructor\":0,\"heap_fallbacks\":3}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 0,
+      "case": "variable",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"passed\":true,\"patched\":0,\"case\":\"variable\",\"mapped\":0,\"shared_file_pages_after_constructor\":0,\"heap_fallbacks\":3}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 0,
+      "case": "failure",
+      "returncode": 43,
+      "expected_returncode": 43,
+      "stdout": "",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 1,
+      "case": "shared",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"passed\":true,\"patched\":1,\"case\":\"shared\",\"mapped\":3,\"shared_file_pages_after_constructor\":3,\"heap_fallbacks\":0}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 1,
+      "case": "exhausted",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"passed\":true,\"patched\":1,\"case\":\"exhausted\",\"mapped\":1,\"shared_file_pages_after_constructor\":1,\"heap_fallbacks\":2}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 1,
+      "case": "disabled",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"passed\":true,\"patched\":1,\"case\":\"disabled\",\"mapped\":0,\"shared_file_pages_after_constructor\":0,\"heap_fallbacks\":3}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 1,
+      "case": "variable",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"passed\":true,\"patched\":1,\"case\":\"variable\",\"mapped\":0,\"shared_file_pages_after_constructor\":0,\"heap_fallbacks\":3}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 1,
+      "case": "failure",
+      "returncode": 43,
+      "expected_returncode": 43,
+      "stdout": "",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "temporary_remote_cleanup_returncode": 0,
+  "sources": {
+    "shims/pcm-template-store.c": "2b0019bc8179dd62621d3a679b91decefc33aff208ead85bf88cd7979eace0f8",
+    "shims/pcm-template-store.h": "dba7a76345b956761dbe34f1d89dd81556a38a0515c6f7414fa8b3f47477038e",
+    "shims/pcm-template-allocation.c": "7419845568becad8da7e0fa4521eb4ff035899e33e93e57f0e200562378e2bf9",
+    "shims/pcm-template-allocation.h": "52c4abb5da2e8325b95b2a4e69b77d12481f40cea2a9a74c995a8ec6df7137d5",
+    "analysis/test-pcm-native-allocation.c": "edb8179382300eaf811e88005470d648b11bd5da0981a5d313aab895881cec50",
+    "analysis/test-pcm-allocation.c": "6825b4779e8a89ebb0798ef796c370c2bf0755d80e544179410dac9db54fc005"
+  }
+}

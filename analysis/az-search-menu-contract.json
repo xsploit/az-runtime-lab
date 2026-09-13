@@ -1,0 +1,72 @@
+{
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Static original AZ instructions and RTTI. No live Search/Menu invocation or payload construction verified.",
+  "search_start": {
+    "owner": "gui::browse::SearchView",
+    "listener": "gui::status_area::ISearchStartButtonNotify::IListener",
+    "subobject_offset": "0x1720",
+    "address_point": "0x29db518",
+    "callback": "0x19bd488",
+    "entry_contract": "x0 is listener subobject; x1 points to native reference-counted string object, copied by facade using0x230f530; character encoding/valid construction still to verify.",
+    "gate": "subtract0x1720 then call0x24826d0; false returns without dispatch",
+    "target": "gui::browser_logic::IKeywordSearch",
+    "target_evidence": "MappedObjPtr diagnostic literal at0x29db548 names IKeywordSearch and needLock=true",
+    "cached_pointer_offset_from_listener": "0x18",
+    "map_key_offset_from_listener": "0x20",
+    "dispatch": "target virtual byte offset0x10 at0x19bd4d8; original x1 forwarded at0x19bd4d0",
+    "warning": "Null cached pointer enters native managed-object resolution. Do not bypass lookup/lifetime/thread contract."
+  },
+  "search_bar": {
+    "controller": "gui::status_area::browse::SearchBarWidgetController",
+    "address_point": "0x2c4f7f0",
+    "mode_method": "0x1c6c598",
+    "mode0": "calls child at widget+0xc8 virtual+0x60 with1 and child+0xd0 with0",
+    "mode1": "first child0, second child1",
+    "other_modes": "diagnostic path then both0",
+    "negative_finding": "This mode method does not itself dispatch IKeywordSearch."
+  },
+  "normal_search": {
+    "controller": "gui::status_area::browse::NormalSearchBarWidgetController",
+    "address_point": "0x2c4f378",
+    "constructor": "0x1c6bad0",
+    "widget_offset": "0x10",
+    "text_change_callback": "0x1c6b810",
+    "text_change_evidence": "Obtains native string from editor, visits listener array at+0x18 in reverse with count+0x28, invokes listener virtual0 with string pointer",
+    "clear_method": "0x1c6b9a0",
+    "clear_evidence": "Builds empty native string literal0x25c1d48 and calls0x24da1d0 with flag1",
+    "noop_slot": "0x1c6c240 is ret; do not mistake it for working search dispatch"
+  },
+  "menu": {
+    "controller": "gui::BrowseMenuWidgetController",
+    "address_point": "0x2b44be8",
+    "bases": [
+      "gui::ToggleImagesButton::Listener at0",
+      "gui::browse::IBrowseMenuChecker::IListener at8",
+      "gui::OkCancelPopupWidget::IListener at16"
+    ],
+    "checker_thunk": "0x1b5a040 subtracts8 and branches0x1b59f48",
+    "remaining": "Map primary button callback0x1b5bb90 and native menu availability/action states before implementing."
+  },
+  "next": [
+    "Confirm native string construction/encoding and actual SearchStart producer.",
+    "Trace facade registration and live ownership; preserve raw-facade lifetime across pending tasks.",
+    "Trace search event factory and source-ready preconditions.",
+    "Trace Menu primary button and availability checker independently."
+  ],
+  "keyword_facade": {
+    "type": "gui::browser_logic::KeywordSearchFacade",
+    "typeinfo": "0x2dbc460",
+    "address_point": "0x2dbc488",
+    "search_slot_offset": 16,
+    "entry": "0x1eefbb8",
+    "payload_copy": "0x230f530 copies pointer from [x1] to [x0], increments32-bit refcount at data-16 unless empty singleton0x312f250",
+    "thread_check": "0x232dc50 is pthread_self thunk; compares result to object from0x2395bf0 +16. Exact identity of that object remains to confirm.",
+    "matching_thread": "Copies payload again and calls0x1eb5138 on facade+88 if nonnull",
+    "other_thread": "Allocates48-byte,8-aligned task through facade+16 virtual+16; retains string at task+32 and raw facade pointer at task+24; submits via0x2209e90 on facade+8",
+    "task_address_point": "0x2dbc500",
+    "task_execute": "0x1eef628: loads saved facade then its handler+88, copies retained payload, calls same0x1eb5138",
+    "task_destroy": "0x1eef540 releases string at+32 then deletes48-byte allocation",
+    "consumer": "0x1eb5138, ListUpdateHandler (diagnostic source path); requires event factory at+24, creates event through0x1eacd78 then calls0x1eb2e40",
+    "boundary": "Facade can preserve string lifetime across queuing, but raw facade lifetime, thread affinity, source readiness and native string construction remain required. No direct injection validated."
+  }
+}

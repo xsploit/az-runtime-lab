@@ -1,0 +1,423 @@
+{
+  "source": "runtime-lab/analysis/allocation-residency-live/az-bins-playing-memory.json",
+  "small_allocated_mib": 647.6325378417969,
+  "rows": [
+    {
+      "size": 14336,
+      "curregs": 33925,
+      "allocated_bytes": 486348800,
+      "slab_capacity_bytes": 486735872,
+      "allocated_mib": 463.818359375,
+      "slab_capacity_mib": 464.1875
+    },
+    {
+      "size": 32768,
+      "curregs": 863,
+      "allocated_bytes": 28278784,
+      "slab_capacity_bytes": 28377088,
+      "allocated_mib": 26.96875,
+      "slab_capacity_mib": 27.0625
+    },
+    {
+      "size": 64,
+      "curregs": 281926,
+      "allocated_bytes": 18043264,
+      "slab_capacity_bytes": 19267584,
+      "allocated_mib": 17.2073974609375,
+      "slab_capacity_mib": 18.375
+    },
+    {
+      "size": 49152,
+      "curregs": 359,
+      "allocated_bytes": 17645568,
+      "slab_capacity_bytes": 17891328,
+      "allocated_mib": 16.828125,
+      "slab_capacity_mib": 17.0625
+    },
+    {
+      "size": 57344,
+      "curregs": 305,
+      "allocated_bytes": 17489920,
+      "slab_capacity_bytes": 19726336,
+      "allocated_mib": 16.6796875,
+      "slab_capacity_mib": 18.8125
+    },
+    {
+      "size": 196608,
+      "curregs": 68,
+      "allocated_bytes": 13369344,
+      "slab_capacity_bytes": 13369344,
+      "allocated_mib": 12.75,
+      "slab_capacity_mib": 12.75
+    },
+    {
+      "size": 81920,
+      "curregs": 120,
+      "allocated_bytes": 9830400,
+      "slab_capacity_bytes": 9830400,
+      "allocated_mib": 9.375,
+      "slab_capacity_mib": 9.375
+    },
+    {
+      "size": 40960,
+      "curregs": 215,
+      "allocated_bytes": 8806400,
+      "slab_capacity_bytes": 10158080,
+      "allocated_mib": 8.3984375,
+      "slab_capacity_mib": 9.6875
+    },
+    {
+      "size": 512,
+      "curregs": 11285,
+      "allocated_bytes": 5777920,
+      "slab_capacity_bytes": 5963776,
+      "allocated_mib": 5.51025390625,
+      "slab_capacity_mib": 5.6875
+    },
+    {
+      "size": 28672,
+      "curregs": 201,
+      "allocated_bytes": 5763072,
+      "slab_capacity_bytes": 6881280,
+      "allocated_mib": 5.49609375,
+      "slab_capacity_mib": 6.5625
+    },
+    {
+      "size": 10240,
+      "curregs": 537,
+      "allocated_bytes": 5498880,
+      "slab_capacity_bytes": 5898240,
+      "allocated_mib": 5.244140625,
+      "slab_capacity_mib": 5.625
+    },
+    {
+      "size": 1280,
+      "curregs": 3762,
+      "allocated_bytes": 4815360,
+      "slab_capacity_bytes": 8519680,
+      "allocated_mib": 4.59228515625,
+      "slab_capacity_mib": 8.125
+    },
+    {
+      "size": 16384,
+      "curregs": 261,
+      "allocated_bytes": 4276224,
+      "slab_capacity_bytes": 4587520,
+      "allocated_mib": 4.078125,
+      "slab_capacity_mib": 4.375
+    },
+    {
+      "size": 5120,
+      "curregs": 731,
+      "allocated_bytes": 3742720,
+      "slab_capacity_bytes": 5242880,
+      "allocated_mib": 3.5693359375,
+      "slab_capacity_mib": 5.0
+    },
+    {
+      "size": 98304,
+      "curregs": 36,
+      "allocated_bytes": 3538944,
+      "slab_capacity_bytes": 3735552,
+      "allocated_mib": 3.375,
+      "slab_capacity_mib": 3.5625
+    },
+    {
+      "size": 163840,
+      "curregs": 17,
+      "allocated_bytes": 2785280,
+      "slab_capacity_bytes": 2949120,
+      "allocated_mib": 2.65625,
+      "slab_capacity_mib": 2.8125
+    },
+    {
+      "size": 12288,
+      "curregs": 217,
+      "allocated_bytes": 2666496,
+      "slab_capacity_bytes": 3145728,
+      "allocated_mib": 2.54296875,
+      "slab_capacity_mib": 3.0
+    },
+    {
+      "size": 128,
+      "curregs": 20687,
+      "allocated_bytes": 2647936,
+      "slab_capacity_bytes": 3276800,
+      "allocated_mib": 2.5252685546875,
+      "slab_capacity_mib": 3.125
+    },
+    {
+      "size": 96,
+      "curregs": 23140,
+      "allocated_bytes": 2221440,
+      "slab_capacity_bytes": 4915200,
+      "allocated_mib": 2.1185302734375,
+      "slab_capacity_mib": 4.6875
+    },
+    {
+      "size": 114688,
+      "curregs": 19,
+      "allocated_bytes": 2179072,
+      "slab_capacity_bytes": 2293760,
+      "allocated_mib": 2.078125,
+      "slab_capacity_mib": 2.1875
+    },
+    {
+      "size": 65536,
+      "curregs": 33,
+      "allocated_bytes": 2162688,
+      "slab_capacity_bytes": 2162688,
+      "allocated_mib": 2.0625,
+      "slab_capacity_mib": 2.0625
+    },
+    {
+      "size": 20480,
+      "curregs": 92,
+      "allocated_bytes": 1884160,
+      "slab_capacity_bytes": 2293760,
+      "allocated_mib": 1.796875,
+      "slab_capacity_mib": 2.1875
+    },
+    {
+      "size": 8192,
+      "curregs": 217,
+      "allocated_bytes": 1777664,
+      "slab_capacity_bytes": 2228224,
+      "allocated_mib": 1.6953125,
+      "slab_capacity_mib": 2.125
+    },
+    {
+      "size": 4096,
+      "curregs": 433,
+      "allocated_bytes": 1773568,
+      "slab_capacity_bytes": 2031616,
+      "allocated_mib": 1.69140625,
+      "slab_capacity_mib": 1.9375
+    },
+    {
+      "size": 24576,
+      "curregs": 67,
+      "allocated_bytes": 1646592,
+      "slab_capacity_bytes": 1966080,
+      "allocated_mib": 1.5703125,
+      "slab_capacity_mib": 1.875
+    },
+    {
+      "size": 640,
+      "curregs": 2562,
+      "allocated_bytes": 1639680,
+      "slab_capacity_bytes": 4259840,
+      "allocated_mib": 1.563720703125,
+      "slab_capacity_mib": 4.0625
+    },
+    {
+      "size": 32,
+      "curregs": 50949,
+      "allocated_bytes": 1630368,
+      "slab_capacity_bytes": 1966080,
+      "allocated_mib": 1.554840087890625,
+      "slab_capacity_mib": 1.875
+    },
+    {
+      "size": 16,
+      "curregs": 90673,
+      "allocated_bytes": 1450768,
+      "slab_capacity_bytes": 2228224,
+      "allocated_mib": 1.3835601806640625,
+      "slab_capacity_mib": 2.125
+    },
+    {
+      "size": 192,
+      "curregs": 6595,
+      "allocated_bytes": 1266240,
+      "slab_capacity_bytes": 3342336,
+      "allocated_mib": 1.20758056640625,
+      "slab_capacity_mib": 3.1875
+    },
+    {
+      "size": 48,
+      "curregs": 24305,
+      "allocated_bytes": 1166640,
+      "slab_capacity_bytes": 3932160,
+      "allocated_mib": 1.1125946044921875,
+      "slab_capacity_mib": 3.75
+    },
+    {
+      "size": 768,
+      "curregs": 1453,
+      "allocated_bytes": 1115904,
+      "slab_capacity_bytes": 2555904,
+      "allocated_mib": 1.064208984375,
+      "slab_capacity_mib": 2.4375
+    },
+    {
+      "size": 3584,
+      "curregs": 305,
+      "allocated_bytes": 1093120,
+      "slab_capacity_bytes": 1376256,
+      "allocated_mib": 1.04248046875,
+      "slab_capacity_mib": 1.3125
+    },
+    {
+      "size": 896,
+      "curregs": 1182,
+      "allocated_bytes": 1059072,
+      "slab_capacity_bytes": 3211264,
+      "allocated_mib": 1.010009765625,
+      "slab_capacity_mib": 3.0625
+    },
+    {
+      "size": 131072,
+      "curregs": 8,
+      "allocated_bytes": 1048576,
+      "slab_capacity_bytes": 1048576,
+      "allocated_mib": 1.0,
+      "slab_capacity_mib": 1.0
+    },
+    {
+      "size": 1792,
+      "curregs": 583,
+      "allocated_bytes": 1044736,
+      "slab_capacity_bytes": 2293760,
+      "allocated_mib": 0.996337890625,
+      "slab_capacity_mib": 2.1875
+    },
+    {
+      "size": 256,
+      "curregs": 3844,
+      "allocated_bytes": 984064,
+      "slab_capacity_bytes": 1507328,
+      "allocated_mib": 0.9384765625,
+      "slab_capacity_mib": 1.4375
+    },
+    {
+      "size": 7168,
+      "curregs": 136,
+      "allocated_bytes": 974848,
+      "slab_capacity_bytes": 1376256,
+      "allocated_mib": 0.9296875,
+      "slab_capacity_mib": 1.3125
+    },
+    {
+      "size": 229376,
+      "curregs": 4,
+      "allocated_bytes": 917504,
+      "slab_capacity_bytes": 1376256,
+      "allocated_mib": 0.875,
+      "slab_capacity_mib": 1.3125
+    },
+    {
+      "size": 1536,
+      "curregs": 591,
+      "allocated_bytes": 907776,
+      "slab_capacity_bytes": 1769472,
+      "allocated_mib": 0.86572265625,
+      "slab_capacity_mib": 1.6875
+    },
+    {
+      "size": 3072,
+      "curregs": 295,
+      "allocated_bytes": 906240,
+      "slab_capacity_bytes": 1376256,
+      "allocated_mib": 0.8642578125,
+      "slab_capacity_mib": 1.3125
+    },
+    {
+      "size": 448,
+      "curregs": 1944,
+      "allocated_bytes": 870912,
+      "slab_capacity_bytes": 5963776,
+      "allocated_mib": 0.83056640625,
+      "slab_capacity_mib": 5.6875
+    },
+    {
+      "size": 2560,
+      "curregs": 316,
+      "allocated_bytes": 808960,
+      "slab_capacity_bytes": 983040,
+      "allocated_mib": 0.771484375,
+      "slab_capacity_mib": 0.9375
+    },
+    {
+      "size": 112,
+      "curregs": 6570,
+      "allocated_bytes": 735840,
+      "slab_capacity_bytes": 5046272,
+      "allocated_mib": 0.701751708984375,
+      "slab_capacity_mib": 4.8125
+    },
+    {
+      "size": 1024,
+      "curregs": 681,
+      "allocated_bytes": 697344,
+      "slab_capacity_bytes": 851968,
+      "allocated_mib": 0.6650390625,
+      "slab_capacity_mib": 0.8125
+    },
+    {
+      "size": 384,
+      "curregs": 1802,
+      "allocated_bytes": 691968,
+      "slab_capacity_bytes": 2359296,
+      "allocated_mib": 0.659912109375,
+      "slab_capacity_mib": 2.25
+    },
+    {
+      "size": 6144,
+      "curregs": 111,
+      "allocated_bytes": 681984,
+      "slab_capacity_bytes": 983040,
+      "allocated_mib": 0.650390625,
+      "slab_capacity_mib": 0.9375
+    },
+    {
+      "size": 80,
+      "curregs": 7545,
+      "allocated_bytes": 603600,
+      "slab_capacity_bytes": 5242880,
+      "allocated_mib": 0.5756378173828125,
+      "slab_capacity_mib": 5.0
+    },
+    {
+      "size": 2048,
+      "curregs": 271,
+      "allocated_bytes": 555008,
+      "slab_capacity_bytes": 917504,
+      "allocated_mib": 0.529296875,
+      "slab_capacity_mib": 0.875
+    },
+    {
+      "size": 160,
+      "curregs": 3161,
+      "allocated_bytes": 505760,
+      "slab_capacity_bytes": 4259840,
+      "allocated_mib": 0.482330322265625,
+      "slab_capacity_mib": 4.0625
+    },
+    {
+      "size": 320,
+      "curregs": 1561,
+      "allocated_bytes": 499520,
+      "slab_capacity_bytes": 2949120,
+      "allocated_mib": 0.47637939453125,
+      "slab_capacity_mib": 2.8125
+    },
+    {
+      "size": 224,
+      "curregs": 1106,
+      "allocated_bytes": 247744,
+      "slab_capacity_bytes": 2293760,
+      "allocated_mib": 0.23626708984375,
+      "slab_capacity_mib": 2.1875
+    },
+    {
+      "size": 8,
+      "curregs": 2158,
+      "allocated_bytes": 17264,
+      "slab_capacity_bytes": 524288,
+      "allocated_mib": 0.0164642333984375,
+      "slab_capacity_mib": 0.5
+    }
+  ],
+  "scope": "Allocator size-class accounting; tcache may lag frees. Slab capacity is not measured physical residency. Does not identify allocation callers."
+}

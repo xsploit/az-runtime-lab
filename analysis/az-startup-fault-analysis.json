@@ -1,0 +1,18 @@
+{
+  "observed_fault": "guest268351 thread2.49 stopped at0xab8808 before microphone breakpoint",
+  "instruction": "ldr x1,[x0] loading object vtable",
+  "static_path": "0xab8788 reads owner+368 setting, optional check through owner+400, iterates16-byte records owner+408..416; loads object pointer from current record intox0 then dereferences",
+  "known_implementation": "callback compare against0xac1498, validated as usecase::system::DeckState primary vtable0x26e7b48 slot2",
+  "proven": "Fault location is deck-state interface dereference, not microphone action execution",
+  "unproven": [
+    "faulting pointer value unavailable in original log",
+    "null versus stale pointer",
+    "construction order/race versus unrelated corruption",
+    "whether later139 exits share this location"
+  ],
+  "next": "Unexpected GDB stop guards now save key registers and all-thread bounded backtraces before detach. Need captured pointer and stack to establish cause.",
+  "evidence": [
+    "az-mic-native-action.log",
+    "az-startup-fault-site.asm"
+  ]
+}

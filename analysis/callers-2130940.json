@@ -1,0 +1,9 @@
+{
+  "target": "0x2130940",
+  "direct_callers": [
+    "0x215bd94",
+    "0x215bdbc",
+    "0x215bde4",
+    "0x215be0c"
+  ]
+}

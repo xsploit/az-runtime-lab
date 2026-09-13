@@ -1,0 +1,9 @@
+{
+  "reads": 13346,
+  "empty": 0,
+  "malformed": 0,
+  "backwards": 0,
+  "writer_errors": [],
+  "staging_files": 0,
+  "scope": "Independent timing publisher test on Pi; running AZ untouched"
+}

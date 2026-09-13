@@ -1,0 +1,27 @@
+{
+  "probe_pid": 297825,
+  "track": "notorious_b.i.g._-_dead_wrong_acapella.mp3",
+  "controls": "Native encoder pulses, counter2, deck1 load, ERP play; no pointer input",
+  "windows": {
+    "dry": {
+      "start_byte": 38886400,
+      "end_byte": 41003008,
+      "frames": 132288,
+      "finite": true,
+      "master_rms": 0.003427444401470547,
+      "cue_to_master_error": 0.0
+    },
+    "filtered": {
+      "start_byte": 41739264,
+      "end_byte": 43855872,
+      "frames": 132288,
+      "finite": true,
+      "master_rms": 0.001884577794801925,
+      "cue_to_master_error": 0.0
+    }
+  },
+  "limitation": "Different song segments, not matched-source frequency response or listening/Pi test",
+  "events": [
+    "{\"filter_frame\":2563776,\"channel\":0,\"result\":1}"
+  ]
+}

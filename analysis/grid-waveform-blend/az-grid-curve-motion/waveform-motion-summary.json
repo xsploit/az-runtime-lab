@@ -1,0 +1,173 @@
+[
+  {
+    "sigma": 0.5,
+    "grid-only": {
+      "video": "runtime-lab/analysis/grid-waveform-blend/az-grid-curve-motion/grid-only.mkv",
+      "frames": 479,
+      "sigma_pixels": 0.5,
+      "valid_pairs": 478,
+      "total_pairs": 478,
+      "minimum_correlation": 0.9837990403175354,
+      "identical_pairs": 10,
+      "residual_mean": -0.0004872204682410562,
+      "residual_stddev": 0.060273253725912405,
+      "residual_absolute_p95": 0.11252617104099004,
+      "estimated_rightward_pairs_over_0_05px": 0,
+      "waveform_dx_range": [
+        -1.3882269852642022,
+        0.0
+      ],
+      "limits": "Inferred image translation from gaussian-smoothed column intensity profile, not true source position or optical motion. Sequential clips contain different song sections. Contrast/shape changes can bias the estimator."
+    },
+    "grid-and-smooth-curve": {
+      "video": "runtime-lab/analysis/grid-waveform-blend/az-grid-curve-motion/grid-and-smooth-curve.mkv",
+      "frames": 480,
+      "sigma_pixels": 0.5,
+      "valid_pairs": 479,
+      "total_pairs": 479,
+      "minimum_correlation": 0.9836944341659546,
+      "identical_pairs": 16,
+      "residual_mean": -0.0008070757400107904,
+      "residual_stddev": 0.05246105683617176,
+      "residual_absolute_p95": 0.0662311156795034,
+      "estimated_rightward_pairs_over_0_05px": 0,
+      "waveform_dx_range": [
+        -1.3273769646852909,
+        0.0
+      ],
+      "limits": "Inferred image translation from gaussian-smoothed column intensity profile, not true source position or optical motion. Sequential clips contain different song sections. Contrast/shape changes can bias the estimator."
+    },
+    "grid-only-restored": {
+      "video": "runtime-lab/analysis/grid-waveform-blend/az-grid-curve-motion/grid-only-restored.mkv",
+      "frames": 479,
+      "sigma_pixels": 0.5,
+      "valid_pairs": 478,
+      "total_pairs": 478,
+      "minimum_correlation": 0.9839003086090088,
+      "identical_pairs": 16,
+      "residual_mean": -0.00018290409470860777,
+      "residual_stddev": 0.07205895825957047,
+      "residual_absolute_p95": 0.10932189815507992,
+      "estimated_rightward_pairs_over_0_05px": 0,
+      "waveform_dx_range": [
+        -1.4614382925837972,
+        0.0
+      ],
+      "limits": "Inferred image translation from gaussian-smoothed column intensity profile, not true source position or optical motion. Sequential clips contain different song sections. Contrast/shape changes can bias the estimator."
+    }
+  },
+  {
+    "sigma": 1,
+    "grid-only": {
+      "video": "runtime-lab/analysis/grid-waveform-blend/az-grid-curve-motion/grid-only.mkv",
+      "frames": 479,
+      "sigma_pixels": 1.0,
+      "valid_pairs": 478,
+      "total_pairs": 478,
+      "minimum_correlation": 0.9963511824607849,
+      "identical_pairs": 10,
+      "residual_mean": 2.008887651095115e-05,
+      "residual_stddev": 0.07835841887253883,
+      "residual_absolute_p95": 0.1359554852886818,
+      "estimated_rightward_pairs_over_0_05px": 0,
+      "waveform_dx_range": [
+        -1.408003471944368,
+        0.0
+      ],
+      "limits": "Inferred image translation from gaussian-smoothed column intensity profile, not true source position or optical motion. Sequential clips contain different song sections. Contrast/shape changes can bias the estimator."
+    },
+    "grid-and-smooth-curve": {
+      "video": "runtime-lab/analysis/grid-waveform-blend/az-grid-curve-motion/grid-and-smooth-curve.mkv",
+      "frames": 480,
+      "sigma_pixels": 1.0,
+      "valid_pairs": 479,
+      "total_pairs": 479,
+      "minimum_correlation": 0.9964876770973206,
+      "identical_pairs": 16,
+      "residual_mean": 0.00011073001040600622,
+      "residual_stddev": 0.07283821329533002,
+      "residual_absolute_p95": 0.10162983171457972,
+      "estimated_rightward_pairs_over_0_05px": 0,
+      "waveform_dx_range": [
+        -1.3025587429198466,
+        0.0
+      ],
+      "limits": "Inferred image translation from gaussian-smoothed column intensity profile, not true source position or optical motion. Sequential clips contain different song sections. Contrast/shape changes can bias the estimator."
+    },
+    "grid-only-restored": {
+      "video": "runtime-lab/analysis/grid-waveform-blend/az-grid-curve-motion/grid-only-restored.mkv",
+      "frames": 479,
+      "sigma_pixels": 1.0,
+      "valid_pairs": 478,
+      "total_pairs": 478,
+      "minimum_correlation": 0.996523916721344,
+      "identical_pairs": 16,
+      "residual_mean": -0.0002412910972872104,
+      "residual_stddev": 0.08654207655296495,
+      "residual_absolute_p95": 0.131535321830403,
+      "estimated_rightward_pairs_over_0_05px": 0,
+      "waveform_dx_range": [
+        -1.4954965254746602,
+        0.0
+      ],
+      "limits": "Inferred image translation from gaussian-smoothed column intensity profile, not true source position or optical motion. Sequential clips contain different song sections. Contrast/shape changes can bias the estimator."
+    }
+  },
+  {
+    "sigma": 2,
+    "grid-only": {
+      "video": "runtime-lab/analysis/grid-waveform-blend/az-grid-curve-motion/grid-only.mkv",
+      "frames": 479,
+      "sigma_pixels": 2.0,
+      "valid_pairs": 478,
+      "total_pairs": 478,
+      "minimum_correlation": 0.9983346462249756,
+      "identical_pairs": 10,
+      "residual_mean": 2.024877851024258e-05,
+      "residual_stddev": 0.08703941352426373,
+      "residual_absolute_p95": 0.14883661970034606,
+      "estimated_rightward_pairs_over_0_05px": 0,
+      "waveform_dx_range": [
+        -1.4127360501520478,
+        0.0
+      ],
+      "limits": "Inferred image translation from gaussian-smoothed column intensity profile, not true source position or optical motion. Sequential clips contain different song sections. Contrast/shape changes can bias the estimator."
+    },
+    "grid-and-smooth-curve": {
+      "video": "runtime-lab/analysis/grid-waveform-blend/az-grid-curve-motion/grid-and-smooth-curve.mkv",
+      "frames": 480,
+      "sigma_pixels": 2.0,
+      "valid_pairs": 479,
+      "total_pairs": 479,
+      "minimum_correlation": 0.9980661869049072,
+      "identical_pairs": 16,
+      "residual_mean": 0.00016223476439421392,
+      "residual_stddev": 0.08287716480377223,
+      "residual_absolute_p95": 0.11841314433876503,
+      "estimated_rightward_pairs_over_0_05px": 0,
+      "waveform_dx_range": [
+        -1.2904517086607625,
+        0.0
+      ],
+      "limits": "Inferred image translation from gaussian-smoothed column intensity profile, not true source position or optical motion. Sequential clips contain different song sections. Contrast/shape changes can bias the estimator."
+    },
+    "grid-only-restored": {
+      "video": "runtime-lab/analysis/grid-waveform-blend/az-grid-curve-motion/grid-only-restored.mkv",
+      "frames": 479,
+      "sigma_pixels": 2.0,
+      "valid_pairs": 478,
+      "total_pairs": 478,
+      "minimum_correlation": 0.9981070756912231,
+      "identical_pairs": 16,
+      "residual_mean": -0.00020842426380326707,
+      "residual_stddev": 0.09301320431725779,
+      "residual_absolute_p95": 0.1444881065650602,
+      "estimated_rightward_pairs_over_0_05px": 0,
+      "waveform_dx_range": [
+        -1.5082920276327052,
+        0.0
+      ],
+      "limits": "Inferred image translation from gaussian-smoothed column intensity profile, not true source position or optical motion. Sequential clips contain different song sections. Contrast/shape changes can bias the estimator."
+    }
+  }
+]

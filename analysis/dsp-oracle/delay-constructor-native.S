@@ -1,0 +1,46 @@
+.syntax unified
+.arm
+.fpu neon
+.text
+.balign 8
+.global delay_constructor
+.type delay_constructor,%function
+delay_constructor:
+.incbin "native-delay-constructor.bin",0,256
+bl fixture_string
+.incbin "native-delay-constructor.bin",260,4
+bl fixture_allocate
+.incbin "native-delay-constructor.bin",268,116
+bl fixture_destroy
+.incbin "native-delay-constructor.bin",388,8
+bl fixture_string
+.incbin "native-delay-constructor.bin",400,4
+bl fixture_allocate
+.incbin "native-delay-constructor.bin",408,116
+bl fixture_destroy
+.incbin "native-delay-constructor.bin",528,8
+bl fixture_string
+.incbin "native-delay-constructor.bin",540,4
+bl fixture_allocate
+.incbin "native-delay-constructor.bin",548,100
+bl fixture_destroy
+.incbin "native-delay-constructor.bin",652,8
+bl fixture_string
+.incbin "native-delay-constructor.bin",664,4
+bl fixture_allocate
+.incbin "native-delay-constructor.bin",672,96
+bl fixture_destroy
+.incbin "native-delay-constructor.bin",772,44
+bl fixture_cleanup
+.incbin "native-delay-constructor.bin",820,4
+bl fixture_destroy
+.incbin "native-delay-constructor.bin",828,8
+bl fixture_destroy
+.incbin "native-delay-constructor.bin",840,8
+bl fixture_destroy
+.incbin "native-delay-constructor.bin",852,8
+bl fixture_destroy
+.incbin "native-delay-constructor.bin",864,28
+.word fixture_rate
+.incbin "native-delay-constructor.bin",896,24
+.section .note.GNU-stack,"",%progbits

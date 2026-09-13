@@ -1,0 +1,77 @@
+[
+  {
+    "instruction": "6c9f84",
+    "string_address": "0x25d5b08",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::up(), this)"
+  },
+  {
+    "instruction": "6ca050",
+    "string_address": "0x25d5b48",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::left(), this)"
+  },
+  {
+    "instruction": "6ca11c",
+    "string_address": "0x25d5b88",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::right(), this)"
+  },
+  {
+    "instruction": "6ca1e8",
+    "string_address": "0x25d5bc8",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::down(), this)"
+  },
+  {
+    "instruction": "6ca2b4",
+    "string_address": "0x25d5c08",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::back(), this)"
+  },
+  {
+    "instruction": "6ca380",
+    "string_address": "0x25d5c48",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::tagTrack(), this)"
+  },
+  {
+    "instruction": "6ca44c",
+    "string_address": "0x25d5c88",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::trackFilter(), this)"
+  },
+  {
+    "instruction": "6ca518",
+    "string_address": "0x25d5cd0",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::source(), this)"
+  },
+  {
+    "instruction": "6ca5e4",
+    "string_address": "0x25d5d10",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::shortcut(), this)"
+  },
+  {
+    "instruction": "6ca6b0",
+    "string_address": "0x25d5d50",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::beatFx(), this)"
+  },
+  {
+    "instruction": "6ca77c",
+    "string_address": "0x25d5d90",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::browse(), this)"
+  },
+  {
+    "instruction": "6ca848",
+    "string_address": "0x25d5dd0",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::taglist(), this)"
+  },
+  {
+    "instruction": "6ca914",
+    "string_address": "0x25d5e10",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::playlist(), this)"
+  },
+  {
+    "instruction": "6ca9e0",
+    "string_address": "0x25d5e50",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::waveform(), this)"
+  },
+  {
+    "instruction": "6caaac",
+    "string_address": "0x25d5e90",
+    "diagnostic": "helper::linkToObserver<IHuiButton> (IdStruct::loadDeck1(), this)"
+  }
+]

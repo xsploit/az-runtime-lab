@@ -1,0 +1,40 @@
+{
+  "host_sanitized": {
+    "command": "cc -O1 -g -Wall -Wextra -Werror -pthread -fsanitize=address,undefined runtime-lab/shims/pcm-template-store.c runtime-lab/analysis/test-pcm-store.c -o /tmp/test-pcm-store-san && /tmp/test-pcm-store-san",
+    "returncode": 0,
+    "stdout": "{\"passed\":true,\"page_bytes\":4096,\"threads\":4,\"slots\":512,\"scope\":\"standalone ownership and COW isolation; no firmware hooks\"}\n",
+    "stderr": ""
+  },
+  "host_failure": {
+    "command": "cc -O2 -Wall -Wextra -Werror -pthread -DPCM_STORE_TEST_FAIL_MAP=3 runtime-lab/shims/pcm-template-store.c runtime-lab/analysis/test-pcm-store.c -o /tmp/test-pcm-store-fail && /tmp/test-pcm-store-fail",
+    "returncode": 0,
+    "stdout": "{\"passed\":true,\"scope\":\"injected partial mapping failure\"}\n",
+    "stderr": ""
+  },
+  "pi_native": {
+    "command": "ssh -o BatchMode=yes -o ConnectTimeout=8 -o UserKnownHostsFile=/tmp/piflex-known-hosts -i /tmp/piflex-ssh-key pompu_5@pflx.local 'cd /tmp/pcm-store-native && cc -O2 -Wall -Wextra -Werror -pthread shims/pcm-template-store.c analysis/test-pcm-store.c -o test && ./test && cc -O2 -Wall -Wextra -Werror -pthread -DPCM_STORE_TEST_FAIL_MAP=3 shims/pcm-template-store.c analysis/test-pcm-store.c -o test-fail && ./test-fail'",
+    "returncode": 0,
+    "stdout": "{\"passed\":true,\"page_bytes\":16384,\"threads\":4,\"slots\":512,\"scope\":\"standalone ownership and COW isolation; no firmware hooks\"}\n{\"passed\":true,\"scope\":\"injected partial mapping failure\"}\n",
+    "stderr": ""
+  },
+  "abi": {
+    "all_undefined_symbols_exported_by_firmware_libc": [
+      "__errno_location",
+      "close",
+      "fcntl",
+      "memfd_create",
+      "memset",
+      "mmap",
+      "munmap",
+      "sysconf",
+      "write"
+    ],
+    "libc_sha256": "3a790595f936fc569d0156a2e6eaa8d667f9d63725f3a70ee0d696ac0e50cbc9",
+    "scope": "symbol presence only, not linked runtime integration"
+  },
+  "source_sha256": {
+    "runtime-lab/shims/pcm-template-store.c": "2b0019bc8179dd62621d3a679b91decefc33aff208ead85bf88cd7979eace0f8",
+    "runtime-lab/shims/pcm-template-store.h": "dba7a76345b956761dbe34f1d89dd81556a38a0515c6f7414fa8b3f47477038e",
+    "runtime-lab/analysis/test-pcm-store.c": "78d7d24b2d12a773a49737c19453f8a4af8ac7e8515c1109fead4c909213ab9c"
+  }
+}

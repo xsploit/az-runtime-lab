@@ -1,0 +1,18 @@
+[
+  {
+    "start": "0x6c5e8c",
+    "end": "0x6c5ea0",
+    "register": 2,
+    "value": "0x229b0c0c98ac94",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157cd0",
+    "end": "0x2157ce4",
+    "register": 2,
+    "value": "0x229b0c0c98ac94",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  }
+]

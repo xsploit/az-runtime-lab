@@ -1,0 +1,90 @@
+{
+  "sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Static registration identity: nearest checked linkToObserver call and all four MOVZ/MOVK halfwords. No runtime ownership or knob payload semantics proven.",
+  "registrations": [
+    {
+      "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<0>::eqIsoHi(), this)",
+      "diagnostic_va": "0x25d5408",
+      "reference": "0x6c7744",
+      "registration_call": "0x6c76e4",
+      "hui_id": "0x7dcb7936b7ed2b00"
+    },
+    {
+      "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<0>::eqIsoMid(), this)",
+      "diagnostic_va": "0x25d5448",
+      "reference": "0x6c7810",
+      "registration_call": "0x6c77b0",
+      "hui_id": "0xa6518fb8028ca800"
+    },
+    {
+      "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<0>::eqIsoLow(), this)",
+      "diagnostic_va": "0x25d5490",
+      "reference": "0x6c78dc",
+      "registration_call": "0x6c787c",
+      "hui_id": "0xdacc2ca9faed3600"
+    },
+    {
+      "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<1>::eqIsoHi(), this)",
+      "diagnostic_va": "0x25d55d8",
+      "reference": "0x6c7cd4",
+      "registration_call": "0x6c7c74",
+      "hui_id": "0x7dcb7936b7ed2b01"
+    },
+    {
+      "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<1>::eqIsoMid(), this)",
+      "diagnostic_va": "0x25d5618",
+      "reference": "0x6c7da0",
+      "registration_call": "0x6c7d40",
+      "hui_id": "0xa6518fb8028ca801"
+    },
+    {
+      "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<1>::eqIsoLow(), this)",
+      "diagnostic_va": "0x25d5660",
+      "reference": "0x6c7e6c",
+      "registration_call": "0x6c7e0c",
+      "hui_id": "0xdacc2ca9faed3601"
+    },
+    {
+      "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<2>::eqIsoHi(), this)",
+      "diagnostic_va": "0x25d57a8",
+      "reference": "0x6c8264",
+      "registration_call": "0x6c8204",
+      "hui_id": "0x7dcb7936b7ed2b02"
+    },
+    {
+      "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<2>::eqIsoMid(), this)",
+      "diagnostic_va": "0x25d57e8",
+      "reference": "0x6c8330",
+      "registration_call": "0x6c82d0",
+      "hui_id": "0xa6518fb8028ca802"
+    },
+    {
+      "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<2>::eqIsoLow(), this)",
+      "diagnostic_va": "0x25d5830",
+      "reference": "0x6c83fc",
+      "registration_call": "0x6c839c",
+      "hui_id": "0xdacc2ca9faed3602"
+    },
+    {
+      "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<3>::eqIsoHi(), this)",
+      "diagnostic_va": "0x25d5978",
+      "reference": "0x6c87f4",
+      "registration_call": "0x6c8794",
+      "hui_id": "0x7dcb7936b7ed2b03"
+    },
+    {
+      "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<3>::eqIsoMid(), this)",
+      "diagnostic_va": "0x25d59b8",
+      "reference": "0x6c88c0",
+      "registration_call": "0x6c8860",
+      "hui_id": "0xa6518fb8028ca803"
+    },
+    {
+      "diagnostic": "linkToObserver<IHuiKnob> (huiid::Mixer::Ch<3>::eqIsoLow(), this)",
+      "diagnostic_va": "0x25d5a00",
+      "reference": "0x6c898c",
+      "registration_call": "0x6c892c",
+      "hui_id": "0xdacc2ca9faed3603"
+    }
+  ]
+}

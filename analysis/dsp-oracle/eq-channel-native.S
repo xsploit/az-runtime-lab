@@ -1,0 +1,65 @@
+.syntax unified
+.arm
+.fpu neon
+.text
+.balign 8
+.space 4
+.global native_channel_execute
+native_channel_execute:
+.incbin "native-eq-channel-native_channel_execute.bin",0,16
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",20,12
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",36,16
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",56,72
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",132,176
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",312,260
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",576,16
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",596,40
+b native_eq_abort
+.incbin "native-eq-channel-native_channel_execute.bin",640,232
+bl native_eq_abort
+.incbin "native-eq-channel-native_channel_execute.bin",876,4
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",884,24
+bl native_eq_abort
+.incbin "native-eq-channel-native_channel_execute.bin",912,4
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",920,12
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",936,28
+bl native_eq_abort
+.incbin "native-eq-channel-native_channel_execute.bin",968,16
+bl native_eq_abort
+.incbin "native-eq-channel-native_channel_execute.bin",988,4
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",996,12
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",1012,28
+bl native_eq_abort
+.incbin "native-eq-channel-native_channel_execute.bin",1044,8
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",1056,28
+bl native_eq_abort
+.incbin "native-eq-channel-native_channel_execute.bin",1088,16
+bl native_eq_abort
+.incbin "native-eq-channel-native_channel_execute.bin",1108,16
+bl native_eq_abort
+.incbin "native-eq-channel-native_channel_execute.bin",1128,4
+bl native_channel_no_effect
+.incbin "native-eq-channel-native_channel_execute.bin",1136,36
+.balign 8
+.global native_channel_mode
+native_channel_mode:
+.incbin "native-eq-channel-native_channel_mode.bin",0,96
+.balign 8
+.space 4
+.global native_channel_volume
+native_channel_volume:
+.incbin "native-eq-channel-native_channel_volume.bin",0,84
+.section .note.GNU-stack,"",%progbits

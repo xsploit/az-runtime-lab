@@ -1,0 +1,14 @@
+{
+  "pid": 325500,
+  "transport": "nonblockingUnixdatagrams",
+  "bridge_log": [
+    "{\"event\": \"ready\", \"midi_socket\": \"/tmp/az-live-mixer-cdn37l75/midi.sock\"}",
+    "{\"event\": \"stopped\", \"valid_tx\": 9225, \"invalid_tx\": 0, \"midi_messages\": 3, \"snapshots\": 1, \"trailing_bytes\": 0}"
+  ],
+  "mixer_log": [
+    "{\"control_frame\":196608,\"ramp_frames\":441}",
+    "{\"frames\":1221440,\"status\":\"stopped\"}"
+  ],
+  "failure": "Bridge own40s deadline expired before launcher loop finished; clean subprocess exits but launcher raised",
+  "fix": "Launcher now gives bridge duration+30seconds (max330). Retest pending."
+}

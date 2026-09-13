@@ -1,0 +1,12 @@
+0x00007fff3f409690 in ?? ()
+Breakpoint 1 at 0x1b976f0
+
+Thread 1 "EP147" hit Breakpoint 1, 0x0000000001b976f0 in ?? ()
+WIDGET=0x7fff0981c0a0 POSITION_REF=0x7ffff32a76a8 LR=0x1b93cc4 ZOOM=$1 = {f = 0.0625, u = 1031798784, s = 1031798784}
+0x7ffff32a76a8:	0x000000000002cc26	0x00007ffff32a76e0
+0x7ffff32a76b8:	0x0000000001b8f524	0x00007fff09834010
+0x7ffff32a76c8:	0x0000000001b8f7c4	0x0000000000000000
+#0  0x0000000001b976f0 in ?? ()
+#1  0x00007fff0981c010 in ?? ()
+Backtrace stopped: previous frame inner to this frame (corrupt stack?)
+[Inferior 1 (process 9262) detached]

@@ -1,0 +1,50 @@
+{
+  "frames": 7680,
+  "segments": [
+    {
+      "mode": 0,
+      "last_frame": [
+        0.20000000298023224,
+        0.10000000149011612,
+        0.4000000059604645,
+        0.699999988079071
+      ]
+    },
+    {
+      "mode": 1,
+      "last_frame": [
+        0.20000000298023224,
+        0.10000000149011612,
+        0.4000000059604645,
+        0.15000000596046448
+      ]
+    },
+    {
+      "mode": 0,
+      "last_frame": [
+        0.20000000298023224,
+        0.10000000149011612,
+        0.4000000059604645,
+        0.699999988079071
+      ]
+    }
+  ],
+  "accepted": [
+    {
+      "headphone_frame": 0,
+      "mode": 0,
+      "result": 1
+    },
+    {
+      "headphone_frame": 2560,
+      "mode": 1,
+      "result": 1
+    },
+    {
+      "headphone_frame": 5120,
+      "mode": 0,
+      "result": 1
+    }
+  ],
+  "scope": "FIFO/H1/recovered headphone audio; synthetic buses, explicit digital unity scale, no physical hardware claim"
+}

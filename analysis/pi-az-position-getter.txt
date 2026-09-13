@@ -1,0 +1,10 @@
+0x00007fff3f409690 in ?? ()
+Breakpoint 1 at 0x1b94380
+
+Thread 1 "EP147" hit Breakpoint 1, 0x0000000001b94380 in ?? ()
+POSITION_GETTER=0x1b8e580 OWNER=0x7fff0981c010 OWNER_VTABLE=0x2b6f208
+Temporary breakpoint 2 at 0x1b94384
+
+Thread 1 "EP147" hit Temporary breakpoint 2, 0x0000000001b94384 in ?? ()
+POSITION_VALUE=183334
+[Inferior 1 (process 9262) detached]

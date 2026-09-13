@@ -1,0 +1,25 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 384  of event 'cpu-clock'
+# Event count (approx.): 3878787840
+#
+# Overhead  Command          Shared Object           
+# ........  ...............  ........................
+#
+    44.79%  EP147            libX11.so.6.3.0         
+    16.93%  EP147            EP147                   
+     9.38%  JUCE ALSA        EP147                   
+     4.43%  IndicatorCtrl    EP147                   
+     3.91%  EP147            [kernel.kallsyms]       
+     3.65%  EP147            libc-2.29.so            
+     3.65%  HuiProcessor     EP147                   
+     1.82%  EP147            libjemalloc.so.2        
+     1.04%  JUCE ALSA        [vdso]                  
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

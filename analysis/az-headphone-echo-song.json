@@ -1,0 +1,21 @@
+{
+  "pid": 370653,
+  "track": "notorious_b.i.g._-_dead_wrong_acapella.mp3",
+  "start_byte": 61999104,
+  "frames": 132300,
+  "finite": true,
+  "rms": [
+    0.017356294331409245,
+    0.01737061683418795,
+    0.009894656618221852,
+    0.009908963153213204
+  ],
+  "scope": "Actual AZ MP3 through recovered headphone DSP and manually commanded Echo; native browse/load/play; no listening or native AZ FX synchronization claim",
+  "commands": {
+    "P1": "source0 BPM8600, time0 tempo0 loaded1 quantize0",
+    "E1": "Echo type5 channel0 beat3 depth0.5"
+  },
+  "calibration": "explicit host digital normalization scale -0.1333521416; physical device unverified",
+  "ui_fx_synchronized": false,
+  "native_bpm_synchronized": false
+}

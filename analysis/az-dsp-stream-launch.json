@@ -1,0 +1,12 @@
+{
+  "probe_pid": 295341,
+  "dsp_graph": true,
+  "frames": 1021824,
+  "all_finite": true,
+  "peak": 0.0,
+  "events": [
+    "{\"filter_frame\":666624,\"channel\":0,\"result\":1}",
+    "{\"frames\":1021824,\"status\":\"stopped\"}"
+  ],
+  "scope": "AZ stream and accepted Filter command; silent input, not song/effect audio proof"
+}

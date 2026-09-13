@@ -1,0 +1,10 @@
+{
+  "probe_duration_seconds": 30,
+  "alive_at_final_capture": true,
+  "screenshot_exit": 0,
+  "trace_sha256": "7ef72a13e6c62b9ee0a7d277c57fee7db2402e63fab8c0c7dc4edb959c6f19fd",
+  "trace_register_blocks": 0,
+  "trace_control_register_blocks": 25,
+  "filter": "0xb3d4f0..0xb3d57c",
+  "interpretation": "No targeted block observed during source-screen run. Positive control emitted registers. Does not prove missing mount readiness: alternative path, timing and filtering remain possible."
+}

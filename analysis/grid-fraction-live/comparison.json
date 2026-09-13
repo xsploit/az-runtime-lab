@@ -1,0 +1,12 @@
+{
+  "original_restored_exact": true,
+  "changed_pixels": 502,
+  "bbox": [
+    175,
+    89,
+    390,
+    103
+  ],
+  "original_sha256": "ea79cee08893d8e2a951d2a157f6f6fe9838acd92b086826137f8ef54342a145",
+  "candidate_sha256": "56a353c9cc55fd358e24a5d84290da390edc90f16f7d866e41f402323f836a38"
+}

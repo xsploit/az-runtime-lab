@@ -1,0 +1,23 @@
+{
+  "pid": 265596,
+  "breakpoint": "0x1a16c68 after constructor",
+  "verified": {
+    "primary_vtable": "0x29f22c0",
+    "secondary_vtable": "0x29f2308",
+    "setting_pointer_nonnull": true,
+    "identifier_strings": [
+      "mic1Button",
+      "mic2Button",
+      "micBothButton"
+    ]
+  },
+  "result": "GDB observation succeeded and detached; no native action submitted",
+  "limitations": "Pointer values are process-local; setting internals/thread submission not yet live validated. Breakpoint pauses guest, so run unsuitable for performance evidence.",
+  "transport": "private Unix socket in existing isolated state directory; no TCP listener",
+  "evidence": "az-mic-controller-gdb.log",
+  "reproduce": "LAB_GDB=1 offline AZ launcher; gdb -q -nx -batch -x runtime-lab/analysis/observe-mic-controller.gdb",
+  "run_end": {
+    "process_returncode": 137,
+    "note": "Guest ended after successful observation/detach, before bounded timeout completion. Cause unresolved; no stability claim. Host memory available15Gi at subsequent check."
+  }
+}

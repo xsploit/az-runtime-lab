@@ -1,0 +1,400 @@
+[
+  {
+    "source": "library-idle.json",
+    "collection_ms": 2.957155,
+    "rss_mib": 932.25,
+    "allocated_mib": 1497.2972793579102,
+    "active_mib": 1550.0625,
+    "dirty_mib": 2.5625,
+    "tcache_mib": 19.974395751953125,
+    "allocator_page_bytes": 65536,
+    "large_classes": [
+      {
+        "size_bytes": 117440512,
+        "count": 5,
+        "total_bytes": 587202560
+      },
+      {
+        "size_bytes": 16777216,
+        "count": 5,
+        "total_bytes": 83886080
+      },
+      {
+        "size_bytes": 8388608,
+        "count": 7,
+        "total_bytes": 58720256
+      },
+      {
+        "size_bytes": 10485760,
+        "count": 5,
+        "total_bytes": 52428800
+      },
+      {
+        "size_bytes": 786432,
+        "count": 44,
+        "total_bytes": 34603008
+      },
+      {
+        "size_bytes": 2621440,
+        "count": 12,
+        "total_bytes": 31457280
+      },
+      {
+        "size_bytes": 3670016,
+        "count": 4,
+        "total_bytes": 14680064
+      },
+      {
+        "size_bytes": 393216,
+        "count": 33,
+        "total_bytes": 12976128
+      },
+      {
+        "size_bytes": 1572864,
+        "count": 6,
+        "total_bytes": 9437184
+      },
+      {
+        "size_bytes": 2097152,
+        "count": 2,
+        "total_bytes": 4194304
+      },
+      {
+        "size_bytes": 917504,
+        "count": 4,
+        "total_bytes": 3670016
+      },
+      {
+        "size_bytes": 1835008,
+        "count": 2,
+        "total_bytes": 3670016
+      },
+      {
+        "size_bytes": 655360,
+        "count": 4,
+        "total_bytes": 2621440
+      },
+      {
+        "size_bytes": 327680,
+        "count": 7,
+        "total_bytes": 2293760
+      },
+      {
+        "size_bytes": 1048576,
+        "count": 1,
+        "total_bytes": 1048576
+      },
+      {
+        "size_bytes": 262144,
+        "count": 2,
+        "total_bytes": 524288
+      }
+    ]
+  },
+  {
+    "source": "startup.json",
+    "collection_ms": 3.521086,
+    "rss_mib": 922.375,
+    "allocated_mib": 1489.421890258789,
+    "active_mib": 1531.1875,
+    "dirty_mib": 1.5,
+    "tcache_mib": 13.081886291503906,
+    "allocator_page_bytes": 65536,
+    "large_classes": [
+      {
+        "size_bytes": 117440512,
+        "count": 5,
+        "total_bytes": 587202560
+      },
+      {
+        "size_bytes": 16777216,
+        "count": 5,
+        "total_bytes": 83886080
+      },
+      {
+        "size_bytes": 8388608,
+        "count": 7,
+        "total_bytes": 58720256
+      },
+      {
+        "size_bytes": 10485760,
+        "count": 5,
+        "total_bytes": 52428800
+      },
+      {
+        "size_bytes": 786432,
+        "count": 44,
+        "total_bytes": 34603008
+      },
+      {
+        "size_bytes": 2621440,
+        "count": 12,
+        "total_bytes": 31457280
+      },
+      {
+        "size_bytes": 3670016,
+        "count": 4,
+        "total_bytes": 14680064
+      },
+      {
+        "size_bytes": 393216,
+        "count": 33,
+        "total_bytes": 12976128
+      },
+      {
+        "size_bytes": 1572864,
+        "count": 5,
+        "total_bytes": 7864320
+      },
+      {
+        "size_bytes": 2097152,
+        "count": 2,
+        "total_bytes": 4194304
+      },
+      {
+        "size_bytes": 4194304,
+        "count": 1,
+        "total_bytes": 4194304
+      },
+      {
+        "size_bytes": 917504,
+        "count": 4,
+        "total_bytes": 3670016
+      },
+      {
+        "size_bytes": 1835008,
+        "count": 2,
+        "total_bytes": 3670016
+      },
+      {
+        "size_bytes": 3145728,
+        "count": 1,
+        "total_bytes": 3145728
+      },
+      {
+        "size_bytes": 655360,
+        "count": 4,
+        "total_bytes": 2621440
+      },
+      {
+        "size_bytes": 327680,
+        "count": 7,
+        "total_bytes": 2293760
+      },
+      {
+        "size_bytes": 1048576,
+        "count": 1,
+        "total_bytes": 1048576
+      },
+      {
+        "size_bytes": 262144,
+        "count": 2,
+        "total_bytes": 524288
+      }
+    ]
+  },
+  {
+    "source": "two-decks-later.json",
+    "collection_ms": 3.139027,
+    "rss_mib": 949.609375,
+    "allocated_mib": 1509.5810012817383,
+    "active_mib": 1575.75,
+    "dirty_mib": 2.8125,
+    "tcache_mib": 26.269790649414062,
+    "allocator_page_bytes": 65536,
+    "large_classes": [
+      {
+        "size_bytes": 117440512,
+        "count": 5,
+        "total_bytes": 587202560
+      },
+      {
+        "size_bytes": 16777216,
+        "count": 5,
+        "total_bytes": 83886080
+      },
+      {
+        "size_bytes": 8388608,
+        "count": 7,
+        "total_bytes": 58720256
+      },
+      {
+        "size_bytes": 10485760,
+        "count": 5,
+        "total_bytes": 52428800
+      },
+      {
+        "size_bytes": 786432,
+        "count": 44,
+        "total_bytes": 34603008
+      },
+      {
+        "size_bytes": 2621440,
+        "count": 12,
+        "total_bytes": 31457280
+      },
+      {
+        "size_bytes": 3670016,
+        "count": 4,
+        "total_bytes": 14680064
+      },
+      {
+        "size_bytes": 393216,
+        "count": 33,
+        "total_bytes": 12976128
+      },
+      {
+        "size_bytes": 1572864,
+        "count": 6,
+        "total_bytes": 9437184
+      },
+      {
+        "size_bytes": 2097152,
+        "count": 2,
+        "total_bytes": 4194304
+      },
+      {
+        "size_bytes": 917504,
+        "count": 4,
+        "total_bytes": 3670016
+      },
+      {
+        "size_bytes": 1835008,
+        "count": 2,
+        "total_bytes": 3670016
+      },
+      {
+        "size_bytes": 655360,
+        "count": 5,
+        "total_bytes": 3276800
+      },
+      {
+        "size_bytes": 3145728,
+        "count": 1,
+        "total_bytes": 3145728
+      },
+      {
+        "size_bytes": 327680,
+        "count": 7,
+        "total_bytes": 2293760
+      },
+      {
+        "size_bytes": 524288,
+        "count": 2,
+        "total_bytes": 1048576
+      },
+      {
+        "size_bytes": 1048576,
+        "count": 1,
+        "total_bytes": 1048576
+      },
+      {
+        "size_bytes": 262144,
+        "count": 2,
+        "total_bytes": 524288
+      }
+    ]
+  },
+  {
+    "source": "two-decks-playing.json",
+    "collection_ms": 3.017489,
+    "rss_mib": 962.640625,
+    "allocated_mib": 1508.8242263793945,
+    "active_mib": 1574.75,
+    "dirty_mib": 31.5,
+    "tcache_mib": 25.514480590820312,
+    "allocator_page_bytes": 65536,
+    "large_classes": [
+      {
+        "size_bytes": 117440512,
+        "count": 5,
+        "total_bytes": 587202560
+      },
+      {
+        "size_bytes": 16777216,
+        "count": 5,
+        "total_bytes": 83886080
+      },
+      {
+        "size_bytes": 8388608,
+        "count": 7,
+        "total_bytes": 58720256
+      },
+      {
+        "size_bytes": 10485760,
+        "count": 5,
+        "total_bytes": 52428800
+      },
+      {
+        "size_bytes": 786432,
+        "count": 44,
+        "total_bytes": 34603008
+      },
+      {
+        "size_bytes": 2621440,
+        "count": 12,
+        "total_bytes": 31457280
+      },
+      {
+        "size_bytes": 3670016,
+        "count": 4,
+        "total_bytes": 14680064
+      },
+      {
+        "size_bytes": 393216,
+        "count": 33,
+        "total_bytes": 12976128
+      },
+      {
+        "size_bytes": 1572864,
+        "count": 6,
+        "total_bytes": 9437184
+      },
+      {
+        "size_bytes": 2097152,
+        "count": 2,
+        "total_bytes": 4194304
+      },
+      {
+        "size_bytes": 917504,
+        "count": 4,
+        "total_bytes": 3670016
+      },
+      {
+        "size_bytes": 1835008,
+        "count": 2,
+        "total_bytes": 3670016
+      },
+      {
+        "size_bytes": 655360,
+        "count": 5,
+        "total_bytes": 3276800
+      },
+      {
+        "size_bytes": 3145728,
+        "count": 1,
+        "total_bytes": 3145728
+      },
+      {
+        "size_bytes": 327680,
+        "count": 7,
+        "total_bytes": 2293760
+      },
+      {
+        "size_bytes": 524288,
+        "count": 2,
+        "total_bytes": 1048576
+      },
+      {
+        "size_bytes": 1048576,
+        "count": 1,
+        "total_bytes": 1048576
+      },
+      {
+        "size_bytes": 262144,
+        "count": 2,
+        "total_bytes": 524288
+      }
+    ]
+  }
+]

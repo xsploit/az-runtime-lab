@@ -1,0 +1,67 @@
+{
+  "scope": "Sequential headless two-MP3 transport and memory samples; paced NULL audio, no digital/audio fidelity or physical-output test",
+  "rows": [
+    {
+      "stage": "two-playing",
+      "mode": "baseline",
+      "pid": 29398,
+      "pss_mib": 977.7021484375,
+      "cpu_percent_one_core": 45.78502545800381,
+      "source_rates": [
+        44091.179450666656,
+        44091.179450666656
+      ],
+      "minor_faults": 1690,
+      "major_faults": 0,
+      "swap_kib": 0
+    },
+    {
+      "stage": "two-playing",
+      "mode": "template",
+      "pid": 28634,
+      "pss_mib": 615.0283203125,
+      "cpu_percent_one_core": 46.06921506016109,
+      "source_rates": [
+        44114.52124979938,
+        44114.52124979938
+      ],
+      "minor_faults": 1860,
+      "major_faults": 0,
+      "swap_kib": 0
+    },
+    {
+      "stage": "cue-restart",
+      "mode": "baseline",
+      "pid": 29398,
+      "pss_mib": 978.4052734375,
+      "cpu_percent_one_core": 44.63533144193338,
+      "source_rates": [
+        44091.110289929165,
+        44091.110289929165
+      ],
+      "minor_faults": 784,
+      "major_faults": 0,
+      "swap_kib": 0
+    },
+    {
+      "stage": "cue-restart",
+      "mode": "template",
+      "pid": 28634,
+      "pss_mib": 644.1064453125,
+      "cpu_percent_one_core": 45.01757123467083,
+      "source_rates": [
+        44115.42110568835,
+        44115.42110568835
+      ],
+      "minor_faults": 1003,
+      "major_faults": 0,
+      "swap_kib": 0
+    }
+  ],
+  "reductions_mib": [
+    362.673828125,
+    334.298828125
+  ],
+  "cue_restart_verified": true,
+  "visible_session_changed": false
+}

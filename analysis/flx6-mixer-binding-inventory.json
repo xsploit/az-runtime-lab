@@ -1,0 +1,147 @@
+{
+  "source": "rx3-research/bitedj-mapping/Pioneer-DDJ-FLX6.midi.xml",
+  "sha256": "1df86863293b8c9eb48d1748b6a3e4bd56b2a4f21c5f08c3b5b83bc101fb0301",
+  "bindings": [
+    {
+      "group": "[Master]",
+      "key": "headMix",
+      "status": "0xB6",
+      "midino": "0x0C",
+      "description": "HEADPHONES MIXING - rotate - Monitor Balance"
+    },
+    {
+      "group": "[Channel1]",
+      "key": "volume",
+      "status": "0xB0",
+      "midino": "0x13",
+      "description": "CHANNELFADER - slider"
+    },
+    {
+      "group": "[Channel2]",
+      "key": "volume",
+      "status": "0xB1",
+      "midino": "0x13",
+      "description": "CHANNELFADER - slider"
+    },
+    {
+      "group": "[Channel3]",
+      "key": "volume",
+      "status": "0xB2",
+      "midino": "0x13",
+      "description": "CHANNELFADER - slider"
+    },
+    {
+      "group": "[Channel4]",
+      "key": "volume",
+      "status": "0xB3",
+      "midino": "0x13",
+      "description": "CHANNELFADER - slider"
+    },
+    {
+      "group": "[Master]",
+      "key": "crossfader",
+      "status": "0xB6",
+      "midino": "0x1F",
+      "description": "CROSSFADER - slider"
+    },
+    {
+      "group": "[Master]",
+      "key": "headMix",
+      "status": "0xB6",
+      "midino": "0x2C",
+      "description": "HEADPHONES MIXING - rotate - Monitor Balance"
+    },
+    {
+      "group": "[Channel1]",
+      "key": "volume",
+      "status": "0xB0",
+      "midino": "0x33",
+      "description": "CHANNELFADER - slider"
+    },
+    {
+      "group": "[Channel2]",
+      "key": "volume",
+      "status": "0xB1",
+      "midino": "0x33",
+      "description": "CHANNELFADER - slider"
+    },
+    {
+      "group": "[Channel3]",
+      "key": "volume",
+      "status": "0xB2",
+      "midino": "0x33",
+      "description": "CHANNELFADER - slider"
+    },
+    {
+      "group": "[Channel4]",
+      "key": "volume",
+      "status": "0xB3",
+      "midino": "0x33",
+      "description": "CHANNELFADER - slider"
+    },
+    {
+      "group": "[Master]",
+      "key": "crossfader",
+      "status": "0xB6",
+      "midino": "0x3F",
+      "description": "CROSSFADER - slider"
+    },
+    {
+      "group": "[Library]",
+      "key": "PioneerDDJFLX6.browseRotate",
+      "status": "0xB6",
+      "midino": "0x40",
+      "description": "BROWSE - accelerated track-list scrolling"
+    },
+    {
+      "group": "[Library]",
+      "key": "MoveFocusForward",
+      "status": "0x96",
+      "midino": "0x41",
+      "description": "BROWSE - press - Open selected folder or move between browser panes"
+    },
+    {
+      "group": "[Tab]",
+      "key": "PioneerDDJFLX6.backPressed",
+      "status": "0x96",
+      "midino": "0x65",
+      "description": "BACK - press - Return to Browse or go back in the active browser"
+    },
+    {
+      "group": "[Tab]",
+      "key": "library",
+      "status": "0x96",
+      "midino": "0x7A",
+      "description": "VIEW - press - Open the Browse page"
+    },
+    {
+      "group": "[Channel1]",
+      "key": "pfl",
+      "status": "0x90",
+      "midino": "0x54",
+      "description": "CUE Channel - press - toggle Headphone Cue"
+    },
+    {
+      "group": "[Channel2]",
+      "key": "pfl",
+      "status": "0x91",
+      "midino": "0x54",
+      "description": "CUE Channel - press - toggle Headphone Cue"
+    },
+    {
+      "group": "[Channel3]",
+      "key": "pfl",
+      "status": "0x92",
+      "midino": "0x54",
+      "description": "CUE Channel - press - toggle Headphone Cue"
+    },
+    {
+      "group": "[Channel4]",
+      "key": "pfl",
+      "status": "0x93",
+      "midino": "0x54",
+      "description": "CUE Channel - press - toggle Headphone Cue"
+    }
+  ],
+  "scope": "Saved research copy; not proof of current Pi installation or physical MIDI values."
+}

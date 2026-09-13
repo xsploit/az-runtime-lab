@@ -1,0 +1,30 @@
+[
+  {
+    "adrp": "0x6cc0e4",
+    "add": "0x6cc0ec",
+    "target": "0x25d40a8",
+    "label": "primaryDeckSelect",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x6cc1b0",
+    "add": "0x6cc1b8",
+    "target": "0x25d40f8",
+    "label": "secondaryDeckSelect",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x6ce96c",
+    "add": "0x6ce974",
+    "target": "0x25d40a8",
+    "label": "primaryDeckSelect",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x6cea38",
+    "add": "0x6cea40",
+    "target": "0x25d40f8",
+    "label": "secondaryDeckSelect",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

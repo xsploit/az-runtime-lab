@@ -1,0 +1,42 @@
+[
+  {
+    "vtable": "0x28629b0",
+    "type": "music_library::ListCacheCollector"
+  },
+  {
+    "vtable": "0x2862a80",
+    "type": "std::_Sp_counted_ptr<music_library::ListRequestHandler*, (__gnu_cxx::_Lock_policy)2>"
+  },
+  {
+    "vtable": "0x2862ab8",
+    "type": "std::_Sp_counted_ptr<music_library::InformationRequestHandler*, (__gnu_cxx::_Lock_policy)2>"
+  },
+  {
+    "vtable": "0x2862af0",
+    "type": "std::_Sp_counted_ptr<music_library::UpdateRequestHandler*, (__gnu_cxx::_Lock_policy)2>"
+  },
+  {
+    "vtable": "0x2862b28",
+    "type": "std::_Sp_counted_ptr<music_library::ListServer*, (__gnu_cxx::_Lock_policy)2>"
+  },
+  {
+    "vtable": "0x2862b60",
+    "type": "std::_Sp_counted_ptr<music_library::InformationServer*, (__gnu_cxx::_Lock_policy)2>"
+  },
+  {
+    "vtable": "0x2862b98",
+    "type": "std::_Sp_counted_ptr<music_library::CuePointServer*, (__gnu_cxx::_Lock_policy)2>"
+  },
+  {
+    "vtable": "0x2862bd0",
+    "type": "std::_Sp_counted_ptr<music_library::DjProfileServer*, (__gnu_cxx::_Lock_policy)2>"
+  },
+  {
+    "vtable": "0x2862c08",
+    "type": "std::_Sp_counted_ptr<music_library::InformationUpdater*, (__gnu_cxx::_Lock_policy)2>"
+  },
+  {
+    "vtable": "0x2862c40",
+    "type": "std::_Sp_counted_ptr<music_library::CueUpdater*, (__gnu_cxx::_Lock_policy)2>"
+  }
+]

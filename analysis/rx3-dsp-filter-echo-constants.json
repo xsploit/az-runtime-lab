@@ -1,0 +1,163 @@
+[
+  {
+    "address": "0x00425488",
+    "name": "mixerengine::BeatEffectEcho::MAX_DELAY_TIME",
+    "bits": "0x8",
+    "as_float": 1.1210387714598537e-44,
+    "as_u32": 8
+  },
+  {
+    "address": "0x00425494",
+    "name": "mixerengine::BeatEffectEcho::MAX_TIME_VALUE",
+    "bits": "0xfa0",
+    "as_float": 5.605193857299268e-42,
+    "as_u32": 4000
+  },
+  {
+    "address": "0x00425490",
+    "name": "mixerengine::BeatEffectEcho::MIN_TIME_VALUE",
+    "bits": "0x1",
+    "as_float": 1.401298464324817e-45,
+    "as_u32": 1
+  },
+  {
+    "address": "0x0042548c",
+    "name": "mixerengine::BeatEffectEcho::DEFAULT_TIME_VALUE",
+    "bits": "0x1f4",
+    "as_float": 7.006492321624085e-43,
+    "as_u32": 500
+  },
+  {
+    "address": "0x00425480",
+    "name": "mixerengine::BeatEffectEcho::EFFECT_ON_SMOOTHER",
+    "bits": "0x408b3f46",
+    "as_float": 4.351473808288574,
+    "as_u32": 1082867526
+  },
+  {
+    "address": "0x00425478",
+    "name": "mixerengine::BeatEffectEcho::EFFECT_RATIO_SLOPE",
+    "bits": "0x3faceb10",
+    "as_float": 1.3509235382080078,
+    "as_u32": 1068296976
+  },
+  {
+    "address": "0x00425474",
+    "name": "mixerengine::BeatEffectEcho::ORIGINAL_RATIO_SLOPE",
+    "bits": "0x40853408",
+    "as_float": 4.162601470947266,
+    "as_u32": 1082471432
+  },
+  {
+    "address": "0x0042547c",
+    "name": "mixerengine::BeatEffectEcho::MIX_RATIO_SMOOTHING_TIME",
+    "bits": "0x40555555",
+    "as_float": 3.3333332538604736,
+    "as_u32": 1079334229
+  },
+  {
+    "address": "0x00425484",
+    "name": "mixerengine::BeatEffectEcho::TIME_CHANGE_SMOOTHING_TIME",
+    "bits": "0x40555555",
+    "as_float": 3.3333332538604736,
+    "as_u32": 1079334229
+  },
+  {
+    "address": "0x0042da34",
+    "name": "mixerengine::SoundColorFxFilter::MAX_HPF_RESONANCE",
+    "bits": "0x3fa660cc",
+    "as_float": 1.2998290061950684,
+    "as_u32": 1067868364
+  },
+  {
+    "address": "0x0042da38",
+    "name": "mixerengine::SoundColorFxFilter::MAX_LPF_RESONANCE",
+    "bits": "0x3fb33333",
+    "as_float": 1.399999976158142,
+    "as_u32": 1068708659
+  },
+  {
+    "address": "0x0042da30",
+    "name": "mixerengine::SoundColorFxFilter::CENTER_EFFECT_RATIO",
+    "bits": "0x3e800000",
+    "as_float": 0.25,
+    "as_u32": 1048576000
+  },
+  {
+    "address": "0x0042da28",
+    "name": "mixerengine::SoundColorFxFilter::CFX_FILTER_FADE_ADD",
+    "bits": "0x3b149b93",
+    "as_float": 0.0022675737272948027,
+    "as_u32": 991206291
+  },
+  {
+    "address": "0x0042da18",
+    "name": "mixerengine::SoundColorFxFilter::CFX_FILTER_HPF_FC_MAX",
+    "bits": "0x46002000",
+    "as_float": 8200.0,
+    "as_u32": 1174413312
+  },
+  {
+    "address": "0x0042da1c",
+    "name": "mixerengine::SoundColorFxFilter::CFX_FILTER_HPF_FC_MIN",
+    "bits": "0x41a00000",
+    "as_float": 20.0,
+    "as_u32": 1101004800
+  },
+  {
+    "address": "0x0042da20",
+    "name": "mixerengine::SoundColorFxFilter::CFX_FILTER_LPF_FC_MAX",
+    "bits": "0x46a41000",
+    "as_float": 21000.0,
+    "as_u32": 1185157120
+  },
+  {
+    "address": "0x0042da24",
+    "name": "mixerengine::SoundColorFxFilter::CFX_FILTER_LPF_FC_MIN",
+    "bits": "0x42c80000",
+    "as_float": 100.0,
+    "as_u32": 1120403456
+  },
+  {
+    "address": "0x0042da2c",
+    "name": "mixerengine::SoundColorFxFilter::INV_CENTER_EFFECT_RATIO",
+    "bits": "0x40800000",
+    "as_float": 4.0,
+    "as_u32": 1082130432
+  },
+  {
+    "address": "0x0042da40",
+    "name": "mixerengine::SoundColorFxFilter::INV_USE_COLOR_FILTER_STEP",
+    "bits": "0x3c020821",
+    "as_float": 0.007936508394777775,
+    "as_u32": 1006766113
+  },
+  {
+    "address": "0x0042da44",
+    "name": "mixerengine::SoundColorFxFilter::SLIDE_USE_COLOR_FILTER_STEP",
+    "bits": "0x41800000",
+    "as_float": 16.0,
+    "as_u32": 1098907648
+  },
+  {
+    "address": "0x0042da4c",
+    "name": "mixerengine::SoundColorFxFilter::NO_USE_COLOR_FILTER_STEP_LEFT",
+    "bits": "0x42fc0000",
+    "as_float": 126.0,
+    "as_u32": 1123811328
+  },
+  {
+    "address": "0x0042da48",
+    "name": "mixerengine::SoundColorFxFilter::NO_USE_COLOR_FILTER_STEP_RIGHT",
+    "bits": "0x43020000",
+    "as_float": 130.0,
+    "as_u32": 1124204544
+  },
+  {
+    "address": "0x0042da3c",
+    "name": "mixerengine::SoundColorFxFilter::INV_SLIDE_USE_COLOR_FILTER_STEP",
+    "bits": "0x3d800000",
+    "as_float": 0.0625,
+    "as_u32": 1031798784
+  }
+]

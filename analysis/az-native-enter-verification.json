@@ -1,0 +1,34 @@
+{
+  "pid": 158999,
+  "pointer_input_used": false,
+  "encoder_press": {
+    "byte": 31,
+    "bit": 0,
+    "sequence": [
+      0,
+      1,
+      0
+    ],
+    "counter_unchanged": true
+  },
+  "steps": [
+    "Initial SOURCE USB1 selected",
+    "First flag pulse focuses Local Library",
+    "Second pulse opens local library; transient OneLibrary warning",
+    "Third pulse enters focused track list",
+    "Counter0 to1 selects660Hz track",
+    "Load deck1 with counter1 preserved loads LAB-TONE-660Hz.wav"
+  ],
+  "screenshots": [
+    "encoder-press-source.png",
+    "encoder-press-library.png",
+    "encoder-press-track-selection.png",
+    "encoder-native-load660.png"
+  ],
+  "limitations": [
+    "Single local folder fixture",
+    "Physical FLX6 integration not tested",
+    "Press versus release activation edge not isolated",
+    "View idempotence and page-state readback still pending"
+  ]
+}

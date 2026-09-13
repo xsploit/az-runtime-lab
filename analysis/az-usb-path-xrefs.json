@@ -1,0 +1,16 @@
+[
+  {
+    "adrp": "0x210162c",
+    "add": "0x2101634",
+    "target": "0x2e33ab8",
+    "label": "usb1 proc path",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x21016c4",
+    "add": "0x21016cc",
+    "target": "0x2e33ac8",
+    "label": "usb2 proc path",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

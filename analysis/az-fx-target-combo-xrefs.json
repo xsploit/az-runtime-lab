@@ -1,0 +1,93 @@
+[
+  {
+    "adrp": "0x188fe14",
+    "add": "0x188fe28",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x188fee0",
+    "add": "0x188fee4",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x188ff74",
+    "add": "0x188ff78",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1890040",
+    "add": "0x1890044",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x18900f4",
+    "add": "0x18900fc",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1890184",
+    "add": "0x1890188",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1894b5c",
+    "add": "0x1894b64",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1894c18",
+    "add": "0x1894c1c",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1894cbc",
+    "add": "0x1894cc0",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1894d7c",
+    "add": "0x1894d80",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1894e58",
+    "add": "0x1894e5c",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1894efc",
+    "add": "0x1894f10",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x18c7314",
+    "add": "0x18c731c",
+    "target": "0x295fe50",
+    "label": "BeatFxTargetComboBox",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "phase": "original-upload",
+    "before": {
+      "time": 23043.441967831,
+      "positions": [
+        97044,
+        97044,
+        9223372036854775807,
+        9223372036854775807
+      ],
+      "enabled": 0,
+      "uploads": 131497,
+      "fallbacks": 0
+    },
+    "cpu_percent_one_core": {
+      "player": 50.74886397397729,
+      "xwayland": 16.49963065163794
+    },
+    "after": {
+      "time": 23068.793234995,
+      "positions": [
+        1214484,
+        1214484,
+        9223372036854775807,
+        9223372036854775807
+      ],
+      "enabled": 0,
+      "uploads": 131497,
+      "fallbacks": 0
+    },
+    "source_rates": [
+      44078.27004351458,
+      44078.27004351458,
+      0.0,
+      0.0
+    ],
+    "transport_valid": true
+  },
+  {
+    "phase": "staged-upload",
+    "before": {
+      "time": 23071.00634281,
+      "positions": [
+        96340,
+        96340,
+        9223372036854775807,
+        9223372036854775807
+      ],
+      "enabled": 1,
+      "uploads": 131898,
+      "fallbacks": 0
+    },
+    "cpu_percent_one_core": {
+      "player": 41.249260617317624,
+      "xwayland": 12.499775944641705
+    },
+    "after": {
+      "time": 23096.111471938,
+      "positions": [
+        1203668,
+        1203668,
+        9223372036854775807,
+        9223372036854775807
+      ],
+      "enabled": 1,
+      "uploads": 146171,
+      "fallbacks": 0
+    },
+    "source_rates": [
+      44107.6400903696,
+      44107.6400903696,
+      0.0,
+      0.0
+    ],
+    "transport_valid": true
+  },
+  {
+    "phase": "original-upload-restored",
+    "before": {
+      "time": 23098.314407885,
+      "positions": [
+        96084,
+        96084,
+        9223372036854775807,
+        9223372036854775807
+      ],
+      "enabled": 0,
+      "uploads": 146515,
+      "fallbacks": 0
+    },
+    "cpu_percent_one_core": {
+      "player": 50.24887494022799,
+      "xwayland": 16.749624980076
+    },
+    "after": {
+      "time": 23123.670955509,
+      "positions": [
+        1214420,
+        1214420,
+        9223372036854775807,
+        9223372036854775807
+      ],
+      "enabled": 0,
+      "uploads": 146515,
+      "fallbacks": 0
+    },
+    "source_rates": [
+      44104.426855866215,
+      44104.426855866215,
+      0.0,
+      0.0
+    ],
+    "transport_valid": true
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "adrp": "0x2353d38",
+    "add": "0x2353d44",
+    "target": "0x313afa8",
+    "label": "/proc/cpuinfo",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2353d88",
+    "add": "0x2353d8c",
+    "target": "0x313afa8",
+    "label": "/proc/cpuinfo",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2353e38",
+    "add": "0x2353e44",
+    "target": "0x313afa8",
+    "label": "/proc/cpuinfo",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2353e78",
+    "add": "0x2353e7c",
+    "target": "0x313afa8",
+    "label": "/proc/cpuinfo",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2353f08",
+    "add": "0x2353f0c",
+    "target": "0x313afa8",
+    "label": "/proc/cpuinfo",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2354100",
+    "add": "0x2354104",
+    "target": "0x313b038",
+    "label": "cpu cores",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

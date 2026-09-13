@@ -1,0 +1,94 @@
+{
+  "scope": "Delay initialize/time-change/depth/on/off/selection callbacks only; no delay audio loop or BeatFX manager/quantize integration.",
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "native_range": [
+    "0xb6168",
+    "0xb639c"
+  ],
+  "native_code_sha256": "d12dc77a6dbaeedf3605c842ff501f408b81d59e685f220f472c3199e54e3f31",
+  "native_code_relocations": 0,
+  "selection_range": [
+    "0xb6d18",
+    "0xb6d34"
+  ],
+  "selection_sha256": "33a107c75d8d365ec7bc407cc43d22661f1f3f74cfe61c37e757562cc41d5fb1",
+  "compiler_commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "delay_control_compare.c",
+      "delay_control.c",
+      "delay-control-native.S",
+      "-lm",
+      "-o",
+      "delay-control-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "delay_control_compare.c",
+      "delay_control.c",
+      "-lm",
+      "-o",
+      "delay-control-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "delay_control_compare.c",
+      "delay_control.c",
+      "-lm",
+      "-o",
+      "delay-control-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"calls\":76800,\"state_bytes_per_call\":140,\"mismatching_calls\":0}\n",
+      "stderr": ""
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"calls\":76800,\"state_bytes_per_call\":140,\"mismatching_calls\":0}\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "{\"calls\":76800,\"state_bytes_per_call\":140,\"mismatching_calls\":0}\n",
+      "stderr": ""
+    }
+  },
+  "source_hashes": {
+    "delay_control_compare.c": "686608efe40107d9aaf0979638c510f5932cba627005531d4f0beec63220b316",
+    "delay_control.c": "1f01fc2b16598261cb5a60c7f70caee43cf86982e1f602d547547beb53bb74c5",
+    "delay_control.h": "d0d973327053d78a48a224e31eb7c00f9bee01622aa26253fd01460f750c7771",
+    "delay-control-native.S": "1db8ca6ace3a80a02e7cb1c788cd39390463a960c27ffe6241aac6fc33226b6f",
+    "run_delay_control.py": "b08875d3a2b5467c479eeaeece916c80a51bb6bcb57d882d15369d2594d5bbd7"
+  }
+}

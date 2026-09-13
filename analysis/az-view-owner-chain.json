@@ -1,0 +1,39 @@
+{
+  "status": "static chain and native lookup verified",
+  "global_pointer": "0x3bd5d70",
+  "global_store": "0x218cfb8",
+  "chain": [
+    {
+      "type": "EP147Application",
+      "vtable": "0x2968548",
+      "member": "0x110",
+      "store": "0x18d8d48"
+    },
+    {
+      "type": "ui::UiLayerObjects",
+      "vtable": "0x29676f0",
+      "member": "0x10",
+      "store": "0x20eb6b0"
+    },
+    {
+      "type": "gui::GuiObjectManager",
+      "vtable": "0x29676d0",
+      "member": "0x190",
+      "store": "0x2012694"
+    },
+    {
+      "type": "gui::ViewObjectManager",
+      "vtable": "0x29cb4a0",
+      "member": "0x18",
+      "store": "0x198e66c"
+    },
+    {
+      "type": "gui::ViewTransitionManager",
+      "vtable": "0x29cd220",
+      "member": "0x150",
+      "identity_member": "0xf8"
+    }
+  ],
+  "evidence": "direct-view-owner-live.json",
+  "limitation": "Read-only observation, not atomic GUI command dispatch"
+}

@@ -1,0 +1,15 @@
+{
+  "mode": "template",
+  "pid": 30460,
+  "launcher_exit": 0,
+  "rate": 44100,
+  "channels": 10,
+  "format": "float32le",
+  "full_frames": 3000704,
+  "full_sha256": "5e92027ff554c30304a891bb41347c3d122ea1263093b3e1890a5c5cef8dd76e",
+  "first_active_frame": 1141824,
+  "clip_start_frame": 1137414,
+  "clip_frames": 1323000,
+  "clip_sha256": "34e486b707cb1ba7f42b8cd44f9735b166689ab5d15531749dc7643a318adbde",
+  "scope": "ALSA file output, paced null sink; physical output and realtime underruns not tested"
+}

@@ -1,0 +1,219 @@
+{
+  "scope": "Private PC QEMU: CRC-valid mixer receive packet to native HUI EQ state. Not audio/DSP validation.",
+  "cases": [],
+  "pid": 551756,
+  "initial": {
+    "registry_table": "0x7f28f43a7300",
+    "bucket_count": 101,
+    "controls": [
+      {
+        "channel": 0,
+        "band": "high",
+        "hui_id": "0x7dcb7936b7ed2b00",
+        "component": "0x7f28e45045c0",
+        "owner": "0x7f28e4504500",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f28e44f8cc0",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 0,
+        "band": "mid",
+        "hui_id": "0xa6518fb8028ca800",
+        "component": "0x7f28e45048c0",
+        "owner": "0x7f28e4504800",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f28e44f8d20",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 0,
+        "band": "low",
+        "hui_id": "0xdacc2ca9faed3600",
+        "component": "0x7f28e4504bc0",
+        "owner": "0x7f28e4504b00",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f28e44f8d80",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 1,
+        "band": "high",
+        "hui_id": "0x7dcb7936b7ed2b01",
+        "component": "0x7f28e45059c0",
+        "owner": "0x7f28e4505900",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f28e44f8f40",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 1,
+        "band": "mid",
+        "hui_id": "0xa6518fb8028ca801",
+        "component": "0x7f28e4505cc0",
+        "owner": "0x7f28e4505c00",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f28e44f8fa0",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 1,
+        "band": "low",
+        "hui_id": "0xdacc2ca9faed3601",
+        "component": "0x7f28e4505fc0",
+        "owner": "0x7f28e4505f00",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f28e4501000",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 2,
+        "band": "high",
+        "hui_id": "0x7dcb7936b7ed2b02",
+        "component": "0x7f28e4506dc0",
+        "owner": "0x7f28e4506d00",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f28e45011c0",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 2,
+        "band": "mid",
+        "hui_id": "0xa6518fb8028ca802",
+        "component": "0x7f28e45070c0",
+        "owner": "0x7f28e4507000",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f28e4501220",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 2,
+        "band": "low",
+        "hui_id": "0xdacc2ca9faed3602",
+        "component": "0x7f28e45073c0",
+        "owner": "0x7f28e4507300",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f28e4501280",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 3,
+        "band": "high",
+        "hui_id": "0x7dcb7936b7ed2b03",
+        "component": "0x7f28e450f1c0",
+        "owner": "0x7f28e450f100",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f28e4501440",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 3,
+        "band": "mid",
+        "hui_id": "0xa6518fb8028ca803",
+        "component": "0x7f28e450f4c0",
+        "owner": "0x7f28e450f400",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f28e45014a0",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      },
+      {
+        "channel": 3,
+        "band": "low",
+        "hui_id": "0xdacc2ca9faed3603",
+        "component": "0x7f28e450f7c0",
+        "owner": "0x7f28e450f700",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7f28e4501500",
+        "adapter_vtable": "0x2e63960",
+        "default_adapter": {
+          "raw_denominator": 1023,
+          "scale": 1.0,
+          "range_min": 0.0,
+          "range_max": 1.0
+        }
+      }
+    ]
+  },
+  "bad_crc_no_change": true,
+  "error": "RuntimeError('Native EQ did not reach requested packet values')",
+  "passed": false,
+  "launcher_status": 0
+}

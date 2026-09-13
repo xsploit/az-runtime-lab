@@ -1,0 +1,24 @@
+{
+  "first_channel": 3,
+  "rate": 44100,
+  "channels": 10,
+  "format": "float32 little endian",
+  "active_start_seconds": 35.590385487528344,
+  "active_duration_seconds": 9.999977324263039,
+  "channel_peaks": [
+    0.0,
+    0.0,
+    0.045745849609375,
+    0.045745849609375,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "stereo_max_difference": 0.0,
+  "positive_zero_crossing_hz": 440.00546709492244,
+  "energy_fraction_at_440_hz": 0.9999998831688293,
+  "limitation": "Single generated tone and selected output pair; no speakers, hardware mixer, other decks, or Pi performance tested"
+}

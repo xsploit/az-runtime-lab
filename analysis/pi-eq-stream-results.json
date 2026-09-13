@@ -1,0 +1,8 @@
+{
+  "frames_per_case": 20480,
+  "normal_master_energy": 24.10131653576831,
+  "cut_master_energy": 0.0,
+  "independent_cue_bit_identical": true,
+  "malformed_command_rejected": true,
+  "unattached_command_rejected": true
+}

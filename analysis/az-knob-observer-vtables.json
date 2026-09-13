@@ -1,0 +1,264 @@
+{
+  "sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Static RTTI and contiguous executable-pointer candidates; slot semantics and runtime ownership require tracing.",
+  "classes": [
+    {
+      "type": "midi_adapter::MidiHidAdapter",
+      "typeinfo": "0x25c0b70",
+      "tables": [
+        {
+          "address_point": "0x25c0ce0",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x66c4a0",
+            "0x66cb30"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "midi_adapter::HuiEventAdapter",
+      "typeinfo": "0x25d3718",
+      "tables": [
+        {
+          "address_point": "0x25d3740",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x6c3430",
+            "0x6c34c0",
+            "0x6c3918",
+            "0x6c3b90",
+            "0x6c3a58",
+            "0x6c3df8",
+            "0x6c3e00",
+            "0x6c3e08",
+            "0x6c37b0",
+            "0x6c3cd0"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "midi_adapter::HuiEventHandler",
+      "typeinfo": "0x25d3b60",
+      "tables": [
+        {
+          "address_point": "0x25d3cd0",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x6c4150",
+            "0x6c4ba8",
+            "0x6c4468",
+            "0x6c4468",
+            "0x6c43e0",
+            "0x6c4360",
+            "0x6c4140",
+            "0x6c42d8",
+            "0x6c4148",
+            "0x6c4258",
+            "0x6c41d8",
+            "0x6c4468",
+            "0x6c4518"
+          ]
+        },
+        {
+          "address_point": "0x25d3d48",
+          "offset_to_top": "0xfffffffffffffff0",
+          "functions": [
+            "0x6c4cc8",
+            "0x6c48b0",
+            "0x6c45b0",
+            "0x6c45a8",
+            "0x6c47b8",
+            "0x6c45a0"
+          ]
+        },
+        {
+          "address_point": "0x25d3d88",
+          "offset_to_top": "0xffffffffffffffe0",
+          "functions": [
+            "0x6c4c38",
+            "0x6c49e0",
+            "0x6c4fc0",
+            "0x6c4738"
+          ]
+        },
+        {
+          "address_point": "0x25d3db8",
+          "offset_to_top": "0xffffffffffffffd0",
+          "functions": [
+            "0x6c4de8",
+            "0x6c4b10",
+            "0x6c4838"
+          ]
+        },
+        {
+          "address_point": "0x25d3de0",
+          "offset_to_top": "0xffffffffffffffc0",
+          "functions": [
+            "0x6c4d58",
+            "0x6c4a78",
+            "0x6c4628"
+          ]
+        },
+        {
+          "address_point": "0x25d3e08",
+          "offset_to_top": "0xffffffffffffffb0",
+          "functions": [
+            "0x6c4e78",
+            "0x6c4948",
+            "0x6c4f00",
+            "0x6c46a8"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "meow::IHuiButtonObserver",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "meow::IHuiJogObserver",
+          "offset_flags": "0x1002"
+        },
+        {
+          "type": "meow::IHuiEncoderObserver",
+          "offset_flags": "0x2002"
+        },
+        {
+          "type": "meow::IHuiSliderObserver",
+          "offset_flags": "0x3002"
+        },
+        {
+          "type": "meow::IHuiSelectingSwitchObserver",
+          "offset_flags": "0x4002"
+        },
+        {
+          "type": "meow::IHuiTouchPad1DObserver",
+          "offset_flags": "0x5002"
+        }
+      ]
+    },
+    {
+      "type": "midi_adapter::OperationDataServerKnob",
+      "typeinfo": "0x25e2958",
+      "tables": [
+        {
+          "address_point": "0x25e29a0",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x713dc8",
+            "0x713dd8",
+            "0x712890"
+          ]
+        },
+        {
+          "address_point": "0x25e29c8",
+          "offset_to_top": "0xfffffffffffffff8",
+          "functions": [
+            "0x713dd0",
+            "0x713de0"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "midi_adapter::IOperationSendableWithValue",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "midi_adapter::OperationDataServerBase",
+          "offset_flags": "0x802"
+        }
+      ]
+    },
+    {
+      "type": "hui::deck::Knob",
+      "typeinfo": "0x2e06760",
+      "tables": [
+        {
+          "address_point": "0x2e067a8",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x20387d8",
+            "0x20230b0",
+            "0x2038b58",
+            "0x2038e18",
+            "0x2038fe0",
+            "0x2038808",
+            "0x20230c0",
+            "0x2038698",
+            "0x2038ba0",
+            "0x20386a8"
+          ]
+        },
+        {
+          "address_point": "0x2e06808",
+          "offset_to_top": "0xffffffffffffffe8",
+          "functions": [
+            "0x2038d38",
+            "0x2038ef8",
+            "0x2038ab8"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "hui::deck::OperatorBase",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "meow::IHuiSliderObserver",
+          "offset_flags": "0x1802"
+        }
+      ]
+    },
+    {
+      "type": "meow::HuiSlider",
+      "typeinfo": "0x2e62150",
+      "tables": [
+        {
+          "address_point": "0x2e63990",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x21f4ab0",
+            "0x21f4b20",
+            "0x21f4950",
+            "0x21edc50",
+            "0x21ef320",
+            "0x21f7550",
+            "0x21f7570",
+            "0x21ee410",
+            "0x21f7590",
+            "0x21fe830",
+            "0x21fb680"
+          ]
+        },
+        {
+          "address_point": "0x2e639f8",
+          "offset_to_top": "0xffffffffffffff40",
+          "functions": [
+            "0x21f1eb0",
+            "0x21f4a30",
+            "0x21f7560",
+            "0x21f7580",
+            "0x21ee9e0",
+            "0x21f75a0",
+            "0x21fea50",
+            "0x21fb760"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "meow::HuiInputComponentBase<meow::IHuiSliderAdapter, meow::IHuiSliderObserver, juce::CriticalSection>",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "meow::IHuiSlider",
+          "offset_flags": "0xc002"
+        }
+      ]
+    }
+  ]
+}

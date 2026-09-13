@@ -1,0 +1,72 @@
+[
+  {
+    "adrp": "0x1a02a44",
+    "add": "0x1a02a58",
+    "target": "0x2a01f60",
+    "label": "HeadphonesWidgetController primary",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a02a48",
+    "add": "0x1a02a64",
+    "target": "0x2a01fa8",
+    "label": "HeadphonesWidgetController listener",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a02bdc",
+    "add": "0x1a02be0",
+    "target": "0x2a01f60",
+    "label": "HeadphonesWidgetController primary",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a02bf8",
+    "add": "0x1a02bfc",
+    "target": "0x2a01fa8",
+    "label": "HeadphonesWidgetController listener",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a02d84",
+    "add": "0x1a02d98",
+    "target": "0x2a01f60",
+    "label": "HeadphonesWidgetController primary",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a02d88",
+    "add": "0x1a02da4",
+    "target": "0x2a01fa8",
+    "label": "HeadphonesWidgetController listener",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a02f24",
+    "add": "0x1a02f38",
+    "target": "0x2a01f60",
+    "label": "HeadphonesWidgetController primary",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a02f28",
+    "add": "0x1a02f44",
+    "target": "0x2a01fa8",
+    "label": "HeadphonesWidgetController listener",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a030f8",
+    "add": "0x1a030fc",
+    "target": "0x2a01f60",
+    "label": "HeadphonesWidgetController primary",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a03100",
+    "add": "0x1a03104",
+    "target": "0x2a01fa8",
+    "label": "HeadphonesWidgetController listener",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

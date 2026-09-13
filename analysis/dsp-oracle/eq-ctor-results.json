@@ -1,0 +1,129 @@
+{
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "native_ranges": [
+    [
+      "native_channel_ctor",
+      647052,
+      648104
+    ],
+    [
+      "native_eq_ctor",
+      761960,
+      762684
+    ],
+    [
+      "native_iso_ctor",
+      764280,
+      765476
+    ],
+    [
+      "native_eq_iir_ctor",
+      636112,
+      636572
+    ],
+    [
+      "native_eq_iir_set",
+      633968,
+      634080
+    ],
+    [
+      "native_eq_resources",
+      762684,
+      762832
+    ],
+    [
+      "native_iso_resources",
+      765520,
+      765824
+    ]
+  ],
+  "commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "eq_control.c",
+      "equalizer.c",
+      "isolator.c",
+      "eq_channel.c",
+      "eq_ctor_compare.c",
+      "../../mixer/cfx_filter.c",
+      "eq-ctor-native.S",
+      "native.S",
+      "-lm",
+      "-o",
+      "eq-ctor-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "eq_control.c",
+      "equalizer.c",
+      "isolator.c",
+      "eq_channel.c",
+      "eq_ctor_compare.c",
+      "../../mixer/cfx_filter.c",
+      "-lm",
+      "-o",
+      "eq-ctor-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "eq_control.c",
+      "equalizer.c",
+      "isolator.c",
+      "eq_channel.c",
+      "eq_ctor_compare.c",
+      "../../mixer/cfx_filter.c",
+      "-lm",
+      "-o",
+      "eq-ctor-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"processor_constructors\":320,\"channel_mode_initializations\":80,\"sample_rates\":8,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"processor_constructors\":320,\"channel_mode_initializations\":80,\"sample_rates\":8,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "{\"processor_constructors\":320,\"channel_mode_initializations\":80,\"sample_rates\":8,\"mismatches\":0}\n",
+      "stderr": ""
+    }
+  },
+  "scope": "Original EQ/isolator/IIR constructor DSP state and original channel mode-state initialization at eight rates. Peripheral channel InputChannel/GPIO/route/CFX construction hooks excluded; tracked allocations and no-op string bookkeeping."
+}

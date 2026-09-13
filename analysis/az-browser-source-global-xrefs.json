@@ -1,0 +1,16 @@
+[
+  {
+    "adrp": "0x65fed4",
+    "add": "0x65fed8",
+    "target": "0x3baf668",
+    "label": "browser GUI source global",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x205a900",
+    "add": "0x205a908",
+    "target": "0x3baf668",
+    "label": "browser GUI source global",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

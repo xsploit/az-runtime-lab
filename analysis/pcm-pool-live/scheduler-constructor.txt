@@ -1,0 +1,94 @@
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev>:
+  7760e0: a9a37bfd     	stp	x29, x30, [sp, #-0x1d0]!
+  7760e4: 910003fd     	mov	x29, sp
+  7760e8: a90153f3     	stp	x19, x20, [sp, #0x10]
+  7760ec: aa0203f4     	mov	x20, x2
+  7760f0: f0019e93     	adrp	x19, 0x3b49000 <stdout+0x7f40>
+  7760f4: 9113e273     	add	x19, x19, #0x4f8
+  7760f8: a9025bf5     	stp	x21, x22, [sp, #0x20]
+  7760fc: a90573fb     	stp	x27, x28, [sp, #0x50]
+  776100: aa0003fc     	mov	x28, x0
+  776104: f90047e1     	str	x1, [sp, #0x88]
+  776108: 08dffe60     	ldarb	w0, [x19]
+  77610c: f0019e95     	adrp	x21, 0x3b49000 <stdout+0x7f40>
+  776110: 360087e0     	tbz	w0, #0x0, 0x77720c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7e464>
+  776114: b94502a3     	ldr	w3, [x21, #0x500]
+  776118: f000f402     	adrp	x2, 0x25f9000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x361a8>
+  77611c: f000f401     	adrp	x1, 0x25f9000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x361a8>
+  776120: 912a8042     	add	x2, x2, #0xaa0
+  776124: 912ca021     	add	x1, x1, #0xb28
+  776128: f000f400     	adrp	x0, 0x25f9000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x361a8>
+  77612c: 91312000     	add	x0, x0, #0xc48
+  776130: f9000382     	str	x2, [x28]
+  776134: 91008382     	add	x2, x28, #0x20
+  776138: a9010381     	stp	x1, x0, [x28, #0x10]
+  77613c: 91006281     	add	x1, x20, #0x18
+  776140: b9000b83     	str	w3, [x28, #0x8]
+  776144: d2800f00     	mov	x0, #0x78               // =120
+  776148: f90037e1     	str	x1, [sp, #0x68]
+  77614c: f90043e2     	str	x2, [sp, #0x80]
+  776150: 97f2bafc     	bl	0x424d40 <_Znwm@plt>
+  776154: 0f000420     	movi	v0.2s, #0x1
+  776158: aa0003f3     	mov	x19, x0
+  77615c: aa0003f5     	mov	x21, x0
+  776160: a90363f7     	stp	x23, x24, [sp, #0x30]
+  776164: 9000f420     	adrp	x0, 0x25fa000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x371a8>
+  776168: a9046bf9     	stp	x25, x26, [sp, #0x40]
+  77616c: 91010000     	add	x0, x0, #0x40
+  776170: 90019e76     	adrp	x22, 0x3b42000 <stdout+0xf40>
+  776174: fd000660     	str	d0, [x19, #0x8]
+  776178: 913862d6     	add	x22, x22, #0xe18
+  77617c: f80106a0     	str	x0, [x21], #0x10
+  776180: 08dffec0     	ldarb	w0, [x22]
+  776184: 90019e77     	adrp	x23, 0x3b42000 <stdout+0xf40>
+  776188: 36008540     	tbz	w0, #0x0, 0x777230 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7e488>
+  77618c: b94e22e2     	ldr	w2, [x23, #0xe20]
+  776190: 910042a3     	add	x3, x21, #0x10
+  776194: f000f401     	adrp	x1, 0x25f9000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x361a8>
+  776198: 91398021     	add	x1, x1, #0xe60
+  77619c: f9000a61     	str	x1, [x19, #0x10]
+  7761a0: d2942a00     	mov	x0, #0xa150             // =41296
+  7761a4: b9001a62     	str	w2, [x19, #0x18]
+  7761a8: f2a00040     	movk	x0, #0x2, lsl #16
+  7761ac: f9004be3     	str	x3, [sp, #0x90]
+  7761b0: 97f2bb88     	bl	0x424fd0 <malloc@plt>
+  7761b4: aa0003f7     	mov	x23, x0
+  7761b8: b4008aa0     	cbz	x0, 0x77730c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7e564>
+  7761bc: 91008276     	add	x22, x19, #0x20
+  7761c0: 9102a001     	add	x1, x0, #0xa8
+  7761c4: f9001261     	str	x1, [x19, #0x20]
+  7761c8: 52808002     	mov	w2, #0x400              // =1024
+  7761cc: b9000ac2     	str	w2, [x22, #0x8]
+  7761d0: b40084c1     	cbz	x1, 0x777268 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7e4c0>
+  7761d4: d2801502     	mov	x2, #0xa8               // =168
+  7761d8: 528015e1     	mov	w1, #0xaf               // =175
+  7761dc: 97f2b905     	bl	0x4245f0 <memset@plt>
+  7761e0: 9140aae0     	add	x0, x23, #0x2a, lsl #12 // =0x2a000
+  7761e4: d2801502     	mov	x2, #0xa8               // =168
+  7761e8: 9102a000     	add	x0, x0, #0xa8
+  7761ec: 52801de1     	mov	w1, #0xef               // =239
+  7761f0: 97f2b900     	bl	0x4245f0 <memset@plt>
+  7761f4: f9401260     	ldr	x0, [x19, #0x20]
+  7761f8: b40079a0     	cbz	x0, 0x77712c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7e384>
+  7761fc: b9400ac2     	ldr	w2, [x22, #0x8]
+  776200: 37f87962     	tbnz	w2, #0x1f, 0x77712c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7e384>
+  776204: 52801503     	mov	w3, #0xa8               // =168
+  776208: 52800001     	mov	w1, #0x0                // =0
+  77620c: 9b237c42     	smull	x2, w2, w3
+  776210: 97f2b8f8     	bl	0x4245f0 <memset@plt>
+  776214: 9100c278     	add	x24, x19, #0x30
+  776218: 9101c276     	add	x22, x19, #0x70
+  77621c: d2808017     	mov	x23, #0x400             // =1024
+  776220: f9003a7f     	str	xzr, [x19, #0x70]
+  776224: d503201f     	nop
+  776228: d2800200     	mov	x0, #0x10               // =16
+  77622c: 97f2bac5     	bl	0x424d40 <_Znwm@plt>
+  776230: f94002c1     	ldr	x1, [x22]
+  776234: d370fc22     	lsr	x2, x1, #48
+  776238: 9240bc21     	and	x1, x1, #0xffffffffffff
+  77623c: b3503c40     	bfi	x0, x2, #48, #16

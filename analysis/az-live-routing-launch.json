@@ -1,0 +1,19 @@
+{
+  "pid": 320174,
+  "mode": "NATIVE_ROUTING + MIX_STREAM + DSP_GRAPH + MIXER_TX_CAPTURE",
+  "midi_injected": [
+    "b0 13 20",
+    "b0 33 00",
+    "92 54 7f"
+  ],
+  "bridge_log": [
+    "{\"event\": \"ready\", \"midi_socket\": \"/tmp/az-live-mixer-mqd8p5f9/midi.sock\"}",
+    "{\"event\": \"stopped\", \"valid_tx\": 9439, \"invalid_tx\": 0, \"midi_messages\": 3, \"snapshots\": 1, \"trailing_bytes\": 0}"
+  ],
+  "mixer_log": [
+    "{\"control_frame\":764096,\"ramp_frames\":441}",
+    "{\"frames\":1246720,\"status\":\"stopped\"}"
+  ],
+  "scope": "Live AZ TX consumed and injected complete MIDI messages emitted M1 accepted by audio stream; no physical controller or live assignment UI change in this probe",
+  "limitation": "32768-frame diagnostic TX capture cap; continuous packet transport still required"
+}

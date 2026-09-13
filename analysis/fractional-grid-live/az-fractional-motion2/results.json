@@ -1,0 +1,105 @@
+{
+  "pid": 14542,
+  "identity": "1773536",
+  "results": [
+    {
+      "phase": "original",
+      "before": {
+        "time": 18548.884961191,
+        "positions": [
+          1308288,
+          568933
+        ],
+        "enabled": 0,
+        "counters": {
+          "lab_grid_updates": 55130,
+          "lab_grid_draws": 103900,
+          "lab_grid_fallbacks": 0
+        }
+      },
+      "cpu_without_capture": 40.23788664576118,
+      "cpu_with_capture": 42.94855331045257,
+      "after": {
+        "time": 18560.096818901,
+        "positions": [
+          1802048,
+          568933
+        ],
+        "enabled": 0,
+        "counters": {
+          "lab_grid_updates": 56456,
+          "lab_grid_draws": 103900,
+          "lab_grid_fallbacks": 0
+        }
+      },
+      "deck1_source_units_per_second": 44039.08904050121,
+      "transport_valid": true
+    },
+    {
+      "phase": "candidate",
+      "before": {
+        "time": 18560.620781316,
+        "positions": [
+          1825664,
+          568933
+        ],
+        "enabled": 1,
+        "counters": {
+          "lab_grid_updates": 56516,
+          "lab_grid_draws": 103984,
+          "lab_grid_fallbacks": 0
+        }
+      },
+      "cpu_without_capture": 45.990723096276554,
+      "cpu_with_capture": 50.13996469445129,
+      "after": {
+        "time": 18571.936578891,
+        "positions": [
+          2324544,
+          568933
+        ],
+        "enabled": 1,
+        "counters": {
+          "lab_grid_updates": 57856,
+          "lab_grid_draws": 106660,
+          "lab_grid_fallbacks": 0
+        }
+      },
+      "deck1_source_units_per_second": 44087.038204198216,
+      "transport_valid": true
+    },
+    {
+      "phase": "restored",
+      "before": {
+        "time": 18572.471831609,
+        "positions": [
+          2348224,
+          568933
+        ],
+        "enabled": 0,
+        "counters": {
+          "lab_grid_updates": 57918,
+          "lab_grid_draws": 106696,
+          "lab_grid_fallbacks": 0
+        }
+      },
+      "cpu_without_capture": 39.240147456243164,
+      "cpu_with_capture": 42.08840213082009,
+      "after": {
+        "time": 18583.741015287,
+        "positions": [
+          2845120,
+          568933
+        ],
+        "enabled": 0,
+        "counters": {
+          "lab_grid_updates": 59254,
+          "lab_grid_draws": 106696,
+          "lab_grid_fallbacks": 0
+        }
+      },
+      "deck1_source_units_per_second": 44093.34466435879,
+      "transport_valid": true
+    }
+  ]
+}

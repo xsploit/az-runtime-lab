@@ -1,0 +1,26 @@
+{
+  "scope": "Attempted live AZ song playback and EQ audio capture; all windows silent, so audio response not verified.",
+  "audio_windows": [
+    {
+      "label": "normal",
+      "start_frame": 1118336,
+      "frames": 66112,
+      "master_rms": 0.0
+    },
+    {
+      "label": "cut",
+      "start_frame": 1211648,
+      "frames": 66176,
+      "master_rms": 0.0
+    },
+    {
+      "label": "restored",
+      "start_frame": 1305088,
+      "frames": 66176,
+      "master_rms": 0.0
+    }
+  ],
+  "passed": false,
+  "error": "AssertionError([{'label': 'normal', 'start_frame': 1118336, 'frames': 66112, 'master_rms': 0.0}, {'label': 'cut', 'start_frame': 1211648, 'frames': 66176, 'master_rms': 0.0}, {'label': 'restored', 'start_frame': 1305088, 'frames': 66176, 'master_rms': 0.0}])",
+  "launcher_status": 0
+}

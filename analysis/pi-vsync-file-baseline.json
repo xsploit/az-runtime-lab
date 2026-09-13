@@ -1,0 +1,11 @@
+{
+  "reads": 13377,
+  "empty": 63,
+  "malformed": 0,
+  "updates": 471,
+  "gap_ms_min": 16,
+  "gap_ms_median": 17.0,
+  "gap_ms_max": 18,
+  "gaps_over_20ms": 0,
+  "scope": "Synthetic timing-file observations, not displayed FPS"
+}

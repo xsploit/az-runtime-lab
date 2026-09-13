@@ -1,0 +1,128 @@
+[
+  {
+    "adrp": "0x543bac",
+    "add": "0x543bb0",
+    "target": "0x29f6b80",
+    "label": "aButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x543bdc",
+    "add": "0x543be0",
+    "target": "0x29f6b88",
+    "label": "bButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x543bfc",
+    "add": "0x543c00",
+    "target": "0x29f6b90",
+    "label": "thruButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x544054",
+    "add": "0x544058",
+    "target": "0x2a01ec0",
+    "label": "monoSplitButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x544080",
+    "add": "0x544084",
+    "target": "0x2a01ed0",
+    "label": "stereoButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x54426c",
+    "add": "0x544270",
+    "target": "0x2a091b8",
+    "label": "minus9DbButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x544298",
+    "add": "0x54429c",
+    "target": "0x2a091c8",
+    "label": "minus6DbButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x5442c0",
+    "add": "0x5442c4",
+    "target": "0x2a091d8",
+    "label": "minus3DbButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x5442e0",
+    "add": "0x5442e4",
+    "target": "0x2a091e8",
+    "label": "0DbButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19f05ec",
+    "add": "0x19f05f4",
+    "target": "0x29f6b80",
+    "label": "aButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19f0a18",
+    "add": "0x19f0a20",
+    "target": "0x29f6b88",
+    "label": "bButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19f0e30",
+    "add": "0x19f0e38",
+    "target": "0x29f6b90",
+    "label": "thruButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a00fd4",
+    "add": "0x1a00fdc",
+    "target": "0x2a01ec0",
+    "label": "monoSplitButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a013f4",
+    "add": "0x1a013fc",
+    "target": "0x2a01ed0",
+    "label": "stereoButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a0eccc",
+    "add": "0x1a0ecd4",
+    "target": "0x2a091b8",
+    "label": "minus9DbButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a0f0ec",
+    "add": "0x1a0f0f4",
+    "target": "0x2a091c8",
+    "label": "minus6DbButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a0f4f8",
+    "add": "0x1a0f4fc",
+    "target": "0x2a091d8",
+    "label": "minus3DbButton",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a0f920",
+    "add": "0x1a0f928",
+    "target": "0x2a091e8",
+    "label": "0DbButton",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

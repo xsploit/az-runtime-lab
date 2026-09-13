@@ -1,0 +1,165 @@
+{
+  "scope": "Live AZ playback and native EQ mode/knob delivery into software audio capture; no physical controller test.",
+  "audible_before_eq_test": true,
+  "audio_windows": [
+    {
+      "label": "normal",
+      "start_frame": 1587712,
+      "frames": 66176,
+      "master_rms": 0.010179556825270832
+    },
+    {
+      "label": "cut",
+      "start_frame": 1681152,
+      "frames": 66176,
+      "master_rms": 0.0
+    },
+    {
+      "label": "restored",
+      "start_frame": 1774592,
+      "frames": 66176,
+      "master_rms": 0.021453555549737317
+    }
+  ],
+  "passed": true,
+  "changes": [
+    {
+      "mode": 1,
+      "applied": [
+        {
+          "eq_frame": 1408896,
+          "channel": 0,
+          "mode": 1,
+          "result": 1
+        },
+        {
+          "eq_frame": 1408896,
+          "channel": 1,
+          "mode": 1,
+          "result": 1
+        },
+        {
+          "eq_frame": 1408896,
+          "channel": 2,
+          "mode": 1,
+          "result": 1
+        },
+        {
+          "eq_frame": 1408896,
+          "channel": 3,
+          "mode": 1,
+          "result": 1
+        }
+      ],
+      "tx_mode": "isolator"
+    },
+    {
+      "mode": 0,
+      "applied": [
+        {
+          "eq_frame": 1464448,
+          "channel": 0,
+          "mode": 0,
+          "result": 1
+        },
+        {
+          "eq_frame": 1464448,
+          "channel": 1,
+          "mode": 0,
+          "result": 1
+        },
+        {
+          "eq_frame": 1464448,
+          "channel": 2,
+          "mode": 0,
+          "result": 1
+        },
+        {
+          "eq_frame": 1464448,
+          "channel": 3,
+          "mode": 0,
+          "result": 1
+        }
+      ],
+      "tx_mode": "eq"
+    }
+  ],
+  "launcher_status": 0,
+  "native_exit": [
+    null
+  ],
+  "native_input_audio": [
+    {
+      "input_audio_channel": 0,
+      "frames": 4357120,
+      "peak": 0.99169302,
+      "energy": 45053.59536113268,
+      "nonfinite": 0
+    },
+    {
+      "input_audio_channel": 1,
+      "frames": 4357120,
+      "peak": 1.00011587,
+      "energy": 45047.3684076851,
+      "nonfinite": 0
+    },
+    {
+      "input_audio_channel": 2,
+      "frames": 4357120,
+      "peak": 0,
+      "energy": 0,
+      "nonfinite": 0
+    },
+    {
+      "input_audio_channel": 3,
+      "frames": 4357120,
+      "peak": 0,
+      "energy": 0,
+      "nonfinite": 0
+    },
+    {
+      "input_audio_channel": 4,
+      "frames": 4357120,
+      "peak": 0,
+      "energy": 0,
+      "nonfinite": 0
+    },
+    {
+      "input_audio_channel": 5,
+      "frames": 4357120,
+      "peak": 0,
+      "energy": 0,
+      "nonfinite": 0
+    },
+    {
+      "input_audio_channel": 6,
+      "frames": 4357120,
+      "peak": 0,
+      "energy": 0,
+      "nonfinite": 0
+    },
+    {
+      "input_audio_channel": 7,
+      "frames": 4357120,
+      "peak": 0,
+      "energy": 0,
+      "nonfinite": 0
+    },
+    {
+      "input_audio_channel": 8,
+      "frames": 4357120,
+      "peak": 0,
+      "energy": 0,
+      "nonfinite": 0
+    },
+    {
+      "input_audio_channel": 9,
+      "frames": 4357120,
+      "peak": 0,
+      "energy": 0,
+      "nonfinite": 0
+    }
+  ],
+  "loaded_track": "notorious_b.i.g._-_dead_wrong_acapella.mp3",
+  "visual_check": "eq-audio-loaded.png viewed: waveform drawn and remaining time02:58.834 vs earlier loaded03:03.227"
+}

@@ -1,0 +1,107 @@
+[
+  {
+    "adrp": "0x19f3b14",
+    "add": "0x19f3b1c",
+    "target": "0x3b864e8",
+    "label": "cross0",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19f3b14",
+    "add": "0x19f3b30",
+    "target": "0x3b864f0",
+    "label": "cross2",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19f3b2c",
+    "add": "0x19f3b30",
+    "target": "0x3b864f0",
+    "label": "cross2",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19f3b2c",
+    "add": "0x19f3b40",
+    "target": "0x3b864f8",
+    "label": "cross1",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19f3b3c",
+    "add": "0x19f3b40",
+    "target": "0x3b864f8",
+    "label": "cross1",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a03a74",
+    "add": "0x1a03a7c",
+    "target": "0x3b86630",
+    "label": "mono1",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a03a74",
+    "add": "0x1a03a90",
+    "target": "0x3b86638",
+    "label": "mono0",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a03a8c",
+    "add": "0x1a03a90",
+    "target": "0x3b86638",
+    "label": "mono0",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a12b24",
+    "add": "0x1a12b2c",
+    "target": "0x3b866e0",
+    "label": "link0",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a12b24",
+    "add": "0x1a12b40",
+    "target": "0x3b866e8",
+    "label": "link1",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a12b3c",
+    "add": "0x1a12b40",
+    "target": "0x3b866e8",
+    "label": "link1",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a12b3c",
+    "add": "0x1a12b50",
+    "target": "0x3b866f0",
+    "label": "link2",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a12b4c",
+    "add": "0x1a12b50",
+    "target": "0x3b866f0",
+    "label": "link2",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a12b4c",
+    "add": "0x1a12b60",
+    "target": "0x3b866f8",
+    "label": "link3",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1a12b5c",
+    "add": "0x1a12b60",
+    "target": "0x3b866f8",
+    "label": "link3",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

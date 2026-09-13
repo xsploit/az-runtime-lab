@@ -1,0 +1,92 @@
+{
+  "verified": true,
+  "stages": [
+    {
+      "control_frame": 2551872,
+      "window": [
+        2595972,
+        2640072
+      ],
+      "rms": [
+        0.008090145399453724,
+        0.008090145458188808,
+        0.016180290798907447,
+        0.016180290916377616
+      ],
+      "peaks": [
+        0.011440569534897804,
+        0.011440569534897804,
+        0.02288113906979561,
+        0.02288113906979561
+      ],
+      "cue_double_master_error": 0.0
+    },
+    {
+      "control_frame": 2669056,
+      "window": [
+        2673466,
+        2717566
+      ],
+      "rms": [
+        0.0,
+        0.0,
+        0.016180285642258947,
+        0.016180285600397342
+      ],
+      "peaks": [
+        0.0,
+        0.0,
+        0.02288113906979561,
+        0.02288113906979561
+      ],
+      "cue_double_master_error": null
+    },
+    {
+      "control_frame": 2758400,
+      "window": [
+        2762810,
+        2806910
+      ],
+      "rms": [
+        0.008090146607911016,
+        0.008090146621030766,
+        0.0,
+        0.0
+      ],
+      "peaks": [
+        0.011440569534897804,
+        0.011440569534897804,
+        0.0,
+        0.0
+      ],
+      "cue_double_master_error": null
+    },
+    {
+      "control_frame": 2848000,
+      "window": [
+        2852410,
+        2896510
+      ],
+      "rms": [
+        0.008090146649858685,
+        0.008090146691389091,
+        0.01618029329971737,
+        0.016180293382778183
+      ],
+      "peaks": [
+        0.011440569534897804,
+        0.011440569534897804,
+        0.02288113906979561,
+        0.02288113906979561
+      ],
+      "cue_double_master_error": 0.0
+    }
+  ],
+  "scope": "Native AZ generated deck1 tone through host mixer. No physical audio or native UI synchronization; does not measure end-to-end latency.",
+  "run": {
+    "launcher_pid": 138711,
+    "tool_session": 32932,
+    "terminal_exit": 143,
+    "shutdown": "No normal teardown report; process absent on inspection. Cause of termination not established. Audio verification does not prove clean shutdown."
+  }
+}

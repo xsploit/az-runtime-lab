@@ -1,0 +1,23 @@
+[
+  {
+    "adrp": "0x1df68d4",
+    "add": "0x1df68d8",
+    "target": "0x2d8fa58",
+    "label": "PadStemWidget primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1df698c",
+    "add": "0x1df6990",
+    "target": "0x2d8fa58",
+    "label": "PadStemWidget primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1df73f4",
+    "add": "0x1df73f8",
+    "target": "0x2d8fa58",
+    "label": "PadStemWidget primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

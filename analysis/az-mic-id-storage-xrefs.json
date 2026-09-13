@@ -1,0 +1,42 @@
+[
+  {
+    "adrp": "0x19ebcc4",
+    "instruction": "0x19ebccc",
+    "operation": "LDR",
+    "target": "0x3b86458",
+    "label": "Mic1 ID storage",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19ebcc4",
+    "instruction": "0x19ebce0",
+    "operation": "LDR",
+    "target": "0x3b86460",
+    "label": "Mic2 ID storage",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19ebcdc",
+    "instruction": "0x19ebce0",
+    "operation": "LDR",
+    "target": "0x3b86460",
+    "label": "Mic2 ID storage",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19ebcdc",
+    "instruction": "0x19ebcf0",
+    "operation": "LDR",
+    "target": "0x3b86468",
+    "label": "Both ID storage",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x19ebcec",
+    "instruction": "0x19ebcf0",
+    "operation": "LDR",
+    "target": "0x3b86468",
+    "label": "Both ID storage",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

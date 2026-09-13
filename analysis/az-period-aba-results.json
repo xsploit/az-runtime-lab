@@ -1,0 +1,47 @@
+{
+  "original": {
+    "frames": 959,
+    "duration_seconds": 8.0,
+    "changed_samples": 155,
+    "change_rate_hz": 19.25,
+    "interval_ms": {
+      "median": 50.0,
+      "p95": 91.66666666666666,
+      "max": 100.0
+    },
+    "note": "Sampled X11 pixel changes, not panel FPS. Verify playback/view and account for capture overhead."
+  },
+  "halfperiod": {
+    "frames": 961,
+    "duration_seconds": 8.008023,
+    "changed_samples": 230,
+    "change_rate_hz": 28.59632146411168,
+    "interval_ms": {
+      "median": 35.531,
+      "p95": 55.50899999999999,
+      "max": 66.953
+    },
+    "note": "Sampled X11 pixel changes, not panel FPS. Verify playback/view and account for capture overhead."
+  },
+  "restored": {
+    "frames": 960,
+    "duration_seconds": 8.0,
+    "changed_samples": 161,
+    "change_rate_hz": 20.0,
+    "interval_ms": {
+      "median": 50.0,
+      "p95": 91.66666666666666,
+      "max": 100.0
+    },
+    "note": "Sampled X11 pixel changes, not panel FPS. Verify playback/view and account for capture overhead."
+  },
+  "conditions": {
+    "pid": 7913,
+    "original_period_ms": 16.88048615800135,
+    "experimental_period_ms": 8.440243079000675,
+    "restored": true,
+    "tracks": "Dead Wrong acapella on both decks",
+    "capture": "850x170 X11 crop at120Hz,8sec each",
+    "limits": "Sequential positions, one A/B/A sequence; does not measure panel presentation or full stability"
+  }
+}

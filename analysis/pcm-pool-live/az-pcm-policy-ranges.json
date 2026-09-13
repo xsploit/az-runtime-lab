@@ -1,0 +1,645 @@
+{
+  "pid": 24479,
+  "start_id": "2739430",
+  "scheduler": "0x7ffec45d3800",
+  "pool": "0x7ffec4121200",
+  "policy_u32": [
+    9,
+    96,
+    44100,
+    2,
+    4,
+    200
+  ],
+  "registered_locked_ranges": 88,
+  "locked_range_capacity": 88,
+  "max_locked_ranges": 96,
+  "parallel_unit_count": 5,
+  "scanned_present_mib": 0.0,
+  "elapsed_seconds": 0.019128120002278592,
+  "scope": "Read AZ scheduler policy/container counts without changing playback.\n\nPinned to the verified timing-patched image. Initial discovery scans only present\nanonymous pages; subsequent --scheduler reads avoid scanning. No audio is saved.\nLocked-range count is registered objects, not a count of currently pinned pages.\n",
+  "ranges": {
+    "rows": [
+      {
+        "slot": 0,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 1,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 2,
+        "source_group": 0,
+        "begin_page": 0,
+        "end_page": 110,
+        "nonempty": true
+      },
+      {
+        "slot": 3,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 4,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 5,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 6,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 7,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 8,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 9,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 10,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 11,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 12,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 13,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 14,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 15,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 16,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 17,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 18,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 19,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 20,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 21,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 22,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 23,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 24,
+        "source_group": 1,
+        "begin_page": 0,
+        "end_page": 111,
+        "nonempty": true
+      },
+      {
+        "slot": 25,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 26,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 27,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 28,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 29,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 30,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 31,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 32,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 33,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 34,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 35,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 36,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 37,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 38,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 39,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 40,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 41,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 42,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 43,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 44,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 45,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 46,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 47,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 48,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 49,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 50,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 51,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 52,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 53,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 54,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 55,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 56,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 57,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 58,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 59,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 60,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 61,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 62,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 63,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 64,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 65,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 66,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 67,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 68,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 69,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 70,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 71,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 72,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 73,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 74,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 75,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 76,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 77,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 78,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 79,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 80,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 81,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 82,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 83,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 84,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 85,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 86,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      },
+      {
+        "slot": 87,
+        "source_group": null,
+        "begin_page": 0,
+        "end_page": 0,
+        "nonempty": false
+      }
+    ],
+    "nonempty_count": 2,
+    "source_groups": 2,
+    "union_page_coordinates": 221,
+    "scope": "Stable registered range coordinates grouped by source. These are requested protected ranges, not a resident page census or proof that all ranges are currently backed. No source identifiers or audio contents emitted."
+  }
+}

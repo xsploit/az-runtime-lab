@@ -1,0 +1,35 @@
+{
+  "pid": 115220,
+  "model": "XDJ-AZ1.30",
+  "display": "1280x800 Xvfb",
+  "observations": [
+    {
+      "file": "onair-ui-off.png",
+      "transport": "loaded at cue",
+      "badge": false
+    },
+    {
+      "file": "onair-ui-on.png",
+      "transport": "loaded at cue",
+      "byte94": "0x80",
+      "badge": true
+    },
+    {
+      "file": "onair-ui-playing-on.png",
+      "transport": "playing; remaining9.641seconds",
+      "badge": true
+    },
+    {
+      "file": "onair-ui-playing-off.png",
+      "transport": "playing; remaining8.982seconds",
+      "byte94": "0x00",
+      "badge": false
+    }
+  ],
+  "verification": "Images visually inspected; deck1 native red ON AIR badge toggles with mixer state.",
+  "limitations": [
+    "Only deck1 visible badge tested.",
+    "No physical audio, network or mixer gain verification.",
+    "Paused badge shows supplied mixer state is not automatically equivalent to track playback."
+  ]
+}

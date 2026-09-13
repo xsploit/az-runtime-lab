@@ -1,0 +1,239 @@
+.syntax unified
+.arm
+.fpu neon
+.text
+.balign 8
+.global native_delay_keep
+.type native_delay_keep,%function
+native_delay_keep:
+.incbin "native-delay-q-native_delay_keep.bin",0,4
+.balign 8
+.space 4
+.global native_manager_operate
+.type native_manager_operate,%function
+native_manager_operate:
+.incbin "native-delay-q-native_manager_operate.bin",0,180
+bl native_switch_beat
+.incbin "native-delay-q-native_manager_operate.bin",184,880
+.word manager_ones
+.incbin "native-delay-q-native_manager_operate.bin",1068,148
+bl native_switch_type
+.incbin "native-delay-q-native_manager_operate.bin",1220,760
+.balign 8
+.space 4
+.global native_switch_type
+.type native_switch_type,%function
+native_switch_type:
+.incbin "native-delay-q-native_switch_type.bin",0,76
+.word native_switch_type+760
+.word native_switch_type+748
+.word native_switch_type+736
+.word native_switch_type+724
+.word native_switch_type+712
+.word native_switch_type+700
+.word native_switch_type+688
+.word native_switch_type+676
+.word native_switch_type+664
+.word native_switch_type+652
+.word native_switch_type+640
+.word native_switch_type+628
+.word native_switch_type+616
+.word native_switch_type+604
+.word native_switch_type+160
+.incbin "native-delay-q-native_switch_type.bin",136,876
+.balign 8
+.global native_switch_beat
+.type native_switch_beat,%function
+native_switch_beat:
+.incbin "native-delay-q-native_switch_beat.bin",0,184
+.balign 8
+.global native_switch_target
+.type native_switch_target,%function
+native_switch_target:
+.incbin "native-delay-q-native_switch_target.bin",0,116
+.balign 8
+.global native_off_execute
+.type native_off_execute,%function
+native_off_execute:
+.incbin "native-delay-q-native_off_execute.bin",0,36
+.balign 8
+.global native_off_status
+.type native_off_status,%function
+native_off_status:
+.incbin "native-delay-q-native_off_status.bin",0,64
+.balign 8
+.space 4
+.global native_off_beat
+.type native_off_beat,%function
+native_off_beat:
+.incbin "native-delay-q-native_off_beat.bin",0,8
+b native_range_check
+.balign 8
+.global native_noop
+.type native_noop,%function
+native_noop:
+.incbin "native-delay-q-native_noop.bin",0,4
+.balign 8
+.global native_delay_notify
+.type native_delay_notify,%function
+native_delay_notify:
+.incbin "native-delay-q-native_delay_notify.bin",0,28
+.balign 8
+.space 4
+.global native_delay_beat
+.type native_delay_beat,%function
+native_delay_beat:
+.incbin "native-delay-q-native_delay_beat.bin",0,28
+bl native_range_check
+.incbin "native-delay-q-native_delay_beat.bin",32,4
+bl native_quantize_check
+.incbin "native-delay-q-native_delay_beat.bin",40,12
+bl native_quantize_set
+.incbin "native-delay-q-native_delay_beat.bin",56,4
+bl native_beat_position
+.incbin "native-delay-q-native_delay_beat.bin",64,8
+bl fixture_engine
+.incbin "native-delay-q-native_delay_beat.bin",76,4
+bl fixture_time
+.incbin "native-delay-q-native_delay_beat.bin",84,172
+.balign 8
+.global native_range_check
+.type native_range_check,%function
+native_range_check:
+.incbin "native-delay-q-native_range_check.bin",0,32
+bl fixture_bfx_bpm
+.incbin "native-delay-q-native_range_check.bin",36,52
+bl __aeabi_uidiv
+.incbin "native-delay-q-native_range_check.bin",92,136
+bl fixture_engine
+.incbin "native-delay-q-native_range_check.bin",232,4
+bl fixture_bfx_bpm
+.incbin "native-delay-q-native_range_check.bin",240,24
+.word manager_cache
+.word manager_bpm_sentinel
+.word manager_beat_ratios
+.balign 8
+.space 4
+.global native_status
+.type native_status,%function
+native_status:
+.incbin "native-delay-q-native_status.bin",0,40
+bl fixture_engine
+bl fixture_quantize
+.incbin "native-delay-q-native_status.bin",48,44
+.balign 8
+.global native_manager_on
+.type native_manager_on,%function
+native_manager_on:
+.incbin "native-delay-q-native_manager_on.bin",0,36
+.balign 8
+.space 4
+.global native_quantize_set
+.type native_quantize_set,%function
+native_quantize_set:
+.incbin "native-delay-q-native_quantize_set.bin",0,16
+bl native_beat_position
+.incbin "native-delay-q-native_quantize_set.bin",20,8
+bl fixture_engine
+.incbin "native-delay-q-native_quantize_set.bin",32,4
+bl fixture_time
+.incbin "native-delay-q-native_quantize_set.bin",40,152
+bl fixture_engine
+.incbin "native-delay-q-native_quantize_set.bin",196,8
+bl fixture_tempo
+.incbin "native-delay-q-native_quantize_set.bin",208,96
+bl __aeabi_uidiv
+.incbin "native-delay-q-native_quantize_set.bin",308,4
+bl __aeabi_uidiv
+.incbin "native-delay-q-native_quantize_set.bin",316,56
+.word quant_min_bpm
+.word quant_numerators
+.word quant_denominators
+.balign 8
+.space 4
+.global native_time_update
+.type native_time_update,%function
+native_time_update:
+.incbin "native-delay-q-native_time_update.bin",0,16
+bl native_beat_position
+.incbin "native-delay-q-native_time_update.bin",20,8
+bl fixture_engine
+.incbin "native-delay-q-native_time_update.bin",32,8
+bl fixture_reverse
+.incbin "native-delay-q-native_time_update.bin",44,24
+bl fixture_scratch
+.incbin "native-delay-q-native_time_update.bin",72,16
+bl fixture_spin
+.incbin "native-delay-q-native_time_update.bin",92,16
+bl fixture_scan
+.incbin "native-delay-q-native_time_update.bin",112,16
+bl fixture_time
+.incbin "native-delay-q-native_time_update.bin",132,172
+bl native_quantize_set
+.incbin "native-delay-q-native_time_update.bin",308,20
+.balign 8
+.global native_quantize_check
+.type native_quantize_check,%function
+native_quantize_check:
+.incbin "native-delay-q-native_quantize_check.bin",0,16
+bl fixture_channel
+.incbin "native-delay-q-native_quantize_check.bin",20,8
+bl fixture_engine
+.incbin "native-delay-q-native_quantize_check.bin",32,4
+bl fixture_beat
+.incbin "native-delay-q-native_quantize_check.bin",40,4
+bl fixture_engine
+bl fixture_quantize
+.incbin "native-delay-q-native_quantize_check.bin",52,24
+bl fixture_engine
+bl fixture_quantize
+.incbin "native-delay-q-native_quantize_check.bin",84,44
+bl fixture_engine
+bl fixture_quantize
+.incbin "native-delay-q-native_quantize_check.bin",136,8
+.balign 8
+.global native_beat_position
+.type native_beat_position,%function
+native_beat_position:
+.incbin "native-delay-q-native_beat_position.bin",0,16
+bl fixture_channel
+.incbin "native-delay-q-native_beat_position.bin",20,8
+bl fixture_engine
+.incbin "native-delay-q-native_beat_position.bin",32,4
+bl fixture_beat
+.incbin "native-delay-q-native_beat_position.bin",40,28
+.balign 8
+.global native_adjust
+.type native_adjust,%function
+native_adjust:
+.incbin "native-delay-q-native_adjust.bin",0,328
+.balign 8
+.space 4
+.global delay_execute
+.type delay_execute,%function
+delay_execute:
+.incbin "native-delay-q-delay_execute.bin",0,256
+bl ceil
+.incbin "native-delay-q-delay_execute.bin",260,520
+bl floor
+.incbin "native-delay-q-delay_execute.bin",784,72
+bl native_quantize_check
+.incbin "native-delay-q-delay_execute.bin",860,48
+b native_time_update
+.incbin "native-delay-q-delay_execute.bin",912,124
+bl ceil
+.incbin "native-delay-q-delay_execute.bin",1040,108
+bl floor
+.incbin "native-delay-q-delay_execute.bin",1152,52
+
+.balign 4
+quant_min_bpm:.word 4000
+quant_numerators:.word 1,1,1,1,3,1,2,4,8,16,32,64
+quant_denominators:.word 16,8,4,2,4,1,1,1,1,1,1,1
+.balign 8
+manager_ones:.float 1,1
+manager_cache:.word 1,0,0
+manager_bpm_sentinel:.word 4294967295
+manager_beat_ratios:.space 80
+.word 0x3d800000,0x3e000000,0x3e800000,0x3f000000,0x3f400000,0x3f800000,0x40000000,0x40800000,0x41000000,0x41800000,0x42000000,0x42800000
+.section .note.GNU-stack,"",%progbits

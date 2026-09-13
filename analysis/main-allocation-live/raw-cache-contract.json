@@ -1,0 +1,17 @@
+{
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "call": "0xe97040",
+  "return": "0xe97044",
+  "configuration_mib": 100,
+  "payload_block_bytes": 16384,
+  "stride_bytes": 16408,
+  "block_count": 6400,
+  "guard_blocks": 2,
+  "requested_bytes": 105044016,
+  "calls": 5,
+  "allocator_size_class_bytes": 117440512,
+  "rtti_typeinfo": "0x27e4fe8",
+  "vtable": "0x27e5b38",
+  "pool_field_in_cache": "0x2e8",
+  "scope": "Raw-file cache construction; instance consumers and safe smaller capacities remain unverified."
+}

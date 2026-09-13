@@ -1,0 +1,78 @@
+{
+  "scope": "Static setting-to-TX mappings; mic labels verified through typed UI listener, channel labels and live routing pending",
+  "mic_select": {
+    "listener_base": 40,
+    "thunk": "0x982048 ->0x981d00",
+    "table": "0x2692540",
+    "setting_to_tx": {
+      "0": 1,
+      "1": 2,
+      "2": 0
+    },
+    "downstream_slot": 4,
+    "setter": "0x2134450",
+    "object_byte": 9,
+    "tx_byte": 16,
+    "setting_validator": {
+      "function": "0x850e38",
+      "accepted_unsigned_range": [
+        0,
+        2
+      ]
+    },
+    "labels": {
+      "0": "MIC1",
+      "1": "MIC2",
+      "2": "MIC1+2"
+    },
+    "label_evidence": "az-mic-label-binding.json; az-mic-item-listener.asm"
+  },
+  "channel_select": {
+    "listener_base": 8,
+    "thunk": "0x982648 ->0x9823d0",
+    "table": "0x2692788",
+    "setting_to_tx": {
+      "3": 2,
+      "4": 0,
+      "5": 1,
+      "6": 3,
+      "7": 7
+    },
+    "other_setting_values": 0,
+    "downstream_slot": 2,
+    "setter": "0x2134458",
+    "object_byte": 10,
+    "tx_byte": 18,
+    "setting_validator": {
+      "function": "0x850e28",
+      "accepted_unsigned_range": [
+        0,
+        7
+      ]
+    },
+    "labels": {
+      "0": "Mic1",
+      "1": "Mic2",
+      "2": "BothMic",
+      "3": "Ch3",
+      "4": "Ch1",
+      "5": "Ch2",
+      "6": "Ch4",
+      "7": "Master"
+    },
+    "tx_ambiguity": "TX18=0 corresponds to Ch1 or any microphone enum0/1/2. TX18 alone cannot reconstruct full application target; preserve setting source/readback."
+  },
+  "quantize": {
+    "setting_to_tx": {
+      "0": 2,
+      "1": 3
+    },
+    "tx_byte": 17
+  },
+  "state_change_handlers": {
+    "channel": "0x8649f8",
+    "mic": "0x864950",
+    "behavior": "check identifier, skip unchanged value, optionally lock object+48, write value+96, unlock, conditionally notify via object+24 when byte+100 set",
+    "limitation": "These callbacks do not invoke the range validator themselves; caller contract must be traced before direct injection."
+  }
+}

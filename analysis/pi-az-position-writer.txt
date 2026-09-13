@@ -1,0 +1,29 @@
+0x00007fff3f409690 in ?? ()
+Hardware watchpoint 1: *(long*)$pos
+
+Thread 1 "EP147" hit Hardware watchpoint 1: *(long*)$pos
+
+Old value = 83269
+New value = 83289
+0x0000000001fbd8f0 in ?? ()
+POSITION_WRITER_PC=0x1fbd8f0 STORAGE=0x7fff3e695008 OBJ=0x7fff3e694f10
+x0             0x14559             83289
+x1             0x7fff34780500      140734073668864
+x2             0x380bc0            3673024
+x3             0x2                 2
+x19            0x7fff3e694f10      140734240476944
+x20            0x7fff3e694fe8      140734240477160
+x30            0x1fbd710           33281808
+pc             0x1fbd8f0           0x1fbd8f0
+   0x1fbd8e0:	add	x0, sp, #0x68
+   0x1fbd8e4:	bl	0x22fc600
+   0x1fbd8e8:	ldr	x0, [x19, #224]
+   0x1fbd8ec:	str	x0, [x19, #248]
+=> 0x1fbd8f0:	ldp	x19, x20, [sp, #16]
+   0x1fbd8f4:	ldp	x21, x22, [sp, #32]
+   0x1fbd8f8:	ldp	x29, x30, [sp], #176
+   0x1fbd8fc:	ret
+#0  0x0000000001fbd8f0 in ?? ()
+#1  0x00007ffe8457d000 in ?? ()
+Backtrace stopped: previous frame inner to this frame (corrupt stack?)
+[Inferior 1 (process 9262) detached]

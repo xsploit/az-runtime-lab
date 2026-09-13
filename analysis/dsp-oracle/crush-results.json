@@ -1,0 +1,92 @@
+{
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "native_ranges": [
+    [
+      "native_crush_color",
+      834872,
+      834924
+    ],
+    [
+      "native_crush_parameter",
+      834924,
+      835128
+    ],
+    [
+      "native_crush_core",
+      835292,
+      837584
+    ]
+  ],
+  "commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "crush.c",
+      "crush_compare.c",
+      "crush-native.S",
+      "-lm",
+      "-o",
+      "crush-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "crush.c",
+      "crush_compare.c",
+      "-lm",
+      "-o",
+      "crush-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "crush.c",
+      "crush_compare.c",
+      "-lm",
+      "-o",
+      "crush-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"calls\":2400,\"frames\":125152,\"words\":341504,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"calls\":2400,\"frames\":125152,\"words\":341504,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "{\"calls\":2400,\"frames\":125152,\"words\":341504,\"mismatches\":0}\n",
+      "stderr": ""
+    }
+  }
+}

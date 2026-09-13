@@ -1,0 +1,19 @@
+{
+  "scope": "Static mixer-input wrapper path; observed delivery in az-eq-packet-delivery.json. Scheduler frequency not measured.",
+  "binary_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "entry": "0x2159560",
+  "input": "x0 full HuiSlider owner; x1 raw event pointer",
+  "stages": [
+    "Requires owner+184 adapter. Calls component virtual+32 with that adapter and raw event.",
+    "Checks queued count owner+176; no pending events returns.",
+    "Try-locks observer critical section owner+64. If lock fails, returns before resetting pending count.",
+    "Copies observer pointer array owner+112/count+128 into temporary snapshot owner+136/count+152, with allocation/free; unlocks.",
+    "Iterates all queued8-byte payloads owner+160 and the captured observer pointers. Each observer lifetime token is checked before component virtual+16 dispatch.",
+    "Resets queued count owner+176 to zero after delivery loop."
+  ],
+  "meaning": "Accepted knob events are dispatched synchronously in this mixer-input wrapper when observer lock is acquired. No need to presume a separate GUI-frame tick; caller threading and callback reentrancy still require care.",
+  "limits": [
+    "No audio-callback realtime guarantee; allocation and observer callbacks remain.",
+    "No rate/FPS conclusions from polled observation latency."
+  ]
+}

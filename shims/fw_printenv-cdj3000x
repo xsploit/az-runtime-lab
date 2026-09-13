@@ -1,0 +1,20 @@
+#!/bin/sh
+# Offline environment fixture. No boot-device access and no cloud authentication.
+case "$1" in -n) shift;; *) exit 1;; esac
+case "$1" in
+arch) echo arm;;
+baudrate) echo 115200;;
+board|board_name) echo evb_rk3399;;
+bootcmd) echo 'run bootcmd_emmc';;
+bootdelay|devnum) echo 0;;
+cpu) echo armv8;;
+devtype) echo mmc;;
+image) echo Image;;
+kernel_bank) echo A;;
+model|product_name) echo CDJ-3000X;;
+soc|vendor) echo rockchip;;
+release) echo 1.40;;
+update_status) echo success;;
+boot_type) echo normal;;
+*) exit 1;;
+esac

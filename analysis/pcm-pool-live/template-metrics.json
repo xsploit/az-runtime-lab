@@ -1,0 +1,141 @@
+{
+  "mode": "template",
+  "launcher_exit": 0,
+  "samples": [
+    {
+      "pid": 27680,
+      "starttime": "3154660",
+      "smaps_rollup_kib": {
+        "Rss": 31376,
+        "Pss": 29845,
+        "Pss_Dirty": 24368,
+        "Pss_Anon": 11120,
+        "Pss_File": 5477,
+        "Pss_Shmem": 13248,
+        "Shared_Clean": 2640,
+        "Shared_Dirty": 0,
+        "Private_Clean": 4368,
+        "Private_Dirty": 24368,
+        "Referenced": 30592,
+        "Anonymous": 11120,
+        "KSM": 0,
+        "LazyFree": 0,
+        "AnonHugePages": 0,
+        "ShmemPmdMapped": 0,
+        "FilePmdMapped": 0,
+        "Shared_Hugetlb": 0,
+        "Private_Hugetlb": 0,
+        "Swap": 0,
+        "SwapPss": 0,
+        "Locked": 0
+      },
+      "template_vmas": 33850,
+      "lab_pcm_installed": 1,
+      "lab_pcm_init_error": 0,
+      "lab_pcm_allocations": 0,
+      "lab_pcm_releases": 0,
+      "lab_pcm_reallocations": 0,
+      "store": {
+        "arena": 140734549295104,
+        "stride": 16384,
+        "capacity": 33850,
+        "next": 0,
+        "live": 0
+      },
+      "guard_instructions": [
+        "0xd503201f",
+        "0xd503201f"
+      ]
+    },
+    {
+      "pid": 27680,
+      "starttime": "3154660",
+      "smaps_rollup_kib": {
+        "Rss": 345088,
+        "Pss": 342716,
+        "Pss_Dirty": 336928,
+        "Pss_Anon": 307536,
+        "Pss_File": 5788,
+        "Pss_Shmem": 29392,
+        "Shared_Clean": 3680,
+        "Shared_Dirty": 32,
+        "Private_Clean": 4464,
+        "Private_Dirty": 336912,
+        "Referenced": 344272,
+        "Anonymous": 307536,
+        "KSM": 0,
+        "LazyFree": 0,
+        "AnonHugePages": 0,
+        "ShmemPmdMapped": 0,
+        "FilePmdMapped": 0,
+        "Shared_Hugetlb": 0,
+        "Private_Hugetlb": 0,
+        "Swap": 0,
+        "SwapPss": 0,
+        "Locked": 0
+      },
+      "template_vmas": 33850,
+      "lab_pcm_installed": 1,
+      "lab_pcm_init_error": 0,
+      "lab_pcm_allocations": 33850,
+      "lab_pcm_releases": 0,
+      "lab_pcm_reallocations": 0,
+      "store": {
+        "arena": 140734549295104,
+        "stride": 16384,
+        "capacity": 33850,
+        "next": 33850,
+        "live": 33850
+      },
+      "guard_instructions": [
+        "0xd503201f",
+        "0xd503201f"
+      ]
+    },
+    {
+      "pid": 27680,
+      "starttime": "3154660",
+      "smaps_rollup_kib": {
+        "Rss": 475264,
+        "Pss": 472560,
+        "Pss_Dirty": 465520,
+        "Pss_Anon": 424608,
+        "Pss_File": 7040,
+        "Pss_Shmem": 40912,
+        "Shared_Clean": 4672,
+        "Shared_Dirty": 32,
+        "Private_Clean": 5056,
+        "Private_Dirty": 465504,
+        "Referenced": 474880,
+        "Anonymous": 424608,
+        "KSM": 0,
+        "LazyFree": 0,
+        "AnonHugePages": 0,
+        "ShmemPmdMapped": 0,
+        "FilePmdMapped": 0,
+        "Shared_Hugetlb": 0,
+        "Private_Hugetlb": 0,
+        "Swap": 0,
+        "SwapPss": 0,
+        "Locked": 0
+      },
+      "template_vmas": 33850,
+      "lab_pcm_installed": 1,
+      "lab_pcm_init_error": 0,
+      "lab_pcm_allocations": 33850,
+      "lab_pcm_releases": 0,
+      "lab_pcm_reallocations": 0,
+      "store": {
+        "arena": 140734549295104,
+        "stride": 16384,
+        "capacity": 33850,
+        "next": 33850,
+        "live": 33850
+      },
+      "guard_instructions": [
+        "0xd503201f",
+        "0xd503201f"
+      ]
+    }
+  ]
+}

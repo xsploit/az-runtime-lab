@@ -1,0 +1,9 @@
+{"page_bytes":16384,"aliases":33850,"payload_bytes":14112,"written_aliases":9519}
+{"stage":"baseline","rss_kib":1408,"pss_kib":246,"rss_delta_kib":0,"pss_delta_kib":0,"seconds":0.000000,"vma_count":17,"pte_kib":96,"minor_faults":125}
+{"stage":"views_mapped_unread","rss_kib":1472,"pss_kib":248,"rss_delta_kib":64,"pss_delta_kib":2,"seconds":0.079592,"vma_count":33866,"pte_kib":96,"minor_faults":127}
+{"stage":"shared_template_read","rss_kib":543072,"pss_kib":264,"rss_delta_kib":541664,"pss_delta_kib":18,"seconds":0.073735,"vma_count":33866,"pte_kib":352,"minor_faults":33977}
+{"stage":"private_payload_write","rss_kib":543072,"pss_kib":152568,"rss_delta_kib":541664,"pss_delta_kib":152322,"seconds":0.236245,"vma_count":33866,"pte_kib":352,"minor_faults":43496}
+{"stage":"recycled_template_read","rss_kib":543072,"pss_kib":264,"rss_delta_kib":541664,"pss_delta_kib":18,"seconds":0.067234,"vma_count":33866,"pte_kib":352,"minor_faults":53015}
+{"stage":"guard_rewrite_control","rss_kib":543072,"pss_kib":541848,"rss_delta_kib":541664,"pss_delta_kib":541602,"seconds":0.426862,"vma_count":33866,"pte_kib":352,"minor_faults":86865}
+{"stage":"control_recycled","rss_kib":543072,"pss_kib":264,"rss_delta_kib":541664,"pss_delta_kib":18,"seconds":0.577563,"vma_count":33866,"pte_kib":352,"minor_faults":120715}
+{"passed":true,"scope":"Synthetic pages only; no AZ integration or audio timing verification"}

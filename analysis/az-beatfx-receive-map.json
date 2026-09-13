@@ -1,0 +1,10 @@
+{
+ "binary_sha256":"736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+ "scope":"Static original AZ instructions; musical meanings and live UI synchronization not yet proven",
+ "dispatcher":"2154850 passes RXframe+84; call2154858 ->21545e8",
+ "device":"Mixer+1328, device_adapter::mixer::BeatFx",
+ "state1":{"update":"21316e0","inputs":"RX88..89 little u16, RX84 bit6","cache":"valid92,u32value96,byteflag100","listener_slot":3},
+ "state2":{"update":"2131848","inputs":{"x1":"RX90..91 signed little16","x2":"RX86 byte","x3":"bool(RX84 &12)","x4":"RX85 high nibble","x5":"RX92 signed byte","x6":"RX93 high nibble"},"cache":"valid104; x6->106,x5->107,x4->108,x3->109,x2->110,x1->112","representation":"x4==5 uses alternate tagged representation; do not assume effect enum","notification":"2136740"},
+ "behavior":"Both groups notify on first valid state or any changed compared field, with separate initial cached notifications on registration",
+ "next":"Differential native RX packets with preserved baseline; observe FX BPM/time/type/beat widgets to identify semantics before E1/P1 integration"
+}

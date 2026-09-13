@@ -1,0 +1,34 @@
+{
+  "firmware": "XDJ-AZ1.30 EP147",
+  "onair_manager": {
+    "primary_vtable": "0x281af38",
+    "mixer_listener": {
+      "offset": 816,
+      "interface": "device_adapter::mixer::IChannelListener",
+      "vtable": "0x281b0b0",
+      "slot2_thunk": "0x101e6d0",
+      "body": "0x101db38"
+    },
+    "fader_listener": {
+      "offset": 824,
+      "interface": "meow::IHuiSliderObserver",
+      "slot2_thunk": "0x101d2b0",
+      "body": "0x101cd48"
+    }
+  },
+  "static_state_path": {
+    "thread_check": "0x101db74..0x101db8c",
+    "enabled_byte": 852,
+    "channel_count": 848,
+    "gate_byte": 853,
+    "cached_channel_bitset_pointer": 856,
+    "fader_array_pointer": 896,
+    "bitset_update": "0x101ddf8..0x101de20"
+  },
+  "limitations": [
+    "State fields852/853 physical settings not named.",
+    "Mixer listener upstream producer and packet fields not yet traced.",
+    "No recovered fader threshold; listener consumes a boolean rather than reading cached fader in this path.",
+    "Static state path, not full runtime on-air verification."
+  ]
+}

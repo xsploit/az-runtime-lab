@@ -1,0 +1,31 @@
+{
+  "binary_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Native AZ callback ABI with preset/adjustment roles corroborated by native FxState copy and live UI",
+  "source": "RX packet84..93 ->2131848 ->2136740/21365b0 ->21307e8",
+  "normal_callback": {
+    "virtual_byte_offset": 32,
+    "arguments": {
+      "x0": "listener",
+      "w1": "effect type RX85 high nibble",
+      "x2": "8-byte BeatFxTime temporary"
+    }
+  },
+  "BeatFxTime": {
+    "0..1": "signed16 milliseconds RX90/91",
+    "2": "RX86 beat preset: 6=1/3,7=1/2,8=2/3 verified live",
+    "3": "bool(RX84 &0x0c), adjusted/intermediate display mode",
+    "4..5": "sign-extended RX92 preset-strip position adjustment",
+    "6": "RX93 high nibble",
+    "7": "padding not explicitly initialized"
+  },
+  "alternate_callback": {
+    "when": "type==5",
+    "virtual_byte_offset": 40,
+    "arguments": {
+      "w1": "effect type",
+      "w2": "RX90/91 low16 parameter"
+    }
+  },
+  "important": "Type5 is Reverb according to AZ debug label map, not RX3 software Echo5. Do not copy software effect IDs into RX85.",
+  "next": "Finish full preset enum and RX93 high semantics; X-PAD value uses separate RX87 field"
+}

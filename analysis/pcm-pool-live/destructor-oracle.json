@@ -1,0 +1,790 @@
+{
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Run original AZ PageBuffer destructors on synthetic objects under QEMU.\n\nAllocator calls are recorded, not executed. Guard-error reporting is intercepted\nand resumed after its logging block: tests identify detection, not the real\nlogger's fatal/nonfatal behavior. No full player or concurrent cleanup tested.\n",
+  "tests": 18,
+  "intercepted_guard_reports": [
+    "0x768ca0",
+    "0x76907c",
+    "0x770658"
+  ],
+  "results": [
+    {
+      "variant": "deleting",
+      "case": "normal",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 1,
+          "address": "0x614000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 1,
+          "address": "0x601000",
+          "size": 0,
+          "caller": "0x768c48"
+        },
+        {
+          "kind": 2,
+          "address": "0x600000",
+          "size": 344,
+          "caller": "0x768c8c"
+        }
+      ]
+    },
+    {
+      "variant": "deleting",
+      "case": "front_guard_corrupt",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 1,
+          "address": "0x614000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 4,
+          "address": "0x602000",
+          "size": 0,
+          "caller": "0x501110"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 1,
+          "address": "0x601000",
+          "size": 0,
+          "caller": "0x768c48"
+        },
+        {
+          "kind": 2,
+          "address": "0x600000",
+          "size": 344,
+          "caller": "0x768c8c"
+        }
+      ]
+    },
+    {
+      "variant": "deleting",
+      "case": "back_guard_corrupt",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 1,
+          "address": "0x614000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 4,
+          "address": "0x602000",
+          "size": 0,
+          "caller": "0x501110"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 1,
+          "address": "0x601000",
+          "size": 0,
+          "caller": "0x768c48"
+        },
+        {
+          "kind": 2,
+          "address": "0x600000",
+          "size": 344,
+          "caller": "0x768c8c"
+        }
+      ]
+    },
+    {
+      "variant": "deleting",
+      "case": "null_payload",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 1,
+          "address": "0x601000",
+          "size": 0,
+          "caller": "0x768c48"
+        },
+        {
+          "kind": 2,
+          "address": "0x600000",
+          "size": 344,
+          "caller": "0x768c8c"
+        }
+      ]
+    },
+    {
+      "variant": "deleting",
+      "case": "zero_count",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 1,
+          "address": "0x614000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x768bcc"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x768bd8"
+        },
+        {
+          "kind": 1,
+          "address": "0x601000",
+          "size": 0,
+          "caller": "0x768c48"
+        },
+        {
+          "kind": 2,
+          "address": "0x600000",
+          "size": 344,
+          "caller": "0x768c8c"
+        }
+      ]
+    },
+    {
+      "variant": "deleting",
+      "case": "empty_vector",
+      "passed": true,
+      "events": [
+        {
+          "kind": 2,
+          "address": "0x600000",
+          "size": 344,
+          "caller": "0x768c8c"
+        }
+      ]
+    },
+    {
+      "variant": "nondeleting",
+      "case": "normal",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 1,
+          "address": "0x614000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 1,
+          "address": "0x601000",
+          "size": 0,
+          "caller": "0x769030"
+        }
+      ]
+    },
+    {
+      "variant": "nondeleting",
+      "case": "front_guard_corrupt",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 1,
+          "address": "0x614000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 4,
+          "address": "0x602000",
+          "size": 0,
+          "caller": "0x501190"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 1,
+          "address": "0x601000",
+          "size": 0,
+          "caller": "0x769030"
+        }
+      ]
+    },
+    {
+      "variant": "nondeleting",
+      "case": "back_guard_corrupt",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 1,
+          "address": "0x614000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 4,
+          "address": "0x602000",
+          "size": 0,
+          "caller": "0x501190"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 1,
+          "address": "0x601000",
+          "size": 0,
+          "caller": "0x769030"
+        }
+      ]
+    },
+    {
+      "variant": "nondeleting",
+      "case": "null_payload",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 1,
+          "address": "0x601000",
+          "size": 0,
+          "caller": "0x769030"
+        }
+      ]
+    },
+    {
+      "variant": "nondeleting",
+      "case": "zero_count",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 1,
+          "address": "0x614000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x768fb4"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x768fc0"
+        },
+        {
+          "kind": 1,
+          "address": "0x601000",
+          "size": 0,
+          "caller": "0x769030"
+        }
+      ]
+    },
+    {
+      "variant": "nondeleting",
+      "case": "empty_vector",
+      "passed": true,
+      "events": []
+    },
+    {
+      "variant": "owner_array_cleanup",
+      "case": "normal",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x7705f8"
+        },
+        {
+          "kind": 1,
+          "address": "0x614000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x7705f8"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x7705f8"
+        }
+      ]
+    },
+    {
+      "variant": "owner_array_cleanup",
+      "case": "front_guard_corrupt",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x7705f8"
+        },
+        {
+          "kind": 1,
+          "address": "0x614000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x7705f8"
+        },
+        {
+          "kind": 4,
+          "address": "0x602000",
+          "size": 0,
+          "caller": "0x501210"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x7705f8"
+        }
+      ]
+    },
+    {
+      "variant": "owner_array_cleanup",
+      "case": "back_guard_corrupt",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x7705f8"
+        },
+        {
+          "kind": 1,
+          "address": "0x614000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x7705f8"
+        },
+        {
+          "kind": 4,
+          "address": "0x602000",
+          "size": 0,
+          "caller": "0x501210"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x7705f8"
+        }
+      ]
+    },
+    {
+      "variant": "owner_array_cleanup",
+      "case": "null_payload",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x7705f8"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x7705f8"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x7705f8"
+        }
+      ]
+    },
+    {
+      "variant": "owner_array_cleanup",
+      "case": "zero_count",
+      "passed": true,
+      "events": [
+        {
+          "kind": 1,
+          "address": "0x618000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602020",
+          "size": 16,
+          "caller": "0x7705f8"
+        },
+        {
+          "kind": 1,
+          "address": "0x614000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602010",
+          "size": 16,
+          "caller": "0x7705f8"
+        },
+        {
+          "kind": 1,
+          "address": "0x610000",
+          "size": 0,
+          "caller": "0x7705ec"
+        },
+        {
+          "kind": 2,
+          "address": "0x602000",
+          "size": 16,
+          "caller": "0x7705f8"
+        }
+      ]
+    },
+    {
+      "variant": "owner_array_cleanup",
+      "case": "empty_vector",
+      "passed": true,
+      "events": []
+    }
+  ]
+}

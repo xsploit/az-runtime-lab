@@ -1,0 +1,1382 @@
+{
+  "sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "classes": [
+    {
+      "type": "usecase::load::ILoadTrackListener",
+      "typeinfo": "0x2697aa0",
+      "kind": "__class_type_info",
+      "bases": [],
+      "vtables": [
+        {
+          "address_point": "0x2697cf8",
+          "offset_to_top": 0,
+          "first_function": "0x995318"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::IBackToTop",
+      "typeinfo": "0x26acb38",
+      "kind": "__class_type_info",
+      "bases": [],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::BackToTop",
+      "typeinfo": "0x26acb68",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x26acb38",
+          "offset_flags": null,
+          "type": "usecase::load::IBackToTop"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26acb90",
+          "offset_to_top": 0,
+          "first_function": "0xa089a8"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::UsecaseLoadThread",
+      "typeinfo": "0x26aceb8",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x25c6f80",
+          "offset_flags": null,
+          "type": "meow::SharedTaskDrivenThreadWithTimer"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26acfa0",
+          "offset_to_top": 0,
+          "first_function": "0xa0e388"
+        },
+        {
+          "address_point": "0x26ad018",
+          "offset_to_top": -200,
+          "first_function": "0xa0e558"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::TrackInfoStockerController::Listener",
+      "typeinfo": "0x26acf08",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26ace78",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "meow::ExistenceCheckable<usecase::load::TrackInfoStockerController::Listener>"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::CueLoadController",
+      "typeinfo": "0x26acf58",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aceb8",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "usecase::load::UsecaseLoadThread"
+        },
+        {
+          "address": "0x26acf08",
+          "offset_flags": "0xd802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 216,
+          "type": "usecase::load::TrackInfoStockerController::Listener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26ad058",
+          "offset_to_top": 0,
+          "first_function": "0xa0cc48"
+        },
+        {
+          "address_point": "0x26ad0e0",
+          "offset_to_top": -200,
+          "first_function": "0xa0cda8"
+        },
+        {
+          "address_point": "0x26ad120",
+          "offset_to_top": -216,
+          "first_function": "0xa0cdb0"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::ITrackUnloader::Listener",
+      "typeinfo": "0x26aed78",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aecd0",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "meow::ExistenceCheckable<usecase::load::ITrackUnloader::Listener>"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::IDisconnectController",
+      "typeinfo": "0x26aedc8",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aeb38",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "meow::ExistenceCheckable<usecase::load::IDisconnectController>"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::IDisconnectState",
+      "typeinfo": "0x26aee18",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aeb90",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "meow::ExistenceCheckable<usecase::load::IDisconnectState>"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::DisconnectController::DeckUnloadReception",
+      "typeinfo": "0x26aeee0",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aed78",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "usecase::load::ITrackUnloader::Listener"
+        },
+        {
+          "address": "0x26aed20",
+          "offset_flags": "0x1002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 16,
+          "type": "usecase::preview::ITouchCuePreviewLoader::Listener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26af0b0",
+          "offset_to_top": 0,
+          "first_function": "0xa15680"
+        },
+        {
+          "address_point": "0x26af0e0",
+          "offset_to_top": -16,
+          "first_function": "0xa15690"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::DisconnectController",
+      "typeinfo": "0x26aef40",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aceb8",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "usecase::load::UsecaseLoadThread"
+        },
+        {
+          "address": "0x26aedc8",
+          "offset_flags": "0xd802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 216,
+          "type": "usecase::load::IDisconnectController"
+        },
+        {
+          "address": "0x26aee18",
+          "offset_flags": "0xe802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 232,
+          "type": "usecase::load::IDisconnectState"
+        },
+        {
+          "address": "0x26aee78",
+          "offset_flags": "0xf802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 248,
+          "type": "usecase::preview::IBrowsePreviewLoader::LoadListener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26af118",
+          "offset_to_top": 0,
+          "first_function": "0xa14ab8"
+        },
+        {
+          "address_point": "0x26af1b8",
+          "offset_to_top": -200,
+          "first_function": "0xa14c30"
+        },
+        {
+          "address_point": "0x26af1f8",
+          "offset_to_top": -216,
+          "first_function": "0xa14c28"
+        },
+        {
+          "address_point": "0x26af230",
+          "offset_to_top": -232,
+          "first_function": "0xa14c20"
+        },
+        {
+          "address_point": "0x26af258",
+          "offset_to_top": -248,
+          "first_function": "0xa14c38"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::TrackInfoStockerController",
+      "typeinfo": "0x26b1a08",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aceb8",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "usecase::load::UsecaseLoadThread"
+        },
+        {
+          "address": "0x26b18d0",
+          "offset_flags": "0xd802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 216,
+          "type": "trackinfo_stocker::ITrackInfoStockerListener"
+        },
+        {
+          "address": "0x26b1940",
+          "offset_flags": "0xe802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 232,
+          "type": "meow::UpdatableSharedObject<appnd_trk_info::BeatGrid>::IListener"
+        },
+        {
+          "address": "0x2612338",
+          "offset_flags": "0xf802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 248,
+          "type": "meow::UpdatableSharedObject<appnd_trk_info::HotCueSet>::IListener"
+        },
+        {
+          "address": "0x26882d8",
+          "offset_flags": "0x10802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 264,
+          "type": "meow::UpdatableSharedObject<appnd_trk_info::MemoryCueSet>::IListener"
+        },
+        {
+          "address": "0x26b19b0",
+          "offset_flags": "0x11802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 280,
+          "type": "meow::UpdatableSharedObject<audio_format::SeekTable>::IListener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26b1c38",
+          "offset_to_top": 0,
+          "first_function": "0xa1cac0"
+        },
+        {
+          "address_point": "0x26b1cd8",
+          "offset_to_top": -200,
+          "first_function": "0xa1cc58"
+        },
+        {
+          "address_point": "0x26b1d18",
+          "offset_to_top": -216,
+          "first_function": "0xa1cc50"
+        },
+        {
+          "address_point": "0x26b1d40",
+          "offset_to_top": -232,
+          "first_function": "0xa1cc48"
+        },
+        {
+          "address_point": "0x26b1d68",
+          "offset_to_top": -248,
+          "first_function": "0xa1cc40"
+        },
+        {
+          "address_point": "0x26b1d90",
+          "offset_to_top": -264,
+          "first_function": "0xa1cc38"
+        },
+        {
+          "address_point": "0x26b1db8",
+          "offset_to_top": -280,
+          "first_function": "0xa1cc60"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::LoadableState",
+      "typeinfo": "0x26b5a30",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aceb8",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "usecase::load::UsecaseLoadThread"
+        },
+        {
+          "address": "0x26b5950",
+          "offset_flags": "0xd802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 216,
+          "type": "trackinfo_stocker::LoadInfoRequestHandler::Listener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26b5c60",
+          "offset_to_top": 0,
+          "first_function": "0xa25700"
+        },
+        {
+          "address_point": "0x26b5ce0",
+          "offset_to_top": -200,
+          "first_function": "0xa25870"
+        },
+        {
+          "address_point": "0x26b5d38",
+          "offset_to_top": -216,
+          "first_function": "0xa25868"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::ILoadState",
+      "typeinfo": "0x26b7338",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26b7020",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "meow::ExistenceCheckable<usecase::load::ILoadState>"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::ILoadTrackProgressBroadcaster",
+      "typeinfo": "0x26b73e0",
+      "kind": "__class_type_info",
+      "bases": [],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::ITrackUnloader",
+      "typeinfo": "0x26b7410",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26b70d8",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "meow::ExistenceCheckable<usecase::load::ITrackUnloader>"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::AnalyzerController::Listener",
+      "typeinfo": "0x26b7468",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26b7140",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "meow::ExistenceCheckable<usecase::load::AnalyzerController::Listener>"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::LoadableState::Listener",
+      "typeinfo": "0x26b74b8",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26b6f58",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "meow::ExistenceCheckable<usecase::load::LoadableState::Listener>"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::LoadController::UsecaseLoadState",
+      "typeinfo": "0x26b7578",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x26b7338",
+          "offset_flags": null,
+          "type": "usecase::load::ILoadState"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26b7d80",
+          "offset_to_top": 0,
+          "first_function": "0xa41448"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::LoadController::TrackChangedTrigger",
+      "typeinfo": "0x26b75c8",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2688270",
+          "offset_flags": null,
+          "type": "dj_player::ITrackChangeNotificationListener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26b7de0",
+          "offset_to_top": 0,
+          "first_function": "0xa3fc08"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::LoadController::Reception",
+      "typeinfo": "0x26b7610",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x26b7308",
+          "offset_flags": null,
+          "type": "music_library::IListDataInfoReplyListener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26b7e10",
+          "offset_to_top": 0,
+          "first_function": "0xa3fc00"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::LoadController",
+      "typeinfo": "0x26b7648",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aceb8",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "usecase::load::UsecaseLoadThread"
+        },
+        {
+          "address": "0x26b7338",
+          "offset_flags": "0xd802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 216,
+          "type": "usecase::load::ILoadState"
+        },
+        {
+          "address": "0x26b73e0",
+          "offset_flags": "0xe802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 232,
+          "type": "usecase::load::ILoadTrackProgressBroadcaster"
+        },
+        {
+          "address": "0x26b7410",
+          "offset_flags": "0xf002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 240,
+          "type": "usecase::load::ITrackUnloader"
+        },
+        {
+          "address": "0x26b7388",
+          "offset_flags": "0x10002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 256,
+          "type": "usecase::pc_control::IPcDeck::Listener"
+        },
+        {
+          "address": "0x25c2f28",
+          "offset_flags": "0x11002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 272,
+          "type": "connection_with_hostapp::IPcAppliSetMode::Listener"
+        },
+        {
+          "address": "0x26acf08",
+          "offset_flags": "0x12002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 288,
+          "type": "usecase::load::TrackInfoStockerController::Listener"
+        },
+        {
+          "address": "0x26b74b8",
+          "offset_flags": "0x13002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 304,
+          "type": "usecase::load::LoadableState::Listener"
+        },
+        {
+          "address": "0x26b7518",
+          "offset_flags": "0x14002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 320,
+          "type": "usecase::track_download::ITrackDownload::Listener"
+        },
+        {
+          "address": "0x26b7290",
+          "offset_flags": "0x15002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 336,
+          "type": "dj_player::ITrackLoadable::Listener"
+        },
+        {
+          "address": "0x26b72c8",
+          "offset_flags": "0x15802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 344,
+          "type": "dj_player::ITrackUnloadable::Listener"
+        },
+        {
+          "address": "0x26518c0",
+          "offset_flags": "0x16002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 352,
+          "type": "meow::setting_framework::IItemListener<application_setting::HotCueAutoLoad>"
+        },
+        {
+          "address": "0x26190f0",
+          "offset_flags": "0x17002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 368,
+          "type": "meow::setting_framework::IItemListener<application_setting::AutoCue>"
+        },
+        {
+          "address": "0x2651360",
+          "offset_flags": "0x18002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 384,
+          "type": "meow::setting_framework::IItemListener<application_setting::AutoCueLevel>"
+        },
+        {
+          "address": "0x2619430",
+          "offset_flags": "0x19002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 400,
+          "type": "meow::setting_framework::IItemListener<application_setting::JogMode>"
+        },
+        {
+          "address": "0x2651d40",
+          "offset_flags": "0x1a002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 416,
+          "type": "meow::setting_framework::IItemListener<application_setting::EjectLoadLock>"
+        },
+        {
+          "address": "0x25ece08",
+          "offset_flags": "0x1b002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 432,
+          "type": "meow::setting_framework::IItemListener<application_setting::ProDjLinkMode>"
+        },
+        {
+          "address": "0x26b7468",
+          "offset_flags": "0x1c002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 448,
+          "type": "usecase::load::AnalyzerController::Listener"
+        },
+        {
+          "address": "0x26b7308",
+          "offset_flags": "0x1d002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 464,
+          "type": "music_library::IListDataInfoReplyListener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26b7e38",
+          "offset_to_top": 0,
+          "first_function": "0xa3c0f0"
+        },
+        {
+          "address_point": "0x26b7fc0",
+          "offset_to_top": -200,
+          "first_function": "0xa3c848"
+        },
+        {
+          "address_point": "0x26b8000",
+          "offset_to_top": -216,
+          "first_function": "0xa3c840"
+        },
+        {
+          "address_point": "0x26b8060",
+          "offset_to_top": -232,
+          "first_function": "0xa3c838"
+        },
+        {
+          "address_point": "0x26b8090",
+          "offset_to_top": -240,
+          "first_function": "0xa3c830"
+        },
+        {
+          "address_point": "0x26b80d0",
+          "offset_to_top": -256,
+          "first_function": "0xa3c828"
+        },
+        {
+          "address_point": "0x26b80f8",
+          "offset_to_top": -272,
+          "first_function": "0xa3c820"
+        },
+        {
+          "address_point": "0x26b8128",
+          "offset_to_top": -288,
+          "first_function": "0xa3c818"
+        },
+        {
+          "address_point": "0x26b8158",
+          "offset_to_top": -304,
+          "first_function": "0xa3c810"
+        },
+        {
+          "address_point": "0x26b8180",
+          "offset_to_top": -320,
+          "first_function": "0xa3c808"
+        },
+        {
+          "address_point": "0x26b81b8",
+          "offset_to_top": -336,
+          "first_function": "0xa3c800"
+        },
+        {
+          "address_point": "0x26b81e0",
+          "offset_to_top": -344,
+          "first_function": "0xa3c7f8"
+        },
+        {
+          "address_point": "0x26b8208",
+          "offset_to_top": -352,
+          "first_function": "0xa3c7f0"
+        },
+        {
+          "address_point": "0x26b8230",
+          "offset_to_top": -368,
+          "first_function": "0xa3c7e8"
+        },
+        {
+          "address_point": "0x26b8258",
+          "offset_to_top": -384,
+          "first_function": "0xa3c7e0"
+        },
+        {
+          "address_point": "0x26b8280",
+          "offset_to_top": -400,
+          "first_function": "0xa3c7d8"
+        },
+        {
+          "address_point": "0x26b82a8",
+          "offset_to_top": -416,
+          "first_function": "0xa3c7d0"
+        },
+        {
+          "address_point": "0x26b82d0",
+          "offset_to_top": -432,
+          "first_function": "0xa3c7c8"
+        },
+        {
+          "address_point": "0x26b82f8",
+          "offset_to_top": -448,
+          "first_function": "0xa3c7c0"
+        },
+        {
+          "address_point": "0x26b8328",
+          "offset_to_top": -464,
+          "first_function": "0xa3c850"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::IHotCueBankLoadListener",
+      "typeinfo": "0x26c1708",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26c16c0",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "meow::ExistenceCheckable<usecase::load::IHotCueBankLoadListener>"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x29cc9b0",
+          "offset_to_top": 0,
+          "first_function": "0x199a910"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::DragAndDropHotCueBankListLoader",
+      "typeinfo": "0x26c17b0",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aceb8",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "usecase::load::UsecaseLoadThread"
+        },
+        {
+          "address": "0x26c1768",
+          "offset_flags": "0xd802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 216,
+          "type": "network_prodjlink::IUdp_MusicDragAndDrop_Listener"
+        },
+        {
+          "address": "0x26c1708",
+          "offset_flags": "0xe002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 224,
+          "type": "usecase::load::IHotCueBankLoadListener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26c1838",
+          "offset_to_top": 0,
+          "first_function": "0xa4c430"
+        },
+        {
+          "address_point": "0x26c18d0",
+          "offset_to_top": -200,
+          "first_function": "0xa4c798"
+        },
+        {
+          "address_point": "0x26c1910",
+          "offset_to_top": -216,
+          "first_function": "0xa4c790"
+        },
+        {
+          "address_point": "0x26c1940",
+          "offset_to_top": -224,
+          "first_function": "0xa4c7a0"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::DragAndDropTrackLoader",
+      "typeinfo": "0x26c3448",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aceb8",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "usecase::load::UsecaseLoadThread"
+        },
+        {
+          "address": "0x26c1768",
+          "offset_flags": "0xd802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 216,
+          "type": "network_prodjlink::IUdp_MusicDragAndDrop_Listener"
+        },
+        {
+          "address": "0x2697aa0",
+          "offset_flags": "0xe002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 224,
+          "type": "usecase::load::ILoadTrackListener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26c34a0",
+          "offset_to_top": 0,
+          "first_function": "0xa50d20"
+        },
+        {
+          "address_point": "0x26c3538",
+          "offset_to_top": -200,
+          "first_function": "0xa51000"
+        },
+        {
+          "address_point": "0x26c3578",
+          "offset_to_top": -216,
+          "first_function": "0xa50ff8"
+        },
+        {
+          "address_point": "0x26c35a8",
+          "offset_to_top": -224,
+          "first_function": "0xa51008"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::IHotCueBankLoadProgressBroadcaster",
+      "typeinfo": "0x26c5128",
+      "kind": "__class_type_info",
+      "bases": [],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::IHotCueBankLoader",
+      "typeinfo": "0x26c5160",
+      "kind": "__class_type_info",
+      "bases": [],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::HotCueBankLoader",
+      "typeinfo": "0x26c5198",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26c5160",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "usecase::load::IHotCueBankLoader"
+        },
+        {
+          "address": "0x26aceb8",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "usecase::load::UsecaseLoadThread"
+        },
+        {
+          "address": "0x26c5128",
+          "offset_flags": "0xe002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 224,
+          "type": "usecase::load::IHotCueBankLoadProgressBroadcaster"
+        },
+        {
+          "address": "0x26aed78",
+          "offset_flags": "0xe802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 232,
+          "type": "usecase::load::ITrackUnloader::Listener"
+        },
+        {
+          "address": "0x26c50e0",
+          "offset_flags": "0xf802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 248,
+          "type": "music_library::IBankHotCueReplyListener"
+        },
+        {
+          "address": "0x26c4f78",
+          "offset_flags": "0x10002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 256,
+          "type": "trackinfo_stocker::LoadedOneTrackRequestHandler::Listener"
+        },
+        {
+          "address": "0x26b7388",
+          "offset_flags": "0x10802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 264,
+          "type": "usecase::pc_control::IPcDeck::Listener"
+        },
+        {
+          "address": "0x25c2f28",
+          "offset_flags": "0x11802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 280,
+          "type": "connection_with_hostapp::IPcAppliSetMode::Listener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26c54b8",
+          "offset_to_top": 0,
+          "first_function": "0xa57988"
+        },
+        {
+          "address_point": "0x26c5528",
+          "offset_to_top": -8,
+          "first_function": "0xa57cf0"
+        },
+        {
+          "address_point": "0x26c55a0",
+          "offset_to_top": -208,
+          "first_function": "0xa57ce8"
+        },
+        {
+          "address_point": "0x26c55e0",
+          "offset_to_top": -224,
+          "first_function": "0xa57ce0"
+        },
+        {
+          "address_point": "0x26c5610",
+          "offset_to_top": -232,
+          "first_function": "0xa57cd8"
+        },
+        {
+          "address_point": "0x26c5638",
+          "offset_to_top": -248,
+          "first_function": "0xa57cd0"
+        },
+        {
+          "address_point": "0x26c5678",
+          "offset_to_top": -256,
+          "first_function": "0xa57cc8"
+        },
+        {
+          "address_point": "0x26c56a0",
+          "offset_to_top": -264,
+          "first_function": "0xa57cc0"
+        },
+        {
+          "address_point": "0x26c56c8",
+          "offset_to_top": -280,
+          "first_function": "0xa57cb8"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::InstantDoublesTarget",
+      "typeinfo": "0x26c8740",
+      "kind": "__class_type_info",
+      "bases": [],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::InstantDoublesTargetOnLinkedPlayer",
+      "typeinfo": "0x26c8788",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x26c8740",
+          "offset_flags": null,
+          "type": "usecase::load::InstantDoublesTarget"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26c8800",
+          "offset_to_top": 0,
+          "first_function": "0xa5bd28"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::InstantDoublesTargetOnLocalPlayer",
+      "typeinfo": "0x26c8c00",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x26c8740",
+          "offset_flags": null,
+          "type": "usecase::load::InstantDoublesTarget"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26c8c28",
+          "offset_to_top": 0,
+          "first_function": "0xa63df0"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::IInstantDoublesLoader",
+      "typeinfo": "0x26c93b8",
+      "kind": "__class_type_info",
+      "bases": [],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::InstantDoublesLoader",
+      "typeinfo": "0x26c93f0",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26c93b8",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "usecase::load::IInstantDoublesLoader"
+        },
+        {
+          "address": "0x26aceb8",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "usecase::load::UsecaseLoadThread"
+        },
+        {
+          "address": "0x2697aa0",
+          "offset_flags": "0xe002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 224,
+          "type": "usecase::load::ILoadTrackListener"
+        },
+        {
+          "address": "0x25ece08",
+          "offset_flags": "0xe800",
+          "public": false,
+          "virtual": false,
+          "offset_or_vtable_slot": 232,
+          "type": "meow::setting_framework::IItemListener<application_setting::ProDjLinkMode>"
+        },
+        {
+          "address": "0x26b7518",
+          "offset_flags": "0xf802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 248,
+          "type": "usecase::track_download::ITrackDownload::Listener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26c9538",
+          "offset_to_top": 0,
+          "first_function": "0xa6b150"
+        },
+        {
+          "address_point": "0x26c95a8",
+          "offset_to_top": -8,
+          "first_function": "0xa6b690"
+        },
+        {
+          "address_point": "0x26c9620",
+          "offset_to_top": -208,
+          "first_function": "0xa6b688"
+        },
+        {
+          "address_point": "0x26c9660",
+          "offset_to_top": -224,
+          "first_function": "0xa6b680"
+        },
+        {
+          "address_point": "0x26c96c8",
+          "offset_to_top": -232,
+          "first_function": "0xa6b678"
+        },
+        {
+          "address_point": "0x26c96f0",
+          "offset_to_top": -248,
+          "first_function": "0xa6b698"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::InstantDoublesTargetOnDummyPlayer",
+      "typeinfo": "0x26c9490",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x26c8740",
+          "offset_flags": null,
+          "type": "usecase::load::InstantDoublesTarget"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26c94e8",
+          "offset_to_top": 0,
+          "first_function": "0xa6a6a0"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::ITrackLoader",
+      "typeinfo": "0x26cc2d0",
+      "kind": "__class_type_info",
+      "bases": [],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::TrackLoader",
+      "typeinfo": "0x26cc300",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aceb8",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "usecase::load::UsecaseLoadThread"
+        },
+        {
+          "address": "0x26cc2d0",
+          "offset_flags": "0xd802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 216,
+          "type": "usecase::load::ITrackLoader"
+        },
+        {
+          "address": "0x26c4ee8",
+          "offset_flags": "0xe002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 224,
+          "type": "music_library::ILoadedLocationReplyListener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26cc358",
+          "offset_to_top": 0,
+          "first_function": "0xa70170"
+        },
+        {
+          "address_point": "0x26cc3e8",
+          "offset_to_top": -200,
+          "first_function": "0xa6faf8"
+        },
+        {
+          "address_point": "0x26cc428",
+          "offset_to_top": -216,
+          "first_function": "0xa6f470"
+        },
+        {
+          "address_point": "0x26cc458",
+          "offset_to_top": -224,
+          "first_function": "0xa6fd18"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::ITrackSearch",
+      "typeinfo": "0x26cd4c8",
+      "kind": "__class_type_info",
+      "bases": [],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::TrackSearch",
+      "typeinfo": "0x26cd4f8",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x26aceb8",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "usecase::load::UsecaseLoadThread"
+        },
+        {
+          "address": "0x26c4f78",
+          "offset_flags": "0xd802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 216,
+          "type": "trackinfo_stocker::LoadedOneTrackRequestHandler::Listener"
+        },
+        {
+          "address": "0x25c6e78",
+          "offset_flags": "0xe000",
+          "public": false,
+          "virtual": false,
+          "offset_or_vtable_slot": 224,
+          "type": "meow::TimerHandler"
+        },
+        {
+          "address": "0x26cd4c8",
+          "offset_flags": "0x13002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 304,
+          "type": "usecase::load::ITrackSearch"
+        },
+        {
+          "address": "0x2697aa0",
+          "offset_flags": "0x13802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 312,
+          "type": "usecase::load::ILoadTrackListener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x26cd750",
+          "offset_to_top": 0,
+          "first_function": "0xa73e90"
+        },
+        {
+          "address_point": "0x26cd838",
+          "offset_to_top": -200,
+          "first_function": "0xa74078"
+        },
+        {
+          "address_point": "0x26cd890",
+          "offset_to_top": -216,
+          "first_function": "0xa74070"
+        },
+        {
+          "address_point": "0x26cd8b8",
+          "offset_to_top": -224,
+          "first_function": "0xa74068"
+        },
+        {
+          "address_point": "0x26cd8e0",
+          "offset_to_top": -304,
+          "first_function": "0xa74060"
+        },
+        {
+          "address_point": "0x26cd950",
+          "offset_to_top": -312,
+          "first_function": "0xa74058"
+        }
+      ]
+    },
+    {
+      "type": "usecase::load::ILoadState::Listener",
+      "typeinfo": "0x271bae0",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x271ba58",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "meow::ExistenceCheckable<usecase::load::ILoadState::Listener>"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "usecase::load::IDisconnectController::Listener",
+      "typeinfo": "0x29e9140",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x29e90c0",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "meow::ExistenceCheckable<usecase::load::IDisconnectController::Listener>"
+        }
+      ],
+      "vtables": []
+    }
+  ]
+}

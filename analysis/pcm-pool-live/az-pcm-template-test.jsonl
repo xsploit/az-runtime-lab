@@ -1,0 +1,8 @@
+{"page_bytes":16384,"aliases":512,"payload_bytes":14112,"written_aliases":128}
+{"stage":"baseline","rss_kib":1408,"pss_kib":246,"rss_delta_kib":0,"pss_delta_kib":0,"seconds":0.000000}
+{"stage":"shared_template_read","rss_kib":9664,"pss_kib":264,"rss_delta_kib":8256,"pss_delta_kib":18,"seconds":0.006068}
+{"stage":"private_payload_write","rss_kib":9664,"pss_kib":2312,"rss_delta_kib":8256,"pss_delta_kib":2066,"seconds":0.003654}
+{"stage":"recycled_template_read","rss_kib":9664,"pss_kib":264,"rss_delta_kib":8256,"pss_delta_kib":18,"seconds":0.000953}
+{"stage":"guard_rewrite_control","rss_kib":9664,"pss_kib":8440,"rss_delta_kib":8256,"pss_delta_kib":8194,"seconds":0.005023}
+{"stage":"control_recycled","rss_kib":9664,"pss_kib":264,"rss_delta_kib":8256,"pss_delta_kib":18,"seconds":0.010365}
+{"passed":true,"scope":"Synthetic pages only; no AZ integration or audio timing verification"}

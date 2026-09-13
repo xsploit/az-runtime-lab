@@ -1,0 +1,143 @@
+{
+  "attempts": [],
+  "pid": 548681,
+  "snapshot": {
+    "registry_table": "0x7fa5e26a6300",
+    "bucket_count": 101,
+    "controls": [
+      {
+        "channel": 0,
+        "band": "high",
+        "hui_id": "0x7dcb7936b7ed2b00",
+        "component": "0x7fa5dab045c0",
+        "owner": "0x7fa5dab04500",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7fa5daaf8cc0",
+        "adapter_vtable": "0x2e63960"
+      },
+      {
+        "channel": 0,
+        "band": "mid",
+        "hui_id": "0xa6518fb8028ca800",
+        "component": "0x7fa5dab048c0",
+        "owner": "0x7fa5dab04800",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7fa5daaf8d20",
+        "adapter_vtable": "0x2e63960"
+      },
+      {
+        "channel": 0,
+        "band": "low",
+        "hui_id": "0xdacc2ca9faed3600",
+        "component": "0x7fa5dab04bc0",
+        "owner": "0x7fa5dab04b00",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7fa5daaf8d80",
+        "adapter_vtable": "0x2e63960"
+      },
+      {
+        "channel": 1,
+        "band": "high",
+        "hui_id": "0x7dcb7936b7ed2b01",
+        "component": "0x7fa5dab059c0",
+        "owner": "0x7fa5dab05900",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7fa5daaf8f40",
+        "adapter_vtable": "0x2e63960"
+      },
+      {
+        "channel": 1,
+        "band": "mid",
+        "hui_id": "0xa6518fb8028ca801",
+        "component": "0x7fa5dab05cc0",
+        "owner": "0x7fa5dab05c00",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7fa5daaf8fa0",
+        "adapter_vtable": "0x2e63960"
+      },
+      {
+        "channel": 1,
+        "band": "low",
+        "hui_id": "0xdacc2ca9faed3601",
+        "component": "0x7fa5dab05fc0",
+        "owner": "0x7fa5dab05f00",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7fa5dab01000",
+        "adapter_vtable": "0x2e63960"
+      },
+      {
+        "channel": 2,
+        "band": "high",
+        "hui_id": "0x7dcb7936b7ed2b02",
+        "component": "0x7fa5dab06dc0",
+        "owner": "0x7fa5dab06d00",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7fa5dab011c0",
+        "adapter_vtable": "0x2e63960"
+      },
+      {
+        "channel": 2,
+        "band": "mid",
+        "hui_id": "0xa6518fb8028ca802",
+        "component": "0x7fa5dab070c0",
+        "owner": "0x7fa5dab07000",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7fa5dab01220",
+        "adapter_vtable": "0x2e63960"
+      },
+      {
+        "channel": 2,
+        "band": "low",
+        "hui_id": "0xdacc2ca9faed3602",
+        "component": "0x7fa5dab073c0",
+        "owner": "0x7fa5dab07300",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7fa5dab01280",
+        "adapter_vtable": "0x2e63960"
+      },
+      {
+        "channel": 3,
+        "band": "high",
+        "hui_id": "0x7dcb7936b7ed2b03",
+        "component": "0x7fa5dab0f1c0",
+        "owner": "0x7fa5dab0f100",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7fa5dab01440",
+        "adapter_vtable": "0x2e63960"
+      },
+      {
+        "channel": 3,
+        "band": "mid",
+        "hui_id": "0xa6518fb8028ca803",
+        "component": "0x7fa5dab0f4c0",
+        "owner": "0x7fa5dab0f400",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7fa5dab014a0",
+        "adapter_vtable": "0x2e63960"
+      },
+      {
+        "channel": 3,
+        "band": "low",
+        "hui_id": "0xdacc2ca9faed3603",
+        "component": "0x7fa5dab0f7c0",
+        "owner": "0x7fa5dab0f700",
+        "value": 0.0,
+        "raw": 0,
+        "adapter": "0x7fa5dab01500",
+        "adapter_vtable": "0x2e63960"
+      }
+    ]
+  },
+  "launcher_status": 0
+}

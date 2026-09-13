@@ -1,0 +1,33 @@
+{
+  "scope": "Static interface inventory, not complete call semantics or live control injection",
+  "binary_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "channel": {
+    "vtable": "0x2e42380",
+    "slot2": {
+      "method": "0x21344f0",
+      "behavior": "store low byte w1 to this+8",
+      "name": "unresolved"
+    },
+    "slot3": {
+      "method": "0x21300b8",
+      "name": "select(InputSource)",
+      "evidence": "assertion function string0x2e417b0",
+      "behavior": "If signed int this+12 >1 accepts any low8 value, otherwise only0 or3; stores to this+9",
+      "enum_labels": "assertion0x2e42448 mentions kUsbAudio/kDeck but numeric correspondence unresolved"
+    },
+    "slot4": "0x2132078 listener-like registration, complete contract pending",
+    "slot5": "0x2132e38 unresolved"
+  },
+  "headphones": {
+    "vtable": "0x2e420f8",
+    "slot2": "0x21344c8 writes this+8",
+    "slot3": "0x21344d0 writes this+9",
+    "names": "unresolved"
+  },
+  "negative_evidence": {
+    "query": "Demangled RTTI candidate catalog for SoundColor, ColorFx, color_effect, CFX",
+    "matches": 0,
+    "limit": "No matches do not establish absent code; hardware-only control remains a hypothesis"
+  },
+  "next": "Trace channel slot2 and headphone setters from typed application listeners through TX builder; do not mistake these byte controls for DSP gain/color knobs."
+}

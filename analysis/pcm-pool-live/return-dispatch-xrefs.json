@@ -1,0 +1,148 @@
+{
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "types": [
+    {
+      "typeinfo": "0x25f8520",
+      "name_address": "0x25f83b8",
+      "mangled_name": "N4meow16AsyncTaskBoxBase9AsyncTaskIZN6pcmbuf7pagebuf18BufferingCommanderINS3_23DefaultPageStaticConfigEE12onPageFilledERKNS3_5TrackIS5_E11ReservationEPNS3_4PageIS5_EERKNS2_22PositionWithSourceInfoEN12audio_format15ReaderErrorTypeENSI_15AudioFormatKindENS_14ContextualUnitILy36916648590029877ENS_8UnitTypeIxLy66685906108733364ESt5ratioILl1ELl1EEEEEEEUlvE_EE"
+    },
+    {
+      "typeinfo": "0x25f96a0",
+      "name_address": "0x25f9658",
+      "mangled_name": "N6pcmbuf7pagebuf18BufferingCommanderINS0_23DefaultPageStaticConfigEEE"
+    }
+  ],
+  "references": {
+    "0x773620": {
+      "direct_calls": [
+        "0x7738a8"
+      ],
+      "pointer_references": []
+    },
+    "0x77d5f0": {
+      "direct_calls": [],
+      "pointer_references": [
+        "0x25f8d88"
+      ]
+    },
+    "0x782978": {
+      "direct_calls": [
+        "0x782af4"
+      ],
+      "pointer_references": [
+        "0x25f9fa8"
+      ]
+    },
+    "0x782af0": {
+      "direct_calls": [],
+      "pointer_references": [
+        "0x25f9fd0"
+      ]
+    }
+  },
+  "scheduler_task_table": {
+    "0x25f9d70": [
+      "0x771ee0",
+      "0x771fe0",
+      "0x691c70",
+      "0x68f050",
+      "0x68f6e0",
+      "0x68f0e8",
+      "0x22093b0",
+      "0x220ad30",
+      "0x769310",
+      "0x70e4f8"
+    ]
+  },
+  "ranges": [
+    {
+      "start": "0x773620",
+      "end_exclusive": "0x7736cc"
+    },
+    {
+      "start": "0x774630",
+      "end_exclusive": "0x7746e8"
+    },
+    {
+      "start": "0x670488",
+      "end_exclusive": "0x6704a8"
+    },
+    {
+      "start": "0x77d3e8",
+      "end_exclusive": "0x77d490"
+    },
+    {
+      "start": "0x77d54c",
+      "end_exclusive": "0x77d598"
+    },
+    {
+      "start": "0x77d5f0",
+      "end_exclusive": "0x77d5f8"
+    },
+    {
+      "start": "0x7826e0",
+      "end_exclusive": "0x782834"
+    },
+    {
+      "start": "0x782978",
+      "end_exclusive": "0x782ac4"
+    },
+    {
+      "start": "0x76ebf0",
+      "end_exclusive": "0x76ec58"
+    },
+    {
+      "start": "0x776130",
+      "end_exclusive": "0x776150"
+    },
+    {
+      "start": "0x776364",
+      "end_exclusive": "0x7763c8"
+    },
+    {
+      "start": "0x7766a4",
+      "end_exclusive": "0x7766e8"
+    },
+    {
+      "start": "0x68f0e8",
+      "end_exclusive": "0x68f11c"
+    },
+    {
+      "start": "0x231cbe0",
+      "end_exclusive": "0x231cbec"
+    },
+    {
+      "start": "0x22093b0",
+      "end_exclusive": "0x22093e4"
+    },
+    {
+      "start": "0x2211620",
+      "end_exclusive": "0x22116d8"
+    },
+    {
+      "start": "0x22107b0",
+      "end_exclusive": "0x2210958"
+    },
+    {
+      "start": "0x2210a40",
+      "end_exclusive": "0x2210a48"
+    },
+    {
+      "start": "0x781d60",
+      "end_exclusive": "0x782058"
+    },
+    {
+      "start": "0x684480",
+      "end_exclusive": "0x6844ac"
+    },
+    {
+      "start": "0x7745f8",
+      "end_exclusive": "0x7746e8"
+    },
+    {
+      "start": "0x774828",
+      "end_exclusive": "0x774868"
+    }
+  ],
+  "scope": "Static direct B/BL and byte-pattern pointer references; no indirect-call completeness or runtime synchronization proof."
+}

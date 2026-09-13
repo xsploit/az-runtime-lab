@@ -1,0 +1,12 @@
+{
+  "frames": 720,
+  "duration_seconds": 6.0,
+  "changed_samples": 179,
+  "change_rate_hz": 29.666666666666668,
+  "interval_ms": {
+    "median": 33.333333333333336,
+    "p95": 41.666666666666664,
+    "max": 41.666666666666664
+  },
+  "note": "Sampled X11 pixel changes, not panel FPS. Verify playback/view and account for capture overhead."
+}

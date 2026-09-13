@@ -1,0 +1,9 @@
+{
+  "frames": 90,
+  "pixel_first_colors": {
+    "(255, 255, 255)": 51,
+    "(85, 85, 85)": 39
+  },
+  "transitions": 6,
+  "experiment_switch": "held at 0 throughout"
+}

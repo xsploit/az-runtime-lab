@@ -1,0 +1,26 @@
+{
+  "candidate": {
+    "samples": 719,
+    "time_base": "1/240",
+    "duration_seconds": 5.983333333333333,
+    "change_rate_hz": 29.58217270194986,
+    "median_interval_ms": 33.333333333333215,
+    "max_interval_ms": 41.66666666666696
+  },
+  "original": {
+    "samples": 721,
+    "time_base": "1/1000000",
+    "duration_seconds": 5.999801,
+    "change_rate_hz": 29.500978449118563,
+    "median_interval_ms": 33.333999999999975,
+    "max_interval_ms": 58.34300000000003
+  },
+  "restored": {
+    "samples": 721,
+    "time_base": "1/1000000",
+    "duration_seconds": 5.999763,
+    "change_rate_hz": 29.667838546289246,
+    "median_interval_ms": 33.333999999999975,
+    "max_interval_ms": 41.67200000000015
+  }
+}

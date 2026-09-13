@@ -1,0 +1,110 @@
+{
+  "pid": 11605,
+  "player_objects": [
+    "0x7fffa7cfac40",
+    "0x7fffa7cfaa80",
+    "0x7fffa7cfa8c0",
+    "0x7fffa7cfa700"
+  ],
+  "source": "0x7ffeed63d000",
+  "cache": "0x7fffa7c94f10",
+  "phases": [
+    {
+      "phase": "original",
+      "interval_ms": 33,
+      "fast_repaint": false,
+      "repaint": {
+        "hz": 29.756138408671756,
+        "negative_steps": 0,
+        "median_step": 33.77365699969232
+      },
+      "source": {
+        "hz": 29.506086825405607,
+        "negative_steps": 0,
+        "median_step": 1472.0
+      },
+      "cache": {
+        "hz": 29.756138408671756,
+        "negative_steps": 0,
+        "median_step": 34
+      },
+      "cpu_percent_one_core_memory_sample": 30.48622622392128,
+      "cache_units_per_second": 1003.7070552303229,
+      "distinct_pixel_hz": 30.062630480167016,
+      "capture_frames": 480
+    },
+    {
+      "phase": "provider_only",
+      "interval_ms": 16,
+      "fast_repaint": false,
+      "repaint": {
+        "hz": 29.504469300129372,
+        "negative_steps": 0,
+        "median_step": 33.72709150053561
+      },
+      "source": {
+        "hz": 59.258976475683575,
+        "negative_steps": 0,
+        "median_step": 704
+      },
+      "cache": {
+        "hz": 29.504469300129372,
+        "negative_steps": 0,
+        "median_step": 34.0
+      },
+      "cpu_percent_one_core_memory_sample": 30.95768021651603,
+      "cache_units_per_second": 996.6509714433532,
+      "distinct_pixel_hz": 30.563674321503132,
+      "capture_frames": 479
+    },
+    {
+      "phase": "combined",
+      "interval_ms": 16,
+      "fast_repaint": true,
+      "repaint": {
+        "hz": 59.2650435423256,
+        "negative_steps": 0,
+        "median_step": 16.915791001170874
+      },
+      "source": {
+        "hz": 59.2650435423256,
+        "negative_steps": 0,
+        "median_step": 704
+      },
+      "cache": {
+        "hz": 59.2650435423256,
+        "negative_steps": 0,
+        "median_step": 16
+      },
+      "cpu_percent_one_core_memory_sample": 48.98026506752081,
+      "cache_units_per_second": 1000.0038359736711,
+      "distinct_pixel_hz": 59.12317327766179,
+      "capture_frames": 479
+    },
+    {
+      "phase": "restored",
+      "interval_ms": 33,
+      "fast_repaint": false,
+      "repaint": {
+        "hz": 29.514755267320428,
+        "negative_steps": 0,
+        "median_step": 33.75110099930316
+      },
+      "source": {
+        "hz": 29.764880311958738,
+        "negative_steps": 0,
+        "median_step": 1472
+      },
+      "cache": {
+        "hz": 29.514755267320428,
+        "negative_steps": 0,
+        "median_step": 33.0
+      },
+      "cpu_percent_one_core_memory_sample": 30.729476182342133,
+      "cache_units_per_second": 1000.7503035978732,
+      "distinct_pixel_hz": 29.561586638830896,
+      "capture_frames": 479
+    }
+  ],
+  "restored": true
+}

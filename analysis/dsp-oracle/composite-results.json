@@ -1,0 +1,117 @@
+{
+  "scope": "Native manager plus real native Filter/IIR/control callbacks; Off uses equivalent copy/no-op, Sweep tick mocked. Portable full manager/filter audio+state comparison.",
+  "commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "composite_compare.c",
+      "cfx_composed.c",
+      "cfx_manager_filter.c",
+      "cfx_filter.c",
+      "cfx_process.c",
+      "iir_reconstructed.c",
+      "manager-native.S",
+      "cfx-native.S",
+      "cfx-control.S",
+      "native.S",
+      "-lm",
+      "-o",
+      "composite-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "composite_compare.c",
+      "cfx_composed.c",
+      "cfx_manager_filter.c",
+      "cfx_filter.c",
+      "cfx_process.c",
+      "iir_reconstructed.c",
+      "-lm",
+      "-o",
+      "composite-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "composite_compare.c",
+      "cfx_composed.c",
+      "cfx_manager_filter.c",
+      "cfx_filter.c",
+      "cfx_process.c",
+      "iir_reconstructed.c",
+      "-lm",
+      "-o",
+      "composite-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"calls\":12000,\"stereo_frames\":249274,\"numeric_values_compared\":978548,\"mismatches\":0,\"max_abs_error\":0,\"busy_requests\":1128}\n",
+      "stderr": "",
+      "metrics": {
+        "calls": 12000,
+        "stereo_frames": 249274,
+        "numeric_values_compared": 978548,
+        "mismatches": 0,
+        "max_abs_error": 0,
+        "busy_requests": 1128
+      }
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"calls\":12000,\"stereo_frames\":249274,\"numeric_values_compared\":978548,\"mismatches\":0,\"max_abs_error\":0,\"busy_requests\":1128}\n",
+      "stderr": "",
+      "metrics": {
+        "calls": 12000,
+        "stereo_frames": 249274,
+        "numeric_values_compared": 978548,
+        "mismatches": 0,
+        "max_abs_error": 0,
+        "busy_requests": 1128
+      }
+    },
+    "host_asan": {
+      "returncode": 0,
+      "stdout": "{\"calls\":12000,\"stereo_frames\":249274,\"numeric_values_compared\":978548,\"mismatches\":0,\"max_abs_error\":0,\"busy_requests\":1128}\n",
+      "stderr": "",
+      "metrics": {
+        "calls": 12000,
+        "stereo_frames": 249274,
+        "numeric_values_compared": 978548,
+        "mismatches": 0,
+        "max_abs_error": 0,
+        "busy_requests": 1128
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "samples": 1025,
+  "mismatches": [],
+  "method": "Original code under QEMU; constructed default adapter, no full player",
+  "expected": "float32(min(raw/1023,1.0))",
+  "selected": {
+    "0": "0",
+    "511": "0.499511242",
+    "512": "0.500488758",
+    "1023": "1",
+    "1024": "1"
+  }
+}

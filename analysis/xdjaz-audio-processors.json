@@ -1,0 +1,896 @@
+{
+  "scope": "ABI ancestry evidence, not runtime graph membership",
+  "processors": [
+    {
+      "type": "meow::AudioProcessorBase",
+      "typeinfo": "0x2603dd0",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x312a2d8",
+          "offset_flags": null,
+          "type": "juce::AudioProcessor"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "combo_system::DeckBluetoothAudioSwitcher",
+      "typeinfo": "0x2603e18",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e56898",
+          "offset_flags": null,
+          "type": "meow::SimpleAudioSwitcher"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2604be8",
+          "offset_to_top": 0,
+          "first_function": "0x7fd250"
+        }
+      ]
+    },
+    {
+      "type": "combo_system::AudioSystem",
+      "typeinfo": "0x2603e50",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e567b0",
+          "offset_flags": null,
+          "type": "meow::AudioSystem"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2604e08",
+          "offset_to_top": 0,
+          "first_function": "0x7af370"
+        },
+        {
+          "address_point": "0x2605058",
+          "offset_to_top": -272,
+          "first_function": "0x7af418"
+        },
+        {
+          "address_point": "0x2605078",
+          "offset_to_top": -328,
+          "first_function": "0x7af420"
+        },
+        {
+          "address_point": "0x26050a0",
+          "offset_to_top": -400,
+          "first_function": "0x7af428"
+        }
+      ]
+    },
+    {
+      "type": "meow::AudioProcessorBaseEx<0ull, meow::DummyPerformanceCounter>",
+      "typeinfo": "0x289ea08",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x2603dd0",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "meow::AudioProcessorBase"
+        },
+        {
+          "address": "0x289e9b0",
+          "offset_flags": "0x11002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 272,
+          "type": "meow::SerialNumbered<0ull, unsigned int, false>"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "dj_player::DjPlayerAudioProcessor",
+      "typeinfo": "0x289ea68",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x289ea08",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "meow::AudioProcessorBaseEx<0ull, meow::DummyPerformanceCounter>"
+        },
+        {
+          "address": "0x289e978",
+          "offset_flags": "0x12002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 288,
+          "type": "dj_player::IVolumeControlable"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "dj_player::DjPlayerUnit",
+      "typeinfo": "0x289eb08",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x289ea68",
+          "offset_flags": null,
+          "type": "dj_player::DjPlayerAudioProcessor"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x289f878",
+          "offset_to_top": 0,
+          "first_function": "0x14a2270"
+        },
+        {
+          "address_point": "0x289fab8",
+          "offset_to_top": -272,
+          "first_function": "0x14a24c8"
+        },
+        {
+          "address_point": "0x289fad8",
+          "offset_to_top": -288,
+          "first_function": "0x14a24d0"
+        }
+      ]
+    },
+    {
+      "type": "preview_player::BrowsePreviewPlayerUnit",
+      "typeinfo": "0x28a2e68",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x289ea08",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "meow::AudioProcessorBaseEx<0ull, meow::DummyPerformanceCounter>"
+        },
+        {
+          "address": "0x2e676e8",
+          "offset_flags": "0x12002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 288,
+          "type": "meow::TaskDrivenThread"
+        },
+        {
+          "address": "0x28a2e10",
+          "offset_flags": "0x3d802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 984,
+          "type": "preview_player::IPreviewPlayer"
+        },
+        {
+          "address": "0x2882c08",
+          "offset_flags": "0x3e802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 1000,
+          "type": "pcmbuf::ILoadResultListener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x28a3368",
+          "offset_to_top": 0,
+          "first_function": "0x14bb750"
+        },
+        {
+          "address_point": "0x28a3600",
+          "offset_to_top": -272,
+          "first_function": "0x14bbad0"
+        },
+        {
+          "address_point": "0x28a3620",
+          "offset_to_top": -288,
+          "first_function": "0x14bbac8"
+        },
+        {
+          "address_point": "0x28a3690",
+          "offset_to_top": -328,
+          "first_function": "0x14bbac0"
+        },
+        {
+          "address_point": "0x28a36b8",
+          "offset_to_top": -344,
+          "first_function": "0x14bbab8"
+        },
+        {
+          "address_point": "0x28a36e0",
+          "offset_to_top": -984,
+          "first_function": "0x14bbab0"
+        },
+        {
+          "address_point": "0x28a3760",
+          "offset_to_top": -1000,
+          "first_function": "0x14bbad8"
+        }
+      ]
+    },
+    {
+      "type": "preview_player::FixedFsAudioProcessor<meow::Float2>",
+      "typeinfo": "0x28a5be8",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x289ea08",
+          "offset_flags": null,
+          "type": "meow::AudioProcessorBaseEx<0ull, meow::DummyPerformanceCounter>"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x28a5c10",
+          "offset_to_top": 0,
+          "first_function": "0x14bfd50"
+        },
+        {
+          "address_point": "0x28a5e38",
+          "offset_to_top": -272,
+          "first_function": "0x14c0258"
+        }
+      ]
+    },
+    {
+      "type": "preview_player::PreviewPlayerUnit",
+      "typeinfo": "0x28a6a10",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e676e8",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "meow::TaskDrivenThread"
+        },
+        {
+          "address": "0x28a2e10",
+          "offset_flags": "0x2b802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 696,
+          "type": "preview_player::IPreviewPlayer"
+        },
+        {
+          "address": "0x289ea08",
+          "offset_flags": "0x2c802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 712,
+          "type": "meow::AudioProcessorBaseEx<0ull, meow::DummyPerformanceCounter>"
+        },
+        {
+          "address": "0x2882c08",
+          "offset_flags": "0x3e802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 1000,
+          "type": "pcmbuf::ILoadResultListener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x28a6b58",
+          "offset_to_top": 0,
+          "first_function": "0x14c87e0"
+        },
+        {
+          "address_point": "0x28a6c48",
+          "offset_to_top": -40,
+          "first_function": "0x14c8b98"
+        },
+        {
+          "address_point": "0x28a6c70",
+          "offset_to_top": -56,
+          "first_function": "0x14c8b90"
+        },
+        {
+          "address_point": "0x28a6c98",
+          "offset_to_top": -696,
+          "first_function": "0x14c8b88"
+        },
+        {
+          "address_point": "0x28a6d18",
+          "offset_to_top": -712,
+          "first_function": "0x14c8b80"
+        },
+        {
+          "address_point": "0x28a6f40",
+          "offset_to_top": -984,
+          "first_function": "0x14c8b78"
+        },
+        {
+          "address_point": "0x28a6f60",
+          "offset_to_top": -1000,
+          "first_function": "0x14c8ba0"
+        }
+      ]
+    },
+    {
+      "type": "simple_player::SimplePlayerUnit",
+      "typeinfo": "0x28a9a28",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x289ea08",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "meow::AudioProcessorBaseEx<0ull, meow::DummyPerformanceCounter>"
+        },
+        {
+          "address": "0x28a9920",
+          "offset_flags": "0x12002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 288,
+          "type": "simple_player::ISimplePlayerUnit"
+        },
+        {
+          "address": "0x2882c08",
+          "offset_flags": "0x12802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 296,
+          "type": "pcmbuf::ILoadResultListener"
+        },
+        {
+          "address": "0x28a98e0",
+          "offset_flags": "0x13402",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 308,
+          "type": "meow::ExistenceCheckable<simple_player::SimplePlayerUnit>"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x28a9f20",
+          "offset_to_top": 0,
+          "first_function": "0x14cc788"
+        },
+        {
+          "address_point": "0x28aa180",
+          "offset_to_top": -272,
+          "first_function": "0x14cca28"
+        },
+        {
+          "address_point": "0x28aa1a0",
+          "offset_to_top": -288,
+          "first_function": "0x14cca20"
+        },
+        {
+          "address_point": "0x28aa1f0",
+          "offset_to_top": -296,
+          "first_function": "0x14cca30"
+        }
+      ]
+    },
+    {
+      "type": "BluetoothPlayer",
+      "typeinfo": "0x2e316b8",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e51508",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "meow::AudioRingBufferPlayer"
+        },
+        {
+          "address": "0x29582b0",
+          "offset_flags": "0x17000",
+          "public": false,
+          "virtual": false,
+          "offset_or_vtable_slot": 368,
+          "type": "device_adapter::IA2DPSNK::IListener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e31700",
+          "offset_to_top": 0,
+          "first_function": "0x20fa7a0"
+        },
+        {
+          "address_point": "0x2e31938",
+          "offset_to_top": -368,
+          "first_function": "0x20fa4b8"
+        }
+      ]
+    },
+    {
+      "type": "meow::AudioRingBufferPlayer",
+      "typeinfo": "0x2e51508",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2603dd0",
+          "offset_flags": null,
+          "type": "meow::AudioProcessorBase"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e515b8",
+          "offset_to_top": 0,
+          "first_function": "0x20faa88"
+        }
+      ]
+    },
+    {
+      "type": "meow::AudioRecorderUnit",
+      "typeinfo": "0x2e53578",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x289ea08",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "meow::AudioProcessorBaseEx<0ull, meow::DummyPerformanceCounter>"
+        },
+        {
+          "address": "0x2e53460",
+          "offset_flags": "0x12002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 288,
+          "type": "meow::IAudioRecorderControl"
+        },
+        {
+          "address": "0x2e533d0",
+          "offset_flags": "0x12802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 296,
+          "type": "juce::TimeSliceClient"
+        },
+        {
+          "address": "0x2e53498",
+          "offset_flags": "0x13802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 312,
+          "type": "meow::MeowThreadedWriter::Listener"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e538f0",
+          "offset_to_top": 0,
+          "first_function": "0x21a1a90"
+        },
+        {
+          "address_point": "0x2e53bb0",
+          "offset_to_top": -272,
+          "first_function": "0x21a1f40"
+        },
+        {
+          "address_point": "0x2e53bd0",
+          "offset_to_top": -288,
+          "first_function": "0x21a0ee0"
+        },
+        {
+          "address_point": "0x2e53c58",
+          "offset_to_top": -296,
+          "first_function": "0x21a1f20"
+        },
+        {
+          "address_point": "0x2e53c80",
+          "offset_to_top": -312,
+          "first_function": "0x21a1f50"
+        }
+      ]
+    },
+    {
+      "type": "meow::AudioSystem",
+      "typeinfo": "0x2e567b0",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x312a410",
+          "offset_flags": "0x0",
+          "public": false,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "juce::AudioProcessorGraph"
+        },
+        {
+          "address": "0x2e56788",
+          "offset_flags": "0x19000",
+          "public": false,
+          "virtual": false,
+          "offset_or_vtable_slot": 400,
+          "type": "juce::ChangeListener"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "meow::SimpleAudioMixer",
+      "typeinfo": "0x2e56860",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2603dd0",
+          "offset_flags": null,
+          "type": "meow::AudioProcessorBase"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e56bf8",
+          "offset_to_top": 0,
+          "first_function": "0x7fd200"
+        }
+      ]
+    },
+    {
+      "type": "meow::SimpleAudioSwitcher",
+      "typeinfo": "0x2e56898",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2603dd0",
+          "offset_flags": null,
+          "type": "meow::AudioProcessorBase"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e56e18",
+          "offset_to_top": 0,
+          "first_function": "0x21b4ba0"
+        }
+      ]
+    },
+    {
+      "type": "juce::AudioSource",
+      "typeinfo": "0x2e6d2e0",
+      "kind": "__class_type_info",
+      "bases": [],
+      "vtables": []
+    },
+    {
+      "type": "juce::PositionableAudioSource",
+      "typeinfo": "0x2e6d318",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e6d2e0",
+          "offset_flags": null,
+          "type": "juce::AudioSource"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "juce::BufferingAudioSource",
+      "typeinfo": "0x2e6d350",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e6d318",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "juce::PositionableAudioSource"
+        },
+        {
+          "address": "0x2e533d0",
+          "offset_flags": "0x800",
+          "public": false,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "juce::TimeSliceClient"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e6d7f8",
+          "offset_to_top": 0,
+          "first_function": "0x222be60"
+        },
+        {
+          "address_point": "0x2e6d860",
+          "offset_to_top": -8,
+          "first_function": "0x222bf20"
+        }
+      ]
+    },
+    {
+      "type": "juce::ChannelRemappingAudioSource",
+      "typeinfo": "0x2e6d3b0",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e6d2e0",
+          "offset_flags": null,
+          "type": "juce::AudioSource"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e6d888",
+          "offset_to_top": 0,
+          "first_function": "0x22262f0"
+        }
+      ]
+    },
+    {
+      "type": "juce::IIRFilterAudioSource",
+      "typeinfo": "0x2e6d3e8",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e6d2e0",
+          "offset_flags": null,
+          "type": "juce::AudioSource"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e6d8c0",
+          "offset_to_top": 0,
+          "first_function": "0x2229180"
+        }
+      ]
+    },
+    {
+      "type": "juce::MemoryAudioSource",
+      "typeinfo": "0x2e6d420",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e6d2e0",
+          "offset_flags": null,
+          "type": "juce::AudioSource"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e6d8f8",
+          "offset_to_top": 0,
+          "first_function": "0x2250be0"
+        }
+      ]
+    },
+    {
+      "type": "juce::MixerAudioSource",
+      "typeinfo": "0x2e6d458",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e6d2e0",
+          "offset_flags": null,
+          "type": "juce::AudioSource"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e6d930",
+          "offset_to_top": 0,
+          "first_function": "0x224bda0"
+        }
+      ]
+    },
+    {
+      "type": "juce::ResamplingAudioSource",
+      "typeinfo": "0x2e6d490",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e6d2e0",
+          "offset_flags": null,
+          "type": "juce::AudioSource"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e6d968",
+          "offset_to_top": 0,
+          "first_function": "0x2226190"
+        }
+      ]
+    },
+    {
+      "type": "juce::ReverbAudioSource",
+      "typeinfo": "0x2e6d4c8",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e6d2e0",
+          "offset_flags": null,
+          "type": "juce::AudioSource"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e6d9a0",
+          "offset_to_top": 0,
+          "first_function": "0x2226360"
+        }
+      ]
+    },
+    {
+      "type": "juce::ToneGeneratorAudioSource",
+      "typeinfo": "0x2e6d508",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e6d2e0",
+          "offset_flags": null,
+          "type": "juce::AudioSource"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e6d9d8",
+          "offset_to_top": 0,
+          "first_function": "0x2226010"
+        }
+      ]
+    },
+    {
+      "type": "juce::AudioTransportSource",
+      "typeinfo": "0x2e6f408",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e6d318",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "juce::PositionableAudioSource"
+        },
+        {
+          "address": "0x3140f50",
+          "offset_flags": "0x802",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 8,
+          "type": "juce::ChangeBroadcaster"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x2e71800",
+          "offset_to_top": 0,
+          "first_function": "0x225b400"
+        },
+        {
+          "address_point": "0x2e71860",
+          "offset_to_top": -8,
+          "first_function": "0x225b5e0"
+        }
+      ]
+    },
+    {
+      "type": "juce::AudioFormatReaderSource",
+      "typeinfo": "0x3127d00",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x2e6d318",
+          "offset_flags": null,
+          "type": "juce::PositionableAudioSource"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x3128280",
+          "offset_to_top": 0,
+          "first_function": "0x226a160"
+        }
+      ]
+    },
+    {
+      "type": "juce::AudioProcessor",
+      "typeinfo": "0x312a2d8",
+      "kind": "__class_type_info",
+      "bases": [],
+      "vtables": []
+    },
+    {
+      "type": "juce::AudioPluginInstance",
+      "typeinfo": "0x312a348",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x312a2d8",
+          "offset_flags": null,
+          "type": "juce::AudioProcessor"
+        }
+      ],
+      "vtables": []
+    },
+    {
+      "type": "juce::AudioProcessorGraph::AudioGraphIOProcessor",
+      "typeinfo": "0x312a3d8",
+      "kind": "__si_class_type_info",
+      "bases": [
+        {
+          "address": "0x312a348",
+          "offset_flags": null,
+          "type": "juce::AudioPluginInstance"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x312c978",
+          "offset_to_top": 0,
+          "first_function": "0x22d7190"
+        }
+      ]
+    },
+    {
+      "type": "juce::AudioProcessorGraph",
+      "typeinfo": "0x312a410",
+      "kind": "__vmi_class_type_info",
+      "bases": [
+        {
+          "address": "0x312a2d8",
+          "offset_flags": "0x2",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 0,
+          "type": "juce::AudioProcessor"
+        },
+        {
+          "address": "0x3140f50",
+          "offset_flags": "0x11002",
+          "public": true,
+          "virtual": false,
+          "offset_or_vtable_slot": 272,
+          "type": "juce::ChangeBroadcaster"
+        },
+        {
+          "address": "0x3140ed0",
+          "offset_flags": "0x14800",
+          "public": false,
+          "virtual": false,
+          "offset_or_vtable_slot": 328,
+          "type": "juce::AsyncUpdater"
+        }
+      ],
+      "vtables": [
+        {
+          "address_point": "0x312c710",
+          "offset_to_top": 0,
+          "first_function": "0x22db000"
+        },
+        {
+          "address_point": "0x312c930",
+          "offset_to_top": -272,
+          "first_function": "0x22db370"
+        },
+        {
+          "address_point": "0x312c950",
+          "offset_to_top": -328,
+          "first_function": "0x22db380"
+        }
+      ]
+    }
+  ]
+}

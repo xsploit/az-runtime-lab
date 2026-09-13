@@ -1,0 +1,67 @@
+{
+  "scope": "Native utility UI clicks -> native TX -> real software-mixer mode application. No loaded-song audio or physical controller test.",
+  "passed": true,
+  "changes": [
+    {
+      "mode": 1,
+      "applied": [
+        {
+          "eq_frame": 460544,
+          "channel": 0,
+          "mode": 1,
+          "result": 1
+        },
+        {
+          "eq_frame": 460544,
+          "channel": 1,
+          "mode": 1,
+          "result": 1
+        },
+        {
+          "eq_frame": 460544,
+          "channel": 2,
+          "mode": 1,
+          "result": 1
+        },
+        {
+          "eq_frame": 460544,
+          "channel": 3,
+          "mode": 1,
+          "result": 1
+        }
+      ],
+      "tx_mode": "isolator"
+    },
+    {
+      "mode": 0,
+      "applied": [
+        {
+          "eq_frame": 514240,
+          "channel": 0,
+          "mode": 0,
+          "result": 1
+        },
+        {
+          "eq_frame": 514240,
+          "channel": 1,
+          "mode": 0,
+          "result": 1
+        },
+        {
+          "eq_frame": 514240,
+          "channel": 2,
+          "mode": 0,
+          "result": 1
+        },
+        {
+          "eq_frame": 514240,
+          "channel": 3,
+          "mode": 0,
+          "result": 1
+        }
+      ],
+      "tx_mode": "eq"
+    }
+  ],
+  "launcher_status": 0
+}

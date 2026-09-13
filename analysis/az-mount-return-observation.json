@@ -1,0 +1,16 @@
+{
+  "mount_query_return_values": {
+    "0x2070758": {
+      "-1": 8878,
+      "1": 201,
+      "2": 97,
+      "3": 8134
+    },
+    "0x754aa8": {
+      "3": 4400,
+      "-1": 6600
+    }
+  },
+  "load_entry_trace_blocks": {},
+  "limitation": "Trace observations only; no exhaustive call counts or key-to-result association."
+}

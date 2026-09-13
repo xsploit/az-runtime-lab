@@ -1,0 +1,1201 @@
+{
+  "hz": 59.24,
+  "seconds": 5,
+  "count": 297,
+  "lateness_ms": {
+    "median": 0.075093,
+    "p95": 0.216588,
+    "max": 4.29142
+  },
+  "samples": [
+    {
+      "stamp_ns": 10566782923774,
+      "lateness_ns": 4291420
+    },
+    {
+      "stamp_ns": 10566799804260,
+      "lateness_ns": 115876
+    },
+    {
+      "stamp_ns": 10566816684746,
+      "lateness_ns": 73862
+    },
+    {
+      "stamp_ns": 10566833565232,
+      "lateness_ns": 93292
+    },
+    {
+      "stamp_ns": 10566850445718,
+      "lateness_ns": 84667
+    },
+    {
+      "stamp_ns": 10566867326204,
+      "lateness_ns": 72449
+    },
+    {
+      "stamp_ns": 10566884206690,
+      "lateness_ns": 248771
+    },
+    {
+      "stamp_ns": 10566901087177,
+      "lateness_ns": 216588
+    },
+    {
+      "stamp_ns": 10566917967663,
+      "lateness_ns": 52702
+    },
+    {
+      "stamp_ns": 10566934848149,
+      "lateness_ns": 113559
+    },
+    {
+      "stamp_ns": 10566951728635,
+      "lateness_ns": 72267
+    },
+    {
+      "stamp_ns": 10566968609121,
+      "lateness_ns": 73475
+    },
+    {
+      "stamp_ns": 10566985489607,
+      "lateness_ns": 69683
+    },
+    {
+      "stamp_ns": 10567002370094,
+      "lateness_ns": 831917
+    },
+    {
+      "stamp_ns": 10567019250580,
+      "lateness_ns": 70209
+    },
+    {
+      "stamp_ns": 10567036131066,
+      "lateness_ns": 73825
+    },
+    {
+      "stamp_ns": 10567053011552,
+      "lateness_ns": 70644
+    },
+    {
+      "stamp_ns": 10567069892038,
+      "lateness_ns": 72908
+    },
+    {
+      "stamp_ns": 10567086772524,
+      "lateness_ns": 140006
+    },
+    {
+      "stamp_ns": 10567103653011,
+      "lateness_ns": 73268
+    },
+    {
+      "stamp_ns": 10567120533497,
+      "lateness_ns": 83476
+    },
+    {
+      "stamp_ns": 10567137413983,
+      "lateness_ns": 74610
+    },
+    {
+      "stamp_ns": 10567154294469,
+      "lateness_ns": 71337
+    },
+    {
+      "stamp_ns": 10567171174955,
+      "lateness_ns": 86008
+    },
+    {
+      "stamp_ns": 10567188055441,
+      "lateness_ns": 71457
+    },
+    {
+      "stamp_ns": 10567204935927,
+      "lateness_ns": 149888
+    },
+    {
+      "stamp_ns": 10567221816414,
+      "lateness_ns": 175317
+    },
+    {
+      "stamp_ns": 10567238696900,
+      "lateness_ns": 145377
+    },
+    {
+      "stamp_ns": 10567255577386,
+      "lateness_ns": 74344
+    },
+    {
+      "stamp_ns": 10567272457872,
+      "lateness_ns": 190553
+    },
+    {
+      "stamp_ns": 10567289338358,
+      "lateness_ns": 96482
+    },
+    {
+      "stamp_ns": 10567306218844,
+      "lateness_ns": 70746
+    },
+    {
+      "stamp_ns": 10567323099331,
+      "lateness_ns": 71453
+    },
+    {
+      "stamp_ns": 10567339979817,
+      "lateness_ns": 79309
+    },
+    {
+      "stamp_ns": 10567356860303,
+      "lateness_ns": 78240
+    },
+    {
+      "stamp_ns": 10567373740789,
+      "lateness_ns": 71077
+    },
+    {
+      "stamp_ns": 10567390621275,
+      "lateness_ns": 89823
+    },
+    {
+      "stamp_ns": 10567407501761,
+      "lateness_ns": 72679
+    },
+    {
+      "stamp_ns": 10567424382248,
+      "lateness_ns": 69997
+    },
+    {
+      "stamp_ns": 10567441262734,
+      "lateness_ns": 75057
+    },
+    {
+      "stamp_ns": 10567458143220,
+      "lateness_ns": 72673
+    },
+    {
+      "stamp_ns": 10567475023706,
+      "lateness_ns": 83548
+    },
+    {
+      "stamp_ns": 10567491904192,
+      "lateness_ns": 75385
+    },
+    {
+      "stamp_ns": 10567508784678,
+      "lateness_ns": 71649
+    },
+    {
+      "stamp_ns": 10567525665164,
+      "lateness_ns": 222340
+    },
+    {
+      "stamp_ns": 10567542545651,
+      "lateness_ns": 38990
+    },
+    {
+      "stamp_ns": 10567559426137,
+      "lateness_ns": 79180
+    },
+    {
+      "stamp_ns": 10567576306623,
+      "lateness_ns": 254112
+    },
+    {
+      "stamp_ns": 10567593187109,
+      "lateness_ns": 71226
+    },
+    {
+      "stamp_ns": 10567610067595,
+      "lateness_ns": 131972
+    },
+    {
+      "stamp_ns": 10567626948081,
+      "lateness_ns": 144476
+    },
+    {
+      "stamp_ns": 10567643828568,
+      "lateness_ns": 72627
+    },
+    {
+      "stamp_ns": 10567660709054,
+      "lateness_ns": 85039
+    },
+    {
+      "stamp_ns": 10567677589540,
+      "lateness_ns": 71802
+    },
+    {
+      "stamp_ns": 10567694470026,
+      "lateness_ns": 72084
+    },
+    {
+      "stamp_ns": 10567711350512,
+      "lateness_ns": 70385
+    },
+    {
+      "stamp_ns": 10567728230998,
+      "lateness_ns": 79611
+    },
+    {
+      "stamp_ns": 10567745111485,
+      "lateness_ns": 71244
+    },
+    {
+      "stamp_ns": 10567761991971,
+      "lateness_ns": 94471
+    },
+    {
+      "stamp_ns": 10567778872457,
+      "lateness_ns": 83253
+    },
+    {
+      "stamp_ns": 10567795752943,
+      "lateness_ns": 89276
+    },
+    {
+      "stamp_ns": 10567812633429,
+      "lateness_ns": 71465
+    },
+    {
+      "stamp_ns": 10567829513915,
+      "lateness_ns": 47395
+    },
+    {
+      "stamp_ns": 10567846394401,
+      "lateness_ns": 420774
+    },
+    {
+      "stamp_ns": 10567863274888,
+      "lateness_ns": 73274
+    },
+    {
+      "stamp_ns": 10567880155374,
+      "lateness_ns": 64222
+    },
+    {
+      "stamp_ns": 10567897035860,
+      "lateness_ns": 74968
+    },
+    {
+      "stamp_ns": 10567913916346,
+      "lateness_ns": 69565
+    },
+    {
+      "stamp_ns": 10567930796832,
+      "lateness_ns": 71958
+    },
+    {
+      "stamp_ns": 10567947677318,
+      "lateness_ns": 70962
+    },
+    {
+      "stamp_ns": 10567964557805,
+      "lateness_ns": 71021
+    },
+    {
+      "stamp_ns": 10567981438291,
+      "lateness_ns": 81840
+    },
+    {
+      "stamp_ns": 10567998318777,
+      "lateness_ns": 74159
+    },
+    {
+      "stamp_ns": 10568015199263,
+      "lateness_ns": 88997
+    },
+    {
+      "stamp_ns": 10568032079749,
+      "lateness_ns": 70335
+    },
+    {
+      "stamp_ns": 10568048960235,
+      "lateness_ns": 71376
+    },
+    {
+      "stamp_ns": 10568065840722,
+      "lateness_ns": 92102
+    },
+    {
+      "stamp_ns": 10568082721208,
+      "lateness_ns": 72643
+    },
+    {
+      "stamp_ns": 10568099601694,
+      "lateness_ns": 86962
+    },
+    {
+      "stamp_ns": 10568116482180,
+      "lateness_ns": 78319
+    },
+    {
+      "stamp_ns": 10568133362666,
+      "lateness_ns": 71878
+    },
+    {
+      "stamp_ns": 10568150243152,
+      "lateness_ns": 93753
+    },
+    {
+      "stamp_ns": 10568167123638,
+      "lateness_ns": 86387
+    },
+    {
+      "stamp_ns": 10568184004125,
+      "lateness_ns": 103613
+    },
+    {
+      "stamp_ns": 10568200884611,
+      "lateness_ns": 93043
+    },
+    {
+      "stamp_ns": 10568217765097,
+      "lateness_ns": 79936
+    },
+    {
+      "stamp_ns": 10568234645583,
+      "lateness_ns": 75366
+    },
+    {
+      "stamp_ns": 10568251526069,
+      "lateness_ns": 481412
+    },
+    {
+      "stamp_ns": 10568268406555,
+      "lateness_ns": 72653
+    },
+    {
+      "stamp_ns": 10568285287042,
+      "lateness_ns": 70545
+    },
+    {
+      "stamp_ns": 10568302167528,
+      "lateness_ns": 53753
+    },
+    {
+      "stamp_ns": 10568319048014,
+      "lateness_ns": 69572
+    },
+    {
+      "stamp_ns": 10568335928500,
+      "lateness_ns": 71873
+    },
+    {
+      "stamp_ns": 10568352808986,
+      "lateness_ns": 71544
+    },
+    {
+      "stamp_ns": 10568369689472,
+      "lateness_ns": 70641
+    },
+    {
+      "stamp_ns": 10568386569959,
+      "lateness_ns": 73015
+    },
+    {
+      "stamp_ns": 10568403450445,
+      "lateness_ns": 86760
+    },
+    {
+      "stamp_ns": 10568420330931,
+      "lateness_ns": 75357
+    },
+    {
+      "stamp_ns": 10568437211417,
+      "lateness_ns": 85843
+    },
+    {
+      "stamp_ns": 10568454091903,
+      "lateness_ns": 58736
+    },
+    {
+      "stamp_ns": 10568470972389,
+      "lateness_ns": 71703
+    },
+    {
+      "stamp_ns": 10568487852875,
+      "lateness_ns": 90559
+    },
+    {
+      "stamp_ns": 10568504733362,
+      "lateness_ns": 75896
+    },
+    {
+      "stamp_ns": 10568521613848,
+      "lateness_ns": 269902
+    },
+    {
+      "stamp_ns": 10568538494334,
+      "lateness_ns": 80627
+    },
+    {
+      "stamp_ns": 10568555374820,
+      "lateness_ns": 86298
+    },
+    {
+      "stamp_ns": 10568572255306,
+      "lateness_ns": 89506
+    },
+    {
+      "stamp_ns": 10568589135792,
+      "lateness_ns": 85010
+    },
+    {
+      "stamp_ns": 10568606016279,
+      "lateness_ns": 106829
+    },
+    {
+      "stamp_ns": 10568622896765,
+      "lateness_ns": 74740
+    },
+    {
+      "stamp_ns": 10568639777251,
+      "lateness_ns": 68207
+    },
+    {
+      "stamp_ns": 10568656657737,
+      "lateness_ns": 75730
+    },
+    {
+      "stamp_ns": 10568673538223,
+      "lateness_ns": 69549
+    },
+    {
+      "stamp_ns": 10568690418709,
+      "lateness_ns": 72238
+    },
+    {
+      "stamp_ns": 10568707299196,
+      "lateness_ns": 71594
+    },
+    {
+      "stamp_ns": 10568724179682,
+      "lateness_ns": 68338
+    },
+    {
+      "stamp_ns": 10568741060168,
+      "lateness_ns": 94917
+    },
+    {
+      "stamp_ns": 10568757940654,
+      "lateness_ns": 76847
+    },
+    {
+      "stamp_ns": 10568774821140,
+      "lateness_ns": 71073
+    },
+    {
+      "stamp_ns": 10568791701626,
+      "lateness_ns": 91559
+    },
+    {
+      "stamp_ns": 10568808582112,
+      "lateness_ns": 72841
+    },
+    {
+      "stamp_ns": 10568825462599,
+      "lateness_ns": 87382
+    },
+    {
+      "stamp_ns": 10568842343085,
+      "lateness_ns": 75201
+    },
+    {
+      "stamp_ns": 10568859223571,
+      "lateness_ns": 69316
+    },
+    {
+      "stamp_ns": 10568876104057,
+      "lateness_ns": 80117
+    },
+    {
+      "stamp_ns": 10568892984543,
+      "lateness_ns": 81250
+    },
+    {
+      "stamp_ns": 10568909865029,
+      "lateness_ns": 577501
+    },
+    {
+      "stamp_ns": 10568926745516,
+      "lateness_ns": 87054
+    },
+    {
+      "stamp_ns": 10568943626002,
+      "lateness_ns": 70540
+    },
+    {
+      "stamp_ns": 10568960506488,
+      "lateness_ns": 71655
+    },
+    {
+      "stamp_ns": 10568977386974,
+      "lateness_ns": 80215
+    },
+    {
+      "stamp_ns": 10568994267460,
+      "lateness_ns": 80108
+    },
+    {
+      "stamp_ns": 10569011147946,
+      "lateness_ns": 82798
+    },
+    {
+      "stamp_ns": 10569028028433,
+      "lateness_ns": 70356
+    },
+    {
+      "stamp_ns": 10569044908919,
+      "lateness_ns": 124121
+    },
+    {
+      "stamp_ns": 10569061789405,
+      "lateness_ns": 75309
+    },
+    {
+      "stamp_ns": 10569078669891,
+      "lateness_ns": 90721
+    },
+    {
+      "stamp_ns": 10569095550377,
+      "lateness_ns": 87374
+    },
+    {
+      "stamp_ns": 10569112430863,
+      "lateness_ns": 166286
+    },
+    {
+      "stamp_ns": 10569129311349,
+      "lateness_ns": 73604
+    },
+    {
+      "stamp_ns": 10569146191836,
+      "lateness_ns": 84996
+    },
+    {
+      "stamp_ns": 10569163072322,
+      "lateness_ns": 75093
+    },
+    {
+      "stamp_ns": 10569179952808,
+      "lateness_ns": 88246
+    },
+    {
+      "stamp_ns": 10569196833294,
+      "lateness_ns": 72620
+    },
+    {
+      "stamp_ns": 10569213713780,
+      "lateness_ns": 80439
+    },
+    {
+      "stamp_ns": 10569230594266,
+      "lateness_ns": 75425
+    },
+    {
+      "stamp_ns": 10569247474753,
+      "lateness_ns": 101873
+    },
+    {
+      "stamp_ns": 10569264355239,
+      "lateness_ns": 72525
+    },
+    {
+      "stamp_ns": 10569281235725,
+      "lateness_ns": 71918
+    },
+    {
+      "stamp_ns": 10569298116211,
+      "lateness_ns": 163516
+    },
+    {
+      "stamp_ns": 10569314996697,
+      "lateness_ns": 88001
+    },
+    {
+      "stamp_ns": 10569331877183,
+      "lateness_ns": 68375
+    },
+    {
+      "stamp_ns": 10569348757670,
+      "lateness_ns": 72842
+    },
+    {
+      "stamp_ns": 10569365638156,
+      "lateness_ns": 68735
+    },
+    {
+      "stamp_ns": 10569382518642,
+      "lateness_ns": 75035
+    },
+    {
+      "stamp_ns": 10569399399128,
+      "lateness_ns": 69225
+    },
+    {
+      "stamp_ns": 10569416279614,
+      "lateness_ns": 76433
+    },
+    {
+      "stamp_ns": 10569433160100,
+      "lateness_ns": 69233
+    },
+    {
+      "stamp_ns": 10569450040586,
+      "lateness_ns": 71089
+    },
+    {
+      "stamp_ns": 10569466921073,
+      "lateness_ns": 104611
+    },
+    {
+      "stamp_ns": 10569483801559,
+      "lateness_ns": 70393
+    },
+    {
+      "stamp_ns": 10569500682045,
+      "lateness_ns": 87175
+    },
+    {
+      "stamp_ns": 10569517562531,
+      "lateness_ns": 71272
+    },
+    {
+      "stamp_ns": 10569534443017,
+      "lateness_ns": 71943
+    },
+    {
+      "stamp_ns": 10569551323503,
+      "lateness_ns": 89707
+    },
+    {
+      "stamp_ns": 10569568203990,
+      "lateness_ns": 76265
+    },
+    {
+      "stamp_ns": 10569585084476,
+      "lateness_ns": 84214
+    },
+    {
+      "stamp_ns": 10569601964962,
+      "lateness_ns": 76737
+    },
+    {
+      "stamp_ns": 10569618845448,
+      "lateness_ns": 42444
+    },
+    {
+      "stamp_ns": 10569635725934,
+      "lateness_ns": 217061
+    },
+    {
+      "stamp_ns": 10569652606420,
+      "lateness_ns": 42304
+    },
+    {
+      "stamp_ns": 10569669486907,
+      "lateness_ns": 91290
+    },
+    {
+      "stamp_ns": 10569686367393,
+      "lateness_ns": 68534
+    },
+    {
+      "stamp_ns": 10569703247879,
+      "lateness_ns": 98539
+    },
+    {
+      "stamp_ns": 10569720128365,
+      "lateness_ns": 25838
+    },
+    {
+      "stamp_ns": 10569737008851,
+      "lateness_ns": 74621
+    },
+    {
+      "stamp_ns": 10569753889337,
+      "lateness_ns": 79847
+    },
+    {
+      "stamp_ns": 10569770769823,
+      "lateness_ns": 70166
+    },
+    {
+      "stamp_ns": 10569787650310,
+      "lateness_ns": 83762
+    },
+    {
+      "stamp_ns": 10569804530796,
+      "lateness_ns": 76192
+    },
+    {
+      "stamp_ns": 10569821411282,
+      "lateness_ns": 72603
+    },
+    {
+      "stamp_ns": 10569838291768,
+      "lateness_ns": 84497
+    },
+    {
+      "stamp_ns": 10569855172254,
+      "lateness_ns": 74482
+    },
+    {
+      "stamp_ns": 10569872052740,
+      "lateness_ns": 112209
+    },
+    {
+      "stamp_ns": 10569888933227,
+      "lateness_ns": 77545
+    },
+    {
+      "stamp_ns": 10569905813713,
+      "lateness_ns": 178754
+    },
+    {
+      "stamp_ns": 10569922694199,
+      "lateness_ns": 76516
+    },
+    {
+      "stamp_ns": 10569939574685,
+      "lateness_ns": 180466
+    },
+    {
+      "stamp_ns": 10569956455171,
+      "lateness_ns": 73710
+    },
+    {
+      "stamp_ns": 10569973335657,
+      "lateness_ns": 36028
+    },
+    {
+      "stamp_ns": 10569990216144,
+      "lateness_ns": 71495
+    },
+    {
+      "stamp_ns": 10570007096630,
+      "lateness_ns": 80314
+    },
+    {
+      "stamp_ns": 10570023977116,
+      "lateness_ns": 72744
+    },
+    {
+      "stamp_ns": 10570040857602,
+      "lateness_ns": 71304
+    },
+    {
+      "stamp_ns": 10570057738088,
+      "lateness_ns": 85549
+    },
+    {
+      "stamp_ns": 10570074618574,
+      "lateness_ns": 72256
+    },
+    {
+      "stamp_ns": 10570091499060,
+      "lateness_ns": 72131
+    },
+    {
+      "stamp_ns": 10570108379547,
+      "lateness_ns": 88912
+    },
+    {
+      "stamp_ns": 10570125260033,
+      "lateness_ns": 102990
+    },
+    {
+      "stamp_ns": 10570142140519,
+      "lateness_ns": 84976
+    },
+    {
+      "stamp_ns": 10570159021005,
+      "lateness_ns": 94036
+    },
+    {
+      "stamp_ns": 10570175901491,
+      "lateness_ns": 94947
+    },
+    {
+      "stamp_ns": 10570192781977,
+      "lateness_ns": 89155
+    },
+    {
+      "stamp_ns": 10570209662464,
+      "lateness_ns": 86029
+    },
+    {
+      "stamp_ns": 10570226542950,
+      "lateness_ns": 72996
+    },
+    {
+      "stamp_ns": 10570243423436,
+      "lateness_ns": 87092
+    },
+    {
+      "stamp_ns": 10570260303922,
+      "lateness_ns": 72615
+    },
+    {
+      "stamp_ns": 10570277184408,
+      "lateness_ns": 73638
+    },
+    {
+      "stamp_ns": 10570294064894,
+      "lateness_ns": 69568
+    },
+    {
+      "stamp_ns": 10570310945381,
+      "lateness_ns": 86645
+    },
+    {
+      "stamp_ns": 10570327825867,
+      "lateness_ns": 72779
+    },
+    {
+      "stamp_ns": 10570344706353,
+      "lateness_ns": 89153
+    },
+    {
+      "stamp_ns": 10570361586839,
+      "lateness_ns": 71546
+    },
+    {
+      "stamp_ns": 10570378467325,
+      "lateness_ns": 87569
+    },
+    {
+      "stamp_ns": 10570395347811,
+      "lateness_ns": 87795
+    },
+    {
+      "stamp_ns": 10570412228297,
+      "lateness_ns": 73966
+    },
+    {
+      "stamp_ns": 10570429108784,
+      "lateness_ns": 98377
+    },
+    {
+      "stamp_ns": 10570445989270,
+      "lateness_ns": 70473
+    },
+    {
+      "stamp_ns": 10570462869756,
+      "lateness_ns": 82718
+    },
+    {
+      "stamp_ns": 10570479750242,
+      "lateness_ns": 73148
+    },
+    {
+      "stamp_ns": 10570496630728,
+      "lateness_ns": 134431
+    },
+    {
+      "stamp_ns": 10570513511214,
+      "lateness_ns": 72842
+    },
+    {
+      "stamp_ns": 10570530391701,
+      "lateness_ns": 90660
+    },
+    {
+      "stamp_ns": 10570547272187,
+      "lateness_ns": 72460
+    },
+    {
+      "stamp_ns": 10570564152673,
+      "lateness_ns": 94057
+    },
+    {
+      "stamp_ns": 10570581033159,
+      "lateness_ns": 73006
+    },
+    {
+      "stamp_ns": 10570597913645,
+      "lateness_ns": 122196
+    },
+    {
+      "stamp_ns": 10570614794131,
+      "lateness_ns": 74329
+    },
+    {
+      "stamp_ns": 10570631674618,
+      "lateness_ns": 137536
+    },
+    {
+      "stamp_ns": 10570648555104,
+      "lateness_ns": 73725
+    },
+    {
+      "stamp_ns": 10570665435590,
+      "lateness_ns": 74229
+    },
+    {
+      "stamp_ns": 10570682316076,
+      "lateness_ns": 74937
+    },
+    {
+      "stamp_ns": 10570699196562,
+      "lateness_ns": 69515
+    },
+    {
+      "stamp_ns": 10570716077048,
+      "lateness_ns": 71852
+    },
+    {
+      "stamp_ns": 10570732957534,
+      "lateness_ns": 73652
+    },
+    {
+      "stamp_ns": 10570749838021,
+      "lateness_ns": 70563
+    },
+    {
+      "stamp_ns": 10570766718507,
+      "lateness_ns": 72382
+    },
+    {
+      "stamp_ns": 10570783598993,
+      "lateness_ns": 69941
+    },
+    {
+      "stamp_ns": 10570800479479,
+      "lateness_ns": 72297
+    },
+    {
+      "stamp_ns": 10570817359965,
+      "lateness_ns": 86487
+    },
+    {
+      "stamp_ns": 10570834240451,
+      "lateness_ns": 69268
+    },
+    {
+      "stamp_ns": 10570851120938,
+      "lateness_ns": 84364
+    },
+    {
+      "stamp_ns": 10570868001424,
+      "lateness_ns": 71942
+    },
+    {
+      "stamp_ns": 10570884881910,
+      "lateness_ns": 70002
+    },
+    {
+      "stamp_ns": 10570901762396,
+      "lateness_ns": 182266
+    },
+    {
+      "stamp_ns": 10570918642882,
+      "lateness_ns": 73436
+    },
+    {
+      "stamp_ns": 10570935523368,
+      "lateness_ns": 74273
+    },
+    {
+      "stamp_ns": 10570952403855,
+      "lateness_ns": 632616
+    },
+    {
+      "stamp_ns": 10570969284341,
+      "lateness_ns": 85169
+    },
+    {
+      "stamp_ns": 10570986164827,
+      "lateness_ns": 68044
+    },
+    {
+      "stamp_ns": 10571003045313,
+      "lateness_ns": 66714
+    },
+    {
+      "stamp_ns": 10571019925799,
+      "lateness_ns": 71552
+    },
+    {
+      "stamp_ns": 10571036806285,
+      "lateness_ns": 72945
+    },
+    {
+      "stamp_ns": 10571053686771,
+      "lateness_ns": 85875
+    },
+    {
+      "stamp_ns": 10571070567258,
+      "lateness_ns": 72804
+    },
+    {
+      "stamp_ns": 10571087447744,
+      "lateness_ns": 87067
+    },
+    {
+      "stamp_ns": 10571104328230,
+      "lateness_ns": 109868
+    },
+    {
+      "stamp_ns": 10571121208716,
+      "lateness_ns": 73001
+    },
+    {
+      "stamp_ns": 10571138089202,
+      "lateness_ns": 219692
+    },
+    {
+      "stamp_ns": 10571154969688,
+      "lateness_ns": 70676
+    },
+    {
+      "stamp_ns": 10571171850175,
+      "lateness_ns": 433590
+    },
+    {
+      "stamp_ns": 10571188730661,
+      "lateness_ns": 75702
+    },
+    {
+      "stamp_ns": 10571205611147,
+      "lateness_ns": 73243
+    },
+    {
+      "stamp_ns": 10571222491633,
+      "lateness_ns": 123914
+    },
+    {
+      "stamp_ns": 10571239372119,
+      "lateness_ns": 74769
+    },
+    {
+      "stamp_ns": 10571256252605,
+      "lateness_ns": 107607
+    },
+    {
+      "stamp_ns": 10571273133092,
+      "lateness_ns": 71387
+    },
+    {
+      "stamp_ns": 10571290013578,
+      "lateness_ns": 74077
+    },
+    {
+      "stamp_ns": 10571306894064,
+      "lateness_ns": 125452
+    },
+    {
+      "stamp_ns": 10571323774550,
+      "lateness_ns": 72307
+    },
+    {
+      "stamp_ns": 10571340655036,
+      "lateness_ns": 87589
+    },
+    {
+      "stamp_ns": 10571357535522,
+      "lateness_ns": 73241
+    },
+    {
+      "stamp_ns": 10571374416008,
+      "lateness_ns": 83949
+    },
+    {
+      "stamp_ns": 10571391296495,
+      "lateness_ns": 68359
+    },
+    {
+      "stamp_ns": 10571408176981,
+      "lateness_ns": 70067
+    },
+    {
+      "stamp_ns": 10571425057467,
+      "lateness_ns": 136961
+    },
+    {
+      "stamp_ns": 10571441937953,
+      "lateness_ns": 95446
+    },
+    {
+      "stamp_ns": 10571458818439,
+      "lateness_ns": 472102
+    },
+    {
+      "stamp_ns": 10571475698925,
+      "lateness_ns": 91232
+    },
+    {
+      "stamp_ns": 10571492579412,
+      "lateness_ns": 116235
+    },
+    {
+      "stamp_ns": 10571509459898,
+      "lateness_ns": 74313
+    },
+    {
+      "stamp_ns": 10571526340384,
+      "lateness_ns": 85743
+    },
+    {
+      "stamp_ns": 10571543220870,
+      "lateness_ns": 72543
+    },
+    {
+      "stamp_ns": 10571560101356,
+      "lateness_ns": 98584
+    },
+    {
+      "stamp_ns": 10571576981842,
+      "lateness_ns": 51236
+    },
+    {
+      "stamp_ns": 10571593862329,
+      "lateness_ns": 81925
+    },
+    {
+      "stamp_ns": 10571610742815,
+      "lateness_ns": 73114
+    },
+    {
+      "stamp_ns": 10571627623301,
+      "lateness_ns": 83896
+    },
+    {
+      "stamp_ns": 10571644503787,
+      "lateness_ns": 72029
+    },
+    {
+      "stamp_ns": 10571661384273,
+      "lateness_ns": 80126
+    },
+    {
+      "stamp_ns": 10571678264759,
+      "lateness_ns": 98241
+    },
+    {
+      "stamp_ns": 10571695145245,
+      "lateness_ns": 97115
+    },
+    {
+      "stamp_ns": 10571712025732,
+      "lateness_ns": 67118
+    },
+    {
+      "stamp_ns": 10571728906218,
+      "lateness_ns": 74289
+    },
+    {
+      "stamp_ns": 10571745786704,
+      "lateness_ns": 68459
+    },
+    {
+      "stamp_ns": 10571762667190,
+      "lateness_ns": 73926
+    },
+    {
+      "stamp_ns": 10571779547676,
+      "lateness_ns": 69615
+    }
+  ],
+  "note": "Independent temporary file; not active AZ writer or frame timing"
+}

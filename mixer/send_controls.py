@@ -1,0 +1,18 @@
+"""Send a complete mixer snapshot to the launcher's reported private socket."""
+import argparse, math, socket
+p=argparse.ArgumentParser(description=__doc__)
+p.add_argument('socket')
+p.add_argument('--gains',type=float,nargs=4,default=[1]*4)
+p.add_argument('--assign',type=int,nargs=4,choices=[-1,0,1],default=[0]*4)
+p.add_argument('--cue-mask',type=int,choices=range(16),default=1)
+p.add_argument('--cross',type=float,default=.5)
+p.add_argument('--master',type=float,default=.25)
+p.add_argument('--phones',type=float,default=.5)
+p.add_argument('--blend',type=float,default=0)
+p.add_argument('--ramp',type=int,default=441)
+a=p.parse_args()
+if not all(math.isfinite(v) and 0<=v<=1 for v in [*a.gains,a.cross,a.master,a.phones,a.blend]):p.error('gains and mix positions must be finite values from 0 to 1')
+if not 0<=a.ramp<=441000:p.error('ramp must be 0..441000 frames')
+msg=' '.join(map(str,['M1',a.ramp,*a.gains,*a.assign,a.cue_mask,a.cross,a.master,a.phones,a.blend]))
+with socket.socket(socket.AF_UNIX,socket.SOCK_DGRAM) as s:s.sendto(msg.encode(),a.socket)
+print('Snapshot sent; mixer-stream.log records its applied frame offset.')

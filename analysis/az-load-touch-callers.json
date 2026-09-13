@@ -1,0 +1,52 @@
+[
+  {
+    "return_address": "0000000000b77428",
+    "third_argument": "0000000000000000",
+    "trace_blocks": 1
+  },
+  {
+    "return_address": "0000000002070758",
+    "third_argument": "0000000000000000",
+    "trace_blocks": 23114
+  },
+  {
+    "return_address": "0000000000b691b0",
+    "third_argument": "0000000000000000",
+    "trace_blocks": 1
+  },
+  {
+    "return_address": "0000000000b7725c",
+    "third_argument": "0000000000000000",
+    "trace_blocks": 1
+  },
+  {
+    "return_address": "0000000000b7727c",
+    "third_argument": "0000000000000000",
+    "trace_blocks": 1
+  },
+  {
+    "return_address": "0000000000b772a0",
+    "third_argument": "0000000000000000",
+    "trace_blocks": 1
+  },
+  {
+    "return_address": "0000000000b774c0",
+    "third_argument": "0000000000000000",
+    "trace_blocks": 1
+  },
+  {
+    "return_address": "0000000000b743e8",
+    "third_argument": "0000000000000000",
+    "trace_blocks": 1
+  },
+  {
+    "return_address": "0000000000b73344",
+    "third_argument": "0000000000000000",
+    "trace_blocks": 1
+  },
+  {
+    "return_address": "0000000000754aa8",
+    "third_argument": "0000000000000000",
+    "trace_blocks": 15480
+  }
+]

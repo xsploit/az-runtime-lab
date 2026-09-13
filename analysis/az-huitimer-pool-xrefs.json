@@ -1,0 +1,23 @@
+[
+  {
+    "adrp": "0x21efab4",
+    "add": "0x21efab8",
+    "target": "0x2e64210",
+    "label": "HuiTimerPool vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x21efb64",
+    "add": "0x21efb68",
+    "target": "0x2e64210",
+    "label": "HuiTimerPool vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x21f17c4",
+    "add": "0x21f17c8",
+    "target": "0x2e64210",
+    "label": "HuiTimerPool vtable",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

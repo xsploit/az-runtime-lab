@@ -1,0 +1,48 @@
+{
+  "pid": 332575,
+  "cache_before": 0,
+  "persistence": "A survived previous launch",
+  "action": "nativeTHRU returned",
+  "tx_transitions": [
+    [
+      0,
+      [
+        "thru",
+        "thru",
+        "thru",
+        "thru"
+      ]
+    ],
+    [
+      465,
+      [
+        "a",
+        "thru",
+        "thru",
+        "thru"
+      ]
+    ],
+    [
+      1116,
+      [
+        "thru",
+        "thru",
+        "thru",
+        "thru"
+      ]
+    ]
+  ],
+  "bridge_log": [
+    "{\"event\": \"ready\", \"midi_socket\": \"/tmp/az-live-mixer-xygp06dq/midi.sock\"}",
+    "{\"event\": \"snapshot\", \"assign\": [-1, 0, 0, 0], \"cue\": 1, \"gains\": [1.0, 1.0, 1.0, 1.0]}",
+    "{\"event\": \"snapshot\", \"assign\": [0, 0, 0, 0], \"cue\": 1, \"gains\": [1.0, 1.0, 1.0, 1.0]}",
+    "{\"event\": \"stopped\", \"valid_tx\": 6354, \"invalid_tx\": 0, \"midi_messages\": 0, \"snapshots\": 2, \"trailing_bytes\": 0}"
+  ],
+  "mixer_log": [
+    "{\"control_frame\":15296,\"ramp_frames\":441}",
+    "{\"control_frame\":107008,\"ramp_frames\":441}",
+    "{\"frames\":830400,\"status\":\"stopped\"}"
+  ],
+  "state": "restoredTHRU",
+  "scope": "Native persistent state\u2192TX\u2192livebridge\u2192M1 applied; no physical listening/Pi timing"
+}

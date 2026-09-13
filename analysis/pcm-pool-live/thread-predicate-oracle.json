@@ -1,0 +1,44 @@
+{
+  "scope": "Original AZ dispatch predicate with synthetic pthread identities under QEMU.\n\nExecutes 0x68f0e8 and original atomic handle getter 0x231cbe0. pthread_self\nwrapper 0x232dc50 is substituted. Does not start threads or execute queues.\nAll extracted firmware instruction files remain temporary.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "tests": 6,
+  "results": [
+    {
+      "stored_handle": "0x1234",
+      "current_handle": "0x1234",
+      "queue_required": false,
+      "passed": true
+    },
+    {
+      "stored_handle": "0x1234",
+      "current_handle": "0x5678",
+      "queue_required": true,
+      "passed": true
+    },
+    {
+      "stored_handle": "0x0",
+      "current_handle": "0x1234",
+      "queue_required": true,
+      "passed": true
+    },
+    {
+      "stored_handle": "0x1234",
+      "current_handle": "0x0",
+      "queue_required": true,
+      "passed": true
+    },
+    {
+      "stored_handle": "0x100001234",
+      "current_handle": "0x200001234",
+      "queue_required": true,
+      "passed": true
+    },
+    {
+      "stored_handle": "0xf123456789abcdef",
+      "current_handle": "0xf123456789abcdef",
+      "queue_required": false,
+      "passed": true
+    }
+  ],
+  "source_sha256": "e8a1a241eb9c99abfdad4fe35207b043bd202937c7da0861b155f472c5af4339"
+}

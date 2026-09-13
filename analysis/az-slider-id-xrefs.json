@@ -1,0 +1,258 @@
+[
+  {
+    "start": "0x6c75fc",
+    "end": "0x6c7610",
+    "register": 2,
+    "value": "0x4d17e2dc19f00",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c76c8",
+    "end": "0x6c76dc",
+    "register": 2,
+    "value": "0x7dcb7936b7ed2b00",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c7794",
+    "end": "0x6c77a8",
+    "register": 2,
+    "value": "0xa6518fb8028ca800",
+    "lane": 2,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c7860",
+    "end": "0x6c7874",
+    "register": 2,
+    "value": "0xdacc2ca9faed3600",
+    "lane": 3,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c7b8c",
+    "end": "0x6c7ba0",
+    "register": 2,
+    "value": "0x4d17e2dc19f01",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c7c58",
+    "end": "0x6c7c6c",
+    "register": 2,
+    "value": "0x7dcb7936b7ed2b01",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c7d24",
+    "end": "0x6c7d38",
+    "register": 2,
+    "value": "0xa6518fb8028ca801",
+    "lane": 2,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c7df0",
+    "end": "0x6c7e04",
+    "register": 2,
+    "value": "0xdacc2ca9faed3601",
+    "lane": 3,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c811c",
+    "end": "0x6c8130",
+    "register": 2,
+    "value": "0x4d17e2dc19f02",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c81e8",
+    "end": "0x6c81fc",
+    "register": 2,
+    "value": "0x7dcb7936b7ed2b02",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c82b4",
+    "end": "0x6c82c8",
+    "register": 2,
+    "value": "0xa6518fb8028ca802",
+    "lane": 2,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c8380",
+    "end": "0x6c8394",
+    "register": 2,
+    "value": "0xdacc2ca9faed3602",
+    "lane": 3,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c86ac",
+    "end": "0x6c86c0",
+    "register": 2,
+    "value": "0x4d17e2dc19f03",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c8778",
+    "end": "0x6c878c",
+    "register": 2,
+    "value": "0x7dcb7936b7ed2b03",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c8844",
+    "end": "0x6c8858",
+    "register": 2,
+    "value": "0xa6518fb8028ca803",
+    "lane": 2,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c8910",
+    "end": "0x6c8924",
+    "register": 2,
+    "value": "0xdacc2ca9faed3603",
+    "lane": 3,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x21578fc",
+    "end": "0x2157910",
+    "register": 2,
+    "value": "0x4d17e2dc19f00",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x215791c",
+    "end": "0x2157930",
+    "register": 2,
+    "value": "0x7dcb7936b7ed2b00",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x215793c",
+    "end": "0x2157950",
+    "register": 2,
+    "value": "0xa6518fb8028ca800",
+    "lane": 2,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x215795c",
+    "end": "0x2157970",
+    "register": 2,
+    "value": "0xdacc2ca9faed3600",
+    "lane": 3,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x21579f0",
+    "end": "0x2157a04",
+    "register": 2,
+    "value": "0x4d17e2dc19f01",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157a10",
+    "end": "0x2157a24",
+    "register": 2,
+    "value": "0x7dcb7936b7ed2b01",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157a30",
+    "end": "0x2157a44",
+    "register": 2,
+    "value": "0xa6518fb8028ca801",
+    "lane": 2,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157a50",
+    "end": "0x2157a64",
+    "register": 2,
+    "value": "0xdacc2ca9faed3601",
+    "lane": 3,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157ae4",
+    "end": "0x2157af8",
+    "register": 2,
+    "value": "0x4d17e2dc19f02",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157b04",
+    "end": "0x2157b18",
+    "register": 2,
+    "value": "0x7dcb7936b7ed2b02",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157b24",
+    "end": "0x2157b38",
+    "register": 2,
+    "value": "0xa6518fb8028ca802",
+    "lane": 2,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157b44",
+    "end": "0x2157b58",
+    "register": 2,
+    "value": "0xdacc2ca9faed3602",
+    "lane": 3,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157bd8",
+    "end": "0x2157bec",
+    "register": 2,
+    "value": "0x4d17e2dc19f03",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157bf8",
+    "end": "0x2157c0c",
+    "register": 2,
+    "value": "0x7dcb7936b7ed2b03",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157c18",
+    "end": "0x2157c2c",
+    "register": 2,
+    "value": "0xa6518fb8028ca803",
+    "lane": 2,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157c38",
+    "end": "0x2157c4c",
+    "register": 2,
+    "value": "0xdacc2ca9faed3603",
+    "lane": 3,
+    "caveat": "Validate register writes and control flow"
+  }
+]

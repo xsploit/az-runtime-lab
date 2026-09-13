@@ -1,0 +1,24 @@
+{
+  "scope": "Shared software mixer integration, not AZ binary crash",
+  "native_core_pid": 401206,
+  "asan_pid": 401724,
+  "reproducer": "probe-software-echo-timing.py",
+  "inputs": {
+    "bpm100": 4000,
+    "type": 5,
+    "target": 0,
+    "beat": 8,
+    "depth": 0.5,
+    "loaded": 1,
+    "quantize": 0
+  },
+  "confirmed": "ASAN invalid read at beat_echo.c:30 from beat_manager_echo_process:74 via lab_beat_fx_offer",
+  "hypothesis": "Off timing can exceed ring length and is copied into Echo before time limit is enforced",
+  "status": "Fixed in shared beat_manager.c; native conditional time transfer and scheduled preset range clamp restored",
+  "resources": "16GiB available; SIGSEGV read fault, not OOM",
+  "evidence": [
+    "dsp-oracle/beat-initial-results.json",
+    "software-echo-applied-timing.json",
+    "dsp-oracle/BEAT-MANAGER.md"
+  ]
+}

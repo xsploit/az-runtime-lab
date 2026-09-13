@@ -1,0 +1,16 @@
+{
+  "class": "gui::utility::MixerValueTableController",
+  "listener_type": "IItemListener<beat_effect::MicSelect>",
+  "base_offset": 144,
+  "vtable": "0x2c93a08",
+  "callback": "0x1d07528",
+  "observed_path": {
+    "thread_comparison": "0x1d07548..60; alternate queued-looking path not fully traced",
+    "value_normalization": "1 and2 retained; other values become0",
+    "row_update": "0x1d07588 calls0x1d00208 with row20 and normalized value",
+    "model_update": "0x1d07594 calls0x1d2d6e8 with object at controller+312 and value",
+    "guard": "controller byte744 selects alternate path"
+  },
+  "next": "Trace row20 label/value source and model setter; no label names proven",
+  "scope": "Static UI binding only; not tested as injectable entry"
+}

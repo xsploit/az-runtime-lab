@@ -1,0 +1,22 @@
+[
+  {
+    "address": "0x25c1da8",
+    "text": "ERR at "
+  },
+  {
+    "address": "0x2d8fbe8",
+    "text": "bool meow::MappedObjPtr<Type, kMapId, needLock, ExceptionType>::link(bool) const [with Type = usecase::pc_control::IPcAppliModeSwitcher; long long unsigned int kMapId = 0; bool needLock = true; ExceptionType = void]"
+  },
+  {
+    "address": "0x27cbd98",
+    "text": " - "
+  },
+  {
+    "address": "0x25c2b98",
+    "text": "!assert_if_no_dependency || obj_id.isValid()"
+  },
+  {
+    "address": "0x2d8fcc0",
+    "text": "bool meow::MappedObjPtr<Type, kMapId, needLock, ExceptionType>::link(bool) const [with Type = connection_with_hostapp::IHostAppliInfo; long long unsigned int kMapId = 0; bool needLock = true; ExceptionType = void]"
+  }
+]

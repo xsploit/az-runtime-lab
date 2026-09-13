@@ -1,0 +1,49 @@
+{
+  "binary_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Static native AZ packet -> listener -> async FxState -> widget chain; X-PAD value scale not yet live verified",
+  "FxState_vtable": "0x2dcd818",
+  "fields": {
+    "XPadValue": {
+      "rx": "87 unsigned byte",
+      "dispatch": "0x21546e0..21546e8 ->0x2131c40",
+      "listener_slot_bytes": 72,
+      "callback": "0x1f4cc28",
+      "task_vtable": "0x2dcdc60",
+      "task_run": "0x1f4b4f8",
+      "state_offset": "0x5e",
+      "native_name": "gui::FxState::beatFxXPadValueChanged(unsigned char)",
+      "widget": "0x1de4ee0; range-check then value/max*(track width-marker width)"
+    },
+    "XPadTouchArea": {
+      "rx": "85 low nibble",
+      "dispatch": "0x21546ec..21546f8 ->0x2131da8",
+      "listener_slot_bytes": 80,
+      "callback": "0x1f4c6e8",
+      "task_vtable": "0x2dcdc90",
+      "task_run": "0x1f4b4e8",
+      "state_offset": "0x5f",
+      "native_name": "gui::FxState::beatFxXPadTouchAreaChanged(unsigned char)",
+      "widget": "0x1de4fb8; range-check then region1..6 -> configured marker positions"
+    },
+    "BeatFxTime": {
+      "task_run": "0x1f4b540",
+      "native_name": "gui::FxState::typeAndOrParameterChanged(BeatFxType,BeatFxTime const&)",
+      "state_copy": "effect byte at0x51, eight-byte BeatFxTime at0x52",
+      "resolved_offsets": {
+        "0x54": "RX86 preset",
+        "0x55": "bool(RX84&12) adjusted flag",
+        "0x56": "sign-extended RX92 adjustment",
+        "0x58": "RX93 high nibble"
+      }
+    },
+    "RX93_low": {
+      "listener_slot_bytes": 88,
+      "FxState_callback": "0x6d5468; not assigned X-PAD semantics"
+    }
+  },
+  "remaining": [
+    "Trace X-PAD value to infinity/beat text widget",
+    "Verify X-PAD feedback in running native UI",
+    "Trace original control input direction separately; receive feedback is not a user action injector"
+  ]
+}

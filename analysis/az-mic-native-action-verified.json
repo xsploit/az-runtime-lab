@@ -1,0 +1,29 @@
+{
+  "pid": 270522,
+  "action": "native BeatFxMicWidgetController slot3 at0x19ebcc0 with mic2Button identifier",
+  "initial_setting_cache": 2,
+  "initial_label": "MIC1+2",
+  "target_setting": 1,
+  "target_label": "MIC2",
+  "native_call_returned": true,
+  "controller_and_setting_vtables_validated_in_log": true,
+  "tx_frames": 9786,
+  "invalid_crc": 0,
+  "tx_transitions": [
+    {
+      "frame": 0,
+      "mic_tx": 0
+    },
+    {
+      "frame": 1096,
+      "mic_tx": 2
+    }
+  ],
+  "result": "Native action returned and TX byte16 reached2, expected MIC2 encoding. No touchscreen injection.",
+  "limitations": "No microphone audio connected; proves command propagation, not DSP routing or all control interfaces. Runtime pointer is process-local. Lab setting changed to MIC2.",
+  "evidence": [
+    "az-mic-native-action-retry.log",
+    "../xdjaz/mic2-native-action-tx.raw"
+  ],
+  "run_end": "70sec probe completed normal teardown; launcher exit0"
+}

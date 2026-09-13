@@ -1,0 +1,154 @@
+{
+  "passed_delivery": true,
+  "native_tx_mode": 0,
+  "delivered": [
+    {
+      "event": "eq_delivered",
+      "channel": 0,
+      "mode": 0,
+      "raw": [
+        512,
+        512,
+        512
+      ]
+    },
+    {
+      "event": "eq_delivered",
+      "channel": 1,
+      "mode": 0,
+      "raw": [
+        512,
+        512,
+        512
+      ]
+    },
+    {
+      "event": "eq_delivered",
+      "channel": 2,
+      "mode": 0,
+      "raw": [
+        512,
+        512,
+        512
+      ]
+    },
+    {
+      "event": "eq_delivered",
+      "channel": 3,
+      "mode": 0,
+      "raw": [
+        512,
+        512,
+        512
+      ]
+    },
+    {
+      "event": "eq_delivered",
+      "channel": 0,
+      "mode": 0,
+      "raw": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "event": "eq_delivered",
+      "channel": 0,
+      "mode": 0,
+      "raw": [
+        1023,
+        1023,
+        1023
+      ]
+    },
+    {
+      "event": "eq_delivered",
+      "channel": 1,
+      "mode": 0,
+      "raw": [
+        1023,
+        1023,
+        1023
+      ]
+    },
+    {
+      "event": "eq_delivered",
+      "channel": 2,
+      "mode": 0,
+      "raw": [
+        1023,
+        1023,
+        1023
+      ]
+    },
+    {
+      "event": "eq_delivered",
+      "channel": 3,
+      "mode": 0,
+      "raw": [
+        1023,
+        1023,
+        1023
+      ]
+    }
+  ],
+  "mixer_applied": [
+    {
+      "eq_frame": 29504,
+      "channel": 0,
+      "mode": 0,
+      "result": 1
+    },
+    {
+      "eq_frame": 29504,
+      "channel": 1,
+      "mode": 0,
+      "result": 1
+    },
+    {
+      "eq_frame": 29504,
+      "channel": 2,
+      "mode": 0,
+      "result": 1
+    },
+    {
+      "eq_frame": 29504,
+      "channel": 3,
+      "mode": 0,
+      "result": 1
+    },
+    {
+      "eq_frame": 73600,
+      "channel": 0,
+      "mode": 0,
+      "result": 1
+    },
+    {
+      "eq_frame": 117696,
+      "channel": 0,
+      "mode": 0,
+      "result": 1
+    },
+    {
+      "eq_frame": 117696,
+      "channel": 1,
+      "mode": 0,
+      "result": 1
+    },
+    {
+      "eq_frame": 117696,
+      "channel": 2,
+      "mode": 0,
+      "result": 1
+    },
+    {
+      "eq_frame": 117696,
+      "channel": 3,
+      "mode": 0,
+      "result": 1
+    }
+  ],
+  "native_hui_final": "eq-native-service-hui.json",
+  "scope": "Live AZ TX mode plus injected RX knobs through single owner to native HUI and software EQ; no music energy or native UI mode-toggle test in this run."
+}

@@ -1,0 +1,13 @@
+{
+  "change": "LabDspGraph allocated once with calloc before opening audio FIFO, freed on normal shutdown",
+  "stack_limit_bytes": 262144,
+  "echo_frames": 14080,
+  "cue_error": 0,
+  "echo_delayed_energy": 0.12234945596506909,
+  "compiler_main_stack_bytes": 8096,
+  "compiler_configuration": "host cc O2, DSP_GRAPH and HEADPHONE_DSP; fstack-usage",
+  "headphone_stream_frames": 7680,
+  "space_stream_frames": 70400,
+  "space_closed_fader_tail_rms": 0.07307107436315487,
+  "scope": "Host stream/allocation regression, not total memory benchmark or Pi performance proof"
+}

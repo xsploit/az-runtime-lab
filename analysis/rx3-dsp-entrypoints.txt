@@ -1,0 +1,215 @@
+00056d5c 00000004 T mixerengine::MixerEngine::initialize()
+00056dd0 00000034 T mixerengine::MixerEngine::postProcess()
+00057fb0 00000224 T mixerengine::MixerEngine::updateOnAir()
+00057134 0000005c T mixerengine::MixerEngine::getEqualizer(djengine::EnMixerInput, djengine::EnEqualizerBand)
+000570d8 0000005c T mixerengine::MixerEngine::setEqualizer(djengine::EnMixerInput, djengine::EnEqualizerBand, float)
+0005751c 00000010 T mixerengine::MixerEngine::setMasterATT(djengine::EnMasterATT)
+00057080 00000058 T mixerengine::MixerEngine::initEqualizer(unsigned long, int)
+00056fc4 00000010 T mixerengine::MixerEngine::setCrossFader(float)
+000577d4 00000080 T mixerengine::MixerEngine::stopRecording()
+00056e58 00000034 T mixerengine::MixerEngine::getDigitalTrim(djengine::EnMixerInput)
+00057254 00000008 T mixerengine::MixerEngine::initBeatEffect(unsigned long, int)
+0005753c 00000010 T mixerengine::MixerEngine::setBoothVolume(float)
+00056e14 00000044 T mixerengine::MixerEngine::setDigitalTrim(djengine::EnMixerInput, float)
+000578e8 00000010 T mixerengine::MixerEngine::setMicOutOnRec(bool)
+00057754 00000080 T mixerengine::MixerEngine::startRecording()
+00056f18 00000034 T mixerengine::MixerEngine::getChannelFader(djengine::EnMixerInput)
+00056ed4 00000044 T mixerengine::MixerEngine::setChannelFader(djengine::EnMixerInput, float)
+000574f8 00000010 T mixerengine::MixerEngine::setMasterVolume(float)
+00057b88 0000000c T mixerengine::MixerEngine::simulatorNotify(djengine::EnMixerInput, djengine::EnSimulatorPad)
+00056d60 00000070 T mixerengine::MixerEngine::changeBufferSize(int)
+000571d4 00000038 T mixerengine::MixerEngine::getEqualizerMode(djengine::EnMixerInput)
+00057b94 00000034 T mixerengine::MixerEngine::getInputChObject(djengine::EnMixerInput)
+00057bc8 00000038 T mixerengine::MixerEngine::getMixerChObject(djengine::EnMixerInput)
+00057374 00000050 T mixerengine::MixerEngine::initSoundColorFx(unsigned long, int)
+00057744 00000010 T mixerengine::MixerEngine::prepareRecording(char const*, bool)
+00057190 00000044 T mixerengine::MixerEngine::setEqualizerMode(djengine::EnMixerInput, djengine::EnEqualizerMode)
+00057580 00000010 T mixerengine::MixerEngine::setMicOutOnBooth(bool)
+00057294 00000008 T mixerengine::MixerEngine::getBeatEffectTime()
+00057c00 0000002c T mixerengine::MixerEngine::getOutputChObject(djengine::EnMixerOutput)
+0005728c 00000008 T mixerengine::MixerEngine::setBeatEffectTime(unsigned long)
+0005727c 00000008 T mixerengine::MixerEngine::setBeatEffectType(djengine::EnBeatEffectType)
+000576d0 00000010 T mixerengine::MixerEngine::setHeadphoneLevel(float)
+00057950 0000002c T mixerengine::MixerEngine::clearInputChLevels(djengine::EnMixerInput)
+0005725c 00000008 T mixerengine::MixerEngine::setBeatEffectOnOff(bool)
+00057560 00000010 T mixerengine::MixerEngine::setBoothMonitorATT(djengine::EnBoothMonitorATT)
+00056fe8 00000010 T mixerengine::MixerEngine::setCrossFaderCurve(djengine::EnCrossFaderCurve)
+0005704c 00000034 T mixerengine::MixerEngine::getCrossFaderAssign(djengine::EnMixerInput)
+0005720c 00000048 T mixerengine::MixerEngine::getEqualizerDbValue(djengine::EnMixerInput, djengine::EnEqualizerBand)
+00057920 00000030 T mixerengine::MixerEngine::getInputChLevelMono(djengine::EnMixerInput)
+00057408 00000034 T mixerengine::MixerEngine::getSoundColorFxType(djengine::EnMixerInput)
+00057008 00000044 T mixerengine::MixerEngine::setCrossFaderAssign(djengine::EnMixerInput, djengine::EnCrossFaderAssign)
+000576ac 00000010 T mixerengine::MixerEngine::setHeadphoneMixRate(float)
+000573c4 00000044 T mixerengine::MixerEngine::setSoundColorFxType(djengine::EnMixerInput, djengine::EnSoundColorFxType)
+00056f90 00000034 T mixerengine::MixerEngine::getChannelFaderCurve(djengine::EnMixerInput)
+00057480 00000034 T mixerengine::MixerEngine::getSoundColorFxColor(djengine::EnMixerInput)
+000572e4 00000008 T mixerengine::MixerEngine::setBeatEffectPercent(long, bool)
+00056f4c 00000044 T mixerengine::MixerEngine::setChannelFaderCurve(djengine::EnMixerInput, djengine::EnChannelFaderCurve)
+00056e8c 00000048 T mixerengine::MixerEngine::setDigitalTrimforSim(djengine::EnMixerInput, float, int)
+0005743c 00000044 T mixerengine::MixerEngine::setSoundColorFxColor(djengine::EnMixerInput, float)
+00057b10 00000038 T mixerengine::MixerEngine::getExternalSourceType(djengine::EnMixerInput)
+00057a00 00000040 T mixerengine::MixerEngine::getInputChValidStatus(djengine::EnMixerInput)
+00057acc 00000044 T mixerengine::MixerEngine::setExternalSourceType(djengine::EnMixerInput, djengine::EnExternalSourceType)
+000579bc 00000044 T mixerengine::MixerEngine::setInputChValidStatus(djengine::EnMixerInput, djengine::EnInputChValidStatus)
+0005799c 00000020 T mixerengine::MixerEngine::clearMasterOutChLevels()
+00057c2c 000000a8 T mixerengine::MixerEngine::getBpmWaveDataProvider(mixerengine::EnMixerBpmDetectChannel const&)
+000575e8 00000044 T mixerengine::MixerEngine::getMixerChHeadphoneCue(djengine::EnMixerInput)
+00056e04 00000010 T mixerengine::MixerEngine::registerEngineCallBack(djengine::EngineCB*)
+0005768c 00000010 T mixerengine::MixerEngine::setHeadphoneStereoType(djengine::EnHeadphoneStereoType)
+000575a0 00000048 T mixerengine::MixerEngine::setMixerChHeadphoneCue(djengine::EnMixerInput, bool)
+000572c4 00000008 T mixerengine::MixerEngine::setBeatEffectBeatButton(djengine::EnBeatButtonType, bool)
+000572bc 00000008 T mixerengine::MixerEngine::setBeatEffectLevelDepth(float)
+0005730c 00000008 T mixerengine::MixerEngine::setBeatEffectXpadLinear(long)
+00057328 00000010 T mixerengine::MixerEngine::initBpmWaveDetectManager(unsigned long const&)
+00057f40 00000070 T mixerengine::MixerEngine::setBpmDetectMixerChannel(mixerengine::EnMixerBpmDetectChannel const&)
+0005766c 00000010 T mixerengine::MixerEngine::setMasterOutHeadphoneCue(bool)
+0005762c 00000020 T mixerengine::MixerEngine::setPreviewChHeadphoneCue(bool)
+000574b4 00000044 T mixerengine::MixerEngine::setSoundColorFxParameter(djengine::EnMixerInput, float)
+000572b4 00000008 T mixerengine::MixerEngine::notifyBeatEffectBpmChanged(bool)
+00057314 00000008 T mixerengine::MixerEngine::setBeatEffectQuantizeOnOff(bool)
+00057dc8 00000178 T mixerengine::MixerEngine::setBeatEffectSelectChannel(djengine::EnBeatEffectSelectChannel)
+00057714 00000030 T mixerengine::MixerEngine::clearAuxInputLevelIndicator()
+00057304 00000008 T mixerengine::MixerEngine::switchBeatEffectMaxMinValue(djengine::EnBeatEffectType)
+000581d4 0000009c T mixerengine::MixerEngine::update(int)
+00057b48 00000040 T mixerengine::MixerEngine::getGain(djengine::EnMixerInput)
+00057a8c 00000040 T mixerengine::MixerEngine::getRoute(djengine::EnMixerInput)
+00057a40 0000004c T mixerengine::MixerEngine::setRoute(djengine::EnPlayerChannel, djengine::EnMixerInput)
+00057cd4 000000f4 T mixerengine::MixerEngine::setAuxATT(djengine::EnAuxATT)
+00057864 00000074 T mixerengine::MixerEngine::trackMark()
+000582c4 00000874 T mixerengine::MixerEngine::MixerEngine()
+000582c4 00000874 T mixerengine::MixerEngine::MixerEngine()
+00056b98 000001c4 T mixerengine::MixerEngine::~MixerEngine()
+00056b98 000001c4 T mixerengine::MixerEngine::~MixerEngine()
+0009e3fc 00000494 T mixerengine::MixerChannel::updateFilter(int)
+0009ec30 000000ac T mixerengine::MixerChannel::initEqualizer(unsigned long, int)
+0009edb8 00000010 T mixerengine::MixerChannel::initSoundColorFx(unsigned long, int)
+0009ed58 00000060 T mixerengine::MixerChannel::setEqualizerMode(djengine::EnEqualizerMode)
+0009ecdc 00000054 T mixerengine::MixerChannel::setEqualizerVolume(djengine::EnEqualizerBand, float)
+0009e3a8 00000054 T mixerengine::MixerChannel::changeEqualizerMode(djengine::EnEqualizerMode)
+0009edc8 00000010 T mixerengine::MixerChannel::setSoundColorFxType(djengine::EnSoundColorFxType)
+0009ede8 00000010 T mixerengine::MixerChannel::setSoundColorFxColor(float)
+0009ec18 00000018 T mixerengine::MixerChannel::setExternalSourceType(djengine::EnExternalSourceType)
+0009ee10 00000010 T mixerengine::MixerChannel::setSoundColorFxParameter(float)
+0009e890 00000388 T mixerengine::MixerChannel::update(int)
+0009dec0 00000018 T mixerengine::MixerChannel::setRoute(djengine::EnPlayerChannel)
+0009df8c 0000041c T mixerengine::MixerChannel::MixerChannel(djengine::EnMixerInput, djengine::EnBeatEffectSelectChannel, djengine::EnBeatEffectSelectChannel, mixerengine::BeatEffectManager&)
+0009df8c 0000041c T mixerengine::MixerChannel::MixerChannel(djengine::EnMixerInput, djengine::EnBeatEffectSelectChannel, djengine::EnBeatEffectSelectChannel, mixerengine::BeatEffectManager&)
+0009df70 0000001c T mixerengine::MixerChannel::~MixerChannel()
+0009ded8 00000098 T mixerengine::MixerChannel::~MixerChannel()
+0009ded8 00000098 T mixerengine::MixerChannel::~MixerChannel()
+000b6d40 00000018 T mixerengine::BeatEffectEcho::initialize()
+000b7960 00000024 T mixerengine::BeatEffectEcho::getDelayData(common::Float2*, long)
+000b7984 00000030 T mixerengine::BeatEffectEcho::saveDelayData(common::Float2 const&)
+000b6d58 0000000c T mixerengine::BeatEffectEcho::keepEffectInit()
+000b6d64 0000000c T mixerengine::BeatEffectEcho::changeTimeValue()
+000b6e04 000000f4 T mixerengine::BeatEffectEcho::changeLevelDepthValue()
+000b6d70 00000054 T mixerengine::BeatEffectEcho::changeEffectStatusToOn()
+000b6dc4 00000040 T mixerengine::BeatEffectEcho::changeEffectStatusToOff()
+000b6f68 000005c8 T mixerengine::BeatEffectEcho::execute(common::Float2 const*, common::Float2*, int)
+000b75a8 000003b8 T mixerengine::BeatEffectEcho::BeatEffectEcho()
+000b75a8 000003b8 T mixerengine::BeatEffectEcho::BeatEffectEcho()
+000b7530 00000078 T mixerengine::BeatEffectEcho::~BeatEffectEcho()
+000b6ef8 00000070 T mixerengine::BeatEffectEcho::~BeatEffectEcho()
+000b6ef8 00000070 T mixerengine::BeatEffectEcho::~BeatEffectEcho()
+0008af50 0000003c T mixerengine::BeatEffectManager::copyMusicData(common::Float2 const*, int)
+00089b84 000004f8 T mixerengine::BeatEffectManager::initBeatEffect(unsigned long, int)
+00089b74 00000010 T mixerengine::BeatEffectManager::setQuantizeOnOff(bool)
+0008ad5c 000001f4 T mixerengine::BeatEffectManager::storeMaxMinValue(djengine::EnBeatEffectType)
+000899bc 00000028 T mixerengine::BeatEffectManager::getBeatEffectTime()
+0008a52c 000007bc T mixerengine::BeatEffectManager::operateBeatEffect(common::Float2*, int, bool)
+00089970 0000004c T mixerengine::BeatEffectManager::setBeatEffectTime(unsigned long)
+00089ac4 00000008 T mixerengine::BeatEffectManager::setBeatEffectType(djengine::EnBeatEffectType)
+0008ace8 00000074 T mixerengine::BeatEffectManager::switchNextChannel()
+00089928 00000018 T mixerengine::BeatEffectManager::changeEffectStatus()
+00089940 00000024 T mixerengine::BeatEffectManager::setBeatEffectOnOff(bool)
+00089a08 00000084 T mixerengine::BeatEffectManager::setBeatEffectPercent(long, bool)
+0008a470 000000b8 T mixerengine::BeatEffectManager::switchNextBeatButton(bool)
+0008a07c 000003f4 T mixerengine::BeatEffectManager::switchNextBeatEffect()
+00089ad4 00000030 T mixerengine::BeatEffectManager::setBeatEffectBeatButton(djengine::EnBeatButtonType, bool)
+00089ab0 00000008 T mixerengine::BeatEffectManager::setBeatEffectLevelDepth(float)
+00089b28 0000004c T mixerengine::BeatEffectManager::setBeatEffectXpadLinear(long)
+0008a528 00000004 T mixerengine::BeatEffectManager::notifyBeatEffectBpmChanged(bool)
+00089914 00000008 T mixerengine::BeatEffectManager::setBeatEffectSelectChannel(djengine::EnBeatEffectSelectChannel)
+000893d8 0000038c T mixerengine::BeatEffectManager::BeatEffectManager()
+000893d8 0000038c T mixerengine::BeatEffectManager::BeatEffectManager()
+00089764 000001a0 T mixerengine::BeatEffectManager::~BeatEffectManager()
+00089764 000001a0 T mixerengine::BeatEffectManager::~BeatEffectManager()
+000ce680 000000a0 T mixerengine::SoundColorFxFilter::initialize()
+000ce154 0000052c T mixerengine::SoundColorFxFilter::calcParameter()
+000ce994 00000044 T mixerengine::SoundColorFxFilter::parameterChaser(float*, float, float*)
+000cdfd4 00000024 T mixerengine::SoundColorFxFilter::changeColorValue()
+000ce004 00000008 T mixerengine::SoundColorFxFilter::changeCfxStatus_On()
+000ce00c 00000008 T mixerengine::SoundColorFxFilter::changeCfxStatus_Off()
+000cdff8 0000000c T mixerengine::SoundColorFxFilter::changeColorParameter()
+000ce720 00000274 T mixerengine::SoundColorFxFilter::execute(common::Float2 const*, common::Float2*, int)
+000ce080 000000d4 T mixerengine::SoundColorFxFilter::SoundColorFxFilter()
+000ce080 000000d4 T mixerengine::SoundColorFxFilter::SoundColorFxFilter()
+000ce014 0000006c T mixerengine::SoundColorFxFilter::~SoundColorFxFilter()
+000cdf70 00000064 T mixerengine::SoundColorFxFilter::~SoundColorFxFilter()
+000cdf70 00000064 T mixerengine::SoundColorFxFilter::~SoundColorFxFilter()
+000bc758 00000028 T mixerengine::SoundColorFxManager::setParameter(float)
+000bc4d4 00000234 T mixerengine::SoundColorFxManager::init(unsigned long, int)
+000bbc68 0000086c T mixerengine::SoundColorFxManager::operate(common::Float2*, int)
+000bc708 00000014 T mixerengine::SoundColorFxManager::setType(djengine::EnSoundColorFxType)
+000bc71c 00000028 T mixerengine::SoundColorFxManager::setColor(float)
+000bb970 00000238 T mixerengine::SoundColorFxManager::SoundColorFxManager(mixerengine::MixerChannel*)
+000bb970 00000238 T mixerengine::SoundColorFxManager::SoundColorFxManager(mixerengine::MixerChannel*)
+000bbba8 000000c0 T mixerengine::SoundColorFxManager::~SoundColorFxManager()
+000bbba8 000000c0 T mixerengine::SoundColorFxManager::~SoundColorFxManager()
+0005752c 00000010 T mixerengine::MixerEngine::getMasterATT() const
+00056fd4 00000014 T mixerengine::MixerEngine::getCrossFader() const
+0005790c 00000014 T mixerengine::MixerEngine::getOnAirState(djengine::EnMixerInput) const
+0005754c 00000014 T mixerengine::MixerEngine::getBoothVolume() const
+000578f8 00000014 T mixerengine::MixerEngine::getMicOutOnRec() const
+00057264 00000008 T mixerengine::MixerEngine::isBeatEffectOn() const
+00057508 00000014 T mixerengine::MixerEngine::getMasterVolume() const
+00057590 00000010 T mixerengine::MixerEngine::getMicOutOnBooth() const
+000578d8 00000010 T mixerengine::MixerEngine::getRecElapsedSec() const
+00057284 00000008 T mixerengine::MixerEngine::getBeatEffectType() const
+000576e0 00000014 T mixerengine::MixerEngine::getHeadphoneLevel() const
+00057570 00000010 T mixerengine::MixerEngine::getBoothMonitorATT() const
+00056ff8 00000010 T mixerengine::MixerEngine::getCrossFaderCurve() const
+00057854 00000010 T mixerengine::MixerEngine::getRecordingStatus() const
+000576bc 00000014 T mixerengine::MixerEngine::getHeadphoneMixRate() const
+000572a4 00000008 T mixerengine::MixerEngine::getBeatEffectMaxTime() const
+000572ac 00000008 T mixerengine::MixerEngine::getBeatEffectMinTime() const
+0005729c 00000008 T mixerengine::MixerEngine::getBeatEffectOldTime() const
+000572ec 00000008 T mixerengine::MixerEngine::getBeatEffectPercent() const
+0005797c 00000020 T mixerengine::MixerEngine::getMasterOutChLevels(long*, long*) const
+0005769c 00000010 T mixerengine::MixerEngine::getHeadphoneStereoType() const
+0005731c 0000000c T mixerengine::MixerEngine::isBeatEffectQuantizeOn() const
+000572cc 00000008 T mixerengine::MixerEngine::getBeatEffectBeatButton() const
+000572f4 00000008 T mixerengine::MixerEngine::getBeatEffectMaxPercent() const
+000572fc 00000008 T mixerengine::MixerEngine::getBeatEffectMinPercent() const
+0005767c 00000010 T mixerengine::MixerEngine::getMasterOutHeadphoneCue() const
+0005764c 00000020 T mixerengine::MixerEngine::getPreviewChHeadphoneCue() const
+00057704 00000010 T mixerengine::MixerEngine::getAuxInputLevelIndicator() const
+000572d4 00000008 T mixerengine::MixerEngine::getBeatEffectMaxBeatButton() const
+000572dc 00000008 T mixerengine::MixerEngine::getBeatEffectMinBeatButton() const
+0005726c 00000008 T mixerengine::MixerEngine::getBeatEffectSelectChannel() const
+00057274 00000008 T mixerengine::MixerEngine::getBeatEffectNextSelectChannel() const
+00057338 0000003c T mixerengine::MixerEngine::getBpm() const
+000576f4 00000010 T mixerengine::MixerEngine::getAuxATT() const
+0009ed30 00000010 T mixerengine::MixerChannel::getEqualizerVolume(djengine::EnEqualizerBand) const
+0009ed40 00000018 T mixerengine::MixerChannel::getEqualizerDbValue(djengine::EnEqualizerBand) const
+0009edd8 00000010 T mixerengine::MixerChannel::getSoundColorFxType() const
+0009edf8 00000018 T mixerengine::MixerChannel::getSoundColorFxColor() const
+0009de60 00000060 T mixerengine::MixerChannel::getGain() const
+000b6d38 00000008 T mixerengine::BeatEffectEcho::getBufferSampleNum() const
+00089964 0000000c T mixerengine::BeatEffectManager::isBeatEffectOn() const
+00089acc 00000008 T mixerengine::BeatEffectManager::getBeatEffectType() const
+0008991c 0000000c T mixerengine::BeatEffectManager::getEffectPosition() const
+000899f0 0000000c T mixerengine::BeatEffectManager::getBeatEffectMaxTime() const
+000899fc 0000000c T mixerengine::BeatEffectManager::getBeatEffectMinTime() const
+000899e4 0000000c T mixerengine::BeatEffectManager::getBeatEffectOldTime() const
+00089a8c 0000000c T mixerengine::BeatEffectManager::getBeatEffectPercent() const
+00089b04 0000000c T mixerengine::BeatEffectManager::getBeatEffectBeatButton() const
+00089ab8 0000000c T mixerengine::BeatEffectManager::getBeatEffectLevelDepth() const
+00089a98 0000000c T mixerengine::BeatEffectManager::getBeatEffectMaxPercent() const
+00089aa4 0000000c T mixerengine::BeatEffectManager::getBeatEffectMinPercent() const
+00089b10 0000000c T mixerengine::BeatEffectManager::getBeatEffectMaxBeatButton() const
+00089b1c 0000000c T mixerengine::BeatEffectManager::getBeatEffectMinBeatButton() const
+00089904 00000008 T mixerengine::BeatEffectManager::getBeatEffectSelectChannel() const
+0008990c 00000008 T mixerengine::BeatEffectManager::getBeatEffectNextSelectChannel() const
+000bc780 00000010 T mixerengine::SoundColorFxManager::getEffectPosition() const
+000bc744 00000014 T mixerengine::SoundColorFxManager::getColor() const

@@ -1,0 +1,30 @@
+[
+  {
+    "adrp": "0x7fd204",
+    "add": "0x7fd208",
+    "target": "0x2e56bf8",
+    "label": "SimpleAudioMixer primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x21b2a14",
+    "add": "0x21b2a18",
+    "target": "0x2e56bf8",
+    "label": "SimpleAudioMixer primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x21b4bb0",
+    "add": "0x21b4bb4",
+    "target": "0x2e56bf8",
+    "label": "SimpleAudioMixer primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x21b4c20",
+    "add": "0x21b4c24",
+    "target": "0x2e56bf8",
+    "label": "SimpleAudioMixer primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

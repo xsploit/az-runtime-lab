@@ -1,0 +1,35 @@
+{
+  "scope": "Captured actual native AZ settings transitions replayed to bridge H1 socket; no H1 audio receiver or physical headphone claim",
+  "sources": [
+    {
+      "source": "headphone-mono-native-tx.raw",
+      "sha256": "aef523851efb5fb40a80b95d5fff1888ba03e300d2285d15f61f62b5b7d5afff",
+      "delivered": [
+        {
+          "frame": 0,
+          "command": "H1 1"
+        },
+        {
+          "frame": 465,
+          "command": "H1 0"
+        },
+        {
+          "frame": 1116,
+          "command": "H1 1"
+        }
+      ]
+    },
+    {
+      "source": "headphone-stereo-native-tx.raw",
+      "sha256": "efc4b14828a7ac8ba2edafa2ec98be1cbe281b954b6073824861cdb68326522f",
+      "delivered": [
+        {
+          "frame": 1130,
+          "command": "H1 0"
+        }
+      ]
+    }
+  ],
+  "midi_fader_preserved": true,
+  "socket_cleanup": true
+}

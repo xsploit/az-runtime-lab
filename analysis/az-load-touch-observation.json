@@ -1,0 +1,13 @@
+{
+  "experiment": "Local Library, two track-row clicks, deck1 bottom-panel click",
+  "pcs": {
+    "0000000000b46790": 49918,
+    "0000000000b467b4": 2,
+    "0000000000b467bc": 1
+  },
+  "trace_bytes": 48361569,
+  "native_request_entry_blocks": 0,
+  "process_alive_before_deliberate_teardown": true,
+  "screenshot": "xdjaz/load-trace-after.png",
+  "limitation": "No hardware load event; no assertion of exhaustive call counts with TB chaining"
+}

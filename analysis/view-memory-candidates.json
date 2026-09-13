@@ -1,0 +1,15 @@
+{
+  "pid": 458486,
+  "scanned_bytes": 4347838464,
+  "skipped_chunks": 39,
+  "candidates": [
+    {
+      "manager": "0x7f267d759e00",
+      "nested": "0x7f267d4dec00",
+      "vtable": "0x29cd220",
+      "getter": "0x198f468",
+      "current": "0x7f267dbc6800",
+      "identity": "0x7f27a877cbc0"
+    }
+  ]
+}

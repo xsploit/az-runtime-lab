@@ -1,0 +1,23 @@
+{
+  "scope": "Static object discovery candidates; no live object obtained",
+  "constructor": "0x19eb298",
+  "allocation": {
+    "caller": "0x1a16c64",
+    "size": 104,
+    "allocator": "operator new at0x1a16c58",
+    "widget_arg": "owner[0]+208",
+    "owned_slot": "owner+16; old nonnull object deleted via virtual slot1"
+  },
+  "identity": {
+    "primary_vtable": "0x29f22c0",
+    "secondary_at8": "0x29f2308",
+    "type_cookie_at16": "initialized from shared MicSelect listener cookie"
+  },
+  "fields": {
+    "24": "resolved dependency interface",
+    "40": "setting result written via indirect return x8=this+40 from dependency virtual+320",
+    "56": "widget pointer"
+  },
+  "observation_plan": "Observe constructor completion and destruction in isolated guest; validate both vtables and owning slot before any invocation. Do not retain pointer after UI owner replaces/deletes controller.",
+  "evidence": "az-mic-controller-constructor.asm; direct caller0x1a16c4c..1a16c88"
+}

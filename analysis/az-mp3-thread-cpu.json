@@ -1,0 +1,216 @@
+{
+  "pid": 179636,
+  "elapsed": 5.013543050008593,
+  "threads": 236,
+  "total_cpu_percent": 93.94553817568051,
+  "top_threads": [
+    {
+      "tid": 179636,
+      "name": "qemu",
+      "ticks": 8985,
+      "core": 14,
+      "allowed": "14-17",
+      "cpu_percent": 44.47952232096976
+    },
+    {
+      "tid": 180309,
+      "name": "JUCE ALSA",
+      "ticks": 3913,
+      "core": 18,
+      "allowed": "18",
+      "cpu_percent": 18.350296204166895
+    },
+    {
+      "tid": 180106,
+      "name": "FGPRKeyConMain",
+      "ticks": 1716,
+      "core": 19,
+      "allowed": "15-17,19",
+      "cpu_percent": 9.773527326132367
+    },
+    {
+      "tid": 180524,
+      "name": "IndicatorCtrl",
+      "ticks": 1153,
+      "core": 15,
+      "allowed": "14-17",
+      "cpu_percent": 5.584872757789925
+    },
+    {
+      "tid": 179983,
+      "name": "HuiProcessor",
+      "ticks": 824,
+      "core": 17,
+      "allowed": "15-17,19",
+      "cpu_percent": 3.5902753442935227
+    },
+    {
+      "tid": 180314,
+      "name": "PreviewMixer",
+      "ticks": 374,
+      "core": 16,
+      "allowed": "14-17",
+      "cpu_percent": 1.7951376721467613
+    },
+    {
+      "tid": 180316,
+      "name": "SendManager",
+      "ticks": 287,
+      "core": 14,
+      "allowed": "14-17",
+      "cpu_percent": 1.3962181894474812
+    },
+    {
+      "tid": 180301,
+      "name": "MidiRecvMsg",
+      "ticks": 163,
+      "core": 15,
+      "allowed": "14-17",
+      "cpu_percent": 0.7978389653985606
+    },
+    {
+      "tid": 180402,
+      "name": "PLinkCrawThrd",
+      "ticks": 150,
+      "core": 15,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.7978389653985606
+    },
+    {
+      "tid": 180423,
+      "name": "SubDispUpdate",
+      "ticks": 181,
+      "core": 14,
+      "allowed": "14-17",
+      "cpu_percent": 0.7978389653985606
+    },
+    {
+      "tid": 179695,
+      "name": "SignalProxy",
+      "ticks": 174,
+      "core": 16,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.5983792240489204
+    },
+    {
+      "tid": 180021,
+      "name": "OptClientSocket",
+      "ticks": 100,
+      "core": 15,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.5983792240489204
+    },
+    {
+      "tid": 180354,
+      "name": "localSyncMmb0",
+      "ticks": 121,
+      "core": 19,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.5983792240489204
+    },
+    {
+      "tid": 179744,
+      "name": "WatchDogTimer",
+      "ticks": 69,
+      "core": 17,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.3989194826992803
+    },
+    {
+      "tid": 180033,
+      "name": "CycEvntChck",
+      "ticks": 860,
+      "core": 17,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.3989194826992803
+    },
+    {
+      "tid": 180285,
+      "name": "MixerLinkMon",
+      "ticks": 50,
+      "core": 15,
+      "allowed": "14-17",
+      "cpu_percent": 0.3989194826992803
+    },
+    {
+      "tid": 180318,
+      "name": "MidiHidAdapter",
+      "ticks": 83,
+      "core": 17,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.3989194826992803
+    },
+    {
+      "tid": 180355,
+      "name": "localSyncMmb1",
+      "ticks": 77,
+      "core": 19,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.3989194826992803
+    },
+    {
+      "tid": 180357,
+      "name": "localSyncMmb3",
+      "ticks": 72,
+      "core": 17,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.3989194826992803
+    },
+    {
+      "tid": 179745,
+      "name": "HidInputThread",
+      "ticks": 2,
+      "core": 14,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.19945974134964015
+    },
+    {
+      "tid": 180015,
+      "name": "BufferingSched",
+      "ticks": 50,
+      "core": 14,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.19945974134964015
+    },
+    {
+      "tid": 180113,
+      "name": "PlayNotify",
+      "ticks": 74,
+      "core": 19,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.19945974134964015
+    },
+    {
+      "tid": 180124,
+      "name": "PlayNotify",
+      "ticks": 69,
+      "core": 14,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.19945974134964015
+    },
+    {
+      "tid": 180135,
+      "name": "PlayNotify",
+      "ticks": 68,
+      "core": 14,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.19945974134964015
+    },
+    {
+      "tid": 180142,
+      "name": "PlayNotify",
+      "ticks": 75,
+      "core": 14,
+      "allowed": "14-17,19",
+      "cpu_percent": 0.19945974134964015
+    }
+  ],
+  "affinity_counts": {
+    "16-17,19": 1,
+    "14-17,19": 209,
+    "18": 1,
+    "14-17": 19,
+    "0-19": 1,
+    "15-17,19": 5
+  }
+}

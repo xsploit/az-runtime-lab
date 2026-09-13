@@ -1,0 +1,227 @@
+{
+  "binary": "rx3-research/pi-runtime/rbp",
+  "sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "scope": "Symbol candidates; execute loops separately inspected for Filter and Echo",
+  "entries": [
+    {
+      "address": "0x0008b0a8",
+      "size": 4,
+      "name": "mixerengine::BeatEffectOff::initialize()"
+    },
+    {
+      "address": "0x0008af90",
+      "size": 36,
+      "name": "mixerengine::BeatEffectOff::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x000b6d40",
+      "size": 24,
+      "name": "mixerengine::BeatEffectEcho::initialize()"
+    },
+    {
+      "address": "0x000b6f68",
+      "size": 1480,
+      "name": "mixerengine::BeatEffectEcho::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x0008f02c",
+      "size": 168,
+      "name": "mixerengine::BeatEffectRoll::initialize()"
+    },
+    {
+      "address": "0x0008f9f8",
+      "size": 108,
+      "name": "mixerengine::BeatEffectRoll::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x000b6168",
+      "size": 24,
+      "name": "mixerengine::BeatEffectDelay::initialize()"
+    },
+    {
+      "address": "0x000b6404",
+      "size": 1204,
+      "name": "mixerengine::BeatEffectDelay::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x0009251c",
+      "size": 108,
+      "name": "mixerengine::BeatEffectHelix::initialize()"
+    },
+    {
+      "address": "0x00092e7c",
+      "size": 1972,
+      "name": "mixerengine::BeatEffectHelix::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x0008b2b8",
+      "size": 360,
+      "name": "mixerengine::BeatEffectPitch::initialize()"
+    },
+    {
+      "address": "0x0008c648",
+      "size": 1684,
+      "name": "mixerengine::BeatEffectPitch::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x000914e8",
+      "size": 192,
+      "name": "mixerengine::BeatEffectTrans::initialize()"
+    },
+    {
+      "address": "0x000910b4",
+      "size": 476,
+      "name": "mixerengine::BeatEffectTrans::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x000bd49c",
+      "size": 4,
+      "name": "mixerengine::SoundColorFxOff::initialize()"
+    },
+    {
+      "address": "0x000bd464",
+      "size": 36,
+      "name": "mixerengine::SoundColorFxOff::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x00093630",
+      "size": 92,
+      "name": "mixerengine::BeatEffectFilter::initialize()"
+    },
+    {
+      "address": "0x0009405c",
+      "size": 1716,
+      "name": "mixerengine::BeatEffectFilter::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x00096c78",
+      "size": 132,
+      "name": "mixerengine::BeatEffectPhaser::initialize()"
+    },
+    {
+      "address": "0x00097628",
+      "size": 1264,
+      "name": "mixerengine::BeatEffectPhaser::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x0008cf48",
+      "size": 424,
+      "name": "mixerengine::BeatEffectReverb::initialize()"
+    },
+    {
+      "address": "0x0008e418",
+      "size": 2772,
+      "name": "mixerengine::BeatEffectReverb::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x0008fdc4",
+      "size": 348,
+      "name": "mixerengine::BeatEffectSpiral::initialize()"
+    },
+    {
+      "address": "0x00090a00",
+      "size": 1640,
+      "name": "mixerengine::BeatEffectSpiral::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x000b7c70",
+      "size": 196,
+      "name": "mixerengine::BeatEffectFlanger::initialize()"
+    },
+    {
+      "address": "0x000b8354",
+      "size": 1204,
+      "name": "mixerengine::BeatEffectFlanger::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x000cc144",
+      "size": 240,
+      "name": "mixerengine::SoundColorFxCrush::initialize()"
+    },
+    {
+      "address": "0x000cc30c",
+      "size": 1216,
+      "name": "mixerengine::SoundColorFxCrush::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x000bd050",
+      "size": 220,
+      "name": "mixerengine::SoundColorFxNoise::initialize()"
+    },
+    {
+      "address": "0x000bd12c",
+      "size": 820,
+      "name": "mixerengine::SoundColorFxNoise::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x000bd4d8",
+      "size": 488,
+      "name": "mixerengine::SoundColorFxSpace::initialize()"
+    },
+    {
+      "address": "0x000bd7d0",
+      "size": 4696,
+      "name": "mixerengine::SoundColorFxSpace::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x000bff88",
+      "size": 648,
+      "name": "mixerengine::SoundColorFxSweep::initialize()"
+    },
+    {
+      "address": "0x000c0210",
+      "size": 584,
+      "name": "mixerengine::SoundColorFxSweep::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x00097b20",
+      "size": 24,
+      "name": "mixerengine::BeatEffectPingPong::initialize()"
+    },
+    {
+      "address": "0x00097d48",
+      "size": 1572,
+      "name": "mixerengine::BeatEffectPingPong::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x0009198c",
+      "size": 168,
+      "name": "mixerengine::BeatEffectSlipRoll::initialize()"
+    },
+    {
+      "address": "0x00092490",
+      "size": 108,
+      "name": "mixerengine::BeatEffectSlipRoll::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x000ce680",
+      "size": 160,
+      "name": "mixerengine::SoundColorFxFilter::initialize()"
+    },
+    {
+      "address": "0x000ce720",
+      "size": 628,
+      "name": "mixerengine::SoundColorFxFilter::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x000cccfc",
+      "size": 200,
+      "name": "mixerengine::SoundColorFxDubecho::initialize()"
+    },
+    {
+      "address": "0x000ccdc4",
+      "size": 3208,
+      "name": "mixerengine::SoundColorFxDubecho::execute(common::Float2 const*, common::Float2*, int)"
+    },
+    {
+      "address": "0x000948fc",
+      "size": 516,
+      "name": "mixerengine::BeatEffectVinylBrake::initialize()"
+    },
+    {
+      "address": "0x000965b4",
+      "size": 1608,
+      "name": "mixerengine::BeatEffectVinylBrake::execute(common::Float2 const*, common::Float2*, int)"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "tid": "208465",
+    "name": "qemu",
+    "mask": "0,2,4,6,8,10"
+  },
+  {
+    "tid": "208793",
+    "name": "HuiProcessor",
+    "mask": "15-17,19"
+  },
+  {
+    "tid": "209090",
+    "name": "JUCE ALSA",
+    "mask": "18"
+  },
+  {
+    "tid": "209281",
+    "name": "IndicatorCtrl",
+    "mask": "14-17"
+  }
+]

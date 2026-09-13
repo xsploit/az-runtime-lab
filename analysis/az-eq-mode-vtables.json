@@ -1,0 +1,274 @@
+{
+  "sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Static RTTI and contiguous executable-pointer candidates; slot semantics and runtime ownership require tracing.",
+  "classes": [
+    {
+      "type": "application_setting::EqIsoSetting",
+      "typeinfo": "0x26269d8",
+      "tables": [
+        {
+          "address_point": "0x2633190",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x852ca8",
+            "0x8535d8",
+            "0x864368",
+            "0x850bd8"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "usecase::mixer::MasterEq",
+      "typeinfo": "0x26d6270",
+      "tables": [
+        {
+          "address_point": "0x26d63f8",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0xa86d28",
+            "0xa86ee8",
+            "0xa844a0"
+          ]
+        },
+        {
+          "address_point": "0x26d6420",
+          "offset_to_top": "0xfffffffffffffff8",
+          "functions": [
+            "0xa86c50",
+            "0xa86e00",
+            "0xa84818"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "usecase::mixer::IMasterEq",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "meow::setting_framework::IItemListener<application_setting::MasterEq>",
+          "offset_flags": "0x802"
+        }
+      ]
+    },
+    {
+      "type": "usecase::mixer::Mixer",
+      "typeinfo": "0x26d8ea8",
+      "tables": [
+        {
+          "address_point": "0x26d8fb8",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0xa8dae0",
+            "0xa8dd38",
+            "0xa8a0d0",
+            "0xa8ccd8",
+            "0xa8cce0",
+            "0xa8cce8",
+            "0xa8ccf0",
+            "0xa8ccf8",
+            "0xa8cd00",
+            "0xa8a910",
+            "0xa8af08",
+            "0xa8b4e0"
+          ]
+        },
+        {
+          "address_point": "0x26d9028",
+          "offset_to_top": "0xfffffffffffffff8",
+          "functions": [
+            "0xa8dd20",
+            "0xa8ddc0",
+            "0xa8ac78"
+          ]
+        },
+        {
+          "address_point": "0x26d9050",
+          "offset_to_top": "0xffffffffffffffe8",
+          "functions": [
+            "0xa8dd28",
+            "0xa8dd60",
+            "0xa8b250"
+          ]
+        },
+        {
+          "address_point": "0x26d9078",
+          "offset_to_top": "0xffffffffffffffd8",
+          "functions": [
+            "0xa8dd30",
+            "0xa8dd90",
+            "0xa8b828"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "usecase::mixer::IMixer",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "meow::setting_framework::IItemListener<application_setting::EqIso>",
+          "offset_flags": "0x802"
+        },
+        {
+          "type": "meow::setting_framework::IItemListener<application_setting::ChannelFaderCurve>",
+          "offset_flags": "0x1802"
+        },
+        {
+          "type": "meow::setting_framework::IItemListener<application_setting::CrossFaderCurve>",
+          "offset_flags": "0x2802"
+        }
+      ]
+    },
+    {
+      "type": "gui::mixer_settings::EqIsoWidget",
+      "typeinfo": "0x29fbca0",
+      "tables": [
+        {
+          "address_point": "0x29fbcc8",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x19f8c88",
+            "0x19f9038",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x248cda0",
+            "0x248ce20",
+            "0x24825c0",
+            "0x249daf0",
+            "0x242cfc0",
+            "0x24ac3a0",
+            "0x242ed80",
+            "0x242cfd0",
+            "0x246d5c0",
+            "0x242cfc0",
+            "0x242cfc0",
+            "0x2482ca0",
+            "0x242cfc0",
+            "0x2433150",
+            "0x242cfc0",
+            "0x24861f0",
+            "0x242efc0",
+            "0x19f8bb0",
+            "0x242d0a0",
+            "0x242d000",
+            "0x242d010",
+            "0x242d020",
+            "0x242cff0"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "gui::mixer_settings::EqIsoWidgetController",
+      "typeinfo": "0x29fcec0",
+      "tables": [
+        {
+          "address_point": "0x29fcf08",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x19faa88",
+            "0x19fad98",
+            "0x19ca298",
+            "0x19fb9f0",
+            "0x19af338",
+            "0x19af340",
+            "0x19faa40"
+          ]
+        },
+        {
+          "address_point": "0x29fcf50",
+          "offset_to_top": "0xfffffffffffffff8",
+          "functions": [
+            "0x19faf20",
+            "0x19fac08",
+            "0x19faa60"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "gui::ToggleImagesButton::Listener",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "meow::setting_framework::IItemListener<application_setting::EqIso>",
+          "offset_flags": "0x802"
+        }
+      ]
+    },
+    {
+      "type": "device_adapter::mixer::MasterEQ",
+      "typeinfo": "0x2e41d40",
+      "tables": [
+        {
+          "address_point": "0x2e420d0",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x21345c8",
+            "0x2134700",
+            "0x21344c0"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "device_adapter::mixer::Mixer",
+      "typeinfo": "0x2e41f70",
+      "tables": [
+        {
+          "address_point": "0x2e42208",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x21353a0",
+            "0x21354e0",
+            "0x2130088",
+            "0x2134518",
+            "0x2134520",
+            "0x2134528",
+            "0x2134530",
+            "0x21301e8",
+            "0x2130308",
+            "0x2134538",
+            "0x2134540",
+            "0x2134548",
+            "0x2134550",
+            "0x2134558",
+            "0x2134560",
+            "0x2134568",
+            "0x2134570",
+            "0x2134578",
+            "0x2130b08",
+            "0x2133ce8",
+            "0x2130040"
+          ]
+        },
+        {
+          "address_point": "0x2e422c0",
+          "offset_to_top": "0xfffffffffffffff8",
+          "functions": [
+            "0x21354d8",
+            "0x2135508",
+            "0x2130650"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "device_adapter::mixer::IMixer",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "meow::IHuiButtonObserver",
+          "offset_flags": "0x802"
+        }
+      ]
+    }
+  ]
+}

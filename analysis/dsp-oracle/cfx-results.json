@@ -1,0 +1,130 @@
+{
+  "scope": "CFX Filter coefficient/init/execute state and audio; coefficient setters and clearDelayBuffer use mocks, process calls native IIR. Native global ones pointer relocated, no DSP instructions changed. CFX manager/type transition orchestration excluded.",
+  "native_virtual_range": [
+    "0xce154",
+    "0xce994"
+  ],
+  "native_instruction_sha256": "95f88f5a35aa54ab847bf22169a80b15b45b2508e02a067e74fa20c4ea4e2ec8",
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "relocations": [
+    {
+      "address": "0xce990",
+      "kind": "absolute constant pointer",
+      "target": "private pair of float 1.0 values"
+    }
+  ],
+  "source_hashes": {
+    "cfx_filter.c": "9e8c29ded520070fe269c8355e909d15ae8a274307602d3d15481029656cd144",
+    "cfx_filter.h": "9ce547349c4ad772d624de8231ec75e8fb6383ac11246b7476664ad6634d2c8c",
+    "cfx_process.c": "f0b899210559263597b8412cfe4321b77813640573af31dd85c88ae3d7daeeac",
+    "cfx_compare.c": "ab83d2f952761423f61e75b8b13cb2a23df7d3d354f07f2f4b01f3d68be0b10a",
+    "cfx-native.S": "6b378933f8003047f54db91d8d888a1c76969f4cc0d4876b4230db345cb45e88",
+    "run_cfx.py": "7ef106d0b018a78f8b7fd485176130d659dfd4c2af5b26120e2b1b46391fd876"
+  },
+  "commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "cfx_compare.c",
+      "cfx_filter.c",
+      "cfx_process.c",
+      "iir_reconstructed.c",
+      "cfx-native.S",
+      "native.S",
+      "-lm",
+      "-o",
+      "cfx-compare-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "cfx_compare.c",
+      "cfx_filter.c",
+      "cfx_process.c",
+      "iir_reconstructed.c",
+      "-lm",
+      "-o",
+      "cfx-compare-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "cfx_compare.c",
+      "cfx_filter.c",
+      "cfx_process.c",
+      "iir_reconstructed.c",
+      "-lm",
+      "-o",
+      "cfx-compare-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"state_checks\":71871,\"audio_calls\":3000,\"audio_stereo_frames\":179400,\"values_compared\":2131704,\"bit_mismatches\":0,\"max_abs_error\":0}\n",
+      "metrics": {
+        "state_checks": 71871,
+        "audio_calls": 3000,
+        "audio_stereo_frames": 179400,
+        "values_compared": 2131704,
+        "bit_mismatches": 0,
+        "max_abs_error": 0
+      }
+    },
+    "host": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"state_checks\":71871,\"audio_calls\":3000,\"audio_stereo_frames\":179400,\"values_compared\":2131704,\"bit_mismatches\":0,\"max_abs_error\":0}\n",
+      "metrics": {
+        "state_checks": 71871,
+        "audio_calls": 3000,
+        "audio_stereo_frames": 179400,
+        "values_compared": 2131704,
+        "bit_mismatches": 0,
+        "max_abs_error": 0
+      }
+    },
+    "host_asan": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"state_checks\":71871,\"audio_calls\":3000,\"audio_stereo_frames\":179400,\"values_compared\":2131704,\"bit_mismatches\":0,\"max_abs_error\":0}\n",
+      "metrics": {
+        "state_checks": 71871,
+        "audio_calls": 3000,
+        "audio_stereo_frames": 179400,
+        "values_compared": 2131704,
+        "bit_mismatches": 0,
+        "max_abs_error": 0
+      }
+    }
+  }
+}

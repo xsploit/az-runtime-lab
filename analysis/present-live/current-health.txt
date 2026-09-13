@@ -1,0 +1,12 @@
+cd6046bb1c6e4b9c412f6ba1388f34f655ea5f97fa92b1bac20bd10f220f94e7  /home/pompu_5/az-native-lab/shims/ximage-present.so
+736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6  /home/pompu_5/az-native-lab/xdjaz/rootfs/home/root/pdj/EP147
+TracerPid:	0
+VmSize:	14044496 kB
+VmRSS:	  972992 kB
+Threads:	235
+VmSize:	  574672 kB
+VmRSS:	   96944 kB
+Threads:	5
+MemTotal:        4146288 kB
+MemAvailable:    1718800 kB
+57850

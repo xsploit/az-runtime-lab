@@ -1,0 +1,140 @@
+[
+  {
+    "type": "usecase::effector::BeatFx",
+    "typeinfo": "0x2692290",
+    "kind": "__vmi_class_type_info",
+    "bases": [
+      {
+        "address": "0x2692260",
+        "offset_flags": "0x2",
+        "public": true,
+        "virtual": false,
+        "offset_or_vtable_slot": 0,
+        "type": "usecase::effector::IBeatFx"
+      },
+      {
+        "address": "0x2629418",
+        "offset_flags": "0x802",
+        "public": true,
+        "virtual": false,
+        "offset_or_vtable_slot": 8,
+        "type": "meow::setting_framework::IItemListener<application_setting::beat_effect::ChannelSelect>"
+      },
+      {
+        "address": "0x2629690",
+        "offset_flags": "0x1802",
+        "public": true,
+        "virtual": false,
+        "offset_or_vtable_slot": 24,
+        "type": "meow::setting_framework::IItemListener<application_setting::beat_effect::Quantize>"
+      },
+      {
+        "address": "0x2629558",
+        "offset_flags": "0x2802",
+        "public": true,
+        "virtual": false,
+        "offset_or_vtable_slot": 40,
+        "type": "meow::setting_framework::IItemListener<application_setting::beat_effect::MicSelect>"
+      },
+      {
+        "address": "0x25d6020",
+        "offset_flags": "0x3802",
+        "public": true,
+        "virtual": false,
+        "offset_or_vtable_slot": 56,
+        "type": "device_adapter::mixer::IBeatFxListener"
+      }
+    ],
+    "vtables": [
+      {
+        "address_point": "0x2692378",
+        "offset_to_top": 0,
+        "first_function": "0x9856c8"
+      },
+      {
+        "address_point": "0x26923e0",
+        "offset_to_top": -8,
+        "first_function": "0x985260"
+      },
+      {
+        "address_point": "0x2692408",
+        "offset_to_top": -24,
+        "first_function": "0x985030"
+      },
+      {
+        "address_point": "0x2692430",
+        "offset_to_top": -40,
+        "first_function": "0x984e00"
+      },
+      {
+        "address_point": "0x2692458",
+        "offset_to_top": -56,
+        "first_function": "0x985498"
+      }
+    ]
+  },
+  {
+    "type": "usecase::effector::Effector",
+    "typeinfo": "0x2698fd8",
+    "kind": "__vmi_class_type_info",
+    "bases": [
+      {
+        "address": "0x2e676e8",
+        "offset_flags": "0x2",
+        "public": true,
+        "virtual": false,
+        "offset_or_vtable_slot": 0,
+        "type": "meow::TaskDrivenThread"
+      },
+      {
+        "address": "0x2698fa8",
+        "offset_flags": "0x2b802",
+        "public": true,
+        "virtual": false,
+        "offset_or_vtable_slot": 696,
+        "type": "usecase::effector::IEffector"
+      }
+    ],
+    "vtables": [
+      {
+        "address_point": "0x2699020",
+        "offset_to_top": 0,
+        "first_function": "0x9971d8"
+      },
+      {
+        "address_point": "0x2699098",
+        "offset_to_top": -40,
+        "first_function": "0x996a90"
+      },
+      {
+        "address_point": "0x26990c0",
+        "offset_to_top": -56,
+        "first_function": "0x996d00"
+      },
+      {
+        "address_point": "0x26990e8",
+        "offset_to_top": -696,
+        "first_function": "0x996f70"
+      }
+    ]
+  },
+  {
+    "type": "device_adapter::mixer::BeatFx",
+    "typeinfo": "0x2e41ab0",
+    "kind": "__si_class_type_info",
+    "bases": [
+      {
+        "address": "0x2e41a80",
+        "offset_flags": null,
+        "type": "device_adapter::mixer::IBeatFx"
+      }
+    ],
+    "vtables": [
+      {
+        "address_point": "0x2e42338",
+        "offset_to_top": 0,
+        "first_function": "0x21352b0"
+      }
+    ]
+  }
+]

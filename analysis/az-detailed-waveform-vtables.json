@@ -1,0 +1,309 @@
+{
+  "sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Static RTTI and contiguous executable-pointer candidates; slot semantics and runtime ownership require tracing.",
+  "classes": [
+    {
+      "type": "gui::waveform::DetailedWaveformWidget<appnd_trk_info::DetailedWaveform_Blue, gui::waveform::DetailedWaveformDrawer, gui::waveform::DetailedWaveformDataProvider<appnd_trk_info::DetailedWaveform_Blue> >",
+      "typeinfo": "0x2b66200",
+      "tables": [
+        {
+          "address_point": "0x2b66d98",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x1b898c0",
+            "0x1b87330",
+            "0x1e070d8",
+            "0x1e07008",
+            "0x1b857b0"
+          ]
+        },
+        {
+          "address_point": "0x2b66dd0",
+          "offset_to_top": "0xffffffffffffffd0",
+          "functions": [
+            "0x1b89150",
+            "0x1b870a8"
+          ]
+        },
+        {
+          "address_point": "0x2b66df0",
+          "offset_to_top": "0xffffffffffffffc0",
+          "functions": [
+            "0x1b89648",
+            "0x1b86b90"
+          ]
+        },
+        {
+          "address_point": "0x2b66f68",
+          "offset_to_top": "0xffffffffffff7960",
+          "functions": [
+            "0x1b893c8",
+            "0x1b86e18",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x248cda0",
+            "0x248ce20",
+            "0x24825c0",
+            "0x249daf0",
+            "0x242cfc0",
+            "0x24ac3a0",
+            "0x242ed80",
+            "0x242cfd0",
+            "0x246d5c0",
+            "0x242cfc0",
+            "0x242cfc0",
+            "0x2482ca0",
+            "0x242cfc0",
+            "0x2433150",
+            "0x242cfc0",
+            "0x24861f0",
+            "0x242efc0",
+            "0x1e071a0",
+            "0x242d0a0",
+            "0x242d000",
+            "0x242d010",
+            "0x242d020",
+            "0x242cff0",
+            "0x242cff0",
+            "0x242cff0",
+            "0x242cfc0",
+            "0x242cfc0",
+            "0x242d0a0",
+            "0x242cfc0",
+            "0x242cfc0",
+            "0x242cfe0",
+            "0x242d000",
+            "0x2485480",
+            "0x242cfc0",
+            "0x2481ec0"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "gui::WidgetBase",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "gui::waveform::DetailedWaveformRenderer",
+          "offset_flags": "0x3000"
+        },
+        {
+          "type": "gui::waveform::DetailedWaveformBackgroundRenderer",
+          "offset_flags": "0x3800"
+        },
+        {
+          "type": "gui::waveform::DetailedWaveformDrawer",
+          "offset_flags": "0x4000"
+        }
+      ]
+    },
+    {
+      "type": "gui::waveform::DetailedWaveformWidget<appnd_trk_info::DetailedWaveform_RGB, gui::waveform::DetailedWaveformDrawer, gui::waveform::DetailedWaveformDataProvider<appnd_trk_info::DetailedWaveform_RGB> >",
+      "typeinfo": "0x2b66258",
+      "tables": [
+        {
+          "address_point": "0x2b67408",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x1b88730",
+            "0x1b86918",
+            "0x1e070d8",
+            "0x1e07008",
+            "0x1b85630"
+          ]
+        },
+        {
+          "address_point": "0x2b67440",
+          "offset_to_top": "0xffffffffffffffd0",
+          "functions": [
+            "0x1b88238",
+            "0x1b86690"
+          ]
+        },
+        {
+          "address_point": "0x2b67460",
+          "offset_to_top": "0xffffffffffffffc0",
+          "functions": [
+            "0x1b87fc0",
+            "0x1b86408"
+          ]
+        },
+        {
+          "address_point": "0x2b675d8",
+          "offset_to_top": "0xffffffffffff7960",
+          "functions": [
+            "0x1b884b0",
+            "0x1b86178",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x248cda0",
+            "0x248ce20",
+            "0x24825c0",
+            "0x249daf0",
+            "0x242cfc0",
+            "0x24ac3a0",
+            "0x242ed80",
+            "0x242cfd0",
+            "0x246d5c0",
+            "0x242cfc0",
+            "0x242cfc0",
+            "0x2482ca0",
+            "0x242cfc0",
+            "0x2433150",
+            "0x242cfc0",
+            "0x24861f0",
+            "0x242efc0",
+            "0x1e071a0",
+            "0x242d0a0",
+            "0x242d000",
+            "0x242d010",
+            "0x242d020",
+            "0x242cff0",
+            "0x242cff0",
+            "0x242cff0",
+            "0x242cfc0",
+            "0x242cfc0",
+            "0x242d0a0",
+            "0x242cfc0",
+            "0x242cfc0",
+            "0x242cfe0",
+            "0x242d000",
+            "0x2485480",
+            "0x242cfc0",
+            "0x2481ec0"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "gui::WidgetBase",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "gui::waveform::DetailedWaveformRenderer",
+          "offset_flags": "0x3000"
+        },
+        {
+          "type": "gui::waveform::DetailedWaveformBackgroundRenderer",
+          "offset_flags": "0x3800"
+        },
+        {
+          "type": "gui::waveform::DetailedWaveformDrawer",
+          "offset_flags": "0x4000"
+        }
+      ]
+    },
+    {
+      "type": "gui::waveform::DetailedWaveformWidget<appnd_trk_info::DetailedWaveform_3Band, gui::waveform::DetailedWaveformLayeredDrawer, gui::waveform::DetailedWaveformLayeredDataProvider<appnd_trk_info::DetailedWaveform_3Band> >",
+      "typeinfo": "0x2b662b0",
+      "tables": [
+        {
+          "address_point": "0x2b67a78",
+          "offset_to_top": "0x0",
+          "functions": [
+            "0x1b88ff8",
+            "0x1b87d48",
+            "0x1e070d8",
+            "0x1e07008",
+            "0x1b854b0"
+          ]
+        },
+        {
+          "address_point": "0x2b67ab0",
+          "offset_to_top": "0xffffffffffffffd0",
+          "functions": [
+            "0x1b88b00",
+            "0x1b87838"
+          ]
+        },
+        {
+          "address_point": "0x2b67ad0",
+          "offset_to_top": "0xffffffffffffffc0",
+          "functions": [
+            "0x1b88888",
+            "0x1b87ac0"
+          ]
+        },
+        {
+          "address_point": "0x2b67c48",
+          "offset_to_top": "0xffffffffffff7960",
+          "functions": [
+            "0x1b88d78",
+            "0x1b875a8",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x242d0a0",
+            "0x248cda0",
+            "0x248ce20",
+            "0x24825c0",
+            "0x249daf0",
+            "0x242cfc0",
+            "0x24ac3a0",
+            "0x242ed80",
+            "0x242cfd0",
+            "0x246d5c0",
+            "0x242cfc0",
+            "0x242cfc0",
+            "0x2482ca0",
+            "0x242cfc0",
+            "0x2433150",
+            "0x242cfc0",
+            "0x24861f0",
+            "0x242efc0",
+            "0x1e071a0",
+            "0x242d0a0",
+            "0x242d000",
+            "0x242d010",
+            "0x242d020",
+            "0x242cff0",
+            "0x242cff0",
+            "0x242cff0",
+            "0x242cfc0",
+            "0x242cfc0",
+            "0x242d0a0",
+            "0x242cfc0",
+            "0x242cfc0",
+            "0x242cfe0",
+            "0x242d000",
+            "0x2485480",
+            "0x242cfc0",
+            "0x2481ec0"
+          ]
+        }
+      ],
+      "vmi_direct_base_candidates": [
+        {
+          "type": "gui::WidgetBase",
+          "offset_flags": "0x2"
+        },
+        {
+          "type": "gui::waveform::DetailedWaveformRenderer",
+          "offset_flags": "0x3000"
+        },
+        {
+          "type": "gui::waveform::DetailedWaveformBackgroundRenderer",
+          "offset_flags": "0x3800"
+        },
+        {
+          "type": "gui::waveform::DetailedWaveformLayeredDrawer",
+          "offset_flags": "0x4000"
+        }
+      ]
+    }
+  ]
+}

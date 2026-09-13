@@ -1,0 +1,107 @@
+{
+  "scope": "Echo sample loop and controls, full represented state/ring and PCM. Quantize external calls use scripted hooks; actual quantize and outer manager remain pending.",
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "native_range": [
+    "0xb6d40",
+    "0xb6ef8"
+  ],
+  "native_code_sha256": "9a21c0efff0f27eb50b2b15d0df99645bc94c0ca6ca2cb5eb273e9158af45bdb",
+  "native_code_relocations": {
+    "0xb6fe4": "ceil",
+    "0xb7428": "ceil",
+    "0xb7460": "floor",
+    "0xb74ac": "floor",
+    "0xb7354": "oracle_quantize",
+    "0xb7364": "oracle_time"
+  },
+  "execute_range": [
+    "0xb6f68",
+    "0xb7530"
+  ],
+  "compiler_commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "echo_audio_compare.c",
+      "echo_audio.c",
+      "echo_control.c",
+      "echo-control-native.S",
+      "echo-execute-native.S",
+      "-lm",
+      "-o",
+      "echo-audio-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "echo_audio_compare.c",
+      "echo_audio.c",
+      "echo_control.c",
+      "-lm",
+      "-o",
+      "echo-audio-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "echo_audio_compare.c",
+      "echo_audio.c",
+      "echo_control.c",
+      "-lm",
+      "-o",
+      "echo-audio-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"calls\":5632,\"stereo_frames\":614606,\"compared_words\":47067036,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"calls\":5632,\"stereo_frames\":614606,\"compared_words\":47067036,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "{\"calls\":5632,\"stereo_frames\":614606,\"compared_words\":47067036,\"mismatches\":0}\n",
+      "stderr": ""
+    }
+  },
+  "source_hashes": {
+    "echo_audio_compare.c": "96bb4fa80fa1b3cb6e94ecc123854096405ead9ed7e57e34b2c96a05fb3d9953",
+    "echo_audio.c": "9b7a7809acdf13758667e020bc88f8f78977e3478b19301458ac3ef66d5d5caa",
+    "echo_control.c": "c35ffe73ea9617547d19a5a43a41d5706cfdfad618be119bef56ef427397cee6",
+    "echo_control.h": "24bffcfcc1df3b0e8afd302c368fc1854872292e08fa7a47192583d2c5554ec0",
+    "echo_audio.h": "22272c2243ac600260f46a16e4aa6474641a2aad13cde184a1e6b08060cf4576",
+    "echo-control-native.S": "f50148444a8e5563bb97dc1f3049e9ca121a1a2a4ca673ec26f221fc99a03af6",
+    "echo-execute-native.S": "2675475d6e48fff96b449b77776ac9492f8267f55fa5a9efde1e83bae7b4bf51",
+    "run_echo_audio.py": "69ad689b87450baa187279da66190a151089caf6d06f255489b35e514e98ffec"
+  }
+}

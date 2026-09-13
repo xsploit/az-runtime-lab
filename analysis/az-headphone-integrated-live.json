@@ -1,0 +1,50 @@
+{
+  "pid": 367591,
+  "native_action": "Stereo",
+  "action_returned": true,
+  "mixer_events": [
+    {
+      "headphone_frame": 0,
+      "mode": 1,
+      "result": 1
+    },
+    {
+      "headphone_frame": 15040,
+      "mode": 0,
+      "result": 1
+    },
+    {
+      "frames": 1157760,
+      "status": "stopped"
+    }
+  ],
+  "routing_events": [
+    {
+      "event": "ready",
+      "midi_socket": "/tmp/az-live-mixer-lowqsd06/midi.sock"
+    },
+    {
+      "event": "headphone_snapshot",
+      "mode": "mono_split"
+    },
+    {
+      "event": "headphone_snapshot",
+      "mode": "stereo"
+    },
+    {
+      "event": "stopped",
+      "valid_tx": 8732,
+      "invalid_tx": 0,
+      "midi_messages": 0,
+      "snapshots": 0,
+      "trailing_bytes": 0
+    }
+  ],
+  "frames": 1157760,
+  "pcm_nonzero": false,
+  "pcm_sha256": "a678fd6b4c05eee90b74d779b3147f78bc0d6ac9236abe196983d2d4688b8f18",
+  "launcher_exit": 0,
+  "mixer_exit": 0,
+  "routing_exit": 0,
+  "scope": "Actual AZ startup native handler/TX/bridge/H1/audio-receiver chain; no loaded-song or physical headphone proof"
+}

@@ -1,0 +1,6587 @@
+{
+  "pid": 22519,
+  "start_id": "2648772",
+  "firmware_sha256": "137442868569db41daa2c52be4a614d154152e53561b0a7153c8ce2734ae850c",
+  "page_size": 16384,
+  "elapsed_seconds": 0.4919076740006858,
+  "maps_changed": false,
+  "records": [
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 0,
+      "caller": "0xe97044",
+      "address": 140733753373952,
+      "size": 105044016,
+      "residency": {
+        "pages": 6413,
+        "present": 4,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 0.0625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 1,
+      "caller": "0xe97044",
+      "address": 140733577153472,
+      "size": 105044016,
+      "residency": {
+        "pages": 6412,
+        "present": 4,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 0.0625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 2,
+      "caller": "0xe97044",
+      "address": 140733367355136,
+      "size": 105044016,
+      "residency": {
+        "pages": 6412,
+        "present": 4,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 0.0625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 3,
+      "caller": "0xe97044",
+      "address": 140733124014336,
+      "size": 105044016,
+      "residency": {
+        "pages": 6413,
+        "present": 4,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 0.0625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 4,
+      "caller": "0xe97044",
+      "address": 140732841057920,
+      "size": 105044016,
+      "residency": {
+        "pages": 6412,
+        "present": 273,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 4.265625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 5,
+      "caller": "0xd9d04c",
+      "address": 140733484885184,
+      "size": 8388608,
+      "residency": {
+        "pages": 513,
+        "present": 511,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 7.984375
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 6,
+      "caller": "0xd9d080",
+      "address": 140733493284480,
+      "size": 16777216,
+      "residency": {
+        "pages": 1025,
+        "present": 1023,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 15.984375
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 7,
+      "caller": "0xd9d04c",
+      "address": 140733484853632,
+      "size": 8388608,
+      "residency": {
+        "pages": 513,
+        "present": 513,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 8.015625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 8,
+      "caller": "0xd9d080",
+      "address": 140733493319936,
+      "size": 16777216,
+      "residency": {
+        "pages": 1025,
+        "present": 1025,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 16.015625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 9,
+      "caller": "0xd9d04c",
+      "address": 140733510162368,
+      "size": 8388608,
+      "residency": {
+        "pages": 513,
+        "present": 512,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 8.0
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 10,
+      "caller": "0xd9d080",
+      "address": 140733518610368,
+      "size": 16777216,
+      "residency": {
+        "pages": 1025,
+        "present": 1023,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 15.984375
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 11,
+      "caller": "0xd9d04c",
+      "address": 140733510182592,
+      "size": 8388608,
+      "residency": {
+        "pages": 513,
+        "present": 513,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 8.015625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 12,
+      "caller": "0xd9d080",
+      "address": 140733518631808,
+      "size": 16777216,
+      "residency": {
+        "pages": 1025,
+        "present": 1025,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 16.015625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 13,
+      "caller": "0xd9d04c",
+      "address": 140733535477376,
+      "size": 8388608,
+      "residency": {
+        "pages": 513,
+        "present": 510,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 7.96875
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 14,
+      "caller": "0xd9d080",
+      "address": 140733543932032,
+      "size": 16777216,
+      "residency": {
+        "pages": 1025,
+        "present": 1024,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 16.0
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 15,
+      "caller": "0xd9d04c",
+      "address": 140733535430336,
+      "size": 8388608,
+      "residency": {
+        "pages": 513,
+        "present": 513,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 8.015625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 16,
+      "caller": "0xd9d080",
+      "address": 140733543913088,
+      "size": 16777216,
+      "residency": {
+        "pages": 1025,
+        "present": 1025,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 16.015625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 17,
+      "caller": "0xd9d04c",
+      "address": 140733241524480,
+      "size": 8388608,
+      "residency": {
+        "pages": 513,
+        "present": 512,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 8.0
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 18,
+      "caller": "0xd9d080",
+      "address": 140733249959296,
+      "size": 16777216,
+      "residency": {
+        "pages": 1025,
+        "present": 1024,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 16.0
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 19,
+      "caller": "0xd9d04c",
+      "address": 140733241518720,
+      "size": 8388608,
+      "residency": {
+        "pages": 513,
+        "present": 513,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 8.015625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 20,
+      "caller": "0xd9d080",
+      "address": 140733249968768,
+      "size": 16777216,
+      "residency": {
+        "pages": 1025,
+        "present": 1025,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 16.015625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 21,
+      "caller": "0xd9d04c",
+      "address": 140733266811264,
+      "size": 8388608,
+      "residency": {
+        "pages": 513,
+        "present": 513,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 8.015625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 22,
+      "caller": "0xd9d080",
+      "address": 140733275281664,
+      "size": 16777216,
+      "residency": {
+        "pages": 1025,
+        "present": 1024,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 16.0
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 23,
+      "caller": "0xd9d04c",
+      "address": 140733266819456,
+      "size": 8388608,
+      "residency": {
+        "pages": 513,
+        "present": 513,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 8.015625
+      }
+    },
+    {
+      "trace": "az-current-c-allocations.json",
+      "index": 24,
+      "caller": "0xd9d080",
+      "address": 140733275298752,
+      "size": 16777216,
+      "residency": {
+        "pages": 1025,
+        "present": 1025,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 16.015625
+      }
+    },
+    {
+      "trace": "az-current-new-allocations.json",
+      "index": 0,
+      "caller": "0x12c2ba8",
+      "address": 140733870836416,
+      "size": 10485760,
+      "residency": {
+        "pages": 641,
+        "present": 641,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 10.015625
+      }
+    },
+    {
+      "trace": "az-current-new-allocations.json",
+      "index": 1,
+      "caller": "0x12c2ba8",
+      "address": 140733694670720,
+      "size": 10485760,
+      "residency": {
+        "pages": 641,
+        "present": 641,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 10.015625
+      }
+    },
+    {
+      "trace": "az-current-new-allocations.json",
+      "index": 2,
+      "caller": "0x12c2ba8",
+      "address": 140733705202816,
+      "size": 10485760,
+      "residency": {
+        "pages": 641,
+        "present": 641,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 10.015625
+      }
+    },
+    {
+      "trace": "az-current-new-allocations.json",
+      "index": 3,
+      "caller": "0x12c2ba8",
+      "address": 140733715722368,
+      "size": 10485760,
+      "residency": {
+        "pages": 641,
+        "present": 641,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 10.015625
+      }
+    },
+    {
+      "trace": "az-current-new-allocations.json",
+      "index": 4,
+      "caller": "0x12c2ba8",
+      "address": 140733726315904,
+      "size": 10485760,
+      "residency": {
+        "pages": 641,
+        "present": 641,
+        "swapped": 0,
+        "file_or_shared_anon": 0,
+        "present_page_span_mib": 10.015625
+      }
+    }
+  ],
+  "recorded_range_union_present_mib": 174.75,
+  "mappings": [
+    {
+      "mapping": "7fff2c210000-7fff4f310000 rw-p 00000000 00:00 0 ",
+      "pages": 35904,
+      "present": 34916,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 545.5625
+    },
+    {
+      "mapping": "7fff0a5e0000-7fff165e0000 rw-p 00000000 00:00 0 ",
+      "pages": 12288,
+      "present": 4618,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 72.15625
+    },
+    {
+      "mapping": "7ffe7d830000-7ffe85ab0000 rw-p 00000000 00:00 0 ",
+      "pages": 8352,
+      "present": 4131,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 64.546875
+    },
+    {
+      "mapping": "7ffea8410000-7ffeaf410000 rw-p 00000000 00:00 0 ",
+      "pages": 7168,
+      "present": 3964,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 61.9375
+    },
+    {
+      "mapping": "7ffefbdd0000-7fff09dd0000 rw-p 00000000 00:00 0 ",
+      "pages": 14336,
+      "present": 3080,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 48.125
+    },
+    {
+      "mapping": "7fff16df0000-7fff20df0000 rw-p 00000000 00:00 0 ",
+      "pages": 10240,
+      "present": 2568,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 40.125
+    },
+    {
+      "mapping": "00400000-01b84000 r-xp 00000000 00:1e 1618                               /home/root/pdj/EP147",
+      "pages": 1505,
+      "present": 1401,
+      "swapped": 0,
+      "file_or_shared_anon": 1401,
+      "present_page_span_mib": 21.890625
+    },
+    {
+      "mapping": "7fff66b00000-7fff67c00000 rw-p 00000000 00:00 0 ",
+      "pages": 1088,
+      "present": 972,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 15.1875
+    },
+    {
+      "mapping": "023fc000-03b10000 r-xp 01ffc000 00:1e 1618                               /home/root/pdj/EP147",
+      "pages": 1477,
+      "present": 777,
+      "swapped": 0,
+      "file_or_shared_anon": 777,
+      "present_page_span_mib": 12.140625
+    },
+    {
+      "mapping": "7fff21600000-7fff29800000 rw-p 00000000 00:00 0 ",
+      "pages": 8320,
+      "present": 650,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 10.15625
+    },
+    {
+      "mapping": "01b98000-023f8000 r-xp 01798000 00:1e 1618                               /home/root/pdj/EP147",
+      "pages": 536,
+      "present": 500,
+      "swapped": 0,
+      "file_or_shared_anon": 500,
+      "present_page_span_mib": 7.8125
+    },
+    {
+      "mapping": "7fff54340000-7fff54840000 rw-p 00000000 00:00 0 ",
+      "pages": 320,
+      "present": 320,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 5.0
+    },
+    {
+      "mapping": "7ffeeaff0000-7ffefaff0000 rw-p 00000000 00:00 0 ",
+      "pages": 16384,
+      "present": 273,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 4.265625
+    },
+    {
+      "mapping": "7ffc17610000-7ffc18c90000 rw-p 00000000 00:00 0 ",
+      "pages": 1440,
+      "present": 256,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 4.0
+    },
+    {
+      "mapping": "7ffd0c490000-7ffd0c890000 rw-p 00000000 00:00 0 ",
+      "pages": 256,
+      "present": 182,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 2.84375
+    },
+    {
+      "mapping": "7ffefb800000-7ffefbc00000 rw-p 00000000 00:00 0 ",
+      "pages": 256,
+      "present": 138,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 2.15625
+    },
+    {
+      "mapping": "7ffe00090000-7ffe00410000 rw-p 00000000 00:00 0 ",
+      "pages": 224,
+      "present": 128,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 2.0
+    },
+    {
+      "mapping": "7ffc15740000-7ffc17140000 rw-p 00000000 00:00 0 ",
+      "pages": 1664,
+      "present": 121,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 1.890625
+    },
+    {
+      "mapping": "7fff5ac00000-7fff5b400000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 76,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 1.1875
+    },
+    {
+      "mapping": "7fff67fe4000-7fff68134000 r-xp 00000000 b3:02 200837                     /usr/lib/libc-2.29.so",
+      "pages": 84,
+      "present": 75,
+      "swapped": 0,
+      "file_or_shared_anon": 75,
+      "present_page_span_mib": 1.171875
+    },
+    {
+      "mapping": "7fff59370000-7fff597f0000 rw-p 00000000 00:00 0 ",
+      "pages": 288,
+      "present": 70,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 1.09375
+    },
+    {
+      "mapping": "7fff6821c000-7fff6834c000 r-xp 00000000 b3:02 200860                     /usr/lib/libstdc++.so.6.0.25",
+      "pages": 76,
+      "present": 69,
+      "swapped": 0,
+      "file_or_shared_anon": 69,
+      "present_page_span_mib": 1.078125
+    },
+    {
+      "mapping": "7fff685b4000-7fff688ec000 r-xp 00000000 b3:02 200612                     /usr/lib/libcrypto.so.3",
+      "pages": 206,
+      "present": 55,
+      "swapped": 0,
+      "file_or_shared_anon": 55,
+      "present_page_span_mib": 0.859375
+    },
+    {
+      "mapping": "7fff5fe00000-7fff60600000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 53,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.828125
+    },
+    {
+      "mapping": "7fff58860000-7fff58b60000 rw-p 00000000 00:00 0 ",
+      "pages": 192,
+      "present": 48,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.75
+    },
+    {
+      "mapping": "03b44000-03c4c000 rw-p 00000000 00:00 0 ",
+      "pages": 66,
+      "present": 39,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.609375
+    },
+    {
+      "mapping": "7fff690b4000-7fff6919c000 r-xp 00000000 b3:02 199898                     /usr/lib/libasound.so.2.0.0",
+      "pages": 58,
+      "present": 39,
+      "swapped": 0,
+      "file_or_shared_anon": 39,
+      "present_page_span_mib": 0.609375
+    },
+    {
+      "mapping": "7fff691d8000-7fff692f0000 r-xp 00000000 b3:02 200832                     /usr/lib/libX11.so.6.3.0",
+      "pages": 70,
+      "present": 37,
+      "swapped": 0,
+      "file_or_shared_anon": 37,
+      "present_page_span_mib": 0.578125
+    },
+    {
+      "mapping": "7ffc0df00000-7ffc10480000 rw-p 00000000 00:00 0 ",
+      "pages": 2400,
+      "present": 33,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.515625
+    },
+    {
+      "mapping": "7fff68470000-7fff684f8000 r-xp 00000000 b3:02 200543                     /usr/lib/libmbedcrypto.so.3.6.3",
+      "pages": 34,
+      "present": 32,
+      "swapped": 0,
+      "file_or_shared_anon": 32,
+      "present_page_span_mib": 0.5
+    },
+    {
+      "mapping": "7ffe7a010000-7ffe7a590000 rw-p 00000000 00:00 0 ",
+      "pages": 352,
+      "present": 31,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.484375
+    },
+    {
+      "mapping": "7fff68170000-7fff68208000 r-xp 00000000 b3:02 200108                     /usr/lib/libm-2.29.so",
+      "pages": 38,
+      "present": 30,
+      "swapped": 0,
+      "file_or_shared_anon": 30,
+      "present_page_span_mib": 0.46875
+    },
+    {
+      "mapping": "7fff69018000-7fff690a0000 r-xp 00000000 b3:02 200823                     /usr/lib/libfreetype.so.6.17.1",
+      "pages": 34,
+      "present": 30,
+      "swapped": 0,
+      "file_or_shared_anon": 30,
+      "present_page_span_mib": 0.46875
+    },
+    {
+      "mapping": "7ffee1020000-7ffee17a0000 rw-p 00000000 00:00 0 ",
+      "pages": 480,
+      "present": 28,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.4375
+    },
+    {
+      "mapping": "7fff65e00000-7fff66200000 rw-p 00000000 00:00 0 ",
+      "pages": 256,
+      "present": 28,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.4375
+    },
+    {
+      "mapping": "7fff68edc000-7fff68f4c000 r-xp 00000000 b3:02 201007                     /usr/lib/libjemalloc.so.2",
+      "pages": 28,
+      "present": 28,
+      "swapped": 0,
+      "file_or_shared_anon": 28,
+      "present_page_span_mib": 0.4375
+    },
+    {
+      "mapping": "7fff615e0000-7fff617e0000 rw-p 00000000 00:00 0 ",
+      "pages": 128,
+      "present": 27,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.421875
+    },
+    {
+      "mapping": "7ffc1714c000-7ffc17610000 r--p 00000000 b3:02 197214                     /usr/share/fonts/ttf/PDJ-TsukuGoCustomPro-B.otf",
+      "pages": 305,
+      "present": 25,
+      "swapped": 0,
+      "file_or_shared_anon": 25,
+      "present_page_span_mib": 0.390625
+    },
+    {
+      "mapping": "7ffe86130000-7ffe865f4000 r--p 00000000 b3:02 197214                     /usr/share/fonts/ttf/PDJ-TsukuGoCustomPro-B.otf",
+      "pages": 305,
+      "present": 24,
+      "swapped": 0,
+      "file_or_shared_anon": 24,
+      "present_page_span_mib": 0.375
+    },
+    {
+      "mapping": "7fff5d400000-7fff5d800000 rw-p 00000000 00:00 0 ",
+      "pages": 256,
+      "present": 24,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.375
+    },
+    {
+      "mapping": "7fff63f80000-7fff64600000 rw-p 00000000 00:00 0 ",
+      "pages": 416,
+      "present": 23,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.359375
+    },
+    {
+      "mapping": "7fff5e200000-7fff5e600000 rw-p 00000000 00:00 0 ",
+      "pages": 256,
+      "present": 22,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.34375
+    },
+    {
+      "mapping": "7fff688f8000-7fff6894c000 r--p 00334000 b3:02 200612                     /usr/lib/libcrypto.so.3",
+      "pages": 21,
+      "present": 21,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.328125
+    },
+    {
+      "mapping": "7ffe85abc000-7ffe86130000 r--p 00000000 b3:02 197215                     /usr/share/fonts/ttf/PioneerDJ-UCGothic_J-DB.ttf",
+      "pages": 413,
+      "present": 20,
+      "swapped": 0,
+      "file_or_shared_anon": 20,
+      "present_page_span_mib": 0.3125
+    },
+    {
+      "mapping": "7fff607f0000-7fff609f0000 rw-p 00000000 00:00 0 ",
+      "pages": 128,
+      "present": 20,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.3125
+    },
+    {
+      "mapping": "7fff61ff0000-7fff621f0000 rw-p 00000000 00:00 0 ",
+      "pages": 128,
+      "present": 20,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.3125
+    },
+    {
+      "mapping": "7fff68540000-7fff685a0000 r-xp 00000000 b3:02 200814                     /usr/lib/libspdlog.so.1.13.0",
+      "pages": 24,
+      "present": 20,
+      "swapped": 0,
+      "file_or_shared_anon": 20,
+      "present_page_span_mib": 0.3125
+    },
+    {
+      "mapping": "7fff5c600000-7fff5ca00000 rw-p 00000000 00:00 0 ",
+      "pages": 256,
+      "present": 18,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.28125
+    },
+    {
+      "mapping": "7fff62a00000-7fff62e00000 rw-p 00000000 00:00 0 ",
+      "pages": 256,
+      "present": 18,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.28125
+    },
+    {
+      "mapping": "7fff5f000000-7fff5f400000 rw-p 00000000 00:00 0 ",
+      "pages": 256,
+      "present": 17,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.265625
+    },
+    {
+      "mapping": "7fff65000000-7fff65400000 rw-p 00000000 00:00 0 ",
+      "pages": 256,
+      "present": 17,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.265625
+    },
+    {
+      "mapping": "7fff68de4000-7fff68e20000 r-xp 00000000 b3:02 199864                     /usr/lib/libjpeg.so.62.3.0",
+      "pages": 15,
+      "present": 15,
+      "swapped": 0,
+      "file_or_shared_anon": 15,
+      "present_page_span_mib": 0.234375
+    },
+    {
+      "mapping": "7ffec94e0000-7ffec9760000 rw-p 00000000 00:00 0 ",
+      "pages": 160,
+      "present": 14,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.21875
+    },
+    {
+      "mapping": "7fff68418000-7fff68460000 r-xp 00000000 b3:02 200634                     /usr/lib/libmbedtls.so.3.6.3",
+      "pages": 18,
+      "present": 14,
+      "swapped": 0,
+      "file_or_shared_anon": 14,
+      "present_page_span_mib": 0.21875
+    },
+    {
+      "mapping": "7ffc10c90000-7ffc10f10000 rw-p 00000000 00:00 0 ",
+      "pages": 160,
+      "present": 12,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.1875
+    },
+    {
+      "mapping": "7ffe7b5a0000-7ffe7b820000 rw-p 00000000 00:00 0 ",
+      "pages": 160,
+      "present": 12,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.1875
+    },
+    {
+      "mapping": "7ffea3960000-7ffea3be0000 rw-p 00000000 00:00 0 ",
+      "pages": 160,
+      "present": 11,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.171875
+    },
+    {
+      "mapping": "7fff68e30000-7fff68e5c000 r-xp 00000000 b3:02 199865                     /usr/lib/libmpg123.so.0.44.2",
+      "pages": 11,
+      "present": 11,
+      "swapped": 0,
+      "file_or_shared_anon": 11,
+      "present_page_span_mib": 0.171875
+    },
+    {
+      "mapping": "7fff689c8000-7fff68a3c000 r-xp 00000000 b3:02 200059                     /usr/lib/libanwbtestack.so",
+      "pages": 29,
+      "present": 10,
+      "swapped": 0,
+      "file_or_shared_anon": 10,
+      "present_page_span_mib": 0.15625
+    },
+    {
+      "mapping": "7fff67ecc000-7fff67f50000 r-xp 00000000 b3:02 199885                     /usr/lib/libssl.so.3",
+      "pages": 33,
+      "present": 9,
+      "swapped": 0,
+      "file_or_shared_anon": 9,
+      "present_page_span_mib": 0.140625
+    },
+    {
+      "mapping": "7fff6838c000-7fff683e0000 r-xp 00000000 b3:02 199931                     /usr/lib/libwebsockets.so.19",
+      "pages": 21,
+      "present": 9,
+      "swapped": 0,
+      "file_or_shared_anon": 9,
+      "present_page_span_mib": 0.140625
+    },
+    {
+      "mapping": "03b24000-03b44000 rw-p 03714000 00:1e 1618                               /home/root/pdj/EP147",
+      "pages": 8,
+      "present": 8,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.125
+    },
+    {
+      "mapping": "7fff67fb0000-7fff67fd4000 r-xp 00000000 b3:02 199883                     /usr/lib/libxcb.so.1.1.0",
+      "pages": 9,
+      "present": 8,
+      "swapped": 0,
+      "file_or_shared_anon": 8,
+      "present_page_span_mib": 0.125
+    },
+    {
+      "mapping": "7fff69510000-7fff69530000 r-xp 00000000 b3:02 200866                     /usr/lib/ld-2.29.so",
+      "pages": 8,
+      "present": 8,
+      "swapped": 0,
+      "file_or_shared_anon": 8,
+      "present_page_span_mib": 0.125
+    },
+    {
+      "mapping": "7fff61200000-7fff61400000 rw-p 00000000 00:00 0 ",
+      "pages": 128,
+      "present": 7,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.109375
+    },
+    {
+      "mapping": "7fff67d44000-7fff67d84000 r-xp 00000000 b3:02 200809                     /usr/lib/libncurses.so.6.0",
+      "pages": 16,
+      "present": 7,
+      "swapped": 0,
+      "file_or_shared_anon": 7,
+      "present_page_span_mib": 0.109375
+    },
+    {
+      "mapping": "7fff68bb4000-7fff68bfc000 r-xp 00000000 b3:02 200900                     /usr/lib/libanwbtprofile.so",
+      "pages": 18,
+      "present": 7,
+      "swapped": 0,
+      "file_or_shared_anon": 7,
+      "present_page_span_mib": 0.109375
+    },
+    {
+      "mapping": "7fff68e98000-7fff68eb4000 r-xp 00000000 b3:02 200910                     /usr/lib/libpthread-2.29.so",
+      "pages": 7,
+      "present": 6,
+      "swapped": 0,
+      "file_or_shared_anon": 6,
+      "present_page_span_mib": 0.09375
+    },
+    {
+      "mapping": "7fff68f64000-7fff68ff8000 rw-p 00000000 00:00 0 ",
+      "pages": 37,
+      "present": 6,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.09375
+    },
+    {
+      "mapping": "7ffe87e00000-7ffe88080000 rw-p 00000000 00:00 0 ",
+      "pages": 160,
+      "present": 5,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.078125
+    },
+    {
+      "mapping": "7fff5a000000-7fff5a200000 rw-p 00000000 00:00 0 ",
+      "pages": 128,
+      "present": 5,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.078125
+    },
+    {
+      "mapping": "7fff6814c000-7fff68160000 r-xp 00000000 b3:02 200013                     /usr/lib/libgcc_s.so.1",
+      "pages": 5,
+      "present": 5,
+      "swapped": 0,
+      "file_or_shared_anon": 5,
+      "present_page_span_mib": 0.078125
+    },
+    {
+      "mapping": "7fff68d3c000-7fff68dcc000 r-xp 00000000 b3:02 200024                     /usr/lib/libcurl.so.4.8.0",
+      "pages": 36,
+      "present": 5,
+      "swapped": 0,
+      "file_or_shared_anon": 5,
+      "present_page_span_mib": 0.078125
+    },
+    {
+      "mapping": "7fff67cd4000-7fff67ce8000 r-xp 00000000 b3:02 200898                     /usr/lib/libresolv-2.29.so",
+      "pages": 5,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff67db0000-7fff67df0000 r-xp 00000000 b3:02 200074                     /usr/lib/libblkid.so.1.1.0",
+      "pages": 16,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff67e1c000-7fff67e64000 r-xp 00000000 b3:02 200752                     /usr/lib/libmount.so.1.1.0",
+      "pages": 18,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff67ea0000-7fff67eb8000 r-xp 00000000 b3:02 199948                     /usr/lib/libfmt.so.10.2.1",
+      "pages": 6,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff683f4000-7fff68408000 r-xp 00000000 b3:02 200580                     /usr/lib/libmbedx509.so.3.6.3",
+      "pages": 5,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff68514000-7fff68528000 r-xp 00000000 b3:02 200886                     /usr/lib/libz.so.1.2.11",
+      "pages": 5,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff6896c000-7fff68990000 r-xp 00000000 b3:02 200878                     /usr/lib/libanwbtattach.so",
+      "pages": 9,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff68a54000-7fff68a70000 r-xp 00000000 b3:02 199895                     /usr/lib/libanwbtaac.so",
+      "pages": 7,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff68a80000-7fff68b9c000 r-xp 00000000 b3:02 199887                     /usr/lib/libfdk-aac.so.2.0.1",
+      "pages": 71,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff68c10000-7fff68c28000 r-xp 00000000 b3:02 200921                     /usr/lib/libanwbtphonebook.so",
+      "pages": 6,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff68c38000-7fff68c6c000 r-xp 00000000 b3:02 200751                     /usr/lib/libanwbtsdk.so",
+      "pages": 13,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff68c80000-7fff68d24000 r-xp 00000000 b3:02 200541                     /usr/lib/libsqlcipher.so.0.8.6",
+      "pages": 41,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff68e6c000-7fff68e7c000 rw-p 00000000 00:00 0 ",
+      "pages": 4,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff68ff8000-7fff69008000 r-xp 00000000 b3:02 200617                     /usr/lib/libdrm.so.2.4.0",
+      "pages": 4,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "7fff691b4000-7fff691c4000 r-xp 00000000 b3:02 200172                     /usr/lib/libXext.so.6.4.0",
+      "pages": 4,
+      "present": 4,
+      "swapped": 0,
+      "file_or_shared_anon": 4,
+      "present_page_span_mib": 0.0625
+    },
+    {
+      "mapping": "01b88000-01b94000 r-xp 01788000 00:1e 1618                               /home/root/pdj/EP147",
+      "pages": 3,
+      "present": 3,
+      "swapped": 0,
+      "file_or_shared_anon": 3,
+      "present_page_span_mib": 0.046875
+    },
+    {
+      "mapping": "7ffec84dc000-7ffec8cdc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 3,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.046875
+    },
+    {
+      "mapping": "7ffeca770000-7ffecaf70000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 3,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.046875
+    },
+    {
+      "mapping": "7fff67cb8000-7fff67cc4000 r-xp 00000000 b3:02 200868                     /usr/lib/libXrandr.so.2.2.0",
+      "pages": 3,
+      "present": 3,
+      "swapped": 0,
+      "file_or_shared_anon": 3,
+      "present_page_span_mib": 0.046875
+    },
+    {
+      "mapping": "7fff67d18000-7fff67d24000 r-xp 00000000 b3:02 200060                     /usr/lib/libnss_files-2.29.so",
+      "pages": 3,
+      "present": 3,
+      "swapped": 0,
+      "file_or_shared_anon": 3,
+      "present_page_span_mib": 0.046875
+    },
+    {
+      "mapping": "7fff68370000-7fff6837c000 r-xp 00000000 b3:02 200811                     /usr/lib/libqrencode.so.3.4.2",
+      "pages": 3,
+      "present": 3,
+      "swapped": 0,
+      "file_or_shared_anon": 3,
+      "present_page_span_mib": 0.046875
+    },
+    {
+      "mapping": "7fff69350000-7fff69450000 rw-p 00000000 00:00 0 ",
+      "pages": 64,
+      "present": 3,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.046875
+    },
+    {
+      "mapping": "7fffe9110000-7fffe9134000 rw-p 00000000 00:00 0                          [stack]",
+      "pages": 9,
+      "present": 3,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.046875
+    },
+    {
+      "mapping": "03b1c000-03b24000 r--p 0370c000 00:1e 1618                               /home/root/pdj/EP147",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 2,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffc11724000-7ffc11f24000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffc14f40000-7ffc15740000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe7ada0000-7ffe7b5a0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe7b824000-7ffe7c024000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe7c028000-7ffe7c828000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe7c82c000-7ffe7d02c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe7d030000-7ffe7d830000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe8888c000-7ffe8908c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe8b0a0000-7ffe8b8a0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe8c0a8000-7ffe8c8a8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe910d0000-7ffe918d0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe918d4000-7ffe920d4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe930e0000-7ffe938e0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe99914000-7ffe9a114000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe9a91c000-7ffe9b11c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe9d130000-7ffe9d930000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffe9d934000-7ffe9e134000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffea2158000-7ffea2958000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffea53fc000-7ffea5bfc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffeaf414000-7ffeafc14000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffeb1424000-7ffeb1c24000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffeb443c000-7ffeb4c3c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffeb9c68000-7ffeba468000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffebac70000-7ffebb470000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffec14a4000-7ffec1ca4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffec9f6c000-7ffeca76c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffed77d8000-7ffed7fd8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffed7fdc000-7ffed87dc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffed87e0000-7ffed8fe0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee001c000-7ffee081c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee0820000-7ffee1020000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee17a8000-7ffee1fa8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee1fac000-7ffee27ac000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee27b0000-7ffee2fb0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee2fb4000-7ffee37b4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee47c0000-7ffee4fc0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee4fc4000-7ffee57c4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee5fcc000-7ffee67cc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee67d0000-7ffee6fd0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee6fd4000-7ffee77d4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee87e0000-7ffee8fe0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee97e8000-7ffee9fe8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7ffee9fec000-7ffeea7ec000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff29a00000-7fff2a200000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff2b20c000-7fff2ba0c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff2ba10000-7fff2c210000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff54844000-7fff55044000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff55048000-7fff55848000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff5584c000-7fff5604c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff56050000-7fff56850000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff56854000-7fff57054000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff5785c000-7fff5805c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff58060000-7fff58860000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff59800000-7fff5a000000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff5b5fc000-7fff5bdfc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff5be00000-7fff5c600000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff5cc00000-7fff5d400000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff64800000-7fff65000000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff65600000-7fff65e00000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff67c9c000-7fff67ca4000 r-xp 00000000 b3:02 200127                     /usr/lib/libXrender.so.1.3.0",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 2,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff67cfc000-7fff67d04000 r-xp 00000000 b3:02 200088                     /usr/lib/libnss_dns-2.29.so",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 2,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff67d34000-7fff67d44000 rw-p 00000000 00:00 0 ",
+      "pages": 4,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff67d98000-7fff67da0000 r-xp 00000000 b3:02 199996                     /usr/lib/libuuid.so.1.3.0",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 2,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff67f5c000-7fff67f64000 r--p 00080000 b3:02 199885                     /usr/lib/libssl.so.3",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff67f64000-7fff67f6c000 rw-p 00088000 b3:02 199885                     /usr/lib/libssl.so.3",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff67f6c000-7fff67f74000 r-xp 00000000 b3:02 200562                     /usr/lib/librt-2.29.so",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 2,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff67f84000-7fff67f8c000 r-xp 00000000 b3:02 200512                     /usr/lib/libXdmcp.so.6.0.0",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 2,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff6835c000-7fff68364000 r--p 00130000 b3:02 200860                     /usr/lib/libstdc++.so.6.0.25",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff68364000-7fff6836c000 rw-p 00138000 b3:02 200860                     /usr/lib/libstdc++.so.6.0.25",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff68504000-7fff6850c000 r--p 00084000 b3:02 200543                     /usr/lib/libmbedcrypto.so.3.6.3",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff68538000-7fff68540000 rw-p 00000000 00:00 0 ",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff6894c000-7fff68954000 rw-p 00388000 b3:02 200612                     /usr/lib/libcrypto.so.3",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff689a4000-7fff689ac000 r-xp 00000000 b3:02 200189                     /usr/lib/libanwbthcit.so",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 2,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff68c08000-7fff68c10000 rw-p 00044000 b3:02 200900                     /usr/lib/libanwbtprofile.so",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff68d34000-7fff68d3c000 rw-p 000a4000 b3:02 200541                     /usr/lib/libsqlcipher.so.0.8.6",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff68e7c000-7fff68e84000 r-xp 00000000 b3:02 200619                     /usr/lib/libatomic.so.1.2.0",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 2,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff691a8000-7fff691b0000 r--p 000e4000 b3:02 199898                     /usr/lib/libasound.so.2.0.0",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff69300000-7fff69308000 rw-p 00118000 b3:02 200832                     /usr/lib/libX11.so.6.3.0",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "7fff69534000-7fff6953c000 rw-p 00000000 00:00 0 ",
+      "pages": 2,
+      "present": 2,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.03125
+    },
+    {
+      "mapping": "01b84000-01b88000 r-xp 01784000 00:1e 1618                               /home/root/pdj/EP147",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "01b94000-01b98000 r-xp 01794000 00:1e 1618                               /home/root/pdj/EP147",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "023f8000-023fc000 r-xp 01ff8000 00:1e 1618                               /home/root/pdj/EP147",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "05000000-05004000 r-xp 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffc10f20000-7ffc11720000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffc1473c000-7ffc14f3c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe7a59c000-7ffe7ad9c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe865f8000-7ffe86df8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe86dfc000-7ffe875fc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe87600000-7ffe87e00000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe88088000-7ffe88888000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe89090000-7ffe89890000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe89894000-7ffe8a094000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe8a098000-7ffe8a898000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe8a89c000-7ffe8b09c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe8b8a4000-7ffe8c0a4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe8c8ac000-7ffe8d0ac000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe8d0b0000-7ffe8d8b0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe8d8b4000-7ffe8e0b4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe8e0b8000-7ffe8e8b8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe8e8bc000-7ffe8f0bc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe8f0c0000-7ffe8f8c0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe8f8c4000-7ffe900c4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe900c8000-7ffe908c8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe908cc000-7ffe910cc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe920d8000-7ffe928d8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe928dc000-7ffe930dc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe938e4000-7ffe940e4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe940e8000-7ffe948e8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe948ec000-7ffe950ec000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe950f0000-7ffe958f0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe958f4000-7ffe960f4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe960f8000-7ffe968f8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe968fc000-7ffe970fc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe97100000-7ffe97900000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe97904000-7ffe98104000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe98108000-7ffe98908000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe9890c000-7ffe9910c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe99110000-7ffe99910000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe9a118000-7ffe9a918000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe9b120000-7ffe9b920000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe9b924000-7ffe9c124000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe9c128000-7ffe9c928000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe9c92c000-7ffe9d12c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe9e138000-7ffe9e938000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe9e93c000-7ffe9f13c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe9f140000-7ffe9f940000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffe9f944000-7ffea0144000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea0148000-7ffea0948000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea094c000-7ffea114c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea1150000-7ffea1950000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea1954000-7ffea2154000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea295c000-7ffea315c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea3160000-7ffea3960000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea3bf0000-7ffea43f0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea43f4000-7ffea4bf4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea4bf8000-7ffea53f8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea5c00000-7ffea6400000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea6404000-7ffea6c04000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea6c08000-7ffea7408000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea740c000-7ffea7c0c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffea7c10000-7ffea8410000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeafc18000-7ffeb0418000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb041c000-7ffeb0c1c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb0c20000-7ffeb1420000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb1c28000-7ffeb2428000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb242c000-7ffeb2c2c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb2c30000-7ffeb3430000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb3434000-7ffeb3c34000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb3c38000-7ffeb4438000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb4c40000-7ffeb5440000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb5444000-7ffeb5c44000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb5c48000-7ffeb6448000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb644c000-7ffeb6c4c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb6c50000-7ffeb7450000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb7454000-7ffeb7c54000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb7c58000-7ffeb8458000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb845c000-7ffeb8c5c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb8c60000-7ffeb9460000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeb9464000-7ffeb9c64000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeba46c000-7ffebac6c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffebb474000-7ffebbc74000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffebbc78000-7ffebc478000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffebc47c000-7ffebcc7c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffebcc80000-7ffebd480000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffebd484000-7ffebdc84000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffebdc88000-7ffebe488000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffebe48c000-7ffebec8c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffebec90000-7ffebf490000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffebf494000-7ffebfc94000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffebfc98000-7ffec0498000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec049c000-7ffec0c9c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec0ca0000-7ffec14a0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec1ca8000-7ffec24a8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec24ac000-7ffec2cac000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec2cb0000-7ffec34b0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec34b4000-7ffec3cb4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec3cb8000-7ffec44b8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec44bc000-7ffec4cbc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec4cc0000-7ffec54c0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec54c4000-7ffec5cc4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec5cc8000-7ffec64c8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec64cc000-7ffec6ccc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec6cd0000-7ffec74d0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec74d4000-7ffec7cd4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec7cd8000-7ffec84d8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec8ce0000-7ffec94e0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffec9768000-7ffec9f68000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffecaf74000-7ffecb774000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffecb778000-7ffecbf78000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffecbf7c000-7ffecc77c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffecc780000-7ffeccf80000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeccf84000-7ffecd784000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffecd788000-7ffecdf88000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffecdf8c000-7ffece78c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffece790000-7ffecef90000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffecef94000-7ffecf794000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffecf798000-7ffecff98000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffecff9c000-7ffed079c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed07a0000-7ffed0fa0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed0fa4000-7ffed17a4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed17a8000-7ffed1fa8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed1fac000-7ffed27ac000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed27b0000-7ffed2fb0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed2fb4000-7ffed37b4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed37b8000-7ffed3fb8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed3fbc000-7ffed47bc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed47c0000-7ffed4fc0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed4fc4000-7ffed57c4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed57c8000-7ffed5fc8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed5fcc000-7ffed67cc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed67d0000-7ffed6fd0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed6fd4000-7ffed77d4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed8fe4000-7ffed97e4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed97e8000-7ffed9fe8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffed9fec000-7ffeda7ec000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeda7f0000-7ffedaff0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffedaff4000-7ffedb7f4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffedb7f8000-7ffedbff8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffedbffc000-7ffedc7fc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffedc800000-7ffedd000000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffedd004000-7ffedd804000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffedd808000-7ffede008000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffede00c000-7ffede80c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffede810000-7ffedf010000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffedf014000-7ffedf814000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffedf818000-7ffee0018000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffee37b8000-7ffee3fb8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffee3fbc000-7ffee47bc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffee57c8000-7ffee5fc8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffee77d8000-7ffee7fd8000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffee7fdc000-7ffee87dc000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffee8fe4000-7ffee97e4000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffeea7f0000-7ffeeaff0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffefb000000-7ffefb800000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff09de0000-7fff0a5e0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff165f0000-7fff16df0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff20e00000-7fff21600000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff2a204000-7fff2aa04000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff2aa08000-7fff2b208000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff4f31c000-7fff4fb1c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff4fb20000-7fff50320000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff50324000-7fff50b24000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff50b28000-7fff51328000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff5132c000-7fff51b2c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff51b30000-7fff52330000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff52334000-7fff52b34000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff52b38000-7fff53338000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff5333c000-7fff53b3c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff53b40000-7fff54340000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff57058000-7fff57858000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff58b70000-7fff59370000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff5a400000-7fff5ac00000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff5da00000-7fff5e200000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff5e800000-7fff5f000000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff5f600000-7fff5fe00000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff60a00000-7fff61200000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff617f0000-7fff61ff0000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff62200000-7fff62a00000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff62f7c000-7fff6377c000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff63780000-7fff63f80000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff66300000-7fff66b00000 rw-p 00000000 00:00 0 ",
+      "pages": 512,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67cb0000-7fff67cb4000 r--p 00004000 b3:02 200127                     /usr/lib/libXrender.so.1.3.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67cb4000-7fff67cb8000 rw-p 00008000 b3:02 200127                     /usr/lib/libXrender.so.1.3.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67cd0000-7fff67cd4000 rw-p 00008000 b3:02 200868                     /usr/lib/libXrandr.so.2.2.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67cf4000-7fff67cf8000 rw-p 00010000 b3:02 200898                     /usr/lib/libresolv-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67d10000-7fff67d14000 rw-p 00004000 b3:02 200088                     /usr/lib/libnss_dns-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67d14000-7fff67d18000 rw-s 00000000 00:01 0                          /SYSV1402edc9 (deleted)",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67d30000-7fff67d34000 rw-p 00008000 b3:02 200060                     /usr/lib/libnss_files-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67d90000-7fff67d94000 r--p 0003c000 b3:02 200809                     /usr/lib/libncurses.so.6.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67d94000-7fff67d98000 rw-p 00040000 b3:02 200809                     /usr/lib/libncurses.so.6.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67dac000-7fff67db0000 rw-p 00004000 b3:02 199996                     /usr/lib/libuuid.so.1.3.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67dfc000-7fff67e00000 r--p 0003c000 b3:02 200074                     /usr/lib/libblkid.so.1.1.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67e00000-7fff67e04000 rw-p 00040000 b3:02 200074                     /usr/lib/libblkid.so.1.1.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67e04000-7fff67e08000 r-xp 00000000 b3:02 199992                     /usr/lib/libcap.so.2.25",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67e18000-7fff67e1c000 rw-p 00004000 b3:02 199992                     /usr/lib/libcap.so.2.25",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67e70000-7fff67e74000 r--p 00044000 b3:02 200752                     /usr/lib/libmount.so.1.1.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67e74000-7fff67e78000 rw-p 00048000 b3:02 200752                     /usr/lib/libmount.so.1.1.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67e78000-7fff67e7c000 r-xp 00000000 b3:02 200576                     /usr/lib/libp256m.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67e88000-7fff67e8c000 rw-p 00000000 b3:02 200576                     /usr/lib/libp256m.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67e8c000-7fff67e90000 r-xp 00000000 b3:02 200538                     /usr/lib/libeverest.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67e9c000-7fff67ea0000 rw-p 00000000 b3:02 200538                     /usr/lib/libeverest.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67ec4000-7fff67ec8000 r--p 00014000 b3:02 199948                     /usr/lib/libfmt.so.10.2.1",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67ec8000-7fff67ecc000 rw-p 00018000 b3:02 199948                     /usr/lib/libfmt.so.10.2.1",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67f80000-7fff67f84000 rw-p 00004000 b3:02 200562                     /usr/lib/librt-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67f98000-7fff67f9c000 rw-p 00004000 b3:02 200512                     /usr/lib/libXdmcp.so.6.0.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67f9c000-7fff67fa0000 r-xp 00000000 b3:02 199939                     /usr/lib/libXau.so.6.0.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67fac000-7fff67fb0000 rw-p 00000000 b3:02 199939                     /usr/lib/libXau.so.6.0.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff67fe0000-7fff67fe4000 rw-p 00020000 b3:02 199883                     /usr/lib/libxcb.so.1.1.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68140000-7fff68144000 r--p 0014c000 b3:02 200837                     /usr/lib/libc-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68144000-7fff68148000 rw-p 00150000 b3:02 200837                     /usr/lib/libc-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68148000-7fff6814c000 rw-p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff6816c000-7fff68170000 rw-p 00010000 b3:02 200013                     /usr/lib/libgcc_s.so.1",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68214000-7fff68218000 r--p 00094000 b3:02 200108                     /usr/lib/libm-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68218000-7fff6821c000 rw-p 00098000 b3:02 200108                     /usr/lib/libm-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff6836c000-7fff68370000 rw-p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68388000-7fff6838c000 rw-p 00008000 b3:02 200811                     /usr/lib/libqrencode.so.3.4.2",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff683ec000-7fff683f0000 r--p 00050000 b3:02 199931                     /usr/lib/libwebsockets.so.19",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff683f0000-7fff683f4000 rw-p 00054000 b3:02 199931                     /usr/lib/libwebsockets.so.19",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68414000-7fff68418000 rw-p 00010000 b3:02 200580                     /usr/lib/libmbedx509.so.3.6.3",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff6846c000-7fff68470000 rw-p 00044000 b3:02 200634                     /usr/lib/libmbedtls.so.3.6.3",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff6850c000-7fff68510000 rw-p 0008c000 b3:02 200543                     /usr/lib/libmbedcrypto.so.3.6.3",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68534000-7fff68538000 rw-p 00010000 b3:02 200886                     /usr/lib/libz.so.1.2.11",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff685ac000-7fff685b0000 r--p 0005c000 b3:02 200814                     /usr/lib/libspdlog.so.1.13.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff685b0000-7fff685b4000 rw-p 00060000 b3:02 200814                     /usr/lib/libspdlog.so.1.13.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68958000-7fff6895c000 r-xp 00000000 b3:02 200067                     /usr/lib/libbt-vendor.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68968000-7fff6896c000 rw-p 00000000 b3:02 200067                     /usr/lib/libbt-vendor.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff6899c000-7fff689a0000 rw-p 00020000 b3:02 200878                     /usr/lib/libanwbtattach.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff689bc000-7fff689c0000 rw-p 00008000 b3:02 200189                     /usr/lib/libanwbthcit.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68a48000-7fff68a4c000 r--p 00070000 b3:02 200059                     /usr/lib/libanwbtestack.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68a4c000-7fff68a50000 rw-p 00074000 b3:02 200059                     /usr/lib/libanwbtestack.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68a7c000-7fff68a80000 rw-p 00018000 b3:02 199895                     /usr/lib/libanwbtaac.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68ba8000-7fff68bac000 r--p 00118000 b3:02 199887                     /usr/lib/libfdk-aac.so.2.0.1",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68bac000-7fff68bb0000 rw-p 0011c000 b3:02 199887                     /usr/lib/libfdk-aac.so.2.0.1",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68c34000-7fff68c38000 rw-p 00014000 b3:02 200921                     /usr/lib/libanwbtphonebook.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68c78000-7fff68c7c000 r--p 00030000 b3:02 200751                     /usr/lib/libanwbtsdk.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68c7c000-7fff68c80000 rw-p 00034000 b3:02 200751                     /usr/lib/libanwbtsdk.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68d30000-7fff68d34000 r--p 000a0000 b3:02 200541                     /usr/lib/libsqlcipher.so.0.8.6",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68ddc000-7fff68de0000 r--p 00090000 b3:02 200024                     /usr/lib/libcurl.so.4.8.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68de0000-7fff68de4000 rw-p 00094000 b3:02 200024                     /usr/lib/libcurl.so.4.8.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68e2c000-7fff68e30000 rw-p 00038000 b3:02 199864                     /usr/lib/libjpeg.so.62.3.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68e68000-7fff68e6c000 rw-p 00028000 b3:02 199865                     /usr/lib/libmpg123.so.0.44.2",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68e90000-7fff68e94000 rw-p 00004000 b3:02 200619                     /usr/lib/libatomic.so.1.2.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68ec0000-7fff68ec4000 rw-p 00018000 b3:02 200910                     /usr/lib/libpthread-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68ec4000-7fff68ec8000 rw-p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68ec8000-7fff68ecc000 r-xp 00000000 b3:02 200008                     /usr/lib/libdl-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68ed8000-7fff68edc000 rw-p 00000000 b3:02 200008                     /usr/lib/libdl-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68f5c000-7fff68f60000 r--p 00070000 b3:02 201007                     /usr/lib/libjemalloc.so.2",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff68f60000-7fff68f64000 rw-p 00074000 b3:02 201007                     /usr/lib/libjemalloc.so.2",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff69014000-7fff69018000 rw-p 0000c000 b3:02 200617                     /usr/lib/libdrm.so.2.4.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff690ac000-7fff690b0000 r--p 00084000 b3:02 200823                     /usr/lib/libfreetype.so.6.17.1",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff690b0000-7fff690b4000 rw-p 00088000 b3:02 200823                     /usr/lib/libfreetype.so.6.17.1",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff691b0000-7fff691b4000 rw-p 000ec000 b3:02 199898                     /usr/lib/libasound.so.2.0.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff691d0000-7fff691d4000 r--p 0000c000 b3:02 200172                     /usr/lib/libXext.so.6.4.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff691d4000-7fff691d8000 rw-p 00010000 b3:02 200172                     /usr/lib/libXext.so.6.4.0",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff69308000-7fff6930c000 r-xp 00000000 b3:02 201321                     /lab-shims/fractional-grid.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff69324000-7fff69328000 r--p 0000c000 b3:02 201321                     /lab-shims/fractional-grid.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff69328000-7fff6932c000 rw-p 00010000 b3:02 201321                     /lab-shims/fractional-grid.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff6932c000-7fff69330000 r-xp 00000000 b3:02 201374                     /lab-shims/allocator-snapshot.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff69348000-7fff6934c000 r--p 0000c000 b3:02 201374                     /lab-shims/allocator-snapshot.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff6934c000-7fff69350000 rw-p 00010000 b3:02 201374                     /lab-shims/allocator-snapshot.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff69450000-7fff69454000 r-xp 00000000 b3:02 201380                     /lab-shims/large-new-trace.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff6946c000-7fff69470000 r--p 0000c000 b3:02 201380                     /lab-shims/large-new-trace.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff69470000-7fff69474000 rw-p 00010000 b3:02 201380                     /lab-shims/large-new-trace.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff69478000-7fff6947c000 r-xp 00000000 b3:02 201383                     /lab-shims/main-allocation-trace.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff69494000-7fff69498000 r--p 0000c000 b3:02 201383                     /lab-shims/main-allocation-trace.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff69498000-7fff6949c000 rw-p 00010000 b3:02 201383                     /lab-shims/main-allocation-trace.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff694a0000-7fff694a4000 r-xp 00000000 b3:02 201336                     /lab-shims/ximage-present.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff694bc000-7fff694c0000 r--p 0000c000 b3:02 201336                     /lab-shims/ximage-present.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff694c0000-7fff694c4000 rw-p 00010000 b3:02 201336                     /lab-shims/ximage-present.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff694c4000-7fff694c8000 r-xp 00000000 b3:02 201273                     /lab-shims/ximage-fast24.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff694e0000-7fff694e4000 r--p 0000c000 b3:02 201273                     /lab-shims/ximage-fast24.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff694e4000-7fff694e8000 rw-p 00010000 b3:02 201273                     /lab-shims/ximage-fast24.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff694e8000-7fff694ec000 r-xp 00000000 b3:02 200957                     /lab-shims/offline-mixer-fixture.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff694f8000-7fff694fc000 rw-p 00000000 b3:02 200957                     /lab-shims/offline-mixer-fixture.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff6950c000-7fff69510000 r-xp 00000000 00:00 0                          [vdso]",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff69530000-7fff69534000 rw-s 00000000 00:01 0                          /SYSV1402edc9 (deleted)",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 1,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff6953c000-7fff69540000 r--p 0001c000 b3:02 200866                     /usr/lib/ld-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7fff69540000-7fff69544000 rw-p 00020000 b3:02 200866                     /usr/lib/ld-2.29.so",
+      "pages": 1,
+      "present": 1,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.015625
+    },
+    {
+      "mapping": "7ffc10f1c000-7ffc10f20000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffc11720000-7ffc11724000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffc14738000-7ffc1473c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffc14f3c000-7ffc14f40000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffc18c90000-7ffc92890000 rw-s 00000000 b3:02 201025                     /mnt/LocalFileCache2.bin",
+      "pages": 124672,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffc92890000-7ffd0c490000 rw-s 00000000 b3:02 201028                     /mnt/LocalFileCache4.bin",
+      "pages": 124672,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffd0c890000-7ffd86490000 rw-s 00000000 b3:02 201026                     /mnt/LocalFileCache3.bin",
+      "pages": 124672,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffd86490000-7ffe00090000 rw-s 00000000 b3:02 201024                     /mnt/LocalFileCache0.bin",
+      "pages": 124672,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe00410000-7ffe7a010000 rw-s 00000000 b3:02 201027                     /mnt/LocalFileCache1.bin",
+      "pages": 124672,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe7a598000-7ffe7a59c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe7ad9c000-7ffe7ada0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe7b820000-7ffe7b824000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe7c024000-7ffe7c028000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe7c828000-7ffe7c82c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe7d02c000-7ffe7d030000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe865f4000-7ffe865f8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe86df8000-7ffe86dfc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe875fc000-7ffe87600000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe88084000-7ffe88088000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe88888000-7ffe8888c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8908c000-7ffe89090000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe89890000-7ffe89894000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8a094000-7ffe8a098000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8a898000-7ffe8a89c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8b09c000-7ffe8b0a0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8b8a0000-7ffe8b8a4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8c0a4000-7ffe8c0a8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8c8a8000-7ffe8c8ac000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8d0ac000-7ffe8d0b0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8d8b0000-7ffe8d8b4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8e0b4000-7ffe8e0b8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8e8b8000-7ffe8e8bc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8f0bc000-7ffe8f0c0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe8f8c0000-7ffe8f8c4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe900c4000-7ffe900c8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe908c8000-7ffe908cc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe910cc000-7ffe910d0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe918d0000-7ffe918d4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe920d4000-7ffe920d8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe928d8000-7ffe928dc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe930dc000-7ffe930e0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe938e0000-7ffe938e4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe940e4000-7ffe940e8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe948e8000-7ffe948ec000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe950ec000-7ffe950f0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe958f0000-7ffe958f4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe960f4000-7ffe960f8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe968f8000-7ffe968fc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe970fc000-7ffe97100000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe97900000-7ffe97904000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe98104000-7ffe98108000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe98908000-7ffe9890c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9910c000-7ffe99110000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe99910000-7ffe99914000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9a114000-7ffe9a118000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9a918000-7ffe9a91c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9b11c000-7ffe9b120000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9b920000-7ffe9b924000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9c124000-7ffe9c128000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9c928000-7ffe9c92c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9d12c000-7ffe9d130000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9d930000-7ffe9d934000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9e134000-7ffe9e138000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9e938000-7ffe9e93c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9f13c000-7ffe9f140000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffe9f940000-7ffe9f944000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea0144000-7ffea0148000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea0948000-7ffea094c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea114c000-7ffea1150000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea1950000-7ffea1954000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea2154000-7ffea2158000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea2958000-7ffea295c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea315c000-7ffea3160000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea3bec000-7ffea3bf0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea43f0000-7ffea43f4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea4bf4000-7ffea4bf8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea53f8000-7ffea53fc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea5bfc000-7ffea5c00000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea6400000-7ffea6404000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea6c04000-7ffea6c08000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea7408000-7ffea740c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffea7c0c000-7ffea7c10000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeaf410000-7ffeaf414000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeafc14000-7ffeafc18000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb0418000-7ffeb041c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb0c1c000-7ffeb0c20000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb1420000-7ffeb1424000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb1c24000-7ffeb1c28000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb2428000-7ffeb242c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb2c2c000-7ffeb2c30000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb3430000-7ffeb3434000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb3c34000-7ffeb3c38000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb4438000-7ffeb443c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb4c3c000-7ffeb4c40000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb5440000-7ffeb5444000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb5c44000-7ffeb5c48000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb6448000-7ffeb644c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb6c4c000-7ffeb6c50000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb7450000-7ffeb7454000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb7c54000-7ffeb7c58000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb8458000-7ffeb845c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb8c5c000-7ffeb8c60000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb9460000-7ffeb9464000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeb9c64000-7ffeb9c68000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeba468000-7ffeba46c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffebac6c000-7ffebac70000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffebb470000-7ffebb474000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffebbc74000-7ffebbc78000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffebc478000-7ffebc47c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffebcc7c000-7ffebcc80000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffebd480000-7ffebd484000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffebdc84000-7ffebdc88000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffebe488000-7ffebe48c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffebec8c000-7ffebec90000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffebf490000-7ffebf494000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffebfc94000-7ffebfc98000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec0498000-7ffec049c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec0c9c000-7ffec0ca0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec14a0000-7ffec14a4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec1ca4000-7ffec1ca8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec24a8000-7ffec24ac000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec2cac000-7ffec2cb0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec34b0000-7ffec34b4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec3cb4000-7ffec3cb8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec44b8000-7ffec44bc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec4cbc000-7ffec4cc0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec54c0000-7ffec54c4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec5cc4000-7ffec5cc8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec64c8000-7ffec64cc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec6ccc000-7ffec6cd0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec74d0000-7ffec74d4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec7cd4000-7ffec7cd8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec84d8000-7ffec84dc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec8cdc000-7ffec8ce0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec9764000-7ffec9768000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffec9f68000-7ffec9f6c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeca76c000-7ffeca770000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffecaf70000-7ffecaf74000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffecb774000-7ffecb778000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffecbf78000-7ffecbf7c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffecc77c000-7ffecc780000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeccf80000-7ffeccf84000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffecd784000-7ffecd788000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffecdf88000-7ffecdf8c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffece78c000-7ffece790000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffecef90000-7ffecef94000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffecf794000-7ffecf798000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffecff98000-7ffecff9c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed079c000-7ffed07a0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed0fa0000-7ffed0fa4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed17a4000-7ffed17a8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed1fa8000-7ffed1fac000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed27ac000-7ffed27b0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed2fb0000-7ffed2fb4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed37b4000-7ffed37b8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed3fb8000-7ffed3fbc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed47bc000-7ffed47c0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed4fc0000-7ffed4fc4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed57c4000-7ffed57c8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed5fc8000-7ffed5fcc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed67cc000-7ffed67d0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed6fd0000-7ffed6fd4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed77d4000-7ffed77d8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed7fd8000-7ffed7fdc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed87dc000-7ffed87e0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed8fe0000-7ffed8fe4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed97e4000-7ffed97e8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffed9fe8000-7ffed9fec000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeda7ec000-7ffeda7f0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffedaff0000-7ffedaff4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffedb7f4000-7ffedb7f8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffedbff8000-7ffedbffc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffedc7fc000-7ffedc800000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffedd000000-7ffedd004000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffedd804000-7ffedd808000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffede008000-7ffede00c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffede80c000-7ffede810000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffedf010000-7ffedf014000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffedf814000-7ffedf818000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee0018000-7ffee001c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee081c000-7ffee0820000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee17a4000-7ffee17a8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee1fa8000-7ffee1fac000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee27ac000-7ffee27b0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee2fb0000-7ffee2fb4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee37b4000-7ffee37b8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee3fb8000-7ffee3fbc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee47bc000-7ffee47c0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee4fc0000-7ffee4fc4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee57c4000-7ffee57c8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee5fc8000-7ffee5fcc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee67cc000-7ffee67d0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee6fd0000-7ffee6fd4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee77d4000-7ffee77d8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee7fd8000-7ffee7fdc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee87dc000-7ffee87e0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee8fe0000-7ffee8fe4000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee97e4000-7ffee97e8000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffee9fe8000-7ffee9fec000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffeea7ec000-7ffeea7f0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7ffefaffc000-7ffefb000000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff09ddc000-7fff09de0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff165ec000-7fff165f0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff20dfc000-7fff20e00000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff299fc000-7fff29a00000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff2a200000-7fff2a204000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff2aa04000-7fff2aa08000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff2b208000-7fff2b20c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff2ba0c000-7fff2ba10000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff4f318000-7fff4f31c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff4fb1c000-7fff4fb20000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff50320000-7fff50324000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff50b24000-7fff50b28000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff51328000-7fff5132c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff51b2c000-7fff51b30000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff52330000-7fff52334000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff52b34000-7fff52b38000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff53338000-7fff5333c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff53b3c000-7fff53b40000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff54840000-7fff54844000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff55044000-7fff55048000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff55848000-7fff5584c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff5604c000-7fff56050000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff56850000-7fff56854000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff57054000-7fff57058000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff57858000-7fff5785c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff5805c000-7fff58060000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff58b6c000-7fff58b70000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff597fc000-7fff59800000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff5a3fc000-7fff5a400000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff5b5f8000-7fff5b5fc000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff5bdfc000-7fff5be00000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff5cbfc000-7fff5cc00000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff5d9fc000-7fff5da00000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff5e7fc000-7fff5e800000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff5f5fc000-7fff5f600000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff609fc000-7fff60a00000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff617ec000-7fff617f0000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff621fc000-7fff62200000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff62f78000-7fff62f7c000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff6377c000-7fff63780000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff647fc000-7fff64800000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff655fc000-7fff65600000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff662fc000-7fff66300000 ---p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67ca4000-7fff67cb0000 ---p 00008000 b3:02 200127                     /usr/lib/libXrender.so.1.3.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67cc4000-7fff67cd0000 ---p 0000c000 b3:02 200868                     /usr/lib/libXrandr.so.2.2.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67ce8000-7fff67cf4000 ---p 00014000 b3:02 200898                     /usr/lib/libresolv-2.29.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67cf8000-7fff67cfc000 rw-p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67d04000-7fff67d10000 ---p 00008000 b3:02 200088                     /usr/lib/libnss_dns-2.29.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67d24000-7fff67d30000 ---p 0000c000 b3:02 200060                     /usr/lib/libnss_files-2.29.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67d84000-7fff67d90000 ---p 00040000 b3:02 200809                     /usr/lib/libncurses.so.6.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67da0000-7fff67dac000 ---p 00008000 b3:02 199996                     /usr/lib/libuuid.so.1.3.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67df0000-7fff67dfc000 ---p 00040000 b3:02 200074                     /usr/lib/libblkid.so.1.1.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67e08000-7fff67e18000 ---p 00004000 b3:02 199992                     /usr/lib/libcap.so.2.25",
+      "pages": 4,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67e64000-7fff67e70000 ---p 00048000 b3:02 200752                     /usr/lib/libmount.so.1.1.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67e7c000-7fff67e88000 ---p 00004000 b3:02 200576                     /usr/lib/libp256m.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67e90000-7fff67e9c000 ---p 00004000 b3:02 200538                     /usr/lib/libeverest.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67eb8000-7fff67ec4000 ---p 00018000 b3:02 199948                     /usr/lib/libfmt.so.10.2.1",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67f50000-7fff67f5c000 ---p 00084000 b3:02 199885                     /usr/lib/libssl.so.3",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67f74000-7fff67f80000 ---p 00008000 b3:02 200562                     /usr/lib/librt-2.29.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67f8c000-7fff67f98000 ---p 00008000 b3:02 200512                     /usr/lib/libXdmcp.so.6.0.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67fa0000-7fff67fac000 ---p 00004000 b3:02 199939                     /usr/lib/libXau.so.6.0.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff67fd4000-7fff67fe0000 ---p 00024000 b3:02 199883                     /usr/lib/libxcb.so.1.1.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68134000-7fff68140000 ---p 00150000 b3:02 200837                     /usr/lib/libc-2.29.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68160000-7fff6816c000 ---p 00014000 b3:02 200013                     /usr/lib/libgcc_s.so.1",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68208000-7fff68214000 ---p 00098000 b3:02 200108                     /usr/lib/libm-2.29.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff6834c000-7fff6835c000 ---p 00130000 b3:02 200860                     /usr/lib/libstdc++.so.6.0.25",
+      "pages": 4,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff6837c000-7fff68388000 ---p 0000c000 b3:02 200811                     /usr/lib/libqrencode.so.3.4.2",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff683e0000-7fff683ec000 ---p 00054000 b3:02 199931                     /usr/lib/libwebsockets.so.19",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68408000-7fff68414000 ---p 00014000 b3:02 200580                     /usr/lib/libmbedx509.so.3.6.3",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68460000-7fff6846c000 ---p 00048000 b3:02 200634                     /usr/lib/libmbedtls.so.3.6.3",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff684f8000-7fff68504000 ---p 00088000 b3:02 200543                     /usr/lib/libmbedcrypto.so.3.6.3",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68510000-7fff68514000 rw-p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68528000-7fff68534000 ---p 00014000 b3:02 200886                     /usr/lib/libz.so.1.2.11",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff685a0000-7fff685ac000 ---p 00060000 b3:02 200814                     /usr/lib/libspdlog.so.1.13.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff688ec000-7fff688f8000 ---p 00338000 b3:02 200612                     /usr/lib/libcrypto.so.3",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68954000-7fff68958000 rw-p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff6895c000-7fff68968000 ---p 00004000 b3:02 200067                     /usr/lib/libbt-vendor.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68990000-7fff6899c000 ---p 00024000 b3:02 200878                     /usr/lib/libanwbtattach.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff689a0000-7fff689a4000 rw-p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff689ac000-7fff689bc000 ---p 00008000 b3:02 200189                     /usr/lib/libanwbthcit.so",
+      "pages": 4,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff689c0000-7fff689c8000 rw-p 00000000 00:00 0 ",
+      "pages": 2,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68a3c000-7fff68a48000 ---p 00074000 b3:02 200059                     /usr/lib/libanwbtestack.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68a50000-7fff68a54000 rw-p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68a70000-7fff68a7c000 ---p 0001c000 b3:02 199895                     /usr/lib/libanwbtaac.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68b9c000-7fff68ba8000 ---p 0011c000 b3:02 199887                     /usr/lib/libfdk-aac.so.2.0.1",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68bb0000-7fff68bb4000 rw-p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68bfc000-7fff68c08000 ---p 00048000 b3:02 200900                     /usr/lib/libanwbtprofile.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68c28000-7fff68c34000 ---p 00018000 b3:02 200921                     /usr/lib/libanwbtphonebook.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68c6c000-7fff68c78000 ---p 00034000 b3:02 200751                     /usr/lib/libanwbtsdk.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68d24000-7fff68d30000 ---p 000a4000 b3:02 200541                     /usr/lib/libsqlcipher.so.0.8.6",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68dcc000-7fff68ddc000 ---p 00090000 b3:02 200024                     /usr/lib/libcurl.so.4.8.0",
+      "pages": 4,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68e20000-7fff68e2c000 ---p 0003c000 b3:02 199864                     /usr/lib/libjpeg.so.62.3.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68e5c000-7fff68e68000 ---p 0002c000 b3:02 199865                     /usr/lib/libmpg123.so.0.44.2",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68e84000-7fff68e90000 ---p 00008000 b3:02 200619                     /usr/lib/libatomic.so.1.2.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68e94000-7fff68e98000 rw-p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68eb4000-7fff68ec0000 ---p 0001c000 b3:02 200910                     /usr/lib/libpthread-2.29.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68ecc000-7fff68ed8000 ---p 00004000 b3:02 200008                     /usr/lib/libdl-2.29.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff68f4c000-7fff68f5c000 ---p 00070000 b3:02 201007                     /usr/lib/libjemalloc.so.2",
+      "pages": 4,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff69008000-7fff69014000 ---p 00010000 b3:02 200617                     /usr/lib/libdrm.so.2.4.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff690a0000-7fff690ac000 ---p 00088000 b3:02 200823                     /usr/lib/libfreetype.so.6.17.1",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff6919c000-7fff691a8000 ---p 000e8000 b3:02 199898                     /usr/lib/libasound.so.2.0.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff691c4000-7fff691d0000 ---p 00010000 b3:02 200172                     /usr/lib/libXext.so.6.4.0",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff692f0000-7fff69300000 ---p 00118000 b3:02 200832                     /usr/lib/libX11.so.6.3.0",
+      "pages": 4,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff6930c000-7fff69324000 ---p 00004000 b3:02 201321                     /lab-shims/fractional-grid.so",
+      "pages": 6,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff69330000-7fff69348000 ---p 00004000 b3:02 201374                     /lab-shims/allocator-snapshot.so",
+      "pages": 6,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff69454000-7fff6946c000 ---p 00004000 b3:02 201380                     /lab-shims/large-new-trace.so",
+      "pages": 6,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff69474000-7fff69478000 rw-p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff6947c000-7fff69494000 ---p 00004000 b3:02 201383                     /lab-shims/main-allocation-trace.so",
+      "pages": 6,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff6949c000-7fff694a0000 rw-p 00000000 00:00 0 ",
+      "pages": 1,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff694a4000-7fff694bc000 ---p 00004000 b3:02 201336                     /lab-shims/ximage-present.so",
+      "pages": 6,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff694c8000-7fff694e0000 ---p 00004000 b3:02 201273                     /lab-shims/ximage-fast24.so",
+      "pages": 6,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff694ec000-7fff694f8000 ---p 00004000 b3:02 200957                     /lab-shims/offline-mixer-fixture.so",
+      "pages": 3,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    },
+    {
+      "mapping": "7fff694fc000-7fff6950c000 r--p 00000000 00:00 0                          [vvar]",
+      "pages": 4,
+      "present": 0,
+      "swapped": 0,
+      "file_or_shared_anon": 0,
+      "present_page_span_mib": 0.0
+    }
+  ],
+  "smaps_rollup": "00400000-7fffe9134000 ---p 00000000 00:00 0                              [rollup]\nRss:              973248 kB\nPss:              971632 kB\nPss_Dirty:        962176 kB\nPss_Anon:         919216 kB\nPss_File:           9456 kB\nPss_Shmem:         42960 kB\nShared_Clean:       3184 kB\nShared_Dirty:         32 kB\nPrivate_Clean:      7872 kB\nPrivate_Dirty:    962160 kB\nReferenced:       973120 kB\nAnonymous:        919216 kB\nKSM:                   0 kB\nLazyFree:              0 kB\nAnonHugePages:         0 kB\nShmemPmdMapped:        0 kB\nFilePmdMapped:         0 kB\nShared_Hugetlb:        0 kB\nPrivate_Hugetlb:       0 kB\nSwap:                  0 kB\nSwapPss:               0 kB\nLocked:                0 kB\n",
+  "scope": "Read page residency for recorded allocation ranges; never reads payload or PFNs.\n\nAllocation traces are historical: freed/reused/overlapping ranges are not live\nobjects. Present virtual pages are not necessarily unique physical pages.\n"
+}

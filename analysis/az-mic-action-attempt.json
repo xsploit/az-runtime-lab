@@ -1,0 +1,10 @@
+{
+  "pid": 268351,
+  "result": "failed before constructor breakpoint; no action sent",
+  "gdb_stop": "Thread2.49 SIGSEGV at0xab8808",
+  "script_exit": 1,
+  "core": "coredumpctl info268351 found no core",
+  "correction": "Both GDB scripts now require pc==0x1a16c68 before reading controller/calling action; unexpected stops record backtrace and detach.",
+  "limitation": "Cause unresolved. Cannot attribute failure to microphone action because it was not executed.",
+  "evidence": "az-mic-native-action.log"
+}

@@ -1,0 +1,131 @@
+{
+  "model": "CDJ3000X1.40",
+  "type": "device_adapter::subcpu_comm::erp_ucom::RxDataDispatcher",
+  "typeinfo": "3038350",
+  "vtable": "3038420",
+  "receive": "225b460",
+  "validator": "225f800",
+  "length_check": "225f814 compares size to0x40; success225f910",
+  "packet_bytes": 64,
+  "device": "/dev/subucom_spi1.0",
+  "scope": "Checksum verified against extracted instructions; anonymous button offsets statically traced. Button names, complete validator and live transport still pending.",
+  "checksum": {
+    "coverage_bytes": 62,
+    "offset": 62,
+    "endianness": "little",
+    "polynomial_reflected": "0x8408",
+    "initial": 65535,
+    "final_xor": 65535,
+    "evidence": "cdj3000x-crc-verified.json: 10000 inputs matched extracted firmware instructions"
+  },
+  "dispatch": "0x225ae40 calls 0x22579a8 with packet+8",
+  "anonymous_fields": [
+    {
+      "packet_byte": 14,
+      "bit": 0,
+      "dispatcher_member": 16
+    },
+    {
+      "packet_byte": 14,
+      "bit": 1,
+      "dispatcher_member": 24
+    },
+    {
+      "packet_byte": 14,
+      "bit": 2,
+      "dispatcher_member": 32
+    },
+    {
+      "packet_byte": 14,
+      "bit": 3,
+      "dispatcher_member": 40
+    },
+    {
+      "packet_byte": 14,
+      "bit": 4,
+      "dispatcher_member": 48
+    },
+    {
+      "packet_byte": 14,
+      "bit": 5,
+      "dispatcher_member": 56
+    },
+    {
+      "packet_byte": 15,
+      "bit": 0,
+      "dispatcher_member": 64
+    },
+    {
+      "packet_byte": 15,
+      "bit": 1,
+      "dispatcher_member": 72
+    },
+    {
+      "packet_byte": 15,
+      "bit": 2,
+      "dispatcher_member": 80
+    },
+    {
+      "packet_byte": 15,
+      "bit": 3,
+      "dispatcher_member": 88
+    },
+    {
+      "packet_byte": 16,
+      "bit": 1,
+      "dispatcher_member": 96
+    },
+    {
+      "packet_byte": 16,
+      "bit": 2,
+      "dispatcher_member": 104
+    }
+  ],
+  "named_fields": [
+    {
+      "name": "Browse",
+      "packet_byte": 14,
+      "mask": 2,
+      "dispatcher_member": 24,
+      "id": "0063bb660eeceeae",
+      "registration": "0x2260d80..0x2260da0",
+      "read": "0x2257a08..0x2257a14",
+      "confidence": "Static ID match to previously verified AZ Browse; no CDJ live test"
+    },
+    {
+      "name": "Back",
+      "packet_byte": 15,
+      "mask": 1,
+      "dispatcher_member": 64,
+      "id": "009fc1f55209ac55",
+      "registration": "0x2260e98..0x2260eb8",
+      "read": "0x2257b00..0x2257b10",
+      "confidence": "Static ID match to previously verified AZ Back; no CDJ live test"
+    },
+    {
+      "name": "Play",
+      "packet_byte": 9,
+      "mask": 1,
+      "dispatcher_member": 128,
+      "id": "315ffa1ef4831600",
+      "confidence": "Live MP3 transport advance verified"
+    },
+    {
+      "name": "Cue",
+      "packet_byte": 9,
+      "mask": 2,
+      "dispatcher_member": 136,
+      "id": "40045926d6629d00",
+      "confidence": "Live return to track start verified"
+    }
+  ],
+  "constructor": {
+    "entry": "0x225bad8",
+    "subobject_init": "0x22608a0",
+    "subobject_offset": 16,
+    "register_helper": "0x225cb18",
+    "helper_store": "0x225cb60",
+    "transport_subobject_init": "0x225f070",
+    "transport_full_offset": 128
+  }
+}

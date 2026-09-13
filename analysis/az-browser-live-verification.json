@@ -1,0 +1,64 @@
+{
+  "pid": 146367,
+  "verified": "Native two-row browser selection changes via mixer encoder counter",
+  "sequence": [
+    {
+      "counter": 0,
+      "flag": 0,
+      "result": "baseline"
+    },
+    {
+      "counter": 1,
+      "flag": 0,
+      "result": "track selection unchanged; sidebar highlighted"
+    },
+    {
+      "counter": 2,
+      "flag": 1,
+      "result": "unchanged"
+    },
+    {
+      "counter": 6,
+      "flag": 1,
+      "result": "unchanged"
+    },
+    {
+      "action": "click track1 at330,155"
+    },
+    {
+      "counter": 10,
+      "flag": 0,
+      "result": "track2 selected"
+    },
+    {
+      "counter": 9,
+      "flag": 0,
+      "result": "track1 selected"
+    },
+    {
+      "counter": 10,
+      "flag": 0,
+      "result": "track2 selected"
+    }
+  ],
+  "screenshots": [
+    "browse-counter-before.png",
+    "browse-counter-plus1.png",
+    "browse-counter-flag.png",
+    "browse-counter-plus4.png",
+    "browse-counter-focused.png",
+    "browse-counter-minus1.png",
+    "browse-counter-focused-plus1.png"
+  ],
+  "limitations": [
+    "Initial focus established by synthetic pointer input, not a native button",
+    "Flag1 meaning remains unknown",
+    "Two tracks only; acceleration and boundary behavior untested",
+    "FLX6 physical input not connected"
+  ],
+  "run_completion": {
+    "launcher_exit": 0,
+    "scheduled_duration_seconds": 100,
+    "alive_before_scheduled_teardown": true
+  }
+}

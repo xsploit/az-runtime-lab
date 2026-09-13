@@ -1,0 +1,30 @@
+[
+  {
+    "adrp": "0x6caaa4",
+    "add": "0x6caaac",
+    "target": "0x25d5e90",
+    "label": "loadDeck1 diagnostic",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x6cab70",
+    "add": "0x6cab78",
+    "target": "0x25d5ed8",
+    "label": "loadDeck2 diagnostic",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x6cac3c",
+    "add": "0x6cac44",
+    "target": "0x25d5f20",
+    "label": "loadDeck3 diagnostic",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x6cad08",
+    "add": "0x6cad10",
+    "target": "0x25d5f68",
+    "label": "loadDeck4 diagnostic",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

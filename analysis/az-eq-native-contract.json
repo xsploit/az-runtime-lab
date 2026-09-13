@@ -1,0 +1,42 @@
+{
+  "sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Static native UI path; utility UI mode changes verified into native TX and software mixer. EQ/ISO widget callback itself remains statically mapped, not directly invoked.",
+  "controller": {
+    "type": "gui::mixer_settings::EqIsoWidgetController",
+    "vtable": "0x29fcf08",
+    "button_callback": "0x19fb9f0",
+    "setting_pointer_offset": 40,
+    "buttons": {
+      "eqButton": {
+        "identifier_global": "0x3b86598",
+        "string_va": "0x29fce70",
+        "submitted_enum": 0
+      },
+      "isoButton": {
+        "identifier_global": "0x3b865a0",
+        "string_va": "0x29fce80",
+        "submitted_enum": 1
+      }
+    },
+    "identifier_initializer": "0x543e10",
+    "setting_update": "0x19fba60",
+    "listener_thunk": "0x19faa60",
+    "listener_base_offset": 8,
+    "listener_body": "0x19faa40",
+    "display_update": "0x19fa660",
+    "identifier_guard": "Incoming Identifier interned pointer must equal setting wrapper+32.",
+    "display_state": "Enum0 selects first button state1 and second state0; enum1 selects first0 and second1. Checks thread identity, otherwise schedules task."
+  },
+  "open": [
+    "Physical FLX6 input and audio test.",
+    "Production packet transport instead of diagnostic capture file.",
+    "Expanded musical response, automation/cue and real-time performance checks."
+  ],
+  "resolved_references": [
+    "az-eq-mode-output-contract.json",
+    "az-eq-packet-delivery.json",
+    "eq-native-service-results.json",
+    "eq-mode-live-results.json",
+    "eq-audio-live-results.json"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "scope": "Sequential 20-second process CPU/RSS observations on actual Pi5. BiteDJ normal session versus native AZ empty SOURCE screen on private Xvfb with paced null audio. Not matched playback/rendering workloads.",
+  "bitedj": {
+    "pid": 1162,
+    "seconds": 20.000350255,
+    "cpu_one_core_percent": 0.5499903681561801,
+    "before": {
+      "cpu_ticks": 1604,
+      "rss_kib": 524960,
+      "threads": 40
+    },
+    "after": {
+      "cpu_ticks": 1615,
+      "rss_kib": 524960,
+      "threads": 40
+    }
+  },
+  "az": {
+    "pid": 1889,
+    "seconds": 20.000431308999964,
+    "cpu_one_core_percent": 8.249822088874248,
+    "before": {
+      "cpu_ticks": 130,
+      "rss_kib": 950096,
+      "threads": 235
+    },
+    "after": {
+      "cpu_ticks": 295,
+      "rss_kib": 943408,
+      "threads": 235
+    }
+  },
+  "bitedj_restored_pid": 2261,
+  "az_and_xvfb_stopped": true,
+  "az_visual_review": "SOURCE, USB1 present, both decks not loaded; screenshot pi-native-first-display.png",
+  "compatibility_fix": {
+    "pi_page_size": 16384,
+    "bundled_allocator_failure": "Unsupported system page size followed by process return134; no systemd core tooling installed, no saved core found in inspected paths.",
+    "replacement": "Debian libjemalloc2 5.2.1-3 arm64, sandbox-only bind over /usr/lib/libjemalloc.so.2",
+    "url": "https://deb.debian.org/debian/pool/main/j/jemalloc/libjemalloc2_5.2.1-3_arm64.deb",
+    "sha256": "9e53cd4b54381d01aeac90e58479adf8e6b9a14cc61d3d2782e4835f1ecc202a",
+    "validation": "Native AZ remained live through45-second bounded probe and screenshot; allocator replacement is a compatibility experiment, not full ABI or long-run validation."
+  },
+  "limits": [
+    "Application process only: excludes compositor/Xvfb, Python pacing launcher and companion services.",
+    "AZ software mixer not attached in this startup comparison.",
+    "No FLX6, playback, waveforms, physical display FPS, or underrun test.",
+    "RSS includes shared pages; not proportional/private memory."
+  ]
+}

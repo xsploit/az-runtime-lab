@@ -1,0 +1,16 @@
+[
+  {
+    "adrp": "0x6cde68",
+    "add": "0x6cde70",
+    "target": "0x25d4988",
+    "label": "tempoSlider",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x6d0704",
+    "add": "0x6d070c",
+    "target": "0x25d4988",
+    "label": "tempoSlider",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

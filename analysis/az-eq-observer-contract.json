@@ -1,0 +1,48 @@
+{
+  "sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Statically traced EQ HUI registration and MIDI-adapter dispatch. Not yet a verified live injection contract.",
+  "registration": {
+    "entry": "0x6c5330",
+    "key_argument": "x0 points to 64-bit HUI ID",
+    "owner_argument": "x1 full HuiEventHandler pointer",
+    "registry_base": "0x3b45568",
+    "lookup": "ID modulo signed bucket count at registry+24; bucket table at +8; node key+0, value+8, next+16. Reader counter is acquired/released atomically.",
+    "subscriber": "owner+0x30 (or null), passed to resolved component virtual +0x30 with w2=1",
+    "failure": "Missing registry entry returns false; caller emits named linkToObserver diagnostic."
+  },
+  "observer": {
+    "type": "midi_adapter::HuiEventHandler",
+    "base_type": "meow::IHuiSliderObserver",
+    "base_offset": 48,
+    "vtable": "0x25d3db8",
+    "callback": "0x6c4838",
+    "arguments": {
+      "x0": "slider observer subobject, full owner+48",
+      "x2": "64-bit event identifier forwarded unchanged",
+      "x3": "pointer to payload: float32 at+0 and 32-bit field at+4"
+    },
+    "listener_vector": "full owner+0x60 to +0x68",
+    "delivery": "listener virtual slot8 (+0x40), x1=identifier, s0=float, w2=payload+4. Skip default no-op 0x6cb490.",
+    "primary_equivalent": "0x6c4258 reads vector at full owner+0x60/+0x68"
+  },
+  "adapter": {
+    "type": "midi_adapter::HuiEventAdapter",
+    "callback": "0x6c37b0",
+    "behavior": "Maps incoming HUI ID through object hash table (+0x20 table, +0x28 bucket count) to operation ID. Zero mapped ID returns without notification.",
+    "missing_id": "Allocates 24-byte node with zero mapped value, so this entry is not allocation-free.",
+    "special_case": "Mapped ID 0x01441c7d60cec880: field==255 drops; otherwise substitutes 0x01bfa71818497e99. Meaning not assigned.",
+    "downstream": "Listener vector object+8/+16; virtual slot5 (+0x28) receives mapped operation ID, unchanged float and 32-bit field."
+  },
+  "unresolved": [
+    "Live initialized registry/component ownership and lifetime.",
+    "Actual EQ float range/adapter configuration. Generic HuiSlider trace identifies second field as raw input uint32 at+8; see az-slider-value-contract.json.",
+    "Which current listeners are registered and whether the EQ operation mapping is enabled.",
+    "Hardware TX mode connection and software mixer EQ1 synchronization."
+  ],
+  "integration_constraints": [
+    "Do not call callback with full owner where slider subobject is required.",
+    "Do not treat the adapter operation ID as the original HUI ID.",
+    "Do not place allocation-capable dispatch on the audio callback.",
+    "Do not claim native EQ audio follows these events until runtime and mixer output are verified."
+  ]
+}

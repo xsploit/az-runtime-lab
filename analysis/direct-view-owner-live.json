@@ -1,0 +1,22 @@
+{
+  "pid": 471684,
+  "manager": "0x7fd034f59e00",
+  "application": "0x7fd153f1c8c0",
+  "before": {
+    "kind": "other",
+    "identity": 140537033640896,
+    "current": 140532223068160,
+    "nested": 140532215823360,
+    "pid": 471684,
+    "observed_at": 272667.008522197
+  },
+  "after": {
+    "kind": "browse",
+    "identity": 140537033640416,
+    "current": 140532220635136,
+    "nested": 140532215823360,
+    "pid": 471684,
+    "observed_at": 272676.009764553
+  },
+  "discovery": "fixed validated owner chain; no heap scan"
+}

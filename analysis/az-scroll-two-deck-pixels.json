@@ -1,0 +1,16 @@
+{
+  "1": {
+    "samples": 721,
+    "duration": 5.999755,
+    "distinct_hz": 58.83573579254486,
+    "median_interval_ms": 16.669000000000267,
+    "max_interval_ms": 33.44099999999983
+  },
+  "2": {
+    "samples": 721,
+    "duration": 5.999864,
+    "distinct_hz": 58.834666919116835,
+    "median_interval_ms": 16.666000000000068,
+    "max_interval_ms": 38.04699999999972
+  }
+}

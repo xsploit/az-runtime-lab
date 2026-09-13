@@ -1,0 +1,34 @@
+{
+  "pid": 311450,
+  "breakpoint": "0x19c2fe4",
+  "controller": "0x7f34845c9250",
+  "validated_vtables": [
+    "0x2a01f60",
+    "0x2a01fa8",
+    "0x26333d0"
+  ],
+  "setting_before": 0,
+  "action": "native1a03a70 with monoSplitButton identifier3b86630",
+  "action_returned": true,
+  "crc_invalid": 0,
+  "mode_histogram": {
+    "1": 10768,
+    "0": 651
+  },
+  "transitions": [
+    {
+      "frame": 0,
+      "mode": 1
+    },
+    {
+      "frame": 465,
+      "mode": 0
+    },
+    {
+      "frame": 1116,
+      "mode": 1
+    }
+  ],
+  "scope": "Native UI\u2192setting\u2192TX8bits6..7 verified; no physical headphone or software mono audio test",
+  "state_change": "Private lab headphone setting nowMonoSplit; restoreStereo with native action in next guarded probe"
+}

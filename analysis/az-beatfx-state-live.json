@@ -1,0 +1,23 @@
+{
+  "pid": 276782,
+  "scope": "Live read-only application setting observation at constructor completion",
+  "breakpoint": "0x9960f8",
+  "validated_vtables": [
+    "0x2692378",
+    "0x2633f70",
+    "0x2633fd0"
+  ],
+  "state": {
+    "channel": 7,
+    "mic": 1
+  },
+  "labels": {
+    "channel": "Master",
+    "mic": "MIC2"
+  },
+  "significance": "Separate native channel target and microphone selection observed; MIC2 value from earlier native action remains on next launch. Full target need not be inferred from ambiguous packet bytes.",
+  "limitations": "One startup snapshot, not continuous thread-safe observer or physical audio routing verification. Persistence cause/storage not separately traced.",
+  "evidence": "az-beatfx-state-live.log",
+  "script": "observe-beatfx-state.gdb",
+  "run_end": "Guest exited139 after successful readback/detach; stability not verified."
+}

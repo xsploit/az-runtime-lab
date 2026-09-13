@@ -1,0 +1,69 @@
+{
+  "class": "usecase::effector::BeatFx",
+  "listener_base_offset": 56,
+  "listener_vtable": "0x2692458",
+  "callbacks": [
+    {
+      "slot": 2,
+      "address": "0x9836e0",
+      "behavior": "subtract56 from this and tail-branch0x9831a8"
+    },
+    {
+      "slot": 3,
+      "address": "0x984288",
+      "behavior": "return only"
+    },
+    {
+      "slot": 4,
+      "address": "0x984298",
+      "behavior": "return only"
+    },
+    {
+      "slot": 5,
+      "address": "0x9842a8",
+      "behavior": "return only"
+    },
+    {
+      "slot": 6,
+      "address": "0x984268",
+      "behavior": "return only"
+    }
+  ],
+  "active_callback_partial": {
+    "function": "0x9831a8",
+    "input": "low8 of w1",
+    "branches": "values1/3 share path;0 separate branch;other values return",
+    "shared_path": "writes setting value1 via object+88 wrapper, uses request/notification machinery",
+    "scope": "Semantic name and complete asynchronous update path unresolved",
+    "setting": "application_setting::beat_effect::Quantize",
+    "setting_evidence": "Constructor983994 loads+88 and registers listener base+24; RTTI2634b18=ItemHolder<beat_effect::Quantize>,2636bd0=any holder of matching Item pointer",
+    "input_mapping": {
+      "0": 0,
+      "1": 1,
+      "3": 1,
+      "other": "ignored"
+    }
+  },
+  "implication": "Mixer cached notification at listener virtual offset24 maps to slot3, a no-op for this specific concrete application listener. Other listener implementations may consume it.",
+  "verification": "Static original instructions, no live callback injection",
+  "outgoing_quantize_listener": {
+    "thunk": "0x9823c8 adjusts this-24 ->0x982050",
+    "identifier_check": "incoming identifier equals wrapper+32 before use",
+    "setting_0": "object+64 interface virtual+24 with w1=2",
+    "setting_1": "object+64 interface virtual+24 with w1=3",
+    "other": "diagnostic path then w1=2",
+    "limitation": "Concrete downstream interface identity and packet/audio effect not yet proven"
+  },
+  "downstream_identity": {
+    "type": "device_adapter::mixer::BeatFx",
+    "chain": [
+      "Effector constructor9960c4 resolves IMixer (diagnostic2699128), calls virtual+128",
+      "Mixer vtable2e42208 slot16=2134570 returns this+1328",
+      "Mixer constructor2130e3c installs BeatFx vtable2e42338 at+1328",
+      "Returned pointer is passed x1 at9960ec to BeatFx constructor9836e8, stored application+64",
+      "Quantize listener calls downstream virtual+24=2134448, which stores byte+8"
+    ],
+    "result": "Quantize setting0 stores2; setting1 stores3 at Mixer+1336",
+    "scope": "Static full interface chain. TX serialization and live/audio behavior pending"
+  }
+}

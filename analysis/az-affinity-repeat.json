@@ -1,0 +1,109 @@
+{
+  "pid": 203793,
+  "measurements": [
+    {
+      "index": 0,
+      "cores": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "samples": 360,
+      "changes": 112,
+      "changes_per_second": 18.666666666666668,
+      "capture_wall_seconds": 6.198298228002386,
+      "affinity_after": [
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "index": 1,
+      "cores": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "samples": 360,
+      "changes": 179,
+      "changes_per_second": 29.833333333333332,
+      "capture_wall_seconds": 6.193305615015561,
+      "affinity_after": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10
+      ]
+    },
+    {
+      "index": 2,
+      "cores": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "samples": 360,
+      "changes": 111,
+      "changes_per_second": 18.5,
+      "capture_wall_seconds": 6.195804874005262,
+      "affinity_after": [
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "index": 3,
+      "cores": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "samples": 360,
+      "changes": 181,
+      "changes_per_second": 30.166666666666668,
+      "capture_wall_seconds": 6.189545364992227,
+      "affinity_after": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10
+      ]
+    }
+  ],
+  "scope": "Same cue restart per sample, main-thread affinity only. Visual checkpoints need review; no physical audio/Pi claim.",
+  "visual_review": {
+    "all_same_track": true,
+    "remaining": [
+      "02:55.874",
+      "02:55.797",
+      "02:55.839",
+      "02:55.778"
+    ],
+    "bpm": [
+      86,
+      86,
+      168.7,
+      168.7
+    ],
+    "note": "Analysis progressed between pairs; within each pair tempo/BPM display agrees. Every image shows advancing waveform at same song start."
+  },
+  "original_mean_changes_per_second": 18.583333333333332,
+  "fast_mean_changes_per_second": 30.0,
+  "limitation": "Single process/track, four samples, only main-thread mask changed. Not compositor presentation FPS, audible quality, or Pi performance."
+}

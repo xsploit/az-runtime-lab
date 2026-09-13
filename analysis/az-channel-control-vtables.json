@@ -1,0 +1,141 @@
+[
+  {
+    "type": "usecase::mixer::Channel",
+    "address": "0x26cf590",
+    "offset_to_top": 0,
+    "slots": [
+      {
+        "slot": 0,
+        "function": "0xa78918"
+      },
+      {
+        "slot": 1,
+        "function": "0xa79350"
+      },
+      {
+        "slot": 2,
+        "function": "0xa77770"
+      },
+      {
+        "slot": 3,
+        "function": "0xa761e0"
+      },
+      {
+        "slot": 4,
+        "function": "0xa783e0"
+      },
+      {
+        "slot": 5,
+        "function": "0xa783e8"
+      },
+      {
+        "slot": 6,
+        "function": "0xa76498"
+      },
+      {
+        "slot": 7,
+        "function": "0xa76818"
+      },
+      {
+        "slot": 8,
+        "function": "0xa77420"
+      },
+      {
+        "slot": 9,
+        "function": "0xa75428"
+      }
+    ]
+  },
+  {
+    "type": "usecase::mixer::Channel",
+    "address": "0x26cf5f0",
+    "offset_to_top": -8,
+    "slots": [
+      {
+        "slot": 0,
+        "function": "0xa789d0"
+      },
+      {
+        "slot": 1,
+        "function": "0xa78e80"
+      },
+      {
+        "slot": 2,
+        "function": "0xa77768"
+      }
+    ]
+  },
+  {
+    "type": "usecase::mixer::Channel",
+    "address": "0x26cf618",
+    "offset_to_top": -24,
+    "slots": [
+      {
+        "slot": 0,
+        "function": "0xa78c28"
+      },
+      {
+        "slot": 1,
+        "function": "0xa790e8"
+      },
+      {
+        "slot": 2,
+        "function": "0xa75778"
+      }
+    ]
+  },
+  {
+    "type": "device_adapter::mixer::HeadphoneOut",
+    "address": "0x2e420f8",
+    "offset_to_top": 0,
+    "slots": [
+      {
+        "slot": 0,
+        "function": "0x21345c0"
+      },
+      {
+        "slot": 1,
+        "function": "0x2134708"
+      },
+      {
+        "slot": 2,
+        "function": "0x21344c8"
+      },
+      {
+        "slot": 3,
+        "function": "0x21344d0"
+      }
+    ]
+  },
+  {
+    "type": "device_adapter::mixer::Channel",
+    "address": "0x2e42380",
+    "offset_to_top": 0,
+    "slots": [
+      {
+        "slot": 0,
+        "function": "0x2135fa0"
+      },
+      {
+        "slot": 1,
+        "function": "0x2135a50"
+      },
+      {
+        "slot": 2,
+        "function": "0x21344f0"
+      },
+      {
+        "slot": 3,
+        "function": "0x21300b8"
+      },
+      {
+        "slot": 4,
+        "function": "0x2132078"
+      },
+      {
+        "slot": 5,
+        "function": "0x2132e38"
+      }
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "guest_debugger_connected": true,
+  "no_stopping_fault_within_seconds": 45,
+  "launcher_exit": 0,
+  "scope": "Different diagnostic run: paced null audio and mixer fixtures, without software mixer/RX feedback. No causal inference about crash or silence."
+}

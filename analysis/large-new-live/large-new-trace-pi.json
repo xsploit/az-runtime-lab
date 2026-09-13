@@ -1,0 +1,52 @@
+{
+  "count": 5,
+  "records": [
+    {
+      "ready": 1,
+      "kind": 5,
+      "size": 10485760,
+      "argument2": 0,
+      "caller": 93828351266656,
+      "result": 140733352902400
+    },
+    {
+      "ready": 1,
+      "kind": 4,
+      "size": 12582912,
+      "argument2": 0,
+      "caller": 93828351266680,
+      "result": 140733363445312
+    },
+    {
+      "ready": 1,
+      "kind": 7,
+      "size": 14680064,
+      "argument2": 0,
+      "caller": 93828351266744,
+      "result": 140733243739328
+    },
+    {
+      "ready": 1,
+      "kind": 6,
+      "size": 18874368,
+      "argument2": 0,
+      "caller": 93828351266808,
+      "result": 140733258472192
+    },
+    {
+      "ready": 1,
+      "kind": 6,
+      "size": 4611686018427387903,
+      "argument2": 0,
+      "caller": 93828351266952,
+      "result": 0
+    }
+  ],
+  "checked": [
+    "C malloc/calloc/realloc left intact; zeroing and preservation verified",
+    "four C++ new entry points forwarded and recorded",
+    "throwing allocation failure unwinds through wrapper",
+    "nothrow allocation failure returns null and is recorded",
+    "all successful allocations can be freed"
+  ]
+}

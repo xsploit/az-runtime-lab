@@ -1,0 +1,882 @@
+[
+  {
+    "start": "0x6c9ef0",
+    "end": "0x6c9f04",
+    "register": 2,
+    "value": "0x1649f4963e814f9",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6c9fd4",
+    "end": "0x6c9fe8",
+    "register": 2,
+    "value": "0x9fc1f5536ba997",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6ca0a0",
+    "end": "0x6ca0b4",
+    "register": 2,
+    "value": "0x1685fe879f26780",
+    "lane": 2,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6ca16c",
+    "end": "0x6ca180",
+    "register": 2,
+    "value": "0x9fc1f552852334",
+    "lane": 3,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6ca238",
+    "end": "0x6ca24c",
+    "register": 2,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6ca304",
+    "end": "0x6ca318",
+    "register": 2,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6ca3d0",
+    "end": "0x6ca3e4",
+    "register": 2,
+    "value": "0x5c5e034ace23d5",
+    "lane": 6,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6ca49c",
+    "end": "0x6ca4b0",
+    "register": 2,
+    "value": "0x63bb64be35bd3d",
+    "lane": 14,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6ca568",
+    "end": "0x6ca57c",
+    "register": 2,
+    "value": "0x4c9c2c9458d97e",
+    "lane": 7,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6ca634",
+    "end": "0x6ca648",
+    "register": 2,
+    "value": "0x63bc37dd68e2fe",
+    "lane": 15,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6ca700",
+    "end": "0x6ca714",
+    "register": 2,
+    "value": "0x63bb660eeceeae",
+    "lane": 16,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6ca7cc",
+    "end": "0x6ca7e0",
+    "register": 2,
+    "value": "0x10d6bc18796e31c",
+    "lane": 17,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6ca898",
+    "end": "0x6ca8ac",
+    "register": 2,
+    "value": "0x4c9068767a4bac",
+    "lane": 18,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6caa30",
+    "end": "0x6caa44",
+    "register": 2,
+    "value": "0x3abc876b2f2aea",
+    "lane": 10,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6caafc",
+    "end": "0x6cab10",
+    "register": 2,
+    "value": "0x15418214bc7d89",
+    "lane": 11,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6cabc8",
+    "end": "0x6cabdc",
+    "register": 2,
+    "value": "0x1ce23eafdd238ca",
+    "lane": 12,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x6cac94",
+    "end": "0x6caca8",
+    "register": 2,
+    "value": "0x1a8a8e5a75f8b69",
+    "lane": 13,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1976b20",
+    "end": "0x1976b2c",
+    "register": 0,
+    "value": "0x10d6bc18796e31c",
+    "lane": 17,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1976b34",
+    "end": "0x1976b40",
+    "register": 0,
+    "value": "0x63bb660eeceeae",
+    "lane": 16,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1976b48",
+    "end": "0x1976b58",
+    "register": 0,
+    "value": "0x63bb86740e690a",
+    "lane": 19,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1976b60",
+    "end": "0x1976b6c",
+    "register": 0,
+    "value": "0x4c9068767a4bac",
+    "lane": 18,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1976b74",
+    "end": "0x1976b84",
+    "register": 0,
+    "value": "0x63bb64be35bd3d",
+    "lane": 14,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1976b8c",
+    "end": "0x1976b98",
+    "register": 0,
+    "value": "0x4c9c2c9458d97e",
+    "lane": 7,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1976bf4",
+    "end": "0x1976c04",
+    "register": 0,
+    "value": "0x5c5e034ace23d5",
+    "lane": 6,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1997974",
+    "end": "0x1997980",
+    "register": 0,
+    "value": "0x63bb64be35bd3d",
+    "lane": 14,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1997990",
+    "end": "0x199799c",
+    "register": 0,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19979ac",
+    "end": "0x19979b8",
+    "register": 0,
+    "value": "0x63bb660eeceeae",
+    "lane": 16,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19979c4",
+    "end": "0x19979d0",
+    "register": 0,
+    "value": "0x63bb86740e690a",
+    "lane": 19,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1997a18",
+    "end": "0x1997a24",
+    "register": 0,
+    "value": "0x10d6bc18796e31c",
+    "lane": 17,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1997a60",
+    "end": "0x1997a6c",
+    "register": 0,
+    "value": "0x4c9068767a4bac",
+    "lane": 18,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1997a7c",
+    "end": "0x1997a88",
+    "register": 0,
+    "value": "0x4c9c2c9458d97e",
+    "lane": 7,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1997a94",
+    "end": "0x1997aa0",
+    "register": 0,
+    "value": "0x5c5e034ace23d5",
+    "lane": 6,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1999154",
+    "end": "0x1999168",
+    "register": 1,
+    "value": "0x5c5e034ace23d5",
+    "lane": 6,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1999170",
+    "end": "0x1999184",
+    "register": 1,
+    "value": "0x4c9c2c9458d97e",
+    "lane": 7,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x199918c",
+    "end": "0x19991a0",
+    "register": 1,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19991d0",
+    "end": "0x19991e4",
+    "register": 1,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19996bc",
+    "end": "0x19996d8",
+    "register": 1,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1999c68",
+    "end": "0x1999c78",
+    "register": 1,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x1999dd8",
+    "end": "0x1999df0",
+    "register": 1,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x199a004",
+    "end": "0x199a01c",
+    "register": 1,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x199a090",
+    "end": "0x199a0a0",
+    "register": 1,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x199fb70",
+    "end": "0x199fb7c",
+    "register": 1,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x199fb90",
+    "end": "0x199fb9c",
+    "register": 1,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x199fbb0",
+    "end": "0x199fbbc",
+    "register": 1,
+    "value": "0x5c5e034ace23d5",
+    "lane": 6,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x199fbd0",
+    "end": "0x199fbdc",
+    "register": 1,
+    "value": "0x3abc876b2f2aea",
+    "lane": 10,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x199fbf0",
+    "end": "0x199fbfc",
+    "register": 1,
+    "value": "0x15418214bc7d89",
+    "lane": 11,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x199fc10",
+    "end": "0x199fc1c",
+    "register": 1,
+    "value": "0x1ce23eafdd238ca",
+    "lane": 12,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x199fc30",
+    "end": "0x199fc3c",
+    "register": 1,
+    "value": "0x1a8a8e5a75f8b69",
+    "lane": 13,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x199fcc4",
+    "end": "0x199fcd0",
+    "register": 1,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x199fd90",
+    "end": "0x199fda0",
+    "register": 4,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19a96fc",
+    "end": "0x19a9710",
+    "register": 1,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19a97a4",
+    "end": "0x19a97b8",
+    "register": 1,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19aa0b4",
+    "end": "0x19aa0cc",
+    "register": 1,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19aa30c",
+    "end": "0x19aa324",
+    "register": 1,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19aa334",
+    "end": "0x19aa34c",
+    "register": 1,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19c2114",
+    "end": "0x19c212c",
+    "register": 3,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19c216c",
+    "end": "0x19c2178",
+    "register": 0,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19c2184",
+    "end": "0x19c2190",
+    "register": 0,
+    "value": "0x5c5e034ace23d5",
+    "lane": 6,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19c21d4",
+    "end": "0x19c21e0",
+    "register": 0,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19c21ec",
+    "end": "0x19c21f8",
+    "register": 0,
+    "value": "0x5c5e034ace23d5",
+    "lane": 6,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19c2208",
+    "end": "0x19c2220",
+    "register": 0,
+    "value": "0x1a8a8e5a75f8b69",
+    "lane": 13,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19c220c",
+    "end": "0x19c222c",
+    "register": 3,
+    "value": "0x15418214bc7d89",
+    "lane": 11,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19c2228",
+    "end": "0x19c2238",
+    "register": 0,
+    "value": "0x1ce23eafdd238ca",
+    "lane": 12,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19c2248",
+    "end": "0x19c2254",
+    "register": 3,
+    "value": "0x3abc876b2f2aea",
+    "lane": 10,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19c6dac",
+    "end": "0x19c6dc0",
+    "register": 0,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d20d0",
+    "end": "0x19d20dc",
+    "register": 0,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d2124",
+    "end": "0x19d2130",
+    "register": 3,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d2160",
+    "end": "0x19d216c",
+    "register": 0,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d2178",
+    "end": "0x19d2184",
+    "register": 0,
+    "value": "0x5c5e034ace23d5",
+    "lane": 6,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d21d8",
+    "end": "0x19d21e4",
+    "register": 0,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d21f0",
+    "end": "0x19d21fc",
+    "register": 0,
+    "value": "0x5c5e034ace23d5",
+    "lane": 6,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d2208",
+    "end": "0x19d2220",
+    "register": 0,
+    "value": "0x1ce23eafdd238ca",
+    "lane": 12,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d220c",
+    "end": "0x19d222c",
+    "register": 3,
+    "value": "0x15418214bc7d89",
+    "lane": 11,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d2228",
+    "end": "0x19d2238",
+    "register": 0,
+    "value": "0x1a8a8e5a75f8b69",
+    "lane": 13,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d2248",
+    "end": "0x19d2254",
+    "register": 3,
+    "value": "0x3abc876b2f2aea",
+    "lane": 10,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d8eb8",
+    "end": "0x19d8ec4",
+    "register": 0,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d8ed0",
+    "end": "0x19d8edc",
+    "register": 0,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d8ee8",
+    "end": "0x19d8ef4",
+    "register": 0,
+    "value": "0x3abc876b2f2aea",
+    "lane": 10,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d8f00",
+    "end": "0x19d8f0c",
+    "register": 0,
+    "value": "0x15418214bc7d89",
+    "lane": 11,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d8f18",
+    "end": "0x19d8f24",
+    "register": 0,
+    "value": "0x1ce23eafdd238ca",
+    "lane": 12,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d8f30",
+    "end": "0x19d8f3c",
+    "register": 0,
+    "value": "0x1a8a8e5a75f8b69",
+    "lane": 13,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d8f48",
+    "end": "0x19d8f54",
+    "register": 0,
+    "value": "0x5c5e034ace23d5",
+    "lane": 6,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d8f9c",
+    "end": "0x19d8fb4",
+    "register": 2,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d9044",
+    "end": "0x19d9050",
+    "register": 0,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d905c",
+    "end": "0x19d9068",
+    "register": 0,
+    "value": "0x5c5e034ace23d5",
+    "lane": 6,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d9080",
+    "end": "0x19d9098",
+    "register": 0,
+    "value": "0x1ce23eafdd238ca",
+    "lane": 12,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d9084",
+    "end": "0x19d90a4",
+    "register": 2,
+    "value": "0x15418214bc7d89",
+    "lane": 11,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d90a0",
+    "end": "0x19d90b0",
+    "register": 0,
+    "value": "0x1a8a8e5a75f8b69",
+    "lane": 13,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d90c0",
+    "end": "0x19d90cc",
+    "register": 2,
+    "value": "0x3abc876b2f2aea",
+    "lane": 10,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d9170",
+    "end": "0x19d917c",
+    "register": 0,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155be0",
+    "end": "0x2155bf4",
+    "register": 3,
+    "value": "0x1649f4963e814f9",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155c24",
+    "end": "0x2155c3c",
+    "register": 3,
+    "value": "0x9fc1f5536ba997",
+    "lane": 1,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155c5c",
+    "end": "0x2155c74",
+    "register": 3,
+    "value": "0x1685fe879f26780",
+    "lane": 2,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155c94",
+    "end": "0x2155cac",
+    "register": 3,
+    "value": "0x9fc1f552852334",
+    "lane": 3,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155ccc",
+    "end": "0x2155ce4",
+    "register": 3,
+    "value": "0x9fc1f55209ac55",
+    "lane": 4,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155d04",
+    "end": "0x2155d1c",
+    "register": 3,
+    "value": "0x2f39430c409383",
+    "lane": 5,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155d3c",
+    "end": "0x2155d54",
+    "register": 3,
+    "value": "0x5c5e034ace23d5",
+    "lane": 6,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155d74",
+    "end": "0x2155d8c",
+    "register": 3,
+    "value": "0x4c9c2c9458d97e",
+    "lane": 7,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155dac",
+    "end": "0x2155dc4",
+    "register": 3,
+    "value": "0x4c420c1f6516f5",
+    "lane": 8,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155de4",
+    "end": "0x2155dfc",
+    "register": 3,
+    "value": "0x1982b6c2e2b8c9e",
+    "lane": 9,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155e1c",
+    "end": "0x2155e34",
+    "register": 3,
+    "value": "0x3abc876b2f2aea",
+    "lane": 10,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155e54",
+    "end": "0x2155e6c",
+    "register": 3,
+    "value": "0x15418214bc7d89",
+    "lane": 11,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155e8c",
+    "end": "0x2155ea4",
+    "register": 3,
+    "value": "0x1ce23eafdd238ca",
+    "lane": 12,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155ec4",
+    "end": "0x2155edc",
+    "register": 3,
+    "value": "0x1a8a8e5a75f8b69",
+    "lane": 13,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155efc",
+    "end": "0x2155f14",
+    "register": 3,
+    "value": "0x63bb64be35bd3d",
+    "lane": 14,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155f34",
+    "end": "0x2155f4c",
+    "register": 3,
+    "value": "0x63bc37dd68e2fe",
+    "lane": 15,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155f6c",
+    "end": "0x2155f84",
+    "register": 3,
+    "value": "0x63bb660eeceeae",
+    "lane": 16,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155fa4",
+    "end": "0x2155fbc",
+    "register": 3,
+    "value": "0x10d6bc18796e31c",
+    "lane": 17,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2155fdc",
+    "end": "0x2155ff4",
+    "register": 3,
+    "value": "0x4c9068767a4bac",
+    "lane": 18,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2156014",
+    "end": "0x215602c",
+    "register": 3,
+    "value": "0x63bb86740e690a",
+    "lane": 19,
+    "caveat": "Validate register writes and control flow"
+  }
+]

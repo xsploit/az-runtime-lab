@@ -1,0 +1,7 @@
+{
+  "cases": 11,
+  "mismatches": 0,
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "method": "Original unmodified ARM64 media-record lookup under QEMU with synthetic records",
+  "limitation": "Constructed records only; no full player, real USB state, mount transitions or audio validation"
+}

@@ -1,0 +1,67 @@
+{
+  "samples": 30030,
+  "positions_match_between_modes": true,
+  "rows": [
+    {
+      "zoom_f32": 0.004999999888241291,
+      "samples": 3003,
+      "max_absolute_coordinate_error_px": 5.551115123125783e-17,
+      "backward_steps_in_ordered_inputs": 0
+    },
+    {
+      "zoom_f32": 0.009999999776482582,
+      "samples": 3003,
+      "max_absolute_coordinate_error_px": 5.551115123125783e-17,
+      "backward_steps_in_ordered_inputs": 0
+    },
+    {
+      "zoom_f32": 0.015625,
+      "samples": 3003,
+      "max_absolute_coordinate_error_px": 5.551115123125783e-17,
+      "backward_steps_in_ordered_inputs": 0
+    },
+    {
+      "zoom_f32": 0.0625,
+      "samples": 3003,
+      "max_absolute_coordinate_error_px": 5.551115123125783e-17,
+      "backward_steps_in_ordered_inputs": 0
+    },
+    {
+      "zoom_f32": 0.125,
+      "samples": 3003,
+      "max_absolute_coordinate_error_px": 5.551115123125783e-17,
+      "backward_steps_in_ordered_inputs": 0
+    },
+    {
+      "zoom_f32": 0.25,
+      "samples": 3003,
+      "max_absolute_coordinate_error_px": 5.551115123125783e-17,
+      "backward_steps_in_ordered_inputs": 0
+    },
+    {
+      "zoom_f32": 0.5,
+      "samples": 3003,
+      "max_absolute_coordinate_error_px": 5.551115123125783e-17,
+      "backward_steps_in_ordered_inputs": 0
+    },
+    {
+      "zoom_f32": 1.0,
+      "samples": 3003,
+      "max_absolute_coordinate_error_px": 5.551115123125783e-17,
+      "backward_steps_in_ordered_inputs": 0
+    },
+    {
+      "zoom_f32": 2.0,
+      "samples": 3003,
+      "max_absolute_coordinate_error_px": 5.551115123125783e-17,
+      "backward_steps_in_ordered_inputs": 0
+    },
+    {
+      "zoom_f32": 4.0,
+      "samples": 3003,
+      "max_absolute_coordinate_error_px": 0.0,
+      "backward_steps_in_ordered_inputs": 0
+    }
+  ],
+  "limits": "Original position setup and selected RGB blend fragments; constructed sorted positions. Not full renderer, scheduler, audible transport or optical screen."
+}

@@ -1,0 +1,28 @@
+{
+  "capture": "runtime-lab/analysis/az-grid-strip.nut",
+  "scope": "Native X11 red-grid strip only; sampled transitions, not physical display FPS",
+  "width": 620,
+  "samples": 720,
+  "duration_first_to_last_seconds": 5.991667,
+  "unique_frames": 80,
+  "accepted_transitions": 113,
+  "line_width_pixels_histogram": {
+    "1": 16735
+  },
+  "interval_rounded_ms_histogram": {
+    "67": 57,
+    "33": 42,
+    "75": 8,
+    "42": 3,
+    "25": 2
+  },
+  "shift_pixels_histogram": {
+    "-1": 113
+  },
+  "red_pixel_colors": {
+    "(255, 0, 0)": 16735
+  },
+  "interval_ms_median": 66.66600000000011,
+  "interval_ms_max": 75.00000000000017,
+  "rejected": []
+}

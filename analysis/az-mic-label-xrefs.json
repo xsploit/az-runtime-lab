@@ -1,0 +1,23 @@
+[
+  {
+    "adrp": "0x1ceafa0",
+    "add": "0x1ceafa8",
+    "target": "0x2c93598",
+    "label": "MIC1",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1ceafc8",
+    "add": "0x1ceafd0",
+    "target": "0x2c935a8",
+    "label": "MIC1+2",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1ceaff0",
+    "add": "0x1ceaff8",
+    "target": "0x2c935a0",
+    "label": "MIC2",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

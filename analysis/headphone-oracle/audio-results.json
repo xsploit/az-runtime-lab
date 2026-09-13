@@ -1,0 +1,83 @@
+{
+  "scope": "Audio update with fixture device output and variable split calibration; normal finite fixtures, no physical calibration claim",
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "range": [
+    "0x5a580",
+    "0x5aa28"
+  ],
+  "relocations": [
+    {
+      "address": "0x5a5d0",
+      "target": "fixture_output",
+      "purpose": "output device pointer only"
+    }
+  ],
+  "commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "audio_compare.c",
+      "setters.c",
+      "native-audio.S",
+      "-o",
+      "audio-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "audio_compare.c",
+      "setters.c",
+      "-o",
+      "audio-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "audio_compare.c",
+      "setters.c",
+      "-o",
+      "audio-sanitized"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "PASS 24000 persistent blocks, 1519905 frames, full state and output guards\n",
+      "stderr": ""
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "PASS 24000 persistent blocks, 1519905 frames, full state and output guards\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "PASS 24000 persistent blocks, 1519905 frames, full state and output guards\n",
+      "stderr": ""
+    }
+  }
+}

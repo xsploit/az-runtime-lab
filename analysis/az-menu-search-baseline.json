@@ -1,0 +1,28 @@
+{
+  "pid": 230007,
+  "display": ":1",
+  "model": "XDJAZ1.30",
+  "observations": [
+    {
+      "action": "Click Local Library at740,197",
+      "result": "BROWSE Folder view with3 files; Search not visible",
+      "image": "menu-search-browser.png"
+    },
+    {
+      "action": "Click top-left Back at137,36, then USB icon48,34",
+      "result": "No visible navigation; remained Folder view",
+      "limitation": "Does not prove controls broken; enabled state/semantics unresolved"
+    },
+    {
+      "action": "Mixer packet byte32 bit7 Source pulse, CRC valid",
+      "result": "Returned to SOURCE screen",
+      "image": "menu-source-packet.png"
+    },
+    {
+      "action": "Click visible Source gear735,107",
+      "result": "Opened Local Library settings with Blue/RGB/3Band waveform choices",
+      "image": "menu-source-gear.png"
+    }
+  ],
+  "scope": "XTest pointer events on private Xvfb; no physical touch test. Source gear is not evidence for separate Menu/Search controls. Raw-folder fixture lacks exported library; library-mode hypothesis unverified."
+}

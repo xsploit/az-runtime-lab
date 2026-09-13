@@ -1,0 +1,14 @@
+{
+  "grid_changes": 373,
+  "grid_change_hz": 37.36351798056696,
+  "hold_ms_histogram": {
+    "16": 50,
+    "34": 68,
+    "33": 142,
+    "17": 104,
+    "50": 8
+  },
+  "median_hold_ms": 32.999999999999474,
+  "max_hold_ms": 50.00000000000027,
+  "scope": "Native unscaled grid row; physical-panel flicker not measured"
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "adrp": "0x1b71b78",
+    "add": "0x1b71b7c",
+    "target": "0x2b61008",
+    "label": "Waveform/BeatMeasure",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1b71d18",
+    "add": "0x1b71d20",
+    "target": "0x2b61008",
+    "label": "Waveform/BeatMeasure",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1b97940",
+    "add": "0x1b97948",
+    "target": "0x2b73080",
+    "label": "gui::waveform::DetailedWaveformWidget::update - gridMaker.makeGridImage begin",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1b97fe8",
+    "add": "0x1b97ff0",
+    "target": "0x2b73080",
+    "label": "gui::waveform::DetailedWaveformWidget::update - gridMaker.makeGridImage begin",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x1b986b4",
+    "add": "0x1b986bc",
+    "target": "0x2b73080",
+    "label": "gui::waveform::DetailedWaveformWidget::update - gridMaker.makeGridImage begin",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

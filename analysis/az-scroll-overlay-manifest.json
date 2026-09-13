@@ -1,0 +1,62 @@
+{
+  "source_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "patches": [
+    {
+      "va": "0x1e262e8",
+      "offset": 27419368,
+      "before": "0x528003c1",
+      "after": "0x52800781",
+      "reason": "LocalPlayer startup refresh request 30 to 60 Hz"
+    },
+    {
+      "va": "0x212fb94",
+      "offset": 30604180,
+      "before": "0x7100041f",
+      "after": "0x7100001f",
+      "reason": "Repaint tick threshold"
+    },
+    {
+      "va": "0x212f344",
+      "offset": 30602052,
+      "before": "0x7100041f",
+      "after": "0x7100001f",
+      "reason": "Upload tick threshold"
+    },
+    {
+      "va": "0x212f974",
+      "offset": 30603636,
+      "before": "0x11000673",
+      "after": "0x52800033",
+      "reason": "Repaint reservation one tick"
+    },
+    {
+      "va": "0x212f9ac",
+      "offset": 30603692,
+      "before": "0x11000673",
+      "after": "0x52800033",
+      "reason": "Alternate repaint reservation one tick"
+    },
+    {
+      "va": "0x212fc1c",
+      "offset": 30604316,
+      "before": "0x1e632800",
+      "after": "0xd503201f",
+      "reason": "Remove extra post-callback period"
+    },
+    {
+      "va": "0x212fc44",
+      "offset": 30604356,
+      "before": "0x52800022",
+      "after": "0x52800002",
+      "reason": "Repaint fallback zero ticks"
+    },
+    {
+      "va": "0x212f358",
+      "offset": 30602072,
+      "before": "0x52800022",
+      "after": "0x52800002",
+      "reason": "Upload fallback zero ticks"
+    }
+  ],
+  "overlay_sha256": "137442868569db41daa2c52be4a614d154152e53561b0a7153c8ce2734ae850c"
+}

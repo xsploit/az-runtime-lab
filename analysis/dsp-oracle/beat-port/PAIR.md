@@ -1,0 +1,9 @@
+# Combined Off / Delay / Echo manager candidate
+
+`beat_pair.c/.h` represents three object identities under one manager. Effect audio, quantization state, player snapshot and ring are caller-owned. The manager retains the existing modeled manager layout but accesses effect state through typed views, without casting Delay state to Echo state. Supported IDs are0,1,5 only; process assumes at most64frames and native44.1kHz bounds. This research API is not enabled in the live graph.
+
+On2026-09-12, `run_beat_pair_switch.py` executed original ARM switchNextBeatEffect and actual Delay/Echo callbacks versus `beat_pair_switch`.96direct switches compare all modeled manager state, both effect states and both quantization states:17184words,zero mismatches. Includes equal/different beat selections, different times/depths, all initial source/destination On combinations, player quantize and manager quantize combinations, player time and pitch changes. Sources are hashed in beat-pair-switch-switch-results.json. This is an ARM-side differential comparison; no host replay or sanitizer result is claimed for the combined candidate yet.
+
+The native comparison confirms remembered=Off for direct Delay/Echo changes, counter resets, depth transfer and the actual timing behavior with quantize enabled. Existing prose that says destination time is always retained applies only to the earlier nonquantized direct fixture; enabled quantization can recalculate it.
+
+`beat_pair_process` exists but is not yet differentially tested. Mix-ramp advancement is chosen once per block, matching the original manager's branch placement; do not re-evaluate the done flags within the loop. Off/remembered transitions and full audio/ring evolution must be compared against the both-native-loop setup before shared/live integration. Do not infer process correctness from the switch-only result.

@@ -1,0 +1,17 @@
+{
+  "sources": {
+    "shims/pcm-template-store.c": "2b0019bc8179dd62621d3a679b91decefc33aff208ead85bf88cd7979eace0f8",
+    "shims/pcm-template-store.h": "dba7a76345b956761dbe34f1d89dd81556a38a0515c6f7414fa8b3f47477038e",
+    "shims/pcm-template-allocation.c": "7419845568becad8da7e0fa4521eb4ff035899e33e93e57f0e200562378e2bf9",
+    "shims/pcm-template-allocation.h": "52c4abb5da2e8325b95b2a4e69b77d12481f40cea2a9a74c995a8ec6df7137d5",
+    "shims/pcm-template-hook.c": "43a2b1a0ff86993c20e9c9a4860b9412b693fcbc91550993dc3f4125da6257d0",
+    "analysis/test-pcm-hook-realloc.c": "12d8ccf58ea04485b28e3f341342f504e9d049610fcf490b6f0ba56c5e82c85b",
+    "analysis/test-pcm-allocation.c": "6825b4779e8a89ebb0798ef796c370c2bf0755d80e544179410dac9db54fc005",
+    "run-az-interactive.py": "f030e22b844a0221909f7451fac0e1423b188b0c57a6e38d28b5588a7b06a727",
+    "run-az-pi-probe.py": "0b8e620667e641ee1f612346c2d84c1a92502900dbe33f154814238422c0dafa"
+  },
+  "native_hook_realloc_test": "passed: grow/shrink/zero/failure/external/interior",
+  "allocation_test": "passed on host ASan/UBSan and native Pi",
+  "startup_comparison": "startup-pss-comparison.json",
+  "visible_player_switched": false
+}

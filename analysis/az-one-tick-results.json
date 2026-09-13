@@ -1,0 +1,54 @@
+{
+  "patches": [
+    {
+      "address": "0x212fb94",
+      "original": "0x7100041f",
+      "candidate": "0x7100001f"
+    },
+    {
+      "address": "0x212f344",
+      "original": "0x7100041f",
+      "candidate": "0x7100001f"
+    },
+    {
+      "address": "0x212f974",
+      "original": "0x11000673",
+      "candidate": "0x52800033"
+    },
+    {
+      "address": "0x212f9ac",
+      "original": "0x11000673",
+      "candidate": "0x52800033"
+    }
+  ],
+  "samples": [
+    {
+      "label": "original",
+      "instructions": [
+        "0x7100041f",
+        "0x7100041f",
+        "0x11000673",
+        "0x11000673"
+      ]
+    },
+    {
+      "label": "candidate",
+      "instructions": [
+        "0x7100001f",
+        "0x7100001f",
+        "0x52800033",
+        "0x52800033"
+      ]
+    },
+    {
+      "label": "restored",
+      "instructions": [
+        "0x7100041f",
+        "0x7100041f",
+        "0x11000673",
+        "0x11000673"
+      ]
+    }
+  ],
+  "restored": true
+}

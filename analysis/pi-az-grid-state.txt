@@ -1,0 +1,10 @@
+0x00007fff3f409690 in ?? ()
+Breakpoint 1 at 0x1b857e8
+
+Thread 1 "EP147" hit Breakpoint 1, 0x0000000001b857e8 in ?? ()
+GRID_CALL=0x1b857e8 BACKEND=0x7ffe57d18fd0 STATE=0x7ffe8685a900 IMAGE=0x7fff0981c1b0 X=0 Y=0 FLAG=0
+TRANSLATION_ONLY=1 INTEGER_X=-5 INTEGER_Y=0 OPACITY_BYTE=255 QUALITY_FIELD=1
+0x7ffe8685a908:	1	0	0	0
+0x7ffe8685a918:	1	0
+[Inferior 1 (process 9262) detached]
+TracerPid:	0

@@ -1,0 +1,432 @@
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev>:
+  77cf98:      	stp	x29, x30, [sp, #-0x60]!
+  77cf9c:      	mov	x29, sp
+  77cfa0:      	stp	x19, x20, [sp, #0x10]
+  77cfa4:      	mov	x19, x0
+  77cfa8:      	ldr	x0, [x0]
+  77cfac:      	str	x21, [sp, #0x20]
+  77cfb0:      	mov	x21, x1
+  77cfb4:      	cbz	x0, 0x77cff8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84250>
+  77cfb8:      	ldr	x1, [x19, #0x8]
+  77cfbc:      	cbz	x1, 0x77cff8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84250>
+  77cfc0:      	ldrb	w20, [x1]
+  77cfc4:      	cbz	w20, 0x77cfd0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84228>
+  77cfc8:      	ldr	x2, [x1, #0x8]
+  77cfcc:      	cbz	x2, 0x77d0b8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84310>
+  77cfd0:      	ldr	x0, [x0, #0x8]
+  77cfd4:      	mov	x1, x21
+  77cfd8:      	mov	w20, #0x0               // =0
+  77cfdc:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  77cfe0:      	str	xzr, [x19, #0x8]
+  77cfe4:      	mov	w0, w20
+  77cfe8:      	ldp	x19, x20, [sp, #0x10]
+  77cfec:      	ldr	x21, [sp, #0x20]
+  77cff0:      	ldp	x29, x30, [sp], #0x60
+  77cff4:      	ret
+  77cff8:      	add	x0, sp, #0x38
+  77cffc:      	adrp	x1, 0x25c1000 <_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE+0x4d0>
+  77d000:      	add	x1, x1, #0xda8
+  77d004:      	bl	0x2333ce0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1abbc8>
+  77d008:      	adrp	x1, 0x25f1000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x2e1a8>
+  77d00c:      	add	x1, x1, #0xfa8
+  77d010:      	add	x1, x1, #0xbf8
+  77d014:      	add	x0, sp, #0x38
+  77d018:      	add	x8, sp, #0x40
+  77d01c:      	bl	0x2313bf0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x18bad8>
+  77d020:      	adrp	x1, 0x27cb000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x2081a8>
+  77d024:      	add	x8, sp, #0x48
+  77d028:      	add	x1, x1, #0xd98
+  77d02c:      	add	x0, sp, #0x40
+  77d030:      	bl	0x2313bf0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x18bad8>
+  77d034:      	adrp	x1, 0x26c1000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0xfe1a8>
+  77d038:      	add	x0, sp, #0x50
+  77d03c:      	add	x1, x1, #0x4a0
+  77d040:      	bl	0x2333ce0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1abbc8>
+  77d044:      	add	x1, sp, #0x50
+  77d048:      	add	x8, sp, #0x58
+  77d04c:      	add	x0, sp, #0x48
+  77d050:      	bl	0x2313a90 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x18b978>
+  77d054:      	mov	w2, #0x1                // =1
+  77d058:      	mov	w1, #0x0                // =0
+  77d05c:      	add	x0, sp, #0x58
+  77d060:      	bl	0x22003e0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x782c8>
+  77d064:      	add	x0, sp, #0x58
+  77d068:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d06c:      	add	x0, sp, #0x50
+  77d070:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d074:      	add	x0, sp, #0x48
+  77d078:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d07c:      	add	x0, sp, #0x40
+  77d080:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d084:      	add	x0, sp, #0x38
+  77d088:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d08c:      	ldr	x0, [x19]
+  77d090:      	mov	w20, #0x0               // =0
+  77d094:      	cbz	x0, 0x77cfe4 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x8423c>
+  77d098:      	ldr	x0, [x0, #0x8]
+  77d09c:      	mov	x1, x21
+  77d0a0:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  77d0a4:      	mov	w0, w20
+  77d0a8:      	ldp	x19, x20, [sp, #0x10]
+  77d0ac:      	ldr	x21, [sp, #0x20]
+  77d0b0:      	ldp	x29, x30, [sp], #0x60
+  77d0b4:      	ret
+  77d0b8:      	ldr	w2, [x0, #0x28]
+  77d0bc:      	strb	wzr, [x1]
+  77d0c0:      	str	x21, [x1, #0x8]
+  77d0c4:      	add	w1, w2, #0x1
+  77d0c8:      	str	w1, [x0, #0x28]
+  77d0cc:      	str	xzr, [x19, #0x8]
+  77d0d0:      	b	0x77cfe4 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x8423c>
+  77d0d4:      	mov	x19, x0
+  77d0d8:      	b	0x77d100 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84358>
+  77d0dc:      	mov	x19, x0
+  77d0e0:      	add	x0, sp, #0x58
+  77d0e4:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d0e8:      	add	x0, sp, #0x50
+  77d0ec:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d0f0:      	add	x0, sp, #0x48
+  77d0f4:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d0f8:      	add	x0, sp, #0x40
+  77d0fc:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d100:      	add	x0, sp, #0x38
+  77d104:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d108:      	mov	x0, x19
+  77d10c:      	bl	0x424d10 <_Unwind_Resume@plt>
+  77d110:      	mov	x19, x0
+  77d114:      	b	0x77d0f0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84348>
+  77d118:      	mov	x19, x0
+  77d11c:      	b	0x77d0e8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84340>
+  77d120:      	mov	x19, x0
+  77d124:      	b	0x77d0f8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84350>
+  77d128:      	stp	x29, x30, [sp, #-0x80]!
+  77d12c:      	mov	x29, sp
+  77d130:      	stp	x19, x20, [sp, #0x10]
+  77d134:      	mov	x19, x0
+  77d138:      	ldr	x0, [x0]
+  77d13c:      	str	x25, [sp, #0x40]
+  77d140:      	mov	x25, x1
+  77d144:      	cbz	x0, 0x77d178 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x843d0>
+  77d148:      	ldr	x2, [x19, #0x18]
+  77d14c:      	cbz	x2, 0x77d178 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x843d0>
+  77d150:      	ldr	x2, [x19, #0x20]
+  77d154:      	cbz	x2, 0x77d178 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x843d0>
+  77d158:      	ldr	x3, [x19, #0x8]
+  77d15c:      	ldr	x2, [x0, #0x20]
+  77d160:      	cmp	x3, x2
+  77d164:      	b.eq	0x77d26c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x844c4>
+  77d168:      	ldp	x19, x20, [sp, #0x10]
+  77d16c:      	ldr	x25, [sp, #0x40]
+  77d170:      	ldp	x29, x30, [sp], #0x80
+  77d174:      	ret
+  77d178:      	add	x20, sp, #0x58
+  77d17c:      	adrp	x1, 0x25c1000 <_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE+0x4d0>
+  77d180:      	mov	x0, x20
+  77d184:      	add	x1, x1, #0xda8
+  77d188:      	stp	x21, x22, [sp, #0x20]
+  77d18c:      	bl	0x2333ce0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1abbc8>
+  77d190:      	add	x21, sp, #0x60
+  77d194:      	adrp	x1, 0x25f1000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x2e1a8>
+  77d198:      	add	x1, x1, #0xfa8
+  77d19c:      	add	x1, x1, #0xca0
+  77d1a0:      	mov	x0, x20
+  77d1a4:      	mov	x8, x21
+  77d1a8:      	bl	0x2313bf0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x18bad8>
+  77d1ac:      	add	x22, sp, #0x68
+  77d1b0:      	adrp	x1, 0x27cb000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x2081a8>
+  77d1b4:      	mov	x8, x22
+  77d1b8:      	add	x1, x1, #0xd98
+  77d1bc:      	mov	x0, x21
+  77d1c0:      	bl	0x2313bf0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x18bad8>
+  77d1c4:      	stp	x23, x24, [sp, #0x30]
+  77d1c8:      	add	x23, sp, #0x70
+  77d1cc:      	adrp	x1, 0x26c1000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0xfe1a8>
+  77d1d0:      	mov	x0, x23
+  77d1d4:      	add	x1, x1, #0x4a0
+  77d1d8:      	bl	0x2333ce0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1abbc8>
+  77d1dc:      	add	x24, sp, #0x78
+  77d1e0:      	mov	x1, x23
+  77d1e4:      	mov	x8, x24
+  77d1e8:      	mov	x0, x22
+  77d1ec:      	bl	0x2313a90 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x18b978>
+  77d1f0:      	mov	w2, #0x1                // =1
+  77d1f4:      	mov	w1, #0x0                // =0
+  77d1f8:      	mov	x0, x24
+  77d1fc:      	bl	0x22003e0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x782c8>
+  77d200:      	mov	x0, x24
+  77d204:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d208:      	mov	x0, x23
+  77d20c:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d210:      	mov	x0, x22
+  77d214:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d218:      	mov	x0, x21
+  77d21c:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d220:      	mov	x0, x20
+  77d224:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d228:      	ldr	x0, [x19, #0x18]
+  77d22c:      	cbz	x0, 0x77d254 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x844ac>
+  77d230:      	ldr	x0, [x0, #0x8]
+  77d234:      	mov	x1, x25
+  77d238:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  77d23c:      	ldp	x19, x20, [sp, #0x10]
+  77d240:      	ldp	x21, x22, [sp, #0x20]
+  77d244:      	ldp	x23, x24, [sp, #0x30]
+  77d248:      	ldr	x25, [sp, #0x40]
+  77d24c:      	ldp	x29, x30, [sp], #0x80
+  77d250:      	ret
+  77d254:      	ldp	x19, x20, [sp, #0x10]
+  77d258:      	ldp	x21, x22, [sp, #0x20]
+  77d25c:      	ldp	x23, x24, [sp, #0x30]
+  77d260:      	ldr	x25, [sp, #0x40]
+  77d264:      	ldp	x29, x30, [sp], #0x80
+  77d268:      	ret
+  77d26c:      	ldr	w0, [x0, #0x28]
+  77d270:      	ldr	w2, [x19, #0x10]
+  77d274:      	cmp	w2, w0
+  77d278:      	b.ne	0x77d168 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x843c0>
+  77d27c:      	add	x0, x19, #0x18
+  77d280:      	bl	0x77cf98 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x841f0>
+  77d284:      	tst	w0, #0xff
+  77d288:      	b.eq	0x77d168 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x843c0>
+  77d28c:      	ldr	x0, [x19]
+  77d290:      	cbz	x0, 0x77d29c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x844f4>
+  77d294:      	ldr	w1, [x19, #0x28]
+  77d298:      	tbz	w1, #0x1f, 0x77d358 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x845b0>
+  77d29c:      	add	x20, sp, #0x58
+  77d2a0:      	adrp	x1, 0x25c1000 <_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE+0x4d0>
+  77d2a4:      	mov	x0, x20
+  77d2a8:      	add	x1, x1, #0xda8
+  77d2ac:      	stp	x21, x22, [sp, #0x20]
+  77d2b0:      	bl	0x2333ce0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1abbc8>
+  77d2b4:      	add	x21, sp, #0x60
+  77d2b8:      	adrp	x1, 0x25f1000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x2e1a8>
+  77d2bc:      	add	x1, x1, #0xfa8
+  77d2c0:      	add	x1, x1, #0xca0
+  77d2c4:      	mov	x0, x20
+  77d2c8:      	mov	x8, x21
+  77d2cc:      	bl	0x2313bf0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x18bad8>
+  77d2d0:      	add	x22, sp, #0x68
+  77d2d4:      	adrp	x1, 0x27cb000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x2081a8>
+  77d2d8:      	mov	x8, x22
+  77d2dc:      	add	x1, x1, #0xd98
+  77d2e0:      	mov	x0, x21
+  77d2e4:      	bl	0x2313bf0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x18bad8>
+  77d2e8:      	stp	x23, x24, [sp, #0x30]
+  77d2ec:      	add	x23, sp, #0x70
+  77d2f0:      	adrp	x1, 0x25fa000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x371a8>
+  77d2f4:      	mov	x0, x23
+  77d2f8:      	add	x1, x1, #0x940
+  77d2fc:      	bl	0x2333ce0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1abbc8>
+  77d300:      	add	x24, sp, #0x78
+  77d304:      	mov	x1, x23
+  77d308:      	mov	x8, x24
+  77d30c:      	mov	x0, x22
+  77d310:      	bl	0x2313a90 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x18b978>
+  77d314:      	mov	w2, #0x1                // =1
+  77d318:      	mov	w1, #0x0                // =0
+  77d31c:      	mov	x0, x24
+  77d320:      	bl	0x22003e0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x782c8>
+  77d324:      	mov	x0, x24
+  77d328:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d32c:      	mov	x0, x23
+  77d330:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d334:      	mov	x0, x22
+  77d338:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d33c:      	mov	x0, x21
+  77d340:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d344:      	mov	x0, x20
+  77d348:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d34c:      	ldp	x21, x22, [sp, #0x20]
+  77d350:      	ldp	x23, x24, [sp, #0x30]
+  77d354:      	b	0x77d168 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x843c0>
+  77d358:      	add	x0, x0, #0x70
+  77d35c:      	bl	0x7701f0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x77448>
+  77d360:      	b	0x77d168 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x843c0>
+  77d364:      	mov	x19, x0
+  77d368:      	mov	x0, x24
+  77d36c:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d370:      	mov	x0, x23
+  77d374:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d378:      	mov	x0, x22
+  77d37c:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d380:      	ldp	x23, x24, [sp, #0x30]
+  77d384:      	mov	x0, x21
+  77d388:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d38c:      	mov	x0, x20
+  77d390:      	stp	x23, x24, [sp, #0x30]
+  77d394:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d398:      	mov	x0, x19
+  77d39c:      	bl	0x424d10 <_Unwind_Resume@plt>
+  77d3a0:      	b	0x77d364 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x845bc>
+  77d3a4:      	mov	x19, x0
+  77d3a8:      	b	0x77d370 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x845c8>
+  77d3ac:      	mov	x19, x0
+  77d3b0:      	b	0x77d370 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x845c8>
+  77d3b4:      	mov	x19, x0
+  77d3b8:      	b	0x77d384 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x845dc>
+  77d3bc:      	mov	x19, x0
+  77d3c0:      	b	0x77d38c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x845e4>
+  77d3c4:      	mov	x19, x0
+  77d3c8:      	b	0x77d378 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x845d0>
+  77d3cc:      	mov	x19, x0
+  77d3d0:      	b	0x77d384 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x845dc>
+  77d3d4:      	mov	x19, x0
+  77d3d8:      	b	0x77d38c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x845e4>
+  77d3dc:      	mov	x19, x0
+  77d3e0:      	b	0x77d378 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x845d0>
+  77d3e4:      	udf	#0x0
+  77d3e8:      	stp	x29, x30, [sp, #-0x80]!
+  77d3ec:      	mov	x29, sp
+  77d3f0:      	stp	x19, x20, [sp, #0x10]
+  77d3f4:      	mov	x19, x0
+  77d3f8:      	ldr	x0, [x0]
+  77d3fc:      	ldr	x1, [x0, #0x28]
+  77d400:      	cbz	x1, 0x77d490 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x846e8>
+  77d404:      	ldr	x20, [x0, #0x10]
+  77d408:      	add	x1, x19, #0x10
+  77d40c:      	str	x21, [sp, #0x20]
+  77d410:      	mov	x0, x20
+  77d414:      	bl	0x7709c0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x77c18>
+  77d418:      	mov	x21, x0
+  77d41c:      	ldr	w0, [x19, #0x38]
+  77d420:      	ldr	x1, [x19, #0x48]
+  77d424:      	cbnz	w0, 0x77d54c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x847a4>
+  77d428:      	cbz	x21, 0x77d58c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x847e4>
+  77d42c:      	ldp	x6, x7, [x19, #0x50]
+  77d430:      	add	x0, sp, #0x50
+  77d434:      	ldp	x4, x5, [x19, #0x60]
+  77d438:      	stp	x6, x7, [sp, #0x50]
+  77d43c:      	ldp	x2, x3, [x19, #0x70]
+  77d440:      	stp	x4, x5, [sp, #0x60]
+  77d444:      	stp	x2, x3, [sp, #0x70]
+  77d448:      	bl	0x77d128 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84380>
+  77d44c:      	ldr	x1, [x19, #0x40]
+  77d450:      	mov	x0, #0x7fffffffffffffff // =9223372036854775807
+  77d454:      	cmp	x1, x0
+  77d458:      	b.eq	0x77d464 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x846bc>
+  77d45c:      	mov	x0, x21
+  77d460:      	bl	0x778660 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7f8b8>
+  77d464:      	ldr	x1, [x19]
+  77d468:      	ldr	x0, [x1, #0x28]
+  77d46c:      	cbz	x0, 0x77d480 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x846d8>
+  77d470:      	ldr	x3, [x0]
+  77d474:      	add	x2, x19, #0x8
+  77d478:      	ldr	x3, [x3, #0x10]
+  77d47c:      	blr	x3
+  77d480:      	ldp	x19, x20, [sp, #0x10]
+  77d484:      	ldr	x21, [sp, #0x20]
+  77d488:      	ldp	x29, x30, [sp], #0x80
+  77d48c:      	ret
+  77d490:      	add	x0, sp, #0x30
+  77d494:      	adrp	x1, 0x25c1000 <_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE+0x4d0>
+  77d498:      	add	x1, x1, #0xda8
+  77d49c:      	bl	0x2333ce0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1abbc8>
+  77d4a0:      	adrp	x1, 0x25f1000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x2e1a8>
+  77d4a4:      	add	x1, x1, #0xfa8
+  77d4a8:      	add	x1, x1, #0xd48
+  77d4ac:      	add	x0, sp, #0x30
+  77d4b0:      	add	x8, sp, #0x38
+  77d4b4:      	bl	0x2313bf0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x18bad8>
+  77d4b8:      	adrp	x1, 0x27cb000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x2081a8>
+  77d4bc:      	add	x8, sp, #0x40
+  77d4c0:      	add	x1, x1, #0xd98
+  77d4c4:      	add	x0, sp, #0x38
+  77d4c8:      	bl	0x2313bf0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x18bad8>
+  77d4cc:      	adrp	x1, 0x25fa000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x371a8>
+  77d4d0:      	add	x0, sp, #0x48
+  77d4d4:      	add	x1, x1, #0xc80
+  77d4d8:      	bl	0x2333ce0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1abbc8>
+  77d4dc:      	add	x1, sp, #0x48
+  77d4e0:      	add	x8, sp, #0x50
+  77d4e4:      	add	x0, sp, #0x40
+  77d4e8:      	bl	0x2313a90 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x18b978>
+  77d4ec:      	mov	w2, #0x1                // =1
+  77d4f0:      	mov	w1, #0x0                // =0
+  77d4f4:      	add	x0, sp, #0x50
+  77d4f8:      	bl	0x22003e0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x782c8>
+  77d4fc:      	add	x0, sp, #0x50
+  77d500:      	str	x21, [sp, #0x20]
+  77d504:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d508:      	add	x0, sp, #0x48
+  77d50c:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d510:      	add	x0, sp, #0x40
+  77d514:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d518:      	add	x0, sp, #0x38
+  77d51c:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d520:      	add	x0, sp, #0x30
+  77d524:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d528:      	ldr	x0, [x19]
+  77d52c:      	add	x1, x19, #0x10
+  77d530:      	ldr	x20, [x0, #0x10]
+  77d534:      	mov	x0, x20
+  77d538:      	bl	0x7709c0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x77c18>
+  77d53c:      	mov	x21, x0
+  77d540:      	ldr	w0, [x19, #0x38]
+  77d544:      	ldr	x1, [x19, #0x48]
+  77d548:      	cbz	w0, 0x77d428 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84680>
+  77d54c:      	add	x0, x20, #0x30
+  77d550:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  77d554:      	ldr	x0, [x19]
+  77d558:      	add	x2, x19, #0x8
+  77d55c:      	ldp	w3, w4, [x19, #0x38]
+  77d560:      	mov	x1, x0
+  77d564:      	ldr	x5, [x0, #0x28]
+  77d568:      	mov	x0, x5
+  77d56c:      	ldr	x5, [x5]
+  77d570:      	ldr	x5, [x5, #0x18]
+  77d574:      	blr	x5
+  77d578:      	cbz	x21, 0x77d480 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x846d8>
+  77d57c:      	ldr	x0, [x19, #0x70]
+  77d580:      	cbz	x0, 0x77d480 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x846d8>
+  77d584:      	strb	wzr, [x0]
+  77d588:      	b	0x77d480 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x846d8>
+  77d58c:      	add	x0, x20, #0x30
+  77d590:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  77d594:      	b	0x77d464 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x846bc>
+  77d598:      	mov	x19, x0
+  77d59c:      	add	x0, sp, #0x50
+  77d5a0:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d5a4:      	add	x0, sp, #0x48
+  77d5a8:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d5ac:      	add	x0, sp, #0x40
+  77d5b0:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d5b4:      	add	x0, sp, #0x38
+  77d5b8:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d5bc:      	add	x0, sp, #0x30
+  77d5c0:      	str	x21, [sp, #0x20]
+  77d5c4:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d5c8:      	mov	x0, x19
+  77d5cc:      	bl	0x424d10 <_Unwind_Resume@plt>
+  77d5d0:      	mov	x19, x0
+  77d5d4:      	b	0x77d5bc <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84814>
+  77d5d8:      	mov	x19, x0
+  77d5dc:      	b	0x77d5b4 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x8480c>
+  77d5e0:      	mov	x19, x0
+  77d5e4:      	b	0x77d5ac <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84804>
+  77d5e8:      	mov	x19, x0
+  77d5ec:      	b	0x77d5a4 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x847fc>
+  77d5f0:      	add	x0, x0, #0x18
+  77d5f4:      	b	0x77d3e8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84640>
+  77d5f8:      	ldp	w3, w2, [x2]
+  77d5fc:      	mov	w4, #0xd8               // =216
+  77d600:      	str	w2, [x0, #0x8]
+  77d604:      	cmp	w2, #0x0
+  77d608:      	smaddl	x1, w3, w4, x1
+  77d60c:      	str	x1, [x0]
+  77d610:      	ccmp	x1, #0x0, #0x0, ne
+  77d614:      	b.eq	0x77d61c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84874>
+  77d618:      	ret
+  77d61c:      	stp	x29, x30, [sp, #-0x50]!
+  77d620:      	adrp	x1, 0x25c1000 <_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE+0x4d0>
+  77d624:      	add	x1, x1, #0xda8
+  77d628:      	mov	x29, sp
+  77d62c:      	str	x19, [sp, #0x10]
+  77d630:      	mov	x19, x0
+  77d634:      	add	x0, sp, #0x40
+  77d638:      	bl	0x2333ce0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1abbc8>
+  77d63c:      	adrp	x1, 0x25f3000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x301a8>

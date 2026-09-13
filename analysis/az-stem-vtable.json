@@ -1,0 +1,210 @@
+{
+  "typeinfo": {
+    "type": "gui::waveform::PadStemWidget",
+    "typeinfo": "0x2d8fa10",
+    "kind": "__vmi_class_type_info",
+    "bases": [
+      {
+        "address": "0x3147b80",
+        "offset_flags": "0x2",
+        "public": true,
+        "virtual": false,
+        "offset_or_vtable_slot": 0,
+        "type": "juce::Component"
+      },
+      {
+        "address": "0x2d7c340",
+        "offset_flags": "0xc802",
+        "public": true,
+        "virtual": false,
+        "offset_or_vtable_slot": 200,
+        "type": "gui::waveform::PadStatusWidgetBase"
+      }
+    ],
+    "vtables": [
+      {
+        "address_point": "0x2d8fa58",
+        "offset_to_top": 0,
+        "first_function": "0x1df68d0"
+      }
+    ]
+  },
+  "slots": [
+    {
+      "slot": 0,
+      "address": "0x1df68d0"
+    },
+    {
+      "slot": 1,
+      "address": "0x1df6988"
+    },
+    {
+      "slot": 2,
+      "address": "0x242d0a0"
+    },
+    {
+      "slot": 3,
+      "address": "0x242d0a0"
+    },
+    {
+      "slot": 4,
+      "address": "0x242d0a0"
+    },
+    {
+      "slot": 5,
+      "address": "0x242d0a0"
+    },
+    {
+      "slot": 6,
+      "address": "0x242d0a0"
+    },
+    {
+      "slot": 7,
+      "address": "0x242d0a0"
+    },
+    {
+      "slot": 8,
+      "address": "0x242d0a0"
+    },
+    {
+      "slot": 9,
+      "address": "0x248cda0"
+    },
+    {
+      "slot": 10,
+      "address": "0x248ce20"
+    },
+    {
+      "slot": 11,
+      "address": "0x24825c0"
+    },
+    {
+      "slot": 12,
+      "address": "0x249daf0"
+    },
+    {
+      "slot": 13,
+      "address": "0x242cfc0"
+    },
+    {
+      "slot": 14,
+      "address": "0x24ac3a0"
+    },
+    {
+      "slot": 15,
+      "address": "0x242ed80"
+    },
+    {
+      "slot": 16,
+      "address": "0x242cfd0"
+    },
+    {
+      "slot": 17,
+      "address": "0x246d5c0"
+    },
+    {
+      "slot": 18,
+      "address": "0x242cfc0"
+    },
+    {
+      "slot": 19,
+      "address": "0x242cfc0"
+    },
+    {
+      "slot": 20,
+      "address": "0x2482ca0"
+    },
+    {
+      "slot": 21,
+      "address": "0x242cfc0"
+    },
+    {
+      "slot": 22,
+      "address": "0x2433150"
+    },
+    {
+      "slot": 23,
+      "address": "0x242cfc0"
+    },
+    {
+      "slot": 24,
+      "address": "0x24861f0"
+    },
+    {
+      "slot": 25,
+      "address": "0x242efc0"
+    },
+    {
+      "slot": 26,
+      "address": "0x1df6930"
+    },
+    {
+      "slot": 27,
+      "address": "0x242d0a0"
+    },
+    {
+      "slot": 28,
+      "address": "0x242d000"
+    },
+    {
+      "slot": 29,
+      "address": "0x242d010"
+    },
+    {
+      "slot": 30,
+      "address": "0x242d020"
+    },
+    {
+      "slot": 31,
+      "address": "0x242cff0"
+    },
+    {
+      "slot": 32,
+      "address": "0x242cff0"
+    },
+    {
+      "slot": 33,
+      "address": "0x242cff0"
+    },
+    {
+      "slot": 34,
+      "address": "0x1df68c8"
+    },
+    {
+      "slot": 35,
+      "address": "0x242cfc0"
+    },
+    {
+      "slot": 36,
+      "address": "0x242d0a0"
+    },
+    {
+      "slot": 37,
+      "address": "0x242cfc0"
+    },
+    {
+      "slot": 38,
+      "address": "0x242cfc0"
+    },
+    {
+      "slot": 39,
+      "address": "0x242cfe0"
+    },
+    {
+      "slot": 40,
+      "address": "0x242d000"
+    },
+    {
+      "slot": 41,
+      "address": "0x2485480"
+    },
+    {
+      "slot": 42,
+      "address": "0x242cfc0"
+    },
+    {
+      "slot": 43,
+      "address": "0x2481ec0"
+    }
+  ]
+}

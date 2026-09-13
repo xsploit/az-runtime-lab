@@ -1,0 +1,18 @@
+{
+  "receivers": [
+    {
+      "channel": 0,
+      "control": "0x7fe634705300",
+      "observer": "0x7fe5aefdab38",
+      "target": "0x101d2b0",
+      "candidates": [
+        {
+          "type": "domain::onair::OnAirManager",
+          "vtable": "0x281b0d8",
+          "offset_to_top": -824
+        }
+      ]
+    }
+  ],
+  "limitation": "Positive observed callback-target candidates only; TB chaining can omit repeated blocks. Shared function pointers may identify multiple classes; no exhaustive observer inventory."
+}

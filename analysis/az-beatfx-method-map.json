@@ -1,0 +1,60 @@
+{
+  "class": "device_adapter::mixer::BeatFx",
+  "vtable": "0x2e42338",
+  "slots": [
+    {
+      "slot": 2,
+      "function": "0x2134458",
+      "behavior": "stores low8 input at object+10; returns"
+    },
+    {
+      "slot": 3,
+      "function": "0x2134448",
+      "behavior": "stores low8 input at object+8; returns"
+    },
+    {
+      "slot": 4,
+      "function": "0x2134450",
+      "behavior": "stores low8 input at object+9; returns"
+    },
+    {
+      "slot": 5,
+      "function": "0x21314e0",
+      "behavior": "append24-byte listener record under lock, release lock, call cached-state notification helpers0x2131378 and0x2131448"
+    },
+    {
+      "slot": 6,
+      "function": "0x21329e0",
+      "behavior": "partial trace: locked listener collection scan; removal role unproven"
+    }
+  ],
+  "cached_state": [
+    {
+      "helper": "0x2131378",
+      "valid_flag_offset": 92,
+      "payload_offsets": [
+        96,
+        100
+      ],
+      "callback_vtable_offset": 24
+    },
+    {
+      "helper": "0x2131448",
+      "valid_flag_offset": 104,
+      "payload_offsets": [
+        106,
+        107,
+        108,
+        109,
+        112
+      ],
+      "note": "byte108==5 selects alternate representation; semantic field names unresolved"
+    }
+  ],
+  "limitations": [
+    "Static analysis only",
+    "No safe external calling contract established",
+    "Control field meanings and processing backend unresolved",
+    "No audio DSP implementation identified by these methods"
+  ]
+}

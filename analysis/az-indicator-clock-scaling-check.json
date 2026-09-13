@@ -1,0 +1,8 @@
+{
+  "method": "Python integer reconstruction of signed multiply-high, shifts and sign correction; not execution of firmware",
+  "constant": "0x431bde82d7b634db",
+  "divisor": 1000000,
+  "samples": 10011,
+  "mismatches": 0,
+  "seed": 147
+}

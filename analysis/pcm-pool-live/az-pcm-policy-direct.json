@@ -1,0 +1,21 @@
+{
+  "pid": 24479,
+  "start_id": "2739430",
+  "scheduler": "0x7ffec45d3800",
+  "pool": "0x7ffec4121200",
+  "policy_u32": [
+    9,
+    96,
+    44100,
+    2,
+    4,
+    200
+  ],
+  "registered_locked_ranges": 88,
+  "locked_range_capacity": 88,
+  "max_locked_ranges": 96,
+  "parallel_unit_count": 5,
+  "scanned_present_mib": 0.0,
+  "elapsed_seconds": 0.00129389900030219,
+  "scope": "Read AZ scheduler policy/container counts without changing playback.\n\nPinned to the verified timing-patched image. Initial discovery scans only present\nanonymous pages; subsequent --scheduler reads avoid scanning. No audio is saved.\nLocked-range count is registered objects, not a count of currently pinned pages.\n"
+}

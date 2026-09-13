@@ -1,0 +1,32 @@
+{
+  "pid": 179634,
+  "source": "notorious_b.i.g._-_dead_wrong_acapella.mp3",
+  "window_frames": [
+    3595692,
+    3816192
+  ],
+  "sample_rate": 44100,
+  "rms": [
+    0.03660149296415445,
+    0.03659525069935686,
+    0.0732029859283089,
+    0.07319050139871372
+  ],
+  "peaks": [
+    0.2014581710100174,
+    0.19329451024532318,
+    0.4029163420200348,
+    0.38658902049064636
+  ],
+  "finite": true,
+  "cue_double_master_error": 0.0,
+  "scope": "Five-second live tail of four-channel host mixer capture; not physical listening or full-track completion.",
+  "visual": {
+    "loaded_remaining": "03:03.227",
+    "later_remaining": "02:25.371",
+    "initial_bpm": 86,
+    "later_bpm": 168.7,
+    "overview": "populated during playback",
+    "screenshot": "xdjaz/real-mp3-playing.png"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "scope": "Private PC QEMU: CRC-valid mixer receive packet to native HUI EQ state. Not audio/DSP validation.",
+  "cases": [],
+  "error": "RuntimeError('Multiple AZ guests under this launcher')",
+  "passed": false,
+  "launcher_status": 0
+}

@@ -1,0 +1,21 @@
+{
+  "native_helper": "221dda4..221def4",
+  "patched_instruction": "221ddb4 BL cpu_count replaced with MOV w0,w1 for supplied test count",
+  "counts": [
+    4,
+    6,
+    20,
+    21
+  ],
+  "masks_tested": "0..4095 per count",
+  "passed_cases": 16384,
+  "verified_formula": "output bit i = input bit (N-1-i), for tested scalar path",
+  "scope": "Enabled reversal helper; no vector path N>21 or runtime source-mask capture yet",
+  "inverse_candidates_at_N20": {
+    "3c000": "3c",
+    "bc000": "3d",
+    "40000": "02",
+    "b8000": "1d",
+    "b0000": "0d"
+  }
+}

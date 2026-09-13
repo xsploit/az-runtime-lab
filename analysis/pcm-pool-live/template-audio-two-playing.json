@@ -1,0 +1,85 @@
+{
+  "pid": 30460,
+  "file_cache_mib": 100,
+  "first": {
+    "time": 32915.450560903,
+    "positions": [
+      34762,
+      37408,
+      9223372036854775807,
+      9223372036854775807
+    ],
+    "cpu_ticks": 2036,
+    "minor_faults": 52153,
+    "major_faults": 57,
+    "memory_kib": {
+      "Rss": 635344,
+      "Pss": 632372,
+      "Pss_Dirty": 625472,
+      "Pss_Anon": 582592,
+      "Pss_File": 6900,
+      "Pss_Shmem": 42880,
+      "Shared_Clean": 5200,
+      "Shared_Dirty": 32,
+      "Private_Clean": 4656,
+      "Private_Dirty": 625456,
+      "Referenced": 634528,
+      "Anonymous": 582592,
+      "KSM": 0,
+      "LazyFree": 0,
+      "AnonHugePages": 0,
+      "ShmemPmdMapped": 0,
+      "FilePmdMapped": 0,
+      "Shared_Hugetlb": 0,
+      "Private_Hugetlb": 0,
+      "Swap": 0,
+      "SwapPss": 0,
+      "Locked": 0
+    }
+  },
+  "last": {
+    "time": 32935.463910814,
+    "positions": [
+      917706,
+      920352,
+      9223372036854775807,
+      9223372036854775807
+    ],
+    "cpu_ticks": 2998,
+    "minor_faults": 54018,
+    "major_faults": 61,
+    "memory_kib": {
+      "Rss": 632048,
+      "Pss": 629219,
+      "Pss_Dirty": 622976,
+      "Pss_Anon": 580096,
+      "Pss_File": 6243,
+      "Pss_Shmem": 42880,
+      "Shared_Clean": 4944,
+      "Shared_Dirty": 32,
+      "Private_Clean": 4112,
+      "Private_Dirty": 622960,
+      "Referenced": 631680,
+      "Anonymous": 580096,
+      "KSM": 0,
+      "LazyFree": 0,
+      "AnonHugePages": 0,
+      "ShmemPmdMapped": 0,
+      "FilePmdMapped": 0,
+      "Shared_Hugetlb": 0,
+      "Private_Hugetlb": 0,
+      "Swap": 0,
+      "SwapPss": 0,
+      "Locked": 0
+    }
+  },
+  "source_rates": [
+    44117.75159712945,
+    44117.75159712945,
+    null,
+    null
+  ],
+  "cpu_percent_one_core": 48.06791488071557,
+  "minor_faults_delta": 1865,
+  "major_faults_delta": 4
+}

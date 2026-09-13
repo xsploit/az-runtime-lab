@@ -1,0 +1,58 @@
+{
+  "decks": [
+    {
+      "deck": 1,
+      "channels": [
+        1,
+        2
+      ],
+      "start_seconds": 73.18639455782314,
+      "end_seconds": 83.18637188208616,
+      "duration_seconds": 9.999977324263039,
+      "peak": 0.045745849609375,
+      "stereo_max_difference": 0.0
+    },
+    {
+      "deck": 2,
+      "channels": [
+        3,
+        4
+      ],
+      "start_seconds": 73.820589569161,
+      "end_seconds": 83.82056689342403,
+      "duration_seconds": 9.999977324263039,
+      "peak": 0.045745849609375,
+      "stereo_max_difference": 0.0
+    },
+    {
+      "deck": 3,
+      "channels": [
+        5,
+        6
+      ],
+      "start_seconds": 75.71446712018141,
+      "end_seconds": 85.71444444444444,
+      "duration_seconds": 9.999977324263039,
+      "peak": 0.045745849609375,
+      "stereo_max_difference": 0.0
+    },
+    {
+      "deck": 4,
+      "channels": [
+        7,
+        8
+      ],
+      "start_seconds": 76.34285714285714,
+      "end_seconds": 86.34283446712018,
+      "duration_seconds": 9.999977324263039,
+      "peak": 0.045745849609375,
+      "stereo_max_difference": 0.0
+    }
+  ],
+  "overlap_seconds": 6.843514739229022,
+  "auxiliary_peaks": [
+    0.0,
+    0.0
+  ],
+  "limitation": "Active interval overlap with same generated tone; no distinct-track crosstalk, hardware mixing, or Pi performance claim."
+}

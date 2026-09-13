@@ -1,0 +1,4 @@
+/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/mix_stream.c:126:13:stop	8	static
+/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/mix_stream.c:21:12:write_all	32	static
+/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/mix_stream.c:36:13:controls.part.0	1808	dynamic,bounded
+/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/mix_stream.c:127:5:main	8096	static

@@ -1,0 +1,44 @@
+[
+  {
+    "adrp": "0x2130db8",
+    "add": "0x2130dd8",
+    "target": "0x2e42338",
+    "label": "BeatFx primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2130dc4",
+    "add": "0x2130dd8",
+    "target": "0x2e42338",
+    "label": "BeatFx primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2130dd0",
+    "add": "0x2130dd8",
+    "target": "0x2e42338",
+    "label": "BeatFx primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x21352b4",
+    "add": "0x21352b8",
+    "target": "0x2e42338",
+    "label": "BeatFx primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2135324",
+    "add": "0x2135328",
+    "target": "0x2e42338",
+    "label": "BeatFx primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2135414",
+    "add": "0x213541c",
+    "target": "0x2e42338",
+    "label": "BeatFx primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

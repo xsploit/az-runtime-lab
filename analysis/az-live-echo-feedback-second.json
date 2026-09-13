@@ -1,0 +1,26 @@
+{
+  "snapshot": {
+    "version": 1,
+    "audio_frame": 3424512,
+    "attached": 1,
+    "scheduled_type": 5,
+    "scheduled_target": 0,
+    "scheduled_beat": 3,
+    "active_type": 5,
+    "target": 0,
+    "phase": 0,
+    "manager_beat": 3,
+    "effect_beat": 3,
+    "on": 1,
+    "time_ms": 250,
+    "delay_samples": 11025,
+    "previous_delay_samples": 132300,
+    "delay_change_pending": 0,
+    "source_id": 0,
+    "source_bpm100": 12000,
+    "quantize_requested": 0,
+    "grid_present": 0
+  },
+  "rx_bytes": 128,
+  "elapsed_seconds": 0.0007669380283914506
+}

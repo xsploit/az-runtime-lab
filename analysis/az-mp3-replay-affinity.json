@@ -1,0 +1,26 @@
+[
+  {
+    "name": "restored",
+    "cores": [
+      14,
+      15,
+      16,
+      17
+    ],
+    "samples": 240,
+    "changes": 76
+  },
+  {
+    "name": "pcores",
+    "cores": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10
+    ],
+    "samples": 240,
+    "changes": 99
+  }
+]

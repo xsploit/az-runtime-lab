@@ -1,0 +1,542 @@
+{
+  "pid": 24479,
+  "start_id": "2739430",
+  "scheduler": "0x7ffec45d3800",
+  "registered_ranges": 88,
+  "matches": [
+    {
+      "scheduler_reference": "0x7ffe8cde1a78",
+      "range_id": 66,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffe8cde1b00",
+      "range_id": 67,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4584718",
+      "range_id": 2,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45847a0",
+      "range_id": 3,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4584998",
+      "range_id": 4,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4584a20",
+      "range_id": 5,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4584c18",
+      "range_id": 6,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4584ca0",
+      "range_id": 7,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4584e98",
+      "range_id": 8,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4584f20",
+      "range_id": 9,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4585118",
+      "range_id": 10,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45851a0",
+      "range_id": 11,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4585398",
+      "range_id": 12,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4585420",
+      "range_id": 13,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4585618",
+      "range_id": 14,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45856a0",
+      "range_id": 15,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4585898",
+      "range_id": 16,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4585920",
+      "range_id": 17,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4585b18",
+      "range_id": 18,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4585ba0",
+      "range_id": 19,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4585d98",
+      "range_id": 20,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4585e20",
+      "range_id": 21,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4586518",
+      "range_id": 24,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45865a0",
+      "range_id": 25,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4586798",
+      "range_id": 26,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4586820",
+      "range_id": 27,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4586a18",
+      "range_id": 28,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4586aa0",
+      "range_id": 29,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4586c98",
+      "range_id": 30,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4586d20",
+      "range_id": 31,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4586f18",
+      "range_id": 32,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4586fa0",
+      "range_id": 33,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4587198",
+      "range_id": 34,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4587220",
+      "range_id": 35,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4587418",
+      "range_id": 36,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45874a0",
+      "range_id": 37,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4587698",
+      "range_id": 38,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4587720",
+      "range_id": 39,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4587918",
+      "range_id": 40,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45879a0",
+      "range_id": 41,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4587b98",
+      "range_id": 42,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4587c20",
+      "range_id": 43,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4588318",
+      "range_id": 46,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45883a0",
+      "range_id": 47,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4588598",
+      "range_id": 48,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4588620",
+      "range_id": 49,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4588818",
+      "range_id": 50,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45888a0",
+      "range_id": 51,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4588a98",
+      "range_id": 52,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4588b20",
+      "range_id": 53,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4588d18",
+      "range_id": 54,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4588da0",
+      "range_id": 55,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4588f98",
+      "range_id": 56,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4589020",
+      "range_id": 57,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4589218",
+      "range_id": 58,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45892a0",
+      "range_id": 59,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4589498",
+      "range_id": 60,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4589520",
+      "range_id": 61,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4589718",
+      "range_id": 62,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45897a0",
+      "range_id": 63,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec4589998",
+      "range_id": 64,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec4589a20",
+      "range_id": 65,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec458a118",
+      "range_id": 68,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec458a1a0",
+      "range_id": 69,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec458a398",
+      "range_id": 70,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec458a420",
+      "range_id": 71,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec458a618",
+      "range_id": 72,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec458a6a0",
+      "range_id": 73,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec458a898",
+      "range_id": 74,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec458a920",
+      "range_id": 75,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec458ab18",
+      "range_id": 76,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec458aba0",
+      "range_id": 77,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec458ad98",
+      "range_id": 78,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec458ae20",
+      "range_id": 79,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec458b018",
+      "range_id": 80,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec458b0a0",
+      "range_id": 81,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec458b298",
+      "range_id": 82,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec458b320",
+      "range_id": 83,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec458b518",
+      "range_id": 84,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec458b5a0",
+      "range_id": 85,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec458b798",
+      "range_id": 86,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec458b820",
+      "range_id": 87,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec45d7e78",
+      "range_id": 0,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45d7f00",
+      "range_id": 1,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec45db278",
+      "range_id": 22,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45db300",
+      "range_id": 23,
+      "cue_property_at_minus_0x118": false
+    },
+    {
+      "scheduler_reference": "0x7ffec45de678",
+      "range_id": 44,
+      "cue_property_at_minus_0x118": true
+    },
+    {
+      "scheduler_reference": "0x7ffec45de700",
+      "range_id": 45,
+      "cue_property_at_minus_0x118": false
+    }
+  ],
+  "unique_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87
+  ],
+  "missing_ids": [],
+  "scanned_present_mib": 916.859375,
+  "elapsed_seconds": 12.657667240000592,
+  "scope": "Find source-range wrapper references to one verified AZ scheduler.\n\nRead-only present-page scan. Candidates require a valid registered range ID and\nthe adjacent RangeWithSourceInfo vtable observed in constructor disassembly.\nOnly addresses, IDs and adjacent type hints are saved, never audio contents.\n"
+}

@@ -1,0 +1,36 @@
+{
+  "scope": "Sequential same-session samples with ffmpeg capture overhead; native pixel changes, not panel FPS",
+  "restored_filter": "linear",
+  "results": [
+    {
+      "label": "linear-before",
+      "filter": "linear",
+      "elapsed_seconds": 6.235819472000003,
+      "cpu_percent_one_core": {
+        "az": 31.431314020567257,
+        "xwayland": 21.168027809769786,
+        "sway": 2.7261853997430783
+      }
+    },
+    {
+      "label": "nearest",
+      "filter": "nearest",
+      "elapsed_seconds": 6.235340790000919,
+      "cpu_percent_one_core": {
+        "az": 31.59410313481374,
+        "xwayland": 21.65078133603987,
+        "sway": 3.047147002850056
+      }
+    },
+    {
+      "label": "linear-after",
+      "filter": "linear",
+      "elapsed_seconds": 6.235633931000848,
+      "cpu_percent_one_core": {
+        "az": 31.75298649518704,
+        "xwayland": 21.008289044795465,
+        "sway": 3.0470037545886552
+      }
+    }
+  ]
+}

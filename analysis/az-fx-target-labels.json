@@ -1,0 +1,57 @@
+{
+  "class": "debug_osd::BeatFx::BeatFxTargetComboBox",
+  "typeinfo": "0x2957b50",
+  "setting_listener_base": 416,
+  "setting_getter_virtual_offset": 312,
+  "constructor_region": "0x18c7370..0x18c743c",
+  "pairs": [
+    {
+      "value": 4,
+      "label": "Ch1",
+      "string": "0x298d008"
+    },
+    {
+      "value": 5,
+      "label": "Ch2",
+      "string": "0x298d010"
+    },
+    {
+      "value": 3,
+      "label": "Ch3",
+      "string": "0x298d018"
+    },
+    {
+      "value": 6,
+      "label": "Ch4",
+      "string": "0x298d020"
+    },
+    {
+      "value": 7,
+      "label": "Master",
+      "string": "0x298d028"
+    },
+    {
+      "value": 0,
+      "label": "Mic1",
+      "string": "0x298d030"
+    },
+    {
+      "value": 1,
+      "label": "Mic2",
+      "string": "0x298d038"
+    },
+    {
+      "value": 2,
+      "label": "BothMic",
+      "string": "0x298d040"
+    }
+  ],
+  "scope": "Static label-to-setting mapping verified via item ID enum+1 and callback ID-1; no live channel selector experiment",
+  "evidence": "az-fx-target-combo-init.asm",
+  "callback": {
+    "thunk": "0x18b9928 subtract408 ->0x18b9678",
+    "selected_id": "0x2457a90 called then subtract1 at0x18b96a4",
+    "validator": "0x850e28 accepts0..7",
+    "item_creation": "0x18c7730 loads pair value, adds1, calls0x24574d0"
+  }
+}

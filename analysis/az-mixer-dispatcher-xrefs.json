@@ -1,0 +1,37 @@
+[
+  {
+    "adrp": "0x2153b74",
+    "add": "0x2153b78",
+    "target": "0x2e48338",
+    "label": "RxDataDispatcher primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2155864",
+    "add": "0x2155868",
+    "target": "0x2e48338",
+    "label": "RxDataDispatcher primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x215593c",
+    "add": "0x2155940",
+    "target": "0x2e48338",
+    "label": "RxDataDispatcher primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2155a14",
+    "add": "0x2155a18",
+    "target": "0x2e48338",
+    "label": "RxDataDispatcher primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x2155afc",
+    "add": "0x2155b00",
+    "target": "0x2e48338",
+    "label": "RxDataDispatcher primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

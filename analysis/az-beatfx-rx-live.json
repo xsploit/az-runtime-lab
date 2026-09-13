@@ -1,0 +1,31 @@
+{
+  "pid": 378504,
+  "native_input": "valid CRC mixer RX packets through fixture, no pointer input",
+  "observations": [
+    {
+      "field": "RX88..89 little u16",
+      "value": 12800,
+      "ui": "280.0 BPM visible; oversized formatting not a valid normal-range interpretation"
+    },
+    {
+      "field": "RX88..89 little u16",
+      "value": 1280,
+      "ui": "128.0 BPM"
+    },
+    {
+      "field": "RX90..91 little signed16",
+      "value": 375,
+      "ui": "375 ms at representation0"
+    },
+    {
+      "field": "RX84 bit6",
+      "value": 1,
+      "ui": "No visible change observed; meaning unresolved"
+    }
+  ],
+  "screenshots": [
+    "xdjaz/fx-rx-1280-375.png",
+    "xdjaz/fx-rx-flag6.png"
+  ],
+  "limitation": "BPM and time display evidence at selected values; no audio coupling or effect-type map yet. Next representation1 request occurred after bounded launcher exit and was not delivered."
+}

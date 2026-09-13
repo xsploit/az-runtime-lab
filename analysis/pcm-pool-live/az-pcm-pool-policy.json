@@ -1,0 +1,25 @@
+{
+  "pid": 24479,
+  "start_id": "2739430",
+  "pool": "0x7ffec4121200",
+  "config_u32": [
+    1764,
+    50,
+    30000,
+    37,
+    33850,
+    677,
+    50,
+    600,
+    1500000,
+    88200
+  ],
+  "page_vector": "0x7ffe9ebeff00",
+  "page_vector_count": 33850,
+  "page_vector_capacity": 43144,
+  "free_queue_count": 24331,
+  "not_in_free_queue": 9519,
+  "scanned_present_mib": 0.0,
+  "elapsed_seconds": 0.0008695249998709187,
+  "scope": "Read verified PCM pool metadata; scan only present private anonymous pages.\n\nNo heap dump or PCM contents are saved. Allocator/object identity and container\nbounds are checked. Free-queue count is structural, not semantic load capacity.\n"
+}

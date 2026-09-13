@@ -1,0 +1,22 @@
+{
+  "pid": 153456,
+  "results": {
+    "browse_from_source_without_selection": "Opens browser with Please select a source",
+    "browse_while_browsing": "Changes to waveform page",
+    "browse_from_waveform": "Returns to browser; sidebar focus retained",
+    "back_from_track_list": "Returns to sidebar-focused BROWSE from FOLDER"
+  },
+  "limitations": [
+    "Local source selected with pointer",
+    "No native enter yet",
+    "No direct page-state readback yet",
+    "Controller View must avoid toggling away when already browsing"
+  ],
+  "screenshots": [
+    "native-browse-from-source.png",
+    "native-browse-focus-test.png",
+    "native-browse-return.png",
+    "native-back-before.png",
+    "native-back-after.png"
+  ]
+}

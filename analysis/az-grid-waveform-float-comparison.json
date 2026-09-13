@@ -1,0 +1,33 @@
+{
+  "scope": "Scalar reproduction of observed positive-position expressions; not native execution or root-cause proof",
+  "comparisons": [
+    {
+      "zoom": 0.0625,
+      "first_mismatches": []
+    },
+    {
+      "zoom": 0.125,
+      "first_mismatches": []
+    },
+    {
+      "zoom": 0.25,
+      "first_mismatches": []
+    },
+    {
+      "zoom": 0.5,
+      "first_mismatches": []
+    },
+    {
+      "zoom": 1,
+      "first_mismatches": []
+    },
+    {
+      "zoom": 2,
+      "first_mismatches": []
+    },
+    {
+      "zoom": 4,
+      "first_mismatches": []
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"pid": 2419, "seconds": 20.000347156999965, "cpu_one_core_percent": 6.399888911688265, "before": {"cpu_ticks": 1912, "rss_kib": 594448, "threads": 43}, "after": {"cpu_ticks": 2040, "rss_kib": 600736, "threads": 43}}

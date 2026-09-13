@@ -1,0 +1,74 @@
+{
+  "pid": 478566,
+  "observations": [
+    {
+      "kind": "source",
+      "identity": 140219019414464,
+      "current": 140214011729920,
+      "nested": 140214004464640,
+      "pid": 478566,
+      "observed_at": 272960.068941121,
+      "label": "initial"
+    },
+    {
+      "kind": "browse",
+      "identity": 140219019413984,
+      "current": 140214009272320,
+      "nested": 140214004464640,
+      "pid": 478566,
+      "observed_at": 272969.070295134,
+      "label": "tracks"
+    },
+    {
+      "kind": "browse",
+      "identity": 140219019413984,
+      "current": 140214009272320,
+      "nested": 140214004464640,
+      "pid": 478566,
+      "observed_at": 272970.870645495,
+      "label": "back",
+      "screenshot": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/auto-nav-back.png"
+    },
+    {
+      "kind": "waveform",
+      "identity": 140219019414512,
+      "current": 140214041547264,
+      "nested": 140214004464640,
+      "pid": 478566,
+      "observed_at": 272974.635061956,
+      "label": "waveform"
+    },
+    {
+      "kind": "browse",
+      "identity": 140219019413984,
+      "current": 140214009272320,
+      "nested": 140214004464640,
+      "pid": 478566,
+      "observed_at": 272976.435401817,
+      "label": "view",
+      "screenshot": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/auto-nav-view.png"
+    },
+    {
+      "kind": "browse",
+      "identity": 140219019413984,
+      "current": 140214009272320,
+      "nested": 140214004464640,
+      "pid": 478566,
+      "observed_at": 272978.399557362,
+      "label": "view-repeat",
+      "screenshot": "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/auto-nav-view-repeat.png"
+    }
+  ],
+  "scope": "Native packet replay with automatic page reads; no physical FLX6; read and input not atomic",
+  "visual_review": {
+    "back": "Folder sidebar blue; selected440Hz row gray",
+    "view": "Folder track list open;440Hz row blue",
+    "view-repeat": "Same Folder track list remains open"
+  },
+  "limitations": [
+    "Physical FLX6 not attached",
+    "PC Control and other unmapped pages rejected",
+    "Read and native input delivery are not atomic",
+    "Persistent MIDI socket/launcher integration remains"
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "phase": "original",
+    "cpu_percent_one_core": 27.597199018051917,
+    "elapsed": 6.232516563999525
+  },
+  {
+    "phase": "candidate",
+    "cpu_percent_one_core": 27.483445231172023,
+    "elapsed": 6.18554182600019
+  },
+  {
+    "phase": "restored",
+    "cpu_percent_one_core": 27.752136790766247,
+    "elapsed": 6.2337542260011105
+  }
+]

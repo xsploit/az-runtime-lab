@@ -1,0 +1,123 @@
+{
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "native_virtual_range": [
+    "0xb5788",
+    "0xb5934"
+  ],
+  "native_instruction_sha256": "eccb6e210b60b922ed410dde7ea75dfce3f61ee4cf7fad110bbf48bbd0001cf8",
+  "compiler_commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "compare.c",
+      "iir_reconstructed.c",
+      "native.S",
+      "-lm",
+      "-o",
+      "compare-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "compare.c",
+      "iir_reconstructed.c",
+      "-lm",
+      "-o",
+      "compare-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "compare.c",
+      "iir_reconstructed.c",
+      "-lm",
+      "-o",
+      "compare-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"calls\":6525,\"stereo_frames\":603488,\"floats_compared_including_state\":1259176,\"bit_mismatches\":0,\"max_abs_error\":0,\"guard_failures\":0,\"native_partition_different_samples\":610,\"native_partition_max_abs\":5.9604644775390625e-08}\n",
+      "stderr": "",
+      "metrics": {
+        "calls": 6525,
+        "stereo_frames": 603488,
+        "floats_compared_including_state": 1259176,
+        "bit_mismatches": 0,
+        "max_abs_error": 0,
+        "guard_failures": 0,
+        "native_partition_different_samples": 610,
+        "native_partition_max_abs": 5.960464477539063e-08
+      }
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"calls\":6525,\"stereo_frames\":603488,\"floats_compared_including_state\":1259176,\"bit_mismatches\":0,\"max_abs_error\":0,\"guard_failures\":0,\"native_partition_different_samples\":610,\"native_partition_max_abs\":5.9604644775390625e-08}\n",
+      "stderr": "",
+      "metrics": {
+        "calls": 6525,
+        "stereo_frames": 603488,
+        "floats_compared_including_state": 1259176,
+        "bit_mismatches": 0,
+        "max_abs_error": 0,
+        "guard_failures": 0,
+        "native_partition_different_samples": 610,
+        "native_partition_max_abs": 5.960464477539063e-08
+      }
+    },
+    "host_asan": {
+      "returncode": 0,
+      "stdout": "{\"calls\":6525,\"stereo_frames\":603488,\"floats_compared_including_state\":1259176,\"bit_mismatches\":0,\"max_abs_error\":0,\"guard_failures\":0,\"native_partition_different_samples\":610,\"native_partition_max_abs\":5.9604644775390625e-08}\n",
+      "stderr": "",
+      "metrics": {
+        "calls": 6525,
+        "stereo_frames": 603488,
+        "floats_compared_including_state": 1259176,
+        "bit_mismatches": 0,
+        "max_abs_error": 0,
+        "guard_failures": 0,
+        "native_partition_different_samples": 610,
+        "native_partition_max_abs": 5.960464477539063e-08
+      }
+    }
+  },
+  "scope": "Standalone stereo IIR recurrence only; not full CFX or mixer equivalence.",
+  "source_hashes": {
+    "compare.c": "e2c3f3dbdc34f51e7d4859dc3ce06519d849583e89eb2d75dda0425e6b67a5ab",
+    "iir_reconstructed.c": "f8ef42e7750b7498518a3d2586d74e5492583412bc52624c70eb961ffb97812b",
+    "iir_reconstructed.h": "66e2703d8a047bab110d7a172b48dbab72a90b0b8cdd49692d1cb08e8f0a4209",
+    "native.S": "6bc74fe7ecf54190f7670c44fcf33c0dbb64ca40c3a4adc2337fa95ab41f931d",
+    "run.py": "feaed76379521cb604a6aa48d291cd468fb2899e491907b9210acb93fe40c2f9"
+  },
+  "host_compiler": "cc (GCC) 16.2.1 20260810",
+  "qemu": "qemu-arm version 11.1.1"
+}

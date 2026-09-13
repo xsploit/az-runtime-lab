@@ -1,0 +1,26 @@
+[
+  {
+    "start": "0x6ccb98",
+    "end": "0x6ccbac",
+    "register": 2,
+    "value": "0xa6b7444dca1b6d00",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2049ca0",
+    "end": "0x2049cbc",
+    "register": 1,
+    "value": "0xa6b7444dca1b6d00",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2145254",
+    "end": "0x214526c",
+    "register": 3,
+    "value": "0xa6b7444dca1b6d00",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  }
+]

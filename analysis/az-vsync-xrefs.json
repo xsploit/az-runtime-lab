@@ -1,0 +1,51 @@
+[
+  {
+    "adrp": "0xe3a114",
+    "add": "0xe3a11c",
+    "target": "0x27d39e8",
+    "label": "0 < lines.size()",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x212edd4",
+    "add": "0x212ede4",
+    "target": "0x2e41728",
+    "label": "/sys/module/rockchipdrm/parameters/vsync_time",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x212f040",
+    "add": "0x212f048",
+    "target": "0x27d39e8",
+    "label": "0 < lines.size()",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x212f4a8",
+    "add": "0x212f4b0",
+    "target": "0x2e41788",
+    "label": "0<remain_msec",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x212f7c0",
+    "add": "0x212f7e0",
+    "target": "0x2e41728",
+    "label": "/sys/module/rockchipdrm/parameters/vsync_time",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x212f7dc",
+    "add": "0x212f7e0",
+    "target": "0x2e41728",
+    "label": "/sys/module/rockchipdrm/parameters/vsync_time",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x212f9f4",
+    "add": "0x212f9fc",
+    "target": "0x2e41788",
+    "label": "0<remain_msec",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

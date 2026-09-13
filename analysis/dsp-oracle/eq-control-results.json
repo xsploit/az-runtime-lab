@@ -1,0 +1,91 @@
+{
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "native_ranges": [
+    [
+      "native_eq_volume",
+      761224,
+      761316
+    ],
+    [
+      "native_iso_volume",
+      763736,
+      763840
+    ]
+  ],
+  "commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "eq_control.c",
+      "eq_control_compare.c",
+      "eq-control-native.S",
+      "-lm",
+      "-o",
+      "eq-control-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "eq_control.c",
+      "eq_control_compare.c",
+      "-lm",
+      "-o",
+      "eq-control-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "eq_control.c",
+      "eq_control_compare.c",
+      "-lm",
+      "-o",
+      "eq-control-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"calls\":48000,\"state_bytes\":9792000,\"repeated_target_cases\":1549,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"calls\":48000,\"state_bytes\":9792000,\"repeated_target_cases\":1549,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "{\"calls\":48000,\"state_bytes\":9792000,\"repeated_target_cases\":1549,\"mismatches\":0}\n",
+      "stderr": ""
+    }
+  },
+  "scope": "Native EQ index and isolator gain setters across all three bands, repeated targets and mid-ramp states. Audio, constructor, mode transitions and shared graph integration remain pending."
+}

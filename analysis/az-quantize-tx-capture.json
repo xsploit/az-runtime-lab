@@ -1,0 +1,9 @@
+{
+  "scope": "Historical capture; no deliberate Quantize toggling in this test",
+  "path": "runtime-lab/xdjaz/first-mixer-tx-tempo.raw",
+  "quantize_raw_histogram": {
+    "0": 452,
+    "2": 32316
+  },
+  "invalid_crc": 0
+}

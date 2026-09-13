@@ -1,0 +1,21 @@
+{
+  "pid": 13308,
+  "paused_start": [
+    3657515,
+    3736831
+  ],
+  "paused_end": [
+    3657515,
+    3736831
+  ],
+  "resume_start": [
+    3703596,
+    3763072
+  ],
+  "resume_end": [
+    3791532,
+    3851008
+  ],
+  "paused_stable": true,
+  "both_resumed": true
+}

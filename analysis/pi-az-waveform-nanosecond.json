@@ -1,0 +1,13 @@
+{
+  "capture_hz": 120,
+  "seconds": 8,
+  "frames": 959,
+  "changed_samples": 165,
+  "change_rate_hz": 20.5,
+  "change_gap_ms": {
+    "median": 50.0,
+    "p95": 66.66666666666667,
+    "max": 91.66666666666666
+  },
+  "note": "X11 waveform crop pixel changes sampled at 120Hz; not panel presentation. Capture overhead and partial updates possible."
+}

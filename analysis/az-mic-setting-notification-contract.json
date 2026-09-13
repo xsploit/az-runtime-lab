@@ -1,0 +1,29 @@
+{
+  "scope": "Static control contract, not runtime injection proof",
+  "update": "0x89d878",
+  "existing_item": {
+    "lookup": "0x7632f0 on framework+24 with identifier; typed payload resolver0x881050",
+    "unchanged": "0x89d8d4 equal -> return, no fanout",
+    "changed": "store new enum at0x89d8e0; identifier text nonempty gates0x89d600",
+    "missing_item": "allocates typed holder and calls0x8811b8; insertion notification behavior not fully traced"
+  },
+  "fanout": {
+    "function": "0x89d600",
+    "collection": "8-byte pointer entries, stored count at value object+24 and data at+8",
+    "excluded_listener": "third argument compared at0x89d750; matching listener skipped",
+    "virtual_callback": "slot2, arguments this, identifier, value pointer, at0x89d810..81c",
+    "specialized_callback": "0x864950 optimized inline: identifier check, unchanged check, mutex-protected cache+96 write, conditional downstream notification controlled by+100",
+    "lifetime": "pointer/type-cookie validation precedes callback; invalid entry diagnostic path; no proof collection mutation/reentrancy is safe"
+  },
+  "adapter_implications": [
+    "Submit through setting framework, preserving owner thread/queue and registered object lifetime.",
+    "Use changed-state readback; repeated same-value submissions do not force refresh.",
+    "Optional excluded listener can prevent feedback; widget passes null.",
+    "Do not bypass validation/fallback by invoking cached state callbacks directly."
+  ],
+  "evidence": [
+    "az-mic-setting-submit.asm",
+    "az-mic-update-execute.asm",
+    "az-mic-listener-fanout.asm"
+  ]
+}

@@ -1,0 +1,579 @@
+{
+  "pid": 18499,
+  "units": "KiB",
+  "rollup": {
+    "Rss": 973504,
+    "Pss": 971888,
+    "Pss_Dirty": 962448,
+    "Pss_Anon": 919424,
+    "Pss_File": 9440,
+    "Pss_Shmem": 43024,
+    "Shared_Clean": 3184,
+    "Shared_Dirty": 32,
+    "Private_Clean": 7856,
+    "Private_Dirty": 962432,
+    "Referenced": 973312,
+    "Anonymous": 919424,
+    "KSM": 0,
+    "LazyFree": 0,
+    "AnonHugePages": 0,
+    "ShmemPmdMapped": 0,
+    "FilePmdMapped": 0,
+    "Shared_Hugetlb": 0,
+    "Private_Hugetlb": 0,
+    "Swap": 0,
+    "SwapPss": 0,
+    "Locked": 0
+  },
+  "mapping_groups": {
+    "anonymous": {
+      "Size": 3974896,
+      "Rss": 917408,
+      "Pss": 917408,
+      "Private_Clean": 0,
+      "Private_Dirty": 917408,
+      "Anonymous": 917408,
+      "Swap": 0
+    },
+    "EP147": {
+      "Size": 56544,
+      "Rss": 43168,
+      "Pss": 43168,
+      "Private_Clean": 0,
+      "Private_Dirty": 43168,
+      "Anonymous": 160,
+      "Swap": 0
+    },
+    "libcrypto.so.3": {
+      "Size": 3712,
+      "Rss": 1264,
+      "Pss": 1264,
+      "Private_Clean": 896,
+      "Private_Dirty": 368,
+      "Anonymous": 368,
+      "Swap": 0
+    },
+    "libc-2.29.so": {
+      "Size": 1424,
+      "Rss": 1248,
+      "Pss": 744,
+      "Private_Clean": 208,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libstdc++.so.6.0.25": {
+      "Size": 1344,
+      "Rss": 1184,
+      "Pss": 664,
+      "Private_Clean": 80,
+      "Private_Dirty": 64,
+      "Anonymous": 64,
+      "Swap": 0
+    },
+    "other mapped files": {
+      "Size": 9990240,
+      "Rss": 1152,
+      "Pss": 768,
+      "Private_Clean": 400,
+      "Private_Dirty": 0,
+      "Anonymous": 0,
+      "Swap": 0
+    },
+    "libasound.so.2.0.0": {
+      "Size": 1024,
+      "Rss": 688,
+      "Pss": 688,
+      "Private_Clean": 640,
+      "Private_Dirty": 48,
+      "Anonymous": 48,
+      "Swap": 0
+    },
+    "libX11.so.6.3.0": {
+      "Size": 1216,
+      "Rss": 592,
+      "Pss": 592,
+      "Private_Clean": 560,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libmbedcrypto.so.3.6.3": {
+      "Size": 640,
+      "Rss": 544,
+      "Pss": 544,
+      "Private_Clean": 496,
+      "Private_Dirty": 48,
+      "Anonymous": 48,
+      "Swap": 0
+    },
+    "libfreetype.so.6.17.1": {
+      "Size": 624,
+      "Rss": 528,
+      "Pss": 528,
+      "Private_Clean": 496,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libm-2.29.so": {
+      "Size": 688,
+      "Rss": 496,
+      "Pss": 464,
+      "Private_Clean": 400,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libjemalloc.so.2": {
+      "Size": 544,
+      "Rss": 384,
+      "Pss": 384,
+      "Private_Clean": 352,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libspdlog.so.1.13.0": {
+      "Size": 464,
+      "Rss": 304,
+      "Pss": 304,
+      "Private_Clean": 272,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libmbedtls.so.3.6.3": {
+      "Size": 352,
+      "Rss": 288,
+      "Pss": 288,
+      "Private_Clean": 272,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libjpeg.so.62.3.0": {
+      "Size": 304,
+      "Rss": 256,
+      "Pss": 256,
+      "Private_Clean": 240,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libssl.so.3": {
+      "Size": 640,
+      "Rss": 224,
+      "Pss": 224,
+      "Private_Clean": 160,
+      "Private_Dirty": 64,
+      "Anonymous": 64,
+      "Swap": 0
+    },
+    "libanwbtestack.so": {
+      "Size": 544,
+      "Rss": 208,
+      "Pss": 208,
+      "Private_Clean": 176,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libwebsockets.so.19": {
+      "Size": 416,
+      "Rss": 192,
+      "Pss": 192,
+      "Private_Clean": 160,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libmpg123.so.0.44.2": {
+      "Size": 240,
+      "Rss": 192,
+      "Pss": 192,
+      "Private_Clean": 176,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libncurses.so.6.0": {
+      "Size": 336,
+      "Rss": 160,
+      "Pss": 160,
+      "Private_Clean": 128,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libanwbtprofile.so": {
+      "Size": 368,
+      "Rss": 160,
+      "Pss": 160,
+      "Private_Clean": 128,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "ld-2.29.so": {
+      "Size": 160,
+      "Rss": 160,
+      "Pss": 104,
+      "Private_Clean": 16,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libxcb.so.1.1.0": {
+      "Size": 208,
+      "Rss": 144,
+      "Pss": 144,
+      "Private_Clean": 128,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libcurl.so.4.8.0": {
+      "Size": 672,
+      "Rss": 128,
+      "Pss": 128,
+      "Private_Clean": 96,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libpthread-2.29.so": {
+      "Size": 176,
+      "Rss": 128,
+      "Pss": 72,
+      "Private_Clean": 0,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libsqlcipher.so.0.8.6": {
+      "Size": 752,
+      "Rss": 112,
+      "Pss": 112,
+      "Private_Clean": 64,
+      "Private_Dirty": 48,
+      "Anonymous": 48,
+      "Swap": 0
+    },
+    "libblkid.so.1.1.0": {
+      "Size": 336,
+      "Rss": 96,
+      "Pss": 96,
+      "Private_Clean": 64,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libmount.so.1.1.0": {
+      "Size": 368,
+      "Rss": 96,
+      "Pss": 96,
+      "Private_Clean": 64,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libfmt.so.10.2.1": {
+      "Size": 176,
+      "Rss": 96,
+      "Pss": 96,
+      "Private_Clean": 64,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libgcc_s.so.1": {
+      "Size": 144,
+      "Rss": 96,
+      "Pss": 64,
+      "Private_Clean": 16,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libfdk-aac.so.2.0.1": {
+      "Size": 1216,
+      "Rss": 96,
+      "Pss": 96,
+      "Private_Clean": 64,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libanwbtsdk.so": {
+      "Size": 288,
+      "Rss": 96,
+      "Pss": 96,
+      "Private_Clean": 64,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libXext.so.6.4.0": {
+      "Size": 144,
+      "Rss": 96,
+      "Pss": 96,
+      "Private_Clean": 64,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libresolv-2.29.so": {
+      "Size": 144,
+      "Rss": 80,
+      "Pss": 80,
+      "Private_Clean": 64,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libmbedx509.so.3.6.3": {
+      "Size": 144,
+      "Rss": 80,
+      "Pss": 80,
+      "Private_Clean": 64,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libz.so.1.2.11": {
+      "Size": 144,
+      "Rss": 80,
+      "Pss": 80,
+      "Private_Clean": 64,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libanwbtattach.so": {
+      "Size": 208,
+      "Rss": 80,
+      "Pss": 80,
+      "Private_Clean": 64,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libanwbtaac.so": {
+      "Size": 176,
+      "Rss": 80,
+      "Pss": 80,
+      "Private_Clean": 64,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libanwbtphonebook.so": {
+      "Size": 160,
+      "Rss": 80,
+      "Pss": 80,
+      "Private_Clean": 64,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libdrm.so.2.4.0": {
+      "Size": 128,
+      "Rss": 80,
+      "Pss": 80,
+      "Private_Clean": 64,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libXrender.so.1.3.0": {
+      "Size": 112,
+      "Rss": 64,
+      "Pss": 64,
+      "Private_Clean": 32,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "libXrandr.so.2.2.0": {
+      "Size": 112,
+      "Rss": 64,
+      "Pss": 64,
+      "Private_Clean": 48,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libnss_files-2.29.so": {
+      "Size": 112,
+      "Rss": 64,
+      "Pss": 64,
+      "Private_Clean": 48,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libqrencode.so.3.4.2": {
+      "Size": 112,
+      "Rss": 64,
+      "Pss": 64,
+      "Private_Clean": 48,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libnss_dns-2.29.so": {
+      "Size": 96,
+      "Rss": 48,
+      "Pss": 48,
+      "Private_Clean": 32,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libuuid.so.1.3.0": {
+      "Size": 96,
+      "Rss": 48,
+      "Pss": 48,
+      "Private_Clean": 32,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "librt-2.29.so": {
+      "Size": 96,
+      "Rss": 48,
+      "Pss": 48,
+      "Private_Clean": 32,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libXdmcp.so.6.0.0": {
+      "Size": 96,
+      "Rss": 48,
+      "Pss": 48,
+      "Private_Clean": 32,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libanwbthcit.so": {
+      "Size": 112,
+      "Rss": 48,
+      "Pss": 48,
+      "Private_Clean": 32,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libatomic.so.1.2.0": {
+      "Size": 96,
+      "Rss": 48,
+      "Pss": 48,
+      "Private_Clean": 32,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "fractional-grid.so": {
+      "Size": 144,
+      "Rss": 48,
+      "Pss": 40,
+      "Private_Clean": 0,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "ximage-present.so": {
+      "Size": 144,
+      "Rss": 48,
+      "Pss": 40,
+      "Private_Clean": 0,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "ximage-fast24.so": {
+      "Size": 144,
+      "Rss": 48,
+      "Pss": 40,
+      "Private_Clean": 0,
+      "Private_Dirty": 32,
+      "Anonymous": 32,
+      "Swap": 0
+    },
+    "stack": {
+      "Size": 144,
+      "Rss": 48,
+      "Pss": 48,
+      "Private_Clean": 0,
+      "Private_Dirty": 48,
+      "Anonymous": 48,
+      "Swap": 0
+    },
+    "libcap.so.2.25": {
+      "Size": 96,
+      "Rss": 32,
+      "Pss": 32,
+      "Private_Clean": 16,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libp256m.so": {
+      "Size": 80,
+      "Rss": 32,
+      "Pss": 32,
+      "Private_Clean": 16,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libeverest.so": {
+      "Size": 80,
+      "Rss": 32,
+      "Pss": 32,
+      "Private_Clean": 16,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libXau.so.6.0.0": {
+      "Size": 80,
+      "Rss": 32,
+      "Pss": 32,
+      "Private_Clean": 16,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libbt-vendor.so": {
+      "Size": 80,
+      "Rss": 32,
+      "Pss": 32,
+      "Private_Clean": 16,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "libdl-2.29.so": {
+      "Size": 80,
+      "Rss": 32,
+      "Pss": 32,
+      "Private_Clean": 16,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    },
+    "offline-mixer-fixture.so": {
+      "Size": 80,
+      "Rss": 32,
+      "Pss": 24,
+      "Private_Clean": 0,
+      "Private_Dirty": 16,
+      "Anonymous": 16,
+      "Swap": 0
+    }
+  }
+}

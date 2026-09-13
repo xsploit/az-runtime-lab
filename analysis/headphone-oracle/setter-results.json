@@ -1,0 +1,77 @@
+{
+  "scope": "All four headphone setters; level/mix normalized finite inputs, normal ramp floats, no sample processing or subnormal equivalence claim",
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "range": [
+    "0x5ad4c",
+    "0x5af18"
+  ],
+  "relocations": 0,
+  "commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "compare.c",
+      "setters.c",
+      "native-setters.S",
+      "-o",
+      "setters-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "compare.c",
+      "setters.c",
+      "-o",
+      "setters-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "compare.c",
+      "setters.c",
+      "-o",
+      "setters-sanitized"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "PASS 96000 calls, full256-byte state comparison\n",
+      "stderr": ""
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "PASS 96000 calls, full256-byte state comparison\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "PASS 96000 calls, full256-byte state comparison\n",
+      "stderr": ""
+    }
+  }
+}

@@ -1,0 +1,91 @@
+           PID: 573461 (qemu)
+           TID: 573525 (Shutdown)
+           UID: 1000 (subsect)
+           GID: 1000 (subsect)
+        Signal: 11 (SEGV) si_code: SI_USER
+     Timestamp: Sat 2026-09-12 17:09:14 PDT (4min 38s ago)
+  Command Line: /qemu -E LD_PRELOAD=/lab-shims/offline-mixer-fixture.so -E LAB_MIXER_TX_CAPTURE=1 -E LAB_ERP_FIXTURE=1 /home/root/pdj/EP147
+    Executable: /qemu
+ Control Group: /user.slice/user-1000.slice/user@1000.service/app.slice/app-org.chromium.Chromium-203030.scope
+          Unit: user@1000.service
+     User Unit: app-org.chromium.Chromium-203030.scope
+         Slice: user-1000.slice
+     Owner UID: 1000 (subsect)
+       Boot ID: 3237e29decc748b8a5fc5da2c3e9cf5a
+    Machine ID: 80bd0114f37c41e793a629fd50feff7c
+      Hostname: rcmp
+       Storage: /var/lib/systemd/coredump/core.qemu.1000.3237e29decc748b8a5fc5da2c3e9cf5a.573461.1789258154000000.zst (present)
+  Size on Disk: 15.8M
+       Message: Process 573461 (qemu) of user 1000 dumped core.
+                
+                Module /home/root/pdj/EP147 without build-id.
+                Module /home/root/pdj/EP147
+                Module /usr/lib/libresolv-2.29.so without build-id.
+                Module /usr/lib/libresolv-2.29.so
+                Module /usr/lib/libncurses.so.6.0 without build-id.
+                Module /usr/lib/libncurses.so.6.0
+                Module /usr/lib/libcap.so.2.25 without build-id.
+                Module /usr/lib/libcap.so.2.25
+                Module /usr/lib/libp256m.so without build-id.
+                Module [dso] without build-id.
+                Module /usr/lib/libeverest.so without build-id.
+                Module [dso] without build-id.
+                Module /usr/lib/libfmt.so.10.2.1 without build-id.
+                Module /usr/lib/libfmt.so.10.2.1
+                Module /usr/lib/librt-2.29.so without build-id.
+                Module /usr/lib/librt-2.29.so
+                Module /usr/lib/libc-2.29.so without build-id.
+                Module /usr/lib/libc-2.29.so
+                Module /usr/lib/libm-2.29.so without build-id.
+                Module /usr/lib/libm-2.29.so
+                Module /usr/lib/libstdc++.so.6.0.25 without build-id.
+                Module /usr/lib/libstdc++.so.6.0.25
+                Module /usr/lib/libwebsockets.so.19 without build-id.
+                Module /usr/lib/libwebsockets.so.19
+                Module /usr/lib/libmbedx509.so.3.6.3 without build-id.
+                Module /usr/lib/libmbedx509.so.3.6.3
+                Module /usr/lib/libmbedtls.so.3.6.3 without build-id.
+                Module /usr/lib/libmbedtls.so.3.6.3
+                Module /usr/lib/libmbedcrypto.so.3.6.3 without build-id.
+                Module /usr/lib/libmbedcrypto.so.3.6.3
+                Module /usr/lib/libz.so.1.2.11 without build-id.
+                Module /usr/lib/libz.so.1.2.11
+                Module /usr/lib/libspdlog.so.1.13.0 without build-id.
+                Module /usr/lib/libspdlog.so.1.13.0
+                Module /usr/lib/libqrencode.so.3.4.2 without build-id.
+                Module /usr/lib/libqrencode.so.3.4.2
+                Module /usr/lib/libfdk-aac.so.2.0.1 without build-id.
+                Module /usr/lib/libfdk-aac.so.2.0.1
+                Module /usr/lib/libsqlcipher.so.0.8.6 without build-id.
+                Module /usr/lib/libsqlcipher.so.0.8.6
+                Module /usr/lib/libjpeg.so.62.3.0 without build-id.
+                Module /usr/lib/libjpeg.so.62.3.0
+                Module /usr/lib/libmpg123.so.0.44.2 without build-id.
+                Module /usr/lib/libmpg123.so.0.44.2
+                Module /usr/lib/libpthread-2.29.so without build-id.
+                Module /usr/lib/libpthread-2.29.so
+                Module /usr/lib/libdl-2.29.so without build-id.
+                Module /usr/lib/libdl-2.29.so
+                Module /usr/lib/libdrm.so.2.4.0 without build-id.
+                Module /usr/lib/libdrm.so.2.4.0
+                Module /usr/lib/libX11.so.6.3.0 without build-id.
+                Module /usr/lib/libX11.so.6.3.0
+                Module /usr/lib/libfreetype.so.6.17.1 without build-id.
+                Module /usr/lib/libfreetype.so.6.17.1
+                Module /usr/lib/ld-2.29.so without build-id.
+                Module /usr/lib/ld-2.29.so
+                Module linux-vdso.so.1 without build-id.
+                Module /usr/lib/libnss_dns-2.29.so without build-id.
+                Module /usr/lib/libnss_dns-2.29.so
+                Module /usr/lib/libnss_files-2.29.so without build-id.
+                Module /usr/lib/libnss_files-2.29.so
+                Stack trace of thread 49:
+                #0  0x00007f2d02e112e2 n/a (/qemu + 0x4112e2)
+                #1  0x00007f2d02d24ab6 n/a (/qemu + 0x324ab6)
+                #2  0x00007f2d02d2504b n/a (/qemu + 0x32504b)
+                #3  0x00007f2d02d2a45e n/a (/qemu + 0x32a45e)
+                #4  0x00007f2d02b3e930 n/a (/qemu + 0x13e930)
+                #5  0x00007f2d02d39b74 n/a (/qemu + 0x339b74)
+                #6  0x00007f2d02e0c423 n/a (/qemu + 0x40c423)
+                #7  0x00007f2d02e4d2ec n/a (/qemu + 0x44d2ec)
+                ELF object binary architecture: AMD x86-64

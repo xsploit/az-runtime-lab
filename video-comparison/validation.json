@@ -1,0 +1,92 @@
+{
+  "html": "/home/subsect/Downloads/AZ-video-comparison.html",
+  "bytes": 5972870,
+  "embedded_clips": [
+    {
+      "id": "original",
+      "sha256": "de53c7eef5f9265ef84bfa22415f3cc2caa341869b1570a0dc8221befb699c82",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 640,
+            "height": 190,
+            "nb_read_frames": "359"
+          }
+        ],
+        "format": {
+          "duration": "6.000000"
+        }
+      },
+      "decode_ok": true
+    },
+    {
+      "id": "fractional",
+      "sha256": "88faa3095a90f35b1c8899fd684725ebc95a6b154aef9796626c05960b60b7ca",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 640,
+            "height": 190,
+            "nb_read_frames": "360"
+          }
+        ],
+        "format": {
+          "duration": "6.000000"
+        }
+      },
+      "decode_ok": true
+    },
+    {
+      "id": "restored",
+      "sha256": "1dc548dcdc605fdad0f4bfc1ee5be447a6dd21f64e6104b3305f95eedcf172c9",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 640,
+            "height": 190,
+            "nb_read_frames": "360"
+          }
+        ],
+        "format": {
+          "duration": "6.000000"
+        }
+      },
+      "decode_ok": true
+    },
+    {
+      "id": "earlier",
+      "sha256": "4766e9b7e927555b77cfaa0aaf6b61888279fd872907aa357c91912d10eaf1f3",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 640,
+            "height": 190,
+            "nb_read_frames": "600"
+          }
+        ],
+        "format": {
+          "duration": "10.000000"
+        }
+      },
+      "decode_ok": true
+    }
+  ],
+  "javascript_syntax": "node --check passed",
+  "browser_preview": "Blocked by browser URL policy for file URL; no browser workaround attempted."
+}

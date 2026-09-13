@@ -1,0 +1,33 @@
+{
+  "limits": "Synthetic isolated edge from original selected blend instructions. Encoded-channel centroid is not optical position; exponents below are uncalibrated illustrative transfer curves, not measurements of the Pi display. Full alpha/raster and presentation excluded.",
+  "models": {
+    "native": {
+      "1.0": {
+        "max_absolute_centroid_error_px": 0.21935483870967742,
+        "rms_centroid_error_px": 0.09993345844761069
+      },
+      "1.8": {
+        "max_absolute_centroid_error_px": 0.12129355982057508,
+        "rms_centroid_error_px": 0.060644273095952377
+      },
+      "2.2": {
+        "max_absolute_centroid_error_px": 0.16576892561108775,
+        "rms_centroid_error_px": 0.07320770692451131
+      }
+    },
+    "smooth": {
+      "1.0": {
+        "max_absolute_centroid_error_px": 0.12108370178013028,
+        "rms_centroid_error_px": 0.07887799509339938
+      },
+      "1.8": {
+        "max_absolute_centroid_error_px": 0.0235749322115359,
+        "rms_centroid_error_px": 0.01319323411277115
+      },
+      "2.2": {
+        "max_absolute_centroid_error_px": 0.06627981559881968,
+        "rms_centroid_error_px": 0.04393868086404032
+      }
+    }
+  }
+}

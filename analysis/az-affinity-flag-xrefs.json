@@ -1,0 +1,44 @@
+[
+  {
+    "adrp": "0x1376598",
+    "use": "0x13765c8",
+    "kind": "load",
+    "register": 2
+  },
+  {
+    "adrp": "0x1376af8",
+    "use": "0x1376b28",
+    "kind": "load",
+    "register": 2
+  },
+  {
+    "adrp": "0x1386598",
+    "use": "0x13865c8",
+    "kind": "load",
+    "register": 23
+  },
+  {
+    "adrp": "0x1865ad4",
+    "use": "0x1865ae8",
+    "kind": "store",
+    "register": 2
+  },
+  {
+    "adrp": "0x1882b2c",
+    "use": "0x1882b3c",
+    "kind": "store",
+    "register": 2
+  },
+  {
+    "adrp": "0x18cea20",
+    "use": "0x18cea30",
+    "kind": "store",
+    "register": 2
+  },
+  {
+    "adrp": "0x221dd90",
+    "use": "0x221dd94",
+    "kind": "load",
+    "register": 1
+  }
+]

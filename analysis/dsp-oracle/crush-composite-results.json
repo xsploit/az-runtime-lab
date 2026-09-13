@@ -1,0 +1,126 @@
+{
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "native_ranges": [
+    [
+      "native_crush_color",
+      834872,
+      834924
+    ],
+    [
+      "native_crush_parameter",
+      834924,
+      835128
+    ],
+    [
+      "native_crush_core",
+      835292,
+      837584
+    ],
+    [
+      "manager_native",
+      769128,
+      771284
+    ],
+    [
+      "manager_settype",
+      771848,
+      771868
+    ],
+    [
+      "cfx_adjust",
+      772032,
+      772168
+    ]
+  ],
+  "commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "crush.c",
+      "crush_composite.c",
+      "cfx_crush.c",
+      "cfx_manager_filter.c",
+      "crush-native.S",
+      "manager-native.S",
+      "crush-adjust.S",
+      "-lm",
+      "-o",
+      "crush-composite-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "crush.c",
+      "crush_composite.c",
+      "cfx_crush.c",
+      "cfx_manager_filter.c",
+      "-lm",
+      "-o",
+      "crush-composite-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "crush.c",
+      "crush_composite.c",
+      "cfx_crush.c",
+      "cfx_manager_filter.c",
+      "-lm",
+      "-o",
+      "crush-composite-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"calls\":12000,\"frames\":249274,\"words\":1266548,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"calls\":12000,\"frames\":249274,\"words\":1266548,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "{\"calls\":12000,\"frames\":249274,\"words\":1266548,\"mismatches\":0}\n",
+      "stderr": ""
+    }
+  },
+  "scope": "Original native Off0/Crush6 CFX manager plus real Crush DSP and control dispatch. Off copy/init and unrelated Sweep detector are equivalent fixtures. Other CFX transitions not tested.",
+  "source_hashes": {
+    "crush.c": "69fbc6f24de6f898a0c04a576983bf342c0d61f97957cc92e1d50060e1c0057e",
+    "crush_composite.c": "1fa9a7de7fa5c57a2b5f2d587bbd634513be1c311973487f5dabcffc5a6ca22b",
+    "cfx_crush.c": "e63f624b81f9fd17d51e186d2fbd10eb8bd7e364a6cc40abcb85492be18b9fc9",
+    "cfx_manager_filter.c": "f13fc538449356ee78b1145bdedc1610828877b6b7bea6c0d79c5ca5e380561e",
+    "crush.h": "b5b9d339d6c69471b89a1c2aa37d41f91eeaf4d77900fcbe9c32be180f723de7",
+    "cfx_crush.h": "45da336292f875af9eafc39f583b2648cf549e75da1f2157031e85697f6228c9",
+    "crush_compare.c": "e98ead31564ffb154c38d5cd7a639da9c37e36d2d1a657de0fd283ce55cb3649",
+    "run_crush_composite.py": "520833163dc89d3e4b180f555607fbea0c002d3d8bc2023a2df58f67421a2526"
+  }
+}

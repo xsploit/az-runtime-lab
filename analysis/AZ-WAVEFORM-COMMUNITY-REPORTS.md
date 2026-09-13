@@ -1,0 +1,16 @@
+# AZ waveform jitter: external reports and local hypotheses
+
+Research checked 2026-09-12. These are firsthand user reports, not independent frame-time measurements. Reports on production hardware establish that similar complaints exist outside this Pi port; they do not prove an identical cause or current firmware status.
+
+- [XDJ-AZ screen jitter](https://community.pioneerdj.com/hc/en-us/community/posts/41587476188185-XDJ-AZ-screen-jitter), December25,2024: owner reports substantial waveform jitter when zoomed in. February22,2025 reply independently reports it, with subjective improvement from backing off zoom and selecting RGB. No manufacturer diagnosis in the thread.
+- [XDJ-AZ Waveform and other Issues](https://community.pioneerdj.com/hc/en-us/community/posts/42800375382553-XDJ-AZ-Waveform-and-other-Issues), January26,2025: owner describes flicker/poor refresh on actual AZ; additional replies complain about waveform motion. A user's account of support response is secondhand, not an official engineering finding.
+- [New CDJ-3000's doing weird stuff](https://community.pioneerdj.com/hc/en-us/community/posts/22979935374105-New-CDJ-3000-s-doing-weird-stuff?page=1), October2020: primarily linked-player phase-meter jumps during jog adjustment. November9 support reply relays engineers' explanation of irregular beat-data arrivals and1–2pixel grid lag. Different device/context; cannot directly attribute local AZ jitter to network beat-data timing.
+- [Firmware v1.30 waveform report](https://www.reddit.com/r/PioneerDJ/comments/1siuipt/firmware_v130_officially_broke_the_waveform_on/), April11,2026: firsthand report of Beatport waveform stutter on1.30 versus1.22. Relevant version lead, but streaming context differs from our local USB fixture. Unverified as a general regression; thread title is the author's claim.
+
+## Local evidence and interpretation
+
+Measured: cached waveform position about29.7Hz; main repaint can be raised to59Hz without improving its freshness; grid uses integer x positions and one-pixel lines. Native1280x800 image enlarged1.5x to1920x1200; nearest scaling produced alternating1/2pixel line widths. Linear filtering softens coverage and user reports improvement. Current synthetic clock59.24Hz is not locked to physical60.018Hz presentation. Possible additional pacing judder remains unmeasured.
+
+Most plausible combined explanation: coarse/uneven spatial steps and frame timing, made conspicuous by thin high-contrast lines and fractional enlargement. Apparent backward wobble can be a perception/presentation effect; last native crop113 matched grid transitions all moved left, and five-second position sample had no negative steps. This does not disprove what the user sees on the panel. Waveform-color row matcher rejected all transitions, so waveform direction remains unresolved.
+
+Next discriminating tests: native1:1 versus enlarged presentation at matched zoom, synchronized source/output capture, reconstruct waveform displacement with a matcher robust to raster changes, trace source snapshot cadence, then evaluate refresh-linked presentation. Avoid treating more repaint callbacks as proof of smoother motion. RGB/zoom suggestions are test candidates, not verified fixes.

@@ -1,0 +1,123 @@
+.syntax unified
+.arm
+.fpu neon
+.text
+.balign 8
+.space 4
+.global native_status
+.type native_status,%function
+native_status:
+.incbin "native-delay-q-native_status.bin",0,40
+bl fixture_engine
+bl fixture_quantize
+.incbin "native-delay-q-native_status.bin",48,44
+.balign 8
+.global native_manager_on
+.type native_manager_on,%function
+native_manager_on:
+.incbin "native-delay-q-native_manager_on.bin",0,36
+.balign 8
+.space 4
+.global native_quantize_set
+.type native_quantize_set,%function
+native_quantize_set:
+.incbin "native-delay-q-native_quantize_set.bin",0,16
+bl native_beat_position
+.incbin "native-delay-q-native_quantize_set.bin",20,8
+bl fixture_engine
+.incbin "native-delay-q-native_quantize_set.bin",32,4
+bl fixture_time
+.incbin "native-delay-q-native_quantize_set.bin",40,152
+bl fixture_engine
+.incbin "native-delay-q-native_quantize_set.bin",196,8
+bl fixture_tempo
+.incbin "native-delay-q-native_quantize_set.bin",208,96
+bl __aeabi_uidiv
+.incbin "native-delay-q-native_quantize_set.bin",308,4
+bl __aeabi_uidiv
+.incbin "native-delay-q-native_quantize_set.bin",316,56
+.word quant_min_bpm
+.word quant_numerators
+.word quant_denominators
+.balign 8
+.space 4
+.global native_time_update
+.type native_time_update,%function
+native_time_update:
+.incbin "native-delay-q-native_time_update.bin",0,16
+bl native_beat_position
+.incbin "native-delay-q-native_time_update.bin",20,8
+bl fixture_engine
+.incbin "native-delay-q-native_time_update.bin",32,8
+bl fixture_reverse
+.incbin "native-delay-q-native_time_update.bin",44,24
+bl fixture_scratch
+.incbin "native-delay-q-native_time_update.bin",72,16
+bl fixture_spin
+.incbin "native-delay-q-native_time_update.bin",92,16
+bl fixture_scan
+.incbin "native-delay-q-native_time_update.bin",112,16
+bl fixture_time
+.incbin "native-delay-q-native_time_update.bin",132,172
+bl native_quantize_set
+.incbin "native-delay-q-native_time_update.bin",308,20
+.balign 8
+.global native_quantize_check
+.type native_quantize_check,%function
+native_quantize_check:
+.incbin "native-delay-q-native_quantize_check.bin",0,16
+bl fixture_channel
+.incbin "native-delay-q-native_quantize_check.bin",20,8
+bl fixture_engine
+.incbin "native-delay-q-native_quantize_check.bin",32,4
+bl fixture_beat
+.incbin "native-delay-q-native_quantize_check.bin",40,4
+bl fixture_engine
+bl fixture_quantize
+.incbin "native-delay-q-native_quantize_check.bin",52,24
+bl fixture_engine
+bl fixture_quantize
+.incbin "native-delay-q-native_quantize_check.bin",84,44
+bl fixture_engine
+bl fixture_quantize
+.incbin "native-delay-q-native_quantize_check.bin",136,8
+.balign 8
+.global native_beat_position
+.type native_beat_position,%function
+native_beat_position:
+.incbin "native-delay-q-native_beat_position.bin",0,16
+bl fixture_channel
+.incbin "native-delay-q-native_beat_position.bin",20,8
+bl fixture_engine
+.incbin "native-delay-q-native_beat_position.bin",32,4
+bl fixture_beat
+.incbin "native-delay-q-native_beat_position.bin",40,28
+.balign 8
+.global native_adjust
+.type native_adjust,%function
+native_adjust:
+.incbin "native-delay-q-native_adjust.bin",0,328
+.balign 8
+.space 4
+.global delay_execute
+.type delay_execute,%function
+delay_execute:
+.incbin "native-delay-q-delay_execute.bin",0,256
+bl ceil
+.incbin "native-delay-q-delay_execute.bin",260,520
+bl floor
+.incbin "native-delay-q-delay_execute.bin",784,72
+bl native_quantize_check
+.incbin "native-delay-q-delay_execute.bin",860,48
+b native_time_update
+.incbin "native-delay-q-delay_execute.bin",912,124
+bl ceil
+.incbin "native-delay-q-delay_execute.bin",1040,108
+bl floor
+.incbin "native-delay-q-delay_execute.bin",1152,52
+
+.balign 4
+quant_min_bpm:.word 4000
+quant_numerators:.word 1,1,1,1,3,1,2,4,8,16,32,64
+quant_denominators:.word 16,8,4,2,4,1,1,1,1,1,1,1
+.section .note.GNU-stack,"",%progbits

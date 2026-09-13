@@ -1,0 +1,31 @@
+{
+  "pid": 429970,
+  "service": "run_rx_feedback.py",
+  "native_inputs": "5 browse press/release pairs followed by deck1 load press/release through service control socket",
+  "initial_effect_command": "P1 0 4000 0 0 1 0; E1 5 0 8 .5",
+  "second_effect_command": "P1 0 12300 0 0 1 0; E1 5 0 3 .5",
+  "observed_ui": [
+    {
+      "bpm": 40,
+      "beat": "2",
+      "milliseconds": 3000,
+      "image": "continuous-echo-first.png"
+    },
+    {
+      "bpm": 123,
+      "beat": "1/2",
+      "milliseconds": 244,
+      "image": "continuous-echo-second.png"
+    }
+  ],
+  "service_exit": 0,
+  "rx_packets": 15,
+  "invalid": 0,
+  "scope": "Actual AZ native UI plus shared mixer, automatically polled Q1 feedback and sole RX writer; paused tone fixture, no physical audio/Pi validation",
+  "limits": [
+    "Echo nonquantized feedback only",
+    "Service not yet integrated into normal launcher option",
+    "Control scripts must route through service instead of writing RX FIFO directly",
+    "No full HUI/controller mapping or other effects claim"
+  ]
+}

@@ -1,0 +1,2 @@
+ 1de4f04:      	ldrb	w0, [x0, #0x5e]
+ 1de4fd0:      	ldrb	w0, [x0, #0x5f]

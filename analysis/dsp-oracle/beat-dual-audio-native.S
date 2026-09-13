@@ -1,0 +1,287 @@
+.syntax unified
+.arm
+.fpu neon
+.text
+.balign 8
+.space 4
+.global direct_delay_execute
+.type direct_delay_execute,%function
+direct_delay_execute:
+.incbin "native-echo-q-direct_delay_execute.bin",0,256
+bl ceil
+.incbin "native-echo-q-direct_delay_execute.bin",260,520
+bl floor
+.incbin "native-echo-q-direct_delay_execute.bin",784,72
+bl native_quantize_check
+.incbin "native-echo-q-direct_delay_execute.bin",860,48
+b native_time_update
+.incbin "native-echo-q-direct_delay_execute.bin",912,124
+bl ceil
+.incbin "native-echo-q-direct_delay_execute.bin",1040,108
+bl floor
+.incbin "native-echo-q-direct_delay_execute.bin",1152,52
+.balign 8
+.global direct_delay_init
+.type direct_delay_init,%function
+direct_delay_init:
+.incbin "native-echo-q-direct_delay_init.bin",0,24
+.balign 8
+.global direct_delay_time
+.type direct_delay_time,%function
+direct_delay_time:
+.incbin "native-echo-q-direct_delay_time.bin",0,12
+.balign 8
+.space 4
+.global direct_delay_on
+.type direct_delay_on,%function
+direct_delay_on:
+.incbin "native-echo-q-direct_delay_on.bin",0,116
+.balign 8
+.global direct_delay_off
+.type direct_delay_off,%function
+direct_delay_off:
+.incbin "native-echo-q-direct_delay_off.bin",0,168
+.balign 8
+.global direct_delay_depth
+.type direct_delay_depth,%function
+direct_delay_depth:
+.incbin "native-echo-q-direct_delay_depth.bin",0,244
+.balign 8
+.global direct_delay_notify
+.type direct_delay_notify,%function
+direct_delay_notify:
+.incbin "native-echo-q-direct_delay_notify.bin",0,28
+.balign 8
+.global direct_delay_keep
+.type direct_delay_keep,%function
+direct_delay_keep:
+.incbin "native-echo-q-direct_delay_keep.bin",0,4
+.balign 8
+.space 4
+.global native_manager_operate
+.type native_manager_operate,%function
+native_manager_operate:
+.incbin "native-echo-q-native_manager_operate.bin",0,180
+bl native_switch_beat
+.incbin "native-echo-q-native_manager_operate.bin",184,880
+.word manager_ones
+.incbin "native-echo-q-native_manager_operate.bin",1068,148
+bl native_switch_type
+.incbin "native-echo-q-native_manager_operate.bin",1220,760
+.balign 8
+.space 4
+.global native_switch_type
+.type native_switch_type,%function
+native_switch_type:
+.incbin "native-echo-q-native_switch_type.bin",0,76
+.word native_switch_type+760
+.word native_switch_type+748
+.word native_switch_type+736
+.word native_switch_type+724
+.word native_switch_type+712
+.word native_switch_type+700
+.word native_switch_type+688
+.word native_switch_type+676
+.word native_switch_type+664
+.word native_switch_type+652
+.word native_switch_type+640
+.word native_switch_type+628
+.word native_switch_type+616
+.word native_switch_type+604
+.word native_switch_type+160
+.incbin "native-echo-q-native_switch_type.bin",136,876
+.balign 8
+.global native_switch_beat
+.type native_switch_beat,%function
+native_switch_beat:
+.incbin "native-echo-q-native_switch_beat.bin",0,184
+.balign 8
+.global native_switch_target
+.type native_switch_target,%function
+native_switch_target:
+.incbin "native-echo-q-native_switch_target.bin",0,116
+.balign 8
+.global native_off_execute
+.type native_off_execute,%function
+native_off_execute:
+.incbin "native-echo-q-native_off_execute.bin",0,36
+.balign 8
+.global native_off_status
+.type native_off_status,%function
+native_off_status:
+.incbin "native-echo-q-native_off_status.bin",0,64
+.balign 8
+.space 4
+.global native_off_beat
+.type native_off_beat,%function
+native_off_beat:
+.incbin "native-echo-q-native_off_beat.bin",0,8
+b native_range_check
+.balign 8
+.global native_noop
+.type native_noop,%function
+native_noop:
+.incbin "native-echo-q-native_noop.bin",0,4
+.balign 8
+.global native_echo_notify
+.type native_echo_notify,%function
+native_echo_notify:
+.incbin "native-echo-q-native_echo_notify.bin",0,28
+.balign 8
+.space 4
+.global native_echo_beat
+.type native_echo_beat,%function
+native_echo_beat:
+.incbin "native-echo-q-native_echo_beat.bin",0,28
+bl native_range_check
+.incbin "native-echo-q-native_echo_beat.bin",32,4
+bl native_quantize_check
+.incbin "native-echo-q-native_echo_beat.bin",40,12
+bl native_quantize_set
+.incbin "native-echo-q-native_echo_beat.bin",56,4
+bl native_beat_position
+.incbin "native-echo-q-native_echo_beat.bin",64,8
+bl fixture_engine
+.incbin "native-echo-q-native_echo_beat.bin",76,4
+bl fixture_time
+.incbin "native-echo-q-native_echo_beat.bin",84,172
+.balign 8
+.global native_range_check
+.type native_range_check,%function
+native_range_check:
+.incbin "native-echo-q-native_range_check.bin",0,32
+bl fixture_bfx_bpm
+.incbin "native-echo-q-native_range_check.bin",36,52
+bl __aeabi_uidiv
+.incbin "native-echo-q-native_range_check.bin",92,136
+bl fixture_engine
+.incbin "native-echo-q-native_range_check.bin",232,4
+bl fixture_bfx_bpm
+.incbin "native-echo-q-native_range_check.bin",240,24
+.word manager_cache
+.word manager_bpm_sentinel
+.word manager_beat_ratios
+.balign 8
+.space 4
+.global native_status
+.type native_status,%function
+native_status:
+.incbin "native-echo-q-native_status.bin",0,40
+bl fixture_engine
+bl fixture_quantize
+.incbin "native-echo-q-native_status.bin",48,44
+.balign 8
+.global native_manager_on
+.type native_manager_on,%function
+native_manager_on:
+.incbin "native-echo-q-native_manager_on.bin",0,36
+.balign 8
+.space 4
+.global native_quantize_set
+.type native_quantize_set,%function
+native_quantize_set:
+.incbin "native-echo-q-native_quantize_set.bin",0,16
+bl native_beat_position
+.incbin "native-echo-q-native_quantize_set.bin",20,8
+bl fixture_engine
+.incbin "native-echo-q-native_quantize_set.bin",32,4
+bl fixture_time
+.incbin "native-echo-q-native_quantize_set.bin",40,152
+bl fixture_engine
+.incbin "native-echo-q-native_quantize_set.bin",196,8
+bl fixture_tempo
+.incbin "native-echo-q-native_quantize_set.bin",208,96
+bl __aeabi_uidiv
+.incbin "native-echo-q-native_quantize_set.bin",308,4
+bl __aeabi_uidiv
+.incbin "native-echo-q-native_quantize_set.bin",316,56
+.word quant_min_bpm
+.word quant_numerators
+.word quant_denominators
+.balign 8
+.space 4
+.global native_time_update
+.type native_time_update,%function
+native_time_update:
+.incbin "native-echo-q-native_time_update.bin",0,16
+bl native_beat_position
+.incbin "native-echo-q-native_time_update.bin",20,8
+bl fixture_engine
+.incbin "native-echo-q-native_time_update.bin",32,8
+bl fixture_reverse
+.incbin "native-echo-q-native_time_update.bin",44,24
+bl fixture_scratch
+.incbin "native-echo-q-native_time_update.bin",72,16
+bl fixture_spin
+.incbin "native-echo-q-native_time_update.bin",92,16
+bl fixture_scan
+.incbin "native-echo-q-native_time_update.bin",112,16
+bl fixture_time
+.incbin "native-echo-q-native_time_update.bin",132,172
+bl native_quantize_set
+.incbin "native-echo-q-native_time_update.bin",308,20
+.balign 8
+.global native_quantize_check
+.type native_quantize_check,%function
+native_quantize_check:
+.incbin "native-echo-q-native_quantize_check.bin",0,16
+bl fixture_channel
+.incbin "native-echo-q-native_quantize_check.bin",20,8
+bl fixture_engine
+.incbin "native-echo-q-native_quantize_check.bin",32,4
+bl fixture_beat
+.incbin "native-echo-q-native_quantize_check.bin",40,4
+bl fixture_engine
+bl fixture_quantize
+.incbin "native-echo-q-native_quantize_check.bin",52,24
+bl fixture_engine
+bl fixture_quantize
+.incbin "native-echo-q-native_quantize_check.bin",84,44
+bl fixture_engine
+bl fixture_quantize
+.incbin "native-echo-q-native_quantize_check.bin",136,8
+.balign 8
+.global native_beat_position
+.type native_beat_position,%function
+native_beat_position:
+.incbin "native-echo-q-native_beat_position.bin",0,16
+bl fixture_channel
+.incbin "native-echo-q-native_beat_position.bin",20,8
+bl fixture_engine
+.incbin "native-echo-q-native_beat_position.bin",32,4
+bl fixture_beat
+.incbin "native-echo-q-native_beat_position.bin",40,28
+.balign 8
+.global native_adjust
+.type native_adjust,%function
+native_adjust:
+.incbin "native-echo-q-native_adjust.bin",0,328
+.balign 8
+.global echo_execute
+.type echo_execute,%function
+echo_execute:
+.incbin "native-echo-q-echo_execute.bin",0,124
+bl ceil
+.incbin "native-echo-q-echo_execute.bin",128,876
+bl native_quantize_check
+.incbin "native-echo-q-echo_execute.bin",1008,12
+bl native_time_update
+.incbin "native-echo-q-echo_execute.bin",1024,192
+bl ceil
+.incbin "native-echo-q-echo_execute.bin",1220,52
+bl floor
+.incbin "native-echo-q-echo_execute.bin",1276,72
+bl floor
+.incbin "native-echo-q-echo_execute.bin",1352,128
+
+.balign 4
+quant_min_bpm:.word 4000
+quant_numerators:.word 1,1,1,1,3,1,2,4,8,16,32,64
+quant_denominators:.word 16,8,4,2,4,1,1,1,1,1,1,1
+.balign 8
+manager_ones:.float 1,1
+manager_cache:.word 1,0,0
+manager_bpm_sentinel:.word 4294967295
+manager_beat_ratios:.space 80
+.word 0x3d800000,0x3e000000,0x3e800000,0x3f000000,0x3f400000,0x3f800000,0x40000000,0x40800000,0x41000000,0x41800000,0x42000000,0x42800000
+.section .note.GNU-stack,"",%progbits

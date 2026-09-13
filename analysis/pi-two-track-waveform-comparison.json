@@ -1,0 +1,64 @@
+{
+  "scope": "Corrected two-track application CPU/RSS comparison, main waveforms visible in both apps. Matched 1280x800 application size, but different rendering and audio paths.",
+  "tracks": [
+    "Estara",
+    "Dead Wrong acapella"
+  ],
+  "bitedj_1280x800": {
+    "pid": 4656,
+    "seconds": 20.000350061999598,
+    "cpu_one_core_percent": 11.94979084161616,
+    "before": {
+      "cpu_ticks": 3063,
+      "rss_kib": 595360,
+      "threads": 43
+    },
+    "after": {
+      "cpu_ticks": 3302,
+      "rss_kib": 595360,
+      "threads": 43
+    }
+  },
+  "bitedj_1920x1200": {
+    "pid": 4656,
+    "seconds": 20.000433954000073,
+    "cpu_one_core_percent": 13.699702747959636,
+    "before": {
+      "cpu_ticks": 2159,
+      "rss_kib": 616416,
+      "threads": 43
+    },
+    "after": {
+      "cpu_ticks": 2433,
+      "rss_kib": 622480,
+      "threads": 40
+    }
+  },
+  "az_1280x800_prior_waveform_run": {
+    "pid": 3147,
+    "seconds": 20.00064340400013,
+    "cpu_one_core_percent": 44.698562038319224,
+    "before": {
+      "cpu_ticks": 1670,
+      "rss_kib": 1015200,
+      "threads": 235
+    },
+    "after": {
+      "cpu_ticks": 2564,
+      "rss_kib": 1014384,
+      "threads": 235
+    }
+  },
+  "verification": {
+    "bite_1280": "PLAY main waveforms visible before and after; timers 4:07.93 -> 3:47.80 and 2:58.52 -> 2:38.39.",
+    "bite_fullscreen": "PLAY main waveforms visible before and after; timers 4:07.66 -> 3:47.39 and 2:58.25 -> 2:37.98.",
+    "az": "Previously verified WAVEFORM with both decks advancing: 4:08.519 -> 3:48.159 and 2:59.675 -> 2:39.315."
+  },
+  "limitations": [
+    "BiteDJ Wayland versus AZ Xvfb; no measured frame rate or GPU/compositor cost.",
+    "BiteDJ Network stream clock versus AZ paced null ALSA; no physical audio or underrun check.",
+    "AZ software mixer/CFX/EQ not attached.",
+    "20-second application-only samples, not a sustained full-system test.",
+    "Earlier Settings samples are superseded and cannot support a waveform comparison."
+  ]
+}

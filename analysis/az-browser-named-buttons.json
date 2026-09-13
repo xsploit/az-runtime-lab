@@ -1,0 +1,66 @@
+{
+  "back": {
+    "byte": 33,
+    "bit": 7,
+    "id": "0x9fc1f55209ac55",
+    "link_materialization": "0x6ca238",
+    "diagnostic_address": "0x25d5c08",
+    "status": "Static registration/dispatch/diagnostic match; live PID446511 moves focused local USB track list to Folder sidebar, selection retained; flx6-back-owner-live.json"
+  },
+  "tagTrack": {
+    "byte": 33,
+    "bit": 6,
+    "id": "0x2f39430c409383",
+    "link_materialization": "0x6ca304",
+    "diagnostic_address": "0x25d5c48",
+    "status": "Static registration/dispatch/diagnostic match; live button behavior unverified"
+  },
+  "trackFilter": {
+    "byte": 33,
+    "bit": 5,
+    "id": "0x5c5e034ace23d5",
+    "link_materialization": "0x6ca3d0",
+    "diagnostic_address": "0x25d5c88",
+    "status": "Static registration/dispatch/diagnostic match; live button behavior unverified"
+  },
+  "source": {
+    "byte": 32,
+    "bit": 7,
+    "id": "0x63bb64be35bd3d",
+    "link_materialization": "0x6ca49c",
+    "diagnostic_address": "0x25d5cd0",
+    "status": "Static registration/dispatch/diagnostic match; live button behavior unverified"
+  },
+  "shortcut": {
+    "byte": 33,
+    "bit": 4,
+    "id": "0x4c9c2c9458d97e",
+    "link_materialization": "0x6ca568",
+    "diagnostic_address": "0x25d5d10",
+    "status": "Static registration/dispatch/diagnostic match; live button behavior unverified"
+  },
+  "browse": {
+    "byte": 32,
+    "bit": 6,
+    "id": "0x63bb660eeceeae",
+    "link_materialization": "0x6ca700",
+    "diagnostic_address": "0x25d5d90",
+    "status": "Static registration/dispatch/diagnostic match; live button behavior unverified"
+  },
+  "taglist": {
+    "byte": 32,
+    "bit": 5,
+    "id": "0x10d6bc18796e31c",
+    "link_materialization": "0x6ca7cc",
+    "diagnostic_address": "0x25d5dd0",
+    "status": "Static registration/dispatch/diagnostic match; live button behavior unverified"
+  },
+  "playlist": {
+    "byte": 32,
+    "bit": 4,
+    "id": "0x4c9068767a4bac",
+    "link_materialization": "0x6ca898",
+    "diagnostic_address": "0x25d5e10",
+    "status": "Static registration/dispatch/diagnostic match; live button behavior unverified"
+  }
+}

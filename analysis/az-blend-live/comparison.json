@@ -1,0 +1,31 @@
+{
+  "original": {
+    "changed_pixels": 0,
+    "bbox": null,
+    "max_channel_change": 0,
+    "sha256_rgb": "5d3d6f4f53c627b07963c638870476b818f48746cab7215131eb4cc96178e176"
+  },
+  "original-repeat": {
+    "changed_pixels": 0,
+    "bbox": null,
+    "max_channel_change": 0,
+    "sha256_rgb": "5d3d6f4f53c627b07963c638870476b818f48746cab7215131eb4cc96178e176"
+  },
+  "candidate": {
+    "changed_pixels": 21686,
+    "bbox": [
+      170,
+      126,
+      1069,
+      440
+    ],
+    "max_channel_change": 76,
+    "sha256_rgb": "5a6e37713a85aa6d070beb54df72ec48b55a55efcf2de5b434712542836ca6f1"
+  },
+  "restored": {
+    "changed_pixels": 0,
+    "bbox": null,
+    "max_channel_change": 0,
+    "sha256_rgb": "5d3d6f4f53c627b07963c638870476b818f48746cab7215131eb4cc96178e176"
+  }
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "phase": "original-upload",
+    "before": {
+      "time": 23230.173037205,
+      "positions": [
+        5774594,
+        5774594,
+        9223372036854775807,
+        9223372036854775807
+      ],
+      "enabled": 0,
+      "uploads": 199538,
+      "fallbacks": 0
+    },
+    "cpu_percent_one_core": {
+      "player": 52.74876232941884,
+      "xwayland": 16.749606995597453
+    },
+    "after": {
+      "time": 23255.562078826,
+      "positions": [
+        6894338,
+        6894338,
+        9223372036854775807,
+        9223372036854775807
+      ],
+      "enabled": 0,
+      "uploads": 199538,
+      "fallbacks": 0
+    },
+    "source_rates": [
+      44103.43709366016,
+      44103.43709366016,
+      0.0,
+      0.0
+    ],
+    "transport_valid": true
+  },
+  {
+    "phase": "staged-upload",
+    "before": {
+      "time": 23257.771845793,
+      "positions": [
+        5774274,
+        5774274,
+        9223372036854775807,
+        9223372036854775807
+      ],
+      "enabled": 1,
+      "uploads": 199937,
+      "fallbacks": 0
+    },
+    "cpu_percent_one_core": {
+      "player": 41.998968463339004,
+      "xwayland": 12.249699135140542
+    },
+    "after": {
+      "time": 23282.880784731,
+      "positions": [
+        6881474,
+        6881474,
+        9223372036854775807,
+        9223372036854775807
+      ],
+      "enabled": 1,
+      "uploads": 214079,
+      "fallbacks": 0
+    },
+    "source_rates": [
+      44095.84979810597,
+      44095.84979810597,
+      0.0,
+      0.0
+    ],
+    "transport_valid": true
+  },
+  {
+    "phase": "original-upload-restored",
+    "before": {
+      "time": 23285.098948261,
+      "positions": [
+        5774658,
+        5774658,
+        9223372036854775807,
+        9223372036854775807
+      ],
+      "enabled": 0,
+      "uploads": 214425,
+      "fallbacks": 0
+    },
+    "cpu_percent_one_core": {
+      "player": 51.498829547448565,
+      "xwayland": 16.49962500063886
+    },
+    "after": {
+      "time": 23310.436631109,
+      "positions": [
+        6891714,
+        6891714,
+        9223372036854775807,
+        9223372036854775807
+      ],
+      "enabled": 0,
+      "uploads": 214425,
+      "fallbacks": 0
+    },
+    "source_rates": [
+      44086.74647563654,
+      44086.74647563654,
+      0.0,
+      0.0
+    ],
+    "transport_valid": true
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "slot": 0,
+    "mixer": "0x7fd200",
+    "switcher": "0x21b4ba0"
+  },
+  {
+    "slot": 1,
+    "mixer": "0x7fd2e0",
+    "switcher": "0x21b4c10"
+  },
+  {
+    "slot": 4,
+    "mixer": "0x21afae0",
+    "switcher": "0x21afba0"
+  },
+  {
+    "slot": 5,
+    "mixer": "0x21b4620",
+    "switcher": "0x7ae7a0"
+  },
+  {
+    "slot": 7,
+    "mixer": "0x21b2070",
+    "switcher": "0x21b2310"
+  }
+]

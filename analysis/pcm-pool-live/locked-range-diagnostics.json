@@ -1,0 +1,5 @@
+{
+  "0x25f45c0": "pcmbuf::LockedRangeID pcmbuf::pagebuf::LockedRangeList<StaticConfig>::regNewRange() [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig; pcmbuf::LockedRangeID = meow::UnitType<int, 59746029022935937>]",
+  "0x25fa6c0": "list.size() < nMaxRanges",
+  "0x25f0eb8": "void pcmbuf::pagebuf::BufferCleaner<StaticConfig>::freeSomeClusters() [with StaticConfig = pcmbuf::pagebuf::DefaultPageStaticConfig]"
+}

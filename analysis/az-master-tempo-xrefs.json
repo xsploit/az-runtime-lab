@@ -1,0 +1,16 @@
+[
+  {
+    "adrp": "0x6ccc0c",
+    "add": "0x6ccc14",
+    "target": "0x25d4480",
+    "label": "masterTempo",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x6cf494",
+    "add": "0x6cf49c",
+    "target": "0x25d4480",
+    "label": "masterTempo",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

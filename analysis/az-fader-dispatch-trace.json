@@ -1,0 +1,342 @@
+{
+  "raw_calls": [
+    {
+      "channel": 0,
+      "raw": 0,
+      "control": "0x7faae1b05300"
+    },
+    {
+      "channel": 1,
+      "raw": 0,
+      "control": "0x7faae1b06700"
+    },
+    {
+      "channel": 2,
+      "raw": 0,
+      "control": "0x7faae1b07b00"
+    },
+    {
+      "channel": 3,
+      "raw": 0,
+      "control": "0x7faae1b0ff00"
+    },
+    {
+      "channel": 0,
+      "raw": 0,
+      "control": "0x7faae1b05300"
+    },
+    {
+      "channel": 1,
+      "raw": 0,
+      "control": "0x7faae1b06700"
+    },
+    {
+      "channel": 2,
+      "raw": 0,
+      "control": "0x7faae1b07b00"
+    },
+    {
+      "channel": 3,
+      "raw": 0,
+      "control": "0x7faae1b0ff00"
+    },
+    {
+      "channel": 0,
+      "raw": 0,
+      "control": "0x7faae1b05300"
+    },
+    {
+      "channel": 1,
+      "raw": 0,
+      "control": "0x7faae1b06700"
+    },
+    {
+      "channel": 2,
+      "raw": 0,
+      "control": "0x7faae1b07b00"
+    },
+    {
+      "channel": 3,
+      "raw": 0,
+      "control": "0x7faae1b0ff00"
+    },
+    {
+      "channel": 0,
+      "raw": 0,
+      "control": "0x7faae1b05300"
+    },
+    {
+      "channel": 1,
+      "raw": 0,
+      "control": "0x7faae1b06700"
+    },
+    {
+      "channel": 2,
+      "raw": 0,
+      "control": "0x7faae1b07b00"
+    },
+    {
+      "channel": 3,
+      "raw": 0,
+      "control": "0x7faae1b0ff00"
+    },
+    {
+      "channel": 0,
+      "raw": 1023,
+      "control": "0x7faae1b05300"
+    },
+    {
+      "channel": 1,
+      "raw": 1023,
+      "control": "0x7faae1b06700"
+    },
+    {
+      "channel": 2,
+      "raw": 1023,
+      "control": "0x7faae1b07b00"
+    },
+    {
+      "channel": 3,
+      "raw": 1023,
+      "control": "0x7faae1b0ff00"
+    },
+    {
+      "channel": 0,
+      "raw": 0,
+      "control": "0x7faae1b05300"
+    },
+    {
+      "channel": 1,
+      "raw": 0,
+      "control": "0x7faae1b06700"
+    },
+    {
+      "channel": 2,
+      "raw": 0,
+      "control": "0x7faae1b07b00"
+    },
+    {
+      "channel": 3,
+      "raw": 0,
+      "control": "0x7faae1b0ff00"
+    },
+    {
+      "channel": 0,
+      "raw": 1023,
+      "control": "0x7faae1b05300"
+    },
+    {
+      "channel": 1,
+      "raw": 1023,
+      "control": "0x7faae1b06700"
+    },
+    {
+      "channel": 2,
+      "raw": 1023,
+      "control": "0x7faae1b07b00"
+    },
+    {
+      "channel": 3,
+      "raw": 1023,
+      "control": "0x7faae1b0ff00"
+    }
+  ],
+  "per_control_blocks": [
+    {
+      "channel": 0,
+      "pc": "0x215958c",
+      "count": 7
+    },
+    {
+      "channel": 0,
+      "pc": "0x21595a4",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x21595b0",
+      "count": 3
+    },
+    {
+      "channel": 0,
+      "pc": "0x21595b8",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x21595d0",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x21595d4",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x21595dc",
+      "count": 3
+    },
+    {
+      "channel": 0,
+      "pc": "0x2159634",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x2159654",
+      "count": 3
+    },
+    {
+      "channel": 0,
+      "pc": "0x215965c",
+      "count": 3
+    },
+    {
+      "channel": 0,
+      "pc": "0x2159678",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x21596b8",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x21596c0",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x21596d0",
+      "count": 2
+    },
+    {
+      "channel": 0,
+      "pc": "0x21596d8",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x21596e4",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x21596f0",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x2159708",
+      "count": 9
+    },
+    {
+      "channel": 0,
+      "pc": "0x2159714",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x2159724",
+      "count": 1
+    },
+    {
+      "channel": 0,
+      "pc": "0x2159788",
+      "count": 1
+    },
+    {
+      "channel": 1,
+      "pc": "0x215958c",
+      "count": 8
+    },
+    {
+      "channel": 1,
+      "pc": "0x21595b0",
+      "count": 3
+    },
+    {
+      "channel": 1,
+      "pc": "0x21595dc",
+      "count": 3
+    },
+    {
+      "channel": 1,
+      "pc": "0x2159654",
+      "count": 3
+    },
+    {
+      "channel": 1,
+      "pc": "0x215965c",
+      "count": 3
+    },
+    {
+      "channel": 1,
+      "pc": "0x2159708",
+      "count": 9
+    },
+    {
+      "channel": 2,
+      "pc": "0x215958c",
+      "count": 7
+    },
+    {
+      "channel": 2,
+      "pc": "0x21595b0",
+      "count": 3
+    },
+    {
+      "channel": 2,
+      "pc": "0x21595dc",
+      "count": 5
+    },
+    {
+      "channel": 2,
+      "pc": "0x2159654",
+      "count": 3
+    },
+    {
+      "channel": 2,
+      "pc": "0x215965c",
+      "count": 3
+    },
+    {
+      "channel": 2,
+      "pc": "0x2159708",
+      "count": 9
+    },
+    {
+      "channel": 3,
+      "pc": "0x215958c",
+      "count": 7
+    },
+    {
+      "channel": 3,
+      "pc": "0x21595b0",
+      "count": 3
+    },
+    {
+      "channel": 3,
+      "pc": "0x21595dc",
+      "count": 3
+    },
+    {
+      "channel": 3,
+      "pc": "0x2159654",
+      "count": 3
+    },
+    {
+      "channel": 3,
+      "pc": "0x215965c",
+      "count": 3
+    },
+    {
+      "channel": 3,
+      "pc": "0x2159708",
+      "count": 9
+    }
+  ],
+  "scope": "Observed basic-block entry registers; callback block 0x21596f0 invokes slot2. TB chaining can suppress repeated block entries: counts are observed entries, not total executions. Does not identify downstream DSP or observer implementation."
+}

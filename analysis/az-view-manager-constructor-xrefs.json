@@ -1,0 +1,12 @@
+[
+  {
+    "adrp": "0x198d184",
+    "add": "0x198d188",
+    "caveat": "Candidate, inspect register survival"
+  },
+  {
+    "adrp": "0x198e630",
+    "add": "0x198e638",
+    "caveat": "Candidate, inspect register survival"
+  }
+]

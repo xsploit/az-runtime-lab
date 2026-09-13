@@ -1,0 +1,29 @@
+{
+  "pid": 213252,
+  "model": "CDJ-3000X 1.40 EP145",
+  "fixture": "same USB connection/mount shim as AZ",
+  "source": "notorious_b.i.g._-_dead_wrong_acapella.mp3",
+  "steps": [
+    "SOURCE USB1 appears",
+    "tap Local Library",
+    "select MP3",
+    "native on-screen LOAD"
+  ],
+  "visual": {
+    "title": true,
+    "remaining": "03:03.227",
+    "waveform": true,
+    "initial_bpm": 86
+  },
+  "screenshots": [
+    "usb-probe.png",
+    "usb-browse.png",
+    "mp3-load.png"
+  ],
+  "limitations": [
+    "Loaded paused only; transport and audible playback unverified",
+    "Initial BPM may change during analysis",
+    "No physical hardware or controller",
+    "No AZ packet reuse attempted"
+  ]
+}

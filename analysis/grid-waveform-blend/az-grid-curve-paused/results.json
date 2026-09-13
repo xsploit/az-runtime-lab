@@ -1,0 +1,56 @@
+[
+  {
+    "phase": "grid-only",
+    "before": {
+      "time": 20718.530374316,
+      "positions": [
+        1572820,
+        2810
+      ]
+    },
+    "after": {
+      "time": 20719.447910935,
+      "positions": [
+        1572820,
+        2810
+      ]
+    },
+    "transport_valid": true
+  },
+  {
+    "phase": "grid-and-smooth-curve",
+    "before": {
+      "time": 20720.764718816,
+      "positions": [
+        1572820,
+        2810
+      ]
+    },
+    "after": {
+      "time": 20721.687984889,
+      "positions": [
+        1572820,
+        2810
+      ]
+    },
+    "transport_valid": true
+  },
+  {
+    "phase": "grid-only-restored",
+    "before": {
+      "time": 20722.988053515,
+      "positions": [
+        1572820,
+        2810
+      ]
+    },
+    "after": {
+      "time": 20723.905577536,
+      "positions": [
+        1572820,
+        2810
+      ]
+    },
+    "transport_valid": true
+  }
+]

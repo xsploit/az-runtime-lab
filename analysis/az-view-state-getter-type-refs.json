@@ -1,0 +1,23 @@
+[
+  {
+    "reference": "0x29cb060",
+    "nearby_type_names": [
+      {
+        "type": "gui::TrackFilterStateBase<gui::TrackFilterColor>",
+        "name_pointer_at": "0x29cb008"
+      },
+      {
+        "type": "gui::TrackFilterStateBase<gui::TrackFilterKey>",
+        "name_pointer_at": "0x29cb018"
+      },
+      {
+        "type": "gui::TrackFilterStateBase<unsigned char>",
+        "name_pointer_at": "0x29cb028"
+      },
+      {
+        "type": "gui::ViewObjectManager",
+        "name_pointer_at": "0x29cb058"
+      }
+    ]
+  }
+]

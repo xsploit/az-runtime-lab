@@ -1,0 +1,19 @@
+{
+  "pid": 210182,
+  "samples": 360,
+  "visible_changes_per_second": 29.0,
+  "rms": [
+    0.030201810820399324,
+    0.030199141944501167,
+    0.06040362164079865,
+    0.060398283889002334
+  ],
+  "peaks": [
+    0.19604195654392242,
+    0.1955775022506714,
+    0.39208391308784485,
+    0.3911550045013428
+  ],
+  "finite": true,
+  "scope": "Startup main CPU option, MP3 playback,3second mixed tail,6second waveform capture; not physical output or long-duration stability."
+}

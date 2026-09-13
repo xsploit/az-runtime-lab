@@ -1,0 +1,295 @@
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev>:
+  7734d0:      	stp	x29, x30, [sp, #-0x60]!
+  7734d4:      	mov	x29, sp
+  7734d8:      	str	x1, [sp, #0x28]
+  7734dc:      	cbz	x1, 0x77351c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a774>
+  7734e0:      	ldr	x3, [x0, #0x40]
+  7734e4:      	mov	x4, x0
+  7734e8:      	ldr	x2, [x0, #0x30]
+  7734ec:      	sub	x3, x3, #0x8
+  7734f0:      	cmp	x2, x3
+  7734f4:      	b.eq	0x77350c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a764>
+  7734f8:      	mov	x0, x2
+  7734fc:      	str	x1, [x0], #0x8
+  773500:      	str	x0, [x4, #0x30]
+  773504:      	ldp	x29, x30, [sp], #0x60
+  773508:      	ret
+  77350c:      	add	x1, sp, #0x28
+  773510:      	bl	0x772270 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x794c8>
+  773514:      	ldp	x29, x30, [sp], #0x60
+  773518:      	ret
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev>:
+  77364c:      	b.ge	0x77369c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a8f4>
+  773650:      	sbfiz	x20, x22, #4, #32
+  773654:      	nop
+  773658:      	add	x21, x3, x20
+  77365c:      	ldr	x1, [x21, #0x8]
+  773660:      	cbz	x1, 0x7736b0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a908>
+  773664:      	ldr	x0, [x19, #0x8]
+  773668:      	sub	w2, w2, #0x1
+  77366c:      	str	w2, [x19, #0x28]
+  773670:      	add	w22, w22, #0x1
+  773674:      	str	xzr, [x21, #0x8]
+  773678:      	add	x20, x20, #0x10
+  77367c:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  773680:      	ldp	x3, x0, [x19, #0x10]
+  773684:      	ldr	w2, [x19, #0x28]
+  773688:      	strb	wzr, [x21]
+  77368c:      	sub	x0, x0, x3
+  773690:      	asr	x1, x0, #4
+  773694:      	cmp	w22, w1
+  773698:      	b.lt	0x773658 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a8b0>
+  77369c:      	tbnz	w2, #0x1f, 0x7736cc <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a924>
+  7736a0:      	ldp	x19, x20, [sp, #0x10]
+  7736a4:      	ldp	x21, x22, [sp, #0x20]
+  7736a8:      	ldp	x29, x30, [sp], #0x60
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev>:
+  7740a0:      	ldr	w0, [x0, #0x4]
+  7740a4:      	cmp	w0, #0x0
+  7740a8:      	b.le	0x77410c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7b364>
+  7740ac:      	ldr	x21, [x20, #0x10]
+  7740b0:      	mov	x19, #0x0               // =0
+  7740b4:      	lsl	x27, x19, #4
+  7740b8:      	add	x4, x21, x27
+  7740bc:      	ldr	x1, [x4, #0x8]
+  7740c0:      	cbz	x1, 0x7740fc <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7b354>
+  7740c4:      	ldr	x0, [x20, #0x8]
+  7740c8:      	str	xzr, [x4, #0x8]
+  7740cc:      	add	x19, x19, #0x1
+  7740d0:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  7740d4:      	ldr	x0, [x20]
+  7740d8:      	ldr	w0, [x0, #0x4]
+  7740dc:      	strb	wzr, [x21, x27]
+  7740e0:      	cmp	w0, w19
+  7740e4:      	b.le	0x77410c <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7b364>
+  7740e8:      	ldr	x21, [x20, #0x10]
+  7740ec:      	lsl	x27, x19, #4
+  7740f0:      	add	x4, x21, x27
+  7740f4:      	ldr	x1, [x4, #0x8]
+  7740f8:      	cbnz	x1, 0x7740c4 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7b31c>
+  7740fc:      	strb	wzr, [x21, x27]
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev>:
+  774670:      	ldr	w0, [x0, #0x4]
+  774674:      	cmp	w0, #0x0
+  774678:      	b.le	0x7746dc <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7b934>
+  77467c:      	ldr	x22, [x21, #0x10]
+  774680:      	mov	x19, #0x0               // =0
+  774684:      	lsl	x23, x19, #4
+  774688:      	add	x2, x22, x23
+  77468c:      	ldr	x1, [x2, #0x8]
+  774690:      	cbz	x1, 0x7746cc <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7b924>
+  774694:      	ldr	x0, [x21, #0x8]
+  774698:      	str	xzr, [x2, #0x8]
+  77469c:      	add	x19, x19, #0x1
+  7746a0:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  7746a4:      	ldr	x0, [x21]
+  7746a8:      	ldr	w0, [x0, #0x4]
+  7746ac:      	strb	wzr, [x22, x23]
+  7746b0:      	cmp	w0, w19
+  7746b4:      	b.le	0x7746dc <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7b934>
+  7746b8:      	ldr	x22, [x21, #0x10]
+  7746bc:      	lsl	x23, x19, #4
+  7746c0:      	add	x2, x22, x23
+  7746c4:      	ldr	x1, [x2, #0x8]
+  7746c8:      	cbnz	x1, 0x774694 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7b8ec>
+  7746cc:      	strb	wzr, [x22, x23]
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev>:
+  77c850:      	ldr	w0, [x0, #0x4]
+  77c854:      	cmp	w0, #0x0
+  77c858:      	b.le	0x77c898 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x83af0>
+  77c85c:      	mov	x24, #0x0               // =0
+  77c860:      	ldr	x26, [x22, #0x10]
+  77c864:      	lsl	x25, x24, #4
+  77c868:      	add	x2, x26, x25
+  77c86c:      	ldr	x1, [x2, #0x8]
+  77c870:      	cbz	x1, 0x77cb18 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x83d70>
+  77c874:      	ldr	x0, [x22, #0x8]
+  77c878:      	str	xzr, [x2, #0x8]
+  77c87c:      	add	x24, x24, #0x1
+  77c880:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  77c884:      	ldr	x0, [x22]
+  77c888:      	ldr	w0, [x0, #0x4]
+  77c88c:      	strb	wzr, [x26, x25]
+  77c890:      	cmp	w0, w24
+  77c894:      	b.gt	0x77c860 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x83ab8>
+  77c898:      	ldr	x0, [sp, #0x70]
+  77c89c:      	ldr	x0, [x0, #0x8]
+  77c8a0:      	str	wzr, [x22, #0x28]
+  77c8a4:      	cbz	x0, 0x77c958 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x83bb0>
+  77c8a8:      	add	x25, sp, #0x90
+  77c8ac:      	adrp	x1, 0x25c1000 <_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE+0x4d0>
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev>:
+  77cfac:      	str	x21, [sp, #0x20]
+  77cfb0:      	mov	x21, x1
+  77cfb4:      	cbz	x0, 0x77cff8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84250>
+  77cfb8:      	ldr	x1, [x19, #0x8]
+  77cfbc:      	cbz	x1, 0x77cff8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84250>
+  77cfc0:      	ldrb	w20, [x1]
+  77cfc4:      	cbz	w20, 0x77cfd0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84228>
+  77cfc8:      	ldr	x2, [x1, #0x8]
+  77cfcc:      	cbz	x2, 0x77d0b8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84310>
+  77cfd0:      	ldr	x0, [x0, #0x8]
+  77cfd4:      	mov	x1, x21
+  77cfd8:      	mov	w20, #0x0               // =0
+  77cfdc:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  77cfe0:      	str	xzr, [x19, #0x8]
+  77cfe4:      	mov	w0, w20
+  77cfe8:      	ldp	x19, x20, [sp, #0x10]
+  77cfec:      	ldr	x21, [sp, #0x20]
+  77cff0:      	ldp	x29, x30, [sp], #0x60
+  77cff4:      	ret
+  77cff8:      	add	x0, sp, #0x38
+  77cffc:      	adrp	x1, 0x25c1000 <_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE+0x4d0>
+  77d000:      	add	x1, x1, #0xda8
+  77d004:      	bl	0x2333ce0 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1abbc8>
+  77d008:      	adrp	x1, 0x25f1000 <_ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag+0x2e1a8>
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev>:
+  77d070:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d074:      	add	x0, sp, #0x48
+  77d078:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d07c:      	add	x0, sp, #0x40
+  77d080:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d084:      	add	x0, sp, #0x38
+  77d088:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d08c:      	ldr	x0, [x19]
+  77d090:      	mov	w20, #0x0               // =0
+  77d094:      	cbz	x0, 0x77cfe4 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x8423c>
+  77d098:      	ldr	x0, [x0, #0x8]
+  77d09c:      	mov	x1, x21
+  77d0a0:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  77d0a4:      	mov	w0, w20
+  77d0a8:      	ldp	x19, x20, [sp, #0x10]
+  77d0ac:      	ldr	x21, [sp, #0x20]
+  77d0b0:      	ldp	x29, x30, [sp], #0x60
+  77d0b4:      	ret
+  77d0b8:      	ldr	w2, [x0, #0x28]
+  77d0bc:      	strb	wzr, [x1]
+  77d0c0:      	str	x21, [x1, #0x8]
+  77d0c4:      	add	w1, w2, #0x1
+  77d0c8:      	str	w1, [x0, #0x28]
+  77d0cc:      	str	xzr, [x19, #0x8]
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev>:
+  77d208:      	mov	x0, x23
+  77d20c:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d210:      	mov	x0, x22
+  77d214:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d218:      	mov	x0, x21
+  77d21c:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d220:      	mov	x0, x20
+  77d224:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d228:      	ldr	x0, [x19, #0x18]
+  77d22c:      	cbz	x0, 0x77d254 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x844ac>
+  77d230:      	ldr	x0, [x0, #0x8]
+  77d234:      	mov	x1, x25
+  77d238:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  77d23c:      	ldp	x19, x20, [sp, #0x10]
+  77d240:      	ldp	x21, x22, [sp, #0x20]
+  77d244:      	ldp	x23, x24, [sp, #0x30]
+  77d248:      	ldr	x25, [sp, #0x40]
+  77d24c:      	ldp	x29, x30, [sp], #0x80
+  77d250:      	ret
+  77d254:      	ldp	x19, x20, [sp, #0x10]
+  77d258:      	ldp	x21, x22, [sp, #0x20]
+  77d25c:      	ldp	x23, x24, [sp, #0x30]
+  77d260:      	ldr	x25, [sp, #0x40]
+  77d264:      	ldp	x29, x30, [sp], #0x80
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev>:
+  77d520:      	add	x0, sp, #0x30
+  77d524:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d528:      	ldr	x0, [x19]
+  77d52c:      	add	x1, x19, #0x10
+  77d530:      	ldr	x20, [x0, #0x10]
+  77d534:      	mov	x0, x20
+  77d538:      	bl	0x7709c0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x77c18>
+  77d53c:      	mov	x21, x0
+  77d540:      	ldr	w0, [x19, #0x38]
+  77d544:      	ldr	x1, [x19, #0x48]
+  77d548:      	cbz	w0, 0x77d428 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x84680>
+  77d54c:      	add	x0, x20, #0x30
+  77d550:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  77d554:      	ldr	x0, [x19]
+  77d558:      	add	x2, x19, #0x8
+  77d55c:      	ldp	w3, w4, [x19, #0x38]
+  77d560:      	mov	x1, x0
+  77d564:      	ldr	x5, [x0, #0x28]
+  77d568:      	mov	x0, x5
+  77d56c:      	ldr	x5, [x5]
+  77d570:      	ldr	x5, [x5, #0x18]
+  77d574:      	blr	x5
+  77d578:      	cbz	x21, 0x77d480 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x846d8>
+  77d57c:      	ldr	x0, [x19, #0x70]
+
+runtime-lab/xdjaz/rootfs/home/root/pdj/EP147:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000006f8da8 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev>:
+  77d560:      	mov	x1, x0
+  77d564:      	ldr	x5, [x0, #0x28]
+  77d568:      	mov	x0, x5
+  77d56c:      	ldr	x5, [x5]
+  77d570:      	ldr	x5, [x5, #0x18]
+  77d574:      	blr	x5
+  77d578:      	cbz	x21, 0x77d480 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x846d8>
+  77d57c:      	ldr	x0, [x19, #0x70]
+  77d580:      	cbz	x0, 0x77d480 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x846d8>
+  77d584:      	strb	wzr, [x0]
+  77d588:      	b	0x77d480 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x846d8>
+  77d58c:      	add	x0, x20, #0x30
+  77d590:      	bl	0x7734d0 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x7a728>
+  77d594:      	b	0x77d464 <_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev+0x846bc>
+  77d598:      	mov	x19, x0
+  77d59c:      	add	x0, sp, #0x50
+  77d5a0:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d5a4:      	add	x0, sp, #0x48
+  77d5a8:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d5ac:      	add	x0, sp, #0x40
+  77d5b0:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d5b4:      	add	x0, sp, #0x38
+  77d5b8:      	bl	0x22fc600 <_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_+0x1744e8>
+  77d5bc:      	add	x0, sp, #0x30

@@ -1,0 +1,396 @@
+{
+  "expected_masks": [
+    0,
+    8,
+    4,
+    2,
+    1,
+    15,
+    0
+  ],
+  "raw_sequence_matches": true,
+  "listener_changes_match": true,
+  "events": [
+    {
+      "pc": "0x101db38",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 3,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 3,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 3,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 3,
+      "state": 0
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 3,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 3,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 0,
+      "state": 1
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 0,
+      "state": 1
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 0,
+      "state": 1
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 3,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 1,
+      "state": 1
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 1,
+      "state": 1
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 1,
+      "state": 1
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 3,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 2,
+      "state": 1
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 2,
+      "state": 1
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 2,
+      "state": 1
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 3,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 3,
+      "state": 1
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 3,
+      "state": 1
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 3,
+      "state": 1
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 0,
+      "state": 1
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 0,
+      "state": 1
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 0,
+      "state": 1
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 1,
+      "state": 1
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 1,
+      "state": 1
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 1,
+      "state": 1
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 2,
+      "state": 1
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 2,
+      "state": 1
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 2,
+      "state": 1
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 3,
+      "state": 1
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 0,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 1,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 2,
+      "state": 0
+    },
+    {
+      "pc": "0x2132268",
+      "channel": 3,
+      "state": 0
+    },
+    {
+      "pc": "0x101e6d0",
+      "channel": 3,
+      "state": 0
+    },
+    {
+      "pc": "0x101db38",
+      "channel": 3,
+      "state": 0
+    }
+  ],
+  "scope": "Native callback entry registers. Does not prove visible on-air indicator, network output, or audio gain."
+}

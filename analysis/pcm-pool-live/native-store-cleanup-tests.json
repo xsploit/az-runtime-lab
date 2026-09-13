@@ -1,0 +1,201 @@
+{
+  "scope": "Execute original AZ cleanup with real storage in a separate native Pi process.\n\nExtracted code stays in private temporary directories and is deleted on exit.\nNo attach, player patch, restart or UI operation. Guard reporting is intercepted\nto exit42, verifying detection only. Empty unrelated containers avoid unrelated\nfirmware destructors; this is not full application teardown or exception unwind.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "tests": [
+    {
+      "variant": 0,
+      "case": "normal",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":0,\"case\":\"normal\",\"events\":8,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 0,
+      "case": "mixed",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":0,\"case\":\"mixed\",\"events\":8,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 0,
+      "case": "null",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":0,\"case\":\"null\",\"events\":7,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 0,
+      "case": "zero",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":0,\"case\":\"zero\",\"events\":8,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 0,
+      "case": "empty",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":0,\"case\":\"empty\",\"events\":1,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 0,
+      "case": "front",
+      "returncode": 42,
+      "expected_returncode": 42,
+      "stdout": "",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 0,
+      "case": "back",
+      "returncode": 42,
+      "expected_returncode": 42,
+      "stdout": "",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 1,
+      "case": "normal",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":1,\"case\":\"normal\",\"events\":7,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 1,
+      "case": "mixed",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":1,\"case\":\"mixed\",\"events\":7,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 1,
+      "case": "null",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":1,\"case\":\"null\",\"events\":6,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 1,
+      "case": "zero",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":1,\"case\":\"zero\",\"events\":7,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 1,
+      "case": "empty",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":1,\"case\":\"empty\",\"events\":0,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 1,
+      "case": "front",
+      "returncode": 42,
+      "expected_returncode": 42,
+      "stdout": "",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 1,
+      "case": "back",
+      "returncode": 42,
+      "expected_returncode": 42,
+      "stdout": "",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 2,
+      "case": "normal",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":2,\"case\":\"normal\",\"events\":6,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 2,
+      "case": "mixed",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":2,\"case\":\"mixed\",\"events\":6,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 2,
+      "case": "null",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":2,\"case\":\"null\",\"events\":5,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 2,
+      "case": "zero",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":2,\"case\":\"zero\",\"events\":6,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 2,
+      "case": "empty",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "{\"variant\":2,\"case\":\"empty\",\"events\":0,\"passed\":true}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 2,
+      "case": "front",
+      "returncode": 42,
+      "expected_returncode": 42,
+      "stdout": "",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "variant": 2,
+      "case": "back",
+      "returncode": 42,
+      "expected_returncode": 42,
+      "stdout": "",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "temporary_remote_cleanup_returncode": 0,
+  "sources": {
+    "shims/pcm-template-store.c": "2b0019bc8179dd62621d3a679b91decefc33aff208ead85bf88cd7979eace0f8",
+    "shims/pcm-template-store.h": "dba7a76345b956761dbe34f1d89dd81556a38a0515c6f7414fa8b3f47477038e",
+    "analysis/test-pcm-native-cleanup.c": "8f160294ad869c8dd67710c84478f85133f923bf8572bcbcb0132da21197b0d2"
+  }
+}

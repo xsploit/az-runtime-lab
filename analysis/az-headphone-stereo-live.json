@@ -1,0 +1,23 @@
+{
+  "pid": 313878,
+  "cache_before": 1,
+  "persistence": "MonoSplit confirmed after prior run restart",
+  "native_action": "Stereo identifier3b86638 via1a03a70 returned",
+  "histogram": {
+    "mono_split": 1130,
+    "stereo": 7823
+  },
+  "transitions": [
+    [
+      0,
+      "mono_split"
+    ],
+    [
+      1130,
+      "stereo"
+    ]
+  ],
+  "bad_crc": 0,
+  "scope": "Native setting persistence and outgoing TX mode verified; physical/software audio behavior not tested",
+  "private_lab_setting": "restoredStereo"
+}

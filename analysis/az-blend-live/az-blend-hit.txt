@@ -1,0 +1,11 @@
+warning: "target:/proc/11605/exe": could not open as an executable file: Input/output error.
+warning: `target:/proc/11605/exe': can't open to read symbols: Input/output error.
+warning: Could not load vsyscall page because no executable was specified
+warning: Target and debugger are in different PID namespaces; thread lists and other data are likely unreliable.  Connect to gdbserver inside the container.
+0x00007fffa8ae1690 in ?? ()
+Temporary breakpoint 1 at 0x1e0141c
+
+Thread 1 "EP147" received signal SIGINT, Interrupt.
+0x00007fffa8ae1690 in ?? ()
+BLEND_PC=0x7fffa8ae1690 FRACTION=0.000000000 WEIGHTS=0,0
+[Inferior 1 (process 11605) detached]

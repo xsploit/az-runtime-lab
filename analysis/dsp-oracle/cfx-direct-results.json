@@ -1,0 +1,121 @@
+{
+  "scope": "Native direct Off0/Filter1/Crush6 manager plus actual native Filter/IIR/Crush/control callbacks against shared AZ CFX module. Off copy/init and unrelated Sweep detector fixture; other effects not covered.",
+  "commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "cfx_direct_compare.c",
+      "../../mixer/cfx_manager.c",
+      "../../mixer/cfx_filter.c",
+      "../../mixer/cfx_crush.c",
+      "manager-native.S",
+      "cfx-native.S",
+      "cfx-control.S",
+      "native.S",
+      "crush-native.S",
+      "-lm",
+      "-o",
+      "cfx-direct-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "cfx_direct_compare.c",
+      "../../mixer/cfx_manager.c",
+      "../../mixer/cfx_filter.c",
+      "../../mixer/cfx_crush.c",
+      "-lm",
+      "-o",
+      "cfx-direct-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "cfx_direct_compare.c",
+      "../../mixer/cfx_manager.c",
+      "../../mixer/cfx_filter.c",
+      "../../mixer/cfx_crush.c",
+      "-lm",
+      "-o",
+      "cfx-direct-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"calls\":18000,\"stereo_frames\":374000,\"numeric_values_compared\":2152000,\"mismatches\":0,\"max_abs_error\":0,\"busy_requests\":1856}\n",
+      "stderr": "Verified direct Filter->Crush 90 and Crush->Filter 53 completed transitions\n",
+      "metrics": {
+        "calls": 18000,
+        "stereo_frames": 374000,
+        "numeric_values_compared": 2152000,
+        "mismatches": 0,
+        "max_abs_error": 0,
+        "busy_requests": 1856
+      }
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"calls\":18000,\"stereo_frames\":374000,\"numeric_values_compared\":2152000,\"mismatches\":0,\"max_abs_error\":0,\"busy_requests\":1856}\n",
+      "stderr": "Verified direct Filter->Crush 90 and Crush->Filter 53 completed transitions\n",
+      "metrics": {
+        "calls": 18000,
+        "stereo_frames": 374000,
+        "numeric_values_compared": 2152000,
+        "mismatches": 0,
+        "max_abs_error": 0,
+        "busy_requests": 1856
+      }
+    },
+    "host_asan": {
+      "returncode": 0,
+      "stdout": "{\"calls\":18000,\"stereo_frames\":374000,\"numeric_values_compared\":2152000,\"mismatches\":0,\"max_abs_error\":0,\"busy_requests\":1856}\n",
+      "stderr": "Verified direct Filter->Crush 90 and Crush->Filter 53 completed transitions\n",
+      "metrics": {
+        "calls": 18000,
+        "stereo_frames": 374000,
+        "numeric_values_compared": 2152000,
+        "mismatches": 0,
+        "max_abs_error": 0,
+        "busy_requests": 1856
+      }
+    }
+  },
+  "source_hashes": {
+    "cfx_direct_compare.c": "a58b084bd2ef660bce0cd9b3853facdd32ad138519bfa7044471a8378112c12b",
+    "../../mixer/cfx_manager.c": "b6c144b5811fdc264c97b48a1241911994cd15feb42d1a23f6f56ee59729aceb",
+    "../../mixer/cfx_filter.c": "1a2454e99c159e53c04af40cff4cadd1d6b9cc88db98596316c9369b9c0b1033",
+    "../../mixer/cfx_crush.c": "0eb3b428d66b565f78a0b56df00f8934e82a8335afe25004ba2c072488ecd7d5",
+    "../../mixer/cfx_manager.h": "67c3ca3f340632beaebe3f76213a6a7132e2346a195ac6159464148fd68d3928",
+    "../../mixer/cfx_crush.h": "4de2e99dd62607c068f8034b20169e5a61e66d230f522d349efbe981b138ba14",
+    "run_cfx_direct.py": "2455364849e6e1c18801b22e3567d5089aec73682698594daff760b4f7ad328c"
+  }
+}

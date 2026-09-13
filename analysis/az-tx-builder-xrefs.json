@@ -1,0 +1,23 @@
+[
+  {
+    "adrp": "0x215c2f8",
+    "add": "0x215c2fc",
+    "target": "0x2e4a490",
+    "label": "TxDataBuilder primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x215cca0",
+    "add": "0x215cca4",
+    "target": "0x2e4a490",
+    "label": "TxDataBuilder primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  },
+  {
+    "adrp": "0x215d3d0",
+    "add": "0x215d3d4",
+    "target": "0x2e4a490",
+    "label": "TxDataBuilder primary vtable",
+    "caveat": "Validate register survival in disassembly"
+  }
+]

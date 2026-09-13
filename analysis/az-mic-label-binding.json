@@ -1,0 +1,33 @@
+{
+  "scope": "Static typed MicSelect-to-label mapping verified; live effect routing remains unverified",
+  "function": "0x1ceaf18",
+  "input": "32-bit value at first argument; second argument points to controller pointer",
+  "labels": {
+    "0": "MIC1",
+    "1": "MIC2",
+    "2": "MIC1+2"
+  },
+  "branches": {
+    "0": "0x1ceaf50 -> 0x1ceafa0",
+    "1": "0x1ceaf40 -> 0x1ceaff0",
+    "2": "0x1ceaf48 -> 0x1ceafc8"
+  },
+  "label_addresses": {
+    "MIC1": "0x2c93598",
+    "MIC2": "0x2c935a0",
+    "MIC1+2": "0x2c935a8"
+  },
+  "row": 20,
+  "row_update": "0x1ceaf68 sets row20; 0x1ceaf6c calls 0x1d2c568; alternate selected-text update 0x1d2c570",
+  "caller": "0x1cefa00 copies incoming *x2 into closure; direct path 0x1cefb84 calls formatter, alternate allocates48-byte closure and enqueues via0x220cfa0",
+  "limitation": "Static label/setting/TX association verified; no live microphone audio routing or safe generic injection API established.",
+  "typed_listener": {
+    "class": "gui::utility::MixerItemTableController",
+    "typeinfo": "0x2c89d88",
+    "base_type": "IItemListener<application_setting::beat_effect::MicSelect>",
+    "base_offset": 144,
+    "secondary_vtable": "0x2c8a220",
+    "slot2": "0x1cf3d08",
+    "evidence": "Loads incoming *x2 at0x1cf3d10, subtracts144 from this at0x1cf3d1c, stores both in closure, direct branch0x1cf3e94 calls0x1ceaf18 without enum conversion."
+  }
+}

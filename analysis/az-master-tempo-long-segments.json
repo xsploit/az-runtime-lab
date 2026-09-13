@@ -1,0 +1,73 @@
+{
+  "segments": [
+    {
+      "start_seconds": 79.27727891156462,
+      "duration_seconds": 9.51485260770975,
+      "windows": [
+        {
+          "second": 1,
+          "hz": 462.43999951615564
+        },
+        {
+          "second": 2,
+          "hz": 462.4399982313229
+        },
+        {
+          "second": 3,
+          "hz": 462.43997687444784
+        },
+        {
+          "second": 4,
+          "hz": 462.44000155441535
+        },
+        {
+          "second": 5,
+          "hz": 462.44008231273745
+        },
+        {
+          "second": 6,
+          "hz": 462.4399986244397
+        },
+        {
+          "second": 7,
+          "hz": 462.43998518070657
+        }
+      ]
+    },
+    {
+      "start_seconds": 105.36637188208617,
+      "duration_seconds": 9.515804988662131,
+      "windows": [
+        {
+          "second": 1,
+          "hz": 440.0000235327994
+        },
+        {
+          "second": 2,
+          "hz": 439.99994239421557
+        },
+        {
+          "second": 3,
+          "hz": 440.00012431807954
+        },
+        {
+          "second": 4,
+          "hz": 439.9999088547974
+        },
+        {
+          "second": 5,
+          "hz": 440.00005164462766
+        },
+        {
+          "second": 6,
+          "hz": 440.00003890056934
+        },
+        {
+          "second": 7,
+          "hz": 440.00009083013856
+        }
+      ]
+    }
+  ],
+  "limitation": "Tone frequency windows and threshold-active spans; not a general music quality or latency test."
+}

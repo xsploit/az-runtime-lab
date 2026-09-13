@@ -1,0 +1,30 @@
+{
+  "pid": 416104,
+  "scope": "Native AZ Echo UI RX86 enumeration, no audio timing equivalence claimed",
+  "fixed": {
+    "effect": 1,
+    "bpm_tenths": 1200,
+    "time_ms": 250,
+    "adjusted": false
+  },
+  "preset_labels": {
+    "1": "1/16",
+    "3": "1/8",
+    "5": "1/4",
+    "6": "1/3",
+    "7": "1/2",
+    "8": "2/3",
+    "9": "3/4",
+    "10": "1",
+    "12": "2",
+    "14": "4",
+    "16": "8",
+    "17": "16"
+  },
+  "screenshots": "xdjaz/fx-preset-{wire_value}.png for1,3,5,9,10,12,14,16,17; earlier fx-fraction-rx86-{6,7,8}.png for thirds/half",
+  "limits": [
+    "Other effects and32/64beat modes not covered",
+    "Fixed milliseconds intentionally independent of preset during differential probe",
+    "Software RX3 Echo lacks thirds even though AZ display supports them"
+  ]
+}

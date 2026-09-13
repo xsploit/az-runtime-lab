@@ -1,0 +1,14 @@
+{
+  "deck1": {
+    "changed_channels": 23924,
+    "channels_darker": 23924,
+    "channels_brighter": 0,
+    "mean_change_on_changed_channels": -26.65064370506604
+  },
+  "deck2": {
+    "changed_channels": 39880,
+    "channels_darker": 39880,
+    "channels_brighter": 0,
+    "mean_change_on_changed_channels": -37.162136409227685
+  }
+}

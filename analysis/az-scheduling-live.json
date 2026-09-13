@@ -1,0 +1,108 @@
+{
+  "calls": 466,
+  "counts": [
+    {
+      "policy": 2,
+      "priority": 1,
+      "result": 1,
+      "count": 14
+    },
+    {
+      "policy": 0,
+      "priority": 0,
+      "result": 0,
+      "count": 216
+    },
+    {
+      "policy": 5,
+      "priority": 0,
+      "result": 0,
+      "count": 4
+    },
+    {
+      "policy": 0,
+      "priority": 0,
+      "result": 1,
+      "count": 1
+    },
+    {
+      "policy": 2,
+      "priority": 50,
+      "result": 1,
+      "count": 204
+    },
+    {
+      "policy": 2,
+      "priority": 99,
+      "result": 1,
+      "count": 1
+    },
+    {
+      "policy": 2,
+      "priority": 11,
+      "result": 1,
+      "count": 6
+    },
+    {
+      "policy": 2,
+      "priority": 89,
+      "result": 1,
+      "count": 3
+    },
+    {
+      "policy": 1,
+      "priority": 87,
+      "result": 1,
+      "count": 1
+    },
+    {
+      "policy": 2,
+      "priority": 44,
+      "result": 1,
+      "count": 1
+    },
+    {
+      "policy": 2,
+      "priority": 59,
+      "result": 1,
+      "count": 5
+    },
+    {
+      "policy": 1,
+      "priority": 11,
+      "result": 1,
+      "count": 4
+    },
+    {
+      "policy": 2,
+      "priority": 65,
+      "result": 1,
+      "count": 2
+    },
+    {
+      "policy": 2,
+      "priority": 22,
+      "result": 1,
+      "count": 1
+    },
+    {
+      "policy": 1,
+      "priority": 98,
+      "result": 1,
+      "count": 1
+    },
+    {
+      "policy": 2,
+      "priority": 69,
+      "result": 1,
+      "count": 1
+    },
+    {
+      "policy": 2,
+      "priority": 33,
+      "result": 1,
+      "count": 1
+    }
+  ],
+  "scope": "Pass-through pthread_setschedparam calls; result1=EPERM. No host permissions or policies changed by tracer."
+}

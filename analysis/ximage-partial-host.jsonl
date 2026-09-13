@@ -1,0 +1,3 @@
+{"phase":"original","uploads":240,"seconds":0.411735,"reads":4032,"mixed_generation_reads":3071,"max_request_words":65535}
+{"phase":"staged-copy","uploads":240,"seconds":0.392952,"reads":3445,"mixed_generation_reads":0,"max_request_words":65535}
+{"phase":"original-restored","uploads":240,"seconds":0.372899,"reads":4471,"mixed_generation_reads":3553,"max_request_words":65535}

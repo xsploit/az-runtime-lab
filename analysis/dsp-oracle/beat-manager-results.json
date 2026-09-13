@@ -1,0 +1,489 @@
+{
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "native_ranges": [
+    [
+      "native_manager_operate",
+      566572,
+      568552
+    ],
+    [
+      "native_switch_type",
+      565372,
+      566384
+    ],
+    [
+      "native_switch_beat",
+      566384,
+      566568
+    ],
+    [
+      "native_switch_target",
+      568552,
+      568668
+    ],
+    [
+      "native_off_execute",
+      569232,
+      569268
+    ],
+    [
+      "native_off_status",
+      569608,
+      569672
+    ],
+    [
+      "native_off_beat",
+      569596,
+      569608
+    ],
+    [
+      "native_noop",
+      569512,
+      569516
+    ],
+    [
+      "native_echo_notify",
+      752056,
+      752084
+    ],
+    [
+      "native_echo_beat",
+      625444,
+      625700
+    ],
+    [
+      "native_range_check",
+      744576,
+      744852
+    ],
+    [
+      "native_status",
+      625940,
+      626032
+    ],
+    [
+      "native_manager_on",
+      563520,
+      563556
+    ],
+    [
+      "native_quantize_set",
+      624732,
+      625116
+    ],
+    [
+      "native_time_update",
+      625116,
+      625444
+    ],
+    [
+      "native_quantize_check",
+      626592,
+      626736
+    ],
+    [
+      "native_beat_position",
+      626784,
+      626852
+    ],
+    [
+      "native_adjust",
+      744248,
+      744576
+    ],
+    [
+      "echo_execute",
+      749416,
+      750896
+    ]
+  ],
+  "relocations": [
+    {
+      "site": "0x8a5e0",
+      "replacement": "bl native_switch_beat"
+    },
+    {
+      "site": "0x8a954",
+      "replacement": ".word manager_ones"
+    },
+    {
+      "site": "0x8a9ec",
+      "replacement": "bl native_switch_type"
+    },
+    {
+      "site": "0x8a0c8",
+      "replacement": ".word native_switch_type+760"
+    },
+    {
+      "site": "0x8a0cc",
+      "replacement": ".word native_switch_type+748"
+    },
+    {
+      "site": "0x8a0d0",
+      "replacement": ".word native_switch_type+736"
+    },
+    {
+      "site": "0x8a0d4",
+      "replacement": ".word native_switch_type+724"
+    },
+    {
+      "site": "0x8a0d8",
+      "replacement": ".word native_switch_type+712"
+    },
+    {
+      "site": "0x8a0dc",
+      "replacement": ".word native_switch_type+700"
+    },
+    {
+      "site": "0x8a0e0",
+      "replacement": ".word native_switch_type+688"
+    },
+    {
+      "site": "0x8a0e4",
+      "replacement": ".word native_switch_type+676"
+    },
+    {
+      "site": "0x8a0e8",
+      "replacement": ".word native_switch_type+664"
+    },
+    {
+      "site": "0x8a0ec",
+      "replacement": ".word native_switch_type+652"
+    },
+    {
+      "site": "0x8a0f0",
+      "replacement": ".word native_switch_type+640"
+    },
+    {
+      "site": "0x8a0f4",
+      "replacement": ".word native_switch_type+628"
+    },
+    {
+      "site": "0x8a0f8",
+      "replacement": ".word native_switch_type+616"
+    },
+    {
+      "site": "0x8a0fc",
+      "replacement": ".word native_switch_type+604"
+    },
+    {
+      "site": "0x8a100",
+      "replacement": ".word native_switch_type+160"
+    },
+    {
+      "site": "0x8b104",
+      "replacement": "b native_range_check"
+    },
+    {
+      "site": "0x98b40",
+      "replacement": "bl native_range_check"
+    },
+    {
+      "site": "0x98b48",
+      "replacement": "bl native_quantize_check"
+    },
+    {
+      "site": "0x98b58",
+      "replacement": "bl native_quantize_set"
+    },
+    {
+      "site": "0x98b60",
+      "replacement": "bl native_beat_position"
+    },
+    {
+      "site": "0x98b6c",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98b74",
+      "replacement": "bl fixture_time"
+    },
+    {
+      "site": "0xb5ca0",
+      "replacement": "bl fixture_bfx_bpm"
+    },
+    {
+      "site": "0xb5cd8",
+      "replacement": "bl __aeabi_uidiv"
+    },
+    {
+      "site": "0xb5d64",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0xb5d6c",
+      "replacement": "bl fixture_bfx_bpm"
+    },
+    {
+      "site": "0xb5d88",
+      "replacement": ".word manager_cache"
+    },
+    {
+      "site": "0xb5d8c",
+      "replacement": ".word manager_bpm_sentinel"
+    },
+    {
+      "site": "0xb5d90",
+      "replacement": ".word manager_beat_ratios"
+    },
+    {
+      "site": "0x98d3c",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98d40",
+      "replacement": "bl fixture_quantize"
+    },
+    {
+      "site": "0x9886c",
+      "replacement": "bl native_beat_position"
+    },
+    {
+      "site": "0x98878",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98880",
+      "replacement": "bl fixture_time"
+    },
+    {
+      "site": "0x9891c",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98928",
+      "replacement": "bl fixture_tempo"
+    },
+    {
+      "site": "0x9898c",
+      "replacement": "bl __aeabi_uidiv"
+    },
+    {
+      "site": "0x98994",
+      "replacement": "bl __aeabi_uidiv"
+    },
+    {
+      "site": "0x989d0",
+      "replacement": ".word quant_min_bpm"
+    },
+    {
+      "site": "0x989d4",
+      "replacement": ".word quant_numerators"
+    },
+    {
+      "site": "0x989d8",
+      "replacement": ".word quant_denominators"
+    },
+    {
+      "site": "0x989ec",
+      "replacement": "bl native_beat_position"
+    },
+    {
+      "site": "0x989f8",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98a04",
+      "replacement": "bl fixture_reverse"
+    },
+    {
+      "site": "0x98a20",
+      "replacement": "bl fixture_scratch"
+    },
+    {
+      "site": "0x98a34",
+      "replacement": "bl fixture_spin"
+    },
+    {
+      "site": "0x98a48",
+      "replacement": "bl fixture_scan"
+    },
+    {
+      "site": "0x98a5c",
+      "replacement": "bl fixture_time"
+    },
+    {
+      "site": "0x98b0c",
+      "replacement": "bl native_quantize_set"
+    },
+    {
+      "site": "0x98fb0",
+      "replacement": "bl fixture_channel"
+    },
+    {
+      "site": "0x98fbc",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98fc4",
+      "replacement": "bl fixture_beat"
+    },
+    {
+      "site": "0x98fcc",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98fd0",
+      "replacement": "bl fixture_quantize"
+    },
+    {
+      "site": "0x98fec",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x98ff0",
+      "replacement": "bl fixture_quantize"
+    },
+    {
+      "site": "0x99020",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x99024",
+      "replacement": "bl fixture_quantize"
+    },
+    {
+      "site": "0x99070",
+      "replacement": "bl fixture_channel"
+    },
+    {
+      "site": "0x9907c",
+      "replacement": "bl fixture_engine"
+    },
+    {
+      "site": "0x99084",
+      "replacement": "bl fixture_beat"
+    },
+    {
+      "site": "0xb6fe4",
+      "replacement": "bl ceil"
+    },
+    {
+      "site": "0xb7354",
+      "replacement": "bl native_quantize_check"
+    },
+    {
+      "site": "0xb7364",
+      "replacement": "bl native_time_update"
+    },
+    {
+      "site": "0xb7428",
+      "replacement": "bl ceil"
+    },
+    {
+      "site": "0xb7460",
+      "replacement": "bl floor"
+    },
+    {
+      "site": "0xb74ac",
+      "replacement": "bl floor"
+    }
+  ],
+  "compiler_commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DECHO_NATIVE_QUANTIZE",
+      "-DECHO_STATUS_ORACLE",
+      "-DBEAT_MANAGER_COMPARE_BUILD",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "beat_manager_compare.c",
+      "beat_manager_echo.c",
+      "echo_quantize.c",
+      "echo_audio.c",
+      "echo_control.c",
+      "echo-control-native.S",
+      "beat-manager-native.S",
+      "-lm",
+      "-o",
+      "beat-manager-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DECHO_NATIVE_QUANTIZE",
+      "-DECHO_STATUS_ORACLE",
+      "-DBEAT_MANAGER_COMPARE_BUILD",
+      "-DHOST_REPLAY",
+      "beat_manager_compare.c",
+      "beat_manager_echo.c",
+      "echo_quantize.c",
+      "echo_audio.c",
+      "echo_control.c",
+      "-lm",
+      "-o",
+      "beat-manager-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DECHO_NATIVE_QUANTIZE",
+      "-DECHO_STATUS_ORACLE",
+      "-DBEAT_MANAGER_COMPARE_BUILD",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "beat_manager_compare.c",
+      "beat_manager_echo.c",
+      "echo_quantize.c",
+      "echo_audio.c",
+      "echo_control.c",
+      "-lm",
+      "-o",
+      "beat-manager-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"calls\":180,\"stereo_frames\":11520,\"compared_words\":127052379,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"calls\":180,\"stereo_frames\":11520,\"compared_words\":127051920,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "{\"calls\":180,\"stereo_frames\":11520,\"compared_words\":127051920,\"mismatches\":0}\n",
+      "stderr": ""
+    }
+  },
+  "scope": "Actual outer BeatEffectManager operate/type/target callbacks composed with Off and Echo audio, status and quantize. 180 persistent 64-frame blocks; tail/reselect, target changes, bypass, depth, changing selected-player time/tempo and transport flags. Beat enums0..12, range adjustment at BPM3000/4000/12000/17405/99999/unavailable, force-time true/false notifications, manager quantize and force-tail changes, consumed-round guard. Other effect algorithms and real multi-channel insertion graph not covered.",
+  "source_hashes": {
+    "beat_manager_compare.c": "cf6975c33e791410718cad18c06d305d8655d76ef4ac427d01a90fbf054588fe",
+    "beat_manager_echo.c": "2f3bdcfed2228c7758c9410d71e91d7a8099c8207c39bb3fb997e7c3eeb9fa30",
+    "echo_quantize.c": "b59e18af0467c3185fbf7e847e8897890180184d28c463c06b2a8c77933e669c",
+    "echo_audio.c": "9b7a7809acdf13758667e020bc88f8f78977e3478b19301458ac3ef66d5d5caa",
+    "echo_control.c": "c35ffe73ea9617547d19a5a43a41d5706cfdfad618be119bef56ef427397cee6",
+    "beat_manager_echo.h": "0af2abf20ef2bcd282066a9da4954857d0ca469b929a0fcf0d8a33a4a2ee4119",
+    "beat_manager_probe.c": "93f11ffd30179a171de7caf9cc369ae081dd26021342ed00939f05679f88c907",
+    "echo_quantize_compare.c": "f4c67e362e5dee4ff8c25d4163fc490eb68928764e55653ba7ce4ceda36464ec",
+    "echo_quantize.h": "0af2911ad1df201dcbac27dc9b603cd1e1d63225b1ef50ea4e29a446a6832baf",
+    "echo_audio.h": "22272c2243ac600260f46a16e4aa6474641a2aad13cde184a1e6b08060cf4576",
+    "echo_audio_compare.c": "96bb4fa80fa1b3cb6e94ecc123854096405ead9ed7e57e34b2c96a05fb3d9953",
+    "run_beat_manager_compare.py": "4500b02661ffe8bbc15d5381f7ec94ffdebf1101a50e8006a7172bd9fdcd0628",
+    "beat-manager-native.S": "521aafbd6cbe30725012c278cb34276c0afec11f4ad9b1358f8666a0ea10bb07"
+  }
+}

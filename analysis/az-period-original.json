@@ -1,0 +1,8 @@
+{
+  "frames": 959,
+  "duration_seconds": 8.0,
+  "changed_samples": 1,
+  "change_rate_hz": 0.0,
+  "interval_ms": null,
+  "note": "Sampled X11 pixel changes, not panel FPS. Verify playback/view and account for capture overhead."
+}

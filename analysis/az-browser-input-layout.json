@@ -1,0 +1,95 @@
+{
+  "dispatcher": "0x2154418",
+  "packet_base_offset": 31,
+  "buttons": [
+    {
+      "packet_byte": 32,
+      "bit": 7,
+      "dispatcher_pointer_offset": 120
+    },
+    {
+      "packet_byte": 32,
+      "bit": 6,
+      "dispatcher_pointer_offset": 144
+    },
+    {
+      "packet_byte": 32,
+      "bit": 5,
+      "dispatcher_pointer_offset": 152
+    },
+    {
+      "packet_byte": 32,
+      "bit": 4,
+      "dispatcher_pointer_offset": 160
+    },
+    {
+      "packet_byte": 32,
+      "bit": 3,
+      "dispatcher_pointer_offset": 168
+    },
+    {
+      "packet_byte": 32,
+      "bit": 2,
+      "dispatcher_pointer_offset": 176
+    },
+    {
+      "packet_byte": 33,
+      "bit": 0,
+      "dispatcher_pointer_offset": 112
+    },
+    {
+      "packet_byte": 33,
+      "bit": 1,
+      "dispatcher_pointer_offset": 104
+    },
+    {
+      "packet_byte": 33,
+      "bit": 2,
+      "dispatcher_pointer_offset": 96
+    },
+    {
+      "packet_byte": 33,
+      "bit": 3,
+      "dispatcher_pointer_offset": 88
+    },
+    {
+      "packet_byte": 33,
+      "bit": 4,
+      "dispatcher_pointer_offset": 128
+    },
+    {
+      "packet_byte": 33,
+      "bit": 5,
+      "dispatcher_pointer_offset": 64
+    },
+    {
+      "packet_byte": 33,
+      "bit": 6,
+      "dispatcher_pointer_offset": 56
+    },
+    {
+      "packet_byte": 33,
+      "bit": 7,
+      "dispatcher_pointer_offset": 48
+    }
+  ],
+  "encoder": {
+    "counter_bytes": [
+      34,
+      35
+    ],
+    "signed": true,
+    "flag_byte": 31,
+    "flag_bit": 0,
+    "dispatcher_pointer_offset": 208,
+    "submit": "0x21597a8",
+    "initial_packet": "Stores baseline without submitting encoder event",
+    "delta": "signed16(current)-signed16(previous), computed as32-bit integer"
+  },
+  "limitations": [
+    "Physical button names unresolved except previously verified load bits",
+    "Counter wrap normalization downstream unresolved",
+    "Flag meaning unresolved",
+    "No native browser movement verified in this pass"
+  ]
+}

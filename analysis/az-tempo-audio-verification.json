@@ -1,0 +1,21 @@
+{
+  "active_duration_seconds": 9.51485260770975,
+  "expected_duration_seconds": 9.514747859181732,
+  "measured_hz": 462.44007542836135,
+  "expected_resampled_hz": 462.44,
+  "unchanged_pitch_hz": 440,
+  "stereo_max_difference": 0.0,
+  "peaks": [
+    0.04577545076608658,
+    0.04577545076608658,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "limitation": "Generated sine, deck1, PC null-sink capture. Does not assess music quality, underruns, or Pi performance."
+}

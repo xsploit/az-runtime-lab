@@ -1,0 +1,16 @@
+{
+  "guest_pid": 485268,
+  "service_returncode": 0,
+  "midi_socket_removed": true,
+  "scope": "Native MIDI datagram replay through RX owner; physical hardware absent; screenshots require review",
+  "service_summary": {
+    "event": "stopped",
+    "packets": 18,
+    "rejected": 0
+  },
+  "visual_review": {
+    "loaded": "Deck1 LAB-TONE-440Hz.wav loaded;Echo123.0TAP halfbeat244ms",
+    "back": "Folder sidebar focused; loaded track gray/green"
+  },
+  "shutdown_test": "17 packets from MIDI input plus release of held encoder at service stop;18 total"
+}

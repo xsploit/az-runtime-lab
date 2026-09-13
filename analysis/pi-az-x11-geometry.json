@@ -1,0 +1,31 @@
+{
+  "root": {
+    "window": "0x235",
+    "ok": 1,
+    "x": 0,
+    "y": 0,
+    "width": 1280,
+    "height": 800,
+    "depth": 24
+  },
+  "children": [
+    {
+      "window": "0x200001",
+      "ok": 1,
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1,
+      "depth": 0
+    },
+    {
+      "window": "0x200003",
+      "ok": 1,
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 800,
+      "depth": 24
+    }
+  ]
+}

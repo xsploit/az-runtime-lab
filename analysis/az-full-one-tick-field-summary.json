@@ -1,0 +1,38 @@
+{
+  "original": {
+    "repaint": {
+      "changes": 178,
+      "median_ms": 33.64596099965274,
+      "max_ms": 35.159891000017524
+    },
+    "blit": {
+      "changes": 177,
+      "median_ms": 33.70389699935913,
+      "max_ms": 35.63691399991512
+    }
+  },
+  "candidate": {
+    "repaint": {
+      "changes": 355,
+      "median_ms": 16.83611499890685,
+      "max_ms": 18.695557000115514
+    },
+    "blit": {
+      "changes": 355,
+      "median_ms": 16.813947999849916,
+      "max_ms": 18.716686999425292
+    }
+  },
+  "restored": {
+    "repaint": {
+      "changes": 177,
+      "median_ms": 33.68121099844575,
+      "max_ms": 34.936110999435186
+    },
+    "blit": {
+      "changes": 178,
+      "median_ms": 33.72524799965322,
+      "max_ms": 35.56506099924445
+    }
+  }
+}

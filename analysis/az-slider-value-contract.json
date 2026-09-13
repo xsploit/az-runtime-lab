@@ -1,0 +1,55 @@
+{
+  "sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "scope": "Static generic HuiSlider implementation; actual EQ object adapter/configuration and live behavior unverified.",
+  "state": {
+    "id": "owner+0xd0, getter0x21f7550",
+    "value": "float32 owner+0xd8",
+    "raw_integer": "uint32 owner+0xdc",
+    "value_getter": "0x21f7570 returns packed value/raw qword",
+    "last_input_prefix": "owner+0xe0 receives first8 bytes of raw input unconditionally at entry0x21ef320",
+    "interface_offset": "IHuiSlider subobject at owner+0xc0; getter0x21f7580 reads relative+0x18"
+  },
+  "conversion": {
+    "default_function": "0x21ee490",
+    "input": "raw event unsigned32 at+8",
+    "scale": "adapter unsigned32 denominator+12 and float multiplier+16",
+    "formula_for_finite_valid_configuration": "clamp(float32(raw)/float32(denominator)*multiplier, range_min, range_max)",
+    "default_range": "0 to max(multiplier,0), getter0x21edc30",
+    "override": "Custom adapter virtual+24 may supply another range; actual EQ adapter unresolved.",
+    "limitations": "No inference of a specific ADC resolution, denominator or EQ center from generic code."
+  },
+  "update": {
+    "entry": "0x21ef320",
+    "adapter_validation": "Existence token at adapter+8 checked against initialized expected token; conversion via adapter virtual+16.",
+    "change_threshold": {
+      "bits": "0x34000000",
+      "value": 1.1920928955078125e-07,
+      "comparison": "Suppress when abs(converted-current) < threshold; before clamping. This also suppresses raw-only changes when converted value is unchanged."
+    },
+    "generic_clamp": "Finite converted values bounded to -1..1. Not proof that EQ uses bipolar range.",
+    "accepted_value": "Stores clamped float at owner+216 and unchanged raw event uint32+8 at owner+220.",
+    "queue": "Appends8-byte float/raw pair to owner+160 array, count+176, capacity+168; can malloc/realloc.",
+    "nan": "Nonfinite behavior not validated; no clean rejection claim."
+  },
+  "notification": "0x21f4950 validates observer lifetime token, obtains current HUI ID, passes interface owner+0xc0 and payload to observer virtual+16; mapped HuiEventHandler consumes float/raw.",
+  "next": [
+    "Resolve current EQ adapter configuration and valid raw-input semantics.",
+    "Trace queue consumer scheduling and verify live raw/float correspondence.",
+    "Integrate normalized software EQ commands only after per-knob range/center is established."
+  ],
+  "live_eq_configuration": {
+    "evidence": "az-eq-live-adapters.json",
+    "pid": 548681,
+    "controls_verified": 12,
+    "adapter_vtable": "0x2e63960",
+    "conversion": "0x21ee490",
+    "range_getter": "0x21edc30",
+    "raw_denominator": 1023,
+    "scale": 1.0,
+    "normalized_range": [
+      0,
+      1
+    ],
+    "limitation": "Static conversion plus live configuration; nonzero injected-input correspondence and physical knob center not yet measured."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "pid": 383523,
+  "launcher_exit": 0,
+  "native_input": "CRC-valid mixer RX, no pointer input",
+  "observed": {
+    "RX85_high_nibble_1": "ECHO",
+    "RX88_u16_1280": "128.0 BPM",
+    "RX84_bit6_1": "TAP BPM (green)",
+    "RX90_i16_375": "375 ms"
+  },
+  "screenshot": "xdjaz/fx-native-echo-confirmed.png",
+  "async_note": "Immediate screenshots showed old state; final scheduled screenshot confirms settled values. Earlier bit6-no-visible-effect finding superseded.",
+  "remaining": "Beat fraction fields unset caused infinity BEAT display; complete time representation required. No synchronized software mixer bridge yet."
+}

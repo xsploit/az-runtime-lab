@@ -1,0 +1,87 @@
+{
+  "class": "debug_osd::BeatFx::BeatFxTypeComboBox",
+  "typeinfo": "0x2957ad8",
+  "setting_getter_virtual_offset": 336,
+  "pairs": [
+    {
+      "value": 1,
+      "label": "Echo",
+      "string": "0x298cf68"
+    },
+    {
+      "value": 0,
+      "label": "Delay",
+      "string": "0x298cf70"
+    },
+    {
+      "value": 2,
+      "label": "PingPong",
+      "string": "0x298cf78"
+    },
+    {
+      "value": 3,
+      "label": "Spiral",
+      "string": "0x298cf88"
+    },
+    {
+      "value": 5,
+      "label": "Reverb",
+      "string": "0x298cf90"
+    },
+    {
+      "value": 10,
+      "label": "Trans",
+      "string": "0x298cf98"
+    },
+    {
+      "value": 8,
+      "label": "Filter",
+      "string": "0x266ca18"
+    },
+    {
+      "value": 6,
+      "label": "Flanger",
+      "string": "0x298cfa0"
+    },
+    {
+      "value": 7,
+      "label": "Phaser",
+      "string": "0x298cfa8"
+    },
+    {
+      "value": 15,
+      "label": "Pitch",
+      "string": "0x298cfb0"
+    },
+    {
+      "value": 14,
+      "label": "SlipRoll",
+      "string": "0x298cfb8"
+    },
+    {
+      "value": 11,
+      "label": "Roll",
+      "string": "0x298cfc8"
+    },
+    {
+      "value": 16,
+      "label": "VinylBrake",
+      "string": "0x298cfd0"
+    },
+    {
+      "value": 4,
+      "label": "Helix",
+      "string": "0x298cfe0"
+    }
+  ],
+  "scope": "Debug selector construction pairs only; not yet proven accepted application effect enums",
+  "caution": "Confirmed callback/validator mismatch for original constructor pairs14,15,16. Need inspect intervening container copies and live debug selection before claiming those entries work. Do not use debug labels as authoritative normal AZ hardware effect mapping.",
+  "evidence": "az-fx-type-combo-init.asm",
+  "callback": {
+    "thunk": "0x18b9be0 ->0x18b9930 after subtract408",
+    "selected_id": "0x2457a90 then subtract1",
+    "validator": "0x850e58 unsigned0..13; optimized callback branch checks<=13 after positive itemID",
+    "out_of_range": "fallback setting+40 at0x18b99b0",
+    "item_add": "0x18c84d8 loads stored pair value; +1 at0x18c84dc before addItem0x24574d0"
+  }
+}

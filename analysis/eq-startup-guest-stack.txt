@@ -1,0 +1,88 @@
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.archlinux.org>
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+0x00007f39d01a1000 in _start () from /home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/rootfs/lib/ld-linux-aarch64.so.1
+warning: Could not load shared library symbols for /lab-shims/offline-mixer-fixture.so.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: File "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/rootfs/usr/lib/libstdc++.so.6.0.25-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+To enable execution of this file add
+	add-auto-load-safe-path /home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/xdjaz/rootfs/usr/lib/libstdc++.so.6.0.25-gdb.py
+line to your configuration file "/home/subsect/.config/gdb/gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/subsect/.config/gdb/gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+[Detaching after fork from child process 4]
+[Detaching after fork from child process 8]
+[Detaching after fork from child process 14]
+[Detaching after fork from child process 18]
+[Detaching after fork from child process 22]
+[Detaching after fork from child process 27]
+[Detaching after fork from child process 31]
+[Detaching after fork from child process 37]
+[Detaching after fork from child process 41]
+[Detaching after fork from child process 45]
+[Detaching after fork from child process 59]
+[Detaching after fork from child process 63]
+[New Thread 2.77]
+[New Thread 2.110]
+[Detaching after fork from child process 117]
+[New Thread 2.122]
+[Detaching after fork from child process 123]
+[Detaching after fork from child process 144]
+[Detaching after fork from child process 151]
+[Detaching after fork from child process 192]
+[Detaching after fork from child process 195]
+[Detaching after fork from child process 204]
+[Detaching after fork from child process 207]
+[Detaching after fork from child process 216]
+[Detaching after fork from child process 219]
+[Detaching after fork from child process 228]
+[Detaching after fork from child process 232]
+[Detaching after fork from child process 236]
+[Detaching after fork from child process 253]
+[Detaching after fork from child process 264]
+[Detaching after fork from child process 267]
+[Detaching after fork from child process 286]
+[Detaching after fork from child process 289]
+[Detaching after fork from child process 293]
+[Detaching after fork from child process 299]
+[Detaching after fork from child process 304]
+[Detaching after fork from child process 306]
+[Detaching after fork from child process 310]
+[Detaching after fork from child process 316]
+[Detaching after fork from child process 318]
+[Detaching after fork from child process 324]
+[Detaching after fork from child process 416]
+[New Thread 2.415]
+[Detaching after fork from child process 418]
+[Detaching after fork from child process 423]
+[Detaching after fork from child process 429]
+[Detaching after fork from child process 433]
+[Detaching after fork from child process 437]
+[Detaching after fork from child process 447]
+[Detaching after fork from child process 450]
+[Detaching after fork from child process 454]
+[Detaching after fork from child process 460]
+[Detaching after fork from child process 464]
+[Detaching after fork from child process 468]
+[New Thread 2.350]
+[Detaching after fork from child process 477]
+[Detaching after fork from child process 482]
+[Detaching after fork from child process 488]
+[Detaching after fork from child process 492]
+[Detaching after fork from child process 496]
+[New Thread 2.128]
+[Detaching after fork from child process 500]
+[Detaching after fork from child process 504]
+[Detaching after fork from child process 513]
+[Detaching after fork from child process 517]
+[Detaching after fork from child process 521]
+[New Thread 2.116]
+[Detaching after fork from child process 525]
+[Detaching after fork from child process 529]
+[Detaching after fork from child process 533]

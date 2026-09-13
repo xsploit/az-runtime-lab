@@ -1,0 +1,109 @@
+{
+  "scope": "Delay sample loop and controls, full represented state/ring and PCM. Quantize external calls use scripted hooks; actual quantize and outer manager remain pending.",
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "native_range": [
+    "0xb6168",
+    "0xb639c"
+  ],
+  "native_code_sha256": "d12dc77a6dbaeedf3605c842ff501f408b81d59e685f220f472c3199e54e3f31",
+  "native_code_relocations": {
+    "0xb6504": "ceil",
+    "0xb6710": "floor",
+    "0xb6810": "ceil",
+    "0xb6880": "floor",
+    "0xb675c": "oracle_quantize",
+    "0xb6790": "oracle_time"
+  },
+  "execute_range": [
+    "0xb6404",
+    "0xb68b8"
+  ],
+  "compiler_commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "delay_audio_compare.c",
+      "delay_audio.c",
+      "delay_control.c",
+      "delay-control-native.S",
+      "delay-execute-native.S",
+      "-lm",
+      "-o",
+      "delay-audio-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "delay_audio_compare.c",
+      "delay_audio.c",
+      "delay_control.c",
+      "-lm",
+      "-o",
+      "delay-audio-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "delay_audio_compare.c",
+      "delay_audio.c",
+      "delay_control.c",
+      "-lm",
+      "-o",
+      "delay-audio-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"calls\":5632,\"stereo_frames\":614606,\"compared_words\":47055772,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"calls\":5632,\"stereo_frames\":614606,\"compared_words\":47055772,\"mismatches\":0}\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "{\"calls\":5632,\"stereo_frames\":614606,\"compared_words\":47055772,\"mismatches\":0}\n",
+      "stderr": ""
+    }
+  },
+  "source_hashes": {
+    "delay_audio_compare.c": "035ce461b5473f1fc6a13d7fcf8fd0151b183f0a9e1206c02f639e85dca8654c",
+    "delay_audio.c": "702941cd1f31e0f5a863bd4a000dabf04b03f303997699c55c3a12dcc18811c9",
+    "delay_control.c": "2c0ccadffa63ab1a2b1ae6cd4054c95d535bb451feb5fbe8ddf1ac309c81b12d",
+    "delay_control.h": "25e68e3707c836f4d2ec9c9a3e226b3f68d636d37d56a3ad5c3e73e2d6adf50b",
+    "delay_audio.h": "d17af92925962d4360700760d2a026e412dd0d829eabad8ac86f6e59bac1b09b",
+    "delay-control-native.S": "766fc0d072682a27a20c78637b8852f0a3255357d98c87fd451c736fbb724509",
+    "delay-execute-native.S": "d0cac4bd724cee6ae0bf2b9c5be01a6e4119c467e4e2c29323e841caf7b017fb",
+    "run_delay_audio.py": "6df82b0f66b50b2bed768cb6bba9785de5505caa04453acea4b7da171ae17d90"
+  },
+  "execute_sha256": "0c94595ef4e885c5681d5185ea4bc55fea9debeb3817cbf85eadae2487507933",
+  "tail_branch_relocation": "0xb6790 uses b oracle_time, preserving native tail-call form"
+}

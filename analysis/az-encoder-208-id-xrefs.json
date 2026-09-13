@@ -1,0 +1,58 @@
+[
+  {
+    "start": "0x6cadac",
+    "end": "0x6cadbc",
+    "register": 1,
+    "value": "0x1d690928446227a",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0xab9e64",
+    "end": "0xab9e74",
+    "register": 2,
+    "value": "0x1d690928446227a",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0xaba0c0",
+    "end": "0xaba0d0",
+    "register": 2,
+    "value": "0x1d690928446227a",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19990ec",
+    "end": "0x19990fc",
+    "register": 3,
+    "value": "0x1d690928446227a",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19cfe98",
+    "end": "0x19cfea4",
+    "register": 4,
+    "value": "0x1d690928446227a",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x19d4568",
+    "end": "0x19d4574",
+    "register": 4,
+    "value": "0x1d690928446227a",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  },
+  {
+    "start": "0x2157724",
+    "end": "0x2157738",
+    "register": 2,
+    "value": "0x1d690928446227a",
+    "lane": 0,
+    "caveat": "Validate register writes and control flow"
+  }
+]

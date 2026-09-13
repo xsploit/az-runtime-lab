@@ -1,0 +1,29 @@
+[
+  {
+    "run": "az-fractional-paused",
+    "baseline_restored_equal": true,
+    "pixel_counts": {
+      "grid": 5589,
+      "indicator": 2340,
+      "other": 0
+    }
+  },
+  {
+    "run": "az-fractional-paused2",
+    "baseline_restored_equal": true,
+    "pixel_counts": {
+      "grid": 8069,
+      "indicator": 2340,
+      "other": 0
+    }
+  },
+  {
+    "run": "az-fractional-zoom2",
+    "baseline_restored_equal": true,
+    "pixel_counts": {
+      "grid": 4013,
+      "indicator": 2340,
+      "other": 0
+    }
+  }
+]

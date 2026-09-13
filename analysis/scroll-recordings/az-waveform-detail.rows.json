@@ -1,0 +1,33 @@
+{
+  "scope": "Native X11 sampled row shifts; positive means rightward. Not physical panel capture.",
+  "samples": 600,
+  "rows": {
+    "10": {
+      "changed_samples": 373,
+      "accepted_shift_histogram": {
+        "-1": 371,
+        "-2": 2
+      },
+      "rejected": 0,
+      "minimum_accepted_match": 1.0
+    },
+    "40": {
+      "changed_samples": 0,
+      "accepted_shift_histogram": {},
+      "rejected": 0,
+      "minimum_accepted_match": null
+    },
+    "60": {
+      "changed_samples": 583,
+      "accepted_shift_histogram": {},
+      "rejected": 583,
+      "minimum_accepted_match": null
+    },
+    "75": {
+      "changed_samples": 583,
+      "accepted_shift_histogram": {},
+      "rejected": 583,
+      "minimum_accepted_match": null
+    }
+  }
+}

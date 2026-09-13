@@ -1,0 +1,134 @@
+{
+  "scope": "Native direct Off0/Filter1/Noise2/Sweep3/Crush6 manager plus actual Sweep init/detect/execute, Filter/IIR/Crush/Noise callbacks against shared AZ CFX module; EQ reset request recorded with fixture, EQ audio remains absent.",
+  "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
+  "commands": [
+    [
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-static",
+      "-mfpu=neon",
+      "-mfloat-abi=softfp",
+      "cfx_sweep_compare.c",
+      "../../mixer/cfx_manager.c",
+      "../../mixer/cfx_sweep.c",
+      "../../mixer/cfx_filter.c",
+      "../../mixer/cfx_crush.c",
+      "../../mixer/cfx_noise.c",
+      "manager-native.S",
+      "cfx-native.S",
+      "cfx-control.S",
+      "native.S",
+      "crush-native.S",
+      "noise-native.S",
+      "sweep-composite-native.S",
+      "-lm",
+      "-o",
+      "cfx-sweep-arm"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "cfx_sweep_compare.c",
+      "../../mixer/cfx_manager.c",
+      "../../mixer/cfx_sweep.c",
+      "../../mixer/cfx_filter.c",
+      "../../mixer/cfx_crush.c",
+      "../../mixer/cfx_noise.c",
+      "-lm",
+      "-o",
+      "cfx-sweep-host"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-DRX3_NEON_FZ",
+      "-DHOST_REPLAY",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "cfx_sweep_compare.c",
+      "../../mixer/cfx_manager.c",
+      "../../mixer/cfx_sweep.c",
+      "../../mixer/cfx_filter.c",
+      "../../mixer/cfx_crush.c",
+      "../../mixer/cfx_noise.c",
+      "-lm",
+      "-o",
+      "cfx-sweep-host-asan"
+    ]
+  ],
+  "results": {
+    "arm": {
+      "returncode": 0,
+      "stdout": "{\"calls\":18000,\"stereo_frames\":1152000,\"numeric_values_compared\":25596000,\"mismatches\":0,\"max_abs_error\":0,\"busy_requests\":1263}\n",
+      "stderr": "Sweep transitions F>S80 S>F31 N>S97 S>N35 C>S28 S>C90\nNoise transitions F>N 90 N>F 36 C>N 29 N>C 71 Off>N 79 N>Off 28\nVerified direct Filter->Crush 30 and Crush->Filter 77 completed transitions\n",
+      "metrics": {
+        "calls": 18000,
+        "stereo_frames": 1152000,
+        "numeric_values_compared": 25596000,
+        "mismatches": 0,
+        "max_abs_error": 0,
+        "busy_requests": 1263
+      }
+    },
+    "host": {
+      "returncode": 0,
+      "stdout": "{\"calls\":18000,\"stereo_frames\":1152000,\"numeric_values_compared\":25596000,\"mismatches\":0,\"max_abs_error\":0,\"busy_requests\":1263}\n",
+      "stderr": "Sweep transitions F>S80 S>F31 N>S97 S>N35 C>S28 S>C90\nNoise transitions F>N 90 N>F 36 C>N 29 N>C 71 Off>N 79 N>Off 28\nVerified direct Filter->Crush 30 and Crush->Filter 77 completed transitions\n",
+      "metrics": {
+        "calls": 18000,
+        "stereo_frames": 1152000,
+        "numeric_values_compared": 25596000,
+        "mismatches": 0,
+        "max_abs_error": 0,
+        "busy_requests": 1263
+      }
+    },
+    "host_asan": {
+      "returncode": 0,
+      "stdout": "{\"calls\":18000,\"stereo_frames\":1152000,\"numeric_values_compared\":25596000,\"mismatches\":0,\"max_abs_error\":0,\"busy_requests\":1263}\n",
+      "stderr": "Sweep transitions F>S80 S>F31 N>S97 S>N35 C>S28 S>C90\nNoise transitions F>N 90 N>F 36 C>N 29 N>C 71 Off>N 79 N>Off 28\nVerified direct Filter->Crush 30 and Crush->Filter 77 completed transitions\n",
+      "metrics": {
+        "calls": 18000,
+        "stereo_frames": 1152000,
+        "numeric_values_compared": 25596000,
+        "mismatches": 0,
+        "max_abs_error": 0,
+        "busy_requests": 1263
+      }
+    }
+  },
+  "source_hashes": {
+    "cfx_sweep_compare.c": "ee754535ec9ea930bd5a02f6a9e61c85a69a11618ed8374623702d6ad9e6d414",
+    "../../mixer/cfx_manager.c": "93c88931399772b4ff56b0e3e2e2cfa7f3a2419f67a219d4558f2f4e89785af3",
+    "../../mixer/cfx_sweep.c": "c7b159539915d7d3a00a08caee9dfc468a6f5ead2663110ce7827f651c223ca3",
+    "../../mixer/cfx_filter.c": "1a2454e99c159e53c04af40cff4cadd1d6b9cc88db98596316c9369b9c0b1033",
+    "../../mixer/cfx_crush.c": "0eb3b428d66b565f78a0b56df00f8934e82a8335afe25004ba2c072488ecd7d5",
+    "../../mixer/cfx_noise.c": "555a8a94c87d9d8e921f4940e1cd11c4e1bd8c0c62b4f8a5221eb5a5bf863dd9",
+    "../../mixer/cfx_manager.h": "40552363024bce9911123764f410bbaebd726f0b263c550ab6fe6f5c9d6001ec",
+    "../../mixer/cfx_crush.h": "4de2e99dd62607c068f8034b20169e5a61e66d230f522d349efbe981b138ba14",
+    "../../mixer/cfx_noise.h": "d7e4bfaf0fa4618ab344715641fc3d15dc0246cf4be087fd57400566e64058b3",
+    "../../mixer/cfx_sweep.h": "02bbb6270c520f10356be478f3539a72c225f30c35dae250ca7ec2ace2dcd56b",
+    "run_cfx_sweep.py": "e180179e113dd691ca8aab7d6268fca1aafd607a365cbf68a34e634718e6712b"
+  }
+}

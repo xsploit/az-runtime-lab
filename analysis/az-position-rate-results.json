@@ -1,0 +1,81 @@
+{
+  "patches": [
+    {
+      "address": "0x212fb94",
+      "original": "0x7100041f",
+      "candidate": "0x7100001f"
+    },
+    {
+      "address": "0x212f344",
+      "original": "0x7100041f",
+      "candidate": "0x7100001f"
+    },
+    {
+      "address": "0x212f974",
+      "original": "0x11000673",
+      "candidate": "0x52800033"
+    },
+    {
+      "address": "0x212f9ac",
+      "original": "0x11000673",
+      "candidate": "0x52800033"
+    },
+    {
+      "address": "0x212fc1c",
+      "original": "0x1e632800",
+      "candidate": "0xd503201f"
+    },
+    {
+      "address": "0x212fc44",
+      "original": "0x52800022",
+      "candidate": "0x52800002"
+    },
+    {
+      "address": "0x212f358",
+      "original": "0x52800022",
+      "candidate": "0x52800002"
+    }
+  ],
+  "samples": [
+    {
+      "label": "original",
+      "instructions": [
+        "0x7100041f",
+        "0x7100041f",
+        "0x11000673",
+        "0x11000673",
+        "0x1e632800",
+        "0x52800022",
+        "0x52800022"
+      ],
+      "cpu_percent_one_core": 29.325797781221894
+    },
+    {
+      "label": "candidate",
+      "instructions": [
+        "0x7100001f",
+        "0x7100001f",
+        "0x52800033",
+        "0x52800033",
+        "0xd503201f",
+        "0x52800002",
+        "0x52800002"
+      ],
+      "cpu_percent_one_core": 46.62556907169005
+    },
+    {
+      "label": "restored",
+      "instructions": [
+        "0x7100041f",
+        "0x7100041f",
+        "0x11000673",
+        "0x11000673",
+        "0x1e632800",
+        "0x52800022",
+        "0x52800022"
+      ],
+      "cpu_percent_one_core": 29.327308497261367
+    }
+  ],
+  "restored": true
+}

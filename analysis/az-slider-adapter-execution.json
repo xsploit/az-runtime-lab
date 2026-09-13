@@ -1,0 +1,17 @@
+{
+  "samples": 1025,
+  "raw_range": [
+    0,
+    1024
+  ],
+  "expected": "float32(min(raw / 1023, 1.0))",
+  "mismatches": [],
+  "selected": {
+    "0": "0",
+    "511": "0.499511242",
+    "512": "0.500488758",
+    "1023": "1",
+    "1024": "1"
+  },
+  "scope": "Original adapter instructions under QEMU; default adapter only, not DSP or entire application"
+}

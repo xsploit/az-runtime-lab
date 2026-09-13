@@ -1,0 +1,60 @@
+{
+  "graph": {
+    "returncode": 0,
+    "stdout": "Echo graph: delayed_energy=0.461937239 pre_fader_cue_tail=0; source, post-fader history, target round guard, master and reset passed\n",
+    "stderr": "",
+    "command": [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/test_beat_graph.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/beat_fx.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/beat_echo.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/beat_control.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/beat_quantize.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/beat_manager.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/beat_grid.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/dsp_graph.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/deck_mix.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/cfx_filter.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/cfx_manager.c",
+      "-lm",
+      "-o",
+      "/tmp/az-beat-check-2x9jc0_p/graph"
+    ]
+  },
+  "grid": {
+    "returncode": 0,
+    "stdout": "grid ownership: maximum, empty, invalid, source change and 1000 replace/free/process cycles passed\n",
+    "stderr": "",
+    "command": [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-tree-vectorize",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/analysis/dsp-oracle/beat-port/test_grid.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/beat_fx.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/beat_echo.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/beat_control.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/beat_quantize.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/beat_manager.c",
+      "/home/subsect/Documents/Codex/2026-09-10-in-my-pc-im-workin-on/runtime-lab/mixer/beat_grid.c",
+      "-lm",
+      "-o",
+      "/tmp/az-beat-check-2x9jc0_p/grid"
+    ]
+  }
+}
