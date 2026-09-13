@@ -1,0 +1,70 @@
+{
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "ranges": [
+    {
+      "start": "0x22093b0",
+      "end_exclusive": "0x22093e4"
+    },
+    {
+      "start": "0x2211620",
+      "end_exclusive": "0x22116e8"
+    },
+    {
+      "start": "0x220c820",
+      "end_exclusive": "0x220c914"
+    },
+    {
+      "start": "0x22122d0",
+      "end_exclusive": "0x221245c"
+    },
+    {
+      "start": "0x220d750",
+      "end_exclusive": "0x220d868"
+    },
+    {
+      "start": "0x220c9d0",
+      "end_exclusive": "0x220cba8"
+    },
+    {
+      "start": "0x776338",
+      "end_exclusive": "0x776358"
+    },
+    {
+      "start": "0x7764a0",
+      "end_exclusive": "0x776520"
+    },
+    {
+      "start": "0x782754",
+      "end_exclusive": "0x782798"
+    },
+    {
+      "start": "0x782a04",
+      "end_exclusive": "0x782a38"
+    }
+  ],
+  "queue_vtable": {
+    "address": "0x2e67ac8",
+    "slots": [
+      "0x220d170",
+      "0x220d320",
+      "0x2208c90",
+      "0x21f7250",
+      "0x68f6b8",
+      "0x957408",
+      "0x220c820"
+    ]
+  },
+  "offsets_relative_to_queue": {
+    "inner_queue": "0x38",
+    "head": "0x38",
+    "tail": "0x78",
+    "spare_head": "0xb8"
+  },
+  "allocation": {
+    "node_bytes": 64,
+    "constructor_argument": 1024,
+    "initial_nodes": 1025,
+    "raw_node_bytes_per_queue": 65600
+  },
+  "scope": "Dynamic enqueue and task-ID return contract. Controlled sequential tests, not live contention, allocator exceptions or full application capacity measurements."
+}

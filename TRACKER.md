@@ -1603,3 +1603,18 @@ Revalidated native24479 and both sources stopped. Screenshot confirms deck1 BASE
   separately from reusable free-deque capacity. No global lifecycle guarantee.
 - Evidence: analysis/AZ-DISCARDED-COMPLETION-OWNERSHIP.md and collector/oracle.
   Next queue rejection and last-source disposal; no Pi contact or reclaim enabled.
+
+### Queue reserve exhaustion is growth, not normal rejection (2026-09-13)
+
+- Previous goal turn progress: captured source/PCM ownership separated, eight
+  destructor cases passed and private commit133ca6f verified remotely.
+- Resolved queue vtable2e67ac8 enqueue220c820 / inner22122d0. Empty spare list
+  calls new(64), then appends; no ordinary queue-full false-return branch.
+- Wrapper returns64-bit task ID. Synthetic IDzero still enqueues but returnszero;
+  this is an injection contract edge, not observed application failure.
+- Nine original wrapper/push cases pass with full fixtures, including spare
+  exhaustion, tail helping, tag wrap, high/zero IDs and null task.
+- Scheduler and workers request1024 reserve; constructor allocates1025 nodes
+  including sentinel,65,600raw bytes/queue. Not the large PCM memory target.
+- Evidence: analysis/AZ-TASK-QUEUE-CAPACITY.md. Ordinary queue-full page loss
+  hypothesis deprioritized; last-source disposal/initial paths remain. Pi untouched.

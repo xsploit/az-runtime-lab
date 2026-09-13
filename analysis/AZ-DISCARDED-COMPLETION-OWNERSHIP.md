@@ -110,3 +110,8 @@ Evidence: `pcm-pool-live/discarded-completion-evidence.json`,
 `discarded-completion-disassembly.txt`, `discarded-completion-oracle.json`.
 Reproduce with `python3 analysis/collect-discarded-completion.py` and
 `python3 analysis/probe-discarded-completion.py` from runtime-lab.
+
+Follow-up: AZ-TASK-QUEUE-CAPACITY.md resolves the normal queue implementation.
+It allocates another node when its reserve is exhausted and returns a task ID.
+Ordinary reserve exhaustion does not establish rejection or page-capacity loss;
+that hypothesis is now deprioritized. Shutdown disposal remains a distinct path.

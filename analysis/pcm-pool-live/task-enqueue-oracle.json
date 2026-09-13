@@ -1,0 +1,89 @@
+{
+  "scope": "Original AZ task queue enqueue wrapper and tagged-node push under QEMU.\n\nTests sequential fixtures, spare-node exhaustion/allocation and lagging-tail\nhelping. Does not test allocator exceptions, live contention or queue shutdown.\nThe wrapper returns task IDs, including synthetic ID zero after a successful push.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "source_sha256": "2d85b56456d0cef00aedd8ed6afdcacfbca1e8b42af39d1494037c9a62d8d393",
+  "tests": 9,
+  "results": [
+    {
+      "case": "spare_node",
+      "task_id": 123,
+      "returned": 123,
+      "queued": true,
+      "allocated_bytes": 0,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "spare_chain",
+      "task_id": 123,
+      "returned": 123,
+      "queued": true,
+      "allocated_bytes": 0,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "allocate_when_spares_empty",
+      "task_id": 123,
+      "returned": 123,
+      "queued": true,
+      "allocated_bytes": 64,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "help_lagging_tail",
+      "task_id": 123,
+      "returned": 123,
+      "queued": true,
+      "allocated_bytes": 0,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "allocate_and_help",
+      "task_id": 123,
+      "returned": 123,
+      "queued": true,
+      "allocated_bytes": 64,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "tag_wrap",
+      "task_id": 123,
+      "returned": 123,
+      "queued": true,
+      "allocated_bytes": 0,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "high_task_id",
+      "task_id": 18364758544493064720,
+      "returned": 18364758544493064720,
+      "queued": true,
+      "allocated_bytes": 0,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "zero_task_id",
+      "task_id": 0,
+      "returned": 0,
+      "queued": true,
+      "allocated_bytes": 0,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "null_task",
+      "task_id": 123,
+      "returned": 0,
+      "queued": false,
+      "allocated_bytes": 0,
+      "whole_fixture_matched": true,
+      "passed": true
+    }
+  ]
+}
