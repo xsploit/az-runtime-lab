@@ -1,0 +1,63 @@
+{
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "strings": {
+    "0x25eb048": "N6pcmbuf22PositionWithSourceInfoE",
+    "0x25eb520": "pcmbuf::PositionWithSourceInfo::~PositionWithSourceInfo()",
+    "0x25ec708": "ExistenceCheckable<PositionWithSourceInfo>::exists()"
+  },
+  "ranges": [
+    {
+      "start": "0x76ebf0",
+      "end_exclusive": "0x76ecd0"
+    },
+    {
+      "start": "0x759260",
+      "end_exclusive": "0x7593c4"
+    },
+    {
+      "start": "0x6b0db8",
+      "end_exclusive": "0x6b0ea4"
+    },
+    {
+      "start": "0x76bda8",
+      "end_exclusive": "0x76bea8"
+    },
+    {
+      "start": "0x7826e0",
+      "end_exclusive": "0x782878"
+    },
+    {
+      "start": "0x782978",
+      "end_exclusive": "0x782acc"
+    },
+    {
+      "start": "0x77d3e8",
+      "end_exclusive": "0x77d598"
+    },
+    {
+      "start": "0x2211620",
+      "end_exclusive": "0x22116e8"
+    },
+    {
+      "start": "0x777af0",
+      "end_exclusive": "0x777bdc"
+    }
+  ],
+  "task_vtable": {
+    "address": "0x25f8d78",
+    "slots": [
+      "0x76ebf0",
+      "0x76ecd0",
+      "0x77d5f0"
+    ]
+  },
+  "task_offsets": {
+    "closure": "0x18",
+    "position_with_source_info": "0x20",
+    "source_reference": "0x48",
+    "status": "0x50",
+    "raw_page_wrapper": "0x60",
+    "reservation": "0x68"
+  },
+  "scope": "Direct task destructor and source-reference semantics. Last-source disposal helper is not resolved or executed by the oracle. No global no-leak, pool reuse or real shutdown guarantee."
+}

@@ -1588,3 +1588,18 @@ Revalidated native24479 and both sources stopped. Screenshot confirms deck1 BASE
 - Evidence: analysis/AZ-PCM-WORKER-EXIT.md, expanded shutdown collector and oracle.
   Next: captured onPageFilled destructor759260 and remaining initial/return paths.
   No live cancellation or reclamation claim; full firmware goal remains active.
+
+### Discarded completion separates source reference from PCM ownership (2026-09-13)
+
+- Previous goal turn progress: normal exit/task disposal traced, seven original
+  instruction cases passed and private commit ed01cff verified on GitHub.
+- Identified captured destructor759260 as PositionWithSourceInfo via RTTI/string.
+  It releases task+48 source reference; raw PCM wrapper sits separately at+60.
+- Eight original destructor/source-decrement QEMU cases pass. Retained/null source
+  paths do not return PCM; last-source disposal arguments observed, not executed.
+- Submission's zero-return path also disposes the task without explicit PCM
+  return. Actual enqueue rejection conditions remain unproven; no observed leak.
+- PageBuffer's independent owner array still explains eventual allocation cleanup
+  separately from reusable free-deque capacity. No global lifecycle guarantee.
+- Evidence: analysis/AZ-DISCARDED-COMPLETION-OWNERSHIP.md and collector/oracle.
+  Next queue rejection and last-source disposal; no Pi contact or reclaim enabled.

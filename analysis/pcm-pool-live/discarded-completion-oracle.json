@@ -1,0 +1,80 @@
+{
+  "scope": "Original AZ onPageFilled task and PositionWithSourceInfo destruction.\n\nInitialized type guards, valid source-reference tags and controlled fixtures;\nsource last-reference disposal is observed, not executed. No real PCM return,\nqueue, decoder, allocator free, diagnostic failure or concurrency is simulated.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "source_sha256": "3870089b7fea71ece62e00e8a67f94a015f4d34598bc5ce9257b5e86b48321bd",
+  "tests": 8,
+  "results": [
+    {
+      "case": "retained_source_page",
+      "source_refs_before": 2,
+      "source_dispose_observed": false,
+      "raw_page_unchanged": true,
+      "payload_and_guards_unchanged": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "last_source_page",
+      "source_refs_before": 1,
+      "source_dispose_observed": true,
+      "raw_page_unchanged": true,
+      "payload_and_guards_unchanged": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "many_source_refs",
+      "source_refs_before": 9,
+      "source_dispose_observed": false,
+      "raw_page_unchanged": true,
+      "payload_and_guards_unchanged": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "null_source_page",
+      "source_refs_before": null,
+      "source_dispose_observed": false,
+      "raw_page_unchanged": true,
+      "payload_and_guards_unchanged": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "retained_source_null_page",
+      "source_refs_before": 2,
+      "source_dispose_observed": false,
+      "raw_page_unchanged": true,
+      "payload_and_guards_unchanged": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "last_source_null_page",
+      "source_refs_before": 1,
+      "source_dispose_observed": true,
+      "raw_page_unchanged": true,
+      "payload_and_guards_unchanged": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "error_completion_page",
+      "source_refs_before": 2,
+      "source_dispose_observed": false,
+      "raw_page_unchanged": true,
+      "payload_and_guards_unchanged": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    },
+    {
+      "case": "error_last_source_page",
+      "source_refs_before": 1,
+      "source_dispose_observed": true,
+      "raw_page_unchanged": true,
+      "payload_and_guards_unchanged": true,
+      "whole_fixture_and_globals_matched": true,
+      "passed": true
+    }
+  ]
+}
