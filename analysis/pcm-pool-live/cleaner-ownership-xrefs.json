@@ -23,6 +23,26 @@
       "pointer_references": [
         "0x25f9f98"
       ]
+    },
+    "0x77a050": {
+      "direct_calls": [
+        "0x77a3f4"
+      ],
+      "pointer_references": [
+        "0x25f9cf0"
+      ]
+    },
+    "0x7816c0": {
+      "direct_calls": [],
+      "pointer_references": [
+        "0x25f9ce8"
+      ]
+    },
+    "0x7817e8": {
+      "direct_calls": [],
+      "pointer_references": [
+        "0x25f9d28"
+      ]
     }
   },
   "address_materialization_candidates": [
@@ -32,6 +52,50 @@
       "target": "0x7750f8"
     }
   ],
+  "buffering_task_types": [
+    {
+      "table": "0x25f8b68",
+      "typeinfo": "0x25f7b78",
+      "name": "N6pcmbuf7pagebuf19AroundBufferingTaskINS0_23DefaultPageStaticConfigEEE",
+      "first_four_slots": [
+        "0x766348",
+        "0x766470",
+        "0x766398",
+        "0x770df8"
+      ]
+    },
+    {
+      "table": "0x25f8b98",
+      "typeinfo": "0x25f7bd8",
+      "name": "N6pcmbuf7pagebuf18RangeBufferingTaskINS0_23DefaultPageStaticConfigEEE",
+      "first_four_slots": [
+        "0x766340",
+        "0x7663e0",
+        "0x766390",
+        "0x77bf28"
+      ]
+    },
+    {
+      "table": "0x25f9b58",
+      "typeinfo": "0x25f9180",
+      "name": "N6pcmbuf7pagebuf31DefaultArroundBufferingStrategyE",
+      "first_four_slots": [
+        "0x766168",
+        "0x7663e8",
+        "0x766008",
+        "0x778d90"
+      ]
+    }
+  ],
+  "scheduler_listener_vtable": {
+    "address": "0x25f9d18",
+    "slots": [
+      "0x771ed0",
+      "0x771f80",
+      "0x7817e8",
+      "0x77a3f0"
+    ]
+  },
   "commander_vtable": {
     "address": "0x25f9f88",
     "slots": [
@@ -96,6 +160,66 @@
     {
       "start": "0x775bc8",
       "end_exclusive": "0x775be8"
+    },
+    {
+      "start": "0x769d78",
+      "end_exclusive": "0x769db8"
+    },
+    {
+      "start": "0x779cd0",
+      "end_exclusive": "0x779d4c"
+    },
+    {
+      "start": "0x77bf28",
+      "end_exclusive": "0x77bf84"
+    },
+    {
+      "start": "0x77c048",
+      "end_exclusive": "0x77c088"
+    },
+    {
+      "start": "0x770df8",
+      "end_exclusive": "0x770eb8"
+    },
+    {
+      "start": "0x778d90",
+      "end_exclusive": "0x778dd8"
+    },
+    {
+      "start": "0x77925c",
+      "end_exclusive": "0x77927c"
+    },
+    {
+      "start": "0x776364",
+      "end_exclusive": "0x7763c0"
+    },
+    {
+      "start": "0x776a48",
+      "end_exclusive": "0x776aac"
+    },
+    {
+      "start": "0x77d464",
+      "end_exclusive": "0x77d490"
+    },
+    {
+      "start": "0x77d54c",
+      "end_exclusive": "0x77d598"
+    },
+    {
+      "start": "0x77a3f0",
+      "end_exclusive": "0x77a3f8"
+    },
+    {
+      "start": "0x7816c0",
+      "end_exclusive": "0x7817e8"
+    },
+    {
+      "start": "0x7817e8",
+      "end_exclusive": "0x781918"
+    },
+    {
+      "start": "0x77a1a8",
+      "end_exclusive": "0x77a224"
     }
   ]
 }

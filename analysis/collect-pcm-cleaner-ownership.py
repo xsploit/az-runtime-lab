@@ -17,7 +17,8 @@ spec.loader.exec_module(module)
 elf = module.ELF('az')
 sha = hashlib.sha256(elf.d).hexdigest()
 assert sha == '736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6'
-targets = (0x7748d0, 0x7750f8, 0x77c778, 0x785b10)
+targets = (0x7748d0, 0x7750f8, 0x77c778, 0x785b10,
+           0x77a050, 0x7816c0, 0x7817e8)
 refs = {hex(f): dict(direct_calls=[hex(a) for a in elf.calls(f)],
                     pointer_references=[hex(a) for a in elf.hits(struct.pack('<Q', f))])
         for f in targets}
@@ -50,11 +51,29 @@ ranges = [(0x7768a4, 0x7768f8), (0x7769c8, 0x776a48),
           (0x77c778, 0x77c84c), (0x77cac4, 0x77cb18),
           (0x785b10, 0x785b8c), (0x785d28, 0x785d78),
           (0x774cf4, 0x774d30), (0x775954, 0x775990),
-          (0x775bc8, 0x775be8)]
+          (0x775bc8, 0x775be8),
+          (0x769d78, 0x769db8), (0x779cd0, 0x779d4c),
+          (0x77bf28, 0x77bf84), (0x77c048, 0x77c088),
+          (0x770df8, 0x770eb8), (0x778d90, 0x778dd8),
+          (0x77925c, 0x77927c), (0x776364, 0x7763c0),
+          (0x776a48, 0x776aac), (0x77d464, 0x77d490),
+          (0x77d54c, 0x77d598), (0x77a3f0, 0x77a3f8),
+          (0x7816c0, 0x7817e8), (0x7817e8, 0x781918),
+          (0x77a1a8, 0x77a224)]
 out = HERE/'pcm-pool-live'
 (out/'cleaner-ownership-disassembly.txt').write_text(''.join(elf.dis(a,b) for a,b in ranges))
+types = []
+for table in (0x25f8b68, 0x25f8b98, 0x25f9b58):
+    typeinfo = struct.unpack('<Q', elf.read(table-8, 8))[0]
+    name = struct.unpack('<Q', elf.read(typeinfo+8, 8))[0]
+    types.append(dict(table=hex(table), typeinfo=hex(typeinfo),
+                      name=elf.read(name, 400).split(b'\0')[0].decode(),
+                      first_four_slots=[hex(v) for v in struct.unpack('<4Q', elf.read(table,32))]))
 result = dict(scope=__doc__, firmware_sha256=sha, references=refs,
               address_materialization_candidates=candidates,
+              buffering_task_types=types,
+              scheduler_listener_vtable=dict(address='0x25f9d18',
+                 slots=[hex(v) for v in struct.unpack('<4Q',elf.read(0x25f9d18,32))]),
               commander_vtable=dict(address='0x25f9f88',
                  slots=[hex(v) for v in struct.unpack('<7Q',elf.read(0x25f9f88,56))]),
               ranges=[dict(start=hex(a), end_exclusive=hex(b)) for a,b in ranges])

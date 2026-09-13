@@ -1514,3 +1514,19 @@ Revalidated native24479 and both sources stopped. Screenshot confirms deck1 BASE
   25f9f88 slot+10 callers next. Completion dispatch alone is insufficient.
 - Evidence: analysis/AZ-PCM-CLEANER-CALLBACKS.md and new hash-pinned collector.
   No Pi access, reclaim patch or runtime memory-saving claim. Full goal active.
+
+### Completion-driven refill ownership chain (2026-09-13)
+
+- Previous goal turn progress: cleaner registration and synchronous triggers mapped.
+- RTTI/constructor stores identify RangeBufferingTask and AroundBufferingTask;
+  both call commander slot+10, through range77c070 or strategy779278 respectively.
+  Their execution slot is+18, unlike AsyncTaskBox completion's+10.
+- Constructor installs scheduler+10 as commander+28 listener. onPageFilled
+  success/missing-track calls listener+10; error returns page then calls+18.
+- Listener completion/failure loops synchronously invoke buffering-task+18 and
+  can reach allocation/cleanup. Normal completion-driven refill therefore stays
+  on the scheduler execution path previously resolved for the completion closure.
+- This is not all-entry-point serialization proof: initial/refill requests,
+  cancellation/shutdown and remaining return callers still need review.
+- Evidence: analysis/AZ-PCM-REFILL-DISPATCH.md and expanded collector/artifacts.
+  No Pi access, runtime patch or new benchmark. Broad firmware goal stays active.
