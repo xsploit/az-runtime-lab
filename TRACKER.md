@@ -1484,3 +1484,19 @@ Revalidated native24479 and both sources stopped. Screenshot confirms deck1 BASE
   pcm-pool-live/block-reader-oracle.json and updated disassembly collection.
 - Next execute writer contention/detach; audit other readers/return callers and
   cancellation before reclaim. No Pi access or deployment; full goal active.
+
+### Cluster writer retirement executed offline (2026-09-13)
+
+- Revalidated private GitHub snapshot; resumed the unfinished writer harness.
+  Fixed linker assignment syntax and executed 14 original-instruction QEMU cases.
+- Held readers/writer prevent retirement; releasing the last holder enables it.
+  Releasing only one of two readers leaves the cluster attached. Ten wait calls
+  exhaust contention; absent clusters return without waiting regardless of lock.
+- Observers verify detach before unlock and unlock before page enqueue. Entire
+  128 KiB fixtures match, including nonzero payloads/guards and metadata-call args.
+- Important remaining constraint: writer caches cluster before acquiring lock.
+  Outer writer serialization still needs proof; this is not safe-reclaim approval.
+- Two direct caller sites found, both with preliminary nonzero-lock skip checks.
+  Evidence: analysis/AZ-PCM-CLUSTER-WRITER.md and cluster-writer-oracle.json.
+- No Pi access or deployment. Continue caller ownership/cancellation tracing;
+  broader firmware goal remains active.

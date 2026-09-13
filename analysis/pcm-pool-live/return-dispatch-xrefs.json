@@ -19,6 +19,13 @@
       ],
       "pointer_references": []
     },
+    "0x7745f8": {
+      "direct_calls": [
+        "0x774d1c",
+        "0x77597c"
+      ],
+      "pointer_references": []
+    },
     "0x77d5f0": {
       "direct_calls": [],
       "pointer_references": [
@@ -137,11 +144,15 @@
     },
     {
       "start": "0x7745f8",
-      "end_exclusive": "0x7746e8"
+      "end_exclusive": "0x774868"
     },
     {
-      "start": "0x774828",
-      "end_exclusive": "0x774868"
+      "start": "0x774cf4",
+      "end_exclusive": "0x774d30"
+    },
+    {
+      "start": "0x775954",
+      "end_exclusive": "0x775990"
     }
   ],
   "scope": "Static direct B/BL and byte-pattern pointer references; no indirect-call completeness or runtime synchronization proof."

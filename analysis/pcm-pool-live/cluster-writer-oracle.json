@@ -1,0 +1,147 @@
+{
+  "scope": "Original AZ cluster retirement under controlled local QEMU interleavings.\n\nExecutes writer, exitRead/exitWrite and pool push instructions. Sleep is replaced\nby a deterministic hook, and three post-retirement range/index helpers record\narguments instead of mutating their unrelated structures. Two observer branches\nrecord state before write unlock and before page enqueue. No live threads, Pi,\nkernel timing, full range publication, or application shutdown is tested.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "tests": 14,
+  "results": [
+    {
+      "case": "uncontended",
+      "initial_lock": 0,
+      "release_wait_calls": [],
+      "sleep_calls": 0,
+      "cluster_retired": true,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "reader_held",
+      "initial_lock": 1,
+      "release_wait_calls": [],
+      "sleep_calls": 10,
+      "cluster_retired": false,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "two_readers_held",
+      "initial_lock": 2,
+      "release_wait_calls": [],
+      "sleep_calls": 10,
+      "cluster_retired": false,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "writer_held",
+      "initial_lock": -1,
+      "release_wait_calls": [],
+      "sleep_calls": 10,
+      "cluster_retired": false,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "reader_releases_first",
+      "initial_lock": 1,
+      "release_wait_calls": [
+        1
+      ],
+      "sleep_calls": 1,
+      "cluster_retired": true,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "reader_releases_fifth",
+      "initial_lock": 1,
+      "release_wait_calls": [
+        5
+      ],
+      "sleep_calls": 5,
+      "cluster_retired": true,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "reader_releases_tenth",
+      "initial_lock": 1,
+      "release_wait_calls": [
+        10
+      ],
+      "sleep_calls": 10,
+      "cluster_retired": true,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "two_readers_release",
+      "initial_lock": 2,
+      "release_wait_calls": [
+        1,
+        5
+      ],
+      "sleep_calls": 5,
+      "cluster_retired": true,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "only_one_of_two_releases",
+      "initial_lock": 2,
+      "release_wait_calls": [
+        1
+      ],
+      "sleep_calls": 10,
+      "cluster_retired": false,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "writer_releases",
+      "initial_lock": -1,
+      "release_wait_calls": [
+        3
+      ],
+      "sleep_calls": 3,
+      "cluster_retired": true,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "empty_cluster",
+      "initial_lock": 0,
+      "release_wait_calls": [],
+      "sleep_calls": 0,
+      "cluster_retired": true,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "absent_cluster",
+      "initial_lock": 0,
+      "release_wait_calls": [],
+      "sleep_calls": 0,
+      "cluster_retired": false,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "absent_cluster_reader_held",
+      "initial_lock": 1,
+      "release_wait_calls": [],
+      "sleep_calls": 0,
+      "cluster_retired": false,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "absent_cluster_writer_held",
+      "initial_lock": -1,
+      "release_wait_calls": [],
+      "sleep_calls": 0,
+      "cluster_retired": false,
+      "whole_fixture_matched": true,
+      "passed": true
+    }
+  ],
+  "source_sha256": "ac4c6ee176a92d01d0b2a12a926789a336f4b5ae19121bf2e048c11223557caf"
+}

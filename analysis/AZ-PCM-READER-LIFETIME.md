@@ -42,8 +42,9 @@ page pool.
 The contention branch `0x774828..0x774864` calls wait helper `0x232cad0` with 1,
 retries the exclusive transition up to ten times, and exits the release routine
 without reaching the detach/drain path when those attempts remain unsuccessful.
-This is static control-flow evidence; wait duration and scheduling behavior are
-not measured, and the complete writer path is not executed in this test suite.
+The reader suite does not execute the writer. A subsequent dedicated writer
+suite now verifies these effects in 14 controlled cases; see
+`AZ-PCM-CLUSTER-WRITER.md`. Wait duration and scheduling behavior remain unmeasured.
 
 Taken together, the inspected protocol prevents a new reader from obtaining the
 detached cluster: readers either hold a positive count before the writer can
@@ -86,8 +87,8 @@ with core dumps disabled. This was a harness boundary error, not an AZ crash.
 
 ## Next work
 
-Execute the writer contention/detachment paths with observed page-pool effects,
-then review the other return callers, asynchronous cancellation, and remaining
+Writer contention/detachment tests are now complete within the isolated scope
+documented separately. Review the other return callers, asynchronous cancellation, and remaining
 reader entry points. Only after that should an opt-in reclaim operation be
 integrated and tested for audio identity, long-session memory use and latency.
 No MADV_DONTNEED or other reclaim was added by this work.

@@ -28,11 +28,12 @@ ranges = [(0x773620, 0x7736cc), (0x774630, 0x7746e8),
           (0x22093b0, 0x22093e4), (0x2211620, 0x22116d8),
           (0x22107b0, 0x2210958), (0x2210a40, 0x2210a48),
           (0x781d60, 0x782058), (0x684480, 0x6844ac),
-          (0x7745f8, 0x7746e8), (0x774828, 0x774868)]
+          (0x7745f8, 0x774868), (0x774cf4, 0x774d30),
+          (0x775954, 0x775990)]
 output = HERE/'pcm-pool-live'
 (output/'return-dispatch-disassembly.txt').write_text(''.join(elf.dis(a,b) for a,b in ranges))
 records = {}
-for f in (0x773620, 0x77d5f0, 0x782978, 0x782af0):
+for f in (0x773620, 0x7745f8, 0x77d5f0, 0x782978, 0x782af0):
     records[hex(f)] = dict(direct_calls=[hex(a) for a in elf.calls(f)],
         pointer_references=[hex(a) for a in elf.hits(struct.pack('<Q',f))])
 tables = {hex(a): [hex(v) for v in struct.unpack('<10Q',elf.read(a,80))]
