@@ -1530,3 +1530,18 @@ Revalidated native24479 and both sources stopped. Screenshot confirms deck1 BASE
   cancellation/shutdown and remaining return callers still need review.
 - Evidence: analysis/AZ-PCM-REFILL-DISPATCH.md and expanded collector/artifacts.
   No Pi access, runtime patch or new benchmark. Broad firmware goal stays active.
+
+### Reader-cache detach path and 12 offline clear cases (2026-09-13)
+
+- Previous goal turn progress: completion-driven refill ownership chain mapped.
+- RTTI identifies77aa80 as detachFiles, not initial refill. Its task walks units
+  and requests PageFiller::clearReaderCache through inline/async-promise routes.
+  Promise construction/submission is not a verified worker-completion barrier.
+- Original clear77e260 has a thread-owner diagnostic, not a mutex; if diagnostic
+  helpers return, the mismatch path continues. Policy can retain matching entries.
+-12original-instruction QEMU cases pass for no-policy clear: eight selection
+  masks, first-use thread binding, empty caches and null shared control blocks.
+  Whole32KiB fixtures, reverse visits, compaction and destruction-call order match.
+- Evidence: analysis/AZ-READER-CACHE-DETACH.md, collector and clear oracle.
+  No Pi access or reclaim deployment. Initial requests, full cancellation/drain,
+  policy retention and remaining PCM-return ownership still open; full goal active.

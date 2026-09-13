@@ -1,0 +1,78 @@
+{
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "types": [
+    {
+      "table": "0x25f8cb8",
+      "typeinfo": "0x25f8100",
+      "name": "N4meow16AsyncTaskBoxBase9AsyncTaskIZN6pcmbuf7pagebuf18BufferingSchedulerINS3_23DefaultPageStaticConfigEE11detachFilesERKSt8functionIFbRKN7trackid7TrackIDEEEEUlvE_EE",
+      "slots": [
+        "0x767bd8",
+        "0x769150",
+        "0x77efc8",
+        "0x7666c0"
+      ]
+    },
+    {
+      "table": "0x25f8e30",
+      "typeinfo": "0x25f8958",
+      "name": "N4meow16AsyncTaskBoxBase9AsyncTaskISt5_BindIFZNS0_16doAsyncToPromiseIbZN6pcmbuf7pagebuf10PageFillerINS5_23DefaultPageStaticConfigEN12audio_format18AudioReaderFactoryEE16clearReaderCacheERKSt8functionIFbRKN7trackid7TrackIDEEEEUlvE_EESt6futureIT_EOT0_EUlRSK_RSt7promiseIbEE_SK_SS_EEEE",
+      "slots": [
+        "0x77ecc8",
+        "0x77eda8",
+        "0x77f610",
+        "0x766500"
+      ]
+    }
+  ],
+  "diagnostic": {
+    "address": "0x25fa850",
+    "text": "singleThreadedChecker.isOK()"
+  },
+  "ranges": [
+    {
+      "start": "0x77aa80",
+      "end_exclusive": "0x77aaa8"
+    },
+    {
+      "start": "0x77ab28",
+      "end_exclusive": "0x77ab48"
+    },
+    {
+      "start": "0x77ab70",
+      "end_exclusive": "0x77ab88"
+    },
+    {
+      "start": "0x77efc8",
+      "end_exclusive": "0x77f04c"
+    },
+    {
+      "start": "0x77f104",
+      "end_exclusive": "0x77f158"
+    },
+    {
+      "start": "0x77f1c8",
+      "end_exclusive": "0x77f210"
+    },
+    {
+      "start": "0x77f238",
+      "end_exclusive": "0x77f250"
+    },
+    {
+      "start": "0x77f3ec",
+      "end_exclusive": "0x77f418"
+    },
+    {
+      "start": "0x77f6d0",
+      "end_exclusive": "0x77f704"
+    },
+    {
+      "start": "0x77e260",
+      "end_exclusive": "0x77e510"
+    },
+    {
+      "start": "0x765af8",
+      "end_exclusive": "0x765b34"
+    }
+  ],
+  "scope": "Static constructor/task/clear trace; does not prove promise wait, worker barrier, cancellation completeness or shutdown quiescence."
+}

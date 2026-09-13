@@ -1,0 +1,116 @@
+{
+  "scope": "Original AZ reader-cache clear on synthetic entries, with no retention policy.\n\nRuns the original clear routine and the original empty policy-reference getter.\nPredicate, pthread_self, memmove and destructor/deallocator calls are substitutes.\nNo actual decoder destruction, mismatched-thread diagnostics, live concurrency,\npolicy-retained streaming reader, promise wait, or PCM-pool reclamation is tested.\n",
+  "firmware_sha256": "736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6",
+  "tests": 12,
+  "results": [
+    {
+      "case": "mask_000",
+      "mask": 0,
+      "initial_entries": 3,
+      "remaining_entries": 3,
+      "event_count": 0,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "mask_001",
+      "mask": 1,
+      "initial_entries": 3,
+      "remaining_entries": 2,
+      "event_count": 3,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "mask_010",
+      "mask": 2,
+      "initial_entries": 3,
+      "remaining_entries": 2,
+      "event_count": 3,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "mask_011",
+      "mask": 3,
+      "initial_entries": 3,
+      "remaining_entries": 1,
+      "event_count": 6,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "mask_100",
+      "mask": 4,
+      "initial_entries": 3,
+      "remaining_entries": 2,
+      "event_count": 3,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "mask_101",
+      "mask": 5,
+      "initial_entries": 3,
+      "remaining_entries": 1,
+      "event_count": 6,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "mask_110",
+      "mask": 6,
+      "initial_entries": 3,
+      "remaining_entries": 1,
+      "event_count": 6,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "mask_111",
+      "mask": 7,
+      "initial_entries": 3,
+      "remaining_entries": 0,
+      "event_count": 9,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "first_use_binds_thread",
+      "mask": 7,
+      "initial_entries": 3,
+      "remaining_entries": 0,
+      "event_count": 9,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "empty_cache",
+      "mask": 7,
+      "initial_entries": 0,
+      "remaining_entries": 0,
+      "event_count": 0,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "empty_first_use",
+      "mask": 7,
+      "initial_entries": 0,
+      "remaining_entries": 0,
+      "event_count": 0,
+      "whole_fixture_matched": true,
+      "passed": true
+    },
+    {
+      "case": "null_shared_reference",
+      "mask": 7,
+      "initial_entries": 3,
+      "remaining_entries": 0,
+      "event_count": 6,
+      "whole_fixture_matched": true,
+      "passed": true
+    }
+  ],
+  "source_sha256": "6de46f3c2d69c72447068d7038b7f3e2d6cb4d9d92ecf63e603d328e255813e0"
+}
