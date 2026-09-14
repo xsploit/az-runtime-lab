@@ -37,12 +37,27 @@ keys, cabinet, music or proprietary binaries are supplied by this repository.
 On Debian, install host dependencies:
 
 ```sh
-sudo apt install python3 build-essential binutils bubblewrap xwayland \
+sudo apt install git python3 build-essential binutils bubblewrap xwayland \
   alsa-utils fuse-overlayfs util-linux ffmpeg libx11-dev
 ```
 
 Use a working Wayland desktop. This does not configure boot, screen rotation,
 brightness, autostart or replace your OS. Stop other DJ applications/audio owners.
+
+## Get this checkpoint
+
+The repository is private: collaborators must be invited with their GitHub
+account before cloning. This branch contains the setup described here:
+
+```sh
+git clone --branch feat/native-performance-and-setup-20260914 \
+  https://github.com/xsploit/az-runtime-lab.git
+cd az-runtime-lab
+```
+
+Use a Linux PC (or suitable Linux environment) for the tested cross-compiler.
+Copy the checkout to the Pi before launching; configure paths for the Pi, not
+the build PC. Normal Git authentication is required for this private repository.
 
 ## Build the six guest shims
 
