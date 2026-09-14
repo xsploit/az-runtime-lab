@@ -14,6 +14,7 @@ from flx6_midi_stream import MidiStream
 from flx6_deck import DeckControls
 from flx6_fx import Effects
 from az_rx_owner import RxOwner
+from flx6_fx_feedback import EffectFeedback
 
 def run(a):
     exe=Path(f'/proc/{a.pid}/exe')
@@ -27,13 +28,23 @@ def run(a):
         if key=='PioneerDDJFLX6.shiftPressed':shift_bindings.add(addr)
         if key=='PioneerDDJFLX6.waveformZoom':zoom_bindings.add(addr)
     fx=Effects(a.mapping,a.fx_bpm) if a.dsp_graph else None
+    fx_feedback=EffectFeedback() if fx else None
+    last_fx_observation=None
     mix=MixerState(a.mapping);mix.assign=[-1,1,-1,1]
     mixsock=socket.socket(socket.AF_UNIX,socket.SOCK_DGRAM) if a.mixer_socket else None
     replydir=None;rxowner=None;query_at=0.;next_query=0.
     if mixsock:mixsock.setblocking(False)
     if fx:
-        replydir=tempfile.TemporaryDirectory(prefix='flx6-fx-',dir=a.state)
-        mixsock.bind(str(Path(replydir.name)/'reply.sock'))
+        replydir=tempfile.TemporaryDirectory(prefix='flx6-fx-',dir=a.state.resolve())
+        replypath=Path(replydir.name)/'reply.sock'
+        mixsock.bind(str(replypath))
+        # The bridge runs as root for native memory reads, the audio mixer does
+        # not. Let that specific mixer user traverse and write the reply socket.
+        mixer_owner=os.stat(a.mixer_socket,follow_symlinks=False)
+        if not stat.S_ISSOCK(mixer_owner.st_mode):raise ValueError('Expected mixer control socket')
+        os.chown(replydir.name,mixer_owner.st_uid,mixer_owner.st_gid)
+        os.chown(replypath,mixer_owner.st_uid,mixer_owner.st_gid)
+        replypath.chmod(0o600)
         rxowner=RxOwner(nav.packet(),epoch=a.mixer_socket,tap=True)
     def update_mix():
         if mixsock:mixsock.sendto(mix.snapshot().encode(),a.mixer_socket)
@@ -102,6 +113,11 @@ def run(a):
                         if peer!=a.mixer_socket:continue
                         try:snapshot=json.loads(data)
                         except (ValueError,UnicodeError):continue
+                        if fx_feedback.accept(snapshot,now):
+                            observation={k:snapshot[k] for k in ('active_type','target','on','source_bpm100','effect_beat','time_ms')}
+                            if observation!=last_fx_observation:
+                                last_fx_observation=observation
+                                print(json.dumps({'event':'applied_fx',**observation}),flush=True)
                         packet=rxowner.feedback(snapshot,epoch=a.mixer_socket,received_at=query_at,now=now)
                         send('mixer',packet)
                     if now>=next_query:
@@ -113,8 +129,12 @@ def run(a):
                     midi=os.open(path,os.O_RDWR|os.O_NONBLOCK|os.O_CLOEXEC);parser=MidiStream()
                     os.write(midi,bytes([0xf0,0,0x20,0x7f,3,1,0xf7]))
                     update_mix()
+                    if fx_feedback:fx_feedback.sent.clear()
                     poll=select.poll();poll.register(midi,select.POLLIN|select.POLLHUP|select.POLLERR)
                     print(json.dumps({'event':'connected','device':str(path)}),flush=True)
+                if fx_feedback:
+                    for packet in fx_feedback.messages(time.monotonic(),fx.led_addresses,fx.led_address):
+                        os.write(midi,packet)
                 events=poll.poll(50)
                 if not events:continue
                 flags=events[0][1]
@@ -179,7 +199,13 @@ def run(a):
     finally:
         try:release()
         except (OSError,RuntimeError):pass
-        if midi is not None:os.close(midi)
+        if midi is not None:
+            if fx_feedback:
+                fx_feedback.reset()
+                try:
+                    for packet in fx_feedback.messages(time.monotonic(),fx.led_addresses,fx.led_address):os.write(midi,packet)
+                except OSError:pass
+            os.close(midi)
         for fd in fifos.values():os.close(fd)
         print(json.dumps({'event':'stopped','packets':count,'rejected':rejected,'encoder_counter':nav.encoder.counter}),flush=True)
         temporary=checkpoint.with_suffix('.tmp')

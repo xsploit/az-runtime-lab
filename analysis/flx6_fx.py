@@ -9,6 +9,7 @@ import xml.etree.ElementTree as ET
 
 class Effects:
     def __init__(self,mapping,bpm=120):
+        self.led_addresses=set();self.led_address=(0x94,0x47)
         self.bindings={};self.parts={};self.held={};self.buttons=set()
         self.unit=0;self.targets=[0,0];self.depths=[.5,.5]
         self.colors=[.5]*4;self.enabled=False;self.target=0;self.beat=5;self.depth=.5
@@ -29,6 +30,7 @@ class Effects:
             elif k.endswith('beatFxChannel1'):b=('target',0)
             elif k.endswith('beatFxChannel2'):b=('target',1)
             if b:self.bindings[a]=b
+            if b and b[0]=='toggle':self.led_addresses.add(a)
     def message(self,status,control,value):
         addr=(status+16 if status&0xf0==0x80 else status,control)
         b=self.bindings.get(addr)
@@ -57,6 +59,7 @@ class Effects:
             self.buttons.add(addr)
             if kind in ('toggle','focus'):
                 self.unit=addr[0]&1;self.target=self.targets[self.unit];self.depth=self.depths[self.unit]
+                self.led_address=addr if kind=='toggle' else (addr[0],addr[1]-0x70+0x47)
                 if kind=='toggle':self.enabled=not self.enabled
             elif kind=='target':
                 unit=addr[0]&1;self.targets[unit]=b[1]

@@ -90,3 +90,29 @@ Buffer increased 40 to 80 ms after two ~13 ms load/startup underruns in the earl
 cache session; period remains10 ms. Current session no underruns at verification.
 Mixer uses RR8, aplay RR10. No long DJ stress test; buffer increase trades latency
 for headroom. Temperature58.4 C at last check. DSP mixer RSS about8 MiB.
+
+## LED/status correction after physical feedback
+
+User reports solid Beat FX LED and nonstandard-sounding pads. Confirmed missing
+MIDI LED output in previous bridge. More importantly, root-created reply directory
+(mode0700) and socket prevented the unprivileged mixer from returning Q1 status.
+Thus previous native screen feedback had not actually been receiving telemetry.
+
+- Reply directory/socket now belong to the mixer socket's UID/GID, mode0700/0600.
+  Root bridge still owns the one input writer. Current Pi log verifies applied_fx
+  messages arriving (first: Off type0, target2 = channel3, manual9500 BPM100).
+- Beat FX LED addresses come from saved BiteDJ fxEnabled mappings (94/95:47..49).
+  Only fresh applied Echo/on telemetry enables pulsing. Inactive/tail-only/stale
+  states clear the light. Focus switches clear previous addresses, and shutdown
+  clears all six. Pulse follows manual FX BPM/audio-frame clock, not track phase.
+- Four LED tests cover applied-state acknowledgement, pulse/freshness timeout,
+  tail-only state, out-of-order/invalid replies, and clearing the previous focus.
+- Physical main button emitted 94:48 (FX1 slot2); Level/Depth used B4:04/24.
+  Target selector emitted94:1E, selecting channel3. Pad Echo targetedchannel1.
+  This is a possible reason for audible pads but no main FX on deck1, not a
+  confirmation of the user's headphone path. Asked to test CH1/half-depth/master.
+
+The six Pad FX slots remain partial native-voiced substitutes for the complete
+standard Rekordbox bank, not faithful full-bank support. Roll, Flanger, brake,
+Reverb and release behaviours remain unimplemented. No claim that LED software
+output or main Echo audibility has passed physical QA until user confirms.
