@@ -96,7 +96,13 @@ if clock_temp is not None:
  args[args.index('--chdir'):args.index('--chdir')]=['--ro-bind',str(clock_directory),'/sys/module/rockchipdrm/parameters']
 if os.environ.get('USB_FIXTURE'):
  (root/'media/usb/lab').mkdir(parents=True,exist_ok=True)
- args[args.index('--chdir'):args.index('--chdir')]=['--ro-bind',str(Path(os.environ.get('USB_FIXTURE_PATH',str(base/'fixtures/usb'))).resolve()),'/media/usb/lab']
+ usb_path=Path(os.environ.get('USB_FIXTURE_PATH',str(base/'fixtures/usb'))).resolve()
+ args[args.index('--chdir'):args.index('--chdir')]=['--ro-bind',str(usb_path),'/media/usb/lab']
+ if os.environ.get('USB_PIONEER_CACHE'):
+  cache=Path(os.environ['USB_PIONEER_CACHE']).resolve()
+  fs=subprocess.check_output(['findmnt','-n','-o','FSTYPE','--target',str(cache)],text=True).strip()
+  if fs not in ('overlay','fuse.fuse-overlayfs'):raise ValueError('USB_PIONEER_CACHE requires a mounted copy-on-write overlay')
+  args[args.index('--chdir'):args.index('--chdir')]=['--bind',str(cache),'/media/usb/lab/PIONEER','--setenv','LAB_USB_WRITE_METADATA','1']
 if os.environ.get('MIXER_FIXTURE'):
  if model!='xdjaz' or not os.environ.get('USB_FIXTURE'):
   raise ValueError('MIXER_FIXTURE requires AZ and USB_FIXTURE')
@@ -251,7 +257,7 @@ try:
   exe=Path(mixtemp.name)/'mix-stream'
   sources=['deck_mix.c','mix_stream.c'];flags=['-O2']
   if os.environ.get('DSP_GRAPH'):
-   sources+=['dsp_control.c','dsp_graph.c','beat_fx.c','beat_echo.c','beat_control.c','beat_quantize.c','beat_manager.c','beat_grid.c','cfx_filter.c','cfx_crush.c','cfx_noise.c','cfx_sweep.c','cfx_dubecho.c','cfx_space.c','cfx_manager.c']
+   sources+=['dsp_control.c','dsp_graph.c','channel_eq.c','beat_fx.c','beat_echo.c','beat_control.c','beat_quantize.c','beat_manager.c','beat_grid.c','cfx_filter.c','cfx_crush.c','cfx_noise.c','cfx_sweep.c','cfx_dubecho.c','cfx_space.c','cfx_manager.c']
    flags+=['-D_GNU_SOURCE','-DLAB_DSP_GRAPH','-std=c11','-ffp-contract=off','-fno-tree-vectorize','-Wall','-Wextra','-Werror']
   if os.environ.get('HEADPHONE_DSP'):sources+=['headphone_dsp.c'];flags+=['-DLAB_HEADPHONE_DSP']
   subprocess.run(['cc',*flags,*[str(base/'mixer'/name) for name in sources],'-lm','-o',str(exe)],check=True,timeout=60)

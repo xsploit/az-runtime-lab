@@ -1,0 +1,23 @@
+{
+  "XDG_RUNTIME_DIR": "/run/user/1000",
+  "WAYLAND_DISPLAY": "wayland-1",
+  "PLAYER": "xdjaz",
+  "LAB_PI_JEMALLOC": "/home/pompu_5/az-native-lab/libjemalloc-pi.so.2",
+  "OFFLINE_MIDI": "1",
+  "NULL_AUDIO": "1",
+  "PACED_AUDIO": "1",
+  "USB_FIXTURE": "1",
+  "USB_FIXTURE_PATH": "/media/pompu_5/COS_2025084",
+  "USB_PIONEER_CACHE": "/home/pompu_5/az-native-lab/usb-cache/COS_2025084/merged",
+  "MIXER_FIXTURE": "1",
+  "ERP_FIXTURE": "1",
+  "DECK_FIXTURE": "1",
+  "MIX_STREAM": "1",
+  "DSP_GRAPH": "1",
+  "XIMAGE_FAST24": "1",
+  "LAB_XIMAGE_PRESENT": "1",
+  "LAB_AZ_SMOOTH_SCROLL": "1",
+  "LAB_AZ_FRACTIONAL_GRID": "1",
+  "LAB_VSYNC_HZ": "59.24",
+  "LAB_KEEP_OPEN": "1"
+}

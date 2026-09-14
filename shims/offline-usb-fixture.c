@@ -126,12 +126,13 @@ void *dlsym(void *handle,const char *name){
 #include <fcntl.h>
 #include <stdarg.h>
 #include <sys/syscall.h>
+#include <stdlib.h>
 static atomic_uint usb_event;
 int open64(const char*path,int flags,...){
  if(!strcmp(path,"/proc/udev_usb1")){
   int fds[2];if(pipe2(fds,O_CLOEXEC|O_NONBLOCK))return -1;
   unsigned event=atomic_fetch_add(&usb_event,1);
-  const char*message=event==0?"connect,":event==1?"mount /media/usb/lab vfat protect:1":"";
+  const char*message=event==0?"connect,":event==1?(getenv("LAB_USB_WRITE_METADATA")?"mount /media/usb/lab vfat protect:0":"mount /media/usb/lab vfat protect:1"):"";
   if(*message){write(fds[1],message,strlen(message));fprintf(stderr,"LAB_USB event=%u %s\n",event,message);}
   close(fds[1]);return fds[0];
  }

@@ -2,7 +2,7 @@
 Native jog calibration, shifted zoom and new pad/button paths need physical QA.
 Never run competing FIFO writers. Exits when the pinned player session ends.
 """
-import argparse,fcntl,hashlib,json,os,select,signal,stat,time,socket
+import argparse,fcntl,hashlib,json,os,select,signal,stat,time,socket,tempfile
 import xml.etree.ElementTree as ET
 from flx6_state import MixerState
 from pathlib import Path
@@ -12,6 +12,8 @@ from flx6_navigation import Navigation
 from flx6_transport import Transport
 from flx6_midi_stream import MidiStream
 from flx6_deck import DeckControls
+from flx6_fx import Effects
+from az_rx_owner import RxOwner
 
 def run(a):
     exe=Path(f'/proc/{a.pid}/exe')
@@ -24,9 +26,15 @@ def run(a):
         key=c.findtext('key');addr=(int(c.findtext('status'),0),int(c.findtext('midino'),0))
         if key=='PioneerDDJFLX6.shiftPressed':shift_bindings.add(addr)
         if key=='PioneerDDJFLX6.waveformZoom':zoom_bindings.add(addr)
+    fx=Effects(a.mapping,a.fx_bpm) if a.dsp_graph else None
     mix=MixerState(a.mapping);mix.assign=[-1,1,-1,1]
     mixsock=socket.socket(socket.AF_UNIX,socket.SOCK_DGRAM) if a.mixer_socket else None
+    replydir=None;rxowner=None;query_at=0.;next_query=0.
     if mixsock:mixsock.setblocking(False)
+    if fx:
+        replydir=tempfile.TemporaryDirectory(prefix='flx6-fx-',dir=a.state)
+        mixsock.bind(str(Path(replydir.name)/'reply.sock'))
+        rxowner=RxOwner(nav.packet(),epoch=a.mixer_socket,tap=True)
     def update_mix():
         if mixsock:mixsock.sendto(mix.snapshot().encode(),a.mixer_socket)
     checkpoint=a.state/'flx6-session.json' 
@@ -51,12 +59,18 @@ def run(a):
     def send(kind,packet):
         nonlocal count
         if packet is None:return
+        if kind=='mixer' and rxowner:packet=rxowner.controls(packet)
         fd=fifos[kind];s=os.fstat(fd);assert (s.st_dev,s.st_ino)==epochs[kind]
         if not select.select([],[fd],[],.1)[1]:raise RuntimeError('Native input pipe stalled')
         if os.write(fd,packet)!=len(packet):raise RuntimeError('Partial native control frame')
         count+=1
     def release():
         shift_down.clear();mix.held.clear();mix.parts.clear()
+        if fx:
+            fx.release()
+            for command in fx.commands():
+                try:mixsock.sendto(command.encode(),a.mixer_socket)
+                except BlockingIOError:fx.dirty=True;fx.last_source=None;break
         send('erp',transport.release_all())
         for d,p in decks.release_all():send(f'deck{d}',p)
         for status,control in list(nav.down):send('mixer',nav.message(status,control,0))
@@ -77,6 +91,22 @@ def run(a):
             while running:
                 view._alive()
                 for d,p in decks.idle():send(f'deck{d}',p)
+                if fx:
+                    for command in fx.commands():
+                        try:mixsock.sendto(command.encode(),a.mixer_socket)
+                        except BlockingIOError:fx.dirty=True;fx.last_source=None;break
+                    now=time.monotonic()
+                    for _ in range(16):
+                        try:data,peer=mixsock.recvfrom(4096)
+                        except BlockingIOError:break
+                        if peer!=a.mixer_socket:continue
+                        try:snapshot=json.loads(data)
+                        except (ValueError,UnicodeError):continue
+                        packet=rxowner.feedback(snapshot,epoch=a.mixer_socket,received_at=query_at,now=now)
+                        send('mixer',packet)
+                    if now>=next_query:
+                        try:mixsock.sendto(b'Q1',a.mixer_socket);query_at=now;next_query=now+.2
+                        except BlockingIOError:pass
                 if midi is None:
                     path=device()
                     if path is None:time.sleep(.5);continue
@@ -112,6 +142,8 @@ def run(a):
                             if view.sample()['kind']!='waveform':raise ViewUnavailable('Zoom needs the waveform screen')
                             delta=value if value<64 else value-128
                             send('mixer',nav.packet(delta));print(json.dumps({'event':'zoom','delta':delta}),flush=True);continue
+                        if fx and fx.message(*message):
+                            print(json.dumps({'event':'fx','midi':message}),flush=True);continue
                         if mix.message(*message):
                             update_mix()
                             if addr in mix.bindings and mix.bindings[addr][0]=='pfl':
@@ -156,8 +188,13 @@ def run(a):
             'deck_frames':[bytes(f).hex() for f in decks.frames]})+'\n')
         temporary.chmod(0o600);temporary.replace(checkpoint)
         if mixsock:mixsock.close()
+        if replydir:replydir.cleanup()
         lock.close()
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('pid',type=int);p.add_argument('--mapping',type=Path,required=True);p.add_argument('--state',type=Path,required=True);p.add_argument('--encoder-counter',type=int,required=True);p.add_argument('--mixer-socket')
-    a=p.parse_args();assert -32768<=a.encoder_counter<=32767;run(a)
+    p.add_argument('--dsp-graph',action='store_true');p.add_argument('--fx-bpm',type=float,default=120,help='Manual Echo BPM pending native telemetry')
+    a=p.parse_args()
+    if a.dsp_graph and not a.mixer_socket:p.error('DSP graph requires mixer socket')
+    if not 40<=a.fx_bpm<=300:p.error('Manual FX BPM must be 40..300')
+    assert -32768<=a.encoder_counter<=32767;run(a)
