@@ -1,0 +1,2 @@
+connector 38 type 16 type_id 2 connected 1 encoder 37
+crtc 36 active 1 sequence 65389 timestamp 2093455664841

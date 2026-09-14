@@ -1,0 +1,22 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cycles:u'
+# Event count (approx.): 7800819341
+#
+# Overhead  Shared Object             Symbol                      IPC   [IPC Coverage]
+# ........  ........................  ..........................  ....................
+#
+     4.12%  ximage-fast24.so          [.] 0x00000000000006e8      -      -
+     3.32%  EP147                     [.] 0x000000000201e820      -      -
+     2.39%  libc-2.29.so              [.] 0x0000000000081184      -      -
+     2.20%  EP147                     [.] 0x000000000201ee70      -      -
+     2.19%  EP147                     [.] 0x00000000019feefc      -      -
+     2.05%  EP147                     [.] 0x00000000019feef8      -      -
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

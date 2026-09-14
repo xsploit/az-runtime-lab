@@ -1,10 +1,19 @@
 from pathlib import Path
-from display_timing import publish_timing, SyntheticVsync, prepare_native_timing_directory
+from display_timing import publish_timing, SyntheticVsync
 import subprocess,os,time,json,tempfile,stat,errno,sys,itertools
 if any(os.environ.get(x) for x in ('NATIVE_NAVIGATION','LAB_GDB','TRACE','MOUNT_TRACE','LOAD_TRACE','FADER_TRACE','ONAIR_TRACE','MIC_CONTROL_TRACE')):raise ValueError('Pi probe does not support QEMU-specific tracing or guest discovery')
 base=Path(__file__).resolve().parent;model=os.environ.get('PLAYER','xdjaz');lab=base/model;root=lab/'rootfs';state=lab/'state';state.mkdir(exist_ok=True)
-clock_temp,clock_directory=prepare_native_timing_directory(state/'sys/module/rockchipdrm/parameters')
-print(json.dumps(dict(event='native_timing_directory',path=str(clock_directory),memory_backed=clock_temp is not None)),flush=True)
+clock_temp=None
+clock_directory=state/'sys/module/rockchipdrm/parameters'
+if os.environ.get('LAB_TIMING_TMPFS'):
+ if os.environ['LAB_TIMING_TMPFS']!='1':raise ValueError('LAB_TIMING_TMPFS must be 1')
+ runtime=Path(os.environ.get('XDG_RUNTIME_DIR',f'/run/user/{os.getuid()}'))
+ if runtime.stat().st_uid!=os.getuid():raise RuntimeError('Timing directory owner mismatch')
+ if subprocess.check_output(['findmnt','-n','-o','FSTYPE','-T',str(runtime)],text=True).strip()!='tmpfs':raise RuntimeError('Timing directory must be tmpfs')
+ clock_temp=tempfile.TemporaryDirectory(prefix='az-display-clock-',dir=runtime)
+ clock_directory=Path(clock_temp.name)
+ publish_timing(clock_directory/'vsync_time',time.monotonic_ns())
+ print(json.dumps(dict(event='memory_timing_directory',path=str(clock_directory))),flush=True)
 for d in ['settings','mnt/debug','sys/class/thermal/thermal_zone0','sys/class/thermal/thermal_zone1','sys/module/rockchipdrm/parameters','tmp','run']:(state/d).mkdir(parents=True,exist_ok=True)
 (state/'sys/class/thermal/thermal_zone0/temp').write_text('45000\n');(state/'sys/class/thermal/thermal_zone1/temp').write_text('45000\n');(state/'tmp/testmode').write_text('off\n')
 (root/'home/root/settings').mkdir(exist_ok=True)
@@ -54,13 +63,6 @@ if os.environ.get('LAB_GDB') or os.environ.get('MIC_CONTROL_TRACE'):
  if actual!=expected:raise ValueError('Native control probe addresses do not match this firmware')
 if os.environ.get('LAB_AZ_FILE_CACHE_MIB') and os.environ.get('LAB_AZ_SMOOTH_SCROLL')!='1':
  raise ValueError('File-cache experiment requires the guarded smooth-scroll overlay')
-if os.environ.get('LAB_AZ_PCM_TEMPLATE'):
- if os.environ['LAB_AZ_PCM_TEMPLATE']!='1' or model!='xdjaz' or os.environ.get('LAB_AZ_SMOOTH_SCROLL')!='1' or os.environ.get('OFFLINE_MIDI')!='1' or os.environ.get('PACED_AUDIO')!='1':
-  raise ValueError('PCM template experiment requires pinned smooth-scroll AZ and paced offline fixture')
- if os.environ.get('LAB_MAIN_ALLOCATION_TRACE'):
-  raise ValueError('PCM template and main C allocation tracer both replace imports; select one')
- if not (base/'shims/pcm-template-hook.so').is_file():
-  raise ValueError('Build shims/pcm-template-hook.so on the Pi before enabling it')
 scroll_overlay = None
 scroll_executable = None
 if os.environ.get('LAB_AZ_SMOOTH_SCROLL'):
@@ -127,9 +129,6 @@ if os.environ.get('LAB_MAIN_ALLOCATION_TRACE'):
   raise ValueError('LAB_MAIN_ALLOCATION_TRACE=1 requires offline AZ')
  if not (base/'shims/main-allocation-trace.so').is_file():raise ValueError('Build shims/main-allocation-trace.so first')
  args=[a+':/lab-shims/main-allocation-trace.so' if a.startswith('LD_PRELOAD=') else a for a in args]
-if os.environ.get('LAB_AZ_PCM_TEMPLATE'):
- args=[a+':/lab-shims/pcm-template-hook.so' if a.startswith('LD_PRELOAD=') else a for a in args]
- args[args.index('--chdir'):args.index('--chdir')]=['--setenv','LAB_AZ_PCM_TEMPLATE','1']
 if os.environ.get('LAB_LARGE_NEW_TRACE'):
  if os.environ['LAB_LARGE_NEW_TRACE'] != '1' or not os.environ.get('OFFLINE_MIDI'):
   raise ValueError('LAB_LARGE_NEW_TRACE=1 requires offline lab preload')
@@ -264,7 +263,7 @@ try:
   proc=subprocess.Popen(args,stdout=log,stderr=log)
   sampler=subprocess.Popen(['python',str(base/'analysis/capture-process.py'),str(proc.pid),str(lab/'process-profile.json'),'20']) if os.environ.get('PROFILE') else None
   try:
-   
+
    print(json.dumps(dict(event="started",display=":"+display,pid=proc.pid,keep_open=keep_open)),flush=True)
    feedbackdeadline=time.monotonic()+30
    for tick in (itertools.count() if keep_open else range(duration*60)):
@@ -328,6 +327,13 @@ try:
     if tick==900 and os.environ.get("LAB_CLICK"):
      coords=os.environ["LAB_CLICK"].split(",")
      subprocess.run(["python",str(base/"analysis/click-private-display.py"),":"+display,*coords],check=True,timeout=5)
+    if vsync_clock and os.environ.get('LAB_TIMING_RATE_FILE'):
+     requested = Path(os.environ['LAB_TIMING_RATE_FILE']).read_text().strip()
+     if requested not in ('59.24','60.018'):raise ValueError('Unapproved timing test frequency')
+     if requested != os.environ['LAB_VSYNC_HZ']:
+      os.environ['LAB_VSYNC_HZ']=requested
+      vsync_clock=SyntheticVsync(requested,time.monotonic_ns())
+      print(json.dumps(dict(event='timing_rate_test',hz=requested)),flush=True)
     if vsync_clock:
      stamp, deadline = vsync_clock.sample(time.monotonic_ns())
      publish_timing(clock_directory/'vsync_time', stamp)
@@ -367,4 +373,5 @@ finally:
  if mixtemp is not None:mixtemp.cleanup()
  if 'sampler' in locals() and sampler is not None: sampler.wait(timeout=25)
  xv.terminate();xv.wait(timeout=5)
- if clock_temp is not None:clock_temp.cleanup()
+
+if clock_temp is not None:clock_temp.cleanup()

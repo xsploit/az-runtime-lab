@@ -1,0 +1,105 @@
+[
+  {
+    "phase": "synthetic-before",
+    "hz": 59.24,
+    "source_rates": [
+      44168.58472971922,
+      44168.58472971922,
+      0.0,
+      0.0
+    ],
+    "cpu_percent_one_core": {
+      "player": 48.4655284930177,
+      "xwayland": 14.614605241451214,
+      "test_process": 21.859452284221902,
+      "display_helper": 0.0
+    },
+    "rss_kib": "VmRSS:\t  987424 kB",
+    "drm_writer": {},
+    "temperature_c": 57.3,
+    "repaint": {
+      "hz": 59.20788790126389,
+      "interval_median_ms": 16.882125500123948,
+      "p95_ms": 17.670909999869764,
+      "max_ms": 18.21833899989724,
+      "negative": 0
+    },
+    "upload": {
+      "hz": 59.20788790126389,
+      "interval_median_ms": 16.830856499960646,
+      "p95_ms": 18.37111800024286,
+      "max_ms": 19.827665999997407,
+      "negative": 0
+    }
+  },
+  {
+    "phase": "physical-refresh",
+    "hz": 60.018,
+    "source_rates": [
+      44180.86666532402,
+      44180.86666532402,
+      0.0,
+      0.0
+    ],
+    "cpu_percent_one_core": {
+      "player": 53.24622374453432,
+      "xwayland": 17.248776705975907,
+      "test_process": 22.873377805750657,
+      "display_helper": 1.9998581688088006
+    },
+    "rss_kib": "VmRSS:\t  987408 kB",
+    "drm_writer": {
+      "native_pid": 3334
+    },
+    "temperature_c": 58.4,
+    "repaint": {
+      "hz": 59.99574506426402,
+      "interval_median_ms": 16.6359765001107,
+      "p95_ms": 17.41564799984917,
+      "max_ms": 18.258673999924213,
+      "negative": 0
+    },
+    "upload": {
+      "hz": 59.99574506426402,
+      "interval_median_ms": 16.558883000165224,
+      "p95_ms": 18.25802500033751,
+      "max_ms": 19.63651799969375,
+      "negative": 0
+    }
+  },
+  {
+    "phase": "synthetic-restored",
+    "hz": 59.24,
+    "source_rates": [
+      44087.705107037305,
+      44087.705107037305,
+      0.0,
+      0.0
+    ],
+    "cpu_percent_one_core": {
+      "player": 48.60703475489046,
+      "xwayland": 14.744550388372943,
+      "test_process": 21.866917948858177,
+      "display_helper": 0.0
+    },
+    "rss_kib": "VmRSS:\t  987312 kB",
+    "drm_writer": {
+      "native_pid": 3334
+    },
+    "temperature_c": 58.4,
+    "repaint": {
+      "hz": 59.228109187193006,
+      "interval_median_ms": 16.873431999934837,
+      "p95_ms": 17.724560000002384,
+      "max_ms": 18.434379999991506,
+      "negative": 0
+    },
+    "upload": {
+      "hz": 59.228109187193006,
+      "interval_median_ms": 16.865117499837652,
+      "p95_ms": 18.29467500001192,
+      "max_ms": 19.52957300003618,
+      "negative": 0
+    }
+  }
+]

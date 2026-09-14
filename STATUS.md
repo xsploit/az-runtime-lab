@@ -1,3 +1,7 @@
+## 2026-09-13 Pi powered down for move
+
+Saved a further display fix: normal native launchers now keep the refresh timestamp in tmpfs, avoiding measured disk-publication stalls. Linear scaling remains persisted. Native real-display-clock candidate passed a two-minute /7251-event no-skip test but remains opt-in pending physical comparison; original59.24Hz restored before shutdown. User requested moving the Pi; clean poweroff accepted. See analysis/drm-display-clock/RESULT.md. Fresh process IDs and temporary paths must be discovered on restart. Standard updated launcher still needs its first boot validation.
+
 ## 2026-09-13 display regression recovered
 
 The Pi reboot lost the session-only Sway linear filter. User confirmed the picture improved after restoring it. `/etc/sway/pflx.conf` now persists `output DSI-2 scale_filter linear`; original backed up and updated config validates. Native smooth-scroll, fractional-grid and staged-upload fixes were already active. Check the **compositor output filter**, not just X11 screenshots, after future launches. Use `analysis/panel-rate-test/audit-fixes.py` with freshly discovered PID/source file; it fails if linear filtering is missing. See `analysis/panel-rate-test/RESULT.md` for current evidence and limits.

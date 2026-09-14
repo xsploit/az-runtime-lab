@@ -51,3 +51,44 @@ class SyntheticVsync:
         # ideal boundaries fall between two integer nanoseconds.
         deadline = self.epoch_ns + ((tick + 1) * self.denominator_ns + self.numerator - 1) // self.numerator
         return stamp, deadline
+
+
+def prepare_native_timing_directory(legacy_directory):
+    """Keep the native Pi's transient refresh clock off persistent storage.
+
+    Returns (TemporaryDirectory or None, Path). Keep the temporary owner alive
+    until the player exits, and bind its directory (not a single file) into the
+    player's timing path so atomic replacement remains visible. Explicit
+    LAB_TIMING_TMPFS=0 retains the old path for controlled comparisons.
+    """
+    import subprocess
+    setting = os.environ.get('LAB_TIMING_TMPFS', '1')
+    if setting not in ('0', '1'):
+        raise ValueError('LAB_TIMING_TMPFS must be 0 or 1')
+    if setting == '0':
+        directory = Path(legacy_directory)
+        directory.mkdir(parents=True, exist_ok=True)
+        return None, directory
+    candidates = []
+    runtime = Path(os.environ.get('XDG_RUNTIME_DIR', f'/run/user/{os.getuid()}'))
+    if runtime.is_dir() and runtime.stat().st_uid == os.getuid():
+        candidates.append(runtime)
+    candidates.extend([Path('/dev/shm'), Path('/tmp')])
+    for parent in candidates:
+        if not parent.is_dir():
+            continue
+        result = subprocess.run(['findmnt', '-n', '-o', 'FSTYPE', '-T', str(parent)],
+                                capture_output=True, text=True, timeout=5)
+        if result.returncode or result.stdout.strip() != 'tmpfs':
+            continue
+        try:
+            owner = tempfile.TemporaryDirectory(prefix='az-display-clock-', dir=parent)
+        except PermissionError:
+            continue
+        directory = Path(owner.name)
+        # The player may read before the first recurring publisher iteration.
+        import time
+        publish_timing(directory / 'vsync_time', time.monotonic_ns())
+        return owner, directory
+    raise RuntimeError('No writable tmpfs for native display timing; '
+                       'provide a valid XDG_RUNTIME_DIR or use LAB_TIMING_TMPFS=0 for comparison')

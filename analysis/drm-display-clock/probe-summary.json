@@ -1,0 +1,9 @@
+{
+  "samples": 181,
+  "mean_period_ms": 16.66236242777778,
+  "median_period_ms": 16.662287,
+  "min_ms": 16.649055,
+  "max_ms": 16.680889,
+  "monotonic": true,
+  "hz_from_span": 60.01549926275177
+}

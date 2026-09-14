@@ -1,0 +1,23 @@
+{
+  "physical-refresh-timings": {
+    "upload_samples": 480,
+    "circular_concentration_0_uniform_1_fixed": 0.9716426973702714,
+    "circular_mean_phase_ms": 8.25136107580768,
+    "circular_sd_ms": 0.6360921412293026,
+    "native_clock_distance_to_drm_grid_median_ms": 0.0
+  },
+  "synthetic-before-timings": {
+    "upload_samples": 474,
+    "circular_concentration_0_uniform_1_fixed": 0.16023956551445992,
+    "circular_mean_phase_ms": 11.129539252184664,
+    "circular_sd_ms": 5.074882532136811,
+    "native_clock_distance_to_drm_grid_median_ms": 4.236475000157952
+  },
+  "synthetic-restored-timings": {
+    "upload_samples": 474,
+    "circular_concentration_0_uniform_1_fixed": 0.19672430988636908,
+    "circular_mean_phase_ms": 10.996084965672651,
+    "circular_sd_ms": 4.782176079699395,
+    "native_clock_distance_to_drm_grid_median_ms": 4.231447000056505
+  }
+}

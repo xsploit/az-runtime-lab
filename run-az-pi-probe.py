@@ -1,8 +1,10 @@
 from pathlib import Path
-from display_timing import publish_timing, SyntheticVsync
+from display_timing import publish_timing, SyntheticVsync, prepare_native_timing_directory
 import subprocess,os,time,json,tempfile,stat,errno,sys
 if any(os.environ.get(x) for x in ('NATIVE_NAVIGATION','LAB_GDB','TRACE','MOUNT_TRACE','LOAD_TRACE','FADER_TRACE','ONAIR_TRACE','MIC_CONTROL_TRACE')):raise ValueError('Pi probe does not support QEMU-specific tracing or guest discovery')
 base=Path(__file__).resolve().parent;model=os.environ.get('PLAYER','xdjaz');lab=base/model;root=lab/'rootfs';state=lab/'state';state.mkdir(exist_ok=True)
+clock_temp,clock_directory=prepare_native_timing_directory(state/'sys/module/rockchipdrm/parameters')
+print(json.dumps(dict(event='native_timing_directory',path=str(clock_directory),memory_backed=clock_temp is not None)),flush=True)
 for d in ['settings','mnt/debug','sys/class/thermal/thermal_zone0','sys/class/thermal/thermal_zone1','sys/module/rockchipdrm/parameters','tmp','run']:(state/d).mkdir(parents=True,exist_ok=True)
 (state/'sys/class/thermal/thermal_zone0/temp').write_text('45000\n');(state/'sys/class/thermal/thermal_zone1/temp').write_text('45000\n');(state/'tmp/testmode').write_text('off\n')
 (root/'home/root/settings').mkdir(exist_ok=True)
@@ -93,6 +95,8 @@ if os.environ.get('NULL_AUDIO'):
 if os.environ.get('OFFLINE_MIDI'):
  args[args.index('--chdir'):args.index('--chdir')]=['--ro-bind',str(base/'shims'),'/lab-shims']
  args[-1:-1]=['-E','LD_PRELOAD=/lab-shims/'+(('offline-usb-fixture.so' if os.environ.get('USB_FIXTURE') else 'offline-audio-paced.so') if os.environ.get('PACED_AUDIO') else ('offline-audio-trace.so' if os.environ.get('AUDIO_TRACE') else 'offline-midi.so'))]
+if clock_temp is not None:
+ args[args.index('--chdir'):args.index('--chdir')]=['--ro-bind',str(clock_directory),'/sys/module/rockchipdrm/parameters']
 if os.environ.get('USB_FIXTURE'):
  (root/'media/usb/lab').mkdir(parents=True,exist_ok=True)
  args[args.index('--chdir'):args.index('--chdir')]=['--ro-bind',str(Path(os.environ.get('USB_FIXTURE_PATH',str(base/'fixtures/usb'))).resolve()),'/media/usb/lab']
@@ -259,7 +263,7 @@ try:
   print(json.dumps(dict(event='mixer_control',socket=str(Path(mixtemp.name)/'control.sock'),dsp_graph=bool(os.environ.get('DSP_GRAPH')))),flush=True)
  with (lab/('trace-launch.log' if os.environ.get('TRACE') else 'display-launch.log')).open('w') as log:
   vsync_clock = SyntheticVsync(os.environ['LAB_VSYNC_HZ'], time.monotonic_ns()) if os.environ.get('LAB_VSYNC_HZ') else None
-  publish_timing(state/'sys/module/rockchipdrm/parameters/vsync_time', vsync_clock.sample(time.monotonic_ns())[0] if vsync_clock else time.monotonic_ns())
+  publish_timing(clock_directory/'vsync_time', vsync_clock.sample(time.monotonic_ns())[0] if vsync_clock else time.monotonic_ns())
   proc=subprocess.Popen(args,stdout=log,stderr=log)
   sampler=subprocess.Popen(['python',str(base/'analysis/capture-process.py'),str(proc.pid),str(lab/'process-profile.json'),'20']) if os.environ.get('PROFILE') else None
   try:
@@ -329,10 +333,10 @@ try:
      subprocess.run(["python",str(base/"analysis/click-private-display.py"),":"+display,*coords],check=True,timeout=5)
     if vsync_clock:
      stamp, deadline = vsync_clock.sample(time.monotonic_ns())
-     publish_timing(state/'sys/module/rockchipdrm/parameters/vsync_time', stamp)
+     publish_timing(clock_directory/'vsync_time', stamp)
      time.sleep(max(0, (deadline-time.monotonic_ns())/1e9))
     else:
-     publish_timing(state/'sys/module/rockchipdrm/parameters/vsync_time', time.monotonic_ns())
+     publish_timing(clock_directory/'vsync_time', time.monotonic_ns())
      time.sleep(1/60)
    if os.environ.get('RX_FEEDBACK') and not feedbackready:raise RuntimeError('AZ run ended before RX feedback became ready')
    if os.environ.get('NATIVE_NAVIGATION') and not navigationready:raise RuntimeError('AZ run ended before native navigation became ready')
@@ -366,3 +370,4 @@ finally:
  if mixtemp is not None:mixtemp.cleanup()
  if 'sampler' in locals() and sampler is not None: sampler.wait(timeout=25)
  xv.terminate();xv.wait(timeout=5)
+ if clock_temp is not None:clock_temp.cleanup()
