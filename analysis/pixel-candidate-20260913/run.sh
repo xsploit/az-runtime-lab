@@ -1,7 +1,10 @@
 set -eu
-cd /home/pompu_5/az-native-lab/analysis/pixel-candidate-20260913
-sha256sum /home/pompu_5/az-native-lab/shims/ximage-packed24.h original.h > baseline-hashes.txt
-cmp /home/pompu_5/az-native-lab/shims/ximage-packed24.h original.h
+AZ_SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+AZ_LAB_ROOT=${AZ_LAB_ROOT:-$(CDPATH= cd -- "$AZ_SCRIPT_DIR/../.." && pwd)}
+export AZ_LAB_ROOT
+cd "$AZ_LAB_ROOT/analysis/pixel-candidate-20260913"
+sha256sum "$AZ_LAB_ROOT/shims/ximage-packed24.h" original.h > baseline-hashes.txt
+cmp "$AZ_LAB_ROOT/shims/ximage-packed24.h" original.h
 uname -a > environment.txt
 gcc --version >> environment.txt
 cat /sys/class/thermal/thermal_zone0/temp > temperature-before.txt

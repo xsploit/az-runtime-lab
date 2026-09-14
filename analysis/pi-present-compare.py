@@ -4,6 +4,13 @@ Discovers current LocalPlayer sources and loaded experiment data symbols.
 Caller settles transport first. Paused mode checks source stability; motion
 mode checks both decks' source rates. Restores the initial upload switch.
 """
+
+# Locate shared helpers from this checkout, independent of the caller's cwd.
+import sys as _az_sys
+from pathlib import Path as _AzPath
+_az_sys.path.insert(0, str(_AzPath(__file__).resolve().parents[1]))
+from az_paths import lab_path
+
 import argparse,hashlib,json,os,signal,struct,subprocess,time
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('pid',type=int);p.add_argument('--xserver',type=int,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--motion',action='store_true');p.add_argument('--replay-cue',action='store_true');p.add_argument('--seconds',type=int,default=12);a=p.parse_args()
@@ -33,7 +40,7 @@ assert players is not None,'Could not obtain a stable LocalPlayer registry snaps
 sources=[read(o+0xb0) for o in players];assert all(read(s)==0x25eb390 for s in sources)
 (a.output/'players.json').write_text(json.dumps([{'object':hex(o),'source':hex(s)} for o,s in zip(players,sources)],indent=2))
 mapping=next(s for s in (proc/'maps').read_text().splitlines() if s.endswith('/lab-shims/ximage-present.so') and s.split()[2]=='00000000');base=int(mapping.split('-')[0],16)
-shim=Path('/home/pompu_5/az-native-lab/shims/ximage-present.so');shim_sha=hashlib.sha256(shim.read_bytes()).hexdigest()
+shim=lab_path('shims/ximage-present.so');shim_sha=hashlib.sha256(shim.read_bytes()).hexdigest()
 symbols={s.split()[2]:base+int(s.split()[0],16) for s in subprocess.check_output(['nm','-D',str(shim)],text=True).splitlines() if len(s.split())==3 and s.split()[2].startswith('lab_present_')}
 switch=symbols['lab_present_enabled'];initial=read(switch,'<I');assert initial in (0,1)
 def snapshot():
@@ -64,7 +71,7 @@ def interrupted(sig,frame):raise InterruptedError(sig)
 for s in (signal.SIGINT,signal.SIGTERM):signal.signal(s,interrupted)
 def pulse(mask):
  from az_mixer_packet import crc16
- fd=os.open('/home/pompu_5/az-native-lab/xdjaz/state/tmp/erp-rx.fifo',os.O_WRONLY|os.O_NONBLOCK)
+ fd=os.open(str(lab_path('xdjaz/state/tmp/erp-rx.fifo')),os.O_WRONLY|os.O_NONBLOCK)
  try:
   for v in (0,mask,0):
    f=bytearray(128);f[0]=1;f[10]=v;f[18]=v;f[28:30]=crc16(f[:28]).to_bytes(2,'little');assert os.write(fd,f)==128;time.sleep(.2)

@@ -1,8 +1,9 @@
 # Native Raspberry Pi setup (experimental)
 
 Use **pi/session.py** for the supported native AZ session. Historical scripts in
-`analysis/` and older launchers are research probes, not installation steps: some
-still contain experiment-specific paths, PIDs or other-device assumptions.
+`analysis/` and older launchers are research probes, not installation steps: they
+retain firmware-specific addresses and experiment assumptions. See
+[PORTABILITY.md](PORTABILITY.md) for their path and target configuration.
 Do not run them indiscriminately. This guide does not install or flash firmware.
 
 ## What you need

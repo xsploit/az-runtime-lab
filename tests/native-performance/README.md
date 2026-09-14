@@ -3,6 +3,7 @@
 From the repository root:
 
 ```sh
+python3 tests/native-performance/test_paths.py
 python3 tests/native-performance/test_setup.py
 cc -O2 -DLAB_SCALAR -fsanitize=address,undefined -fno-omit-frame-pointer \
   -Ishims tests/native-performance/sanitize.c shims/grid_span.c -lm \

@@ -63,11 +63,14 @@ third-party research inputs or disassembly excerpts.
 
 ## Reproduction prerequisites
 
-Many scripts retain experiment-specific paths and addresses. Read the script's
+Research scripts retain firmware-specific addresses and experimental assumptions.
+[Portable paths and research inputs](PORTABILITY.md) documents their configuration.
+Read the script's
 docstring and linked findings before running it. Some launchers/probes contact
 the Pi and can change the UI; others only execute isolated local fixtures.
 The supported native entry point is now `pi/session.py`; see PI-SETUP.md.
-The historical probes have not all been converted into portable commands.
+Historical evidence retains its original paths; obsolete session recipes are
+disabled rather than replaying stale process IDs.
 
 The newest offline instruction tests require Python 3, Clang, LLD,
 `qemu-aarch64-static`, and the matching locally supplied firmware at

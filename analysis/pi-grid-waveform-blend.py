@@ -4,6 +4,13 @@ Private AZ 1.30 overlay only. Caller settles transport before invoking. All
 instruction writes are guarded inside GDB with threads stopped; finally restores
 the original waveform branches. Does not alter firmware files or grid settings.
 """
+
+# Locate shared helpers from this checkout, independent of the caller's cwd.
+import sys as _az_sys
+from pathlib import Path as _AzPath
+_az_sys.path.insert(0, str(_AzPath(__file__).resolve().parents[1]))
+from az_paths import lab_path
+
 import argparse,hashlib,json,os,signal,subprocess,time
 from pathlib import Path
 from az_mixer_packet import crc16
@@ -16,7 +23,7 @@ assert hashlib.sha256((proc/'exe').read_bytes()).hexdigest()=='137442868569db41d
 identity=(proc/'stat').read_text().rsplit(')',1)[1].split()[19]
 mapping=next(x for x in (proc/'maps').read_text().splitlines() if x.endswith('/lab-shims/fractional-grid.so') and x.split()[2]=='00000000')
 base=int(mapping.split('-')[0],16)
-nm=subprocess.check_output(['nm','-D','/home/pompu_5/az-native-lab/shims/fractional-grid.so'],text=True)
+nm=subprocess.check_output(['nm','-D',str(lab_path('shims/fractional-grid.so'))],text=True)
 switch=base+int(next(x.split()[0] for x in nm.splitlines() if x.endswith(' lab_grid_enabled')),16)
 patches=[(0x1e0246c,0x5400126d),(0x1e02548,0x54000f6d),(0x1e025f0,0x54001bad),(0x1e027d4,0x5400056d)]
 candidate=0x14000006;players=json.loads(a.players.read_text())
@@ -75,7 +82,7 @@ print('WAVEFORM_PATCH_VERIFIED', {enabled!r})'''
 def rebuild():
  for counter in [2,1]:
   f=bytearray(128);f[0]=1;f[34:36]=counter.to_bytes(2,'little',signed=True);f[96:98]=crc16(f[:96]).to_bytes(2,'little')
-  fd=os.open('/home/pompu_5/az-native-lab/xdjaz/state/tmp/mixer-rx.fifo',os.O_WRONLY|os.O_NONBLOCK)
+  fd=os.open(str(lab_path('xdjaz/state/tmp/mixer-rx.fifo')),os.O_WRONLY|os.O_NONBLOCK)
   try:assert os.write(fd,f)==128
   finally:os.close(fd)
   time.sleep(.4)

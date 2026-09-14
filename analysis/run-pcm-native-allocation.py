@@ -5,6 +5,13 @@ No attach, player patch, restart or UI operation. Allocation failure reporting i
 the original logger. The constructor snippet stops before owner-vector insertion;
 full pool construction, application teardown and exception unwind are not tested.
 """
+
+# Locate shared helpers from this checkout, independent of the caller's cwd.
+import sys as _az_sys
+from pathlib import Path as _AzPath
+_az_sys.path.insert(0, str(_AzPath(__file__).resolve().parents[1]))
+from az_paths import lab_path, ssh_target
+
 import hashlib
 import json
 from pathlib import Path
@@ -15,7 +22,7 @@ import subprocess
 import tempfile
 
 root = Path(__file__).resolve().parents[1]
-firmware = root/'xdjaz/rootfs/home/root/pdj/EP147'
+firmware = lab_path('xdjaz/rootfs/home/root/pdj/EP147')
 data = firmware.read_bytes()
 sha = hashlib.sha256(data).hexdigest()
 assert sha == '736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6'
@@ -30,9 +37,7 @@ def read(address,length):
 assert struct.unpack('<I',read(0x770658,4))[0] == 0xaa1603e1
 assert struct.unpack('<I',read(0x777b40,4))[0] == 0x293f0401
 assert struct.unpack('<I',read(0x777b44,4))[0] == 0xf822d803
-options = ['-o','BatchMode=yes','-o','ConnectTimeout=8',
-           '-o','UserKnownHostsFile=/tmp/piflex-known-hosts','-i','/tmp/piflex-ssh-key']
-host = 'pompu_5@pflx.local'
+options, host = ssh_target()
 def remote(command,check=True):
     return subprocess.run(['ssh',*options,host,command],capture_output=True,text=True,
                           check=check,timeout=45)

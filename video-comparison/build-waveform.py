@@ -1,8 +1,9 @@
 """Offline comparison of preferred fractional grid and contrast-curve experiment."""
-import base64,json,re,subprocess
+import base64,json,re,subprocess,argparse
 from pathlib import Path
 here=Path(__file__).resolve().parent
-root=here.parent/'analysis/grid-waveform-blend/az-grid-curve-motion'
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--clips',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+root=a.clips
 clips=[('preferred','Preferred grid + original waveform','The previous comparison’s B setting, captured again with two decks playing.','grid-only'),('curve','Same grid + smoother waveform contrast','Interpolates the native contrast settings; grid and scrolling settings unchanged.','grid-and-smooth-curve'),('restored','Preferred setting restored','Original waveform contrast restored after the experiment.','grid-only-restored')]
 data=[]
 for ident,label,caption,filename in clips:
@@ -29,5 +30,5 @@ html=html[:start]+'''    <div class="table-wrap"><table>
 '''+html[end:]
 html=html.replace('__CLIP_DATA__',json.dumps(data)).replace('__PLAYER_SCRIPT__',(here/'player.js').read_text().replace("i ? 'fractional' : 'original'", "i ? 'curve' : 'preferred'"))
 assert '__CLIP_DATA__' not in html and '__PLAYER_SCRIPT__' not in html
-out=Path('/home/subsect/Downloads/AZ-waveform-contrast-comparison.html');out.write_text(html)
+out=a.output;out.write_text(html)
 print(out, out.stat().st_size)
