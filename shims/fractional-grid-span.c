@@ -9,10 +9,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
+#include "grid-phase.h"
+#include "grid_span.h"
 #ifndef MAP_FIXED_NOREPLACE
 #define MAP_FIXED_NOREPLACE 0x100000
 #endif
-#include "grid-phase.h"
 #ifndef __aarch64__
 #error This native hook requires AArch64
 #endif
@@ -69,6 +70,19 @@ void lab_grid_draw(void *g,void *im,int x,int y,int flag) {
     ++lab_grid_draws;
 }
 
+/* Only this copy replaces the span routine. The retained shim stays untouched. */
+static void (*lab_grid_original_generate)(LabFill*,uint8_t*,int,int);
+unsigned long lab_grid_span_hits,lab_grid_span_misses;
+int lab_grid_span_enabled=1; /* A/B switch: change only with the process stopped. */
+static void lab_grid_generate(LabFill *f,uint8_t *out,int x,int n) {
+    if (lab_grid_filter_active && lab_grid_span_enabled && lab_grid_span(f,out,x,n)) {
+        ++lab_grid_span_hits;
+        return;
+    }
+    if (lab_grid_filter_active) ++lab_grid_span_misses;
+    lab_grid_original_generate(f,out,x,n);
+}
+
 extern void lab_grid_update(void);
 extern void lab_grid_gate(void);
 /* Caller-specific update bridge. Original maker preserves x19/x26/d9;
@@ -107,26 +121,38 @@ __attribute__((constructor)) static void install(void) {
         {0x1b97984,0x9409a123,lab_grid_update,1},
         {0x1b857e8,0x9420ab7e,(void(*)(void))lab_grid_draw,1},
         {0x1b85840,0x9420ab68,(void(*)(void))lab_grid_draw,1},
-        {0x23fae18,0x540002e1,lab_grid_gate,0}
+        {0x23fae18,0x540002e1,lab_grid_gate,0},
+        {0x241e480,0xa9bc7bfd,(void(*)(void))lab_grid_generate,0}
     };
-    for (unsigned i=0;i<4;++i)
+    for (unsigned i=0;i<5;++i)
         if (*(uint32_t*)hooks[i].address!=hooks[i].original) fail("unexpected call-site bytes");
     size_t page=(size_t)sysconf(_SC_PAGESIZE);
     void *region=MAP_FAILED;
     for (uintptr_t hint=0x5000000;hint<0x7000000;hint+=0x100000) {
         region=mmap((void*)hint,page,PROT_READ|PROT_WRITE,MAP_PRIVATE|MAP_ANONYMOUS|MAP_FIXED_NOREPLACE,-1,0);
-        if (region!=MAP_FAILED) break;
+        if (region!=MAP_FAILED) {
+            if ((uintptr_t)region==hint) break;
+            munmap(region,page); region=MAP_FAILED;
+        }
     }
     if (region==MAP_FAILED) fail("no nearby veneer allocation");
-    for (unsigned i=0;i<4;++i) {
+    for (unsigned i=0;i<5;++i) {
         uint32_t *v=(uint32_t*)((char*)region+i*16);
         v[0]=0x58000050; v[1]=0xd61f0200;
         uintptr_t handler=(uintptr_t)hooks[i].handler;
         memcpy(v+2,&handler,8);
     }
+    /* Exact first two non-PC-relative instructions, then jump to the rest of
+     * the original routine. Stack frame and floating conversion stay intact. */
+    if (*(uint32_t*)0x241e484!=0x1e220041) fail("unexpected span second instruction");
+    uint32_t *tramp=(uint32_t*)((char*)region+128);
+    tramp[0]=0xa9bc7bfd; tramp[1]=0x1e220041;
+    tramp[2]=0x58000050; tramp[3]=0xd61f0200;
+    uintptr_t resume=0x241e488; memcpy(tramp+4,&resume,8);
+    lab_grid_original_generate=(void(*)(LabFill*,uint8_t*,int,int))tramp;
     __builtin___clear_cache(region,(char*)region+page);
     if (mprotect(region,page,PROT_READ|PROT_EXEC)) fail("veneer protection");
-    for (unsigned i=0;i<4;++i) {
+    for (unsigned i=0;i<5;++i) {
         uintptr_t addr=hooks[i].address, pg=addr & ~(page-1);
         intptr_t delta=(intptr_t)((char*)region+i*16)-(intptr_t)addr;
         if (delta%4 || delta < -(1L<<27) || delta >= (1L<<27)) fail("branch out of range");
@@ -135,5 +161,5 @@ __attribute__((constructor)) static void install(void) {
         __builtin___clear_cache((char*)addr,(char*)addr+4);
         if (mprotect((void*)pg,page,PROT_READ|PROT_EXEC)) fail("restore text protection");
     }
-    fprintf(stderr,"[grid-phase] Blue waveform hooks installed, veneers=%p\n",region);
+    fprintf(stderr,"[grid-phase] EXPERIMENTAL exact horizontal span; Blue waveform hooks installed, veneers=%p\n",region);
 }

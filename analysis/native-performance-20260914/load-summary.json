@@ -1,0 +1,50 @@
+[
+  {
+    "test": "gdubz-first",
+    "peak_player_cpu_percent_one_core": 143.27,
+    "max_postload_xdamage_gap_ms": 23.33,
+    "log_growth_bytes": 3977,
+    "audio_underruns": 0,
+    "new_analysis_files": 3
+  },
+  {
+    "test": "libra-first",
+    "peak_player_cpu_percent_one_core": 147.37,
+    "max_postload_xdamage_gap_ms": 20.193,
+    "log_growth_bytes": 4237,
+    "audio_underruns": 0,
+    "new_analysis_files": 3
+  },
+  {
+    "test": "red40-first",
+    "peak_player_cpu_percent_one_core": 145.27,
+    "max_postload_xdamage_gap_ms": 19.592,
+    "log_growth_bytes": 4232,
+    "audio_underruns": 0,
+    "new_analysis_files": 3
+  },
+  {
+    "test": "gdubz-browser-reload",
+    "peak_player_cpu_percent_one_core": 48.11,
+    "max_postload_xdamage_gap_ms": 19.221,
+    "log_growth_bytes": 3902,
+    "audio_underruns": 0,
+    "new_analysis_files": 0
+  },
+  {
+    "test": "libra-browser-reload",
+    "peak_player_cpu_percent_one_core": 48.16,
+    "max_postload_xdamage_gap_ms": 18.874,
+    "log_growth_bytes": 3902,
+    "audio_underruns": 0,
+    "new_analysis_files": 0
+  },
+  {
+    "test": "red40-browser-reload",
+    "peak_player_cpu_percent_one_core": 48.23,
+    "max_postload_xdamage_gap_ms": 18.806,
+    "log_growth_bytes": 3902,
+    "audio_underruns": 0,
+    "new_analysis_files": 0
+  }
+]

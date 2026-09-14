@@ -2,7 +2,7 @@ from pathlib import Path
 from display_timing import publish_timing, SyntheticVsync, prepare_native_timing_directory
 import subprocess,os,time,json,tempfile,stat,errno,sys,itertools
 if any(os.environ.get(x) for x in ('NATIVE_NAVIGATION','LAB_GDB','TRACE','MOUNT_TRACE','LOAD_TRACE','FADER_TRACE','ONAIR_TRACE','MIC_CONTROL_TRACE')):raise ValueError('Pi probe does not support QEMU-specific tracing or guest discovery')
-base=Path(__file__).resolve().parent;model=os.environ.get('PLAYER','xdjaz');lab=base/model;root=lab/'rootfs';state=lab/'state';state.mkdir(exist_ok=True)
+base=Path(__file__).resolve().parent;model=os.environ.get('PLAYER','xdjaz');lab=base/model;lab.mkdir(exist_ok=True);root=Path(os.environ.get('AZ_ROOTFS',str(lab/'rootfs'))).resolve();state=Path(os.environ.get('AZ_STATE',str(lab/'state'))).resolve();state.mkdir(parents=True,exist_ok=True)
 clock_temp,clock_directory=prepare_native_timing_directory(state/'sys/module/rockchipdrm/parameters')
 print(json.dumps(dict(event='native_timing_directory',path=str(clock_directory),memory_backed=clock_temp is not None)),flush=True)
 for d in ['settings','mnt/debug','sys/class/thermal/thermal_zone0','sys/class/thermal/thermal_zone1','sys/module/rockchipdrm/parameters','tmp','run']:(state/d).mkdir(parents=True,exist_ok=True)
@@ -77,7 +77,7 @@ with (lab/'xvfb.log').open('w') as log:
 os.close(wr);display=os.fdopen(rd).readline().strip()
 if not display:raise RuntimeError('Xvfb failed')
 sock=f'/tmp/.X11-unix/X{display}'
-args=['bwrap','--unshare-all','--die-with-parent','--ro-bind',str(root),'/', '--proc','/proc','--dev','/dev','--bind',str(state/'tmp'),'/tmp','--dir','/tmp/.X11-unix','--ro-bind',sock,sock,'--bind',str(state/'settings'),'/home/root/settings','--ro-bind',str(base/'private/cabinet-extracted'),'/home/root/settings/cabinet','--bind',str(state/'mnt'),'/mnt','--ro-bind',str(state/'sys'),'/sys','--tmpfs','/run','--chdir','/home/root/pdj','--setenv','HOME','/home/root','--setenv','PATH','/usr/sbin:/usr/bin:/sbin:/bin','--setenv','DISPLAY',':'+display,'/home/root/pdj/'+('EP145' if model=='cdj3000x' else 'EP147')]
+args=['bwrap','--unshare-all','--die-with-parent','--ro-bind',str(root),'/', '--proc','/proc','--dev','/dev','--bind',str(state/'tmp'),'/tmp','--dir','/tmp/.X11-unix','--ro-bind',sock,sock,'--bind',str(state/'settings'),'/home/root/settings','--ro-bind',str(Path(os.environ.get('AZ_CABINET',str(base/'private/cabinet-extracted'))).resolve()),'/home/root/settings/cabinet','--bind',str(state/'mnt'),'/mnt','--ro-bind',str(state/'sys'),'/sys','--tmpfs','/run','--chdir','/home/root/pdj','--setenv','HOME','/home/root','--setenv','PATH','/usr/sbin:/usr/bin:/sbin:/bin','--setenv','DISPLAY',':'+display,'/home/root/pdj/'+('EP145' if model=='cdj3000x' else 'EP147')]
 if scroll_executable is not None:
  args[args.index('--chdir'):args.index('--chdir')] = ['--ro-bind', str(scroll_executable), '/home/root/pdj/EP147']
 args[args.index('--chdir'):args.index('--chdir')]=['--ro-bind',str(base/'shims'/('fw_printenv-cdj3000x' if model=='cdj3000x' else 'fw_printenv')),'/usr/sbin/fw_printenv','--ro-bind',str(base/'shims'/('fw_printenv-cdj3000x' if model=='cdj3000x' else 'fw_printenv')),'/sbin/fw_printenv']
@@ -227,6 +227,9 @@ if os.environ.get('LAB_GDB'):
   debug_socket.unlink()
  args[-1:-1]=['-g','/tmp/guest-gdb.sock']
  print(json.dumps(dict(event='debugger',socket=str(debug_socket))),flush=True)
+from native_optimizations import configure
+args=configure(args,base,root,model,os.environ)
+
 # Native ARM64 launch: translate QEMU -E options into sandbox environment.
 while '-E' in args:
  i=args.index('-E');name,value=args[i+1].split('=',1);del args[i:i+2]

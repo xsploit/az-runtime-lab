@@ -35,7 +35,7 @@ def run(a):
     replydir=None;rxowner=None;query_at=0.;next_query=0.
     if mixsock:mixsock.setblocking(False)
     if fx:
-        replydir=tempfile.TemporaryDirectory(prefix='flx6-fx-',dir=a.state.resolve())
+        replydir=tempfile.TemporaryDirectory(prefix='flx6-fx-')
         replypath=Path(replydir.name)/'reply.sock'
         mixsock.bind(str(replypath))
         # The bridge runs as root for native memory reads, the audio mixer does
