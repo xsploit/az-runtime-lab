@@ -56,9 +56,9 @@ captures which are intentionally outside Git:
 - Downloaded toolchains/libraries and generated executable files.
 
 Consequently this Git repository alone cannot recreate a runnable proprietary
-player. The local original inputs remain necessary. Keep this repository private;
-privacy is not a license to redistribute third-party firmware or a claim that
-all extracted material can be published. No blanket license is granted over
+player. The local original inputs remain necessary. The public repository contains research code and documentation, not those
+private inputs. Repository visibility does not grant permission to redistribute
+third-party firmware or other extracted material. No blanket license is granted over
 third-party research inputs or disassembly excerpts.
 
 ## Reproduction prerequisites

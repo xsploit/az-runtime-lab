@@ -46,8 +46,8 @@ brightness, autostart or replace your OS. Stop other DJ applications/audio owner
 
 ## Get this checkpoint
 
-The repository is private: collaborators must be invited with their GitHub
-account before cloning. This branch contains the setup described here:
+This branch contains the setup described here; public read access does not
+require a collaborator invitation:
 
 ```sh
 git clone --branch feat/native-performance-and-setup-20260914 \
@@ -57,7 +57,7 @@ cd az-runtime-lab
 
 Use a Linux PC (or suitable Linux environment) for the tested cross-compiler.
 Copy the checkout to the Pi before launching; configure paths for the Pi, not
-the build PC. Normal Git authentication is required for this private repository.
+the build PC. Authentication is only needed for operations that write to GitHub.
 
 ## Build the six guest shims
 
