@@ -1,3 +1,7 @@
+## 2026-09-13 FLX6 audio and real USB working
+
+User confirmed hearing Estara from the real read-only USB through FLX6 headphones. Jog and tempo respond. Shift+Browse zoom and additional native deck1/2 buttons/pads connected; physical zoom/per-button QA pending. Current dry host mixer handles channel cue/faders/crossfader/headphone blend; EQ/FX and complete deck3/4 remain unfinished. AZ rejects the USB old export.pdb database as missing OneLibrary but Folder loading works. See analysis/flx6-live-20260913/RESULT.md for exact live processes, paths, evidence and restart caveats.
+
 ## 2026-09-13 Pi resumed with FLX6
 
 Standard installed launcher passed its first post-move boot check: Sway reports linear filtering and the player uses a private timing directory under /run/user/1000. Current session EP1471286, launcher1274, Xwayland1277; these IDs are ephemeral. BiteDJ boot supervisor was stopped for AZ. Physical FLX6 appears as ALSA DDJFLX6 and raw MIDI midiC2D0. Both fixtures loaded; audio remains paced NULL, not physical FLX6 output.

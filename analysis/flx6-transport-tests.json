@@ -1,7 +1,7 @@
 {
   "scope": "Offline saved-binding/state checks; no physical-controller verification.",
   "mapping_sha256": "1df86863293b8c9eb48d1748b6a3e4bd56b2a4f21c5f08c3b5b83bc101fb0301",
-  "tests": 5,
+  "tests": 6,
   "passed": true,
   "failures": 0,
   "errors": 0

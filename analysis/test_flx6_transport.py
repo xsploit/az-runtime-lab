@@ -32,6 +32,22 @@ class TransportChecks(unittest.TestCase):
                 packet = self.transport.message(0x90 + deck, control, 0)
                 self.assertFalse(packet[8 + deck * 8 + offset] & mask)
 
+    def test_new_native_button_fields(self):
+        # Independent raw MIDI expectations from decoded ERP fields.
+        for midi,byte,mask in [(0x58,0,2),(0x5c,0,16),(0x10,0,64),
+                (0x11,0,32),(0x4d,1,8),(0x3d,0,4),(0x47,0,128),(0x60,1,16)]:
+            for deck in range(2):
+                packet=self.transport.message(0x90+deck,midi,127)
+                self.check_packet(packet)
+                self.assertTrue(packet[8+8*deck+byte]&mask)
+                packet=self.transport.message(0x90+deck,midi,0)
+                self.assertFalse(packet[8+8*deck+byte]&mask)
+        for pad in range(8):
+            packet=self.transport.message(0x97,pad,127)
+            self.assertEqual(packet[14],1<<pad)
+            packet=self.transport.message(0x97,pad,0)
+            self.assertEqual(packet[14],0)
+
     def test_held_cue_survives_play_and_other_deck(self):
         self.transport.message(0x90, 0x0c, 127)
         self.transport.message(0x91, 0x0b, 127)

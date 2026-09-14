@@ -1,3 +1,5 @@
+Latest: physical jog/tempo response and FLX6 headphone sound confirmed. See [2026-09-13 live result](flx6-live-20260913/RESULT.md) for the current scope, real USB, zoom, extra buttons, incomplete controls and audio-underrun caveat. The earlier checkpoint below describes the first basic bridge only.
+
 # Native Pi FLX6 bridge checkpoint
 
 `run_pi_flx6_controls.py` connects physical raw MIDI to existing guarded native AZ navigation and ERP transport adapters. It uses the saved BiteDJ XML bindings. The original player is untouched; the current smooth-scroll overlay hash is pinned. The bridge exits with that player session.

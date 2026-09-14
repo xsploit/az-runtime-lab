@@ -10,7 +10,16 @@ from az_mixer_packet import crc16
 
 
 class Transport:
-    BUTTONS = {'play': (2, 2), 'cue_default': (2, 4), 'keylock': (0, 8)}
+    BUTTONS = {
+        'play': (2, 2), 'cue_default': (2, 4), 'keylock': (0, 8),
+        'sync_enabled': (0, 2), 'sync_leader': (0, 16),
+        'loop_in': (0, 64), 'loop_out': (0, 32),
+        'reloop_toggle': (1, 8), 'slip_enabled': (0, 4),
+        'reverseroll': (0, 128),
+        'PioneerDDJFLX6.cycleTempoRange': (1, 16),
+        'beatloop_4_toggle': (4, 4), 'beatloop_8_toggle': (4, 8),
+        **{f'hotcue_{i+1}_activate': (6, 1<<i) for i in range(8)},
+    }
 
     def __init__(self, xml, base=None):
         self.frame = bytearray(bytes(128) if base is None else base)

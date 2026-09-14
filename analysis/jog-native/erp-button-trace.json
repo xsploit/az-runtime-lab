@@ -1,0 +1,480 @@
+[
+  {
+    "at": "0x2144e4c",
+    "offset": 0,
+    "id": "0x40045926d6629d00",
+    "consumer": "0x6cbd3c",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::cue(), this)"
+    ],
+    "field": [
+      2,
+      4
+    ],
+    "decoder_call": "0x2143370"
+  },
+  {
+    "at": "0x2144e84",
+    "offset": 8,
+    "id": "0x315ffa1ef4831600",
+    "consumer": "0x6cbe20",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::playPause(), this)"
+    ],
+    "field": [
+      2,
+      2
+    ],
+    "decoder_call": "0x2143358"
+  },
+  {
+    "at": "0x2144ebc",
+    "offset": 16,
+    "id": "0x482340644441c300",
+    "consumer": "0x6cbeec",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::beatJumpFwd(), this)"
+    ],
+    "field": [
+      1,
+      32
+    ],
+    "decoder_call": "0x2143310"
+  },
+  {
+    "at": "0x2144ef4",
+    "offset": 24,
+    "id": "0x13e119a8a7523300",
+    "consumer": "0x6cbfb8",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::beatJumpRev(), this)"
+    ],
+    "field": [
+      1,
+      64
+    ],
+    "decoder_call": "0x2143328"
+  },
+  {
+    "at": "0x2144f2c",
+    "offset": 32,
+    "id": "0xd174d4fd081f300",
+    "consumer": "0x6cc084",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::primaryDeckSelect(), this)"
+    ]
+  },
+  {
+    "at": "0x2144f64",
+    "offset": 40,
+    "id": "0x3030e6ac95bc4d00",
+    "consumer": "0x6cc150",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::secondaryDeckSelect(), this)"
+    ],
+    "field": [
+      1,
+      1
+    ],
+    "decoder_call": "0x2143298"
+  },
+  {
+    "at": "0x2144f9c",
+    "offset": 48,
+    "id": "0xdd5fb97759673a00",
+    "consumer": "0x6cc21c",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::fourBeatLoop(), this)"
+    ],
+    "field": [
+      4,
+      4
+    ],
+    "decoder_call": "0x2143418"
+  },
+  {
+    "at": "0x2144fd4",
+    "offset": 56,
+    "id": "0x5697af465ee62f00",
+    "consumer": "0x6cc2e8",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::eightBeatLoop(), this)"
+    ],
+    "field": [
+      4,
+      8
+    ],
+    "decoder_call": "0x2143430"
+  },
+  {
+    "at": "0x214500c",
+    "offset": 64,
+    "id": "0xa96c5621b6b67300",
+    "consumer": "0x6cc3b4",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::memoryCueFwd(), this)"
+    ],
+    "field": [
+      4,
+      16
+    ],
+    "decoder_call": "0x2143448"
+  },
+  {
+    "at": "0x2145044",
+    "offset": 72,
+    "id": "0xb97f1173b8a3e100",
+    "consumer": "0x6cc480",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::memoryCueRev(), this)"
+    ],
+    "field": [
+      4,
+      32
+    ],
+    "decoder_call": "0x2143460"
+  },
+  {
+    "at": "0x214507c",
+    "offset": 80,
+    "id": "0xcf7bbb88a2400b00",
+    "consumer": "0x6cc54c",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::memoryCueDelete(), this)"
+    ],
+    "field": [
+      4,
+      64
+    ],
+    "decoder_call": "0x2143478"
+  },
+  {
+    "at": "0x21450b4",
+    "offset": 88,
+    "id": "0x616cf2cfa62dcb00",
+    "consumer": "0x6cc618",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::memoryCueMemory(), this)"
+    ],
+    "field": [
+      4,
+      128
+    ],
+    "decoder_call": "0x2143490"
+  },
+  {
+    "at": "0x21450ec",
+    "offset": 96,
+    "id": "0xd7729373baf3100",
+    "consumer": "0x6cc6e4",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::slipRev(), this)"
+    ],
+    "field": [
+      0,
+      128
+    ],
+    "decoder_call": "0x2143280"
+  },
+  {
+    "at": "0x2145124",
+    "offset": 104,
+    "id": "0x63bbc7bd9320b500",
+    "consumer": "0x6cc7b0",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::loopIn(), this)"
+    ],
+    "field": [
+      0,
+      64
+    ],
+    "decoder_call": "0x2143268"
+  },
+  {
+    "at": "0x214515c",
+    "offset": 112,
+    "id": "0xd6bd5df876a7600",
+    "consumer": "0x6cc87c",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::loopOut(), this)"
+    ],
+    "field": [
+      0,
+      32
+    ],
+    "decoder_call": "0x2143250"
+  },
+  {
+    "at": "0x2145194",
+    "offset": 120,
+    "id": "0xd10e5cf54b00900",
+    "consumer": "0x6cc948",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::jogMode(), this)"
+    ],
+    "field": [
+      4,
+      2
+    ],
+    "decoder_call": "0x2143400"
+  },
+  {
+    "at": "0x21451cc",
+    "offset": 128,
+    "id": "0x1c74de5e0d8db300",
+    "consumer": "0x6ccedc",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::quantize(), this)"
+    ]
+  },
+  {
+    "at": "0x2145204",
+    "offset": 136,
+    "id": "0xbd4a12d0a146c100",
+    "consumer": "0x6cca14",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::reloopExit(), this)"
+    ],
+    "field": [
+      1,
+      8
+    ],
+    "decoder_call": "0x21432e0"
+  },
+  {
+    "at": "0x214523c",
+    "offset": 144,
+    "id": "0x9fc1f552cf97ec00",
+    "consumer": "0x6ccae0",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::slip(), this)"
+    ],
+    "field": [
+      0,
+      4
+    ],
+    "decoder_call": "0x2143208"
+  },
+  {
+    "at": "0x2145274",
+    "offset": 152,
+    "id": "0xa6b7444dca1b6d00",
+    "consumer": "0x6ccbac",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::masterTempo(), this)"
+    ],
+    "field": [
+      0,
+      8
+    ],
+    "decoder_call": "0x2143220"
+  },
+  {
+    "at": "0x21452ac",
+    "offset": 160,
+    "id": "0xd05501dc93e7a00",
+    "consumer": "0x6ccc78",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::keySync(), this)"
+    ],
+    "field": [
+      1,
+      2
+    ],
+    "decoder_call": "0x21432b0"
+  },
+  {
+    "at": "0x21452e4",
+    "offset": 168,
+    "id": "0x15bdb6d3e5a0bb00",
+    "consumer": "0x6ccd44",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::beatSync(), this)"
+    ],
+    "field": [
+      0,
+      2
+    ],
+    "decoder_call": "0x21431f0"
+  },
+  {
+    "at": "0x214531c",
+    "offset": 176,
+    "id": "0x63bbf6fc9b5a2000",
+    "consumer": "0x6cce10",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::master(), this)"
+    ],
+    "field": [
+      0,
+      16
+    ],
+    "decoder_call": "0x2143238"
+  },
+  {
+    "at": "0x2145354",
+    "offset": 184,
+    "id": "0x6580a0b34ba1c400",
+    "consumer": "0x6ccfa8",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::tempoReset(), this)"
+    ],
+    "field": [
+      1,
+      4
+    ],
+    "decoder_call": "0x21432c8"
+  },
+  {
+    "at": "0x214538c",
+    "offset": 192,
+    "id": "0x1020d4f6c0c02600",
+    "consumer": "0x6cd074",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::tempoRange(), this)"
+    ],
+    "field": [
+      1,
+      16
+    ],
+    "decoder_call": "0x21432f8"
+  },
+  {
+    "at": "0x21453c4",
+    "offset": 200,
+    "id": "0x685fe879a480e800",
+    "consumer": "0x6cd140",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::shift(), this)"
+    ],
+    "field": [
+      1,
+      128
+    ],
+    "decoder_call": "0x2143340"
+  },
+  {
+    "at": "0x21453fc",
+    "offset": 208,
+    "id": "0xcdacccaccdd3fe00",
+    "consumer": "0x6cd20c",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::trackSearchFwd(), this)"
+    ],
+    "field": [
+      3,
+      4
+    ],
+    "decoder_call": "0x21433b8"
+  },
+  {
+    "at": "0x2145434",
+    "offset": 216,
+    "id": "0x22b9b592e46a7e00",
+    "consumer": "0x6cd2d8",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::trackSearchRev(), this)"
+    ],
+    "field": [
+      3,
+      8
+    ],
+    "decoder_call": "0x21433d0"
+  },
+  {
+    "at": "0x214546c",
+    "offset": 224,
+    "id": "0x62a00c7c8b190300",
+    "consumer": "0x6cd3a4",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::searchFwd(), this)"
+    ],
+    "field": [
+      3,
+      1
+    ],
+    "decoder_call": "0x2143388"
+  },
+  {
+    "at": "0x21454a4",
+    "offset": 232,
+    "id": "0x430f8867854f3f00",
+    "consumer": "0x6cd470",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::searchRev(), this)"
+    ],
+    "field": [
+      3,
+      2
+    ],
+    "decoder_call": "0x21433a0"
+  },
+  {
+    "at": "0x21454dc",
+    "offset": 240,
+    "id": "0xb6aa2e7b13c4000",
+    "consumer": "0x6cd53c",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::vinylSpeedAdjust(), this)"
+    ],
+    "field": [
+      4,
+      1
+    ],
+    "decoder_call": "0x21433e8"
+  },
+  {
+    "at": "0x2145514",
+    "offset": 256,
+    "id": "0x4f9ad3de1a017000",
+    "consumer": "0x6cd608",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::padModeHotCue(), this)"
+    ],
+    "field": [
+      5,
+      1
+    ],
+    "decoder_call": "0x21434a8"
+  },
+  {
+    "at": "0x214554c",
+    "offset": 264,
+    "id": "0x9098a6f9b94f0800",
+    "consumer": "0x6cd6d4",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::padModeBeatLoop(), this)"
+    ],
+    "field": [
+      5,
+      2
+    ],
+    "decoder_call": "0x21434c0"
+  },
+  {
+    "at": "0x2145584",
+    "offset": 272,
+    "id": "0x90b73f7447df9e00",
+    "consumer": "0x6cd7a0",
+    "diagnostics": [
+      "helper::linkToObserver<IHuiButton> (IdStruct::padModeSlipLoop(), this)"
+    ],
+    "field": [
+      5,
+      4
+    ],
+    "decoder_call": "0x21434d8"
+  },
+  {
+    "at": "0x21455bc",
+    "offset": 280,
+    "id": "0xab99f4a1c32efe00",
+    "consumer": "0x6cd86c",
+    "diagnostics": [],
+    "field": [
+      5,
+      8
+    ],
+    "decoder_call": "0x21434f0"
+  }
+]
