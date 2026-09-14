@@ -1,3 +1,9 @@
+## 2026-09-13 Pi resumed with FLX6
+
+Standard installed launcher passed its first post-move boot check: Sway reports linear filtering and the player uses a private timing directory under /run/user/1000. Current session EP1471286, launcher1274, Xwayland1277; these IDs are ephemeral. BiteDJ boot supervisor was stopped for AZ. Physical FLX6 appears as ALSA DDJFLX6 and raw MIDI midiC2D0. Both fixtures loaded; audio remains paced NULL, not physical FLX6 output.
+
+New run_pi_flx6_controls.py bridge is connected, owns mixer/ERP FIFOs and has received real physical button/encoder messages. Screenshot and native page observer show browse after encoder input. Supported scope: Browse/Back/View/load and deck1/2 Play/Cue/keylock. User confirmation of behavior remains pending; jogs, pitch, mixer/audio, LEDs and deck3/4 transport are not integrated. Do not run another FIFO writer while this bridge owns input. See analysis/FLX6-LIVE.md for restart rules and test scope.
+
 ## 2026-09-13 Pi powered down for move
 
 Saved a further display fix: normal native launchers now keep the refresh timestamp in tmpfs, avoiding measured disk-publication stalls. Linear scaling remains persisted. Native real-display-clock candidate passed a two-minute /7251-event no-skip test but remains opt-in pending physical comparison; original59.24Hz restored before shutdown. User requested moving the Pi; clean poweroff accepted. See analysis/drm-display-clock/RESULT.md. Fresh process IDs and temporary paths must be discovered on restart. Standard updated launcher still needs its first boot validation.

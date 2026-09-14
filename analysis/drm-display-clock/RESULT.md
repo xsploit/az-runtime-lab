@@ -29,3 +29,7 @@ Next: verify the updated standard native launcher after the move, confirm linear
 ## Shutdown
 
 User requested shutdown to move the Pi. Saved results to both host and Pi, ran sync, and systemctl poweroff returned success. The last player was3787, Xwayland3778 and memory-clock launcher3764; these IDs and /run/user/1000/az-display-clock-0fd5fyfm are obsolete after shutdown. Discover fresh IDs/paths on restart. BiteDJ remained stopped. No automation created and no claim of background Pi work after shutdown.
+
+## Post-move verification
+
+The updated standard native launcher was successfully started after reboot. Its player uses /run/user/1000/az-display-clock-g5uesore, and Sway reports persisted linear filtering. Both fixtures were loaded and a separate FLX6 basic control bridge connected. The temporary directory and process IDs are session-specific. Audio remains paced NULL. Real-DRM-clock publishing remains opt-in, with physical comparison outstanding.
