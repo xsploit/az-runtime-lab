@@ -1,0 +1,19 @@
+set -eu
+cd /home/pompu_5/az-native-lab/analysis/pixel-candidate-20260913
+sha256sum /home/pompu_5/az-native-lab/shims/ximage-packed24.h original.h > baseline-hashes.txt
+cmp /home/pompu_5/az-native-lab/shims/ximage-packed24.h original.h
+uname -a > environment.txt
+gcc --version >> environment.txt
+cat /sys/class/thermal/thermal_zone0/temp > temperature-before.txt
+gcc -O3 -Wall -Wextra -Werror test.c -lX11 -o test
+./test > test-result.txt
+gcc -O3 -Wall -Wextra -Werror edge.c -lX11 -o edge
+./edge > edge-result.txt
+gcc -O1 -g -fsanitize=address,undefined test.c -lX11 -o test-san
+ASAN_OPTIONS=detect_leaks=0 ./test-san > sanitizer-result.txt 2>&1
+gcc -O3 -Wall -Wextra -Werror -fPIC -shared -nostdlib ximage-fast24.c -o ximage-fast24-candidate.so
+readelf -V ximage-fast24-candidate.so > abi.txt
+gcc -O3 -Wall -Wextra -Werror bench.c -lX11 -o bench
+./bench > benchmark.csv
+cat /sys/class/thermal/thermal_zone0/temp > temperature-after.txt
+cat test-result.txt edge-result.txt sanitizer-result.txt abi.txt

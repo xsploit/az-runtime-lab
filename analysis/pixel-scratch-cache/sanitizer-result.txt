@@ -1,0 +1,1 @@
+3000 rectangles, 898180 XGetPixel comparisons passed; source bytes unchanged

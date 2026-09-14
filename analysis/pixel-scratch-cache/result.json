@@ -1,0 +1,25 @@
+{
+  "decision": "Not deployed: no meaningful conversion benefit",
+  "cases": {
+    "1280x800": {
+      "baseline_total_seconds_median": 0.085015821,
+      "candidate_total_seconds_median": 0.08452541,
+      "baseline_over_candidate": 1.0058019357729233
+    },
+    "900x162": {
+      "baseline_total_seconds_median": 0.02967563,
+      "candidate_total_seconds_median": 0.029888186,
+      "baseline_over_candidate": 0.9928882937224762
+    },
+    "128x32": {
+      "baseline_total_seconds_median": 0.025964287,
+      "candidate_total_seconds_median": 0.025835434,
+      "baseline_over_candidate": 1.0049874525041846
+    },
+    "1x1": {
+      "baseline_total_seconds_median": 0.000856377,
+      "candidate_total_seconds_median": 0.000847618,
+      "baseline_over_candidate": 1.0103336644573382
+    }
+  }
+}

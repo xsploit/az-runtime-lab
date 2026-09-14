@@ -1,3 +1,9 @@
+## 2026-09-13 display regression recovered
+
+The Pi reboot lost the session-only Sway linear filter. User confirmed the picture improved after restoring it. `/etc/sway/pflx.conf` now persists `output DSI-2 scale_filter linear`; original backed up and updated config validates. Native smooth-scroll, fractional-grid and staged-upload fixes were already active. Check the **compositor output filter**, not just X11 screenshots, after future launches. Use `analysis/panel-rate-test/audit-fixes.py` with freshly discovered PID/source file; it fails if linear filtering is missing. See `analysis/panel-rate-test/RESULT.md` for current evidence and limits.
+
+Three performance candidates tested: four-byte conversion slower on Pi; scratch reuse no useful benefit; nominal 60.018 Hz timing not promoted. Established 59.24 Hz timing retained. Two loaded fixtures use paced NULL audio. No claim of completed audio/controller support. BiteDJ remains stopped in the current session.
+
 # Local firmware runtime checkpoint — 2026-09-12
 
 ## Verified

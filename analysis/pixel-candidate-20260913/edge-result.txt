@@ -1,0 +1,1 @@
+257 tightly packed widths end immediately at a protected page: passed

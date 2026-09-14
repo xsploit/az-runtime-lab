@@ -1,0 +1,39 @@
+{
+  "decision": "reject candidate on tested Pi build; keep existing runtime",
+  "environment": "Linux pflx 6.18.48-pflx-rt+ #1 SMP PREEMPT_RT Sun Aug 30 04:37:26 PDT 2026 aarch64 GNU/Linux\ngcc (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "baseline_header_verified_identical": true,
+  "correctness": "3000 rectangles / 898180 pixels; source unchanged",
+  "guard_test": "257 widths ending at PROT_NONE passed",
+  "sanitizers": "ASan + UBSan passed",
+  "idle_benchmark": [
+    {
+      "rectangle": "1280x800",
+      "baseline_ms": 0.5512858533333334,
+      "candidate_ms": 1.2087111066666667,
+      "candidate_time_ratio": 2.192530607049376
+    },
+    {
+      "rectangle": "900x162",
+      "baseline_ms": 0.047196723333333336,
+      "candidate_ms": 0.172678575,
+      "candidate_time_ratio": 3.658698375741762
+    },
+    {
+      "rectangle": "128x32",
+      "baseline_ms": 0.0012701171000000001,
+      "candidate_ms": 0.00500103815,
+      "candidate_time_ratio": 3.9374622623378577
+    },
+    {
+      "rectangle": "1x1",
+      "baseline_ms": 4.31818e-05,
+      "candidate_ms": 4.14346e-05,
+      "candidate_time_ratio": 0.9595385092793722
+    }
+  ],
+  "rounds": 7,
+  "runtime_library_replaced": false,
+  "live_AZ_AB_run": false,
+  "reason_no_live_AB": "Native conversion benchmark regressed significantly; prerequisite meaningful native benefit failed",
+  "final_state": "3a1ae6be471af007832399ea6e38aff0efecb19f426ebe080de86099f1009863  /home/pompu_5/az-native-lab/shims/ximage-fast24.so\n47950\n"
+}
