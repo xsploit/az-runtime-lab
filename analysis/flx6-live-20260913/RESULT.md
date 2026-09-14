@@ -16,7 +16,7 @@
 
 Native deck1/2 Play/Cue/MT, provisional jog touch/rotation/bend and tempo. Added Sync/Master, Loop In/Out, Reloop, Slip/Slip Reverse, tempo-range cycle,4/8beat loops and hotcue1..8 activate through traced native ERP fields. Shift+Browse (including saved waveformZoom MIDI address) routes rotation on waveform view; plain Browse opens library. Shift does not inject AZ Shift globally, preserving room to implement BiteDJ's distinct shifted grid/loop behavior later.
 
-Per-button physical QA remains pending; user confirmed general jog/tempo response. Zoom/Browse question pending. Hotcue delete/other pad modes, full deck3/4 selection, EQ/FX, memory-call-as-loop-size preference, shifted grid jog and most LEDs remain incomplete. There is no claim of complete FLX6 mapping.
+Per-button physical QA remains pending; user confirmed general jog/tempo response. User subsequently confirmed Shift+Browse changes waveform zoom and normal Browse opens the library correctly. Jog sensitivity/direction feedback remains pending. Hotcue delete/other pad modes, full deck3/4 selection, EQ/FX, memory-call-as-loop-size preference, shifted grid jog and most LEDs remain incomplete. There is no claim of complete FLX6 mapping.
 
 ## USB library result
 
@@ -27,3 +27,7 @@ USB has PIONEER/rekordbox/export.pdb and exportExt.pdb. Native AZ displays 'reko
 Original jog converter10,000 tests passed on Pi. Stream parser, deck-state/CRC/wrap/idle/touch tests, transport tests, saved mixer bindings and live mixer ramp/cue/isolation tests passed. Active host and installed Pi bridge versions differ only by later cleanup/docstring/checkpoint-atomicity changes until next safe bridge refresh; do not restart the player just to apply those.
 
 Bridge must be the sole FIFO writer. It saves counts/tempo/encoder against PID+startticks on clean exit so a same-session restart does not reset the jog counter. Stop bridge before manual pulse scripts. If manual rotation changes the counter, update checkpoint to the observed value before resume. Current aplay was launched externally; stop it after stopping the player/mixer and do not start a second output owner. No autostart/service installed.
+
+## Physical zoom/navigation confirmation
+
+User answered “Zoom/Browse work correctly” to the combined Shift+Browse zoom / normal Browse library test. This confirms those two physical behaviors, not every button or jog calibration.

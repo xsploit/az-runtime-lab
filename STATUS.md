@@ -1,6 +1,6 @@
 ## 2026-09-13 FLX6 audio and real USB working
 
-User confirmed hearing Estara from the real read-only USB through FLX6 headphones. Jog and tempo respond. Shift+Browse zoom and additional native deck1/2 buttons/pads connected; physical zoom/per-button QA pending. Current dry host mixer handles channel cue/faders/crossfader/headphone blend; EQ/FX and complete deck3/4 remain unfinished. AZ rejects the USB old export.pdb database as missing OneLibrary but Folder loading works. See analysis/flx6-live-20260913/RESULT.md for exact live processes, paths, evidence and restart caveats.
+User confirmed hearing Estara from the real read-only USB through FLX6 headphones. Jog and tempo respond. Shift+Browse zoom and normal Browse library behavior physically confirmed by user. Additional native deck1/2 buttons/pads connected; per-button QA remains pending. Current dry host mixer handles channel cue/faders/crossfader/headphone blend; EQ/FX and complete deck3/4 remain unfinished. AZ rejects the USB old export.pdb database as missing OneLibrary but Folder loading works. See analysis/flx6-live-20260913/RESULT.md for exact live processes, paths, evidence and restart caveats.
 
 ## 2026-09-13 Pi resumed with FLX6
 
