@@ -1,0 +1,72 @@
+{
+  "rootfs_comparison": {
+    "direction": "new regular files to existing runtime",
+    "identical": 7641,
+    "new_only": 0,
+    "different": 0,
+    "symlinks_compared": false
+  },
+  "controllers": [
+    {
+      "name": "DECK_UCOM.mot",
+      "revision": "1.02",
+      "sha256": "9476c321dbc9bf0f456b39085a53cbe077c81696ca87112ad65acfc61b9ed8b5",
+      "record_counts": {
+        "0": 1,
+        "3": 30656,
+        "5": 1,
+        "7": 1
+      },
+      "record_errors": [],
+      "data_bytes": 490496,
+      "address_start": "0x60000000",
+      "address_end_exclusive": "0x60200000"
+    },
+    {
+      "name": "ErP_UCOM.mot",
+      "revision": "1.00",
+      "sha256": "b26295d1ab52bf37d574036d23f61d88810ab5230df4cc5f020130a378d3d6ff",
+      "record_counts": {
+        "0": 1,
+        "3": 6832,
+        "5": 1,
+        "7": 1
+      },
+      "record_errors": [],
+      "data_bytes": 109312,
+      "address_start": "0x60000000",
+      "address_end_exclusive": "0x60080000"
+    },
+    {
+      "name": "MIXER_CONT_UCOM.mot",
+      "revision": "1.03",
+      "sha256": "fda1bcc5ef8861661563bd10d3f012e19bba1de120c9ef35be5f4924a065ce65",
+      "record_counts": {
+        "0": 1,
+        "3": 24048,
+        "5": 1,
+        "7": 1
+      },
+      "record_errors": [],
+      "data_bytes": 384768,
+      "address_start": "0x60000000",
+      "address_end_exclusive": "0x601d8d00"
+    },
+    {
+      "name": "MPNL_UCOM.mot",
+      "revision": "1.02",
+      "sha256": "fb8e14e27c8303f75a5460bc0538f4a119107a0bda47dd2e7db3f2f8e002ae4b",
+      "record_counts": {
+        "0": 1,
+        "3": 5904,
+        "5": 1,
+        "7": 1
+      },
+      "record_errors": [],
+      "data_bytes": 94464,
+      "address_start": "0x60000000",
+      "address_end_exclusive": "0x60060000"
+    }
+  ],
+  "iso_sha256": "b294978a74fd887de56041825963d52f3645efe557e0c78f16516c4e04709dba"
+}
