@@ -44,3 +44,17 @@ address = A10 + 4*index - 1056       # 32-bit address arithmetic
 The first path's INTSPU/MPYSP/ADDSP are0x80010658/10664/1066c; its address calculation/store is0x8001067c–10684 (word35). The second is0x80010678/10688/10690 with address calculation0x800106b0/106c4 and word37 store0x800106d8. A10 here is the pre-loop address base, not the later two-pass counter using the same register.
 
 The first INTSPU consumes halfword505: LDHU0x80010654 is protected by fetch-header PROT, inserting four NOP cycles before INTSPU0x80010658. This ordered arithmetic includes doubling before conversion and truncation semantics; it is not simply44.1 times a guessed parameter rounded to nearest. The byte-address result does not establish the parameter's units.
+
+## Protected-load correction: first gain kernel
+
+A first-pass issue reconstruction of0x800107b0–107cc now includes fetch-header PROT. Relative to the initial ADDSP/paired-LDW packet:
+
+| Issue offset | Operation |
+|---:|---|
+| 0 | ADDSP and the two protected LDW instructions |
+| 1–4 | Four automatically inserted NOP cycles |
+| 5 | Paired MPYSP instructions |
+| 6–8 | Explicit NOP cycles |
+| 9 | SPKERNEL and paired stores |
+
+The prior proposed product/store offsets1/5 were wrong because they omitted protected-load stalls. The loaded operands reach registers at E5 before products at offset5. This removes the apparent first-product read of an uninitialized prior sample. It does not alone prove how all logical iterations overlap or which ramp update every product consumes; full SPLOOP stage-mask/drain analysis remains separate. The gain routine at0x1180ff58 has no protected load in its first buffered kernel and retains its reviewed first-pass offsets.
