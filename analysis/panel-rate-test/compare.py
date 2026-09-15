@@ -4,6 +4,13 @@ Discovers current LocalPlayer sources and loaded experiment data symbols.
 Caller settles transport first. Paused mode checks source stability; motion
 mode checks both decks' source rates. Restores the initial upload switch.
 """
+
+# Locate shared helpers from this checkout, independent of the caller's cwd.
+import sys as _az_sys
+from pathlib import Path as _AzPath
+_az_sys.path.insert(0, str(_AzPath(__file__).resolve().parents[2]))
+from az_paths import lab_path
+
 import argparse,hashlib,json,os,signal,struct,subprocess,time
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('pid',type=int);p.add_argument('--xserver',type=int,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--seconds',type=int,default=12);a=p.parse_args()
@@ -42,14 +49,14 @@ def interrupted(sig,frame):raise InterruptedError(sig)
 for s in (signal.SIGINT,signal.SIGTERM):signal.signal(s,interrupted)
 def pulse(mask):
  from az_mixer_packet import crc16
- fd=os.open('/home/pompu_5/az-native-lab/xdjaz/state/tmp/erp-rx.fifo',os.O_WRONLY|os.O_NONBLOCK)
+ fd=os.open(str(lab_path('xdjaz/state/tmp/erp-rx.fifo')),os.O_WRONLY|os.O_NONBLOCK)
  try:
   for v in (0,mask,0):
    f=bytearray(128);f[0]=1;f[10]=v;f[18]=v;f[28:30]=crc16(f[:28]).to_bytes(2,'little');assert os.write(fd,f)==128;time.sleep(.2)
  finally:os.close(fd)
 
 import statistics
-ratefile=Path('/home/pompu_5/az-native-lab/analysis/panel-rate-test/rate.txt')
+ratefile=lab_path('analysis/panel-rate-test/rate.txt')
 initial_rate=ratefile.read_text().strip();assert initial_rate=='59.24'
 timer=read(0x3bd6708)-0x28
 assert read(timer)==0x2e414e0

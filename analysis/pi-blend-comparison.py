@@ -4,11 +4,18 @@ Requires two already paused decks and fixture encoder counter1. Rebuilds the
 same view by zoom2->1. Does not alter transport or persist firmware changes.
 GDB writes code while stopped; finally restores bytes and rebuilds original.
 """
+
+# Locate shared helpers from this checkout, independent of the caller's cwd.
+import sys as _az_sys
+from pathlib import Path as _AzPath
+_az_sys.path.insert(0, str(_AzPath(__file__).resolve().parents[1]))
+from az_paths import lab_path
+
 import argparse,hashlib,json,os,signal,subprocess,time
 from pathlib import Path
 from az_mixer_packet import crc16
 p=argparse.ArgumentParser();p.add_argument('pid',type=int);p.add_argument('--motion',action='store_true',help='Requires already playing decks; sequential six-second samples, not matched content');a=p.parse_args()
-base=Path('/home/pompu_5/az-native-lab');root=Path('/tmp/az-blend-motion' if a.motion else '/tmp/az-blend-compare');root.mkdir(exist_ok=True)
+base=lab_path('');root=Path('/tmp/az-blend-motion' if a.motion else '/tmp/az-blend-compare');root.mkdir(exist_ok=True)
 assert hashlib.sha256(Path(f'/proc/{a.pid}/exe').read_bytes()).hexdigest()=='736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6'
 patches=[(0x1e0246c,0x5400126d),(0x1e02548,0x54000f6d),(0x1e025f0,0x54001bad),(0x1e027d4,0x5400056d)]
 candidate=0x14000006

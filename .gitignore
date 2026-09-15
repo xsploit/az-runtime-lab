@@ -36,3 +36,6 @@
 *.core
 core*
 **/.env*
+/local/
+/shims/native-build.json
+!/pi/Pioneer-DDJ-FLX6.midi.xml

@@ -1,0 +1,329 @@
+{
+  "scope": "Static ordered direct call/branch operands in vector-slot8 interrupt wrapper. Names, runtime frequency and effect identities unproven.",
+  "vector": "0x1180a100",
+  "handler": "0x1181ada4",
+  "return_irp": "0x1181b084",
+  "edma_pending": "0x01c01068",
+  "edma_ack": "0x01c01070",
+  "pending_mask": "0x3f",
+  "edges": [
+    {
+      "site": "0x1181ae78",
+      "operation": "CALLP",
+      "target": "0x118101e8",
+      "predicate": null
+    },
+    {
+      "site": "0x1181ae88",
+      "operation": "CALLP",
+      "target": "0x1181d5ac",
+      "predicate": null
+    },
+    {
+      "site": "0x1181ae8c",
+      "operation": "CALLP",
+      "target": "0x11819880",
+      "predicate": null
+    },
+    {
+      "site": "0x1181ae90",
+      "operation": "CALLP",
+      "target": "0x1180e644",
+      "predicate": null
+    },
+    {
+      "site": "0x1181ae94",
+      "operation": "CALLP",
+      "target": "0x11819420",
+      "predicate": null
+    },
+    {
+      "site": "0x1181ae98",
+      "operation": "CALLP",
+      "target": "0x1181a8a4",
+      "predicate": null
+    },
+    {
+      "site": "0x1181ae9c",
+      "operation": "CALLP",
+      "target": "0x1181de24",
+      "predicate": null
+    },
+    {
+      "site": "0x1181aeac",
+      "operation": "CALLP",
+      "target": "0x118104d4",
+      "predicate": null
+    },
+    {
+      "site": "0x1181aeb4",
+      "operation": "CALLP",
+      "target": "0x1181f080",
+      "predicate": null
+    },
+    {
+      "site": "0x1181aec0",
+      "operation": "CALLP",
+      "target": "0x1181e388",
+      "predicate": null
+    },
+    {
+      "site": "0x1181aec8",
+      "operation": "CALLP",
+      "target": "0x1181e300",
+      "predicate": null
+    },
+    {
+      "site": "0x1181aecc",
+      "operation": "CALLP",
+      "target": "0x11818c20",
+      "predicate": null
+    },
+    {
+      "site": "0x1181aed4",
+      "operation": "CALLP",
+      "target": "0x1181cdc8",
+      "predicate": null
+    },
+    {
+      "site": "0x1181aed8",
+      "operation": "CALLP",
+      "target": "0x1181a310",
+      "predicate": null
+    },
+    {
+      "site": "0x1181aee0",
+      "operation": "CALLP",
+      "target": "0x1181b88c",
+      "predicate": null
+    },
+    {
+      "site": "0x1181aee4",
+      "operation": "CALLP",
+      "target": "0x11818f88",
+      "predicate": null
+    },
+    {
+      "site": "0x1181aeec",
+      "operation": "CALLP",
+      "target": "0x1180e8d0",
+      "predicate": null
+    },
+    {
+      "site": "0x1181aef4",
+      "operation": "CALLP",
+      "target": "0x11812744",
+      "predicate": null
+    },
+    {
+      "site": "0x1181aef8",
+      "operation": "CALLP",
+      "target": "0x11818f88",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af00",
+      "operation": "CALLP",
+      "target": "0x1180e8d0",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af08",
+      "operation": "CALLP",
+      "target": "0x11811068",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af0c",
+      "operation": "CALLP",
+      "target": "0x1181cfb4",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af10",
+      "operation": "CALLP",
+      "target": "0x11810bcc",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af14",
+      "operation": "CALLP",
+      "target": "0x11818f88",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af20",
+      "operation": "CALLP",
+      "target": "0x1180e8d0",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af28",
+      "operation": "CALLP",
+      "target": "0x1181b700",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af2c",
+      "operation": "CALLP",
+      "target": "0x1180dd54",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af30",
+      "operation": "CALLP",
+      "target": "0x11818340",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af38",
+      "operation": "CALLP",
+      "target": "0x11818ec8",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af3c",
+      "operation": "CALLP",
+      "target": "0x1181b784",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af40",
+      "operation": "CALLP",
+      "target": "0x1180deb4",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af44",
+      "operation": "CALLP",
+      "target": "0x1180f458",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af48",
+      "operation": "CALLP",
+      "target": "0x1180e568",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af50",
+      "operation": "CALLP",
+      "target": "0x1180e568",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af58",
+      "operation": "CALLP",
+      "target": "0x1181b80c",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af5c",
+      "operation": "CALLP",
+      "target": "0x1180ff58",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af60",
+      "operation": "CALLP",
+      "target": "0x1180e568",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af68",
+      "operation": "CALLP",
+      "target": "0x1180ef88",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af6c",
+      "operation": "CALLP",
+      "target": "0x1181b7c8",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af70",
+      "operation": "CALLP",
+      "target": "0x1180df6c",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af74",
+      "operation": "CALLP",
+      "target": "0x1181a860",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af80",
+      "operation": "CALLP",
+      "target": "0x1181dc20",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af88",
+      "operation": "CALLP",
+      "target": "0x11818558",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af90",
+      "operation": "CALLP",
+      "target": "0x11810cb0",
+      "predicate": null
+    },
+    {
+      "site": "0x1181af98",
+      "operation": "CALLP",
+      "target": "0x1180f074",
+      "predicate": null
+    },
+    {
+      "site": "0x1181afa4",
+      "operation": "CALLP",
+      "target": "0x1181a860",
+      "predicate": null
+    },
+    {
+      "site": "0x1181afa8",
+      "operation": "CALLP",
+      "target": "0x1181dc20",
+      "predicate": null
+    },
+    {
+      "site": "0x1181afb0",
+      "operation": "CALLP",
+      "target": "0x11812e00",
+      "predicate": null
+    },
+    {
+      "site": "0x1181afb4",
+      "operation": "CALLP",
+      "target": "0x1180ff38",
+      "predicate": null
+    },
+    {
+      "site": "0x1181afc0",
+      "operation": "CALLP",
+      "target": "0x1180f0e8",
+      "predicate": null
+    },
+    {
+      "site": "0x1181afc4",
+      "operation": "CALLP",
+      "target": "0x1180eb08",
+      "predicate": null
+    },
+    {
+      "site": "0x1181afcc",
+      "operation": "CALLP",
+      "target": "0x1181a4d4",
+      "predicate": null
+    },
+    {
+      "site": "0x1181afd4",
+      "operation": "CALLP",
+      "target": "0x1181bbf8",
+      "predicate": null
+    }
+  ]
+}

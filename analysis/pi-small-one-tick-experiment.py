@@ -4,6 +4,13 @@ No firmware file writes. Original instructions restored in finally.
 SIGINT/SIGTERM trigger restoration; SIGKILL/host loss cannot run cleanup.
 Restarting the original executable clears in-memory changes.
 """
+
+# Locate shared helpers from this checkout, independent of the caller's cwd.
+import sys as _az_sys
+from pathlib import Path as _AzPath
+_az_sys.path.insert(0, str(_AzPath(__file__).resolve().parents[1]))
+from az_paths import desktop_env
+
 import argparse,hashlib,json,os,signal,subprocess,time,struct
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('pid',type=int);p.add_argument('--timer-fields',action='store_true');a=p.parse_args()
@@ -56,7 +63,7 @@ try:
   elapsed=time.monotonic()-sample_start
   results.append({'label':label,'instructions':[hex(v) for v in memvals()], 'cpu_percent_one_core':100*(cpu()-cpu_before)/os.sysconf('SC_CLK_TCK')/elapsed})
   if not a.timer_fields:
-   e=os.environ.copy();e.update(XDG_RUNTIME_DIR='/run/user/1000',WAYLAND_DISPLAY='wayland-1')
+   e=os.environ.copy();e.update(desktop_env())
    subprocess.run(['grim',f'/tmp/az-small-one-tick-{label}.png'],env=e,check=True,timeout=5)
 finally:
  change(False)

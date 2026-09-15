@@ -1,6 +1,13 @@
 """One isolated two-track native PCM recording. Run from the PCM test stage.
 Captures ALSA file output; no physical sound device or visible-player change.
 """
+
+# Locate shared helpers from this checkout, independent of the caller's cwd.
+import sys as _az_sys
+from pathlib import Path as _AzPath
+_az_sys.path.insert(0, str(_AzPath(__file__).resolve().parents[1]))
+from az_paths import lab_path
+
 from array import array
 import gzip
 import hashlib
@@ -19,11 +26,11 @@ for key in list(env):
     if key.startswith('LAB_') or key in ('PROFILE','PLAYER','MIX_STREAM','AUDIO_CAPTURE'):
         env.pop(key)
 env.update(NULL_AUDIO='1',OFFLINE_MIDI='1',PACED_AUDIO='1',USB_FIXTURE='1',
-    USB_FIXTURE_PATH='/home/pompu_5/az-native-lab/benchmark-usb',
+    USB_FIXTURE_PATH=str(lab_path('benchmark-usb')),
     MIXER_FIXTURE='1',ERP_FIXTURE='1',XIMAGE_FAST24='1',AUDIO_CAPTURE='1',
     LAB_XIMAGE_PRESENT='1',LAB_AZ_SMOOTH_SCROLL='1',LAB_VSYNC_HZ='59.24',
     LAB_AZ_FRACTIONAL_GRID='1',LAB_DURATION_SECONDS='75',
-    LAB_PI_JEMALLOC='/home/pompu_5/az-native-lab/libjemalloc-pi.so.2')
+    LAB_PI_JEMALLOC=str(lab_path('libjemalloc-pi.so.2')))
 if mode=='template': env['LAB_AZ_PCM_TEMPLATE']='1'
 def descendants(pid):
     try: children=Path(f'/proc/{pid}/task/{pid}/children').read_text().split()
