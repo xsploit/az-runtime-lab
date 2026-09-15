@@ -18,6 +18,7 @@
 #include "device_text.h"
 
 #include <cstdint>
+#include <memory>
 #include <fstream>
 #include <iostream>
 #include <map>
@@ -59,6 +60,7 @@ std::string get_text(rekordbox_pdb_t::device_sql_string_t* s) {
 
 struct Track {
     uint32_t id, artist_id, album_id, genre_id, key_id, tempo, bitrate, track_number;
+    uint32_t label_id, artwork_id;
     uint16_t year, duration;
     uint8_t rating, color_id;
     std::string title, comment, file_path, analyze_path;
@@ -73,6 +75,48 @@ struct PlaylistNode {
 struct Entry {
     uint32_t playlist_id, entry_index, track_id;
 };
+
+// The bundled .ksy describes export.pdb. exportExt.pdb reuses the same page
+// and table framing but its rows have different layouts, so feeding it to this
+// schema reads nonsense lengths: measured on a real export that aborts the
+// process (std::length_error from a bogus vector size) rather than failing
+// cleanly. A malformed or foreign file must be rejected up front, and any row
+// that still misparses must not take the whole walk down with it.
+constexpr uint32_t kMinExportTables = 16;
+
+struct Validation {
+    bool ok = false;
+    std::string error;
+};
+
+Validation validate_header(const rekordbox_pdb_t& db, uint64_t file_size) {
+    Validation v;
+    const uint32_t page = db.len_page();
+    const uint32_t tables = db.num_tables();
+    if (page < 512 || page > 65536 || (page & (page - 1)) != 0) {
+        v.error = "implausible page size " + std::to_string(page) +
+                "; this does not look like a rekordbox PDB";
+        return v;
+    }
+    if (tables == 0 || tables > 64) {
+        v.error = "implausible table count " + std::to_string(tables) +
+                "; this does not look like a rekordbox PDB";
+        return v;
+    }
+    if (file_size < static_cast<uint64_t>(page) * 2) {
+        v.error = "file is smaller than two pages; truncated or not a PDB";
+        return v;
+    }
+    if (tables < kMinExportTables) {
+        v.error = "only " + std::to_string(tables) +
+                " tables: this looks like exportExt.pdb or another PDB variant. "
+                "The bundled schema describes export.pdb only; parsing other "
+                "variants with it yields garbage or crashes.";
+        return v;
+    }
+    v.ok = true;
+    return v;
+}
 
 } // namespace
 
@@ -93,16 +137,39 @@ int main(int argc, char** argv) {
         std::cerr << "cannot open " << pdb_path << "\n";
         return 1;
     }
-    kaitai::kstream ks(&ifs);
-    rekordbox_pdb_t db(&ks);
+    ifs.seekg(0, std::ios::end);
+    const uint64_t file_size = static_cast<uint64_t>(ifs.tellg());
+    ifs.seekg(0);
 
-    std::map<uint32_t, std::string> artists, albums, genres, keys;
+    kaitai::kstream ks(&ifs);
+    std::unique_ptr<rekordbox_pdb_t> db_holder;
+    try {
+        db_holder = std::make_unique<rekordbox_pdb_t>(&ks);
+    } catch (const std::exception& e) {
+        std::cerr << "cannot parse " << pdb_path << " as a rekordbox PDB: "
+                  << e.what() << "\n";
+        return 1;
+    }
+    rekordbox_pdb_t& db = *db_holder;
+
+    const Validation valid = validate_header(db, file_size);
+    if (!valid.ok) {
+        std::cerr << "refusing " << pdb_path << ": " << valid.error << "\n";
+        return 1;
+    }
+
+    std::map<uint32_t, std::string> artists, albums, genres, keys, labels, artwork;
+    // Track colours are an id into the COLORS table; the names live there, so
+    // a colour can be preserved by name instead of a bare numeric id.
+    std::map<uint32_t, std::string> colors;
     std::vector<Track> tracks;
     std::vector<PlaylistNode> nodes;
     std::vector<Entry> entries;
     std::set<uint32_t> visited_pages;
 
+    size_t row_errors = 0, page_errors = 0;
     for (const auto& table : *db.tables()) {
+      try {
         const uint32_t last = table->last_page()->index();
         rekordbox_pdb_t::page_ref_t* ref = table->first_page();
         while (true) {
@@ -113,6 +180,7 @@ int main(int argc, char** argv) {
                 for (const auto& rg : *page->row_groups()) {
                     for (const auto& rr : *rg->rows()) {
                         if (!rr->present()) continue;
+                        try {
                         switch (table->type()) {
                         case rekordbox_pdb_t::PAGE_TYPE_ARTISTS: {
                             auto* r = static_cast<rekordbox_pdb_t::artist_row_t*>(rr->body());
@@ -130,11 +198,24 @@ int main(int argc, char** argv) {
                             auto* r = static_cast<rekordbox_pdb_t::key_row_t*>(rr->body());
                             keys[r->id()] = get_text(r->name());
                         } break;
+                        case rekordbox_pdb_t::PAGE_TYPE_LABELS: {
+                            auto* r = static_cast<rekordbox_pdb_t::label_row_t*>(rr->body());
+                            labels[r->id()] = get_text(r->name());
+                        } break;
+                        case rekordbox_pdb_t::PAGE_TYPE_COLORS: {
+                            auto* r = static_cast<rekordbox_pdb_t::color_row_t*>(rr->body());
+                            colors[r->id()] = get_text(r->name());
+                        } break;
+                        case rekordbox_pdb_t::PAGE_TYPE_ARTWORK: {
+                            auto* r = static_cast<rekordbox_pdb_t::artwork_row_t*>(rr->body());
+                            artwork[r->id()] = get_text(r->path());
+                        } break;
                         case rekordbox_pdb_t::PAGE_TYPE_TRACKS: {
                             auto* r = static_cast<rekordbox_pdb_t::track_row_t*>(rr->body());
                             tracks.push_back({r->id(), r->artist_id(), r->album_id(),
                                     r->genre_id(), r->key_id(), r->tempo(), r->bitrate(),
-                                    r->track_number(), r->year(), r->duration(), r->rating(),
+                                    r->track_number(), r->label_id(), r->artwork_id(),
+                                    r->year(), r->duration(), r->rating(),
                                     r->color_id(), get_text(r->title()), get_text(r->comment()),
                                     get_text(r->file_path()), get_text(r->analyze_path())});
                         } break;
@@ -150,12 +231,27 @@ int main(int argc, char** argv) {
                         default:
                             break;
                         }
+                        } catch (const std::exception&) {
+                            // One unreadable row must not lose the rest of the
+                            // table; it is counted and reported instead.
+                            ++row_errors;
+                        }
                     }
                 }
             }
             if (ref->index() == last) break;
             ref = page->next_page();
         }
+      } catch (const std::exception&) {
+        ++page_errors;
+      }
+    }
+
+    if (tracks.empty() && nodes.empty() && entries.empty()) {
+        std::cerr << "refusing " << pdb_path
+                  << ": no tracks, playlists or entries were read; "
+                     "this is not a usable export.pdb\n";
+        return 1;
     }
 
     std::ostringstream o;
@@ -163,7 +259,11 @@ int main(int argc, char** argv) {
     o << " \"counts\": {\"tracks\": " << tracks.size() << ", \"playlists\": "
       << nodes.size() << ", \"entries\": " << entries.size() << ", \"artists\": "
       << artists.size() << ", \"albums\": " << albums.size() << ", \"genres\": "
-      << genres.size() << ", \"keys\": " << keys.size() << "},\n";
+      << genres.size() << ", \"keys\": " << keys.size() << ", \"labels\": "
+      << labels.size() << ", \"colors\": " << colors.size() << ", \"artwork\": "
+      << artwork.size() << "},\n";
+    o << " \"row_errors\": " << row_errors << ", \"table_errors\": "
+      << page_errors << ",\n";
 
     o << " \"tracks\": [\n";
     for (size_t i = 0; i < tracks.size(); ++i) {
@@ -176,9 +276,12 @@ int main(int argc, char** argv) {
           << "\", \"bpm\": " << (t.tempo / 100.0)
           << ", \"bitrate\": " << t.bitrate << ", \"duration_sec\": " << t.duration
           << ", \"year\": " << t.year << ", \"track_number\": " << t.track_number
-          << ", \"rating\": " << static_cast<int>(t.rating)
+          << ", \"label\": \"" << json_escape(labels.count(t.label_id) ? labels[t.label_id] : "")
+          << "\", \"artwork_path\": \"" << json_escape(artwork.count(t.artwork_id) ? artwork[t.artwork_id] : "")
+          << "\", \"rating\": " << static_cast<int>(t.rating)
           << ", \"color_id\": " << static_cast<int>(t.color_id)
-          << ", \"comment\": \"" << json_escape(t.comment)
+          << ", \"color\": \"" << json_escape(colors.count(t.color_id) ? colors[t.color_id] : "")
+          << "\", \"comment\": \"" << json_escape(t.comment)
           << "\", \"file_path\": \"" << json_escape(t.file_path)
           << "\", \"analyze_path\": \"" << json_escape(t.analyze_path) << "\"}";
         o << (i + 1 < tracks.size() ? ",\n" : "\n");
