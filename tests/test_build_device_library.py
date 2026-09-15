@@ -243,6 +243,17 @@ def main():
             check(bool(attr) == bool(p["is_folder"]),
                   f"folder flag lost for playlist {p['name']!r}")
 
+        # Album art from the export's ARTWORK table must survive as image rows.
+        src_art = {t["artwork_path"] for t in source["tracks"] if t["artwork_path"]}
+        db_art = {r[0] for r in db.execute("SELECT path FROM image")}
+        check(src_art == db_art,
+              f"artwork paths not preserved ({len(src_art)} source vs "
+              f"{len(db_art)} staged)")
+        linked = db.execute("SELECT COUNT(*) FROM content c JOIN image i"
+                            " ON c.image_id = i.image_id").fetchone()[0]
+        check(linked == len([t for t in source["tracks"] if t["artwork_path"]]),
+              "content rows are not linked to their artwork")
+
         # --- analysis paths must still resolve on the real drive ----------
         resolved = 0
         if drive:
@@ -258,6 +269,47 @@ def main():
                   f"{len(unresolved)}/{resolved} staged analysis paths do not resolve")
 
         db.close()
+
+        # --- browse category copy hook ------------------------------------
+        # Mechanism test only: build a throwaway reference database here to
+        # exercise copy_browse_categories(). These rows are NOT device evidence
+        # and the kind values are arbitrary -- the real rows have to come from a
+        # genuine device library, which this machine does not have.
+        reference = tmp / "reference.db"
+        ref = sqlite3.connect(reference)
+        ref.execute("CREATE TABLE menuItem (menuItem_id INTEGER, kind INTEGER, name TEXT)")
+        ref.execute("CREATE TABLE category (category_id INTEGER, menuItem_id INTEGER,"
+                    " sequenceNo INTEGER, isVisible INTEGER)")
+        ref.execute("CREATE TABLE sort (sort_id INTEGER, menuItem_id INTEGER,"
+                    " sequenceNo INTEGER, isVisible INTEGER,"
+                    " isSelectedAsSubColumn INTEGER)")
+        ref.execute("INSERT INTO menuItem VALUES (1, 7, 'Artist')")
+        ref.execute("INSERT INTO category VALUES (1, 1, 0, 1)")
+        ref.execute("INSERT INTO sort VALUES (1, 1, 0, 1, 0)")
+        ref.commit()
+        ref.close()
+
+        r2 = subprocess.run(
+            [sys.executable, str(ROOT / "library/build_device_library.py"),
+             str(lib_json), "--out-dir", str(tmp / "staged2"),
+             "--categories-from", str(reference)],
+            capture_output=True, text=True)
+        check(r2.returncode == 0, f"--categories-from failed: {r2.stderr.strip()}")
+        db2 = sqlite3.connect(tmp / "staged2/PIONEER/rekordbox/exportLibrary.db")
+        for table in ("menuItem", "category", "sort"):
+            n = db2.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+            check(n == 1, f"--categories-from did not copy {table} (got {n} rows)")
+        check(db2.execute("SELECT name FROM menuItem").fetchone()[0] == "Artist",
+              "copied menuItem content is wrong")
+        db2.close()
+        # Without the hook the tables must stay empty rather than be invented.
+        db3 = sqlite3.connect(db_path)
+        for table in ("menuItem", "category", "sort"):
+            n = db3.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+            check(n == 0, f"{table} should be empty when no reference is given")
+        db3.close()
+        check("menuItem/category/sort are empty" in r.stdout,
+              "generator must warn that browse categories are empty")
 
         # The staged tree must not contain copies of the analysis or audio.
         staged_files = {p.name for p in (tmp / "staged").rglob("*") if p.is_file()}

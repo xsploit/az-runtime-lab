@@ -141,7 +141,38 @@ def intern(table, name, cache, rows):
     return cache[name]
 
 
-def build(library, db_path, device_name):
+def copy_browse_categories(db, reference):
+    """Copy menuItem/category/sort rows verbatim from a reference library.
+
+    EP147 renders browse category labels from its own GUI string table, so these
+    tables most likely carry *which* categories exist and in what order, not
+    their names. The `kind` enum was not recovered statically and inventing
+    values would be a guess, so by default these tables are created empty and
+    this hook exists to copy the real rows out of a genuine device library when
+    one becomes available. Returns the number of rows copied per table.
+    """
+    src = sqlite3.connect(f"file:{reference}?mode=ro", uri=True)
+    copied = {}
+    try:
+        for table in ("menuItem", "category", "sort"):
+            cols = [r[1] for r in db.execute(f"PRAGMA table_info({table})")]
+            src_cols = [r[1] for r in src.execute(f"PRAGMA table_info({table})")]
+            shared = [c for c in cols if c in src_cols]
+            if not shared:
+                copied[table] = 0
+                continue
+            rows = src.execute(
+                f"SELECT {', '.join(shared)} FROM {table}").fetchall()
+            db.executemany(
+                f"INSERT INTO {table} ({', '.join(shared)})"
+                f" VALUES ({', '.join('?' * len(shared))})", rows)
+            copied[table] = len(rows)
+    finally:
+        src.close()
+    return copied
+
+
+def build(library, db_path, device_name, categories_from=None):
     if db_path.exists():
         db_path.unlink()
     db = sqlite3.connect(db_path)
@@ -151,6 +182,9 @@ def build(library, db_path, device_name):
 
         artists, albums, genres, keys, labels, colors = ({} for _ in range(6))
         arows, alrows, grows, krows, lrows, crows = ([] for _ in range(6))
+        # Album art: the export records a per-track artwork path, which becomes
+        # an image row so the native browser can find the same file.
+        images, imrows = {}, []
 
         content = []
         for t in library["tracks"]:
@@ -173,7 +207,7 @@ def build(library, db_path, device_name):
                 # Colour is preserved by id; the colour table is written below
                 # with the export's own names so the id keeps its meaning.
                 t["color_id"],
-                0,
+                intern("image", t.get("artwork_path", ""), images, imrows),
                 int(round(t["bpm"] * 100)),
                 t["duration_sec"],
                 t["track_number"],
@@ -205,6 +239,7 @@ def build(library, db_path, device_name):
                 db.executemany(f"INSERT INTO {table} VALUES (?, ?)", rows)
         db.executemany("INSERT INTO album VALUES (?, ?, 0, 0)", alrows)
         db.executemany("INSERT INTO color VALUES (?, ?)", sorted(colors.items()))
+        db.executemany("INSERT INTO image VALUES (?, ?)", imrows)
 
         # Playlists: preserve the original ids, parents and ordering.
         counts = {}
@@ -221,6 +256,10 @@ def build(library, db_path, device_name):
             [(e["playlist_id"], e["track_id"], e["entry_index"])
              for e in library["playlist_entries"]])
 
+        copied = {}
+        if categories_from:
+            copied = copy_browse_categories(db, categories_from)
+
         db.execute("INSERT INTO property VALUES (?, ?, ?, ?, ?)",
                    (device_name, "1.0.0",
                     datetime.date.today().isoformat(),
@@ -228,7 +267,7 @@ def build(library, db_path, device_name):
         db.commit()
     finally:
         db.close()
-    return len(content)
+    return len(content), copied
 
 
 def verify(db_path, drive_root):
@@ -259,6 +298,9 @@ def main():
     ap.add_argument("--out-dir", type=Path, required=True)
     ap.add_argument("--device-name", default="DEVICE")
     ap.add_argument("--verify-against", type=Path, metavar="DRIVE_ROOT")
+    ap.add_argument("--categories-from", type=Path, metavar="REFERENCE_DB",
+                    help="copy menuItem/category/sort rows from a genuine "
+                         "device library; see copy_browse_categories()")
     args = ap.parse_args()
 
     library = json.loads(args.library_json.read_text())
@@ -266,10 +308,18 @@ def main():
     staged.mkdir(parents=True, exist_ok=True)
     db_path = staged / "exportLibrary.db"
 
-    n = build(library, db_path, args.device_name)
+    n, copied = build(library, db_path, args.device_name, args.categories_from)
     print(f"wrote {db_path} ({n} content rows, "
           f"{len(library['playlists'])} playlists, "
           f"{len(library['playlist_entries'])} playlist entries)")
+    if copied:
+        print("copied browse categories: "
+              + ", ".join(f"{k}={v}" for k, v in sorted(copied.items())))
+    else:
+        print("NOTE: menuItem/category/sort are empty. EP147 reads them and the "
+              "`kind` enum is unknown, so no values are invented; browse "
+              "categories may be missing until --categories-from is given a "
+              "genuine device library.")
     print("NOTE: plaintext SQLite. EP147 opens this path with sqlite3_key(); "
           "applying the device key is a separate step and no key is handled here. "
           "No device has accepted this output.")
