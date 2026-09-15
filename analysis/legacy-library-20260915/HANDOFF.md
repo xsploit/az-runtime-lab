@@ -44,6 +44,7 @@ All tools take paths as arguments; nothing is hard-coded. Run everything with
 | `library/exportext_extract.py` | `exportExt.pdb` MyTag categories and tags |
 | `library/build_device_library.py` | record set -> staged `exportLibrary.db` in the native local schema |
 | `library/stage_from_usb.py` | one command: USB root -> staged library + preservation report |
+| `library/expected_state.py` | per-track expected cues/loops/colours/grid + playlist order: the oracle for a device test |
 | `library/az_schema_xrefs.py` | static column/type map of EP147's local SQLite readers |
 
 One command, end to end:
@@ -156,8 +157,17 @@ guessed, and column order does not matter since readers resolve columns by name.
    `playlist.attribute` values, and diff its schema against the generated one.
 3. Apply the device key to a staged database and attempt a real mount, in an isolated
    copy, with the original USB left read-only.
-4. Only then: compare browsed playlists, cues and grids against the source record set
-   that `pdb_extract` / `anlz_extract` already produce, which is the ready-made oracle.
+4. Only then: compare browsed playlists, cues and grids against the oracle. Generate it
+   first, before touching the device, so the expectation is written down rather than
+   reconstructed afterwards:
+
+   ```
+   BITEDJ_ROOT=... python3 library/expected_state.py --drive-root /path/to/usb        --out expected.json --all
+   ```
+
+   It prints the playlists in the order the browser should show them and, per track,
+   the beat grid and every hot/memory cue with its clock position, loop end and colour
+   (on the fixture: 41 tracks carrying 111 hot cues, 5 memory cues and 3 loops).
 
 ## Commits
 

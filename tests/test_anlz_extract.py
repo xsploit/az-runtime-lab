@@ -145,6 +145,49 @@ def main():
             print(f"note: {len(lost)} tracks hold .DAT cues absent from the .EXT; "
                   f"--cue-source both is required for these, e.g. {lost[0]}")
 
+        # --- the expected-state oracle ------------------------------------
+        # It is what a device test is checked against, so its totals must agree
+        # with the extractors it is built from, and its clock strings must be
+        # consistent with the millisecond values they came from.
+        manifest_path = tmp / "expected.json"
+        r = subprocess.run(
+            [sys.executable, str(ROOT / "library/expected_state.py"),
+             "--drive-root", drive, "--out", str(manifest_path), "--limit", "1"],
+            capture_output=True, text=True,
+            env=dict(os.environ, BITEDJ_ROOT=bitedj))
+        check(r.returncode == 0, f"expected_state failed: {r.stderr.strip()}")
+        if manifest_path.is_file():
+            manifest = json.loads(manifest_path.read_text())
+            totals = manifest["totals"]
+            merged_hot = sum(1 for a in data["analyses"]
+                             for c in a["merged_cues"] if c["list"] == "hot")
+            merged_mem = sum(1 for a in data["analyses"]
+                             for c in a["merged_cues"] if c["list"] == "memory")
+            check(totals["hot_cues"] == merged_hot,
+                  f"oracle counts {totals['hot_cues']} hot cues, extractor {merged_hot}")
+            check(totals["memory_cues"] == merged_mem,
+                  f"oracle counts {totals['memory_cues']} memory cues, "
+                  f"extractor {merged_mem}")
+            check(totals["tracks_with_beat_grid"] == summary["with_beat_grid"],
+                  "oracle disagrees on how many tracks have a beat grid")
+            for entry in manifest["tracks"]:
+                for cue in entry["hot_cues"] + entry["memory_cues"]:
+                    ms = cue["at_ms"]
+                    mins, rest = divmod(ms, 60000)
+                    secs, millis = divmod(rest, 1000)
+                    if cue["at"] != f"{mins}:{secs:02d}.{millis:03d}":
+                        failures.append(
+                            f"oracle clock {cue['at']} does not match {ms} ms")
+                        break
+                    if cue["is_loop"] and not (cue["loop_end_ms"] or 0) > ms:
+                        failures.append(f"oracle loop end not after start in "
+                                        f"{entry['title']!r}")
+                        break
+            # Playlists must be listed in the order the browser would show them.
+            positions = [p["position"] for p in manifest["playlists"]]
+            check(positions == sorted(positions),
+                  f"oracle playlists are not in browse order: {positions}")
+
     if failures:
         print("FAIL:")
         for f in failures:
@@ -154,7 +197,9 @@ def main():
           f"{path_checked} path tags and {bpm_checked} beat grids agree with export.pdb; "
           f"{summary['total_cues']} cues -> {summary['merged_cues']} merged, "
           f"{summary['time_conflicts']} time conflicts; "
-          f"{len(lost)} tracks needing .DAT-only cues")
+          f"{len(lost)} tracks needing .DAT-only cues; "
+          f"oracle agrees ({totals['hot_cues']} hot, {totals['memory_cues']} memory, "
+          f"{totals['loops']} loops)")
     return 0
 
 
