@@ -1,0 +1,2055 @@
+{
+  "scope": "Static IRQ8 direct call listing plus bounded decoded-instruction target samples; not complete functions, transitive graph, or runtime trace.",
+  "source_listing": "local/dsp-review-20260915/dsp.private.asm",
+  "handler": "0x1181ada4",
+  "sequence": [
+    {
+      "site": "0x1181ae78",
+      "operation": "CALLP",
+      "target": "0x118101e8",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181ae88",
+      "operation": "CALLP",
+      "target": "0x1181d5ac",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181ae8c",
+      "operation": "CALLP",
+      "target": "0x11819880",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181ae90",
+      "operation": "CALLP",
+      "target": "0x1180e644",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181ae94",
+      "operation": "CALLP",
+      "target": "0x11819420",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181ae98",
+      "operation": "CALLP",
+      "target": "0x1181a8a4",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181ae9c",
+      "operation": "CALLP",
+      "target": "0x1181de24",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181aeac",
+      "operation": "CALLP",
+      "target": "0x118104d4",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181aeb4",
+      "operation": "CALLP",
+      "target": "0x1181f080",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181aec0",
+      "operation": "CALLP",
+      "target": "0x1181e388",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181aec8",
+      "operation": "CALLP",
+      "target": "0x1181e300",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181aecc",
+      "operation": "CALLP",
+      "target": "0x11818c20",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181aed4",
+      "operation": "CALLP",
+      "target": "0x1181cdc8",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181aed8",
+      "operation": "CALLP",
+      "target": "0x1181a310",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181aee0",
+      "operation": "CALLP",
+      "target": "0x1181b88c",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181aee4",
+      "operation": "CALLP",
+      "target": "0x11818f88",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181aeec",
+      "operation": "CALLP",
+      "target": "0x1180e8d0",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181aef4",
+      "operation": "CALLP",
+      "target": "0x11812744",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181aef8",
+      "operation": "CALLP",
+      "target": "0x11818f88",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af00",
+      "operation": "CALLP",
+      "target": "0x1180e8d0",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af08",
+      "operation": "CALLP",
+      "target": "0x11811068",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af0c",
+      "operation": "CALLP",
+      "target": "0x1181cfb4",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af10",
+      "operation": "CALLP",
+      "target": "0x11810bcc",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af14",
+      "operation": "CALLP",
+      "target": "0x11818f88",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af20",
+      "operation": "CALLP",
+      "target": "0x1180e8d0",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af28",
+      "operation": "CALLP",
+      "target": "0x1181b700",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af2c",
+      "operation": "CALLP",
+      "target": "0x1180dd54",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af30",
+      "operation": "CALLP",
+      "target": "0x11818340",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af38",
+      "operation": "CALLP",
+      "target": "0x11818ec8",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af3c",
+      "operation": "CALLP",
+      "target": "0x1181b784",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af40",
+      "operation": "CALLP",
+      "target": "0x1180deb4",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af44",
+      "operation": "CALLP",
+      "target": "0x1180f458",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af48",
+      "operation": "CALLP",
+      "target": "0x1180e568",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af50",
+      "operation": "CALLP",
+      "target": "0x1180e568",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af58",
+      "operation": "CALLP",
+      "target": "0x1181b80c",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af5c",
+      "operation": "CALLP",
+      "target": "0x1180ff58",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af60",
+      "operation": "CALLP",
+      "target": "0x1180e568",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af68",
+      "operation": "CALLP",
+      "target": "0x1180ef88",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af6c",
+      "operation": "CALLP",
+      "target": "0x1181b7c8",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af70",
+      "operation": "CALLP",
+      "target": "0x1180df6c",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af74",
+      "operation": "CALLP",
+      "target": "0x1181a860",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af80",
+      "operation": "CALLP",
+      "target": "0x1181dc20",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af88",
+      "operation": "CALLP",
+      "target": "0x11818558",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af90",
+      "operation": "CALLP",
+      "target": "0x11810cb0",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181af98",
+      "operation": "CALLP",
+      "target": "0x1180f074",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181afa4",
+      "operation": "CALLP",
+      "target": "0x1181a860",
+      "predicate": null,
+      "parallel_with_previous": true
+    },
+    {
+      "site": "0x1181afa8",
+      "operation": "CALLP",
+      "target": "0x1181dc20",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181afb0",
+      "operation": "CALLP",
+      "target": "0x11812e00",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181afb4",
+      "operation": "CALLP",
+      "target": "0x1180ff38",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181afc0",
+      "operation": "CALLP",
+      "target": "0x1180f0e8",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181afc4",
+      "operation": "CALLP",
+      "target": "0x1180eb08",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181afcc",
+      "operation": "CALLP",
+      "target": "0x1181a4d4",
+      "predicate": null,
+      "parallel_with_previous": false
+    },
+    {
+      "site": "0x1181afd4",
+      "operation": "CALLP",
+      "target": "0x1181bbf8",
+      "predicate": null,
+      "parallel_with_previous": false
+    }
+  ],
+  "unique_target_count": 45,
+  "direct_call_site_count": 53,
+  "sample_instruction_count_per_target": 120,
+  "routines": [
+    {
+      "address": "0x118101e8",
+      "irq8_call_sites": [
+        "0x1181ae78"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x118101e8",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x11810394",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDDP": 2,
+        "ADDSP": 1,
+        "CMPGTSP": 2,
+        "CMPLTSP": 2,
+        "MPYDP": 4,
+        "SUBSP": 1
+      },
+      "direct_calls_observed_in_window": [],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x11810300",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181d5ac",
+      "irq8_call_sites": [
+        "0x1181ae88"
+      ],
+      "category": "transport",
+      "confidence": "high",
+      "semantic_evidence": "SPI receive/checksum and staged transfer path; SPI-AND-INTERRUPTS.md",
+      "listing_review_window": {
+        "start": "0x1181d5ac",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181d756",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {},
+      "direct_calls_observed_in_window": [
+        "0x1181e944",
+        "0x1181a14c",
+        "0x1181d574",
+        "0x1181d498"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181d6ec",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1181d704",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x11819880",
+      "irq8_call_sites": [
+        "0x1181ae8c"
+      ],
+      "category": "control_state",
+      "confidence": "low",
+      "semantic_evidence": "state-like candidate from bounded instruction sample; exact state ownership unresolved",
+      "listing_review_window": {
+        "start": "0x11819880",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x11819a30",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {},
+      "direct_calls_observed_in_window": [
+        "0x1181fb00"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180e644",
+      "irq8_call_sites": [
+        "0x1181ae90"
+      ],
+      "category": "control_state",
+      "confidence": "high",
+      "semantic_evidence": "staged control reader writes B14 indices 11-14; BUFFER-MAP.md",
+      "listing_review_window": {
+        "start": "0x1180e644",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1180e810",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPLTSP": 3
+      },
+      "direct_calls_observed_in_window": [],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x11819420",
+      "irq8_call_sites": [
+        "0x1181ae94"
+      ],
+      "category": "control_state",
+      "confidence": "low",
+      "semantic_evidence": "state-like candidate from bounded instruction sample; exact state ownership unresolved",
+      "listing_review_window": {
+        "start": "0x11819420",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x118195c4",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {},
+      "direct_calls_observed_in_window": [],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181a8a4",
+      "irq8_call_sites": [
+        "0x1181ae98"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1181a8a4",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181aa84",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPLTSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181fb00",
+        "0x1180e980",
+        "0x1181fae0",
+        "0x1181d6f4"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181de24",
+      "irq8_call_sites": [
+        "0x1181ae9c"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1181de24",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181dff0",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 3,
+        "CMPGTSP": 3,
+        "CMPLTSP": 4,
+        "INTSP": 1,
+        "MPYSP": 9,
+        "SUBSP": 4
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181f940",
+        "0x1181fac0"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181de54",
+          "operation": "BNOP",
+          "target_register": "A3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x118104d4",
+      "irq8_call_sites": [
+        "0x1181aeac"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x118104d4",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181068c",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPGTSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181fb00",
+        "0x1181a494"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181f080",
+      "irq8_call_sites": [
+        "0x1181aeb4"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1181f080",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181f238",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "INTSP": 2,
+        "MPYSP": 2
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181fb20",
+        "0x1181f3a0"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181f158",
+          "operation": "BNOP",
+          "target_register": "A20",
+          "possible_return": false
+        },
+        {
+          "site": "0x1181f1cc",
+          "operation": "B",
+          "target_register": "A3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1181f20c",
+          "operation": "B",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181e388",
+      "irq8_call_sites": [
+        "0x1181aec0"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1181e388",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181e536",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "INTSP": 4,
+        "MPYSP": 4
+      },
+      "direct_calls_observed_in_window": [],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181e4f4",
+          "operation": "B",
+          "target_register": "A20",
+          "possible_return": false
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181e300",
+      "irq8_call_sites": [
+        "0x1181aec8"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1181e300",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181e4ac",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 1,
+        "INTSP": 3,
+        "MPYSP": 6,
+        "SUBSP": 1
+      },
+      "direct_calls_observed_in_window": [],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181e380",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x11818c20",
+      "irq8_call_sites": [
+        "0x1181aecc"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x11818c20",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x11818dc4",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPGTSP": 1,
+        "CMPLTSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x1180f214",
+        "0x1181cd20",
+        "0x118140c0",
+        "0x118159f8",
+        "0x118189ec",
+        "0x11818b40"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x11818d02",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x11818d50",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181cdc8",
+      "irq8_call_sites": [
+        "0x1181aed4"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1181cdc8",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181cf72",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPGTSP": 4,
+        "CMPLTSP": 4,
+        "MPYSP": 4,
+        "SPINT": 4
+      },
+      "direct_calls_observed_in_window": [],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181ce52",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181a310",
+      "irq8_call_sites": [
+        "0x1181aed8"
+      ],
+      "category": "numeric_processing",
+      "confidence": "high",
+      "semantic_evidence": "McASP RX 704-byte ping-pong reader with SHR/INTSP; BUFFER-CONSUMERS.md",
+      "listing_review_window": {
+        "start": "0x1181a310",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181a4b8",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "INTSP": 2,
+        "MPYSP": 2
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181a1a0"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181a48c",
+          "operation": "BNOP",
+          "target_register": "A20",
+          "possible_return": false
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181b88c",
+      "irq8_call_sites": [
+        "0x1181aee0"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1181b88c",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181ba4c",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPGTSP": 3,
+        "CMPLTSP": 2,
+        "INTSPU": 1,
+        "MPYSP": 4
+      },
+      "direct_calls_observed_in_window": [
+        "0x1180fb08"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181b8da",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x11818f88",
+      "irq8_call_sites": [
+        "0x1181aee4",
+        "0x1181aef8",
+        "0x1181af14"
+      ],
+      "category": "control_state",
+      "confidence": "low",
+      "semantic_evidence": "state-like candidate from bounded instruction sample; exact state ownership unresolved",
+      "listing_review_window": {
+        "start": "0x11818f88",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x11819150",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPGTSP": 1,
+        "CMPLTSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181fb00",
+        "0x1180e9e4",
+        "0x1180fb08",
+        "0x11806900",
+        "0x11805000",
+        "0x11807e00",
+        "0x11808bc0",
+        "0x1181fcf0",
+        "0x1181fce0",
+        "0x1180f428"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180e8d0",
+      "irq8_call_sites": [
+        "0x1181aeec",
+        "0x1181af00",
+        "0x1181af20"
+      ],
+      "category": "control_state",
+      "confidence": "low",
+      "semantic_evidence": "state-like candidate from bounded instruction sample; exact state ownership unresolved",
+      "listing_review_window": {
+        "start": "0x1180e8d0",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1180ea70",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {},
+      "direct_calls_observed_in_window": [
+        "0x1180e9e4",
+        "0x1180cfe0"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1180e964",
+          "operation": "B",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1180e9ac",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1180e9da",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1180e9e0",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1180ea16",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x11812744",
+      "irq8_call_sites": [
+        "0x1181aef4"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x11812744",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x11812908",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 1,
+        "INTSPU": 1,
+        "MPYSP": 2,
+        "MPYSPDP": 2,
+        "SUBSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181fb00",
+        "0x11811640",
+        "0x11811708",
+        "0x11811840",
+        "0x118119c0"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x11811068",
+      "irq8_call_sites": [
+        "0x1181af08"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x11811068",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x118111f8",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 4,
+        "CMPGTSP": 1,
+        "CMPLTSP": 2,
+        "MPYSP": 2,
+        "SUBSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x1180e980"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181cfb4",
+      "irq8_call_sites": [
+        "0x1181af0c"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1181cfb4",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181d158",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPGTSP": 3,
+        "CMPLTSP": 5,
+        "MPYSP": 5,
+        "SPINT": 1
+      },
+      "direct_calls_observed_in_window": [],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181d08c",
+          "operation": "BNOP",
+          "target_register": "A2",
+          "possible_return": false
+        },
+        {
+          "site": "0x1181d0cc",
+          "operation": "B",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1181d0e0",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x11810bcc",
+      "irq8_call_sites": [
+        "0x1181af10"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x11810bcc",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x11810d78",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDDP": 2,
+        "ADDSP": 1,
+        "CMPGTSP": 1,
+        "MPYSP": 1,
+        "MPYSPDP": 2,
+        "SUBSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x11818d54",
+        "0x11812c38"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x11810cac",
+          "operation": "BNOP",
+          "target_register": "A18",
+          "possible_return": false
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181b700",
+      "irq8_call_sites": [
+        "0x1181af28"
+      ],
+      "category": "control_state",
+      "confidence": "low",
+      "semantic_evidence": "state-like candidate from bounded instruction sample; exact state ownership unresolved",
+      "listing_review_window": {
+        "start": "0x1181b700",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181b8ca",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {},
+      "direct_calls_observed_in_window": [
+        "0x11810060",
+        "0x1180fb08"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181b776",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1181b7c4",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1181b808",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1181b884",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180dd54",
+      "irq8_call_sites": [
+        "0x1181af2c"
+      ],
+      "category": "wrapper",
+      "confidence": "low",
+      "semantic_evidence": "direct subcalls in bounded sample; routine boundary unresolved",
+      "listing_review_window": {
+        "start": "0x1180dd54",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1180def0",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {},
+      "direct_calls_observed_in_window": [
+        "0x1180cfe0"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1180deaa",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x11818340",
+      "irq8_call_sites": [
+        "0x1181af30"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x11818340",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x118184ec",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 6,
+        "CMPGTSP": 2,
+        "CMPLTSP": 2,
+        "MPYSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181fb00",
+        "0x11813c0c",
+        "0x1181fae0"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x11818ec8",
+      "irq8_call_sites": [
+        "0x1181af38"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x11818ec8",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x11819078",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 2
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181fb00",
+        "0x118161ec",
+        "0x11815ecc",
+        "0x1181fae0",
+        "0x1180e9e4",
+        "0x1180fb08",
+        "0x11806900"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x11818f14",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181b784",
+      "irq8_call_sites": [
+        "0x1181af3c"
+      ],
+      "category": "control_state",
+      "confidence": "low",
+      "semantic_evidence": "state-like candidate from bounded instruction sample; exact state ownership unresolved",
+      "listing_review_window": {
+        "start": "0x1181b784",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181b944",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPGTSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x11810060",
+        "0x1180fb08"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181b7c4",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1181b808",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1181b884",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1181b8da",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180deb4",
+      "irq8_call_sites": [
+        "0x1181af40"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1180deb4",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1180e050",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 2,
+        "CMPGTSP": 1,
+        "SUBSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x1180cfe0",
+        "0x1180e9e4"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1180df62",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1180dfd2",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180f458",
+      "irq8_call_sites": [
+        "0x1181af44"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1180f458",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1180f5f8",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDDP": 4,
+        "ADDSP": 1,
+        "CMPGTSP": 2,
+        "CMPLTSP": 1,
+        "MPYSPDP": 2
+      },
+      "direct_calls_observed_in_window": [
+        "0x1180e9b0"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180e568",
+      "irq8_call_sites": [
+        "0x1181af48",
+        "0x1181af50",
+        "0x1181af60"
+      ],
+      "category": "wrapper",
+      "confidence": "low",
+      "semantic_evidence": "direct subcalls in bounded sample; routine boundary unresolved",
+      "listing_review_window": {
+        "start": "0x1180e568",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1180e734",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {},
+      "direct_calls_observed_in_window": [
+        "0x1180e9e4",
+        "0x1180cfe0"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1180e636",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181b80c",
+      "irq8_call_sites": [
+        "0x1181af58"
+      ],
+      "category": "control_state",
+      "confidence": "low",
+      "semantic_evidence": "state-like candidate from bounded instruction sample; exact state ownership unresolved",
+      "listing_review_window": {
+        "start": "0x1181b80c",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181b9cc",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPGTSP": 3,
+        "MPYSP": 2
+      },
+      "direct_calls_observed_in_window": [
+        "0x1180fb08"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181b884",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1181b8da",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180ff58",
+      "irq8_call_sites": [
+        "0x1181af5c"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1180ff58",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x118100ce",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 2,
+        "MPYSP": 4,
+        "MPYSPDP": 4,
+        "SUBSP": 2
+      },
+      "direct_calls_observed_in_window": [],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x11810058",
+          "operation": "BNOP",
+          "target_register": "A9",
+          "possible_return": false
+        },
+        {
+          "site": "0x11810086",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x118100b6",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180ef88",
+      "irq8_call_sites": [
+        "0x1181af68"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1180ef88",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1180f128",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDDP": 8,
+        "MPYSP": 1,
+        "SUBSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x11818d0c"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1180f070",
+          "operation": "BNOP",
+          "target_register": "A19",
+          "possible_return": false
+        },
+        {
+          "site": "0x1180f0e4",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181b7c8",
+      "irq8_call_sites": [
+        "0x1181af6c"
+      ],
+      "category": "control_state",
+      "confidence": "low",
+      "semantic_evidence": "state-like candidate from bounded instruction sample; exact state ownership unresolved",
+      "listing_review_window": {
+        "start": "0x1181b7c8",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181b98c",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPGTSP": 2,
+        "MPYSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x1180fb08"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181b808",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1181b884",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1181b8da",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180df6c",
+      "irq8_call_sites": [
+        "0x1181af70"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1180df6c",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1180e134",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 3,
+        "CMPGTSP": 1,
+        "CMPLTSP": 1,
+        "SUBSP": 3
+      },
+      "direct_calls_observed_in_window": [
+        "0x1180e9e4",
+        "0x1180cfe0",
+        "0x1181fb00",
+        "0x1180e9b0"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1180dfd2",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1180e0a4",
+          "operation": "BNOP",
+          "target_register": "A1",
+          "possible_return": false
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181a860",
+      "irq8_call_sites": [
+        "0x1181af74",
+        "0x1181afa4"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1181a860",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181aa34",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPLTSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x1180fb08",
+        "0x1181fb00",
+        "0x1180e980",
+        "0x1181fae0",
+        "0x1181d6f4"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1181a8a2",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181dc20",
+      "irq8_call_sites": [
+        "0x1181af80",
+        "0x1181afa8"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1181dc20",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181ddb4",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 1,
+        "CMPGTSP": 1,
+        "CMPLTSP": 1,
+        "MPYSP": 4,
+        "SUBSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x1180fb08",
+        "0x11810088",
+        "0x1181d0ec"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x11818558",
+      "irq8_call_sites": [
+        "0x1181af88"
+      ],
+      "category": "control_state",
+      "confidence": "low",
+      "semantic_evidence": "state-like candidate from bounded instruction sample; exact state ownership unresolved",
+      "listing_review_window": {
+        "start": "0x11818558",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x11818720",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "CMPGTSP": 1,
+        "INTSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181fb00"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x11810cb0",
+      "irq8_call_sites": [
+        "0x1181af90"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x11810cb0",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x11810e58",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDDP": 5,
+        "CMPGTSP": 1,
+        "CMPLTSP": 2,
+        "MPYDP": 1,
+        "MPYSPDP": 4,
+        "SUBSP": 2
+      },
+      "direct_calls_observed_in_window": [
+        "0x11818d54",
+        "0x11812c38"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180f074",
+      "irq8_call_sites": [
+        "0x1181af98"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1180f074",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1180f20c",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDDP": 2,
+        "ADDSP": 1,
+        "INTSP": 2,
+        "MPYSP": 4,
+        "MPYSPDP": 2,
+        "SUBSP": 1
+      },
+      "direct_calls_observed_in_window": [
+        "0x11818d0c"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1180f0e4",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x1180f170",
+          "operation": "BNOP",
+          "target_register": "A8",
+          "possible_return": false
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x11812e00",
+      "irq8_call_sites": [
+        "0x1181afb0"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x11812e00",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x11812fb8",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 2,
+        "MPYSP": 2
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181fb00",
+        "0x11811400",
+        "0x11814570",
+        "0x118114e0",
+        "0x11811580",
+        "0x1181fae0",
+        "0x1181fa60"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180ff38",
+      "irq8_call_sites": [
+        "0x1181afb4"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1180ff38",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x118100b8",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 2,
+        "MPYSP": 4,
+        "MPYSPDP": 4,
+        "SUBSP": 2
+      },
+      "direct_calls_observed_in_window": [
+        "0x1180fba0"
+      ],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1180ff54",
+          "operation": "BNOP",
+          "target_register": "A18",
+          "possible_return": false
+        },
+        {
+          "site": "0x11810058",
+          "operation": "BNOP",
+          "target_register": "A9",
+          "possible_return": false
+        },
+        {
+          "site": "0x11810086",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        },
+        {
+          "site": "0x118100b6",
+          "operation": "BNOP",
+          "target_register": "B3",
+          "possible_return": true
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180f0e8",
+      "irq8_call_sites": [
+        "0x1181afc0"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1180f0e8",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1180f27a",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 1,
+        "INTSP": 4,
+        "MPYSP": 4,
+        "MPYSPDP": 2,
+        "SUBSP": 1
+      },
+      "direct_calls_observed_in_window": [],
+      "register_target_branches_observed_in_window": [
+        {
+          "site": "0x1180f170",
+          "operation": "BNOP",
+          "target_register": "A8",
+          "possible_return": false
+        },
+        {
+          "site": "0x1180f210",
+          "operation": "BNOP",
+          "target_register": "A16",
+          "possible_return": false
+        }
+      ],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1180eb08",
+      "irq8_call_sites": [
+        "0x1181afc4"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1180eb08",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1180ecb6",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDDP": 3,
+        "CMPGTSP": 1,
+        "CMPLTSP": 2,
+        "MPYDP": 1,
+        "MPYSPDP": 4,
+        "SUBSP": 2
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181fb00",
+        "0x1180e9e4"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181a4d4",
+      "irq8_call_sites": [
+        "0x1181afcc"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1181a4d4",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181a68e",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "ADDSP": 1,
+        "CMPGTSP": 1,
+        "CMPLTSP": 3,
+        "MPYSP": 6,
+        "SUBSP": 2
+      },
+      "direct_calls_observed_in_window": [],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    },
+    {
+      "address": "0x1181bbf8",
+      "irq8_call_sites": [
+        "0x1181afd4"
+      ],
+      "category": "numeric_processing",
+      "confidence": "low",
+      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "listing_review_window": {
+        "start": "0x1181bbf8",
+        "decoded_instruction_count": 120,
+        "end_instruction_site": "0x1181bdbc",
+        "is_function_extent": false
+      },
+      "numeric_opcode_counts": {
+        "SUBDP": 2
+      },
+      "direct_calls_observed_in_window": [
+        "0x1181fb00",
+        "0x11813c0c",
+        "0x1181ba60",
+        "0x1181fae0"
+      ],
+      "register_target_branches_observed_in_window": [],
+      "unresolved": [
+        "Window may cross function boundaries and omits descendants outside it.",
+        "Register-target branch purpose, runtime branch frequency, memory ownership and acoustic identity unresolved."
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "Indirect/register-target branches seen in samples are indexed but not resolved globally.",
+    "Packet issue, branch delay slots and loop-buffer scheduling require separate control-flow analysis.",
+    "A sample window is not a function extent; opcode counts or nested calls can cross a boundary.",
+    "Acoustic effect identities and full numeric formulas remain unresolved."
+  ]
+}
