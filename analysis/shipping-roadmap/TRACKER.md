@@ -48,3 +48,7 @@ The distributable image should contain our installation/runtime integration and 
 - `local/dsp-review-20260915/`: verified toolchain, private section wrapper and packet-aware disassembly.
 
 These local paths are ignored research outputs, not prerequisites for users of the released project. No firmware image or hardware deployment is claimed by this tracker.
+
+## Reviewed coefficient and control-ramp checkpoint
+
+The [shared coefficient helpers](../dsp-reversal-20260915/FILTER-COEFFICIENTS.md) now have ordered binary32 equations, including the corrected 4.0 constant and same-packet register reads. The [reciprocal helper](../dsp-reversal-20260915/RECIPROCAL-FA60.md) uses RCPSP followed by two separately rounded Newton refinements. Exact seed mapping and live floating-point control remain unresolved. The [bounded ramp](../dsp-reversal-20260915/BOUNDED-RAMP.md) has a traced persistent scalar writeback; it is not an audio clipping function. Included PC probes demonstrate arithmetic structure only, not DSP execution or audio parity. Full sample recurrence, named effect coverage, routing and reset/tail behavior remain open.
