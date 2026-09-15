@@ -42,13 +42,45 @@ Tests must check real original fixture content and preservation, not just self-c
   both genuine fixtures: deterministic; 667/667 entries reference valid track IDs; 602/602
   analyze_path values resolve to real ANLZ files on the audit drive.
 
+## Input side COMPLETE and tested (2026-09-15)
+
+The whole old-format input is now extracted and validated against genuine fixtures.
+
+- `library/anlz_extract.cpp` — ANLZ cues, loops, colours, comments and beat grids.
+  Measured on the real export: 602/602 pairs parse, 232 raw cues -> 116 merged slots,
+  0 cue-time conflicts, 3 saved loops with loop fractions, 116 cues carrying RGB.
+- **Cue-source semantics (new evidence).** BiteDJ's `readAnalyzeFiles` reads cues from
+  the `.EXT` when present. Measured: the `.EXT`'s own PCOB holds only pads 4-9 while its
+  PCO2 holds 1-9, and the `.DAT`'s PCOB holds the track's legacy list. On this library
+  the `.EXT` is a strict superset (0 tracks where the `.DAT` has cues the `.EXT` lacks),
+  so BiteDJ loses nothing here -- but the sets are *not* identical, so `anlz_extract`
+  reads both by default, tags each cue with its file, and merges to one cue per slot
+  (PCO2 wins; it alone carries colour/loop fraction/comment).
+- `library/pdb_extract.cpp` — now also LABELS, COLORS and ARTWORK. COLORS reads
+  1..8 = Pink/Red/Orange/Yellow/Green/Aqua/Blue/Purple, matching BiteDJ's enum.
+  Neither library sets a *track* colour; colour lives in the ANLZ cue RGB.
+- **Robustness defects found and fixed in my own tools:** `exportExt.pdb` aborted the
+  process (uncaught `std::length_error`) and a non-PDB file silently "succeeded" with
+  zero rows. Both now refuse cleanly; per-row parse errors are counted, not fatal.
+- `library/pdb_raw.py` — schema-free PDB framing reader, cross-validated against the
+  Kaitai parser (identical row counts on all 10 populated table types, both exports).
+- `library/exportext_extract.py` — decodes exportExt MyTags: Genre(7), Components(8),
+  Situation(8), Untitled Column(1); 0 skipped rows, 0 orphans.
+  **No local export carries a tag-to-track mapping**, so exportExt contributes no
+  per-track data to preserve; the larger export has no exportExt.pdb at all.
+
+Cross-source validation (independent files agreeing, not self-consistency):
+602/602 ANLZ PPTH paths equal the export.pdb `file_path`; 600/600 beat grids contain
+the export.pdb BPM; 667/667 playlist entries resolve to real tracks; 602/602
+`analyze_path` values resolve on disk.
+
 ## Next
 
-1. Extend `pdb_extract` to also read ANLZ (DAT/EXT) cues/loops/beatgrid — mirror BiteDJ
-   `readAnalyze`, emit `cue`-shaped records (kind, in/outUsec, loop, colorTableIndex).
-2. Host key-derivation tool (from user-supplied EP147 + lsdk.dat) with Blowfish test vectors.
-3. OneLibrary writer: JSON intermediate -> SQLCipher `exportLibrary.db` using the AZ rootfs's
-   own `sqlcipher`/`libsqlcipher` under qemu-user. **Blocked on schema exactness** — needs a
-   genuine OneLibrary sample to fix CREATE TABLE/user_version/indexes.
-4. Replay native open/key/property/journal/table_info gate against generated output in the
-   isolated qemu launch; compare browsed playlists/cues to the source record set.
+1. Determine whether EP147 has **any** legacy `export.pdb` read path (the decisive
+   question for "no mandatory re-export"); `REPORT.md` found the string but mostly in
+   static initialisers. In progress.
+2. AZ cue/grid mapping: ANLZ ms -> `inUsec`/`in150FramePerSec`/`beatLoop*`/
+   `colorTableIndex`, and the `kind` 0..16 slot mapping.
+3. Writer + acceptance remain **blocked**: no genuine OneLibrary fixture exists locally,
+   so CREATE TABLE/user_version/index exactness and native acceptance cannot be proven.
+   Not faked.
