@@ -73,3 +73,20 @@ python analysis/dsp-reversal-20260915/summarize_gain_tables.py \
 ```
 
 The tool reports aggregate properties only and exits unsuccessfully for incomplete banks or invalid gain-data properties. Reviewed private-section results match the table above; bounded mutation checks reject a truncated third bank and a nonfinite first-bank entry. This probe does not verify firmware identity/CRC, position range, active runtime selection, or exact ramp sample alignment.
+
+## MCU position transport and bounded compute writer
+
+The MCU filler reads position RAM halfword `0x20026f1c` at0x18dfa and writes it directly to transmit-frame byte6 at0x18dfc, i.e. command halfword3. The byte0x200031a5 gate must equal1. No mask is applied at that fill site. A separate MCU validator0x18496 participates in a status/history path through caller0x18544; no evidence makes it a gate on this transmission.
+
+The later DSP compute path masks command3 to ten bits at0x118198a8 before buffering. The exact freshness/routing of every downstream buffer entry remains unresolved. The position reduction initializes B20=0 and B2=4 (0x11819a64/19a54), reads consecutive halfwords via A20 starting at0x1183d3c8, and performs:
+
+```text
+accumulator = 0
+for each of four loaded entries x:
+    accumulator = (accumulator + x) & 0xffff
+position = (accumulator >> 2) & 0x3ff
+```
+
+Key sites: LDHU0x11819c34; ADD0x11819c68; EXTU0x11819c88; pointer increment/counter decrement0x11819ce0/19ce4; conditional loop branch0x11819da0; final extraction/store0x11819e08/19e18. The MV A26,B4 at0x11819c80 shares a packet with EXTU B4 at0x11819c88, so the latter reads the prior sum, not the buffer pointer A26.
+
+For four entries each within0..1023, there is no16-bit wrap, and the result is the floor of their arithmetic mean. For arbitrary entries it is the masked reduction above, not a saturating average. The final extraction always bounds this writer's result to0..1023. It still does not constrain the earlier direct command3→state517 writer. Initialization ordering and upstream RAM-writer bounds remain open before claiming every gain-table access is in range.
