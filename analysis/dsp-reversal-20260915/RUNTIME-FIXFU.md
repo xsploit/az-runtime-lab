@@ -21,3 +21,5 @@ python analysis/dsp-reversal-20260915/compare_encoded_region.py \
 ```
 
 Set TI_ROOT, OUT and AZ_LISTING explicitly; create OUT beforehand. The comparator rejects missing bytes, overlapping records and split boundaries, and prints no payload values. This comparison assumes the supplied disassembly encodings accurately represent the binaries; it does not execute them or validate unrelated sections.
+
+[probe_fixfu.py](probe_fixfu.py) supplies an original integer-only model taking explicit binary32 bits. [Boundary tests](test_fixfu.py) cover zero/subnormals, fractional truncation, both signs around2^31 and2^32, infinity and signed NaN. These22 source-derived vectors pass, as do four invalid-input rejections. They are a reproducible interpretation of the matched source, not independent live numerical evidence. Using bit patterns avoids Python float-to-int behavior or host NaN conversion affecting the result.
