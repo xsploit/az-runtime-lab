@@ -52,3 +52,24 @@ Three explicit B14-halfword517 stores appear in the corrected listing:
 | `0x80014648` | zero from `MVK 0,A1` at `0x800145da` | zero |
 
 These are explicit addressing matches, not a proof against aliased pointer writes. The raw command writer prevents claiming a global10-bit invariant from the compute writer alone. Next steps are the command3 producer/domain, the compute-path input provenance, and table initialization/content. The1023 constant in the gain reader is an index offset, not a clamp instruction.
+
+## Recovered static table shapes
+
+The AIS section loaded at `0x80000000` spans0xf3c0 bytes, including the three banks selected by the reviewed application-setting mapping. The target words are consumed by SUBSP, supporting binary32 interpretation. Direct little-endian binary32 inventory gives:
+
+| Encoded selector | Address | Distinct levels | Reaches1 at index | Observed shape |
+|---|---|---:|---:|---|
+| 0 | `0x80004000` | 1024 | 1023 | Strictly increasing from0 to1 |
+| 1 | `0x80005000` | 411 | 410 | Nondecreasing, then stays1 |
+| 2 | `0x80006000` | 2 | 1 | Index0 is0; all remaining entries are1 |
+
+All1024 values in each bank are finite and within0..1. These are initial firmware-section contents, not proof that no runtime writer changes them. Selector3's address region is not established as a fourth user curve. The three recovered shapes do not by themselves supply UI labels, a mathematical generating formula, or audible parity.
+
+Reproduce the aggregate check with your own extracted section; no table payload is included in this repository:
+
+```sh
+python analysis/dsp-reversal-20260915/summarize_gain_tables.py \
+  /path/to/sec_80000000.bin --section-address 0x80000000
+```
+
+The tool reports aggregate properties only and exits unsuccessfully for incomplete banks or invalid gain-data properties. Reviewed private-section results match the table above; bounded mutation checks reject a truncated third bank and a nonfinite first-bank entry. This probe does not verify firmware identity/CRC, position range, active runtime selection, or exact ramp sample alignment.
