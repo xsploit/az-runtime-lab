@@ -33,6 +33,10 @@ Do not equate folder browsing with old Rekordbox library support. First trace th
 
 Reuse investigation comes before another parser implementation: inspect BiteDJ's existing PDB/ANLZ code and RX3 adapters, record their actual supported fields and interfaces, then identify what an AZ-native output adapter still needs. A host-only browser is useful for diagnostics but is not completion of native prepared-library compatibility.
 
+The [reuse assessment](../legacy-library-20260915/REUSE.md) now identifies concrete BiteDJ readers and the RX3 staging pattern. The [native acceptance trace](../legacy-library-20260915/ACCEPTANCE.md) reaches read-write SQLite open, key application and preparation of a `property` query. The [table-reader trace](../legacy-library-20260915/TABLE-READERS.md) separates local USB `content`/`playlist_content` references from CloudSqlite `djmd*` tables. Next: recover dynamic local entity selectors and ordering, obtain a controlled existing OneLibrary fixture, then validate a staged candidate. No compatible output database exists from this research pass.
+
+For audio, [linked buffers and their consumer](../dsp-reversal-20260915/BUFFER-CONSUMERS.md) establish alternating 704-byte McASP receive blocks and a normalized buffer selector reaching integer-to-float processing. Next: prove channel identities, sample-clock/interrupt routing and subsequent processing states before implementing the hardware replacement. The [RX3 comparison](../dsp-reversal-20260915/RX3-COMPARISON.md) identifies two payloads and their updater transports, but does not establish a common DSP contract.
+
 ## Release gate
 
 The distributable image should contain our installation/runtime integration and permitted dependencies, with a guided local import of the user's compatible vendor inputs. Require hash/version validation, configurable mount/state locations, scoped privileges, first-boot audio/display setup, clean shutdown, persistent cache and an accessible failure log. Publish the image only after fresh-install and sustained playback/analysis tests on hardware. Existing scripts passing on an established checkout do not satisfy this gate.
