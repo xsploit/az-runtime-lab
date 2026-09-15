@@ -114,6 +114,14 @@ Two consequences:
 No index creation or index requirement is visible either; the readers resolve columns by
 name through `PRAGMA table_info`, so column *order* is not significant.
 
+`property.dbVersion` is read (column literal at `0x284bdd0`, text16 getter at `0x118fa58`)
+but **no literal it is compared against was found**. The only version-sounding diagnostic
+in the music_library region, `Unsupported data version!` (`0x285e698`), belongs to the IPC
+request protocol -- it sits in `RequestHandle/ListRequestHandler.cpp` beside
+`unsupported request command`, `Unsupportd category!` [sic] and `unsupported mediaType`,
+not in the database code. So no evidence was found that a particular `dbVersion` string
+gates the mount.
+
 ## What remains unproven
 
 NOT NULL/default constraints, which columns are load-critical versus optional, how

@@ -114,16 +114,36 @@ Also fixed a real decoding fault: ISRC is dispatched to the UTF-16 body type but
 valid ISRCs. Artist roles (remixer/composer/original), `djPlayCount`, `dateAdded`
 (YYYY-MM-DD, matching EP147's browse predicate) and `fileName` are now preserved too.
 
-## Next
+## Unknowns closed since (all static, all on genuine data)
 
-1. `menuItem`/`category`/`sort` are staged empty; EP147 reads them for browse
-   categories, so an empty set may mean an empty browse menu. Investigating whether
-   rows are required and what `kind` values mean. **In progress.**
-2. Remaining inferred values to pin down: playlist `attribute` folder flag (0/1 assumed)
-   and `content.fileType` (currently derived from the file suffix, as the export has no
-   file-type scalar).
-3. Writer acceptance remains **blocked**: no genuine OneLibrary fixture exists locally and
-   no key is handled here, so CREATE TABLE exactness, `PRAGMA user_version`, index
-   requirements and actual native acceptance cannot be proven. Not faked.
-4. Highest-value runtime experiment, for whoever is authorised to run EP147 or hardware:
-   does a legacy USB already show cues/grids in Folder mode today? Not run here.
+- **Schema creation / versioning is not a gate.** The music_library SQL vocabulary has no
+  `CREATE TABLE`, `CREATE INDEX`, `ALTER TABLE` or `PRAGMA user_version`; every such
+  literal in the binary belongs to the Beatport SDK. The firmware never creates or
+  migrates this schema, so the database must arrive complete (hence 22/22 tables and
+  75/75 columns), but no schema version has to be guessed and column order is irrelevant.
+- **`property.dbVersion` has no comparison constant** anywhere in the music_library
+  region; `Unsupported data version!` belongs to the IPC request dispatcher instead.
+- **`content.fileType` is now firmware-derived**, from EP147's own extension chain at
+  `0x117c650`, not a guess.
+- **The ANLZ directory is allocated, not derivable** (599/599 unique, no path hash or
+  track-id relation), so `analysisDataFilePath` is the reliable link to existing cues and
+  grids — the database half is not optional.
+- Both `PIONEER` and hidden `.PIONEER` layouts are supported end to end.
+
+## Remaining blockers (need a fixture, a key, or hardware — not fakeable)
+
+1. **No genuine device-library fixture on this machine.** Leaves two enums unconfirmed and
+   deliberately uninvented: `playlist.attribute` (folder flag, assumed 0/1; the getter is
+   virtual so no caller could be traced) and `menuItem.kind` (which browse categories
+   exist and in what order). `menuItem`/`category`/`sort` are therefore staged empty and
+   **browse categories may be missing** until `--categories-from` is pointed at a real
+   library.
+2. **Output is plaintext; EP147 opens the file with `sqlite3_key()`.** The derivation
+   mechanism is documented but no key is read, derived, printed or committed here.
+3. **No device or emulator has accepted any generated database.** EP147 was not executed.
+
+## Highest-value next experiment (needs authorisation, not run here)
+
+Run a legacy USB and observe whether cues, loops and beat grids appear in Folder mode.
+The oracle already exists: `pdb_extract` + `anlz_extract` produce the expected record set
+to compare against.
