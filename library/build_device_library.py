@@ -24,10 +24,18 @@ IMPORTANT -- what is and is not established:
     a PLAINTEXT database and never handles key material. Applying the device
     key is a separate step for whoever legitimately holds it; no key is read,
     derived, printed or committed here.
+  * The firmware never creates or migrates this schema: the music_library SQL
+    vocabulary contains no CREATE TABLE, ALTER TABLE, CREATE INDEX or
+    PRAGMA user_version (those literals in the binary belong to the Beatport
+    SDK). So the database must arrive complete -- hence all 22 entity tables
+    and all 75 read columns -- but no schema version has to be guessed and
+    column order does not matter, since readers resolve columns by name
+    through PRAGMA table_info.
   * NO device or emulator has accepted a database produced by this tool. There
-    is no genuine OneLibrary fixture on this machine to compare against, so
-    CREATE TABLE exactness, PRAGMA user_version and index requirements are
-    unverified. Do not describe this output as accepted.
+    is no genuine device-library fixture on this machine, so NOT NULL/default
+    constraints, which columns are load-critical, and the playlist `attribute`
+    and menuItem `kind` enums remain unconfirmed. Do not describe this output
+    as accepted.
 
 Usage:
   python3 library/build_device_library.py LIBRARY.json --out-dir DIR

@@ -84,9 +84,50 @@ give cue in/out, `beatLoopNumerator`/`Denominator` + `isActiveLoop` describe sav
 `colorTableIndex` selects hot-cue color. This is the target for translating ANLZ memory
 cues / hot cues / loops (BiteDJ `readAnalyze`) into `cue` rows.
 
+## The library mount never creates or versions its schema
+
+The complete SQL vocabulary of the `music_library` SQLite family (rodata
+`0x284b3a0`-`0x284c830`) is: `SELECT `, `DISTINCT `, ` INNER JOIN `, ` ON `, ` WHERE `,
+` AND `, ` OR `, ` SET `, `UPDATE `, `INSERT INTO `, `VALUES (`, `DELETE FROM `,
+`BEGIN/COMMIT/ROLLBACK TRANSACTION`, plus `SELECT * FROM property`,
+`SELECT name from sqlite_master WHERE TYPE='table'`, `PRAGMA table_info(` and
+`PRAGMA main.journal_mode=delete`.
+
+There is **no `CREATE TABLE`, no `CREATE INDEX`, no `ALTER TABLE`, no `DROP TABLE` and
+no `PRAGMA user_version`** in this family. The binary does contain those literals, but
+all of them belong to the **Beatport streaming SDK** instead -- `CREATE TABLE IF NOT
+EXISTS {} (...)` at `0x33fd0a8`, `CREATE TABLE {} (id PRIMARY KEY,name VARCHAR(200),
+artists VARCHAR(255),num_plays INTEGER,...)` at `0x347f1f0`, `ALTER TABLE {} ADD size
+INTEGER` at `0x347f3f8`, `PRAGMA user_version` / `PRAGMA user_version = {}` at
+`0x33fd3e8`/`0x33fd470` -- sitting among `beatport::PlaylistManager`, `track_cache`,
+`track_locker`, `stream_quality` and `Migrating database from schema {} to {}`. They use
+`{}` fmt placeholders, unlike the music_library literals.
+
+Two consequences:
+
+1. **The library database is never created or migrated by the firmware.** A mounted
+   database must already carry every table and column the readers touch, which is why
+   the generator supplies all 22 entity tables and all 75 read columns.
+2. **`PRAGMA user_version` is not a gate for this database.** It is not read by the
+   music_library family at all, so no schema-version value has to be guessed.
+
+No index creation or index requirement is visible either; the readers resolve columns by
+name through `PRAGMA table_info`, so column *order* is not significant.
+
 ## What remains unproven
 
-Exact `CREATE TABLE` column lists, NOT NULL/defaults, index and PRAGMA `user_version`,
-which columns are load-critical vs optional, the `content.path` vs `fileName` convention,
-and how `dbVersion`/`property` gate a browse. All require a genuine local OneLibrary
-sample; none is available here. See [STATUS.md](STATUS.md) and `../../HANDOFF.md`.
+NOT NULL/default constraints, which columns are load-critical versus optional, how
+`dbVersion`/`property` values gate a browse, and the meaning of two enums that the
+generator therefore does not invent:
+
+- `playlist.attribute` -- folder versus playlist. Assumed 0/1 from rekordbox convention;
+  the getter is virtual so no direct caller could be traced statically.
+- `menuItem.kind` -- which browse categories exist and in what order. EP147 renders the
+  category *labels* from its own GUI string table (`gui::browse` at `0x2b7b958`: Folder,
+  Album, Label, Related Key, Bitrate, Decade, Original Artist, Remixer, Hot Cue Bank
+  List, Date Added, Comments, DJ Play Count, Track Name, ...), so these rows most likely
+  select and order categories rather than name them.
+
+All of these need a genuine local sample, which is not available here; the generator has
+a `--categories-from` hook so the real rows can be copied verbatim once one exists. See
+[STATUS.md](STATUS.md) and [HANDOFF.md](HANDOFF.md).
