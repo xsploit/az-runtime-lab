@@ -90,3 +90,17 @@ position = (accumulator >> 2) & 0x3ff
 Key sites: LDHU0x11819c34; ADD0x11819c68; EXTU0x11819c88; pointer increment/counter decrement0x11819ce0/19ce4; conditional loop branch0x11819da0; final extraction/store0x11819e08/19e18. The MV A26,B4 at0x11819c80 shares a packet with EXTU B4 at0x11819c88, so the latter reads the prior sum, not the buffer pointer A26.
 
 For four entries each within0..1023, there is no16-bit wrap, and the result is the floor of their arithmetic mean. For arbitrary entries it is the masked reduction above, not a saturating average. The final extraction always bounds this writer's result to0..1023. It still does not constrain the earlier direct command3→state517 writer. Initialization ordering and upstream RAM-writer bounds remain open before claiming every gain-table access is in range.
+
+## Normal source bound recovered
+
+MCU routine0x614 reconstructs five packed10-bit values from an eight-byte receive buffer at0x20261ce4. Its fifth store, STRH at0x656 to0x20026f1c, is exactly:
+
+```text
+position = (unsigned_byte5 << 2) | (unsigned_byte6 >> 6)
+```
+
+The direct Thumb decode at0x64c–656 proves the two byte loads, right shift, shifted OR and halfword store. All65536 possible byte pairs produce values0..1023, including1023. The first four decoded values occupy the preceding four halfwords; no physical sensor identity is assigned solely from this layout.
+
+This closes the normal decoded-source→MCU RAM→command3 bound. The raw DSP writer is at0x80014020 (store0x80014038), reached by thunk0x1181fbc0 and direct call0x1181ebd8 in an initialization sequence. It must not be confused with thunk0x80014000, which targets numeric helper0x1181f460. The bounded compute routine0x11819880 is a direct IRQ8 target at0x1181ae8c, earlier in that sequence than the gain routine call0x1181af5c.
+
+Consequently the identified source path is safe with respect to the1024-entry index domain even though startup copies the halfword without masking. This is a conditional source-path proof, **not a global firmware invariant**: other indirect RAM writes, startup/frame initialization and false transmit-gate contents remain unresolved. The historical raw-width concern above remains applicable only to inputs outside the established normal source constraints.
