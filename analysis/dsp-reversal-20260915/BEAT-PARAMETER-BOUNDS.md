@@ -28,7 +28,7 @@ value = state_halfword508 if state_halfword510 == 1 else selected
 B4 = min(32000, max(10, value))
 ```
 
-This does **not** establish where the clamped B4 is ultimately stored or used. In particular, `MV A4,A3` at `0x80012118` followed by `STH A3,*+B14[511]` at `0x80012120` copies the earlier state510 value, not B4. Halfwords508,510,511 have addresses `0x118033f8`, `0x118033fc`, `0x118033fe`. The gate-skipping path and later processing require separate traces.
+The clamped B4 is copied to B5 at `0x80012134`. B4 is then repurposed as a clear-buffer pointer at `0x8001214a`, while B5 remains unchanged through the intervening instructions. `STH B5,*+B14[505]` at `0x80012290`, in the branch-delay stream following `BNOP` at `0x80012288`, stores the clamped value to halfword505 (`0x118033f2`). This closes the initial setup parameter destination, not all later consumers. In contrast, `MV A4,A3` at `0x80012118` followed by `STH A3,*+B14[511]` at `0x80012120` copies the earlier state510 value, not B4. Halfwords508,510,511 have addresses `0x118033f8`, `0x118033fc`, `0x118033fe`. The gate-skipping path and later processing require separate traces.
 
 ## Verification boundary
 

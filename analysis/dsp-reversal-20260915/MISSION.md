@@ -1,6 +1,6 @@
 # Full AZ DSP mapping goal
 
-User priority: complete DSP understanding before new features or controller mapping. The active goal remains open across research checkpoints. Library conversion is parked. Subagents for this work are explicitly Sol (`gpt-5.6-sol`); the coordinator reviews evidence and owns publication.
+User priority: complete DSP understanding before new features or controller mapping. The active goal remains open across research checkpoints. Legacy library adaptation is separately assigned to Claude; it does not replace this DSP goal. Subagents for this work are explicitly Sol (`gpt-5.6-sol`); the coordinator reviews evidence and owns publication.
 
 ## Completion requirements
 
@@ -15,9 +15,9 @@ User priority: complete DSP understanding before new features or controller mapp
 
 | Owner | Bounded work | Output |
 |---|---|---|
-| Sol / az_crc | Full IRQ8 direct processing inventory with classifications and unknown coverage | Processing coverage ledger |
-| Sol / dsp_contract | Exact input-conversion arithmetic and compact-loop schedule | Input arithmetic report and justified numeric probes |
-| Sol / legacy_library | DSP command-to-state-to-consumer maps; library work paused | DSP control/state ledger |
+| Sol / az_crc | IRQ8 coverage inventory and instruction/address semantics | Processing coverage ledger |
+| Sol / dsp_contract | Sample-filter recurrence and packet/latency provenance | Input arithmetic report and justified numeric probes |
+| Sol / legacy_library | Beat selector parameter/state consumers; library work separate | DSP control/state ledger |
 | Coordinator | Host/MCU semantic links, RX3 comparison, independent review and publication | Cross-layer map and reviewed reports |
 
 ## Cross-layer constraints
