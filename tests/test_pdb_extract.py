@@ -16,6 +16,7 @@ Uses only genuine Rekordbox exports. Generates no fake fixtures.
 """
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -79,6 +80,19 @@ def main():
         if no_path:
             print(f"note: {len(no_path)} tracks have empty file_path")
 
+        # EP147 validates DB-recorded analysis paths against
+        # /ANLZ[0-9]{4}.[0-9A-Z]{1,4}/ under a USBANLZ directory (see
+        # analysis/legacy-library-20260915/NATIVE-ANLZ-SUPPORT.md). An export
+        # whose paths do not match that could not be pointed at natively, so
+        # check the real fixture against the native expectation.
+        anlz_pattern = re.compile(r"/USBANLZ/.+/ANLZ[0-9]{4}\.[0-9A-Z]{1,4}$")
+        with_anlz = [t for t in tracks if t["analyze_path"]]
+        bad_shape = [t["analyze_path"] for t in with_anlz
+                     if not anlz_pattern.search(t["analyze_path"])]
+        if bad_shape:
+            fail(f"{len(bad_shape)}/{len(with_anlz)} analyze_path values do not match "
+                 f"the format EP147 accepts (e.g. {bad_shape[0]})")
+
         # Colour names come from the COLORS table, so a track colour can be
         # preserved by name; ids must stay consistent with those names.
         colors = {t["color_id"]: t["color"] for t in tracks if t["color"]}
@@ -127,6 +141,7 @@ def main():
     print(f"PASS: {len(tracks)} tracks, {len(data['playlists'])} playlists, "
           f"{len(data['playlist_entries'])} entries; "
           f"referential integrity OK; "
+          f"{len(with_anlz)} analysis paths in EP147's native format; "
           + (f"{checked} analyze paths resolved on disk" if checked
              else "set DRIVE_ROOT for on-disk path check"))
 
