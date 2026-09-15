@@ -31,3 +31,16 @@ The companion [packet_stalls.py](packet_stalls.py) reports local explicit stall 
 ## Protected loads: correction to prior timing analysis
 
 SPRUFE8B table3-14 specifies PROT at compact-header bit20. When set, every LD instruction in that fetch packet, including32-bit loads, inserts four NOP cycles. The grouping helper now retains this as `protected_load`; `packet_stalls.py` includes its five-cycle local issue span. Ignoring `.fphead` as an executable instruction is correct; discarding its execution properties is not. Prior timing conclusions built without PROT require re-audit, including private filter and software-loop schedules. Pure address, byte-match and MCU-domain findings are not changed by this issue.
+
+
+### Scoped impact inventory
+
+Grouping the full corrected listing and then scanning load sites finds:
+
+| Reviewed range | Protected load sites | Implication |
+|---|---|---|
+| Filter0x11814300–11814564 | None | Its local schedule is unaffected by missing PROT handling. |
+| Gain0x1180ff58–11810058 | 0x11810004 | Second region setup has an automatic load stall; first buffered kernel is unaffected by this issue. |
+| Beat0x80010120–80010c08 | 0x80010500,10584,10654,10710,107b4,107b6,109e8,109ea | Includes the inner gain kernels, so their proposed sample timing must include protected-load behavior. |
+
+This is a static property inventory, not a count of runtime stalls: parallel protected loads and loop-buffer operation need their actual packet/control rules. In particular, two protected load opcodes in one packet must not blindly be counted as two sequential four-cycle stalls. Source-code byte matches and MCU Thumb decoding do not depend on this C674x header property.
