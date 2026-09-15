@@ -126,8 +126,13 @@ TABLE_ORDER = ["property", "artist", "album", "genre", "key", "label", "color",
                "history_content", "myTag", "myTag_content", "menuItem",
                "category", "sort", "recommendedLike"]
 
-# export.pdb file_type values as read by the legacy parser.
-FILE_TYPE_BY_SUFFIX = {".mp3": 1, ".m4a": 4, ".flac": 5, ".wav": 11, ".aif": 12,
+# EP147's own extension -> fileType mapping, read out of the string-compare
+# chain at VA 0x117c650 (music_library): each branch compares the file
+# extension and returns the code below, with 0 for anything unmatched. The old
+# export has no file-type scalar, so the type is derived from the suffix the
+# same way the firmware does.
+FILE_TYPE_BY_SUFFIX = {".mp3": 1, ".aac": 2, ".mp4": 3, ".m4a": 4,
+                       ".fla": 5, ".flac": 5, ".wav": 11, ".aif": 12,
                        ".aiff": 12}
 
 

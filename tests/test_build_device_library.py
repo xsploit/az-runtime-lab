@@ -243,6 +243,21 @@ def main():
             check(bool(attr) == bool(p["is_folder"]),
                   f"folder flag lost for playlist {p['name']!r}")
 
+        # fileType uses EP147's own extension mapping (VA 0x117c650), where an
+        # unrecognised suffix yields 0. A real music export should not contain
+        # any track the firmware would classify as unknown.
+        unknown = db.execute(
+            "SELECT COUNT(*) FROM content WHERE fileType = 0 AND path != ''"
+        ).fetchone()[0]
+        check(unknown == 0,
+              f"{unknown} tracks have fileType 0 (extension EP147 does not map)")
+        for suffix, code in ((".mp3", 1), (".m4a", 4), (".flac", 5),
+                             (".wav", 11), (".aiff", 12)):
+            wrong = db.execute(
+                "SELECT COUNT(*) FROM content WHERE lower(path) LIKE ?"
+                " AND fileType != ?", (f"%{suffix}", code)).fetchone()[0]
+            check(wrong == 0, f"{wrong} {suffix} tracks do not have fileType {code}")
+
         # Album art from the export's ARTWORK table must survive as image rows.
         src_art = {t["artwork_path"] for t in source["tracks"] if t["artwork_path"]}
         db_art = {r[0] for r in db.execute("SELECT path FROM image")}
