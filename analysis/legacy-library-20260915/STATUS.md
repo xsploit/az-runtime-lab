@@ -1,11 +1,27 @@
 # Legacy library work status (Claude, 2026-09-15)
 
-Scope: legacy `export.pdb`/`exportExt.pdb` + ANLZ -> private staged OneLibrary tree for native AZ.
+## Target (corrected 2026-09-15, resumed session)
+
+**Device Library = the OLD `export.pdb` / `exportExt.pdb` + ANLZ format.** That is the
+input the user actually has and wants supported. OneLibrary is the *new* format and is
+only ever an internal adaptation detail — generating one is a permitted means, never the
+goal, and must not redefine the target.
+
+Goal: native AZ browsing/loading of existing old USB libraries, preserving playlists,
+cues, loops, colors and beat grids, **without a mandatory re-export**.
+
 DSP/performance is Codex/Sol's work and is not touched here.
 
 ## Running processes
 
 None. All work is static analysis plus host-side tools. No EP147 execution, no Pi, no USB writes.
+
+## Resumed 2026-09-15
+
+Priority per user: finish ANLZ cue/loop/beat-grid extraction with BiteDJ parsers against
+real local fixtures, add `exportExt.pdb` linkage where useful, validate semantics and path
+handling, then push native local-library reader/schema research as far as evidence allows.
+Tests must check real original fixture content and preservation, not just self-consistency.
 
 ## Evidence so far
 
