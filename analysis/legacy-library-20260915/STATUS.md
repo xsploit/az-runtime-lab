@@ -82,13 +82,48 @@ Cross-source validation (independent files agreeing, not self-consistency):
 the export.pdb BPM; 667/667 playlist entries resolve to real tracks; 602/602
 `analyze_path` values resolve on disk.
 
+## Native integration answered (2026-09-15) — see NATIVE-ANLZ-SUPPORT.md
+
+**EP147 already parses the ANLZ half of the Device Library natively, read and write.**
+`analyze_file` implements the old atom format (PMAI/PPTH/PQTZ/PCOB/PCPT/PCO2/PCP2/
+waveforms/phrases) and `track_info_repository` exposes request/register/delete tickets
+for memory+hot cues, beat grid and offset, seek table, waveforms and phrases, with
+`FileManager` building legacy `USBANLZ/.../ANLZnnnn.xxx` paths.
+**There is no `export.pdb` reader at all** — the literal appears once, and all 19
+references sit in device/mount constant tables; `PdbMountPoint`/`PdbDataBase`/`DeviceSQL`
+are absent from the binary.
+
+Consequence: cues, loops, colours and beat grids need **no translation**. Only the
+database half is missing, and it only has to point at the original ANLZ files.
+
+## Staged database generator (2026-09-15)
+
+`library/build_device_library.py` turns the export into
+`PIONEER/rekordbox/exportLibrary.db` in the local schema, pointing
+`analysisDataFilePath` at the **original** ANLZ files. It never reads, copies or
+modifies `USBANLZ`/`Contents`; the staged tree holds exactly one file.
+
+`tests/test_build_device_library.py` passes on both exports (602 and 13646 tracks):
+structural mount sequence runs; all 22 entity tables present; **23/23 SQL fragments
+taken verbatim from EP147 rodata compile**; **75/75 columns EP147 reads exist**;
+track ids/fields/playlist order/folder flags preserved; 602/602 analysis paths still
+resolve on disk.
+
+Also fixed a real decoding fault: ISRC is dispatched to the UTF-16 body type but holds
+`0x03` + ASCII + NUL, so values came out as CJK mojibake. All 293 / 2604 ISRCs are now
+valid ISRCs. Artist roles (remixer/composer/original), `djPlayCount`, `dateAdded`
+(YYYY-MM-DD, matching EP147's browse predicate) and `fileName` are now preserved too.
+
 ## Next
 
-1. Determine whether EP147 has **any** legacy `export.pdb` read path (the decisive
-   question for "no mandatory re-export"); `REPORT.md` found the string but mostly in
-   static initialisers. In progress.
-2. AZ cue/grid mapping: ANLZ ms -> `inUsec`/`in150FramePerSec`/`beatLoop*`/
-   `colorTableIndex`, and the `kind` 0..16 slot mapping.
-3. Writer + acceptance remain **blocked**: no genuine OneLibrary fixture exists locally,
-   so CREATE TABLE/user_version/index exactness and native acceptance cannot be proven.
-   Not faked.
+1. `menuItem`/`category`/`sort` are staged empty; EP147 reads them for browse
+   categories, so an empty set may mean an empty browse menu. Investigating whether
+   rows are required and what `kind` values mean. **In progress.**
+2. Remaining inferred values to pin down: playlist `attribute` folder flag (0/1 assumed)
+   and `content.fileType` (currently derived from the file suffix, as the export has no
+   file-type scalar).
+3. Writer acceptance remains **blocked**: no genuine OneLibrary fixture exists locally and
+   no key is handled here, so CREATE TABLE exactness, `PRAGMA user_version`, index
+   requirements and actual native acceptance cannot be proven. Not faked.
+4. Highest-value runtime experiment, for whoever is authorised to run EP147 or hardware:
+   does a legacy USB already show cues/grids in Folder mode today? Not run here.
