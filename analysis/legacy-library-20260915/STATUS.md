@@ -16,6 +16,14 @@ DSP/performance is Codex/Sol's work and is not touched here.
 
 None. All work is static analysis plus host-side tools. No EP147 execution, no Pi, no USB writes.
 
+## Resumed again 2026-09-15 (after quota stop at 08fe00f)
+
+Input-side extraction is done and committed (c4ce75d, 2bee04e, 4d06079); not repeating it.
+Now working the **native integration gap**: how EP147 itself reads old-format data.
+Lead in progress: EP147 contains a complete `analyze_file` / `track_info_repository`
+ANLZ atom stack (PMAI/PPTH/PQTZ/PCOB/PCO2/PCPT/PCP2 + USBANLZ path validation), which
+would mean the analysis half of the Device Library is natively consumed unconverted.
+
 ## Resumed 2026-09-15
 
 Priority per user: finish ANLZ cue/loop/beat-grid extraction with BiteDJ parsers against
