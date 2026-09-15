@@ -23,6 +23,7 @@ does check is much stronger than "a file that happens to be SQLite":
 """
 import json
 import os
+import re
 import sqlite3
 import subprocess
 import sys
@@ -163,17 +164,60 @@ def main():
         mismatched = 0
         for t in source["tracks"]:
             row = db.execute(
-                "SELECT title, bpmx100, path, analysisDataFilePath, length, rating"
+                "SELECT title, bpmx100, path, analysisDataFilePath, length,"
+                " rating, isrc, dateAdded, djPlayCount"
                 " FROM content WHERE content_id = ?", (t["id"],)).fetchone()
             if row is None:
                 mismatched += 1
                 continue
             if (row[0] != t["title"] or row[1] != round(t["bpm"] * 100)
                     or row[2] != t["file_path"] or row[3] != t["analyze_path"]
-                    or row[4] != t["duration_sec"] or row[5] != t["rating"]):
+                    or row[4] != t["duration_sec"] or row[5] != t["rating"]
+                    or row[6] != t["isrc"] or row[7] != t["date_added"]
+                    or row[8] != t["play_count"]):
                 mismatched += 1
         check(mismatched == 0,
               f"{mismatched} tracks differ from the source export")
+
+        # ISRC is stored behind the UTF-16 body type but holds tagged ASCII;
+        # a regression there shows up as CJK mojibake, so assert the real shape.
+        # Case-insensitive on purpose: one track in a genuine export carries a
+        # lowercase-typed ISRC ("Us57M2124205"), which is source data, not a
+        # decoding fault.
+        isrc_pattern = re.compile(r"^[A-Za-z]{2}[A-Za-z0-9]{3}[0-9]{7}$")
+        isrcs = [r[0] for r in db.execute(
+            "SELECT isrc FROM content WHERE isrc != ''")]
+        bad_isrc = [i for i in isrcs if not isrc_pattern.match(i)]
+        check(not bad_isrc,
+              f"{len(bad_isrc)}/{len(isrcs)} ISRC values are not valid ISRCs "
+              f"(e.g. {bad_isrc[0] if bad_isrc else ''})")
+
+        # dateAdded must keep the YYYY-MM-DD shape EP147's browse predicate
+        # `dateAdded LIKE "%u-__-__"` matches against.
+        dates = [r[0] for r in db.execute(
+            "SELECT dateAdded FROM content WHERE dateAdded != ''")]
+        bad_dates = [d for d in dates if not re.match(r"^\d{4}-\d{2}-\d{2}$", d)]
+        check(not bad_dates,
+              f"{len(bad_dates)}/{len(dates)} dateAdded values are not YYYY-MM-DD")
+        if dates:
+            year = dates[0][:4]
+            hits = db.execute(
+                'SELECT COUNT(*) FROM content WHERE dateAdded LIKE ?',
+                (f"{year}-__-__",)).fetchone()[0]
+            check(hits > 0,
+                  "EP147's dateAdded browse predicate matches nothing")
+
+        # Artist roles must land in their own columns, not collapse into artist.
+        for role, column in (("remixer", "artist_id_remixer"),
+                             ("composer", "artist_id_composer"),
+                             ("original_artist", "artist_id_originalArtist")):
+            expected = sorted(t[role] for t in source["tracks"] if t.get(role))
+            got = sorted(r[0] for r in db.execute(
+                f"SELECT a.name FROM content c JOIN artist a"
+                f" ON c.{column} = a.artist_id"))
+            check(expected == got,
+                  f"{role} not preserved into {column}: "
+                  f"{len(expected)} in source vs {len(got)} staged")
 
         bad_order = []
         for p in source["playlists"]:

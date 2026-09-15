@@ -158,8 +158,14 @@ def build(library, db_path, device_name):
             suffix = Path(path).suffix.lower() if path else ""
             content.append((
                 t["id"],
-                t["title"], "",
-                intern("artist", t["artist"], artists, arows), 0, 0, 0, 0,
+                t["title"], t.get("mix_name", ""),
+                intern("artist", t["artist"], artists, arows),
+                # The export distinguishes artist roles and the native schema
+                # has a column for each, so they are carried, not collapsed.
+                intern("artist", t.get("remixer", ""), artists, arows),
+                intern("artist", t.get("original_artist", ""), artists, arows),
+                intern("artist", t.get("composer", ""), artists, arows),
+                0,
                 intern("album", t["album"], albums, alrows),
                 intern("genre", t["genre"], genres, grows),
                 intern("label", t.get("label", ""), labels, lrows),
@@ -174,9 +180,13 @@ def build(library, db_path, device_name):
                 t["bitrate"],
                 t["rating"],
                 t["year"],
-                0,
-                t["comment"], "", "",
-                Path(path).name if path else "",
+                t.get("play_count", 0),
+                t["comment"],
+                t.get("isrc", ""),
+                # Already YYYY-MM-DD in the export, which is the shape EP147's
+                # `dateAdded LIKE "%u-__-__"` browse predicate expects.
+                t.get("date_added", ""),
+                t.get("filename") or (Path(path).name if path else ""),
                 FILE_TYPE_BY_SUFFIX.get(suffix, 0),
                 path,
                 # The whole point: point at the ORIGINAL analysis file.

@@ -41,6 +41,29 @@ std::string strip_nulls(const std::string& in) {
     return out;
 }
 
+// Some fields -- ISRC is the one seen on real exports -- are dispatched to the
+// UTF-16LE body type but actually hold a 0x03 marker byte, plain ASCII, and a
+// trailing NUL (e.g. 03 'C' 'A' '5' ... 00 for "CA5KR2380539"). Decoding those
+// bytes as UTF-16 produces CJK mojibake. Genuine UTF-16LE text cannot be
+// mistaken for this form: it interleaves NUL bytes, which are not printable.
+bool looks_like_tagged_ascii(const std::string& raw) {
+    if (raw.size() < 3 || static_cast<unsigned char>(raw[0]) != 0x03) return false;
+    size_t end = raw.size();
+    while (end > 1 && raw[end - 1] == '\0') --end;
+    if (end <= 1) return false;
+    for (size_t i = 1; i < end; ++i) {
+        const unsigned char c = static_cast<unsigned char>(raw[i]);
+        if (c < 0x20 || c > 0x7e) return false;
+    }
+    return true;
+}
+
+std::string decode_tagged_ascii(const std::string& raw) {
+    size_t end = raw.size();
+    while (end > 1 && raw[end - 1] == '\0') --end;
+    return raw.substr(1, end - 1);
+}
+
 // Mirrors rekordboxfeature.cpp::getText: the PDB stores strings in several
 // obscure encodings behind device_sql_string_t; drop embedded null bytes.
 std::string get_text(rekordbox_pdb_t::device_sql_string_t* s) {
@@ -53,7 +76,11 @@ std::string get_text(rekordbox_pdb_t::device_sql_string_t* s) {
         return strip_nulls(a->text());
     }
     if (auto* u = dynamic_cast<rekordbox_pdb_t::device_sql_long_utf16le_t*>(body)) {
-        return utf16_to_utf8(u->text(), /*big_endian=*/false);
+        const std::string& raw = u->text();
+        if (looks_like_tagged_ascii(raw)) {
+            return decode_tagged_ascii(raw);
+        }
+        return utf16_to_utf8(raw, /*big_endian=*/false);
     }
     return {};
 }
@@ -61,9 +88,13 @@ std::string get_text(rekordbox_pdb_t::device_sql_string_t* s) {
 struct Track {
     uint32_t id, artist_id, album_id, genre_id, key_id, tempo, bitrate, track_number;
     uint32_t label_id, artwork_id;
-    uint16_t year, duration;
+    // The export distinguishes these artist roles, and the native schema has a
+    // column for each, so they are carried rather than collapsed into artist.
+    uint32_t remixer_id, composer_id, original_artist_id;
+    uint16_t year, duration, play_count;
     uint8_t rating, color_id;
     std::string title, comment, file_path, analyze_path;
+    std::string isrc, date_added, mix_name, filename;
 };
 
 struct PlaylistNode {
@@ -215,9 +246,14 @@ int main(int argc, char** argv) {
                             tracks.push_back({r->id(), r->artist_id(), r->album_id(),
                                     r->genre_id(), r->key_id(), r->tempo(), r->bitrate(),
                                     r->track_number(), r->label_id(), r->artwork_id(),
-                                    r->year(), r->duration(), r->rating(),
+                                    r->remixer_id(), r->composer_id(),
+                                    r->original_artist_id(),
+                                    r->year(), r->duration(), r->play_count(),
+                                    r->rating(),
                                     r->color_id(), get_text(r->title()), get_text(r->comment()),
-                                    get_text(r->file_path()), get_text(r->analyze_path())});
+                                    get_text(r->file_path()), get_text(r->analyze_path()),
+                                    get_text(r->isrc()), get_text(r->date_added()),
+                                    get_text(r->mix_name()), get_text(r->filename())});
                         } break;
                         case rekordbox_pdb_t::PAGE_TYPE_PLAYLIST_TREE: {
                             auto* r = static_cast<rekordbox_pdb_t::playlist_tree_row_t*>(rr->body());
@@ -281,6 +317,14 @@ int main(int argc, char** argv) {
           << "\", \"rating\": " << static_cast<int>(t.rating)
           << ", \"color_id\": " << static_cast<int>(t.color_id)
           << ", \"color\": \"" << json_escape(colors.count(t.color_id) ? colors[t.color_id] : "")
+          << "\", \"remixer\": \"" << json_escape(artists.count(t.remixer_id) ? artists[t.remixer_id] : "")
+          << "\", \"composer\": \"" << json_escape(artists.count(t.composer_id) ? artists[t.composer_id] : "")
+          << "\", \"original_artist\": \"" << json_escape(artists.count(t.original_artist_id) ? artists[t.original_artist_id] : "")
+          << "\", \"play_count\": " << t.play_count
+          << ", \"isrc\": \"" << json_escape(t.isrc)
+          << "\", \"date_added\": \"" << json_escape(t.date_added)
+          << "\", \"mix_name\": \"" << json_escape(t.mix_name)
+          << "\", \"filename\": \"" << json_escape(t.filename)
           << "\", \"comment\": \"" << json_escape(t.comment)
           << "\", \"file_path\": \"" << json_escape(t.file_path)
           << "\", \"analyze_path\": \"" << json_escape(t.analyze_path) << "\"}";
