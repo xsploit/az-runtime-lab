@@ -25,3 +25,30 @@ The pointers therefore identify **two in-place streams per region**, not a simpl
 After the first kernel, `STW B7,*+B14[77]` at `0x1180fff4` writes the target to the persistent prior-value slot. After the second, `STW B8,*+B14[78]` at `0x11810050` does the same. These writebacks preserve the target rather than the repeatedly accumulated A7. That distinction matters: repeated rounded adds need not end at exactly the target's bits.
 
 This establishes target-difference smoothing followed by mixed-precision gain-like multiplication on the reviewed path. It does not establish upstream parameter units, table identity, signal/channel placement, bypass behavior, exact loop phase, live rounding mode, or audible parity.
+
+## Table address arithmetic and curve selector
+
+The [host control bridge](GAIN-CONTROL-BRIDGE.md) identifies command45 as the CrossFaderCurve setting path. Let `s = command45 & 3`, `p = unsigned_halfword(0x1180340a)` (B14 halfword517), and `base = 0x80004000`. EXTU at `0x1180ff78/ff90` forms `s << 12`. TI SUBAW/ADDAW syntax is **src2, src1, dst**: it shifts the second printed operand by two, not the first. Thus the two target-word addresses are:
+
+```text
+first_target_address  = base + 4096*s + 4*(1023-p)
+second_target_address = base + 4096*s + 4*p
+```
+
+Evidence: SUBAW at `0x1180ff7c`; base addition at `0x1180ff88`; LDW word index1023 at `0x1180ff8a`; ADDAW at `0x1180ff98`; base addition at `0x1180ffac`; LDW index0 at `0x1180ffc8`. The last load shares an execute packet with a B4 overwrite, so it reads the prior table pointer. Arithmetic is register-width arithmetic; these expressions do not establish bounds on p.
+
+**If p is within0..1023**, each selected bank contains1024 word positions and the two reads traverse it in opposite directions. That condition still needs a producer/clamp trace. Four possible banks follow from the two-bit selector; this does not prove four user-selectable curves or initialization of every bank. Table coefficient values and audible response are not yet established.
+
+Instruction semantics reference: TI C674x CPU and Instruction Set Reference, SPRUFE8B, ADDAW printed page122 and SUBAW printed page537. No native/audio parity is claimed.
+
+### Position writers and current bounds
+
+Three explicit B14-halfword517 stores appear in the corrected listing:
+
+| Store | Value source | Bound established at this store |
+|---|---|---|
+| `0x80014038` | command halfword3 at `0x11800a06`, loaded at `0x80014028` | unsigned16; upstream restrictions unresolved |
+| `0x11819e18` | `EXTU B20,20,22` at `0x11819e08` | source bits2..11, hence0..1023 |
+| `0x80014648` | zero from `MVK 0,A1` at `0x800145da` | zero |
+
+These are explicit addressing matches, not a proof against aliased pointer writes. The raw command writer prevents claiming a global10-bit invariant from the compute writer alone. Next steps are the command3 producer/domain, the compute-path input provenance, and table initialization/content. The1023 constant in the gain reader is an index offset, not a clamp instruction.
