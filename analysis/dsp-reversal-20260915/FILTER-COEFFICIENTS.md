@@ -30,7 +30,7 @@ A0 = fl(r*p)          0x11813ad8
 A1 = fl(r*n)          0x11813adc
 ```
 
-The routine moves entry `A6` to `A4` at `0x11813ae0`, writes `B0` to its word index 2 at `0x11813ae2`, then writes `B1:B0` as a nonaligned doubleword at index 0 at `0x11813ae4`. It moves entry `B6` to `B4` at `0x11813ae6` and writes `A1:A0` as a nonaligned doubleword at index 0 at `0x11813ae8`. The index-2 `B0` and pair store are separate observed writes; their layout and possible duplication should be confirmed from `STNDW` addressing semantics before assigning conventional filter coefficients.
+The routine moves entry `A6` to `A4` at `0x11813ae0`, writes `B0` to its word index 2 at `0x11813ae2`, then writes `B1:B0` as a nonaligned doubleword at index 0 at `0x11813ae4`. It moves entry `B6` to `B4` at `0x11813ae6` and writes `A1:A0` as a nonaligned doubleword at index 0 at `0x11813ae8`. The index-2 `B0` and pair store are separate observed writes. The [store-layout review](STORE-LAYOUT.md) confirms the little-endian three-word order `[B0,B1,B0]` and two-word order `[A0,A1]`; this alone does not establish the filter recurrence.
 
 ## `0x11813af0` divergent store pattern
 
@@ -51,4 +51,4 @@ The diagnostic [coefficient relation probe](probe_coeff_relations.py) rounds eac
 
 Route3 halfword `LDHU *+B14[516]` (`0x11808bc8`, `0x11808eac`) addresses byte offset **1032** (`2*516`), and its `STH/LDH *+B14[362]` (`0x11808be0`, `0x11808eb8`) addresses byte offset **724** (`2*362`). Word `LDW/STW *+B14[218]` is byte offset **872** (`4*218`); word `[180]` is **720**, word `[160]` is **640**. Earlier map descriptions using bracket indices as bytes, or scaling halfwords by four, must not be carried forward.
 
-**High confidence:** instruction and store addresses, bit constants, packet-old-value `A5=r`, dataflow equations through `MPYSP`/`ADDSP`/`SUBSP`, reciprocal helper edge. **Medium:** `r` as reciprocal refinement (verified opcode sequence but no bit-accurate RCPSP model). **Open:** precise `STNDW` pair memory ordering, call-site pointer provenance into common state, floating control/rounding mode, exact reciprocal and output bits, and runtime topology/effect identity.
+**High confidence:** instruction and store addresses, bit constants, packet-old-value `A5=r`, dataflow equations through `MPYSP`/`ADDSP`/`SUBSP`, reciprocal helper edge. **Medium:** `r` as reciprocal refinement (verified opcode sequence but no bit-accurate RCPSP model). **Open:** full call-site pointer provenance into common state, floating control/rounding mode, exact reciprocal and output bits, and runtime topology/effect identity.
