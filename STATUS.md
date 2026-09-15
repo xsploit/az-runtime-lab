@@ -1,3 +1,8 @@
+## 2026-09-15 Claude — legacy Rekordbox USB library (in progress)
+
+Owner: Claude (Opus), worktree `az-library-claude`, branch `research/claude-legacy-library-20260915`. DSP mapping stays with Codex/Sol.
+Started: read REPORT/REUSE/ACCEPTANCE/TABLE-READERS. Now locating local legacy/OneLibrary fixtures and reusable BiteDJ Kaitai parsers. No USB, Pi, BiteDJ or main checkout is modified. Details and next steps will be kept in `analysis/legacy-library-20260915/STATUS.md`.
+
 ## 2026-09-13 — FLX6 effects and analysis cache
 
 User confirmed audible Filter. Enabled native DSP graph, mapped Echo and supported
