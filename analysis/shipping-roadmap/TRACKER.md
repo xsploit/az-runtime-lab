@@ -10,6 +10,8 @@ The product target is a bootable Raspberry Pi environment with the AZ runtime, o
 - Current setup still requires a configured desktop, dependencies, external rootfs/cabinet/allocator, and built shims. It is not yet a reproducible fresh-SD-card image.
 - Existing launch configuration hardcodes manual FX BPM default 140. Automatic tempo integration remains a separate implementation gate.
 - Real USB folder playback works in prior device evidence; old export.pdb library browsing has not been established.
+- DSP DMA endpoints and both checksum spans are statically linked: 256-byte command reception and 128-byte response transmission. The remaining response clocks and semantic field names are unresolved; see [SPI and interrupts](../dsp-reversal-20260915/SPI-AND-INTERRUPTS.md).
+- Native SQLite initialization can fall back to NoDB after directory, database-file or effective-write-access checks fail. The upstream selector and database acceptance requirements remain open; see [library trace](../legacy-library-20260915/REPORT.md).
 
 ## Work packages and acceptance
 
@@ -28,6 +30,8 @@ The product target is a bootable Raspberry Pi environment with the AZ runtime, o
 ## Library feature decision
 
 Do not equate folder browsing with old Rekordbox library support. First trace the existing rejection/loader decision. If no usable legacy loader exists, evaluate a host-side reader and adapter using documented or already-supported parsers. Preserve playlists, cue types/times, beat grids, artwork, file paths and missing-file behavior; conversion must be staged without overwriting source exports. Do not assume arbitrary SQL generation produces a valid OneLibrary database. A new adapter requires schema/version checks and end-to-end loading evidence.
+
+Reuse investigation comes before another parser implementation: inspect BiteDJ's existing PDB/ANLZ code and RX3 adapters, record their actual supported fields and interfaces, then identify what an AZ-native output adapter still needs. A host-only browser is useful for diagnostics but is not completion of native prepared-library compatibility.
 
 ## Release gate
 
