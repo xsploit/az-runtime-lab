@@ -25,3 +25,5 @@ The normal path thus performs **22 doubleword stores per output pointer**, advan
 ## Limits
 
 This is a static count under normal control flow, not a DSP execution result. The DP arithmetic uses staggered register-pair writes and early operand-read rules that require a separate latency-aware recurrence trace. No complete filter equation, transfer function, sample rate, audio parity or controller behavior is established by this count. The [coefficient interface](STORE-LAYOUT.md) is independently documented.
+
+The companion [persistent state map](FILTER-STATE-142F8.md) identifies cached accumulators and the input/output histories retained between blocks. Its evidence limits are separate from this store-count schedule.
