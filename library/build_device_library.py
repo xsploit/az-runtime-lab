@@ -335,6 +335,12 @@ def main():
               f"audio {r['audio_checked'] - r['audio_missing']}/{r['audio_checked']}, "
               f"analysis {r['anlz_checked'] - r['anlz_missing']}/{r['anlz_checked']} resolve")
         if r["anlz_missing"]:
+            print(f"ERROR: {r['anlz_missing']} analysis paths do not resolve under "
+                  f"{args.verify_against}. The staged database would point at "
+                  f"analysis files that are not there, so cues, loops and beat "
+                  f"grids would be lost. Check that DRIVE_ROOT is the volume the "
+                  f"export came from and that PIONEER/USBANLZ is present.",
+                  file=sys.stderr)
             return 1
     return 0
 
