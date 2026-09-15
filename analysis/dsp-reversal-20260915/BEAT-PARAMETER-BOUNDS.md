@@ -33,3 +33,5 @@ The clamped B4 is copied to B5 at `0x80012134`. B4 is then repurposed as a clear
 ## Verification boundary
 
 The constants, register provenance, predicate direction, selected addresses and destination for case11/12 were checked directly against the listing. This is a static integer/control trace, not execution of the firmware or evidence of effect identity, timing units, frequency units, or audio equivalence. The complete shared bodies and their state/reset behavior remain unfinished.
+
+The shared11/12 target now has a reviewed [processing-phase map](BEAT-11-12-PHASES.md), covering its two gain phases, final mixer and observed return. Exact sample equations and software-loop store timing remain separate open work.
