@@ -16,6 +16,9 @@ def stall_cost(packet):
     for instruction in packet['instructions']:
         opcode = instruction['mnemonic'].split('.')[0]
         operand = instruction['operands']
+        if instruction.get('protected_load'):
+            costs.append(5)
+            notes.append('PROT header inserts four NOP cycles after load')
         if opcode == 'BNOP':
             try:
                 count = int(operand.rsplit(',', 1)[1].strip(), 0)

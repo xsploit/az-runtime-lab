@@ -13,6 +13,13 @@ LINE = re.compile(r"^([0-9a-fA-F]{8})\s+[0-9a-fA-F]{4,8}\s+(\|\|\s+)?(\[[^]]+\]\
 
 
 def packets(lines):
+    lines = list(lines)
+    headers = {}
+    for line in lines:
+        match = LINE.match(line)
+        if match and match.group(4) == ".fphead":
+            raw = line.split()[1]
+            headers[int(match.group(1), 16) & ~31] = bool(int(raw, 16) & (1 << 20))
     result = []
     current = None
     for line in lines:
@@ -32,7 +39,8 @@ def packets(lines):
                                         "parallel_with_previous": bool(parallel),
                                         "predicate": predicate.strip() if predicate else None,
                                         "mnemonic": mnemonic,
-                                        "operands": operands.strip()})
+                                        "operands": operands.strip(),
+                                        "protected_load": mnemonic.startswith("LD") and headers.get(int(address,16) & ~31, False)})
     return result
 
 

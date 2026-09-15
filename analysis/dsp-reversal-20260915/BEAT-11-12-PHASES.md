@@ -21,10 +21,26 @@ Both inner phases set ILC10 and use SPLOOPD4. The final mixer sets ILC21 and use
 
 ## Timing-sensitive control distinctions
 
-At0x80010500 a load of halfword514 is issued into B3. The immediate comparison0x80010504 reads the old B3. BNOP0x80010508 inserts three NOP cycles regardless of predicate, allowing later comparison0x80010510 to read the new value. The first threshold and later arithmetic therefore must not be collapsed into one ordinary clamp without tracing entry provenance.
+At0x80010500 a protected load of halfword514 is issued into B3. Fetch-header PROT inserts four NOP cycles, so comparison0x80010504 reads the loaded value. BNOP0x80010508 inserts three NOP cycles regardless of predicate, allowing later comparison0x80010510 to read the new value. Both comparisons can use halfword514; the remaining branch paths still require tracing before deriving the full formula.
 
 At0x800105b4 the subtraction reads the old B5 while a parallel load replaces B5 from stack slot3. The later multiplication0x800105c4 consumes the newly loaded factor. Register reuse does not imply multiplication by the same value used in the subtraction.
 
 Transfer thunks0x80013fa0/13fb0 lead to0x11816060/11816180; wait/ack thunk0x80013fd0 leads to0x11815ecc. Those calls establish dependencies on transfer machinery, not a standalone software-only signal path. The final mixer reads words203/186/187/204/43, updates an accumulator, clamps it and uses four incrementing input load pointers to produce two outputs. Runtime aliasing of those pointers is unresolved. Its MVD delays and reused product registers still prevent a verified sample equation.
 
 At0x80010c04 the routine writes word204. CALLP0x80010c08 targets the epilogue thunk0x80013fc0→0x1181fae0; the latter restores saved registers and returns. The setup at0x80010c20 belongs to the next routine. This closes the observed body boundary while leaving branch/state semantics and exact arithmetic coverage explicitly incomplete. No RX3 symbol match or live/audio parity is asserted.
+
+## Conversion/address subpath
+
+The helper called at0x80010674 and0x80010698 is now an [exact match to TI unsigned conversion](RUNTIME-FIXFU.md). For the values actually consumed by each INTSPU, the ordered local calculation is:
+
+```text
+u = INTSPU(source_word)
+t = MPYSP(binary32_bits_0x42306667, u)
+v = ADDSP(t, t)
+index = matched_fixfu(v)
+address = A10 + 4*index - 1056       # 32-bit address arithmetic
+```
+
+The first path's INTSPU/MPYSP/ADDSP are0x80010658/10664/1066c; its address calculation/store is0x8001067c–10684 (word35). The second is0x80010678/10688/10690 with address calculation0x800106b0/106c4 and word37 store0x800106d8. A10 here is the pre-loop address base, not the later two-pass counter using the same register.
+
+The first INTSPU consumes halfword505: LDHU0x80010654 is protected by fetch-header PROT, inserting four NOP cycles before INTSPU0x80010658. This ordered arithmetic includes doubling before conversion and truncation semantics; it is not simply44.1 times a guessed parameter rounded to nearest. The byte-address result does not establish the parameter's units.
