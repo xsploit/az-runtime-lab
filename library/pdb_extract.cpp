@@ -3,17 +3,19 @@
 // Reuses BiteDJ's generated Kaitai parser (rekordbox_pdb.{h,cpp}) and the
 // kaitai C++ runtime -- no Qt, no BiteDJ Track/Sql types. The table walk and
 // getText() logic mirror rekordboxfeature.cpp::parseDeviceDB so the same
-// records BiteDJ imports are captured for the AZ OneLibrary writer.
+// records BiteDJ imports are captured for the AZ adaptation work.
 //
 // Output is a stable JSON document: tracks (with original ids and resolved
 // artist/album/genre/key names + relative media/analysis paths), the playlist
 // tree (parent/sort_order/is_folder), and ordered playlist entries. This is
-// input-side evidence only; it does not itself produce a OneLibrary database.
+// input-side extraction only; it performs no format conversion.
 //
 // Build: see library/build_pdb_extract.sh. Paths are arguments, not baked in.
 
 #include <rekordbox_pdb.h>
 #include <kaitai/kaitaistream.h>
+
+#include "device_text.h"
 
 #include <cstdint>
 #include <fstream>
@@ -26,36 +28,14 @@
 
 namespace {
 
-// UTF-16LE (device long strings) -> UTF-8, minimal and dependency-free.
-std::string utf16le_to_utf8(const std::string& in) {
+using device_text::json_escape;
+using device_text::utf16_to_utf8;
+
+// Device strings are known to carry stray null characters mid-field.
+std::string strip_nulls(const std::string& in) {
     std::string out;
-    for (size_t i = 0; i + 1 < in.size(); i += 2) {
-        uint32_t cp = static_cast<uint8_t>(in[i]) |
-                (static_cast<uint8_t>(in[i + 1]) << 8);
-        if (cp >= 0xD800 && cp <= 0xDBFF && i + 3 < in.size()) {
-            uint32_t lo = static_cast<uint8_t>(in[i + 2]) |
-                    (static_cast<uint8_t>(in[i + 3]) << 8);
-            if (lo >= 0xDC00 && lo <= 0xDFFF) {
-                cp = 0x10000 + ((cp - 0xD800) << 10) + (lo - 0xDC00);
-                i += 2;
-            }
-        }
-        if (cp == 0) continue;
-        if (cp < 0x80) {
-            out += static_cast<char>(cp);
-        } else if (cp < 0x800) {
-            out += static_cast<char>(0xC0 | (cp >> 6));
-            out += static_cast<char>(0x80 | (cp & 0x3F));
-        } else if (cp < 0x10000) {
-            out += static_cast<char>(0xE0 | (cp >> 12));
-            out += static_cast<char>(0x80 | ((cp >> 6) & 0x3F));
-            out += static_cast<char>(0x80 | (cp & 0x3F));
-        } else {
-            out += static_cast<char>(0xF0 | (cp >> 18));
-            out += static_cast<char>(0x80 | ((cp >> 12) & 0x3F));
-            out += static_cast<char>(0x80 | ((cp >> 6) & 0x3F));
-            out += static_cast<char>(0x80 | (cp & 0x3F));
-        }
+    for (char c : in) {
+        if (c != '\x00') out += c;
     }
     return out;
 }
@@ -64,42 +44,17 @@ std::string utf16le_to_utf8(const std::string& in) {
 // obscure encodings behind device_sql_string_t; drop embedded null bytes.
 std::string get_text(rekordbox_pdb_t::device_sql_string_t* s) {
     if (!s) return {};
-    std::string text;
     kaitai::kstruct* body = s->body();
     if (auto* a = dynamic_cast<rekordbox_pdb_t::device_sql_short_ascii_t*>(body)) {
-        text = a->text();
-    } else if (auto* a = dynamic_cast<rekordbox_pdb_t::device_sql_long_ascii_t*>(body)) {
-        text = a->text();
-    } else if (auto* u = dynamic_cast<rekordbox_pdb_t::device_sql_long_utf16le_t*>(body)) {
-        text = utf16le_to_utf8(u->text());
+        return strip_nulls(a->text());
     }
-    std::string cleaned;
-    for (char c : text) {
-        if (c != '\x00') cleaned += c;
+    if (auto* a = dynamic_cast<rekordbox_pdb_t::device_sql_long_ascii_t*>(body)) {
+        return strip_nulls(a->text());
     }
-    return cleaned;
-}
-
-std::string json_escape(const std::string& in) {
-    std::string out;
-    for (unsigned char c : in) {
-        switch (c) {
-        case '"': out += "\\\""; break;
-        case '\\': out += "\\\\"; break;
-        case '\n': out += "\\n"; break;
-        case '\r': out += "\\r"; break;
-        case '\t': out += "\\t"; break;
-        default:
-            if (c < 0x20) {
-                char buf[8];
-                std::snprintf(buf, sizeof(buf), "\\u%04x", c);
-                out += buf;
-            } else {
-                out += static_cast<char>(c);
-            }
-        }
+    if (auto* u = dynamic_cast<rekordbox_pdb_t::device_sql_long_utf16le_t*>(body)) {
+        return utf16_to_utf8(u->text(), /*big_endian=*/false);
     }
-    return out;
+    return {};
 }
 
 struct Track {
