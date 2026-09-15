@@ -116,10 +116,23 @@ which keeps the original export intact and the output small and removable.
   `inUsec`/`colorTableIndex`/`beatLoop*` (see ONELIBRARY-SCHEMA.md), so two cue stores
   exist. Whether a mounted track's cues come from ANLZ, from `cue` rows, or from a merge
   is not established here, and cannot be without a runtime test.
-- **Whether a legacy USB already shows cues/grids in Folder mode today.** The AZ can
-  derive an analysis path *from the music content path* as well as from the DB, and it
-  globs `ANLZ*.`; whether the derived directory matches rekordbox's own
-  `USBANLZ/Pxxx/xxxxxxxx/` choice is unknown. If it does, old cues and grids may already
-  load in Folder browsing. **This is the single highest-value runtime experiment** and
-  needs someone authorised to run EP147 or the hardware -- it was not run here.
+- **Whether a legacy USB already shows cues/grids in Folder mode today.** Measured on the
+  genuine export, rekordbox's analysis directory is **allocated, not derived**: the
+  `USBANLZ/Pxxx/xxxxxxxx/` component is unique per track (599/599 distinct, spread
+  `0x17d`-`0x30cd7` across 125 `Pxxx` directories holding 1-12 tracks each), and it
+  matches none of crc32/adler32/md5/sha1 of the content path, nor the track id. So EP147
+  **cannot compute** a legacy ANLZ location from a music file path; it can only reach one
+  via a recorded path or by *searching* the tree and matching each file's `PPTH` content
+  path -- which is what the `ANLZ*.` glob and the `[FM][search]` diagnostics suggest is
+  possible, but which this trace does not confirm happens during Folder browsing.
+
+  This is why the database half is not optional: `analysisDataFilePath` is the reliable
+  link from a track to its existing analysis. **Running a legacy USB and observing
+  whether cues/grids appear in Folder mode remains the highest-value runtime
+  experiment**, and needs someone authorised to run EP147 or the hardware; it was not run
+  here.
+
+  Note also that real exports are not all `ANLZ0000`: three tracks in the fixture use
+  `ANLZ0001.DAT`. EP147's own validation pattern is `ANLZ[0-9]{4}`, and the tools here
+  carry the recorded path rather than assuming a fixed name.
 - No claim that any generated database is accepted; see STATUS.md for that blocker.
