@@ -310,6 +310,10 @@ def main():
     ap.add_argument("library_json", type=Path)
     ap.add_argument("--out-dir", type=Path, required=True)
     ap.add_argument("--device-name", default="DEVICE")
+    # SqliteMountPoint holds both basenames and picks between them from a member
+    # byte, so a staged library has to be able to use either layout.
+    ap.add_argument("--hidden", action="store_true",
+                    help="stage under .PIONEER/ instead of PIONEER/")
     ap.add_argument("--verify-against", type=Path, metavar="DRIVE_ROOT")
     ap.add_argument("--categories-from", type=Path, metavar="REFERENCE_DB",
                     help="copy menuItem/category/sort rows from a genuine "
@@ -317,7 +321,7 @@ def main():
     args = ap.parse_args()
 
     library = json.loads(args.library_json.read_text())
-    staged = args.out_dir / "PIONEER" / "rekordbox"
+    staged = args.out_dir / (".PIONEER" if args.hidden else "PIONEER") / "rekordbox"
     staged.mkdir(parents=True, exist_ok=True)
     db_path = staged / "exportLibrary.db"
 

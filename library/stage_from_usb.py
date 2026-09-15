@@ -73,6 +73,7 @@ def main():
         print(f"error: {drive} is not a directory", file=sys.stderr)
         return 2
     export = find_export(drive)
+    hidden = export is not None and ".PIONEER" in export.parts
     if export is None:
         print(f"error: no export.pdb under {drive} "
               f"(looked for {', '.join(PDB_CANDIDATES)})", file=sys.stderr)
@@ -80,6 +81,7 @@ def main():
 
     device_name = args.device_name or drive.name or "DEVICE"
     print(f"source export : {export}")
+    print(f"layout        : {'.PIONEER (hidden)' if hidden else 'PIONEER'}")
     print(f"device name   : {device_name}")
 
     with tempfile.TemporaryDirectory(prefix="stage-device-library-") as tmp:
@@ -124,12 +126,16 @@ def main():
                "--device-name", device_name, "--verify-against", str(drive)]
         if args.categories_from:
             cmd += ["--categories-from", str(args.categories_from)]
+        # Mirror whichever layout the source volume uses.
+        if hidden:
+            cmd.append("--hidden")
         print()
         result = subprocess.run(cmd)
         if result.returncode != 0:
             return result.returncode
 
-    staged = args.out_dir / "PIONEER/rekordbox/exportLibrary.db"
+    staged = (args.out_dir / (".PIONEER" if hidden else "PIONEER")
+              / "rekordbox/exportLibrary.db")
     print(f"\nstaged library : {staged}")
     print("the original export was not modified; remove the output directory to undo.")
     return 0

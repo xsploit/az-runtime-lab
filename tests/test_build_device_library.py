@@ -326,6 +326,16 @@ def main():
         check("menuItem/category/sort are empty" in r.stdout,
               "generator must warn that browse categories are empty")
 
+        # EP147's mount point holds both PIONEER and .PIONEER basenames, so the
+        # hidden layout must be stageable too.
+        r3 = subprocess.run(
+            [sys.executable, str(ROOT / "library/build_device_library.py"),
+             str(lib_json), "--out-dir", str(tmp / "staged3"), "--hidden"],
+            capture_output=True, text=True)
+        check(r3.returncode == 0, f"--hidden failed: {r3.stderr.strip()}")
+        check((tmp / "staged3/.PIONEER/rekordbox/exportLibrary.db").is_file(),
+              "--hidden did not stage under .PIONEER/")
+
         # The staged tree must not contain copies of the analysis or audio.
         staged_files = {p.name for p in (tmp / "staged").rglob("*") if p.is_file()}
         check(staged_files == {"exportLibrary.db"},
