@@ -9,3 +9,11 @@ This path is gated by MCU bytes at `0x200031a5` and `0x200031a7` equaling 1, che
 The adjacent halfword46 is filled at `0x18f2c/2e` from low16 of MCU word `0x20003280`. Adjacency is not evidence that both fields share a control identity.
 
 This connects a concrete MCU persistent word to the transmitted command offset consumed by the DSP gain region. It does not yet prove the physical knob/fader identity, upstream producer of `0x2000327c`, or full transport timing. Host-to-MCU packet offsets must not be equated with these DSP halfword indices.
+
+## Producer of MCU word 0x2000327c
+
+The producer is now traced one step upstream. MCU routine `0x18b22` loads base `0x20026e78` into r1, then forms r2=base+0xb6 at `0x18b28`. `LDRB r3,[r2,#3]` at `0x18b82` reads byte **0x20026f31** (base+0xb9). `STR r3,[r0,#0x54]` at `0x18b84`, with r0=`0x20003228`, zero-extends that byte into the persistent word `0x2000327c`. Thus the value on this producer path is 0..255 before the later halfword transmission.
+
+The enclosing update routine `0x18c28` checks byte `0x200031a6` at `0x18c30–34`, calls the producer at `0x18c4c` when nonzero, then sets byte `0x200031a7` to 1 at `0x18c50/52`. That is the same pending-update byte checked and cleared by the transmit filler. This links production to the previously documented transmission gate; it does not prove the physical event source or scheduling frequency.
+
+The reviewed chain is now: MCU byte `0x20026f31` → zero-extended word `0x2000327c` → command halfword45 → DSP staged address `0x11800a5a` → gain-region table selection. Identifying the writer of the first byte and its UI/control meaning remains the next unresolved link. It must not be labeled a fader merely because its downstream code multiplies audio.
