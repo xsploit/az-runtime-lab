@@ -15,6 +15,8 @@ from group_packets import LINE
 WRAPPER_CALL_START = 0x1181AE78
 WRAPPER_CALL_END = 0x1181AFD4
 KNOWN = {
+    '0x1180ff58': ('numeric_processing', 'CrossFaderCurve-selected gain tables and two paired-buffer ramp regions; GAIN-CONTROL-BRIDGE.md and GAIN-RAMP-FF58.md; exact loop phase and runtime bounds unresolved', 'high'),
+    '0x11819880': ('control_state', 'Includes command3 ten-bit buffering and four-entry reduction to halfword517; GAIN-RAMP-FF58.md; remainder of routine and full input provenance unresolved', 'medium'),
     '0x1181d5ac': ('transport', 'SPI receive/checksum and staged transfer path; SPI-AND-INTERRUPTS.md', 'high'),
     '0x1180e644': ('control_state', 'staged control reader writes B14 indices 11-14; BUFFER-MAP.md', 'high'),
     '0x1181a310': ('numeric_processing', 'McASP RX 704-byte ping-pong reader with SHR/INTSP; BUFFER-CONSUMERS.md', 'high'),

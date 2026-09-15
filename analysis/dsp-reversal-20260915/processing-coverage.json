@@ -461,8 +461,8 @@
         "0x1181ae8c"
       ],
       "category": "control_state",
-      "confidence": "low",
-      "semantic_evidence": "state-like candidate from bounded instruction sample; exact state ownership unresolved",
+      "confidence": "medium",
+      "semantic_evidence": "Includes command3 ten-bit buffering and four-entry reduction to halfword517; GAIN-RAMP-FF58.md; remainder of routine and full input provenance unresolved",
       "listing_review_window": {
         "start": "0x11819880",
         "decoded_instruction_count": 120,
@@ -1482,8 +1482,8 @@
         "0x1181af5c"
       ],
       "category": "numeric_processing",
-      "confidence": "low",
-      "semantic_evidence": "floating-point instructions in bounded sample; effect identity unresolved",
+      "confidence": "high",
+      "semantic_evidence": "CrossFaderCurve-selected gain tables and two paired-buffer ramp regions; GAIN-CONTROL-BRIDGE.md and GAIN-RAMP-FF58.md; exact loop phase and runtime bounds unresolved",
       "listing_review_window": {
         "start": "0x1180ff58",
         "decoded_instruction_count": 120,
