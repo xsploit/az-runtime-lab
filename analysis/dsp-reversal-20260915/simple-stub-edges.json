@@ -1,0 +1,868 @@
+{
+  "scope": "Simple serial unconditional B31 MVK/MVKH/B plus NOP5 only; no general symbolic execution or runtime calls",
+  "source_listing": "local/dsp-review-20260915/dsp.private.asm",
+  "stub_count": 89,
+  "stubs": [
+    {
+      "stub": "0x1181fbc0",
+      "branch_site": "0x1181fbc8",
+      "target": "0x80014020",
+      "direct_callers": [
+        "0x1181ebd8"
+      ]
+    },
+    {
+      "stub": "0x1181fbd0",
+      "branch_site": "0x1181fbd8",
+      "target": "0x80015590",
+      "direct_callers": [
+        "0x1181ebd0"
+      ]
+    },
+    {
+      "stub": "0x1181fbe0",
+      "branch_site": "0x1181fbe8",
+      "target": "0x80015be0",
+      "direct_callers": [
+        "0x1181ebb4"
+      ]
+    },
+    {
+      "stub": "0x1181fbf0",
+      "branch_site": "0x1181fbf8",
+      "target": "0x80016660",
+      "direct_callers": [
+        "0x1181ebb0"
+      ]
+    },
+    {
+      "stub": "0x1181fc00",
+      "branch_site": "0x1181fc08",
+      "target": "0x80015b68",
+      "direct_callers": [
+        "0x1181eba8"
+      ]
+    },
+    {
+      "stub": "0x1181fc10",
+      "branch_site": "0x1181fc18",
+      "target": "0x80015004",
+      "direct_callers": [
+        "0x1181eba4"
+      ]
+    },
+    {
+      "stub": "0x1181fc20",
+      "branch_site": "0x1181fc28",
+      "target": "0x80014c20",
+      "direct_callers": [
+        "0x1181eb98"
+      ]
+    },
+    {
+      "stub": "0x1181fc30",
+      "branch_site": "0x1181fc38",
+      "target": "0x800163c0",
+      "direct_callers": [
+        "0x1181eb8c"
+      ]
+    },
+    {
+      "stub": "0x1181fc40",
+      "branch_site": "0x1181fc48",
+      "target": "0x80016280",
+      "direct_callers": [
+        "0x1181eb88"
+      ]
+    },
+    {
+      "stub": "0x1181fc50",
+      "branch_site": "0x1181fc58",
+      "target": "0x80016700",
+      "direct_callers": [
+        "0x1181eb80"
+      ]
+    },
+    {
+      "stub": "0x1181fc60",
+      "branch_site": "0x1181fc68",
+      "target": "0x800164e0",
+      "direct_callers": [
+        "0x1181eb7c"
+      ]
+    },
+    {
+      "stub": "0x1181fc70",
+      "branch_site": "0x1181fc78",
+      "target": "0x80015fa0",
+      "direct_callers": [
+        "0x1181eb78"
+      ]
+    },
+    {
+      "stub": "0x1181fc80",
+      "branch_site": "0x1181fc88",
+      "target": "0x80015c60",
+      "direct_callers": [
+        "0x1181eb74"
+      ]
+    },
+    {
+      "stub": "0x1181fc90",
+      "branch_site": "0x1181fc98",
+      "target": "0x80016760",
+      "direct_callers": [
+        "0x1181eb70"
+      ]
+    },
+    {
+      "stub": "0x1181fca0",
+      "branch_site": "0x1181fca8",
+      "target": "0x800167a0",
+      "direct_callers": [
+        "0x1181eb6c"
+      ]
+    },
+    {
+      "stub": "0x1181fcb0",
+      "branch_site": "0x1181fcb8",
+      "target": "0x800156c0",
+      "direct_callers": [
+        "0x1181eb68"
+      ]
+    },
+    {
+      "stub": "0x1181fcc0",
+      "branch_site": "0x1181fcc8",
+      "target": "0x80014420",
+      "direct_callers": [
+        "0x1181eb60"
+      ]
+    },
+    {
+      "stub": "0x1181fcd0",
+      "branch_site": "0x1181fcd8",
+      "target": "0x80015aa0",
+      "direct_callers": [
+        "0x1181e214"
+      ]
+    },
+    {
+      "stub": "0x1181fce0",
+      "branch_site": "0x1181fce8",
+      "target": "0x800169e0",
+      "direct_callers": [
+        "0x118190c4"
+      ]
+    },
+    {
+      "stub": "0x1181fcf0",
+      "branch_site": "0x1181fcf8",
+      "target": "0x80017c60",
+      "direct_callers": [
+        "0x118190b8"
+      ]
+    },
+    {
+      "stub": "0x1181fd00",
+      "branch_site": "0x1181fd08",
+      "target": "0x80015a24",
+      "direct_callers": [
+        "0x11816ad8"
+      ]
+    },
+    {
+      "stub": "0x1181fd10",
+      "branch_site": "0x1181fd18",
+      "target": "0x8001598c",
+      "direct_callers": [
+        "0x11816ad4"
+      ]
+    },
+    {
+      "stub": "0x1181fd20",
+      "branch_site": "0x1181fd28",
+      "target": "0x800158c0",
+      "direct_callers": [
+        "0x11816ad0"
+      ]
+    },
+    {
+      "stub": "0x1181fd30",
+      "branch_site": "0x1181fd38",
+      "target": "0x800165c0",
+      "direct_callers": [
+        "0x1180e38c"
+      ]
+    },
+    {
+      "stub": "0x1181fd40",
+      "branch_site": "0x1181fd48",
+      "target": "0x80010120",
+      "direct_callers": [
+        "0x1180d454",
+        "0x1180d474"
+      ]
+    },
+    {
+      "stub": "0x1181fd50",
+      "branch_site": "0x1181fd58",
+      "target": "0x800131a0",
+      "direct_callers": [
+        "0x1180d438"
+      ]
+    },
+    {
+      "stub": "0x1181fd60",
+      "branch_site": "0x1181fd68",
+      "target": "0x800120a0",
+      "direct_callers": [
+        "0x1180d40c",
+        "0x1180d424"
+      ]
+    },
+    {
+      "stub": "0x1181fd70",
+      "branch_site": "0x1181fd78",
+      "target": "0x80011700",
+      "direct_callers": [
+        "0x1180d3f4"
+      ]
+    },
+    {
+      "stub": "0x1181fd80",
+      "branch_site": "0x1181fd88",
+      "target": "0x80012940",
+      "direct_callers": [
+        "0x1180d3e0"
+      ]
+    },
+    {
+      "stub": "0x1181fd90",
+      "branch_site": "0x1181fd98",
+      "target": "0x8000f3c0",
+      "direct_callers": [
+        "0x1180d324"
+      ]
+    },
+    {
+      "stub": "0x1181fda0",
+      "branch_site": "0x1181fda8",
+      "target": "0x80010c20",
+      "direct_callers": [
+        "0x1180d300"
+      ]
+    },
+    {
+      "stub": "0x1181fdb0",
+      "branch_site": "0x1181fdb8",
+      "target": "0x80013a00",
+      "direct_callers": [
+        "0x1180d2d4"
+      ]
+    },
+    {
+      "stub": "0x80013f40",
+      "branch_site": "0x80013f48",
+      "target": "0x1181c160",
+      "direct_callers": [
+        "0x80012800"
+      ]
+    },
+    {
+      "stub": "0x80013f50",
+      "branch_site": "0x80013f58",
+      "target": "0x1180a4b8",
+      "direct_callers": [
+        "0x80012088",
+        "0x8001292c",
+        "0x80013188"
+      ]
+    },
+    {
+      "stub": "0x80013f60",
+      "branch_site": "0x80013f68",
+      "target": "0x1180dfe0",
+      "direct_callers": [
+        "0x80011aa0",
+        "0x80011afc",
+        "0x80012548",
+        "0x800125a8",
+        "0x80012d2c",
+        "0x80012d8c"
+      ]
+    },
+    {
+      "stub": "0x80013f70",
+      "branch_site": "0x80013f78",
+      "target": "0x1181f8e0",
+      "direct_callers": [
+        "0x80011a88",
+        "0x80011ae8",
+        "0x80011c08",
+        "0x80012534",
+        "0x80012594",
+        "0x80012d08",
+        "0x80012d68"
+      ]
+    },
+    {
+      "stub": "0x80013f80",
+      "branch_site": "0x80013f88",
+      "target": "0x1180a46c",
+      "direct_callers": [
+        "0x80011708",
+        "0x800120a4",
+        "0x80012944"
+      ]
+    },
+    {
+      "stub": "0x80013f90",
+      "branch_site": "0x80013f98",
+      "target": "0x1180a400",
+      "direct_callers": [
+        "0x80010ec0",
+        "0x80013c54",
+        "0x80013c64"
+      ]
+    },
+    {
+      "stub": "0x80013fa0",
+      "branch_site": "0x80013fa8",
+      "target": "0x11816060",
+      "direct_callers": [
+        "0x80010748",
+        "0x80010768",
+        "0x80010978",
+        "0x80010994"
+      ]
+    },
+    {
+      "stub": "0x80013fb0",
+      "branch_site": "0x80013fb8",
+      "target": "0x11816180",
+      "direct_callers": [
+        "0x800105d4",
+        "0x800105f4"
+      ]
+    },
+    {
+      "stub": "0x80013fc0",
+      "branch_site": "0x80013fc8",
+      "target": "0x1181fae0",
+      "direct_callers": [
+        "0x80010118",
+        "0x80010c08",
+        "0x800116f8",
+        "0x80012090",
+        "0x80012934",
+        "0x80013190",
+        "0x800139f8",
+        "0x80013f30"
+      ]
+    },
+    {
+      "stub": "0x80013fd0",
+      "branch_site": "0x80013fd8",
+      "target": "0x11815ecc",
+      "direct_callers": [
+        "0x800100f0",
+        "0x800105e0",
+        "0x800105f8",
+        "0x80010750",
+        "0x80010784",
+        "0x80010980",
+        "0x800109b0",
+        "0x800116d0",
+        "0x80013f20"
+      ]
+    },
+    {
+      "stub": "0x80013fe0",
+      "branch_site": "0x80013fe8",
+      "target": "0x118161ec",
+      "direct_callers": [
+        "0x80010094",
+        "0x80011670",
+        "0x80013ecc"
+      ]
+    },
+    {
+      "stub": "0x80013ff0",
+      "branch_site": "0x80013ff8",
+      "target": "0x1181f500",
+      "direct_callers": [
+        "0x8000f6f8",
+        "0x8000f70c"
+      ]
+    },
+    {
+      "stub": "0x80014000",
+      "branch_site": "0x80014008",
+      "target": "0x1181f460",
+      "direct_callers": [
+        "0x8000f4d8",
+        "0x8000f6c8",
+        "0x8000f80c",
+        "0x8000fd74",
+        "0x8000fdb8",
+        "0x8000fe04",
+        "0x8000fe1c",
+        "0x80010438",
+        "0x80010674",
+        "0x80010698",
+        "0x8001082c",
+        "0x8001085c",
+        "0x80010a40",
+        "0x80010a70",
+        "0x800113a0",
+        "0x800113e0",
+        "0x80013240",
+        "0x80013264",
+        "0x80013290",
+        "0x800132f0",
+        "0x80013330",
+        "0x80013530",
+        "0x800135ac",
+        "0x800135e8",
+        "0x80013648",
+        "0x80013698"
+      ]
+    },
+    {
+      "stub": "0x80014010",
+      "branch_site": "0x80014018",
+      "target": "0x1181fb00",
+      "direct_callers": [
+        "0x8000f3c0",
+        "0x80010120",
+        "0x80010c20",
+        "0x80011700",
+        "0x800120a0",
+        "0x80012940",
+        "0x800131a0",
+        "0x80013a00"
+      ]
+    },
+    {
+      "stub": "0x800167e0",
+      "branch_site": "0x800167e8",
+      "target": "0x1181d0c0",
+      "direct_callers": [
+        "0x80016728"
+      ]
+    },
+    {
+      "stub": "0x800167f0",
+      "branch_site": "0x800167f8",
+      "target": "0x1181d9c0",
+      "direct_callers": [
+        "0x80016610"
+      ]
+    },
+    {
+      "stub": "0x80016800",
+      "branch_site": "0x80016808",
+      "target": "0x1181f8e0",
+      "direct_callers": [
+        "0x8001660c"
+      ]
+    },
+    {
+      "stub": "0x80016810",
+      "branch_site": "0x80016818",
+      "target": "0x11824d20",
+      "direct_callers": [
+        "0x800165c4"
+      ]
+    },
+    {
+      "stub": "0x80016820",
+      "branch_site": "0x80016828",
+      "target": "0x118140a4",
+      "direct_callers": [
+        "0x80016074"
+      ]
+    },
+    {
+      "stub": "0x80016830",
+      "branch_site": "0x80016838",
+      "target": "0x118142d4",
+      "direct_callers": [
+        "0x80016024",
+        "0x800160c8",
+        "0x800160cc",
+        "0x800163cc",
+        "0x800163d8",
+        "0x800163e4",
+        "0x800163f0"
+      ]
+    },
+    {
+      "stub": "0x80016840",
+      "branch_site": "0x80016848",
+      "target": "0x118149e8",
+      "direct_callers": [
+        "0x80015f60"
+      ]
+    },
+    {
+      "stub": "0x80016850",
+      "branch_site": "0x80016858",
+      "target": "0x118149e0",
+      "direct_callers": [
+        "0x80015f20"
+      ]
+    },
+    {
+      "stub": "0x80016860",
+      "branch_site": "0x80016868",
+      "target": "0x11814998",
+      "direct_callers": [
+        "0x80015f04"
+      ]
+    },
+    {
+      "stub": "0x80016870",
+      "branch_site": "0x80016878",
+      "target": "0x118147f4",
+      "direct_callers": [
+        "0x80015d60",
+        "0x80015dd4",
+        "0x80016100"
+      ]
+    },
+    {
+      "stub": "0x80016880",
+      "branch_site": "0x80016888",
+      "target": "0x11811580",
+      "direct_callers": [
+        "0x80015d48",
+        "0x80015dc0"
+      ]
+    },
+    {
+      "stub": "0x80016890",
+      "branch_site": "0x80016898",
+      "target": "0x118114e0",
+      "direct_callers": [
+        "0x80015d2c",
+        "0x80015da4"
+      ]
+    },
+    {
+      "stub": "0x800168a0",
+      "branch_site": "0x800168a8",
+      "target": "0x11811400",
+      "direct_callers": [
+        "0x80015d10",
+        "0x80015d8c"
+      ]
+    },
+    {
+      "stub": "0x800168b0",
+      "branch_site": "0x800168b8",
+      "target": "0x11811640",
+      "direct_callers": [
+        "0x80015c84"
+      ]
+    },
+    {
+      "stub": "0x800168c0",
+      "branch_site": "0x800168c8",
+      "target": "0x11815b00",
+      "direct_callers": [
+        "0x80015bb4"
+      ]
+    },
+    {
+      "stub": "0x800168d0",
+      "branch_site": "0x800168d8",
+      "target": "0x11815ecc",
+      "direct_callers": [
+        "0x80015bb0",
+        "0x800162b8"
+      ]
+    },
+    {
+      "stub": "0x800168e0",
+      "branch_site": "0x800168e8",
+      "target": "0x11815d30",
+      "direct_callers": [
+        "0x80015ba0"
+      ]
+    },
+    {
+      "stub": "0x800168f0",
+      "branch_site": "0x800168f8",
+      "target": "0x11816258",
+      "direct_callers": [
+        "0x80015b90",
+        "0x800162ac"
+      ]
+    },
+    {
+      "stub": "0x80016900",
+      "branch_site": "0x80016908",
+      "target": "0x1181d3e0",
+      "direct_callers": [
+        "0x80015868",
+        "0x80016710"
+      ]
+    },
+    {
+      "stub": "0x80016910",
+      "branch_site": "0x80016918",
+      "target": "0x1181c138",
+      "direct_callers": [
+        "0x80015850",
+        "0x80015858"
+      ]
+    },
+    {
+      "stub": "0x80016920",
+      "branch_site": "0x80016928",
+      "target": "0x1180e980",
+      "direct_callers": [
+        "0x800157dc",
+        "0x800157f0",
+        "0x80015ff0",
+        "0x8001634c",
+        "0x80016404",
+        "0x80016418",
+        "0x80016548"
+      ]
+    },
+    {
+      "stub": "0x80016930",
+      "branch_site": "0x80016938",
+      "target": "0x1180e9b0",
+      "direct_callers": [
+        "0x80015700",
+        "0x80015788",
+        "0x80015798",
+        "0x800157b0",
+        "0x800157c4",
+        "0x80016340"
+      ]
+    },
+    {
+      "stub": "0x80016940",
+      "branch_site": "0x80016948",
+      "target": "0x1181d5ac",
+      "direct_callers": [
+        "0x800155b0",
+        "0x80015610",
+        "0x80015660"
+      ]
+    },
+    {
+      "stub": "0x80016950",
+      "branch_site": "0x80016958",
+      "target": "0x1181d420",
+      "direct_callers": [
+        "0x80015518"
+      ]
+    },
+    {
+      "stub": "0x80016960",
+      "branch_site": "0x80016968",
+      "target": "0x11816920",
+      "direct_callers": [
+        "0x80015010"
+      ]
+    },
+    {
+      "stub": "0x80016970",
+      "branch_site": "0x80016978",
+      "target": "0x1181ea08",
+      "direct_callers": [
+        "0x80015008"
+      ]
+    },
+    {
+      "stub": "0x80016980",
+      "branch_site": "0x80016988",
+      "target": "0x1181eb38",
+      "direct_callers": [
+        "0x80014f28",
+        "0x80014f54",
+        "0x80014f94",
+        "0x80014fa0",
+        "0x80014fb4"
+      ]
+    },
+    {
+      "stub": "0x80016990",
+      "branch_site": "0x80016998",
+      "target": "0x1181eac0",
+      "direct_callers": [
+        "0x80014c0c",
+        "0x80015598"
+      ]
+    },
+    {
+      "stub": "0x800169a0",
+      "branch_site": "0x800169a8",
+      "target": "0x1181fae0",
+      "direct_callers": [
+        "0x800148ec",
+        "0x80014b4c",
+        "0x800156b4",
+        "0x80015bd4",
+        "0x80015df0",
+        "0x80015f94",
+        "0x8001610c",
+        "0x800163b4",
+        "0x800165b4",
+        "0x8001664c"
+      ]
+    },
+    {
+      "stub": "0x800169b0",
+      "branch_site": "0x800169b8",
+      "target": "0x1181ea44",
+      "direct_callers": [
+        "0x800147c0",
+        "0x80014820",
+        "0x800148c0",
+        "0x80014a08",
+        "0x80014a6c",
+        "0x80014b20",
+        "0x800155e8",
+        "0x80015600",
+        "0x80015634",
+        "0x8001564c",
+        "0x80015680",
+        "0x800156a0"
+      ]
+    },
+    {
+      "stub": "0x800169c0",
+      "branch_site": "0x800169c8",
+      "target": "0x1181eaac",
+      "direct_callers": [
+        "0x80014798",
+        "0x8001480c",
+        "0x800149e8",
+        "0x80014a54",
+        "0x800155e0",
+        "0x80015630",
+        "0x80015678"
+      ]
+    },
+    {
+      "stub": "0x800169d0",
+      "branch_site": "0x800169d8",
+      "target": "0x1181fb00",
+      "direct_callers": [
+        "0x800146c0",
+        "0x800148f4",
+        "0x80015590",
+        "0x80015b68",
+        "0x80015c60",
+        "0x80015e00",
+        "0x80015fa0",
+        "0x80016280",
+        "0x800164e0",
+        "0x800165c0"
+      ]
+    },
+    {
+      "stub": "0x80018760",
+      "branch_site": "0x80018768",
+      "target": "0x1181c72c",
+      "direct_callers": [
+        "0x80018554"
+      ]
+    },
+    {
+      "stub": "0x80018770",
+      "branch_site": "0x80018778",
+      "target": "0x1181c580",
+      "direct_callers": [
+        "0x800180d4",
+        "0x80018420",
+        "0x800184e4"
+      ]
+    },
+    {
+      "stub": "0x80018780",
+      "branch_site": "0x80018788",
+      "target": "0x1180f428",
+      "direct_callers": [
+        "0x80017f54"
+      ]
+    },
+    {
+      "stub": "0x80018790",
+      "branch_site": "0x80018798",
+      "target": "0x1181f2e0",
+      "direct_callers": [
+        "0x80017e64"
+      ]
+    },
+    {
+      "stub": "0x800187a0",
+      "branch_site": "0x800187a8",
+      "target": "0x1181f358",
+      "direct_callers": [
+        "0x80017dc4"
+      ]
+    },
+    {
+      "stub": "0x800187b0",
+      "branch_site": "0x800187b8",
+      "target": "0x1181fae0",
+      "direct_callers": [
+        "0x80017c54",
+        "0x80018744"
+      ]
+    },
+    {
+      "stub": "0x800187c0",
+      "branch_site": "0x800187c8",
+      "target": "0x118142f8",
+      "direct_callers": [
+        "0x800176ac",
+        "0x800176c4"
+      ]
+    },
+    {
+      "stub": "0x800187d0",
+      "branch_site": "0x800187d8",
+      "target": "0x11813af0",
+      "direct_callers": [
+        "0x80016fd0",
+        "0x800175b0"
+      ]
+    },
+    {
+      "stub": "0x800187e0",
+      "branch_site": "0x800187e8",
+      "target": "0x11813a68",
+      "direct_callers": [
+        "0x80016fb4",
+        "0x800175a4"
+      ]
+    },
+    {
+      "stub": "0x800187f0",
+      "branch_site": "0x800187f8",
+      "target": "0x118147f4",
+      "direct_callers": [
+        "0x80016f94",
+        "0x80016fa4"
+      ]
+    },
+    {
+      "stub": "0x80018800",
+      "branch_site": "0x80018808",
+      "target": "0x1181fb00",
+      "direct_callers": [
+        "0x800169e0",
+        "0x80017c60"
+      ]
+    }
+  ]
+}

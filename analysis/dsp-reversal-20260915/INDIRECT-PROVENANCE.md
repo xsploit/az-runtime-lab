@@ -34,3 +34,9 @@ At `0x1180f188/18c`, MVK of `0xffffffff` into B3 and MV of B3 into A16 are paral
 Stub `0x80013f60` constructs B31 using low bits `0xdfe0` and replacement upper bits `0x11800000`, then branches through B31 at `0x80013f68` with NOP5. Its destination is **0x1180dfe0**. It does not overwrite B3.
 
 Six explicit CALLP sites target this stub, each using B3 as link register: `0x80011aa0`, `0x80011afc`, `0x80012548`, `0x800125a8`, `0x80012d2c`, and `0x80012d8c`. Their logical next processing target is therefore `0x1180dfe0`. The calls at `0x80012548/125a8` lie in the shared cases8/9 body. This closes those concrete incoming edges, rather than inferring that absence of a direct CALLP to the final address means its caller is unknown. It does not establish that these are every possible caller.
+
+## Reproducible simple-stub inventory
+
+[map_simple_stubs.py](map_simple_stubs.py) requires explicit `--listing` and `--output` paths. It accepts only serial, unpredicated MVK/MVKH/B B31 sequences at four-byte offsets followed by NOP5. MVKH is evaluated as upper-half replacement. The [generated ledger](simple-stub-edges.json) records 89 accepted stubs and direct CALL/CALLP sites naming each stub. It emits addresses and call edges, not firmware bytes.
+
+A synthetic low-half-sign-extension example resolves to `0x1180dfe0`; changing MVKH to a parallel instruction or replacing NOP5 with NOP4 makes that example fail recognition. The real corrected listing still yields 89 accepted stubs with these stricter checks. This is not a general control-flow decoder: compact, predicated, differently scheduled, chained or dynamically loaded targets require separate analysis. Listed callers are static operand matches, not evidence that every branch is reached at runtime.
