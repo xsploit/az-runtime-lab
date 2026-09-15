@@ -25,3 +25,5 @@ The most important remaining gaps are exact function extents, compact execution-
 ## Next indirect-edge checks
 
 Eleven unique sampled sites use registers outside A3/B3/IRP/NRP: `0x1180e0a4`, `0x1180f070`, `0x1180f170`, `0x1180f210`, `0x1180ff54`, `0x11810058`, `0x11810cac`, `0x1181a48c`, `0x1181d08c`, `0x1181e4f4`, and `0x1181f158`. These are provenance-review targets, not eleven proven dynamic dispatches: a nonstandard register can hold a saved return address or a constant branch destination. Trace its definitions and packet-old values before adding graph edges.
+
+The [register-provenance review](INDIRECT-PROVENANCE.md) classifies `0x11810058` as a preserved incoming-B3 branch on the reviewed local path; `0x1180ff54` has a similar save but still requires callee-preservation analysis. The raw inventory retains both syntactic observations.
