@@ -16,10 +16,9 @@ never copied and never modified.
 
 IMPORTANT -- what is and is not established:
 
-  * The table and column names come from static evidence in EP147 (see
-    ONELIBRARY-SCHEMA.md): the 22-table entity list and a 75-column type map
-    recovered from the getter/writer code. Columns marked INFERRED below are
-    plausible but unconfirmed semantics.
+  * The table and column names combine static evidence in EP147 (see
+    ONELIBRARY-SCHEMA.md) with the published OneLibrary schema implemented by
+    pioneer-usb-writer. The generated column order follows that schema.
   * EP147 opens this file with sqlite3_key(), i.e. SQLCipher. This tool writes
     a PLAINTEXT database and never handles key material. Applying the device
     key is a separate step for whoever legitimately holds it; no key is read,
@@ -31,11 +30,9 @@ IMPORTANT -- what is and is not established:
     and all 75 read columns -- but no schema version has to be guessed and
     column order does not matter, since readers resolve columns by name
     through PRAGMA table_info.
-  * NO device or emulator has accepted a database produced by this tool. There
-    is no genuine device-library fixture on this machine, so NOT NULL/default
-    constraints, which columns are load-critical, and the playlist `attribute`
-    and menuItem `kind` enums remain unconfirmed. Do not describe this output
-    as accepted.
+  * The encrypted output has been opened and queried by the exact AZ firmware
+    SQLCipher library and EP147 executable in the offline ARM64 lab. Automatic
+    mount selection and a populated rendered browser remain unverified.
 
 Usage:
   python3 library/build_device_library.py LIBRARY.json --out-dir DIR
@@ -62,28 +59,32 @@ ATTRIBUTE_FOLDER = 1
 # enforced by the readers, which resolve columns by name via PRAGMA table_info.
 SCHEMA = {
     "property": """
-        deviceName TEXT, dbVersion TEXT, createdDate TEXT,
-        numberOfContents INTEGER, backGroundColorType INTEGER""",
-    "artist": "artist_id INTEGER PRIMARY KEY, name TEXT",
-    "album": "album_id INTEGER PRIMARY KEY, name TEXT, artist_id INTEGER, image_id INTEGER",
+        deviceName TEXT, dbVersion TEXT, numberOfContents INTEGER,
+        createdDate TEXT, backGroundColorType INTEGER, myTagMasterDBID INTEGER""",
+    "artist": "artist_id INTEGER PRIMARY KEY, name TEXT, nameForSearch TEXT",
+    "album": """album_id INTEGER PRIMARY KEY, name TEXT, artist_id INTEGER,
+        image_id INTEGER, isComplation INTEGER, nameForSearch TEXT""",
     "genre": "genre_id INTEGER PRIMARY KEY, name TEXT",
     "key": "key_id INTEGER PRIMARY KEY, name TEXT",
     "label": "label_id INTEGER PRIMARY KEY, name TEXT",
     "color": "color_id INTEGER PRIMARY KEY, name TEXT",
     "image": "image_id INTEGER PRIMARY KEY, path TEXT",
     "content": """
-        content_id INTEGER PRIMARY KEY, title TEXT, subtitle TEXT,
+        content_id INTEGER PRIMARY KEY, title TEXT, titleForSearch TEXT, subtitle TEXT,
+        bpmx100 INTEGER, length INTEGER, trackNo INTEGER, discNo INTEGER,
         artist_id_artist INTEGER, artist_id_remixer INTEGER,
         artist_id_originalArtist INTEGER, artist_id_composer INTEGER,
         artist_id_lyricist INTEGER, album_id INTEGER, genre_id INTEGER,
         label_id INTEGER, key_id INTEGER, color_id INTEGER, image_id INTEGER,
-        bpmx100 INTEGER, length INTEGER, trackNo INTEGER, bitrate INTEGER,
-        rating INTEGER, releaseYear INTEGER, djPlayCount INTEGER,
-        djComment TEXT, isrc TEXT, dateAdded TEXT, fileName TEXT,
-        fileType INTEGER, path TEXT, analysisDataFilePath TEXT,
-        masterDbId INTEGER, masterContentId INTEGER,
+        djComment TEXT, rating INTEGER, releaseYear INTEGER, releaseDate TEXT,
+        dateCreated TEXT, dateAdded TEXT, path TEXT, fileName TEXT,
+        fileSize INTEGER, fileType INTEGER, bitrate INTEGER, bitDepth INTEGER,
+        samplingRate INTEGER, isrc TEXT, djPlayCount INTEGER,
         isHotCueAutoLoadOn INTEGER, isKuvoDeliverStatusOn INTEGER,
-        kuvoDeliveryComment TEXT, hasModified INTEGER""",
+        kuvoDeliveryComment TEXT, masterDbId INTEGER, masterContentId INTEGER,
+        analysisDataFilePath TEXT, analysedBits INTEGER, contentLink INTEGER,
+        hasModified INTEGER, cueUpdateCount INTEGER,
+        analysisDataUpdateCount INTEGER, informationUpdateCount INTEGER""",
     "playlist": """
         playlist_id INTEGER PRIMARY KEY, playlist_id_parent INTEGER,
         sequenceNo INTEGER, name TEXT, image_id INTEGER, attribute INTEGER,
@@ -124,7 +125,8 @@ SCHEMA = {
     "sort": """
         sort_id INTEGER PRIMARY KEY, menuItem_id INTEGER, sequenceNo INTEGER,
         isVisible INTEGER, isSelectedAsSubColumn INTEGER""",
-    "recommendedLike": "content_id_1 INTEGER, content_id_2 INTEGER",
+    "recommendedLike": """content_id_1 INTEGER, content_id_2 INTEGER,
+        rating INTEGER, createdDate INTEGER""",
 }
 
 # Order matters only for readability of the generated file.
@@ -143,6 +145,39 @@ FILE_TYPE_BY_SUFFIX = {".mp3": 1, ".aac": 2, ".mp4": 3, ".m4a": 4,
                        ".fla": 5, ".flac": 5, ".wav": 11, ".aif": 12,
                        ".aiff": 12}
 
+# OneLibrary browse rows accepted by this AZ firmware. Names use the delimiters
+# found in exported databases; AZ renders its localized labels from the kind.
+# The public table also includes COMMENT (id 20, kind 34), but EP147 1.30 stops
+# there with `unknown rootCategory`, so it is deliberately omitted.
+BROWSE_MENU_ITEMS = [
+    (1, 1, "GENRE"), (2, 2, "ARTIST"), (3, 3, "ALBUM"),
+    (4, 4, "TRACK"), (5, 6, "PLAYLIST"), (6, 7, "HISTORY"),
+    (7, 10, "KEY"), (8, 12, "BPM"), (9, 13, "RATING"),
+    (10, 14, "COLOR"), (11, 16, "TIME"), (12, 17, "BITRATE"),
+    (13, 19, "FILENAME"), (14, 23, "LABEL"), (15, 28, "REMIXER"),
+    (16, 29, "DJ PLAY COUNT"), (17, 30, "YEAR"),
+    (18, 31, "HOT CUE BANK LIST"), (19, 33, "MY TAG"),
+    (21, 35, "DATE ADDED"),
+]
+BROWSE_SORTS = [
+    (1, 4, 1, 1, 1), (2, 2, 2, 1, 0), (3, 3, 3, 1, 0),
+    (4, 8, 4, 1, 0), (5, 9, 5, 1, 0), (6, 1, 6, 1, 0),
+    (7, 7, 7, 1, 0), (8, 14, 8, 1, 0), (9, 17, 9, 1, 0),
+    (10, 21, 10, 1, 0),
+]
+
+
+def seed_browse_categories(db):
+    wrapped = [(row_id, kind, "\ufffa" + name + "\ufffb")
+               for row_id, kind, name in BROWSE_MENU_ITEMS]
+    db.executemany("INSERT INTO menuItem VALUES (?, ?, ?)", wrapped)
+    db.executemany("INSERT INTO category VALUES (?, ?, ?, 1)",
+                   [(sequence, menu_id, sequence)
+                    for sequence, (menu_id, _, _) in enumerate(wrapped, 1)])
+    db.executemany("INSERT INTO sort VALUES (?, ?, ?, ?, ?)", BROWSE_SORTS)
+    return {"menuItem": len(wrapped), "category": len(wrapped),
+            "sort": len(BROWSE_SORTS)}
+
 
 def intern(table, name, cache, rows):
     """Assign a stable 1-based id to each distinct non-empty name."""
@@ -157,12 +192,9 @@ def intern(table, name, cache, rows):
 def copy_browse_categories(db, reference):
     """Copy menuItem/category/sort rows verbatim from a reference library.
 
-    EP147 renders browse category labels from its own GUI string table, so these
-    tables most likely carry *which* categories exist and in what order, not
-    their names. The `kind` enum was not recovered statically and inventing
-    values would be a guess, so by default these tables are created empty and
-    this hook exists to copy the real rows out of a genuine device library when
-    one becomes available. Returns the number of rows copied per table.
+    The generator has observed defaults, while this hook remains useful for
+    preserving a user's exact category visibility and sort preferences.
+    Returns the number of rows copied per table.
     """
     src = sqlite3.connect(f"file:{reference}?mode=ro", uri=True)
     copied = {}
@@ -200,12 +232,15 @@ def build(library, db_path, device_name, categories_from=None):
         images, imrows = {}, []
 
         content = []
+        today = datetime.date.today().isoformat()
         for t in library["tracks"]:
             path = t["file_path"]
             suffix = Path(path).suffix.lower() if path else ""
             content.append((
                 t["id"],
-                t["title"], t.get("mix_name", ""),
+                t["title"], t["title"].lower(), t.get("mix_name", ""),
+                int(round(t["bpm"] * 100)), t["duration_sec"],
+                t["track_number"], t.get("disc_number", 0),
                 intern("artist", t["artist"], artists, arows),
                 # The export distinguishes artist roles and the native schema
                 # has a column for each, so they are carried, not collapsed.
@@ -221,36 +256,31 @@ def build(library, db_path, device_name, categories_from=None):
                 # with the export's own names so the id keeps its meaning.
                 t["color_id"],
                 intern("image", t.get("artwork_path", ""), images, imrows),
-                int(round(t["bpm"] * 100)),
-                t["duration_sec"],
-                t["track_number"],
-                t["bitrate"],
-                t["rating"],
-                t["year"],
-                t.get("play_count", 0),
-                t["comment"],
-                t.get("isrc", ""),
+                t["comment"], t["rating"], t["year"], "",
+                t.get("date_added", "") or today,
                 # Already YYYY-MM-DD in the export, which is the shape EP147's
                 # `dateAdded LIKE "%u-__-__"` browse predicate expects.
-                t.get("date_added", ""),
+                t.get("date_added", ""), path,
                 t.get("filename") or (Path(path).name if path else ""),
-                FILE_TYPE_BY_SUFFIX.get(suffix, 0),
-                path,
+                t.get("file_size", 0), FILE_TYPE_BY_SUFFIX.get(suffix, 0),
+                t["bitrate"], t.get("bit_depth", 0),
+                t.get("sample_rate", 0), t.get("isrc", ""),
+                t.get("play_count", 0), 0, 0, "", 0, 0,
                 # The whole point: point at the ORIGINAL analysis file.
-                t["analyze_path"],
-                0, 0, 0, 0, "", 0,
+                t["analyze_path"], 105, 0, 0, 0, 0, 0,
             ))
         db.executemany(
-            "INSERT INTO content VALUES (" + ",".join(["?"] * 34) + ")", content)
+            "INSERT INTO content VALUES (" + ",".join(["?"] * 46) + ")", content)
 
         for t in library["tracks"]:
             if t["color_id"] and t["color"]:
                 colors.setdefault(t["color_id"], t["color"])
-        for table, rows in (("artist", arows), ("album", None), ("genre", grows),
-                            ("key", krows), ("label", lrows)):
-            if rows is not None:
-                db.executemany(f"INSERT INTO {table} VALUES (?, ?)", rows)
-        db.executemany("INSERT INTO album VALUES (?, ?, 0, 0)", alrows)
+        db.executemany("INSERT INTO artist VALUES (?, ?, ?)",
+                       [(i, name, name.lower()) for i, name in arows])
+        for table, rows in (("genre", grows), ("key", krows), ("label", lrows)):
+            db.executemany(f"INSERT INTO {table} VALUES (?, ?)", rows)
+        db.executemany("INSERT INTO album VALUES (?, ?, 0, 0, 0, ?)",
+                       [(i, name, name.lower()) for i, name in alrows])
         db.executemany("INSERT INTO color VALUES (?, ?)", sorted(colors.items()))
         db.executemany("INSERT INTO image VALUES (?, ?)", imrows)
 
@@ -272,11 +302,11 @@ def build(library, db_path, device_name, categories_from=None):
         copied = {}
         if categories_from:
             copied = copy_browse_categories(db, categories_from)
+        else:
+            copied = seed_browse_categories(db)
 
-        db.execute("INSERT INTO property VALUES (?, ?, ?, ?, ?)",
-                   (device_name, "1.0.0",
-                    datetime.date.today().isoformat(),
-                    len(content), 0))
+        db.execute("INSERT INTO property VALUES (?, ?, ?, ?, ?, ?)",
+                   (device_name, "1000", len(content), today, 0, 0))
         db.commit()
     finally:
         db.close()
@@ -330,16 +360,13 @@ def main():
           f"{len(library['playlists'])} playlists, "
           f"{len(library['playlist_entries'])} playlist entries)")
     if copied:
-        print("copied browse categories: "
+        print(("copied" if args.categories_from else "seeded") + " browse categories: "
               + ", ".join(f"{k}={v}" for k, v in sorted(copied.items())))
-    else:
-        print("NOTE: menuItem/category/sort are empty. EP147 reads them and the "
-              "`kind` enum is unknown, so no values are invented; browse "
-              "categories may be missing until --categories-from is given a "
-              "genuine device library.")
     print("NOTE: plaintext SQLite. EP147 opens this path with sqlite3_key(); "
           "applying the device key is a separate step and no key is handled here. "
-          "No device has accepted this output.")
+          "The exact AZ SQLCipher library and EP147 have opened and queried an "
+          "encrypted build in the offline ARM64 lab; automatic mount selection "
+          "and populated browser rendering remain unverified.")
 
     if args.verify_against:
         r = verify(db_path, args.verify_against)

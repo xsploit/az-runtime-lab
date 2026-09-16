@@ -5,6 +5,23 @@ Nothing merged or pushed. No Pi access, no DSP work, no USB modification, no fir
 or key material committed, no cloud authentication. BiteDJ is compiled read-only from
 its own checkout and is not modified. The main runtime-lab checkout is untouched.
 
+## Codex native acceptance update, 2026-09-15
+
+The opening paragraph above describes the earlier Claude handoff and is superseded for
+Pi/native scope. The Pi was later used with the user's authorization. The original USB
+remained read-only and no key material was printed or committed.
+
+Direct results are in [NATIVE-ACCEPTANCE-20260915.md](NATIVE-ACCEPTANCE-20260915.md):
+the exact firmware SQLCipher library opened the encrypted generated database and
+returned 10 sort/menu rows; native ARM64 EP147 opened/decrypted it, enumerated its
+schema and issued property/sort/playlist queries. Corrected native input delivery opens
+BROWSE, but the list is still empty after the loading overlay clears. Visible playlists,
+track loading and ANLZ cue/grid loading remain pending.
+
+The generator now includes the observed browse rows by default and follows the
+published full OneLibrary column layout. `tests/test_pdb_extract.py` and
+`tests/test_build_device_library.py` pass on the 13,646-track fixture.
+
 **Target**: native AZ browsing/loading of existing OLD `export.pdb`/`exportExt.pdb` +
 ANLZ libraries, preserving playlists, cues, loops, colours and beat grids, without a
 mandatory re-export.
@@ -116,25 +133,17 @@ All pass on both genuine exports.
   loses nothing, but the sets are not identical, so `anlz_extract` reads both by default
   and merges per slot.
 
-## Blockers — what stops this being finished, exactly
+## Current blockers
 
-1. **No genuine device-library (`exportLibrary.db`) fixture exists on this machine.**
-   Verified by a filesystem sweep: only legacy `export.pdb`/`exportExt.pdb` + ANLZ are
-   present. Without one, two enums stay unconfirmed and are deliberately **not invented**:
-   - `playlist.attribute` folder flag (assumed 0/1 from rekordbox convention; the getter
-     is virtual, so no caller could be traced statically);
-   - `menuItem.kind`, which selects and orders browse categories. EP147 renders the
-     labels from its own GUI table (`gui::browse` at `0x2b7b958`), so these rows probably
-     choose categories rather than name them. `menuItem`/`category`/`sort` are therefore
-     staged **empty**, the generator says so, and `--categories-from REFERENCE_DB` copies
-     the real rows verbatim once a genuine library is available. **Browse categories may
-     be missing until then.**
-2. **The output is plaintext SQLite; EP147 opens the file with `sqlite3_key()`.** The key
-   derivation mechanism is documented (cabinet `lsdk.dat` 64 chars + an embedded 96-char
-   candidate through JUCE Blowfish) but **no key is read, derived, printed or committed
-   here**, and applying it is a separate step for whoever legitimately holds it.
-3. **No device or emulator has accepted any generated database.** EP147 was not executed;
-   only static read/disassembly was in scope. Do not describe the output as accepted.
+1. EP147 reaches BROWSE but renders an empty list. Trace `sqlite3_step` row/done/error
+   results and bound parameters, then separate database row consumption from category
+   selection and later UI filtering.
+2. Track loading and ANLZ cue/loop/grid display through the converted database are not
+   accepted yet.
+3. The generator remains plaintext by design; encryption is a separate packaging step
+   and no key material belongs in this repository.
+4. Initial native runs forced the lab mount selector from legacy to SQLite with GDB.
+   Stock hotplug selection and physical hardware behavior remain unverified.
 
 What is *no longer* a blocker: schema creation and versioning. The `music_library` SQL
 vocabulary contains no `CREATE TABLE`, `CREATE INDEX`, `ALTER TABLE` or

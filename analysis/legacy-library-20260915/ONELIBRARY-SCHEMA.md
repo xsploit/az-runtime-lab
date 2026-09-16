@@ -122,20 +122,17 @@ request protocol -- it sits in `RequestHandle/ListRequestHandler.cpp` beside
 not in the database code. So no evidence was found that a particular `dbVersion` string
 gates the mount.
 
-## What remains unproven
+## Later dynamic evidence
 
-NOT NULL/default constraints, which columns are load-critical versus optional, how
-`dbVersion`/`property` values gate a browse, and the meaning of two enums that the
-generator therefore does not invent:
+Observed OneLibrary writer data supplied 21 `menuItem` kinds, 21 category rows and 10
+sort rows. Dynamic EP147 1.30 tracing consumed the category rows but reported
+`unknown rootCategory` at COMMENT kind 34, so the default omits that one row and keeps
+DATE ADDED. `--categories-from` remains an override for user-specific visibility and
+ordering. The generator also follows the published 46-column content layout and
+extended artist, album, property and recommendedLike tables.
 
-- `playlist.attribute` -- folder versus playlist. Assumed 0/1 from rekordbox convention;
-  the getter is virtual so no direct caller could be traced statically.
-- `menuItem.kind` -- which browse categories exist and in what order. EP147 renders the
-  category *labels* from its own GUI string table (`gui::browse` at `0x2b7b958`: Folder,
-  Album, Label, Related Key, Bitrate, Decade, Original Artist, Remixer, Hot Cue Bank
-  List, Date Added, Comments, DJ Play Count, Track Name, ...), so these rows most likely
-  select and order categories rather than name them.
-
-All of these need a genuine local sample, which is not available here; the generator has
-a `--categories-from` hook so the real rows can be copied verbatim once one exists. See
-[STATUS.md](STATUS.md) and [HANDOFF.md](HANDOFF.md).
+The encrypted output has been opened by the exact firmware SQLCipher library and native
+EP147. The latter enumerated this schema and issued property, sort and playlist queries.
+The offline browser still produced an empty list, so row consumption and later UI
+filtering remain unproven. See
+[NATIVE-ACCEPTANCE-20260915.md](NATIVE-ACCEPTANCE-20260915.md).

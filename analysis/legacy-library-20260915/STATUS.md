@@ -12,9 +12,35 @@ cues, loops, colors and beat grids, **without a mandatory re-export**.
 
 DSP/performance is Codex/Sol's work and is not touched here.
 
+## Native acceptance update (Codex, 2026-09-15)
+
+This section supersedes the older fixture/key/emulator blockers below. See
+`NATIVE-ACCEPTANCE-20260915.md` for the evidence and limits.
+
+- The generator follows the published full OneLibrary column layout and seeds 20
+  AZ-compatible menu/category rows plus 10 sort rows. Public COMMENT kind 34 is omitted
+  because EP147 1.30 reports `unknown rootCategory` at that row.
+- An encrypted 13,646-track build was opened by the exact AZ firmware
+  `libsqlcipher.so.0`; its sort/menu join returned 10 rows.
+- Native ARM64 EP147 opened/decrypted it, enumerated all tables and issued property,
+  sort and playlist queries.
+- After fixing the offline mixer preload ordering and supplying a FIFO reader, native
+  encoder input focused Local Library, opened BROWSE and cleared the loading overlay.
+  The resulting list was empty. A bounded step trace consumed all 6 playlist rows and
+  all 21 initial category rows before identifying unsupported COMMENT kind 34. Visible
+  playlists, track load and ANLZ cue/grid load remain unverified.
+- The original USB stayed read-only and still has no `exportLibrary.db`.
+
+The initial EP147 runs changed the mount-selector argument at `0x12c2540` from legacy
+to SQLite with GDB because the plain offline USB shim reports `legacy=1`. A corrected
+mixer-fixture run observed the argument already at zero, but stock hotplug selection on
+physical hardware remains unverified.
+
 ## Running processes
 
-None. All work is static analysis plus host-side tools. No EP147 execution, no Pi, no USB writes.
+Native experiments are bounded. Verify and stop any remaining diagnostic process,
+detach GDB, and restore the prior BiteDJ supervisor before treating the Pi as returned
+to daily use.
 
 ## Resumed again 2026-09-15 (after quota stop at 08fe00f)
 
@@ -130,17 +156,17 @@ valid ISRCs. Artist roles (remixer/composer/original), `djPlayCount`, `dateAdded
   grids — the database half is not optional.
 - Both `PIONEER` and hidden `.PIONEER` layouts are supported end to end.
 
-## Remaining blockers (need a fixture, a key, or hardware — not fakeable)
+## Remaining blockers
 
-1. **No genuine device-library fixture on this machine.** Leaves two enums unconfirmed and
-   deliberately uninvented: `playlist.attribute` (folder flag, assumed 0/1; the getter is
-   virtual so no caller could be traced) and `menuItem.kind` (which browse categories
-   exist and in what order). `menuItem`/`category`/`sort` are therefore staged empty and
-   **browse categories may be missing** until `--categories-from` is pointed at a real
-   library.
-2. **Output is plaintext; EP147 opens the file with `sqlite3_key()`.** The derivation
-   mechanism is documented but no key is read, derived, printed or committed here.
-3. **No device or emulator has accepted any generated database.** EP147 was not executed.
+1. EP147 reaches BROWSE but renders an empty list after the loading overlay clears.
+   Trace `sqlite3_step` results and bound parameters, then distinguish query rows from
+   category selection and post-query UI filtering.
+2. Track selection/loading and original ANLZ cues, loops, waveforms and beat grids are
+   not yet demonstrated through the converted database.
+3. The generator intentionally remains plaintext. Encryption is an external packaging
+   step; no key material is printed or committed.
+4. Stock hotplug selection and physical AZ behavior remain unverified. The initial
+   offline runs used a documented GDB selector alteration.
 
 ## Highest-value next experiment (needs authorisation, not run here)
 

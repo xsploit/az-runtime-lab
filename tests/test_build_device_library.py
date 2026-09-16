@@ -6,9 +6,9 @@
   PDB_FIXTURE=$DRIVE_ROOT/PIONEER/rekordbox/export.pdb \\
   python3 tests/test_build_device_library.py
 
-This does NOT claim device acceptance -- no genuine OneLibrary fixture exists on
-this machine and nothing here applies the SQLCipher key (see STATUS.md). What it
-does check is much stronger than "a file that happens to be SQLite":
+This test does not apply the SQLCipher key. Exact firmware acceptance is tracked
+separately in the native acceptance report. What this checks is much stronger
+than "a file that happens to be SQLite":
 
   * the structural part of EP147's mount sequence runs: SELECT * FROM property,
     PRAGMA main.journal_mode=delete, the sqlite_master table listing and a
@@ -113,8 +113,8 @@ def main():
             cmd += ["--verify-against", drive]
         r = subprocess.run(cmd, capture_output=True, text=True)
         check(r.returncode == 0, f"generator failed: {r.stderr.strip()}")
-        check("No device has accepted this output" in r.stdout,
-              "generator must not imply device acceptance")
+        check("exact AZ SQLCipher library and EP147" in r.stdout,
+              "generator must state the bounded native acceptance result")
 
         db_path = tmp / "staged/PIONEER/rekordbox/exportLibrary.db"
         check(db_path.is_file(), "no database was produced")
@@ -317,14 +317,31 @@ def main():
         check(db2.execute("SELECT name FROM menuItem").fetchone()[0] == "Artist",
               "copied menuItem content is wrong")
         db2.close()
-        # Without the hook the tables must stay empty rather than be invented.
+        # Without an override, use the observed OneLibrary browse defaults.
         db3 = sqlite3.connect(db_path)
-        for table in ("menuItem", "category", "sort"):
+        expected_counts = {"menuItem": 20, "category": 20, "sort": 10}
+        for table, expected in expected_counts.items():
             n = db3.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
-            check(n == 0, f"{table} should be empty when no reference is given")
+            check(n == expected,
+                  f"default {table} count should be {expected}, got {n}")
+        check(db3.execute(
+            "SELECT kind, name FROM menuItem WHERE menuItem_id=5").fetchone()
+              == (6, "\ufffaPLAYLIST\ufffb"),
+              "default PLAYLIST menu row differs from observed OneLibrary data")
+        check(db3.execute(
+            "SELECT menuItem_id, sequenceNo, isSelectedAsSubColumn"
+            " FROM sort WHERE sort_id=1").fetchone() == (4, 1, 1),
+              "default TRACK sort row differs from observed OneLibrary data")
+        check(db3.execute(
+            "SELECT kind, name FROM menuItem WHERE menuItem_id=21").fetchone()
+              == (35, "\ufffaDATE ADDED\ufffb"),
+              "DATE ADDED must remain after the AZ-incompatible COMMENT row is omitted")
+        check(db3.execute(
+            "SELECT COUNT(*) FROM menuItem WHERE kind=34").fetchone()[0] == 0,
+              "AZ 1.30 rejects COMMENT kind 34 as an unknown rootCategory")
         db3.close()
-        check("menuItem/category/sort are empty" in r.stdout,
-              "generator must warn that browse categories are empty")
+        check("seeded browse categories" in r.stdout,
+              "generator must report the default browse rows")
 
         # EP147's mount point holds both PIONEER and .PIONEER basenames, so the
         # hidden layout must be stageable too.
@@ -352,7 +369,7 @@ def main():
           f"{len(wanted)}/{len(wanted)} read columns exist; "
           f"ids/fields/playlist order preserved"
           + (f"; {resolved} analysis paths resolve on disk" if resolved else "")
-          + ". NOT device-accepted (no fixture, no key).")
+          + ". Native encrypted acceptance is documented separately.")
     return 0
 
 
