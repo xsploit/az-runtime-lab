@@ -12,29 +12,18 @@ cues, loops, colors and beat grids, **without a mandatory re-export**.
 
 DSP/performance is Codex/Sol's work and is not touched here.
 
-## Native acceptance update (Codex, 2026-09-15)
+## Native acceptance update (root takeover, 2026-09-15)
 
-This section supersedes the older fixture/key/emulator blockers below. See
-`NATIVE-ACCEPTANCE-20260915.md` for the evidence and limits.
+The old library now populates the native AZ browser and loads tracks with original
+waveforms, grids, phrases, artwork, coloured hot cues and saved loop slots.
+Playback advanced and produced nonzero decoded PCM in the Pi lab.
 
-- The generator follows the published full OneLibrary column layout and seeds 20
-  AZ-compatible menu/category rows plus 10 sort rows. Public COMMENT kind 34 is omitted
-  because EP147 1.30 reports `unknown rootCategory` at that row.
-- An encrypted 13,646-track build was opened by the exact AZ firmware
-  `libsqlcipher.so.0`; its sort/menu join returned 10 rows.
-- Native ARM64 EP147 opened/decrypted it, enumerated all tables and issued property,
-  sort and playlist queries.
-- After fixing the offline mixer preload ordering and supplying a FIFO reader, native
-  encoder input focused Local Library, opened BROWSE and cleared the loading overlay.
-  The resulting list was empty. A bounded step trace consumed all 6 playlist rows and
-  all 21 initial category rows before identifying unsupported COMMENT kind 34. Visible
-  playlists, track load and ANLZ cue/grid load remain unverified.
-- The original USB stayed read-only and still has no `exportLibrary.db`.
-
-The initial EP147 runs changed the mount-selector argument at `0x12c2540` from legacy
-to SQLite with GDB because the plain offline USB shim reports `legacy=1`. A corrected
-mixer-fixture run observed the argument already at zero, but stock hotplug selection on
-physical hardware remains unverified.
+Root cause was wrong menu wire kinds, not COMMENT alone. Small semantic IDs were
+forwarded unchanged and discarded by the UI; defaults now use verified protocol
+codes (TRACK 0x83, PLAYLIST 0x84). A separate test mount hid USBANLZ; read-only
+source mounts fixed waveform/cue loading. See `NATIVE-ACCEPTANCE-20260915.md` for
+exact evidence and boundaries. Original USB unchanged. No stock-device acceptance
+or physical audio listening claim is made.
 
 ## Running processes
 

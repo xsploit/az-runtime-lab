@@ -87,3 +87,14 @@ These suites passed 14, 6, and 15 cases respectively before this snapshot.
 Their scope is synthetic local instruction execution; it does not replace full
 application, device, concurrency or listening tests. Refer to each result JSON
 and its documented harness substitutions.
+
+## Old Rekordbox Device Library
+
+The `library/` tools adapt existing `export.pdb` USB libraries for the AZ runtime,
+without re-exporting music or converting the original ANLZ files. Native Pi tests
+now cover categories, playlists, track loading, waveforms, grids, coloured hot
+cues and saved loop slots. The staging tool outputs plaintext SQLite; a separately
+encrypted runtime copy is still required.
+
+See [native acceptance and portable setup](analysis/legacy-library-20260915/NATIVE-ACCEPTANCE-20260915.md)
+for tested behaviour, source mount requirements and remaining limitations.

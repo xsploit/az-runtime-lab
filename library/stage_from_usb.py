@@ -13,9 +13,11 @@ analysis files, because EP147 parses the old ANLZ format natively (see
 analysis/legacy-library-20260915/NATIVE-ANLZ-SUPPORT.md). The output is one
 SQLite file, so it is trivially removable.
 
-This does NOT produce a database any device has accepted. The file is plaintext
-while EP147 opens it with sqlite3_key(), and no OneLibrary fixture exists here
-to confirm schema exactness. See STATUS.md for that blocker.
+The output is plaintext; EP147 requires a separately encrypted SQLCipher copy.
+An encrypted build is verified for native AZ browsing and track/ANLZ loading
+in the Pi lab. Keep the original audio, USBANLZ and artwork trees visible at
+their original relative paths; this directory alone is not a complete USB.
+See NATIVE-ACCEPTANCE-20260915.md for evidence and remaining boundaries.
 
 Usage:
   BITEDJ_ROOT=/path/to/merge-candidate \\

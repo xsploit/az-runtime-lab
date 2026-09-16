@@ -288,8 +288,7 @@ def main():
         # --- browse category copy hook ------------------------------------
         # Mechanism test only: build a throwaway reference database here to
         # exercise copy_browse_categories(). These rows are NOT device evidence
-        # and the kind values are arbitrary -- the real rows have to come from a
-        # genuine device library, which this machine does not have.
+        # with a native wire kind. The original small-ID failure must be rejected.
         reference = tmp / "reference.db"
         ref = sqlite3.connect(reference)
         ref.execute("CREATE TABLE menuItem (menuItem_id INTEGER, kind INTEGER, name TEXT)")
@@ -298,7 +297,7 @@ def main():
         ref.execute("CREATE TABLE sort (sort_id INTEGER, menuItem_id INTEGER,"
                     " sequenceNo INTEGER, isVisible INTEGER,"
                     " isSelectedAsSubColumn INTEGER)")
-        ref.execute("INSERT INTO menuItem VALUES (1, 7, 'Artist')")
+        ref.execute("INSERT INTO menuItem VALUES (1, 129, 'Artist')")
         ref.execute("INSERT INTO category VALUES (1, 1, 0, 1)")
         ref.execute("INSERT INTO sort VALUES (1, 1, 0, 1, 0)")
         ref.commit()
@@ -317,16 +316,28 @@ def main():
         check(db2.execute("SELECT name FROM menuItem").fetchone()[0] == "Artist",
               "copied menuItem content is wrong")
         db2.close()
-        # Without an override, use the observed OneLibrary browse defaults.
+        # Regression: public semantic IDs previously passed schema checks but
+        # produced an empty native browser. Fail loudly on such an override.
+        ref = sqlite3.connect(reference)
+        ref.execute("UPDATE menuItem SET kind=2")
+        ref.commit()
+        ref.close()
+        rejected = subprocess.run(
+            [sys.executable, str(ROOT / "library/build_device_library.py"),
+             str(lib_json), "--out-dir", str(tmp / "bad-reference"),
+             "--categories-from", str(reference)], capture_output=True, text=True)
+        check(rejected.returncode != 0 and "unsupported AZ wire kinds" in rejected.stderr,
+              "small semantic menu kinds must fail instead of creating an empty browser")
+        # Without an override, use the native AZ wire defaults.
         db3 = sqlite3.connect(db_path)
-        expected_counts = {"menuItem": 20, "category": 20, "sort": 10}
+        expected_counts = {"menuItem": 18, "category": 18, "sort": 10}
         for table, expected in expected_counts.items():
             n = db3.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
             check(n == expected,
                   f"default {table} count should be {expected}, got {n}")
         check(db3.execute(
             "SELECT kind, name FROM menuItem WHERE menuItem_id=5").fetchone()
-              == (6, "\ufffaPLAYLIST\ufffb"),
+              == (0x84, "\ufffaPLAYLIST\ufffb"),
               "default PLAYLIST menu row differs from observed OneLibrary data")
         check(db3.execute(
             "SELECT menuItem_id, sequenceNo, isSelectedAsSubColumn"
@@ -334,11 +345,11 @@ def main():
               "default TRACK sort row differs from observed OneLibrary data")
         check(db3.execute(
             "SELECT kind, name FROM menuItem WHERE menuItem_id=21").fetchone()
-              == (35, "\ufffaDATE ADDED\ufffb"),
-              "DATE ADDED must remain after the AZ-incompatible COMMENT row is omitted")
+              == (0x8c, "\ufffaDATE ADDED\ufffb"),
+              "DATE ADDED must use the native browse wire code")
         check(db3.execute(
             "SELECT COUNT(*) FROM menuItem WHERE kind=34").fetchone()[0] == 0,
-              "AZ 1.30 rejects COMMENT kind 34 as an unknown rootCategory")
+              "Small semantic kind IDs must not leak into the native browse protocol")
         db3.close()
         check("seeded browse categories" in r.stdout,
               "generator must report the default browse rows")

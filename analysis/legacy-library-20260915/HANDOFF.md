@@ -1,3 +1,7 @@
+> Latest root takeover: native browsing/loading now works. See
+> NATIVE-ACCEPTANCE-20260915.md and STATUS.md before the historical notes below.
+> The old COMMENT-only diagnosis is superseded by the menu wire-code fix.
+
 # Device Library compatibility — handoff (Claude, 2026-09-15)
 
 Branch `research/claude-legacy-library-20260915`, worktree `az-library-claude`.

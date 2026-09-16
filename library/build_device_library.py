@@ -31,8 +31,9 @@ IMPORTANT -- what is and is not established:
     column order does not matter, since readers resolve columns by name
     through PRAGMA table_info.
   * The encrypted output has been opened and queried by the exact AZ firmware
-    SQLCipher library and EP147 executable in the offline ARM64 lab. Automatic
-    mount selection and a populated rendered browser remain unverified.
+    SQLCipher library and EP147 executable in the offline ARM64 lab. Native category/playlist browsing, deck loading and original ANLZ waveform,
+    beat-grid and hot-cue display are verified in the Pi lab. Stock hardware
+    hotplug selection remains unverified.
 
 Usage:
   python3 library/build_device_library.py LIBRARY.json --out-dir DIR
@@ -145,19 +146,19 @@ FILE_TYPE_BY_SUFFIX = {".mp3": 1, ".aac": 2, ".mp4": 3, ".m4a": 4,
                        ".fla": 5, ".flac": 5, ".wav": 11, ".aif": 12,
                        ".aiff": 12}
 
-# OneLibrary browse rows accepted by this AZ firmware. Names use the delimiters
-# found in exported databases; AZ renders its localized labels from the kind.
-# The public table also includes COMMENT (id 20, kind 34), but EP147 1.30 stops
-# there with `unknown rootCategory`, so it is deliberately omitted.
+# AZ 1.30 forwards menuItem.kind into the native browse protocol unchanged.
+# Its root-list decoder (0x10b56a0) accepts wire codes 0x80..0xbe, NOT the
+# small semantic IDs used by some public OneLibrary writers. Small IDs make
+# a valid queried database appear completely empty. See NATIVE-ACCEPTANCE.
+# Only categories admitted by that decoder are exposed by default.
 BROWSE_MENU_ITEMS = [
-    (1, 1, "GENRE"), (2, 2, "ARTIST"), (3, 3, "ALBUM"),
-    (4, 4, "TRACK"), (5, 6, "PLAYLIST"), (6, 7, "HISTORY"),
-    (7, 10, "KEY"), (8, 12, "BPM"), (9, 13, "RATING"),
-    (10, 14, "COLOR"), (11, 16, "TIME"), (12, 17, "BITRATE"),
-    (13, 19, "FILENAME"), (14, 23, "LABEL"), (15, 28, "REMIXER"),
-    (16, 29, "DJ PLAY COUNT"), (17, 30, "YEAR"),
-    (18, 31, "HOT CUE BANK LIST"), (19, 33, "MY TAG"),
-    (21, 35, "DATE ADDED"),
+    (1, 0x80, "GENRE"), (2, 0x81, "ARTIST"), (3, 0x82, "ALBUM"),
+    (4, 0x83, "TRACK"), (5, 0x84, "PLAYLIST"), (6, 0x95, "HISTORY"),
+    (7, 0x8b, "KEY"), (8, 0x85, "BPM"), (9, 0x86, "RATING"),
+    (10, 0x8e, "COLOR"), (11, 0x92, "TIME"), (12, 0x93, "BITRATE"),
+    (13, 0x94, "FILENAME"), (14, 0x89, "LABEL"), (15, 0x88, "REMIXER"),
+    (17, 0x87, "YEAR"), (18, 0x98, "HOT CUE BANK LIST"),
+    (21, 0x8c, "DATE ADDED"),
 ]
 BROWSE_SORTS = [
     (1, 4, 1, 1, 1), (2, 2, 2, 1, 0), (3, 3, 3, 1, 0),
@@ -214,6 +215,16 @@ def copy_browse_categories(db, reference):
             copied[table] = len(rows)
     finally:
         src.close()
+    # Reject the same small-ID mismatch that caused a silent empty browser.
+    accepted = {0x80,0x81,0x82,0x83,0x84,0x85,0x86,0x87,0x88,0x89,
+                0x8a,0x8b,0x8c,0x8e,0x90,0x92,0x93,0x94,0x95,0x98,
+                0xaa,0xab,*range(0xb4,0xbf)}
+    kinds = db.execute("SELECT menuItem.kind FROM category JOIN menuItem "
+                       "USING(menuItem_id) WHERE category.isVisible != 0")
+    bad = sorted({kind for (kind,) in kinds if kind not in accepted})
+    if bad:
+        raise ValueError(f"Reference categories contain unsupported AZ wire kinds {bad}; "
+                         "omit --categories-from to use verified AZ defaults")
     return copied
 
 
@@ -365,8 +376,8 @@ def main():
     print("NOTE: plaintext SQLite. EP147 opens this path with sqlite3_key(); "
           "applying the device key is a separate step and no key is handled here. "
           "The exact AZ SQLCipher library and EP147 have opened and queried an "
-          "encrypted build in the offline ARM64 lab; automatic mount selection "
-          "and populated browser rendering remain unverified.")
+          "encrypted build in the offline ARM64 lab, including browsing and ANLZ "
+          "loading; stock hardware hotplug selection remains unverified.")
 
     if args.verify_against:
         r = verify(db_path, args.verify_against)
