@@ -57,10 +57,18 @@ passed.
 
 ## DSP and controls: separate work, not finished
 
-On the runtime branch read `analysis/DSP-PORT-PLAN.md`, then only the relevant
-file in `analysis/dsp-reversal-20260915/`. Latest runtime commit records verified
-Sound Color HUI registration and its mapping gap. A complete faithful DSP/effects
-port is NOT established.
+On the runtime branch read `analysis/DSP-PORT-PLAN.md`, then
+`analysis/dsp-reversal-20260915/PANEL-SIX-ROUTE.md`. The former six-way Sound
+Color HUI mapping gap is now resolved as a false premise in inspected software:
+HUI suffixes 2..5 overlap selector values 4,2,3,6, while suffixes 0/1 feed a
+separate eight-input mixer-MCU machine and selectors 1/5 use different panel bits.
+The runtime decoder and host synchronizer preserve those orders independently.
+F1 output has no default identity map; it requires an explicit lab mapping and
+parameter because AZ selector semantics versus the named reconstructed RX3 effects
+remain unproved. Host tests cover packet, edge/toggle, service ordering and busy
+retry. The 2026-09-16 bounded Pi check was not run because the host was unreachable,
+so exclusive ownership was not established and no remote state was changed. A
+complete faithful DSP/effects port is NOT established.
 
 Terra finished its bounded filter/caller-family checkpoint and is paused. Its
 private STATUS/HANDOFF locations are in local access notes. Claude's separate
