@@ -6,5 +6,6 @@
   "fx_bpm": 140,
   "rootfs": "/absolute/path/to/extracted-az-rootfs",
   "cabinet": "/absolute/path/to/extracted-cabinet",
-  "state": "/absolute/path/to/writable-az-state"
+  "state": "/absolute/path/to/writable-az-state",
+  "library_stage": "/absolute/path/to/staged-PIONEER-or-omit-this-key"
 }

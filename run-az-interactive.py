@@ -110,6 +110,22 @@ if os.environ.get('USB_FIXTURE'):
   fs=subprocess.check_output(['findmnt','-n','-o','FSTYPE','--target',str(cache)],text=True).strip()
   if fs not in ('overlay','fuse.fuse-overlayfs'):raise ValueError('USB_PIONEER_CACHE requires a mounted copy-on-write overlay')
   args[args.index('--chdir'):args.index('--chdir')]=['--bind',str(cache),'/media/usb/lab/PIONEER','--setenv','LAB_USB_WRITE_METADATA','1']
+ # A staged database alone must not hide source media/analysis. Mount the
+ # original trees read-only, after any staged PIONEER overlay.
+ if os.environ.get('USB_PIONEER_WRITABLE'):
+  if os.environ.get('USB_PIONEER_CACHE'):raise ValueError('USB_PIONEER_WRITABLE and USB_PIONEER_CACHE both claim PIONEER; stage the library as an overlay lower layer instead')
+  writable=Path(os.environ['USB_PIONEER_WRITABLE']).resolve(strict=True)
+  if not writable.is_dir():raise ValueError('USB_PIONEER_WRITABLE must be a staged PIONEER directory')
+  if os.environ.get('USB_MEDIA_SOURCE_ROOT'):
+   source_root=Path(os.environ['USB_MEDIA_SOURCE_ROOT']).resolve(strict=True)
+   if writable==source_root/'PIONEER':raise ValueError('Use a separate staged PIONEER directory, not the original USB')
+  args[args.index('--chdir'):args.index('--chdir')]=['--bind',str(writable),'/media/usb/lab/PIONEER','--setenv','LAB_USB_WRITE_METADATA','1']
+ if os.environ.get('USB_MEDIA_SOURCE_ROOT'):
+  source_root=Path(os.environ['USB_MEDIA_SOURCE_ROOT']).resolve(strict=True)
+  for relative in ('Contents','Music','PIONEER/USBANLZ','PIONEER/Artwork'):
+   source=source_root/relative
+   if source.is_dir():
+    args[args.index('--chdir'):args.index('--chdir')]=['--ro-bind',str(source),'/media/usb/lab/'+relative]
 if os.environ.get('MIXER_FIXTURE'):
  if model!='xdjaz' or not os.environ.get('USB_FIXTURE'):
   raise ValueError('MIXER_FIXTURE requires AZ and USB_FIXTURE')
@@ -118,7 +134,7 @@ if os.environ.get('MIXER_FIXTURE'):
  if fifo.exists():
   if not stat.S_ISFIFO(fifo.stat().st_mode):raise ValueError('Mixer fixture path is not a FIFO')
  else:os.mkfifo(fifo,0o600)
- args=[a.replace('LD_PRELOAD=/lab-shims/offline-usb-fixture.so','LD_PRELOAD=/lab-shims/offline-mixer-fixture.so') for a in args]
+ args=[a.replace('/lab-shims/offline-usb-fixture.so','/lab-shims/offline-mixer-fixture.so') for a in args]
 if os.environ.get('CDJ_ERP_FIXTURE'):
  if model!='cdj3000x' or not os.environ.get('USB_FIXTURE'):raise ValueError('CDJ_ERP_FIXTURE requires CDJ3000X and USB_FIXTURE')
  fifo=state/'tmp/cdj-erp-rx.fifo'

@@ -19,6 +19,13 @@ def load_config(path):
         if not isinstance(c[key],str) or not Path(c[key]).is_absolute():raise ValueError(f'{key} must be an absolute local path')
     c.setdefault('fx_bpm',140)
     if not 40<=float(c['fx_bpm'])<=300:raise ValueError('fx_bpm must be 40..300')
+    # Optional: browse the original Rekordbox Device Library export instead of
+    # whatever AZ library the USB carries. Omit the key for plain USB browsing.
+    c.setdefault('library_stage',None)
+    if c['library_stage'] is not None:
+        if not isinstance(c['library_stage'],str) or not Path(c['library_stage']).is_absolute():
+            raise ValueError('library_stage must be an absolute local path to the staged PIONEER directory')
+        if Path(c['library_stage'])==Path(c['usb'])/'PIONEER':raise ValueError('library_stage must be a separate staged directory, not the original USB')
     return c
 
 def check(c):
@@ -34,6 +41,12 @@ def check(c):
     elif hashlib.sha256(executable.read_bytes()).hexdigest()!=AZ_HASH:errors.append('Wrong AZ executable: this build supports the documented 1.30 image only')
     for path in (Path(c['usb'])/'PIONEER',Path(c['cabinet'])):
         if not path.is_dir():errors.append(f'Missing directory: {path}')
+    if c['library_stage']:
+        database=Path(c['library_stage'])/'rekordbox/exportLibrary.db'
+        if not database.is_file():errors.append(f'Stage the legacy library first (library/stage_from_usb.py): {database}')
+        elif database.read_bytes()[:16]==b'SQLite format 3\x00':errors.append(f'{database} is plaintext; AZ needs your separately encrypted SQLCipher copy')
+        for name in ('USBANLZ','Artwork'):
+            if not (Path(c['usb'])/'PIONEER'/name).is_dir():errors.append(f'Missing source analysis/artwork tree: {Path(c["usb"])/"PIONEER"/name}')
     for path in (Path(c['jemalloc']),Path(c['mapping']),BASE/'shims/native-build.json'):
         if not path.is_file():errors.append(f'Missing input: {path}')
     for name in ('offline-mixer-fixture','ximage-fast24','ximage-present','fractional-grid','fractional-grid-span','sem-owner'):
@@ -54,7 +67,7 @@ def main():
     lock=(local/'session.lock').open('w');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     if subprocess.run(['sudo','-n','true'],stderr=subprocess.DEVNULL).returncode:
         subprocess.run(['sudo','-v'],check=True)
-    subprocess.run([sys.executable,str(BASE/'analysis/prepare_usb_cache.py'),c['usb'],c['cache']],check=True)
+    subprocess.run([sys.executable,str(BASE/'analysis/prepare_usb_cache.py'),c['usb'],c['cache'],*(['--library-stage',c['library_stage']] if c['library_stage'] else [])],check=True)
     out=local/time.strftime('session-%Y%m%d-%H%M%S');out.mkdir()
     state=Path(c['state'])/'tmp';state.mkdir(parents=True,exist_ok=True)
     fifo=state/'mixed-output.raw'
@@ -107,8 +120,9 @@ def main():
         with socket.socket(socket.AF_UNIX,socket.SOCK_DGRAM) as sock:
             sock.sendto(b'M1 441 1 1 1 1 -1 1 -1 1 1 .5 .25 .5 0',endpoint)
         if not a.no_controller:bridge=start(['sudo','-n','env','PYTHONPATH='+pythonpath,sys.executable,str(BASE/'analysis/run_pi_flx6_controls.py'),str(player),'--mapping',c['mapping'],'--state',str(state),'--encoder-counter','0','--mixer-socket',endpoint,'--dsp-graph','--fx-bpm',str(c['fx_bpm'])],'controls')
-        (out/'session.json').write_text(json.dumps(dict(supervisor=os.getpid(),player=player,launcher=launcher.pid,audio=audio.pid,bridge=bridge.pid if bridge else None,mixer_socket=endpoint,manual_fx_bpm=c['fx_bpm']),indent=2))
-        print(f'AZ session running. Logs: {out}\nCtrl+C stops this session. FX tempo is manually set to {c["fx_bpm"]} BPM.',flush=True)
+        (out/'session.json').write_text(json.dumps(dict(supervisor=os.getpid(),player=player,launcher=launcher.pid,audio=audio.pid,bridge=bridge.pid if bridge else None,mixer_socket=endpoint,manual_fx_bpm=c['fx_bpm'],library_stage=c['library_stage']),indent=2))
+        library='staged legacy Device Library' if c['library_stage'] else 'the USB library as-is'
+        print(f'AZ session running on {library}. Logs: {out}\nCtrl+C stops this session. FX tempo is manually set to {c["fx_bpm"]} BPM.',flush=True)
         while all(child.poll() is None for child in children):time.sleep(.5)
         raise RuntimeError(f'A session process exited; inspect {out}')
     except KeyboardInterrupt:pass

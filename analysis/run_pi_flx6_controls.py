@@ -192,6 +192,10 @@ def run(a):
                         packet=adapter.message(*message);send('mixer',packet)
                         packet2=transport.message(*message);send('erp',packet2)
                         if packet is not None or packet2 is not None or deck_packet is not None:print(json.dumps({'event':'mapped','midi':message,'packets':count}),flush=True)
+                        # View/Back deliberately emit nothing on a page that is
+                        # already correct. Do not report that as unmapped.
+                        elif pressed and nav.bindings.get(addr) in ('view','back'):
+                            print(json.dumps({'event':'no_change','midi':message,'action':nav.bindings[addr]}),flush=True)
                         elif addr not in unmapped:
                             unmapped.add(addr);print(json.dumps({'event':'unmapped_address','midi':message}),flush=True)
                     except (ValueError,NotImplementedError,ViewUnavailable) as exc:
