@@ -305,3 +305,25 @@ and it is the load hitch that motivated the work. Specifically untested:
 `share_ipc` therefore stays **default false**, and is not promoted on this
 evidence. Sharing the IPC namespace still weakens the isolation `--unshare-all`
 provides, which is a separate judgement from the CPU number.
+
+## Threat to the A/B/A's validity: the screen was not verified
+
+A later `--no-controller` pilot, started the same way each A/B/A arm was, left
+the physical output **blank**: `grim` captured an all-black 1920x1200 frame
+while `LiveView` reported `kind: browse`, the `Xwayland on :0` window existed
+and `DSI-2` was active with `dpms: true`. So EP147 was running and navigating
+while nothing reached the panel.
+
+The A/B/A arms were never screenshotted, so it is **not known** whether they
+were presenting either. If they were blank, the measurement compared two
+conditions that were not doing the work the candidate is supposed to change,
+and the 14.4 / 10.6 / 14.6 %core result cannot be trusted.
+
+This does not prove the A/B/A was invalid. It removes the basis for claiming it
+was valid. Any rerun must capture a screenshot per arm and confirm non-blank
+output before its numbers are recorded, and the blank-output condition itself
+needs explaining first.
+
+Restoring the packaged session with the controller brought the display back
+immediately, so the device is not left in a bad state and nothing here suggests
+a persistent fault.
