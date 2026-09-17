@@ -25,6 +25,10 @@ def load_config(path):
     c.setdefault('exit_hold',['0x94,0x2e','0x95,0x2e'])
     if not isinstance(c['exit_hold'],list) or not all(isinstance(v,str) for v in c['exit_hold']):
         raise ValueError('exit_hold must be a list of "STATUS,NOTE" controller addresses, or [] to disable')
+    # Opt-in candidate: share only the SysV IPC namespace with the lab X server
+    # so EP147's native MIT-SHM path can be probed. Unverified; default off.
+    c.setdefault('share_ipc',False)
+    if not isinstance(c['share_ipc'],bool):raise ValueError('share_ipc must be true or false')
     c.setdefault('exit_hold_seconds',2.)
     if not .5<=float(c['exit_hold_seconds'])<=10:raise ValueError('exit_hold_seconds must be 0.5..10')
     # Optional: browse the original Rekordbox Device Library export instead of
@@ -82,6 +86,7 @@ def main():
     if not fifo.exists():os.mkfifo(fifo,0o600)
     if not stat.S_ISFIFO(fifo.stat().st_mode):raise ValueError('Mixed audio path must be a FIFO')
     env={k:v for k,v in os.environ.items() if not (k.startswith(('LAB_','AZ_')) or k in ('OFFLINE_MIDI','NULL_AUDIO','PACED_AUDIO','USB_FIXTURE','MIXER_FIXTURE','ERP_FIXTURE','DECK_FIXTURE','MIX_STREAM','DSP_GRAPH','XIMAGE_FAST24','NATIVE_NAVIGATION','NATIVE_ROUTING','RX_FEEDBACK','AUDIO_CAPTURE','PROFILE','TRACE','HEADPHONE_DSP','MAIN_CPU_LIST','AFFINITY_TRACE','NATIVE_ROUTING_STREAM','MIXER_TX_CAPTURE','CDJ_ERP_FIXTURE','MOUNT_TRACE','LOAD_TRACE','FADER_TRACE','ONAIR_TRACE','MIC_CONTROL_TRACE'))};env.update({k:'1' for k in ('OFFLINE_MIDI','NULL_AUDIO','PACED_AUDIO','USB_FIXTURE','MIXER_FIXTURE','ERP_FIXTURE','DECK_FIXTURE','MIX_STREAM','DSP_GRAPH','XIMAGE_FAST24','LAB_XIMAGE_PRESENT','LAB_AZ_SMOOTH_SCROLL','LAB_AZ_FRACTIONAL_GRID','LAB_KEEP_OPEN','LAB_GRID_SPAN_CANDIDATE','LAB_SEM_OWNER_FIX')})
+    if c['share_ipc']:env['LAB_SHARE_IPC']='1'
     # No inherited opt-in memory/tracing or competing control experiments.
     for key in ('LAB_AZ_PCM_TEMPLATE','LAB_MAIN_ALLOCATION_TRACE','NATIVE_NAVIGATION','NATIVE_ROUTING','RX_FEEDBACK','AUDIO_CAPTURE','PROFILE','TRACE'):
         env.pop(key,None)
@@ -132,6 +137,7 @@ def main():
         if not a.no_controller:bridge=start(['sudo','-n','env','PYTHONPATH='+pythonpath,sys.executable,str(BASE/'analysis/run_pi_flx6_controls.py'),str(player),'--mapping',c['mapping'],'--state',str(state),'--encoder-counter','0','--mixer-socket',endpoint,'--dsp-graph','--fx-bpm',str(c['fx_bpm']),*hold],'controls')
         (out/'session.json').write_text(json.dumps(dict(supervisor=os.getpid(),player=player,launcher=launcher.pid,audio=audio.pid,bridge=bridge.pid if bridge else None,mixer_socket=endpoint,manual_fx_bpm=c['fx_bpm'],library_stage=c['library_stage']),indent=2))
         library='staged legacy Device Library' if c['library_stage'] else 'the USB library as-is'
+        if c['share_ipc']:library+=', IPC namespace shared (candidate)'
         leave='Ctrl+C' if not c['exit_hold'] else f'Ctrl+C, or hold all {len(c["exit_hold"])} mapped exit control(s) together for {c["exit_hold_seconds"]:g}s'
         print(f'AZ session running on {library}. Logs: {out}\n{leave} stops this session. FX tempo is manually set to {c["fx_bpm"]} BPM.',flush=True)
         while all(child.poll() is None for child in children):time.sleep(.5)

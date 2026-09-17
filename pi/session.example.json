@@ -9,5 +9,6 @@
   "state": "/absolute/path/to/writable-az-state",
   "library_stage": "/absolute/path/to/staged-PIONEER-or-omit-this-key",
   "exit_hold": ["0x94,0x2e", "0x95,0x2e"],
-  "exit_hold_seconds": 2
+  "exit_hold_seconds": 2,
+  "share_ipc": false
 }

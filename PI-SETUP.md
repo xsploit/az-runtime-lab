@@ -104,6 +104,7 @@ machine running AZ**. No username, Pi hostname or Windows mount is assumed.
 | `library_stage` | Optional staged `PIONEER` directory holding your encrypted legacy Device Library; omit the key to browse the USB as-is |
 | `exit_hold` | Controller addresses held together to end the session; defaults to both FLX6 Merge FX buttons, `[]` disables |
 | `exit_hold_seconds` | How long that hold must last, 0.5–10 s; default 2 |
+| `share_ipc` | Candidate: share the SysV IPC namespace so AZ can use MIT-SHM instead of packed-24 uploads. Default false; weakens sandbox isolation |
 
 Paths with spaces are passed as separate arguments. Do not use `~` or shell
 variables inside JSON; write their expanded absolute paths. Commas, colons,
