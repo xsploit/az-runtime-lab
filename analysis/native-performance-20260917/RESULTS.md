@@ -48,6 +48,19 @@ with the AZ software mixer not attached**, over different audio and display
 paths. A genuine comparison needs both complete setups under one identical
 workload, and has not been run.
 
+## Earlier benchmarks predate the device library
+
+This baseline ran with `library_stage` set: the 13,646-track adapted library,
+reached through an overlay whose lower layers are the stage plus the USB. Every
+earlier figure in this repo — the 44.70 %core two-track comparison and the
+48.16 -> 42.89 %core NEON A/B — was measured **before** the legacy library
+existed, browsing whatever the USB carried through a single-lower overlay.
+
+So those numbers are not a before/after against this one in either direction.
+Library size, query cost and the extra overlay layer all changed underneath.
+Any claim that the library did or did not cost CPU requires an A/B in one
+session, toggling only `library_stage`, which has not been run.
+
 ## Averages here do not rule out stutter
 
 Every number below is a mean over a stated interval. Short spikes, blocking,
