@@ -33,4 +33,4 @@ try:
 finally:destroy(dis,handle);close(dis)
 gaps=[b['local_ms']-a['local_ms'] for a,b in zip(samples[1:],samples[2:])]
 sorted_gaps=sorted(gaps)
-print(json.dumps(dict(method='XDamage NonEmpty root notifications; not presented FPS',duration_s=time.monotonic()-start,count=len(samples),interval_ms=dict(median=sorted_gaps[len(gaps)//2],p95=sorted_gaps[min(len(gaps)-1,int(len(gaps)*.95))],max=max(gaps),over25=sum(g>25 for g in gaps),over40=sum(g>40 for g in gaps)) if gaps else None,samples=samples),indent=2))
+print(json.dumps(dict(start_monotonic=start,method='XDamage NonEmpty root notifications; not presented FPS',duration_s=time.monotonic()-start,count=len(samples),interval_ms=dict(median=sorted_gaps[len(gaps)//2],p95=sorted_gaps[min(len(gaps)-1,int(len(gaps)*.95))],max=max(gaps),over25=sum(g>25 for g in gaps),over40=sum(g>40 for g in gaps)) if gaps else None,samples=samples),indent=2))

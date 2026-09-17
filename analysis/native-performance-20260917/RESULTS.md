@@ -490,9 +490,9 @@ The candidate is not failing to switch on:
   main-thread self time when unshared, absent when shared), while EP147 itself
   rises to 84.70% of thread samples.
 
-So the packed-24 conversion really does leave our shim, and total CPU still
-does not fall. The work moves into the firmware and the X server rather than
-being eliminated.
+The sampled shim cost disappears without a measured total CPU reduction.
+This does not identify which firmware/X-server functions replace that work;
+function-level attribution remains necessary.
 
 **Correction to the A/B/A table's own instrumentation:** it reported
 `nattch=0` for arm B. That was a measurement bug. Sessions leak 4 MB segments,
@@ -502,8 +502,8 @@ one at nattch 2. Segment *identity* matters, not just size.
 ### The load hitch, measured, and unaffected
 
 Steady two-deck playback is clean: median 16.1-16.9 ms against a 16.88 ms
-frame at 59.24 Hz, worst 18.9 ms, **zero gaps over 25 ms**. There is no
-steady-state jitter problem.
+frame at 59.24 Hz, worst 18.9 ms, **zero gaps over 25 ms** in these notification
+samples. Physical scanout jitter and audio fidelity are not measured here.
 
 Loading a third track while another deck plays is where the cost is, and it is
 far larger than the "one dropped frame" claimed earlier in this session:
@@ -513,21 +513,24 @@ far larger than the "one dropped frame" claimed earlier in this session:
 | off | 16.2 ms | 17.9 | **286.3 ms** | 18 | 11 | 0 | 0 |
 | on | 16.8 ms | 18.0 | **403.7 ms** | 15 | 9 | 0 | 0 |
 
-That is roughly 17 dropped frames at load, with no audio underrun. Sharing the
-IPC namespace does not fix it; the worst gap was larger, though a single max is
+These are XDamage notification gaps, not counted dropped display frames. The
+script also includes browser navigation and selection before LOAD, so the
+largest gap has not yet been attributed to LOAD rather than a page transition.
+No aplay underrun was reported. With shared IPC the worst gap was larger, though a single max is
 noisy and the over-25/over-40 counts moved the other way, so the honest reading
-is **no effect**, not a regression.
+is **no demonstrated improvement**, not proof of equivalence or a regression.
 
-`cache files before=1 after=1` in both runs: no analysis was generated and
-nothing was deleted, confirming again that the staged library serves original
-ANLZ rather than re-analysing.
+`cache files before=1 after=1` in both runs shows an unchanged file count in the
+scanned location. That alone cannot exclude overwrites or activity elsewhere.
+These runs do not establish a fresh-analysis workload.
 
 ### Verdict
 
 `share_ipc` stays **opt-in and default false**. It is verified to work, and it
 buys nothing measurable on CPU or on frame delivery under real two-deck use,
 while weakening the isolation `--unshare-all` provides. The remaining
-optimisation target is the ~286 ms load transition, which is inside EP147.
+investigation target is the ~286 ms notification gap across navigation/load;
+its exact event and blocking component remain unassigned.
 
 Still outstanding: listening and visible-smoothness acceptance, which are the
 user's to give and were not assessed here.
