@@ -451,3 +451,83 @@ one menu, no stray mixxx, and a 51662-byte rendered capture.
 `SETTINGS.DAT` was reset during the search. The original is preserved at
 `local/settings-backup-20260917T001006Z/SETTINGS.DAT`; restore it if any AZ
 preference is missed.
+
+## Loaded A/B/A: the MIT-SHM candidate does not help. Do not promote.
+
+Run with the native load/play controls, not by hand. Each arm launches AZ
+fresh, then drives the identical input sequence to the identical state: the
+same two tracks (`Doctor_P_-_Tetris` F#m and `No Stress (Tokez VIP)` Em, both
+140.0 BPM) from the same `Abstract-ALL` list position, both playing, on the
+two-deck WAVEFORM page at default zoom, same mixer and same audio device.
+
+Guards, added after the duplicate-kiosk incident, asserted per arm before any
+number was recorded: exactly one kiosk shell, and a captured frame over
+300 KB proving the two-deck WAVEFORM page was actually up. An earlier run of
+this harness is discarded because that assertion did not exist: it used the
+wrong control to return to the browser (`view` goes to SOURCE, `browse` opens
+the browser), so deck 2 never loaded and it measured a near-static page at
+16.4 %core.
+
+| Arm | share_ipc | EP147 | mix-stream | machine | damage n | median | p95 | max | >25 ms | underruns |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A1 | off | 44.7 | 8.0 | 83 | 2429 | 16.1 ms | 17.7 | 18.9 | 0 | 0 |
+| B | **on** | **45.7** | 8.0 | 85 | 1778 | 16.9 ms | 17.8 | 19.2 | 0 | 0 |
+| A2 | off | 44.9 | 8.0 | 83 | 2428 | 16.1 ms | 17.7 | 18.9 | 0 | 0 |
+
+The controls agree (44.7, 44.9) and bracket the candidate at 45.7, which is
+**slightly worse, not better**. `mix-stream` is identical across all arms. The
+idle result of 14.4 / 10.6 / 14.6 %core recorded earlier does not reproduce
+under load and should not be cited.
+
+### MIT-SHM was genuinely engaged, verified
+
+The candidate is not failing to switch on:
+
+- EP147's IPC namespace equals the host's, and the live 4,096,000-byte frame
+  segment shows **nattch 2** — the X server attached it.
+- `libXext` `XShmGetEventBase` appears in the profile.
+- **`ximage-fast24.so` disappears from the hot path entirely** (10.43% of
+  main-thread self time when unshared, absent when shared), while EP147 itself
+  rises to 84.70% of thread samples.
+
+So the packed-24 conversion really does leave our shim, and total CPU still
+does not fall. The work moves into the firmware and the X server rather than
+being eliminated.
+
+**Correction to the A/B/A table's own instrumentation:** it reported
+`nattch=0` for arm B. That was a measurement bug. Sessions leak 4 MB segments,
+so three existed; `awk` matched the first, an orphan at nattch 0, not the live
+one at nattch 2. Segment *identity* matters, not just size.
+
+### The load hitch, measured, and unaffected
+
+Steady two-deck playback is clean: median 16.1-16.9 ms against a 16.88 ms
+frame at 59.24 Hz, worst 18.9 ms, **zero gaps over 25 ms**. There is no
+steady-state jitter problem.
+
+Loading a third track while another deck plays is where the cost is, and it is
+far larger than the "one dropped frame" claimed earlier in this session:
+
+| share_ipc | median | p95 | max | >25 ms | >40 ms | underruns | new cache files |
+|---|---|---|---|---|---|---|---|
+| off | 16.2 ms | 17.9 | **286.3 ms** | 18 | 11 | 0 | 0 |
+| on | 16.8 ms | 18.0 | **403.7 ms** | 15 | 9 | 0 | 0 |
+
+That is roughly 17 dropped frames at load, with no audio underrun. Sharing the
+IPC namespace does not fix it; the worst gap was larger, though a single max is
+noisy and the over-25/over-40 counts moved the other way, so the honest reading
+is **no effect**, not a regression.
+
+`cache files before=1 after=1` in both runs: no analysis was generated and
+nothing was deleted, confirming again that the staged library serves original
+ANLZ rather than re-analysing.
+
+### Verdict
+
+`share_ipc` stays **opt-in and default false**. It is verified to work, and it
+buys nothing measurable on CPU or on frame delivery under real two-deck use,
+while weakening the isolation `--unshare-all` provides. The remaining
+optimisation target is the ~286 ms load transition, which is inside EP147.
+
+Still outstanding: listening and visible-smoothness acceptance, which are the
+user's to give and were not assessed here.
