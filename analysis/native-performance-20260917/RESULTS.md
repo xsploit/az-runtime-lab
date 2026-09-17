@@ -306,6 +306,90 @@ and it is the load hitch that motivated the work. Specifically untested:
 evidence. Sharing the IPC namespace still weakens the isolation `--unshare-all`
 provides, which is a separate judgement from the CPU number.
 
+## Unresolved: blank output during repeated restarts
+
+A `--no-controller` session produced an all-black 1920x1200 `grim` capture
+while `LiveView` reported `kind: browse` and `DSI-2` was active with
+`dpms: true`. An earlier revision of this section called that a `grim` artifact
+on the strength of the user reporting the panel was not black. That was wrong
+twice over: the user was describing the screen at that moment, not the A/B/A
+arms, and they later confirmed directly that the screen **was** blank during a
+`--no-controller` session. `grim` was reporting accurately throughout: 6791
+bytes is a blank frame, 51662 a rendered one.
+
+The cause is not established. Tested and **refuted**:
+
+- Launch path. Blank occurred both when AZ was started directly over SSH and
+  when it was started through the kiosk.
+- The controller bridge. Blank persisted with the bridge confirmed running
+  (`session.json` bridge pid live, process present).
+
+What correlates is only that blankness appeared after AZ was restarted
+repeatedly outside the normal kiosk flow, and cleared on a clean kiosk restart,
+which restored a 51662-byte rendered capture.
+
+**Consequence for the A/B/A above: its arms each restarted AZ the same way and
+none was captured, so whether they were presenting remains unknown.** The
+14.4 / 10.6 / 14.6 %core result is therefore still unverified and must not be
+promoted on this evidence. Any rerun must capture a frame per arm and assert it
+is non-blank, and should prefer XDamage notification activity, which observes
+drawing directly and is the display-gap measurement the loaded test needs.
+
+## MIT-SHM candidate: bounded A/B/A, idle only
+
+`share_ipc` toggled off/on/off with everything else held fixed: same build,
+config, USB, library stage, mapping, audio device, vsync, no tracks loaded in
+any arm. Each arm restarted AZ, settled 15 s, then sampled 30 s.
+
+| Arm | share_ipc | EP147 | machine busy | underruns |
+|---|---|---|---|---|
+| A1 | off | 14.4 %core | 33 %core | 0 |
+| B | **on** | **10.6 %core** | **30 %core** | 0 |
+| A2 | off | 14.6 %core | 34 %core | 0 |
+
+The two control arms agree (14.4, 14.6) and bracket the candidate, so the
+~3.9 %core reduction in EP147 is repeatable rather than drift. `mix-stream` was
+unchanged at 11.1-11.2 %core across all three, as expected.
+
+### What made the difference, verified
+
+The discriminator is **`nattch`, not the presence of a segment**. A 4,096,000
+byte segment exists in *both* conditions, because `shmget` succeeds in a
+private namespace too:
+
+- `share_ipc=false`: segment present, **nattch 1** — EP147 allocated it, the X
+  server never attached, so `XShmAttach` failed and the packed-24 path was used.
+- `share_ipc=true`: same segment, **nattch 2** — the X server attached it.
+
+An earlier note in this session claimed the 4 MB segment's presence proved
+MIT-SHM use. It does not; only the attach count does.
+
+### Corrections to earlier claims in this report
+
+- "`ximage-fast24.so` vanished from the profile with shared IPC" was **invalid**.
+  It compared a *loaded* profile against an *idle* one. Sampling idle in both
+  arms shows fast24 absent either way: it only appears when frames are actually
+  changing. Whether shared IPC removes it from the hot path is untested.
+- The idle DSO percentages shift wildly with workload (kernel 65% in a 12 s
+  idle sample versus 28% under load), so DSO share must never be compared
+  across different workloads.
+
+### Not established
+
+Every arm was **idle with no tracks loaded**, so this does not measure playback,
+and it is the load hitch that motivated the work. Specifically untested:
+
+- CPU under two-deck playback with shared IPC.
+- **Frame gaps / jitter**, which is the only reason the review considered this
+  worth running. Nothing here measures when frames land.
+- Continuous underrun monitoring across a real set; zero underruns in three
+  30 s idle windows is weak evidence.
+- Listening. That remains separate user acceptance.
+
+`share_ipc` therefore stays **default false**, and is not promoted on this
+evidence. Sharing the IPC namespace still weakens the isolation `--unshare-all`
+provides, which is a separate judgement from the CPU number.
+
 ## Resolved: the blank capture was a grim artifact, not a blank screen
 
 A `--no-controller` pilot produced an all-black 1920x1200 `grim` capture while
