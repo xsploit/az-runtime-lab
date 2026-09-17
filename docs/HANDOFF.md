@@ -66,9 +66,13 @@ The runtime decoder and host synchronizer preserve those orders independently.
 F1 output has no default identity map; it requires an explicit lab mapping and
 parameter because AZ selector semantics versus the named reconstructed RX3 effects
 remain unproved. Host tests cover packet, edge/toggle, service ordering and busy
-retry. The 2026-09-16 bounded Pi check was not run because the host was unreachable,
-so exclusive ownership was not established and no remote state was changed. A
-complete faithful DSP/effects port is NOT established.
+retry. A bounded 2026-09-16 Pi AArch64 check passed native unit/service/stream,
+observation-only and explicit-policy transport tests under exclusive ownership;
+BiteDJ was restored, temporary staging removed, and the original USB left verified
+read-only. This was synthetic software execution, not EP147/controller/audio/listening
+or semantic effect identification. See the runtime branch's
+`analysis/dsp-reversal-20260915/NATIVE-CFX-CHECK-20260916.md`. A complete faithful
+DSP/effects port is NOT established.
 
 Terra finished its bounded filter/caller-family checkpoint and is paused. Its
 private STATUS/HANDOFF locations are in local access notes. Claude's separate
