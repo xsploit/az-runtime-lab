@@ -173,3 +173,62 @@ machine that is 79% idle.
   use and is not where AZ's time goes.
 - No capacity problem appears in this measurement: 21% of the machine, no
   underruns, no throttling. If a felt symptom exists, it is not visible here.
+
+## Main-thread profile: the MIT-SHM fallback is live, and measured
+
+`perf record -F 997 -g --call-graph fp` on EP147's main thread, 25 s spanning a
+cached deck-2 load with deck 1 playing, symbolized against the patched overlay.
+Addresses are raw: the firmware is stripped, and the reversal work maps them.
+
+Top self-time leaves:
+
+| Self | Symbol |
+|---|---|
+| 10.40% | `XPutImage` |
+| 4.31% | `__arch_copy_from_user` (kernel) |
+| 1.76% | `0x201ee70` |
+| 1.75% | `_raw_spin_unlock_irqrestore` (kernel) |
+| 1.73% | `0x19feefc` |
+| 1.19% | `lab_grid_span` (our NEON shim) |
+
+`__arch_copy_from_user`'s stack is `copy_page_from_iter` ->
+`skb_copy_datagram_from_iter` -> `unix_stream_sendmsg`: window pixels being
+copied into a Unix socket. Together with `XPutImage` that is **~14.7% of main
+thread self time spent moving pixels over the X socket**. The caller chain is
+`XPutImage <- 0x24faca4`, inside the packed-24 XPutImage path recorded at
+`0x24faca0`.
+
+Three facts confirm this is the documented MIT-SHM fallback, now observed live
+rather than inferred:
+
+1. The deployed launcher runs `bwrap --unshare-all` and supports no IPC-sharing
+   option, so the SysV-IPC namespace is unshared.
+2. `ipcs -m` shows **zero shared memory segments**, so MIT-SHM is not in use.
+3. The EP147 binary does reference `XShmPutImage`, so the firmware is capable
+   of the zero-copy path and is falling back, not missing the feature.
+
+`az-opus-performance/` already carries an opt-in `LAB_SHARE_IPC=1` candidate
+that replaces `--unshare-all` with its expansion minus `--unshare-ipc`, with
+host tests (`tests/test_launcher_share_ipc.py`, `tests/qemu-xshm-ab/`) and a
+pixel-exactness argument. Its own notes say it is **host-verified and not Pi
+validated**. This profile is the first live Pi evidence that the fallback it
+targets is actually active and what it costs.
+
+### What this does and does not bound
+
+The 14.7% is a share of **main-thread self time**, and the main thread is
+25.1 %core, so removing the socket copy entirely could return on the order of
+3-4 %core out of 84 %core in use. That is real but modest, and it is an upper
+bound: MIT-SHM replaces the copy with cheaper work, it does not make the upload
+free.
+
+Whether it helps the single-frame load hitch is **not established**. A
+per-frame synchronous copy through a socket is a plausible jitter source, but
+this profile measures where cycles go, not frame delivery timing, and nothing
+here ties those samples to the moment of the load. Treat that as a hypothesis
+to test, not a result.
+
+The candidate's own requirement still stands: a Pi A/B/A with live FLX6 audio,
+measuring CPU, temperature, display gaps and xruns, before any claim. Sharing
+the IPC namespace also weakens the sandbox isolation that `--unshare-all`
+provides; that is a deliberate trade-off for someone to accept, not a free win.
