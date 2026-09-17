@@ -409,3 +409,45 @@ intermittent, and its cause is unexplained. Use XDamage notification activity
 as the presentation check instead — it observes drawing directly, and it is
 already the measurement the loaded test needs.
 
+
+## The blank screen was duplicate kiosks, not an AZ fault
+
+Hours of "AZ runs but does not paint" resolved to operator error, not a bug in
+AZ, the launcher or the candidate.
+
+`ps -eo pid,ppid` showed **two `start-pflx-kiosk` shells**, both orphaned to
+PPID 1, each running its own mode. One had launched BiteDJ and the other AZ, so
+two fullscreen applications were live at once with mixxx also holding the audio
+device. The screen was not blank because AZ failed to render; it was showing a
+contended compositor.
+
+Cause: `systemctl restart pflx-session` was issued while a previous kiosk was
+still alive. sway `exec`s the kiosk, so the old shell survived the unit restart
+and was reparented to init rather than killed with the unit. Repeating that
+during the A/B/A stacked more instances.
+
+Hypotheses tested and refuted along the way, each requiring a restart that made
+the situation worse: the `LAB_SHARE_IPC` launcher patch (reverted, still
+blank), the controller bridge (blank with it confirmed running), the launch
+path (blank via both SSH and kiosk), a stale X server (Xwayland was fresh),
+the synthetic vsync clock (ticking), accumulated per-session state (survived a
+reboot), and AZ's saved `SETTINGS.DAT` (reset, still blank).
+
+Fix: stop everything, confirm zero survivors, then start one session. A reboot
+achieves the same and is faster to trust. After a clean boot: one kiosk shell,
+one menu, no stray mixxx, and a 51662-byte rendered capture.
+
+### Consequences
+
+- `grim` was accurate the whole time. 6791 bytes really was a blank frame.
+- **The A/B/A ran while duplicate kiosks may already have existed.** Its arms
+  were never captured, so whether they were presenting is still unknown, and
+  the 14.4 / 10.6 / 14.6 %core figures remain unverified and unpromoted.
+- Restarting AZ repeatedly outside the normal flow is not safe on this device
+  without asserting a single kiosk first. Any future harness must check
+  `ps -eo args | grep -c start-pflx-kiosk` equals one before recording numbers,
+  and assert a non-blank frame per arm.
+
+`SETTINGS.DAT` was reset during the search. The original is preserved at
+`local/settings-backup-20260917T001006Z/SETTINGS.DAT`; restore it if any AZ
+preference is missed.
