@@ -1,7 +1,14 @@
+
+# Locate shared helpers from this checkout, independent of the caller's cwd.
+import sys as _az_sys
+from pathlib import Path as _AzPath
+_az_sys.path.insert(0, str(_AzPath(__file__).resolve().parents[0]))
+from az_paths import lab_path, mapping_path
+
 from pathlib import Path
 from display_timing import publish_timing, SyntheticVsync
 import subprocess,os,time,json,tempfile,stat,errno,sys
-base=Path(__file__).resolve().parent;model=os.environ.get('PLAYER','xdjaz');lab=base/model;root=lab/'rootfs';state=lab/'state';state.mkdir(exist_ok=True)
+base=Path(__file__).resolve().parent;model=os.environ.get('PLAYER','xdjaz');lab=base/model;lab.mkdir(exist_ok=True);root=lab_path(model+'/rootfs');state=lab_path(model+'/state');state.mkdir(parents=True,exist_ok=True)
 for d in ['settings','mnt/debug','sys/class/thermal/thermal_zone0','sys/class/thermal/thermal_zone1','sys/module/rockchipdrm/parameters','tmp','run']:(state/d).mkdir(parents=True,exist_ok=True)
 (state/'sys/class/thermal/thermal_zone0/temp').write_text('45000\n');(state/'sys/class/thermal/thermal_zone1/temp').write_text('45000\n');(state/'tmp/testmode').write_text('off\n')
 (root/'home/root/settings').mkdir(exist_ok=True)
@@ -30,6 +37,13 @@ if os.environ.get('NATIVE_NAVIGATION') and not os.environ.get('RX_FEEDBACK'):
  raise ValueError('NATIVE_NAVIGATION requires RX_FEEDBACK')
 if os.environ.get('NATIVE_EQ') and not all(os.environ.get(k) for k in ('RX_FEEDBACK','MIXER_TX_CAPTURE','LAB_EQ_TABLES')):
  raise ValueError('NATIVE_EQ requires RX_FEEDBACK, MIXER_TX_CAPTURE and verified LAB_EQ_TABLES')
+cfx_observe=os.environ.get('NATIVE_CFX_OBSERVE')
+cfx_map=os.environ.get('NATIVE_CFX_MAP');cfx_parameter=os.environ.get('NATIVE_CFX_PARAMETER')
+if cfx_observe and cfx_observe!='1':raise ValueError('NATIVE_CFX_OBSERVE must be 1 when enabled')
+if (cfx_observe or cfx_map or cfx_parameter) and not os.environ.get('RX_FEEDBACK'):
+ raise ValueError('Native CFX observation/output requires RX_FEEDBACK')
+if bool(cfx_map)!=bool(cfx_parameter):
+ raise ValueError('Native CFX output requires both NATIVE_CFX_MAP and NATIVE_CFX_PARAMETER')
 if os.environ.get('LAB_EQ_TABLES'):
  import hashlib
  if not os.environ.get('DSP_GRAPH'):raise ValueError('LAB_EQ_TABLES requires DSP_GRAPH')
@@ -58,7 +72,7 @@ with (lab/'xvfb.log').open('w') as log:
 os.close(wr);display=os.read(rd,32).decode().strip();os.close(rd)
 if not display:raise RuntimeError('Xvfb failed')
 sock=f'/tmp/.X11-unix/X{display}'
-args=['bwrap','--unshare-all','--die-with-parent','--ro-bind',str(root),'/', '--ro-bind','/usr/bin/qemu-aarch64-static','/qemu','--proc','/proc','--dev','/dev','--bind',str(state/'tmp'),'/tmp','--dir','/tmp/.X11-unix','--ro-bind',sock,sock,'--bind',str(state/'settings'),'/home/root/settings','--ro-bind',str(base/'private/cabinet-extracted'),'/home/root/settings/cabinet','--bind',str(state/'mnt'),'/mnt','--ro-bind',str(state/'sys'),'/sys','--tmpfs','/run','--chdir','/home/root/pdj','--setenv','HOME','/home/root','--setenv','PATH','/usr/sbin:/usr/bin:/sbin:/bin','--setenv','DISPLAY',':'+display,'/qemu','/home/root/pdj/'+('EP145' if model=='cdj3000x' else 'EP147')]
+args=['bwrap','--unshare-all','--die-with-parent','--ro-bind',str(root),'/', '--ro-bind','/usr/bin/qemu-aarch64-static','/qemu','--proc','/proc','--dev','/dev','--bind',str(state/'tmp'),'/tmp','--dir','/tmp/.X11-unix','--ro-bind',sock,sock,'--bind',str(state/'settings'),'/home/root/settings','--ro-bind',str(lab_path('private/cabinet-extracted')),'/home/root/settings/cabinet','--bind',str(state/'mnt'),'/mnt','--ro-bind',str(state/'sys'),'/sys','--tmpfs','/run','--chdir','/home/root/pdj','--setenv','HOME','/home/root','--setenv','PATH','/usr/sbin:/usr/bin:/sbin:/bin','--setenv','DISPLAY',':'+display,'/qemu','/home/root/pdj/'+('EP145' if model=='cdj3000x' else 'EP147')]
 args[args.index('--chdir'):args.index('--chdir')]=['--ro-bind',str(base/'shims'/('fw_printenv-cdj3000x' if model=='cdj3000x' else 'fw_printenv')),'/usr/sbin/fw_printenv','--ro-bind',str(base/'shims'/('fw_printenv-cdj3000x' if model=='cdj3000x' else 'fw_printenv')),'/sbin/fw_printenv']
 if os.environ.get('NULL_AUDIO'):
  # Bind destination must exist before the rootfs becomes read-only.
@@ -228,7 +242,7 @@ try:
         packet=bytearray(128);packet[0]=1;packet[96:98]=crc16(packet[:96]).to_bytes(2,'little')
         baseline=Path(mixtemp.name)/'rx-baseline.raw';baseline.write_bytes(packet)
         feedbacklog=(lab/'rx-feedback.log').open('w')
-        feedbackproc=subprocess.Popen([sys.executable,str(base/'analysis/run_rx_feedback.py'),str(baseline),str(control_socket),str(input_socket),str(rx_fifo),'--mode',os.environ['LAB_RX_FEEDBACK_MODE'],'--seconds','300',*(['--eq-tx-capture',str(state/'tmp/mixer-tx.raw')] if os.environ.get('NATIVE_EQ') else [])],stdout=feedbacklog,stderr=feedbacklog)
+        feedbackproc=subprocess.Popen([sys.executable,str(base/'analysis/run_rx_feedback.py'),str(baseline),str(control_socket),str(input_socket),str(rx_fifo),'--mode',os.environ['LAB_RX_FEEDBACK_MODE'],'--seconds','300',*(['--eq-tx-capture',str(state/'tmp/mixer-tx.raw')] if os.environ.get('NATIVE_EQ') else []),*(['--cfx-observe'] if cfx_observe else []),*(['--cfx-selector-map',cfx_map,'--cfx-parameter',cfx_parameter] if cfx_map else [])],stdout=feedbacklog,stderr=feedbacklog)
         feedbackstarted=time.monotonic()
       if feedbackproc is None and time.monotonic()>feedbackdeadline:raise RuntimeError('RX feedback reader did not become ready within 30 seconds')
      if feedbackproc is not None:
@@ -246,7 +260,7 @@ try:
       if guest_pid is not None:
        navigation_socket=Path(mixtemp.name)/'navigation-midi.sock'
        navigationlog=(lab/'native-navigation.log').open('w')
-       navigationproc=subprocess.Popen([sys.executable,str(base/'analysis/run_native_navigation.py'),str(guest_pid),str(baseline),str(input_socket),str(navigation_socket),'--mapping',str(base.parent/'rx3-research/bitedj-mapping/Pioneer-DDJ-FLX6.midi.xml'),'--seconds','300',*(['--eq-controls'] if os.environ.get('NATIVE_EQ') else [])],stdout=navigationlog,stderr=navigationlog)
+       navigationproc=subprocess.Popen([sys.executable,str(base/'analysis/run_native_navigation.py'),str(guest_pid),str(baseline),str(input_socket),str(navigation_socket),'--mapping',str(mapping_path()),'--seconds','300',*(['--eq-controls'] if os.environ.get('NATIVE_EQ') else [])],stdout=navigationlog,stderr=navigationlog)
        navigationstarted=time.monotonic()
       elif time.monotonic()>feedbackdeadline:raise RuntimeError('AZ guest was not found under launcher')
      if navigationproc is not None:
@@ -261,7 +275,7 @@ try:
      if routingproc is None and (os.environ.get('NATIVE_ROUTING_STREAM') or (state/'tmp/mixer-tx.raw').exists()):
       routinglog=(lab/'native-routing.log').open('w')
       midi_socket=Path(mixtemp.name)/'midi.sock'
-      routingproc=subprocess.Popen(['python',str(base/'mixer/live_routing.py'),str(state/('tmp/mixer-tx.sock' if os.environ.get('NATIVE_ROUTING_STREAM') else 'tmp/mixer-tx.raw')),str(Path(mixtemp.name)/'control.sock'),str(midi_socket),'--mapping',str(base.parent/'rx3-research/bitedj-mapping/Pioneer-DDJ-FLX6.midi.xml'),'--seconds',str(duration+30),*(['--datagram'] if os.environ.get('NATIVE_ROUTING_STREAM') else []),*(['--headphone-control'] if os.environ.get('HEADPHONE_DSP') else [])],stdout=routinglog,stderr=routinglog)
+      routingproc=subprocess.Popen(['python',str(base/'mixer/live_routing.py'),str(state/('tmp/mixer-tx.sock' if os.environ.get('NATIVE_ROUTING_STREAM') else 'tmp/mixer-tx.raw')),str(Path(mixtemp.name)/'control.sock'),str(midi_socket),'--mapping',str(mapping_path()),'--seconds',str(duration+30),*(['--datagram'] if os.environ.get('NATIVE_ROUTING_STREAM') else []),*(['--headphone-control'] if os.environ.get('HEADPHONE_DSP') else [])],stdout=routinglog,stderr=routinglog)
       print(json.dumps(dict(event='native_routing',midi_socket=str(midi_socket))),flush=True)
      elif routingproc is not None and routingproc.poll() is not None:
       raise RuntimeError('Native routing bridge stopped; inspect native-routing.log')

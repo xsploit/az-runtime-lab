@@ -6,6 +6,7 @@ from pathlib import Path
 
 def prepare(usb,cache):
  usb=usb.resolve(strict=True);cache=cache.resolve();lower=usb/'PIONEER'
+ if any(char in str(path) for path in (usb,cache) for char in (',',':','\\','\n')):raise ValueError('Overlay paths cannot contain commas, colons, backslashes or newlines; use a simpler mount/cache path')
  if not lower.is_dir():raise ValueError('USB has no PIONEER directory')
  if cache.is_relative_to(usb):raise ValueError('Cache must live off the USB')
  uuid=subprocess.check_output(['findmnt','-n','-o','UUID','--target',str(usb)],text=True).strip()

@@ -1,6 +1,6 @@
 # RX3 DSP into the AZ software mixer: first evidence pass
 
-Current verified CFX coverage: all six named RX3 algorithms plus Off are integrated in the AZ software mixer, with native state/manager comparisons. EQ/isolator, 13 other BeatFX algorithms and complete native AZ control synchronization remain unfinished. See `dsp-oracle/SPACE.md` for the latest evidence.
+Current verified CFX coverage: all six named RX3 algorithms plus Off are integrated in the AZ software mixer, with native state/manager comparisons. Anonymous AZ Sound Color selector decoding and host edge synchronization are now implemented, but selector-to-RX3 effect identity remains unproved and F1 emission requires explicit lab policy. EQ/isolator, 13 other BeatFX algorithms and complete semantic native control synchronization remain unfinished. See `dsp-oracle/SPACE.md` for the latest processor evidence and `dsp-reversal-20260915/PANEL-SIX-ROUTE.md` for the corrected control boundary.
 
 2026-09-12. Local research; no firmware or secrets published. No mixer or launcher edits in this pass. This is an implementation plan, not a claim that effects have been ported.
 
@@ -121,3 +121,13 @@ Space5 completes all six named RX3 CFX algorithms in the shared graph. Native pr
 ## Delay composition, 2026-09-12
 
 Delay audio, controls, constructor/selection and now actual quantization/status composition are native-tested. See dsp-oracle/DELAY-QUANTIZE.md and delay-status-results.json:3840blocks/215040frames, zero ARM/host/sanitizer differences. Full manager type selection/routing and live mixer integration remain pending; Delay is not enabled live yet.
+
+## AZ Sound Color control boundary, 2026-09-16
+
+The prior six-way EP147-HUI-to-selector permutation question is closed negatively at the inspected software level. HUI suffixes2..5 share raw `MPNLRX[9]` bits with selector values4,2,3,6. Suffixes0/1 instead use `MPNLRX[11]` bits2/1 and feed a separate eight-input MCU machine at `0x9a36`; selector values1/5 use distinct `MPNLRX[9]` bits1/0. See `dsp-reversal-20260915/PANEL-SIX-ROUTE.md` for addresses, tables and evidence limits.
+
+The host decoder now exposes the two orders independently. `mixer/native_cfx.py` implements the verified first-packet baseline, selector rising edges, MCU scan order, same-selector Off toggle, per-channel 10-bit Color normalization and bounded latest-snapshot resend. It emits no F1 commands unless all six selector values are explicitly mapped to reconstructed F1 types and a parameter policy is explicitly supplied. This opt-in map is configuration, not a recovered AZ effect enum.
+
+Synthetic packet, state-machine, real FIFO/socket service and mixer-stream tests cover the separation and transition-busy retry. A bounded Raspberry Pi 5 AArch64 check on 2026-09-16 then passed the same synchronizer/service/stream regressions plus observation-only and configured-policy transport checks under exclusive ownership. All raw selectors `0..6` were observed, HUI suffixes 0/1 remained non-selector inputs, no F1 was emitted in observation mode, and each configured-policy mixer channel showed busy rejection followed by acceptance. BiteDJ was stopped only for each bounded run and restored afterward; temporary staging was removed. See `dsp-reversal-20260915/NATIVE-CFX-CHECK-20260916.md`.
+
+These native synthetic results still do not identify the six AZ algorithms, prove a physical contact relationship, execute EP147, exercise the physical controller/audio device, or establish audio/listening parity. The explicit selector map remains lab policy rather than recovered AZ semantics.

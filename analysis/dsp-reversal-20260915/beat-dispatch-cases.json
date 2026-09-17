@@ -1,0 +1,23 @@
+{
+  "source": "local/dsp-review-20260915/dsp.private.asm",
+  "selector": {"command_halfword": 89, "command_address": "0x11800ab2", "state_halfword": 503, "state_address": "0x118033ee"},
+  "case0": {"branch_site": "0x1180d2c4", "call_site": "0x1180d2d4", "direct_target": "0x1181fdb0", "stub_destination": "0x80013a00"},
+  "cases": [
+    {"value":1,"compare":"0x1180d2f0","call":"0x1180d300","direct_target":"0x1181fda0","stub_destination":"0x80010c20"},
+    {"value":2,"compare":"0x1180d314","call":"0x1180d324","direct_target":"0x1181fd90","stub_destination":"0x8000f3c0"},
+    {"value":3,"compare":"0x1180d338","call":"0x1180d348","direct_target":"0x11823240"},
+    {"value":4,"compare":"0x1180d360","call":"0x1180d36c","direct_target":"0x11822240"},
+    {"value":5,"compare":"0x1180d384","call":"0x1180d390","direct_target":"0x1181fdc0"},
+    {"value":6,"compare":"0x1180d3d0","call":"0x1180d3e0","direct_target":"0x1181fd80","stub_destination":"0x80012940"},
+    {"value":7,"compare":"0x1180d3e8","call":"0x1180d3f4","direct_target":"0x1181fd70","stub_destination":"0x80011700"},
+    {"value":8,"compare":"0x1180d400","call":"0x1180d40c","direct_target":"0x1181fd60","stub_destination":"0x800120a0"},
+    {"value":9,"compare":"0x1180d414","call":"0x1180d424","direct_target":"0x1181fd60","stub_destination":"0x800120a0"},
+    {"value":10,"compare":"0x1180d42c","call":"0x1180d438","direct_target":"0x1181fd50","stub_destination":"0x800131a0"},
+    {"value":11,"compare":"0x1180d448","call":"0x1180d454","direct_target":"0x1181fd40","stub_destination":"0x80010120"},
+    {"value":12,"compare":"0x1180d468","call":"0x1180d474","direct_target":"0x1181fd40","stub_destination":"0x80010120"},
+    {"value":13,"compare":"0x1180d488","call":"0x1180d494","direct_target":"0x11824160"}
+  ],
+  "special_tail": {"value":98,"compare":"0x1180d4ac","writes":["B14 word198 at 0x1180d4b0","B14 word197 at 0x1180d4b4"]},
+  "auxiliary_state502": {"command_halfword":90,"command_address":"0x11800ab4","state_halfword":502,"state_address":"0x118033ec","observed_cases":[{"value":9,"site":"0x1180dd64"},{"value":10,"site":"0x1180de14"},{"value":4,"site":"0x1180dec4"},{"value":7,"site":"0x1180df78"}]},
+  "limits": ["Direct chain is not complete numeric algorithm coverage", "Auxiliary state502 values are observed branches, not complete enumeration", "No named effect mapping"]
+}

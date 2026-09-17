@@ -9,6 +9,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
+#ifndef MAP_FIXED_NOREPLACE
+#define MAP_FIXED_NOREPLACE 0x100000
+#endif
 #include "grid-phase.h"
 #ifndef __aarch64__
 #error This native hook requires AArch64

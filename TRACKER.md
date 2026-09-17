@@ -1,6 +1,13 @@
 # AZ / CDJ-3000X runtime tracker
 
-Last updated: 2026-09-12. Main index for new community leads and verified work.
+Latest packaged checkpoint: 2026-09-14. See [PI-SETUP.md](PI-SETUP.md) and
+[native performance results](analysis/native-performance-20260914/RESULTS.md).
+Native Pi playback, real USB files, FLX6 navigation/headphones and the documented
+rendering improvements have since been exercised. Full mode/effect coverage and
+long-session stability remain unfinished.
+
+The original 2026-09-12 queue below is historical; its Pending/unavailable labels
+are not current status where superseded by those reports.
 
 ## Current result
 

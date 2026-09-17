@@ -1,4 +1,4 @@
-"""End-to-end FIFO/F1 test: real reconstructed Filter, cue isolation, busy policy."""
+"""End-to-end FIFO/F1 test: Filter, cue isolation and bounded busy retry."""
 from pathlib import Path
 import math,os,socket,struct,subprocess,tempfile,time,json
 b=Path(__file__).resolve().parent
@@ -22,8 +22,10 @@ with tempfile.TemporaryDirectory(prefix='az-dsp-stream-') as tmp:
    for block in range(220):
     if block==1:
      sock.send(b'F1 0 1 0 .5')
+    if block in (2,4,6,8):
+     # Repeat the latest snapshot: early attempts are busy, a later one is accepted.
+     sock.send(b'F1 0 0 1 .5')
     if block==2:
-     sock.send(b'F1 0 0 1 .5') # transition active: reject without replacing accepted controls
      sock.send(b'F1 1 1 nan .5')
     data=[]
     for i in range(64):
@@ -37,9 +39,10 @@ with tempfile.TemporaryDirectory(prefix='az-dsp-stream-') as tmp:
   assert all(math.isfinite(v) for row in out for v in row)
   cue_error=max(abs(row[2]-.5*src[2]) for row,src in zip(out,samples));assert cue_error<1e-8,cue_error
   assert all(abs(row[0]-.25*(src[0]+src[2]))<1e-8 for row,src in zip(out[:64],samples[:64]))
-  tail=list(zip(out[-4096:],samples[-4096:]));delta=math.sqrt(sum((row[0]-.25*(src[0]+src[2]))**2 for row,src in tail)/len(tail));assert delta>.005,delta
+  active=list(zip(out[2*64:20*64],samples[2*64:20*64]));active_delta=math.sqrt(sum((row[0]-.25*(src[0]+src[2]))**2 for row,src in active)/len(active));assert active_delta>.001,active_delta
+  tail=list(zip(out[-4096:],samples[-4096:]));tail_error=max(abs(row[0]-.25*(src[0]+src[2])) for row,src in tail);assert tail_error<1e-8,tail_error
   events=[json.loads(line) for line in err.decode().splitlines()];fx=[x for x in events if 'filter_frame' in x]
-  assert [x['result'] for x in fx]==[1,0],fx
-  print(json.dumps({'frames':len(out),'cue_max_error':cue_error,'filtered_master_difference_rms':delta,'filter_results':fx,'status':'pass'}))
+  results=[x['result'] for x in fx];assert results[0]==1 and results[1]==0 and 1 in results[2:],fx
+  print(json.dumps({'frames':len(out),'cue_max_error':cue_error,'active_filter_difference_rms':active_delta,'off_tail_max_error':tail_error,'filter_results':fx,'status':'pass'}))
  finally:
   if proc.poll() is None:proc.kill();proc.wait()

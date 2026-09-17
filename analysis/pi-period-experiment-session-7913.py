@@ -1,6 +1,15 @@
+# Preserved session-specific experiment, not a runnable generic probe.
+raise SystemExit('Historical PID/address recipe: use current parameterized rendering probes')
+
+# Locate shared helpers from this checkout, independent of the caller's cwd.
+import sys as _az_sys
+from pathlib import Path as _AzPath
+_az_sys.path.insert(0, str(_AzPath(__file__).resolve().parents[1]))
+from az_paths import lab_path, desktop_env
+
 import os,struct,time,subprocess,json
 from pathlib import Path
-b=Path('/home/pompu_5/az-native-lab');os.chdir(b)
+b=lab_path('');os.chdir(b)
 from az_mixer_packet import crc16
 pid=7913;addr=0x7fff9a4f19a0
 fd=os.open(f'/proc/{pid}/mem',os.O_RDWR)
@@ -17,8 +26,8 @@ try:
  for name,value in [('original',period),('halfperiod',period/2),('restored',period)]:
   os.pwrite(fd,struct.pack('<d',value),addr+0x58);time.sleep(1)
   subprocess.run(['ffmpeg','-y','-loglevel','error','-f','x11grab','-framerate','120','-video_size','850x170','-i',':0+180,90','-t','8','-f','framemd5',f'/tmp/az-moving-period-{name}.framemd5'],check=True,timeout=15)
-  env=os.environ.copy();env.update(XDG_RUNTIME_DIR='/run/user/1000',WAYLAND_DISPLAY='wayland-1')
-  subprocess.run(['sudo','-u','pompu_5','env','XDG_RUNTIME_DIR=/run/user/1000','WAYLAND_DISPLAY=wayland-1','grim',f'/tmp/az-moving-period-{name}.png'],check=True)
+  env=os.environ.copy();env.update(desktop_env())
+  subprocess.run(['grim',f'/tmp/az-moving-period-{name}.png'],env=env,check=True)
 finally:
  os.pwrite(fd,original,addr+0x58);assert os.pread(fd,8,addr+0x58)==original;os.close(fd)
  print(json.dumps(dict(pid=pid,period_ms=period,restored=True)),flush=True)

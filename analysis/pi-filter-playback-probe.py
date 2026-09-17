@@ -2,17 +2,27 @@
 Requires verified moving tracks and the listed process identities. Reports
 native pixel changes separately from CPU samples; does not measure panel FPS.
 """
-import os,json,subprocess,time
+
+# Locate shared helpers from this checkout, independent of the caller's cwd.
+import sys as _az_sys
+from pathlib import Path as _AzPath
+_az_sys.path.insert(0, str(_AzPath(__file__).resolve().parents[1]))
+from az_paths import desktop_env, sway_socket
+
+import os,json,subprocess,time,argparse
 from pathlib import Path
-out=Path('/tmp');env=os.environ.copy();env.update(XDG_RUNTIME_DIR='/run/user/1000',WAYLAND_DISPLAY='wayland-1',SWAYSOCK='/run/user/1000/sway-ipc.1000.1143.sock')
-pids={'az':9262,'xwayland':9256,'sway':1143}
+parser=argparse.ArgumentParser(description=__doc__)
+for key in ('az','xwayland','sway'):parser.add_argument('--'+key,type=int,required=True)
+parser.add_argument('--output-name',required=True);a=parser.parse_args()
+pids={key:getattr(a,key) for key in ('az','xwayland','sway')}
+out=Path('/tmp');env=os.environ.copy();env.update(desktop_env());env['SWAYSOCK']=str(sway_socket())
 for name,pid in pids.items():assert Path(f'/proc/{pid}/comm').read_text().strip()=={'az':'EP147','xwayland':'Xwayland','sway':'sway'}[name]
 def stat(pid):
  fields=Path(f'/proc/{pid}/stat').read_text().rsplit(')',1)[1].split()
  return int(fields[11])+int(fields[12]),fields[19]
 def filt(value):
- r=json.loads(subprocess.check_output(['swaymsg','output','DSI-2','scale_filter',value],env=env,timeout=5));assert all(x['success'] for x in r)
-original=next(x['scale_filter'] for x in json.loads(subprocess.check_output(['swaymsg','-t','get_outputs'],env=env)) if x['name']=='DSI-2')
+ r=json.loads(subprocess.check_output(['swaymsg','output',a.output_name,'scale_filter',value],env=env,timeout=5));assert all(x['success'] for x in r)
+original=next(x['scale_filter'] for x in json.loads(subprocess.check_output(['swaymsg','-t','get_outputs'],env=env)) if x['name']==a.output_name)
 results=[]
 try:
  for label,value in [('linear-before','linear'),('nearest','nearest'),('linear-after','linear')]:

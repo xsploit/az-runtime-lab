@@ -1,4 +1,4 @@
-# AZ runtime lab — private research snapshot
+# AZ runtime lab — native Pi experimental setup
 
 XDJ-AZ v1.30 and CDJ-3000X v1.40 runtime research, compatibility shims,
 software mixer work, rendering experiments, and verification tools for a
@@ -6,6 +6,11 @@ Raspberry Pi 5 setup. This is a working research repository, not a finished
 firmware port or installer. Original CDJ-3000 player code is not available here.
 
 ## Start here
+
+- **[Native Pi setup](PI-SETUP.md)**: configurable paths, build, launch, stop and troubleshooting.
+- **[2026-09-14 performance results](analysis/native-performance-20260914/RESULTS.md)**:
+  grid CPU reduction, semaphore repair, fresh-load tests and packaging checks.
+
 
 - [TRACKER.md](TRACKER.md): accumulated findings, unfinished work, and test history.
 - [STATUS.md](STATUS.md): earlier runtime/control integration checkpoint; newer
@@ -35,8 +40,8 @@ firmware port or installer. Original CDJ-3000 player code is not available here.
 
 The memory experiment has not been applied to the user's visible player.
 Headless paced-null/file audio tests do not prove FLX6 hardware output or
-long-session realtime stability. The Pi is off overnight; current research is
-offline. These are snapshot facts, not a live device-status service.
+long-session realtime stability. The dated native-Pi results linked above supersede older device-availability notes.
+Do not treat this document as a live device-status service.
 
 ## What this backup contains
 
@@ -51,17 +56,21 @@ captures which are intentionally outside Git:
 - Downloaded toolchains/libraries and generated executable files.
 
 Consequently this Git repository alone cannot recreate a runnable proprietary
-player. The local original inputs remain necessary. Keep this repository private;
-privacy is not a license to redistribute third-party firmware or a claim that
-all extracted material can be published. No blanket license is granted over
+player. The local original inputs remain necessary. The public repository contains research code and documentation, not those
+private inputs. Repository visibility does not grant permission to redistribute
+third-party firmware or other extracted material. No blanket license is granted over
 third-party research inputs or disassembly excerpts.
 
 ## Reproduction prerequisites
 
-Many scripts retain experiment-specific paths and addresses. Read the script's
+Research scripts retain firmware-specific addresses and experimental assumptions.
+[Portable paths and research inputs](PORTABILITY.md) documents their configuration.
+Read the script's
 docstring and linked findings before running it. Some launchers/probes contact
 the Pi and can change the UI; others only execute isolated local fixtures.
-This snapshot is not a portable setup wizard.
+The supported native entry point is now `pi/session.py`; see PI-SETUP.md.
+Historical evidence retains its original paths; obsolete session recipes are
+disabled rather than replaying stale process IDs.
 
 The newest offline instruction tests require Python 3, Clang, LLD,
 `qemu-aarch64-static`, and the matching locally supplied firmware at

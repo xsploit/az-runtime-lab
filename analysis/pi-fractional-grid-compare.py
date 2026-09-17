@@ -5,6 +5,13 @@ the executable, session identity, hooks, and veneer targets before each write.
 Restores the initial switch in finally; SIGKILL/host loss cannot guarantee this.
 Does not operate playback, controller counters, or firmware files.
 """
+
+# Locate shared helpers from this checkout, independent of the caller's cwd.
+import sys as _az_sys
+from pathlib import Path as _AzPath
+_az_sys.path.insert(0, str(_AzPath(__file__).resolve().parents[1]))
+from az_paths import lab_path
+
 import argparse, hashlib, json, os, signal, struct, subprocess, time
 from pathlib import Path
 
@@ -23,7 +30,7 @@ maps=(proc/'maps').read_text().splitlines()
 mapping=next(x for x in maps if x.endswith('/lab-shims/fractional-grid.so') and x.split()[2]=='00000000')
 base=int(mapping.split('-')[0],16)
 symbols={}
-for line in subprocess.check_output(['nm','-D','/home/pompu_5/az-native-lab/shims/fractional-grid.so'],text=True).splitlines():
+for line in subprocess.check_output(['nm','-D',str(lab_path('shims/fractional-grid.so'))],text=True).splitlines():
     parts=line.split()
     if len(parts)==3 and parts[2].startswith('lab_grid_'): symbols[parts[2]]=base+int(parts[0],16)
 switch=symbols['lab_grid_enabled']

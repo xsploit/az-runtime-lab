@@ -1,0 +1,10 @@
+{
+  "usb": "/media/YOUR_USER/YOUR_USB",
+  "cache": "/home/YOUR_USER/az-analysis-cache",
+  "jemalloc": "/home/YOUR_USER/compatible-arm64-libjemalloc.so.2",
+  "audio_device": "plughw:CARD=DDJFLX6,DEV=0",
+  "fx_bpm": 140,
+  "rootfs": "/absolute/path/to/extracted-az-rootfs",
+  "cabinet": "/absolute/path/to/extracted-cabinet",
+  "state": "/absolute/path/to/writable-az-state"
+}

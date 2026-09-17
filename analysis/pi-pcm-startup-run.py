@@ -1,4 +1,11 @@
 """Run one isolated, time-limited startup comparison; call from staging dir."""
+
+# Locate shared helpers from this checkout, independent of the caller's cwd.
+import sys as _az_sys
+from pathlib import Path as _AzPath
+_az_sys.path.insert(0, str(_AzPath(__file__).resolve().parents[1]))
+from az_paths import lab_path
+
 import json
 import os
 import signal
@@ -16,7 +23,7 @@ env.update(NULL_AUDIO='1',OFFLINE_MIDI='1',PACED_AUDIO='1',USB_FIXTURE='1',
            MIXER_FIXTURE='1',ERP_FIXTURE='1',XIMAGE_FAST24='1',
            LAB_XIMAGE_PRESENT='1',LAB_AZ_SMOOTH_SCROLL='1',LAB_VSYNC_HZ='59.24',
            LAB_AZ_FRACTIONAL_GRID='1',LAB_DURATION_SECONDS='24',
-           LAB_PI_JEMALLOC='/home/pompu_5/az-native-lab/libjemalloc-pi.so.2')
+           LAB_PI_JEMALLOC=str(lab_path('libjemalloc-pi.so.2')))
 if mode=='template': env['LAB_AZ_PCM_TEMPLATE']='1'
 def descendants(pid):
     result=[]

@@ -1,6 +1,9 @@
 """Synthetic checksum tests; do not imply acceptance by the real player."""
+import struct
 import unittest
-from az_mixer_packet import crc16, inspect, inspect_tx
+from az_mixer_packet import (SOUND_COLOR_HUI_SOURCES,
+                             SOUND_COLOR_SELECTOR_BITS, crc16, inspect,
+                             inspect_tx)
 
 
 class PacketTests(unittest.TestCase):
@@ -167,7 +170,43 @@ class PacketTests(unittest.TestCase):
         result = inspect(frame)
         self.assertEqual(result['channel_faders_raw'], [0, 5, 510, 1023])
         self.assertEqual(result['channel_color_raw'], [1023, 510, 5, 0])
+        expected = [struct.unpack('<f', struct.pack('<f', raw / 1023))[0]
+                    for raw in (1023, 510, 5, 0)]
+        self.assertEqual(result['channel_color_normalized'], expected)
         self.assertEqual(result['unnamed_10bit_groups'], [[0]*4]*4)
+
+    def test_sound_color_selector_order_is_mixer_mcu_order(self):
+        for selected, bit in enumerate(SOUND_COLOR_SELECTOR_BITS, 1):
+            frame = bytearray(128)
+            frame[21] = 1 << bit
+            result = inspect(frame)
+            self.assertEqual(result['sound_color_selector_bits_raw'],
+                             [int(index == selected) for index in range(1, 7)])
+
+    def test_sound_color_hui_suffix_sources_are_separate(self):
+        overlap = {2: 4, 3: 2, 4: 3, 5: 6}
+        for suffix, (offset, bit) in enumerate(SOUND_COLOR_HUI_SOURCES):
+            frame = bytearray(128)
+            frame[offset] = 1 << bit
+            result = inspect(frame)
+            self.assertEqual(result['sound_color_hui_bits_raw'],
+                             [int(index == suffix) for index in range(6)])
+            self.assertEqual(result['sound_color_selector_bits_raw'],
+                             [int(index == overlap.get(suffix))
+                              for index in range(1, 7)])
+
+    def test_hui_suffix_zero_one_do_not_masquerade_as_selectors_one_five(self):
+        frame = bytearray(128)
+        frame[23] = (1 << 2) | (1 << 1)
+        result = inspect(frame)
+        self.assertEqual(result['sound_color_hui_bits_raw'][:2], [1, 1])
+        self.assertEqual(result['sound_color_selector_bits_raw'], [0] * 6)
+        frame[23] = 0
+        frame[21] = (1 << 1) | (1 << 0)
+        result = inspect(frame)
+        self.assertEqual(result['sound_color_hui_bits_raw'][:2], [0, 0])
+        self.assertEqual(result['sound_color_selector_bits_raw'],
+                         [1, 0, 0, 0, 1, 0])
 
     def test_cue_bit_order_and_upper_bits(self):
         for channel in range(4):

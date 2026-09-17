@@ -1,0 +1,153 @@
+{
+  "scope": "Static selector-4 and selector-6 DSP routes through trampoline and local processing bodies; no effect name or runtime audio confirmation",
+  "sources": [
+    "analysis/dsp-reversal-20260915/FIELD83.md",
+    "local/dsp-review-20260915/dsp.private.asm",
+    "local/dsp-crc-sol/PACKET-SEMANTICS.md"
+  ],
+  "mvkh_rule": "MVKH replaces upper 16 bits and preserves low 16 bits (TI SPRUFE8B); MVK negative printed immediate is not added to MVKH constant",
+  "routes": [
+    {
+      "selector": 4,
+      "selector_state": "B14 word160 at 0x11803280",
+      "call_site": "0x118190b8",
+      "dispatch_target": "0x1181fcf0",
+      "trampoline": [
+        "0x1181fcf0 MVK.S2 0x7c60,B31",
+        "0x1181fcf4 MVKH.S2 0x80010000,B31",
+        "0x1181fcf8 B.S2 B31"
+      ],
+      "body_entry": "0x80017c60",
+      "body_static_span": [
+        "0x80017c60",
+        "0x8001875c"
+      ],
+      "gate_reads": [
+        "0x80017c64 LDW B14[218] = 0x11803368",
+        "0x80017dd0 LDHU B14[516] = 0x11803408"
+      ],
+      "numeric_signature": [
+        "0x800185e4 ADDSP A17,A16,A16",
+        "0x800185ec MPYSP B6,B6,B6 (squared moving scalar)",
+        "0x800185f4 ADDSP B7,B8,B8",
+        "0x800185f8 SUBSP A7,B6,A8",
+        "0x80018604 MPYSP A8,B8,A3",
+        "0x8001860c MPYSP A6,A3,A9",
+        "0x80018618/0x80018624 MPYSPDP gain times double-precision lanes",
+        "0x8001862a/0x80018630 STDW to two output lanes"
+      ],
+      "loop_boundaries": [
+        [
+          "0x800185e0 SPLOOPD",
+          "0x8001862e SPKERNEL"
+        ],
+        [
+          "0x800186d0 SPLOOPD",
+          "0x800186dc SPKERNEL"
+        ]
+      ],
+      "direct_helpers_via_trampolines": {
+        "0x800187a0": "0x1181f358",
+        "0x80018790": "0x1181f2e0",
+        "0x80018780": "0x1180f428",
+        "0x80018770": "0x1181c580",
+        "0x80018760": "0x1181c72c",
+        "0x800187b0": "0x1181fae0",
+        "0x80018800": "0x1181fb00"
+      },
+      "state_candidates": [
+        "0x1183d378",
+        "0x1183d2e0",
+        "0x1183d070",
+        "0x1183d060",
+        "0x1183d380",
+        "0x11837100",
+        "0x118373c0"
+      ],
+      "unresolved": [
+        "Full scheduled scalar recurrence and source/output lane semantics",
+        "Control halfword516 meaning",
+        "Helper side effects and acoustic identity"
+      ]
+    },
+    {
+      "selector": 6,
+      "selector_state": "B14 word160 at 0x11803280",
+      "call_site": "0x118190c4",
+      "dispatch_target": "0x1181fce0",
+      "trampoline": [
+        "0x1181fce0 MVK.S2 0x69e0,B31",
+        "0x1181fce4 MVKH.S2 0x80010000,B31",
+        "0x1181fce8 B.S2 B31"
+      ],
+      "body_entry": "0x800169e0",
+      "body_static_span": [
+        "0x800169e0",
+        "0x80017c5c"
+      ],
+      "gate_reads_writes": [
+        "0x800169e4 LDW B14[218] = 0x11803368",
+        "0x800169e8 LDHU B14[516] = 0x11803408",
+        "0x80016a00/0x80017140 STH B14[358] = 0x118032cc",
+        "0x80016ba8/0x80016c04/0x80017158 B14[178] = 0x118032c8"
+      ],
+      "numeric_signature": [
+        "0x80017708/0x8001770c MPYSP forms two increment scalars",
+        "0x80017724 ADDSP A20,A19,A19",
+        "0x8001772c ADDSP B16,B7,B7",
+        "0x80017730/0x80017740/0x80017744/0x8001774c MPYSPDP applies changing scalars to four double-precision lanes",
+        "0x80017754/0x80017758/0x80017760/0x80017764 STDW four lanes"
+      ],
+      "loop_boundaries": [
+        [
+          "0x80017714 SPLOOPD",
+          "0x80017762 SPKERNEL"
+        ],
+        [
+          "0x800177bc SPLOOPD",
+          "0x800177d0 SPKERNEL"
+        ],
+        [
+          "0x80017804 SPLOOPD",
+          "0x80017836 SPKERNEL"
+        ]
+      ],
+      "direct_helpers_via_trampolines": {
+        "0x800187f0": "0x118147f4",
+        "0x800187e0": "0x11813a68",
+        "0x800187d0": "0x11813af0",
+        "0x800187c0": "0x118142f8",
+        "0x800187b0": "0x1181fae0",
+        "0x80018800": "0x1181fb00"
+      },
+      "state_candidates": [
+        "0x1183cee0",
+        "0x1183ceb0",
+        "0x1183ced0",
+        "0x1183d2e0",
+        "0x1183d070"
+      ],
+      "unresolved": [
+        "Full scheduled ramp/recurrence and which lanes are audio versus state",
+        "Control halfword516 and state halfword358 meaning",
+        "Helper side effects and acoustic identity"
+      ],
+      "helper_0x118147f4": {
+        "role": "zero initialization of 12 consecutive 64-bit words at A4, no coefficient arithmetic",
+        "sites": [
+          "0x118147f4 ZERO.L1 A1:A0",
+          "0x118147f8-0x11814814 STDW A1:A0,*A4[0..11]",
+          "0x11814808 BNOP.S2 B3,0; later stores occupy branch delay packets"
+        ],
+        "first_call": "0x80016f94 via 0x800187f0, A4 loaded at 0x80016f80 from B15[10]; B15[10] receives pre-packet A3 at 0x80016bd0, previously set to B9 at 0x80016bb4; B9=0x11838840",
+        "second_call": "0x80016fa4 via 0x800187f0, A4 loaded at 0x80016fa0 from B15[11]; B15[11] receives pre-packet A3 at 0x80016b3a, previously set to A7 at 0x80016b30; A7=0x118386c0",
+        "zero_spans": [
+          "0x11838840..0x1183889f",
+          "0x118386c0..0x1183871f"
+        ],
+        "formula": "for j=0..11: *(uint64_t*)(A4+8*j)=0; two calls clear separate 96-byte spans",
+        "caveat": "Static pointer derivation under same-packet read-before-write, not a runtime memory trace"
+      }
+    }
+  ]
+}
