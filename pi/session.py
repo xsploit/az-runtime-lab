@@ -19,6 +19,14 @@ def load_config(path):
         if not isinstance(c[key],str) or not Path(c[key]).is_absolute():raise ValueError(f'{key} must be an absolute local path')
     c.setdefault('fx_bpm',140)
     if not 40<=float(c['fx_bpm'])<=300:raise ValueError('fx_bpm must be 40..300')
+    # Hold these controller addresses together to end the session without a
+    # keyboard. The default is both FLX6 Merge FX buttons, which native AZ never
+    # uses; needing both is what stops one leaned-on button ending a set.
+    c.setdefault('exit_hold',['0x94,0x2e','0x95,0x2e'])
+    if not isinstance(c['exit_hold'],list) or not all(isinstance(v,str) for v in c['exit_hold']):
+        raise ValueError('exit_hold must be a list of "STATUS,NOTE" controller addresses, or [] to disable')
+    c.setdefault('exit_hold_seconds',2.)
+    if not .5<=float(c['exit_hold_seconds'])<=10:raise ValueError('exit_hold_seconds must be 0.5..10')
     # Optional: browse the original Rekordbox Device Library export instead of
     # whatever AZ library the USB carries. Omit the key for plain USB browsing.
     c.setdefault('library_stage',None)
@@ -119,10 +127,13 @@ def main():
             except (FileNotFoundError,PermissionError,ProcessLookupError):pass
         with socket.socket(socket.AF_UNIX,socket.SOCK_DGRAM) as sock:
             sock.sendto(b'M1 441 1 1 1 1 -1 1 -1 1 1 .5 .25 .5 0',endpoint)
-        if not a.no_controller:bridge=start(['sudo','-n','env','PYTHONPATH='+pythonpath,sys.executable,str(BASE/'analysis/run_pi_flx6_controls.py'),str(player),'--mapping',c['mapping'],'--state',str(state),'--encoder-counter','0','--mixer-socket',endpoint,'--dsp-graph','--fx-bpm',str(c['fx_bpm'])],'controls')
+        hold=[x for address in c['exit_hold'] for x in ('--exit-hold-address',address)]
+        if hold:hold+=['--exit-hold-seconds',str(c['exit_hold_seconds']),'--exit-signal-pid',str(os.getpid())]
+        if not a.no_controller:bridge=start(['sudo','-n','env','PYTHONPATH='+pythonpath,sys.executable,str(BASE/'analysis/run_pi_flx6_controls.py'),str(player),'--mapping',c['mapping'],'--state',str(state),'--encoder-counter','0','--mixer-socket',endpoint,'--dsp-graph','--fx-bpm',str(c['fx_bpm']),*hold],'controls')
         (out/'session.json').write_text(json.dumps(dict(supervisor=os.getpid(),player=player,launcher=launcher.pid,audio=audio.pid,bridge=bridge.pid if bridge else None,mixer_socket=endpoint,manual_fx_bpm=c['fx_bpm'],library_stage=c['library_stage']),indent=2))
         library='staged legacy Device Library' if c['library_stage'] else 'the USB library as-is'
-        print(f'AZ session running on {library}. Logs: {out}\nCtrl+C stops this session. FX tempo is manually set to {c["fx_bpm"]} BPM.',flush=True)
+        leave='Ctrl+C' if not c['exit_hold'] else f'Ctrl+C, or hold all {len(c["exit_hold"])} mapped exit control(s) together for {c["exit_hold_seconds"]:g}s'
+        print(f'AZ session running on {library}. Logs: {out}\n{leave} stops this session. FX tempo is manually set to {c["fx_bpm"]} BPM.',flush=True)
         while all(child.poll() is None for child in children):time.sleep(.5)
         raise RuntimeError(f'A session process exited; inspect {out}')
     except KeyboardInterrupt:pass

@@ -16,6 +16,26 @@ from flx6_fx import Effects
 from az_rx_owner import RxOwner
 from flx6_fx_feedback import EffectFeedback
 
+def parse_address(value,parser):
+    try:
+        status,control=(int(part,0) for part in value.split(','))
+    except ValueError:parser.error(f'Expected STATUS,NOTE such as 0x94,0x2e: {value!r}')
+    if not 0x80<=status<=0xef or not 0<=control<128:parser.error(f'Address outside MIDI channel messages: {value!r}')
+    return (status,control)
+
+def request_stop(pid):
+    """Ask one specific session supervisor to run its normal Ctrl+C shutdown.
+
+    The bridge runs as root, so refuse to signal anything that is not still the
+    launcher this session was started with; PIDs are reused.
+    """
+    try:command=Path(f'/proc/{pid}/cmdline').read_bytes().split(b'\0')
+    except (FileNotFoundError,PermissionError,ProcessLookupError):return False
+    if not any(part.endswith(b'session.py') for part in command):return False
+    try:os.kill(pid,signal.SIGTERM)
+    except (ProcessLookupError,PermissionError):return False
+    return True
+
 def run(a):
     exe=Path(f'/proc/{a.pid}/exe')
     assert hashlib.sha256(exe.read_bytes()).hexdigest()=='137442868569db41daa2c52be4a614d154152e53561b0a7153c8ce2734ae850c'
@@ -60,6 +80,10 @@ def run(a):
             nav.encoder.counter=saved['encoder_counter']
             nav.frame[34:36]=nav.encoder.counter.to_bytes(2,'little',signed=True)
     fifos={};epochs={};running=True;count=0;rejected=0
+    # Deliberate controller exit: every configured address, which the player
+    # itself never uses, held together. Requiring the whole set is what keeps a
+    # single leaned-on button from ending a set.
+    exit_addresses=set(a.exit_hold_address);exit_down=set();exit_held_since=None
     def stop(*_):
         nonlocal running
         running=False
@@ -136,6 +160,10 @@ def run(a):
                     for packet in fx_feedback.messages(time.monotonic(),fx.led_addresses,fx.led_address):
                         os.write(midi,packet)
                 events=poll.poll(50)
+                if exit_held_since is not None and time.monotonic()-exit_held_since>=a.exit_hold_seconds:
+                    delivered=request_stop(a.exit_signal_pid);exit_held_since=None
+                    print(json.dumps({'event':'exit_requested','held_seconds':a.exit_hold_seconds,'supervisor':a.exit_signal_pid,'delivered':delivered}),flush=True)
+                    if delivered:running=False;continue
                 if not events:continue
                 flags=events[0][1]
                 if flags&(select.POLLHUP|select.POLLERR):release();os.close(midi);midi=None;continue
@@ -148,6 +176,15 @@ def run(a):
                     try:
                         addr=(status+16 if status&0xf0==0x80 else status,control)
                         pressed=value!=0 and status&0xf0!=0x80
+                        if addr in exit_addresses:
+                            # A tap is ignored; only holding the complete set counts,
+                            # and releasing any one of them restarts the timer.
+                            if pressed:exit_down.add(addr)
+                            else:exit_down.discard(addr)
+                            if exit_down==exit_addresses:
+                                if exit_held_since is None:exit_held_since=time.monotonic()
+                            else:exit_held_since=None
+                            continue
                         if addr in shift_bindings:
                             if pressed:shift_down.add(addr)
                             else:shift_down.discard(addr)
@@ -224,7 +261,13 @@ def run(a):
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('pid',type=int);p.add_argument('--mapping',type=Path,required=True);p.add_argument('--state',type=Path,required=True);p.add_argument('--encoder-counter',type=int,required=True);p.add_argument('--mixer-socket')
     p.add_argument('--dsp-graph',action='store_true');p.add_argument('--fx-bpm',type=float,default=120,help='Manual Echo BPM pending native telemetry')
+    p.add_argument('--exit-hold-address',action='append',default=[],metavar='STATUS,NOTE',help='Controller address that ends the session when held; repeatable')
+    p.add_argument('--exit-hold-seconds',type=float,default=2.,help='Deliberate hold before the session is asked to stop')
+    p.add_argument('--exit-signal-pid',type=int,help='Session supervisor to SIGTERM on that hold')
     a=p.parse_args()
     if a.dsp_graph and not a.mixer_socket:p.error('DSP graph requires mixer socket')
     if not 40<=a.fx_bpm<=300:p.error('Manual FX BPM must be 40..300')
+    if a.exit_hold_address and not a.exit_signal_pid:p.error('--exit-hold-address requires --exit-signal-pid')
+    if not .5<=a.exit_hold_seconds<=10:p.error('--exit-hold-seconds must be 0.5..10')
+    a.exit_hold_address=[parse_address(v,p) for v in a.exit_hold_address]
     assert -32768<=a.encoder_counter<=32767;run(a)

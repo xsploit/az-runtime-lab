@@ -102,6 +102,8 @@ machine running AZ**. No username, Pi hostname or Windows mount is assumed.
 | `mapping` | Optional absolute XML path; defaults to the included FLX6 XML beside the launcher |
 | `fx_bpm` | Manual host-effect tempo, 40–300 BPM; default 140, not automatic track tempo |
 | `library_stage` | Optional staged `PIONEER` directory holding your encrypted legacy Device Library; omit the key to browse the USB as-is |
+| `exit_hold` | Controller addresses held together to end the session; defaults to both FLX6 Merge FX buttons, `[]` disables |
+| `exit_hold_seconds` | How long that hold must last, 0.5–10 s; default 2 |
 
 Paths with spaces are passed as separate arguments. Do not use `~` or shell
 variables inside JSON; write their expanded absolute paths. Commas, colons,
@@ -183,6 +185,22 @@ Other controller XMLs are not automatically equivalent hardware integrations.
   Folder to reach the actual files. With `library_stage`, browse your original
   playlists and categories directly. Either way, fresh files still need analysis
   and later loads use the overlay cache.
+
+## Stopping without a keyboard
+
+**Ctrl+C** in the launcher's terminal is the primary shutdown. With no keyboard
+attached, hold **both MERGE FX buttons** on the FLX6 for two seconds instead:
+the control bridge asks this session's launcher to run its normal Ctrl+C
+shutdown, and `controls.log` records `exit_requested`.
+
+Merge FX is mapped in the included XML but no AZ path reads it, so the gesture
+costs no player function. Both sides are required on purpose — one leaned-on
+button must never end a set. Change `exit_hold`/`exit_hold_seconds` to use other
+addresses, or set `"exit_hold": []` to turn the gesture off. The bridge refuses
+to signal any process that is not still this session's launcher.
+
+For a menu that boots straight into either BiteDJ or AZ and returns here when
+one exits, see [pi/pflx-os/README.md](pi/pflx-os/README.md).
 
 `--no-controller` is a diagnostic mode for a *single* external test driver; it
 intentionally starts no FLX6 bridge. Never inject test FIFO packets while the
