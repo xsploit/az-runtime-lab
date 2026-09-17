@@ -250,3 +250,58 @@ rollback. Do not promote it unless it measurably helps with no regression.
 Listening stays separate user acceptance.
 
 Sharing the IPC namespace also weakens the isolation `--unshare-all` provides.
+
+## MIT-SHM candidate: bounded A/B/A, idle only
+
+`share_ipc` toggled off/on/off with everything else held fixed: same build,
+config, USB, library stage, mapping, audio device, vsync, no tracks loaded in
+any arm. Each arm restarted AZ, settled 15 s, then sampled 30 s.
+
+| Arm | share_ipc | EP147 | machine busy | underruns |
+|---|---|---|---|---|
+| A1 | off | 14.4 %core | 33 %core | 0 |
+| B | **on** | **10.6 %core** | **30 %core** | 0 |
+| A2 | off | 14.6 %core | 34 %core | 0 |
+
+The two control arms agree (14.4, 14.6) and bracket the candidate, so the
+~3.9 %core reduction in EP147 is repeatable rather than drift. `mix-stream` was
+unchanged at 11.1-11.2 %core across all three, as expected.
+
+### What made the difference, verified
+
+The discriminator is **`nattch`, not the presence of a segment**. A 4,096,000
+byte segment exists in *both* conditions, because `shmget` succeeds in a
+private namespace too:
+
+- `share_ipc=false`: segment present, **nattch 1** — EP147 allocated it, the X
+  server never attached, so `XShmAttach` failed and the packed-24 path was used.
+- `share_ipc=true`: same segment, **nattch 2** — the X server attached it.
+
+An earlier note in this session claimed the 4 MB segment's presence proved
+MIT-SHM use. It does not; only the attach count does.
+
+### Corrections to earlier claims in this report
+
+- "`ximage-fast24.so` vanished from the profile with shared IPC" was **invalid**.
+  It compared a *loaded* profile against an *idle* one. Sampling idle in both
+  arms shows fast24 absent either way: it only appears when frames are actually
+  changing. Whether shared IPC removes it from the hot path is untested.
+- The idle DSO percentages shift wildly with workload (kernel 65% in a 12 s
+  idle sample versus 28% under load), so DSO share must never be compared
+  across different workloads.
+
+### Not established
+
+Every arm was **idle with no tracks loaded**, so this does not measure playback,
+and it is the load hitch that motivated the work. Specifically untested:
+
+- CPU under two-deck playback with shared IPC.
+- **Frame gaps / jitter**, which is the only reason the review considered this
+  worth running. Nothing here measures when frames land.
+- Continuous underrun monitoring across a real set; zero underruns in three
+  30 s idle windows is weak evidence.
+- Listening. That remains separate user acceptance.
+
+`share_ipc` therefore stays **default false**, and is not promoted on this
+evidence. Sharing the IPC namespace still weakens the isolation `--unshare-all`
+provides, which is a separate judgement from the CPU number.
