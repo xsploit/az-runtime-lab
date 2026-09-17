@@ -7,6 +7,66 @@ session were idle-only and understated playback by roughly four times.
 Scripts here reproduce it: `measure_components.py SECONDS`,
 `measure_ep147_threads.py PID SECONDS`, `measure_memory_regions.py PID`.
 
+## Exact build and configuration measured
+
+Reproducing or comparing against this baseline requires the same inputs. These
+are the identities of what was actually running, not what the branch contains.
+
+| Input | Identity |
+|---|---|
+| Kernel | `6.18.48-pflx-rt+`, 16384-byte pages, Pi 5, 4 GB |
+| AZ executable | `736bdc9322c00e5770af459c…` (the documented 1.30 EP147) |
+| Patched overlay actually executed | `137442868569db41daa2c52b…` |
+| Shim manifest | `e065e9f03823ad8d80e9d961…` |
+| Shims | fast24 `fe4f2bc28c929f76`, present `4e3b3157eb9c3e25`, fractional-grid `f906e8bb9c538b7d`, grid-span `22871e26886e0d57`, sem-owner `e29cbaf78893ef9d`, mixer-fixture `2342c84d2dde919a` |
+| `run-az-interactive.py` | `61c31766fff7139b` |
+| `pi/session.py` | `f9a02feb48d96b0b` |
+| `run_pi_flx6_controls.py` | `277d270fda472b50` |
+| `prepare_usb_cache.py` | `fe669cc17ae7a15c` |
+| Mapping | `e58ec496995c3203…` (included FLX6 XML) |
+| Display | `LAB_VSYNC_HZ=59.24`, 1280x800 surface, linear-scaled output |
+| Audio | `plughw:CARD=DDJFLX6,DEV=0`, 4ch FLOAT_LE, 44100, 80 ms buffer, 10 ms period |
+| Library | `library_stage` set, staged legacy Device Library over the cache overlay |
+| `fx_bpm` | 140, manual |
+
+The deployed Pi checkout is not a git working tree, so file hashes are the
+identity. Its `run-az-interactive.py` is an older variant than this branch's
+(it predates the `az_paths` refactor) carrying only the library-mount change.
+
+## This is NOT an AZ-versus-BiteDJ comparison
+
+The 44.3 %core figure is **EP147 alone**. AZ's complete setup also needs
+`mix-stream` (11.9), `run-az-interactive` (3.2), `aplay` (0.6) and the control
+bridge (0.3) — roughly 60 %core before counting the compositor that both
+setups pay. Comparing that 44.3 against a single BiteDJ process understates the
+difference.
+
+The existing recorded comparison has the same limitation and says so:
+`analysis/PI-TWO-TRACK-COMPARISON.md` measured BiteDJ 11.95 %core / 581.4 MiB
+against AZ 44.70 %core / 990.6 MiB on the same two tracks, **application-only,
+with the AZ software mixer not attached**, over different audio and display
+paths. A genuine comparison needs both complete setups under one identical
+workload, and has not been run.
+
+## Averages here do not rule out stutter
+
+Every number below is a mean over a stated interval. Short spikes, blocking,
+uneven frame delivery and missed audio deadlines all survive such averaging,
+so "21% of the machine, zero underruns" is not evidence of smooth playback.
+
+The already-recorded fresh-load tests make the point concretely: after the
+semaphore-owner fix, three fresh loads showed display-update gaps of
+19.59–23.33 ms with **peak player CPU of 143–147 %core** — three times the
+44.3 %core average here — and zero reported aplay underruns during continuous
+monitoring. Pre-fix runs showed 59.5–74 ms gaps and one isolated 325.621 ms
+underrun. Those cohorts differ, so no exact before/after percentage should be
+claimed, and XDamage gaps are not physical scanout FPS. See
+`analysis/native-performance-20260914/RESULTS.md` and
+`az-opus-performance/load-analysis/RESULT.md`.
+
+Main-thread CPU share also says nothing about *which functions* spend it. That
+profile does not exist yet and is the main gap after this baseline.
+
 ## Scale
 
 Every figure is **%core**, where one fully busy core is 100% and this Pi 5 has
@@ -89,7 +149,10 @@ machine that is 79% idle.
 - **Loading a previously unanalyzed track was NOT exercised**, so the analysis
   and cache-write path is untested here.
 - One session, one USB, one library, one mapping. No repeat runs, so no
-  variance figure.
+  variance figure, and means only.
+- Fresh analysis was not exercised **in this configuration**. Earlier reports
+  tested it, but not with `library_stage` in place, where analysis writes land
+  in a different cache overlay whose lower layers now include the stage.
 - The 3.8 %core i2c IRQ thread is measured CPU cost. The separately observed
   ~6000 interrupts/sec with nobody touching the screen is an unexplained
   counter reading, not a diagnosis: the device, driver behaviour and what those
