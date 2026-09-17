@@ -7,6 +7,7 @@
 #include <QGuiApplication>
 #include <QLabel>
 #include <QPushButton>
+#include <QList>
 #include <QScreen>
 #include <QTimer>
 #include <QVBoxLayout>
@@ -50,16 +51,33 @@ int main(int argc, char **argv) {
     layout->addWidget(heading);
     layout->addStretch(1);
 
+    // Starting a mode takes time -- AZ needs roughly half a minute before its
+    // own window appears. Acknowledge the touch rather than leaving a black
+    // screen the moment this process exits.
+    auto *starting = new QLabel;
+    starting->setAlignment(Qt::AlignCenter);
+    starting->setStyleSheet("color:#f0f0f0;font-size:40px;font-weight:600;");
+    starting->hide();
+
     std::string chosen;
+    QList<QPushButton *> buttons;
     for (const Mode &mode : kModes) {
         QPushButton *button = modeButton(mode);
         const std::string id = mode.id;
-        QObject::connect(button, &QPushButton::clicked, &app, [&chosen, id, &app]() {
+        const QString title = QString::fromUtf8(mode.title);
+        QObject::connect(button, &QPushButton::clicked, &app,
+                         [&chosen, id, title, starting, &buttons, &app]() {
+            if (!chosen.empty()) return;  // ignore a second tap while starting
             chosen = id;
-            app.quit();
+            for (QPushButton *other : buttons) other->hide();
+            starting->setText(QString("Starting %1…").arg(title));
+            starting->show();
+            QTimer::singleShot(1500, &app, &QApplication::quit);
         });
+        buttons.append(button);
         layout->addWidget(button);
     }
+    layout->addWidget(starting);
 
     layout->addStretch(1);
     auto *footer = new QLabel(

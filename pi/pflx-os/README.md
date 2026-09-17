@@ -46,6 +46,19 @@ If `pflx-mode-menu` or `pflx-az-session` is missing or the chooser fails,
 `start-pflx-kiosk` runs BiteDJ exactly as it did before. That fallback is the
 reason this is safe to install on a device you gig with.
 
+## Two things the device made us find out
+
+The kiosk login session carries ambient capabilities an SSH shell does not, and
+bwrap refuses to start with them: `Unexpected capabilities but not setuid, old
+file caps config?`. AZ launched fine over SSH and died instantly from the menu
+until `pflx-az-session` started dropping all three capability sets with
+`setpriv`. AZ needs none of them.
+
+`pflx-boot-screen` stays on top of whatever maps after it and only exits on its
+own after a long delay, so the chooser was invisible behind a splash that read
+`STARTING DISPLAY` — indistinguishable from a hung boot. `start-pflx-kiosk` now
+stops the splash before showing the chooser.
+
 ## Paths
 
 `pflx-az-session` takes `PFLX_AZ_LAB` (default `$HOME/az-native-lab`) and
