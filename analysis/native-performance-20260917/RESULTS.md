@@ -174,61 +174,79 @@ machine that is 79% idle.
 - No capacity problem appears in this measurement: 21% of the machine, no
   underruns, no throttling. If a felt symptom exists, it is not visible here.
 
-## Main-thread profile: the MIT-SHM fallback is live, and measured
+## Main-thread profile: the cost is our own conversion shim
 
 `perf record -F 997 -g --call-graph fp` on EP147's main thread, 25 s spanning a
 cached deck-2 load with deck 1 playing, symbolized against the patched overlay.
-Addresses are raw: the firmware is stripped, and the reversal work maps them.
+Addresses are raw: the firmware is stripped.
 
-Top self-time leaves:
+Cost by object, exclusive self time on that one thread:
 
-| Self | Symbol |
+| Self | Object |
 |---|---|
-| 10.40% | `XPutImage` |
-| 4.31% | `__arch_copy_from_user` (kernel) |
-| 1.76% | `0x201ee70` |
-| 1.75% | `_raw_spin_unlock_irqrestore` (kernel) |
-| 1.73% | `0x19feefc` |
-| 1.19% | `lab_grid_span` (our NEON shim) |
+| 42.54% | EP147 |
+| 28.46% | kernel |
+| 10.43% | `ximage-fast24.so` (ours) |
+| 8.56% | libc |
+| 2.73% | libjemalloc |
+| 2.00% | libpthread |
+| 1.83% | libX11 |
+| 1.19% | `fractional-grid.so` (ours) |
 
-`__arch_copy_from_user`'s stack is `copy_page_from_iter` ->
-`skb_copy_datagram_from_iter` -> `unix_stream_sendmsg`: window pixels being
-copied into a Unix socket. Together with `XPutImage` that is **~14.7% of main
-thread self time spent moving pixels over the X socket**. The caller chain is
-`XPutImage <- 0x24faca4`, inside the packed-24 XPutImage path recorded at
-`0x24faca0`.
+The single largest non-firmware leaf is **`XPutImage` at 10.40%, inside
+`ximage-fast24.so`** — our own packed-24 conversion shim, not Xlib. The real
+Xlib entry point is `XPutImage@plt` at 0.04%, and libX11 totals 1.83% across
+all symbols. No `XShm`, `shmat` or `shmget` symbols were sampled.
 
-Three facts confirm this is the documented MIT-SHM fallback, now observed live
-rather than inferred:
+So the expensive part of presentation here is the **pixel format conversion we
+added**, not the transport. Our two rendering shims together are ~11.6% of
+main-thread self time.
 
-1. The deployed launcher runs `bwrap --unshare-all` and supports no IPC-sharing
-   option, so the SysV-IPC namespace is unshared.
-2. `ipcs -m` shows **zero shared memory segments**, so MIT-SHM is not in use.
-3. The EP147 binary does reference `XShmPutImage`, so the firmware is capable
-   of the zero-copy path and is falling back, not missing the feature.
+### The MIT-SHM question, corrected
 
-`az-opus-performance/` already carries an opt-in `LAB_SHARE_IPC=1` candidate
-that replaces `--unshare-all` with its expansion minus `--unshare-ipc`, with
-host tests (`tests/test_launcher_share_ipc.py`, `tests/qemu-xshm-ab/`) and a
-pixel-exactness argument. Its own notes say it is **host-verified and not Pi
-validated**. This profile is the first live Pi evidence that the fallback it
-targets is actually active and what it costs.
+An earlier draft of this section claimed ~14.7% of main-thread self time was
+"moving pixels over the X socket" and that MIT-SHM could return 3-4 %core. That
+was wrong in three ways, and the corrected position is weaker:
 
-### What this does and does not bound
+- The 10.40% is our conversion shim. MIT-SHM changes how converted pixels reach
+  the server; it does not remove the conversion, so that 10.40% would largely
+  remain.
+- Only **2.81%** of the 4.31% `__arch_copy_from_user` sat under
+  `unix_stream_sendmsg`. The rest is other user copies and must not be
+  attributed to image upload.
+- `ipcs -m` was run in the wrong namespace. EP147 has its own IPC namespace
+  (`ipc:[4026532670]` versus the shell's `ipc:[4026531839]`), and inside it
+  there **is** a shared memory segment: key `0x1402edc9`, 832 bytes, nattch 2.
+  That is far too small to be a 1280x800 frame, so it is not image transfer,
+  but the earlier "zero shared memory segments" statement was simply not a
+  measurement of EP147's namespace.
 
-The 14.7% is a share of **main-thread self time**, and the main thread is
-25.1 %core, so removing the socket copy entirely could return on the order of
-3-4 %core out of 84 %core in use. That is real but modest, and it is an upper
-bound: MIT-SHM replaces the copy with cheaper work, it does not make the upload
-free.
+A realistic ceiling for removing the socket write is therefore the 2.81% kernel
+copy plus some part of libX11's 1.83%, on a thread that is 25.1 %core: **well
+under 1 %core**. Throughput is not the reason to try it.
 
-Whether it helps the single-frame load hitch is **not established**. A
-per-frame synchronous copy through a socket is a plausible jitter source, but
-this profile measures where cycles go, not frame delivery timing, and nothing
-here ties those samples to the moment of the load. Treat that as a hypothesis
-to test, not a result.
+What remains genuinely open, and is the only reason the A/B is still worth
+running: a per-frame synchronous socket write is a plausible source of frame
+delivery *jitter*, and jitter is what the load hitch actually is. This profile
+measures where cycles go, not when frames land, so it can neither support nor
+refute that.
 
-The candidate's own requirement still stands: a Pi A/B/A with live FLX6 audio,
-measuring CPU, temperature, display gaps and xruns, before any claim. Sharing
-the IPC namespace also weakens the sandbox isolation that `--unshare-all`
-provides; that is a deliberate trade-off for someone to accept, not a free win.
+Also unestablished: that the active presentation path can use MIT-SHM at all.
+`ximage-present.so` and `ximage-fast24.so` both export `XPutImage` and sit in
+front of Xlib, so whether an IPC-shared namespace would actually produce
+`XShmAttach`/`XShmPutImage` calls through that stack is untested. The binary
+referencing `XShmPutImage` does not establish it, and MIT-SHM avoids sending
+pixel data through the socket without necessarily being zero-copy end to end.
+
+### Bounded A/B/A plan, if run
+
+Use the existing `az-opus-performance` `LAB_SHARE_IPC=1` candidate. Before
+measuring anything, verify the X server advertises MIT-SHM and confirm real
+`XShmAttach`/`XShmPutImage` calls occur with IPC sharing enabled; if they do
+not, stop, because there is nothing to measure. Hold tracks, zoom level, audio
+device, controller and every rendering setting fixed across arms. Compare CPU,
+frame gaps and continuously monitored underrun logs, not spot checks. Preserve
+rollback. Do not promote it unless it measurably helps with no regression.
+Listening stays separate user acceptance.
+
+Sharing the IPC namespace also weakens the isolation `--unshare-all` provides.
