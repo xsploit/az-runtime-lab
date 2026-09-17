@@ -2,7 +2,8 @@
 
 All native input producers must send their full128-byte packets to input_socket,
 not directly to rx_fifo. Mixer replacement or FIFO backpressure terminates this
-service explicitly; it does not silently drop control edges or mix sessions.
+service explicitly. Transient control-datagram backpressure retains ordered pending
+commands; the service does not silently drop control edges or mix sessions.
 """
 import argparse,json,os,select,signal,socket,stat,tempfile,time,sys
 from pathlib import Path
@@ -29,7 +30,8 @@ def run(a):
   nonlocal query,query_path
   if query is not None:query.close();query=None
   if query_path is not None:query_path.unlink(missing_ok=True);query_path=None
- bound=False;eq=None;eq_fd=None;eq_output=None;eq_pending=b'';eq_offset=0
+ bound=False;eq=None;eq_fd=None;eq_pending=b'';eq_offset=0
+ cfx=None;control_output=None
  try:
   if getattr(a,'eq_tx_capture',None):
    sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'mixer'))
@@ -41,8 +43,13 @@ def run(a):
    # Skip historical records; only consume complete records starting after setup.
    eq_offset=((eq_stat.st_size+127)//128)*128
    os.lseek(eq_fd,eq_offset,os.SEEK_SET)
-   eq_output=socket.socket(socket.AF_UNIX,socket.SOCK_DGRAM)
-   eq_output.connect(str(a.mixer_socket))
+  if getattr(a,'cfx_observe',False) or getattr(a,'cfx_map',None) is not None:
+   sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'mixer'))
+   from native_cfx import NativeCfx
+   cfx=NativeCfx(getattr(a,'cfx_map',None),getattr(a,'cfx_parameter',None))
+  if eq is not None or (cfx is not None and cfx.output_enabled):
+   control_output=socket.socket(socket.AF_UNIX,socket.SOCK_DGRAM)
+   control_output.connect(str(a.mixer_socket));control_output.setblocking(False)
 
   with tempfile.TemporaryDirectory(prefix='az-rx-feedback-') as td, socket.socket(socket.AF_UNIX,socket.SOCK_DGRAM) as inputs:
    inputs.bind(str(a.input_socket));bound=True;os.chmod(a.input_socket,0o600);inputs.setblocking(False)
@@ -79,6 +86,11 @@ def run(a):
        except ValueError:invalid+=1;continue
        emit(merged)
        if eq is not None:eq.accept_rx(merged)
+       if cfx is not None and cfx.accept_rx(merged):
+        print(json.dumps({'event':'cfx_observed','selector':cfx.observed_selector,
+                          'f1_type':cfx.desired_f1_type,'selector_bits':cfx.buttons,
+                          'hui_bits':cfx.hui_bits,'color_raw':cfx.colors_raw,
+                          'policy':'configured' if cfx.output_enabled else 'observation'}),flush=True)
      if query is not None and query in ready:
       try:
        received=time.monotonic();snapshot=json.loads(query.recv(2048))
@@ -86,11 +98,21 @@ def run(a):
       except (ValueError,UnicodeDecodeError):invalid+=1;merged=None
       close_query()
       if merged is not None:emit(merged)
+     control_blocked=False
      if eq is not None:
       for channel,state,command in eq.pending():
-       eq_output.send(command.encode())
+       try:control_output.send(command.encode())
+       except BlockingIOError:control_blocked=True;break
        eq.delivered(channel,state)
        print(json.dumps({'event':'eq_delivered','channel':channel,'mode':state[0],'raw':state[1:]}),flush=True)
+     if cfx is not None and not control_blocked:
+      for channel,state,command in cfx.pending(now):
+       try:control_output.send(command.encode())
+       except BlockingIOError:break
+       cfx.delivered(channel,state)
+       print(json.dumps({'event':'cfx_delivered','channel':channel,
+                         'selector':state[0],'f1_type':state[1],
+                         'color_raw':state[2],'parameter':state[3]}),flush=True)
      owner.current(time.monotonic())
      if owner.status!=last_status:
       print(json.dumps({'event':'feedback_status','status':owner.status}),flush=True);last_status=owner.status
@@ -98,7 +120,7 @@ def run(a):
  finally:
   os.close(fd)
   if eq_fd is not None:os.close(eq_fd)
-  if eq_output is not None:eq_output.close()
+  if control_output is not None:control_output.close()
   if bound:a.input_socket.unlink(missing_ok=True)
   print(json.dumps({'event':'stopped','packets':count,'invalid':invalid}),flush=True)
 
@@ -106,9 +128,22 @@ def main():
  p=argparse.ArgumentParser(description=__doc__)
  for name in ('baseline','mixer_socket','input_socket','rx_fifo'):p.add_argument(name,type=Path)
  p.add_argument('--eq-tx-capture',type=Path,help='Follow fresh delimited native TX records and emit EQ1; mixer must have EQ tables attached')
+ p.add_argument('--cfx-observe',action='store_true',help='Report anonymous native Sound Color state without assigning F1 types')
+ p.add_argument('--cfx-selector-map',help='Explicit complete selector:F1-type pairs for selectors 1..6')
+ p.add_argument('--cfx-parameter',type=float,help='Explicit F1 parameter policy in [0,1]')
  p.add_argument('--mode',choices=('auto','tap'),required=True)
  p.add_argument('--seconds',type=float,default=120);p.add_argument('--interval',type=float,default=.1)
  a=p.parse_args()
  if not 0<a.seconds<=300 or not .05<=a.interval<=1:p.error('seconds0..300 and interval0.05..1 required')
+ if (a.cfx_selector_map is None)!=(a.cfx_parameter is None):
+  p.error('CFX output requires both --cfx-selector-map and --cfx-parameter')
+ a.cfx_map=None
+ if a.cfx_selector_map is not None:
+  sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'mixer'))
+  from native_cfx import NativeCfx,parse_selector_map
+  try:
+   a.cfx_map=parse_selector_map(a.cfx_selector_map)
+   NativeCfx(a.cfx_map,a.cfx_parameter)
+  except ValueError as exc:p.error(str(exc))
  run(a)
 if __name__=='__main__':main()

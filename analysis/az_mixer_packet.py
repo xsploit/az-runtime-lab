@@ -6,7 +6,20 @@ Accepts one already-delimited 128-byte buffer, not a raw SPI capture stream.
 """
 import argparse
 import json
+import struct
 from pathlib import Path
+
+
+# Mixer-MCU selector scan order at 0x9ddc. These are MPNLRX[9] bits,
+# carried in host frame[21], and are intentionally not EP147 HUI suffix order.
+SOUND_COLOR_SELECTOR_BITS = (1, 4, 3, 5, 0, 2)
+# EP147 0x21540e0 sources for HUI IDs ...f600 through ...f605.
+SOUND_COLOR_HUI_SOURCES = ((23, 2), (23, 1), (21, 5),
+                           (21, 4), (21, 3), (21, 2))
+
+
+def _float32_unit(raw: int) -> float:
+    return struct.unpack('<f', struct.pack('<f', raw / 1023))[0]
 
 
 def crc16(data: bytes) -> int:
@@ -69,6 +82,8 @@ def inspect(frame: bytes) -> dict:
     groups = [[(frame[36 + 5*g + lane] << 2) |
                ((frame[40 + 5*g] >> (6 - 2*lane)) & 3)
                for lane in range(4)] for g in range(4)]
+    channel_color_raw = [(frame[61+g] << 2) |
+                         ((frame[65] >> (6-2*g)) & 3) for g in range(4)]
     return {'length': 128, 'length_valid': True,
             'stored_crc': f'0x{actual:04x}',
             'calculated_crc': f'0x{expected:04x}',
@@ -82,8 +97,16 @@ def inspect(frame: bytes) -> dict:
                 for g, values in enumerate(groups)],
             'channel_faders_raw': [(frame[10+g] << 2) |
                 ((frame[14] >> (6-2*g)) & 3) for g in range(4)],
-            'channel_color_raw': [(frame[61+g] << 2) |
-                ((frame[65] >> (6-2*g)) & 3) for g in range(4)],
+            'channel_color_raw': channel_color_raw,
+            'channel_color_normalized': [_float32_unit(raw)
+                                         for raw in channel_color_raw],
+            # Anonymous selector values 1..6 use this exact list order.
+            'sound_color_selector_bits_raw': [
+                (frame[21] >> bit) & 1 for bit in SOUND_COLOR_SELECTOR_BITS],
+            # HUI suffix order 0..5 is a separate observation contract.
+            'sound_color_hui_bits_raw': [
+                (frame[offset] >> bit) & 1
+                for offset, bit in SOUND_COLOR_HUI_SOURCES],
             'channel_onair_bits_raw': [(frame[94] >> (7-g)) & 1 for g in range(4)],
             'channel_cue_bits_raw': [(frame[20] >> (3-g)) & 1
                                      for g in range(4)],

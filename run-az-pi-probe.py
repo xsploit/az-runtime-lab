@@ -40,6 +40,13 @@ if os.environ.get('NATIVE_NAVIGATION') and not os.environ.get('RX_FEEDBACK'):
  raise ValueError('NATIVE_NAVIGATION requires RX_FEEDBACK')
 if os.environ.get('NATIVE_EQ') and not all(os.environ.get(k) for k in ('RX_FEEDBACK','MIXER_TX_CAPTURE','LAB_EQ_TABLES')):
  raise ValueError('NATIVE_EQ requires RX_FEEDBACK, MIXER_TX_CAPTURE and verified LAB_EQ_TABLES')
+cfx_observe=os.environ.get('NATIVE_CFX_OBSERVE')
+cfx_map=os.environ.get('NATIVE_CFX_MAP');cfx_parameter=os.environ.get('NATIVE_CFX_PARAMETER')
+if cfx_observe and cfx_observe!='1':raise ValueError('NATIVE_CFX_OBSERVE must be 1 when enabled')
+if (cfx_observe or cfx_map or cfx_parameter) and not os.environ.get('RX_FEEDBACK'):
+ raise ValueError('Native CFX observation/output requires RX_FEEDBACK')
+if bool(cfx_map)!=bool(cfx_parameter):
+ raise ValueError('Native CFX output requires both NATIVE_CFX_MAP and NATIVE_CFX_PARAMETER')
 if os.environ.get('LAB_EQ_TABLES'):
  import hashlib
  if not os.environ.get('DSP_GRAPH'):raise ValueError('LAB_EQ_TABLES requires DSP_GRAPH')
@@ -298,7 +305,7 @@ try:
         packet=bytearray(128);packet[0]=1;packet[96:98]=crc16(packet[:96]).to_bytes(2,'little')
         baseline=Path(mixtemp.name)/'rx-baseline.raw';baseline.write_bytes(packet)
         feedbacklog=(lab/'rx-feedback.log').open('w')
-        feedbackproc=subprocess.Popen([sys.executable,str(base/'analysis/run_rx_feedback.py'),str(baseline),str(control_socket),str(input_socket),str(rx_fifo),'--mode',os.environ['LAB_RX_FEEDBACK_MODE'],'--seconds','300',*(['--eq-tx-capture',str(state/'tmp/mixer-tx.raw')] if os.environ.get('NATIVE_EQ') else [])],stdout=feedbacklog,stderr=feedbacklog)
+        feedbackproc=subprocess.Popen([sys.executable,str(base/'analysis/run_rx_feedback.py'),str(baseline),str(control_socket),str(input_socket),str(rx_fifo),'--mode',os.environ['LAB_RX_FEEDBACK_MODE'],'--seconds','300',*(['--eq-tx-capture',str(state/'tmp/mixer-tx.raw')] if os.environ.get('NATIVE_EQ') else []),*(['--cfx-observe'] if cfx_observe else []),*(['--cfx-selector-map',cfx_map,'--cfx-parameter',cfx_parameter] if cfx_map else [])],stdout=feedbacklog,stderr=feedbacklog)
         feedbackstarted=time.monotonic()
       if feedbackproc is None and time.monotonic()>feedbackdeadline:raise RuntimeError('RX feedback reader did not become ready within 30 seconds')
      if feedbackproc is not None:
