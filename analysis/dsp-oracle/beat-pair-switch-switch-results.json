@@ -455,7 +455,7 @@
     "echo_control.c": "c35ffe73ea9617547d19a5a43a41d5706cfdfad618be119bef56ef427397cee6",
     "delay_quantize.c": "45747772c32737c45320d4f32a10a8fe146a26c59e329fbff814bb3173990dcc",
     "delay_control.c": "1f01fc2b16598261cb5a60c7f70caee43cf86982e1f602d547547beb53bb74c5",
-    "beat-port/beat_pair.c": "3851ac890fbd0d5246fce08b0e9ee03c821a175f932948cfb6b03105c7c24e69",
+    "beat-port/beat_pair.c": "936dff0c0cd4a69f507831b444d52bedbebfbb287c2f3b597fdc855b211732c3",
     "beat-port/beat_echo.c": "7b86e38dab56fb74e31f3e0e4d51cdde370a94182a048edbf16475c14b9aac3d",
     "beat-port/beat_delay.c": "d8fafe4fd50f6b98aa46a2b577352f50f4da654eb36f42bd478822fc4264f191",
     "run_beat_pair_switch.py": "c1630f440af5de740c7d14c2d54bf1cc5ba4558e897017633368a867d910d9a9",

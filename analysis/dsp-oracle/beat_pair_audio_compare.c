@@ -6,6 +6,9 @@ static EchoRamp dg,dd,dw,dc;
 static void require(int yes,const char *label){if(!yes){fprintf(stderr,"FAIL %s\n",label);exit(1);}}
 extern void direct_delay_execute(void*,const Stereo*,Stereo*,int);
 #include "beat-port/beat_pair.h"
+#include <stddef.h>
+static FILE *pair_records;
+static void record_bytes(const void *p,size_t n){if(fwrite(p,1,n,pair_records)!=n)exit(2);}
 static DelayAudio capture_delay(void){
  DelayAudio s={0};s.control.rate=dobj[1];s.control.max_samples=dobj[30];s.control.counter=dobj[31];s.control.time_changed=dobj[34];memcpy(&s.control.depth,dobj+8,4);
  memcpy(&s.control.gate,&dg,40);memcpy(&s.control.dry,&dd,40);memcpy(&s.control.wet,&dw,40);memcpy(&s.cross,&dc,40);
@@ -41,7 +44,18 @@ int main(void){
  Stereo *candidate_delay_ring=calloc(352800,sizeof(Stereo));if(!candidate_delay_ring)return 2;
  unsigned transitions=0,prior=0,echo_blocks=0,delay_blocks=0,tail_blocks=0,delay_wet_blocks=0,echo_wet_blocks=0;double energy=0;
  unsigned schedule[]={1,5,1,0,5,0,1,5};
+ pair_records=fopen("native-beat-pair-audio-records.bin","wb");if(!pair_records)return 2;
+ uint32_t layout[]={0x42504131,4800,sizeof(BeatManagerEcho),sizeof(EchoAudio),sizeof(DelayAudio),sizeof(EchoQuantize),sizeof(DelayQuantize),offsetof(EchoPlayerFixture,beats)+sizeof(cp.beats)};
+ record_bytes(layout,sizeof layout);
+ BeatManagerEcho initial_m=capture_manager();EchoAudio initial_e=get_native();DelayAudio initial_d=capture_delay();EchoQuantize initial_eq=get_quantize();DelayQuantize initial_dq=capture_dq();
+ record_bytes(&initial_m,sizeof initial_m);record_bytes(&initial_e,sizeof initial_e);record_bytes(&initial_d,sizeof initial_d);record_bytes(&initial_eq,sizeof initial_eq);record_bytes(&initial_dq,sizeof initial_dq);
  puts("[");
+#ifdef PAIR_PERSISTENT
+  EchoAudio ce=get_native();DelayAudio cd=capture_delay();EchoQuantize eq=get_quantize();DelayQuantize dq=capture_dq();
+  EchoPlayerFixture ep=cp;DelayPlayerFixture dp;_Static_assert(sizeof dp==sizeof cp,"fixture layout");memcpy(&dp,&cp,sizeof dp);
+  memcpy(ring,native_ring,352800*sizeof(Stereo));memcpy(candidate_delay_ring,dring,352800*sizeof(Stereo));
+  BeatPair pair={.manager=capture_manager(),.echo=&ce,.echo_q=&eq,.echo_player=&ep,.echo_ring=ring,.delay=&cd,.delay_q=&dq,.delay_player=&dp,.delay_ring=candidate_delay_ring};
+#endif
  for(unsigned block=0;block<4800;block++){
   manager[20]=schedule[block/600];
   if(block==2700)manager[1]=1;
@@ -51,14 +65,23 @@ int main(void){
   ((unsigned char*)manager)[236]=block>=1200;
   ((unsigned char*)manager)[239]=0;
   Stereo audio[64];for(unsigned i=0;i<64;i++)audio[i]=(Stereo){.1f*sinf((block*64+i)*.07f),.1f*cosf((block*64+i)*.11f)};
+#ifndef PAIR_PERSISTENT
   EchoAudio ce=get_native();DelayAudio cd=capture_delay();EchoQuantize eq=get_quantize();DelayQuantize dq=capture_dq();
   EchoPlayerFixture ep=cp;DelayPlayerFixture dp;_Static_assert(sizeof dp==sizeof cp,"fixture layout");memcpy(&dp,&cp,sizeof dp);
   memcpy(ring,native_ring,352800*sizeof(Stereo));memcpy(candidate_delay_ring,dring,352800*sizeof(Stereo));
   BeatPair pair={.manager=capture_manager(),.echo=&ce,.echo_q=&eq,.echo_player=&ep,.echo_ring=ring,.delay=&cd,.delay_q=&dq,.delay_player=&dp,.delay_ring=candidate_delay_ring};
+#else
+  ep=cp;memcpy(&dp,&cp,sizeof dp);
+  pair.manager.next_type=manager[20];pair.manager.next_target=manager[1];
+  pair.manager.quantize=((unsigned char*)manager)[236];pair.manager.consumed=0;
+#endif
   Stereo candidate[64];memcpy(candidate,audio,sizeof audio);
+  uint32_t request[]={manager[20],manager[1],((unsigned char*)manager)[236],block>=4200&&block<4220};
+  record_bytes(request,sizeof request);record_bytes(&cp,layout[7]);record_bytes(audio,sizeof audio);
   native_manager_operate(manager,audio,64,block>=4200&&block<4220);
   beat_pair_process(&pair,candidate,64,block>=4200&&block<4220);
   EchoAudio ne=get_native();DelayAudio nd=capture_delay();EchoQuantize neq=get_quantize();DelayQuantize ndq=capture_dq();BeatManagerEcho nm=capture_manager();
+  record_bytes(&nm,sizeof nm);record_bytes(&ne,sizeof ne);record_bytes(&nd,sizeof nd);record_bytes(&neq,sizeof neq);record_bytes(&ndq,sizeof ndq);record_bytes(audio,sizeof audio);
   compare(&pair.manager,&nm,sizeof nm,"audio-manager",block,0);compare(&ce,&ne,sizeof ne,"audio-echo",block,0);compare(&cd,&nd,sizeof nd,"audio-delay",block,0);
   compare(&eq,&neq,sizeof eq,"audio-eq",block,0);compare(&dq,&ndq,sizeof dq,"audio-dq",block,0);compare(candidate,audio,sizeof audio,"audio-pcm",block,0);
   compare(ring,native_ring,352800*sizeof(Stereo),"echo-ring",block,0);compare(candidate_delay_ring,dring,352800*sizeof(Stereo),"delay-ring",block,0);
@@ -76,5 +99,5 @@ int main(void){
  }
  require(transitions>=6&&echo_blocks&&delay_blocks&&tail_blocks&&delay_wet_blocks&&echo_wet_blocks&&energy>0,"transition and audio coverage");
  printf("\n]\n");fprintf(stderr,"PASS blocks=4800 frames=307200 transitions=%u echo_blocks=%u delay_blocks=%u tail_blocks=%u delay_wet_blocks=%u echo_wet_blocks=%u energy=%.9g\n",transitions,echo_blocks,delay_blocks,tail_blocks,delay_wet_blocks,echo_wet_blocks,energy);
- free(dring);free(ring);free(native_ring);return 0;
+ record_bytes(native_ring,352800*sizeof(Stereo));record_bytes(dring,352800*sizeof(Stereo));if(fclose(pair_records))return 2;fprintf(stderr,"compared_words=%llu mismatches=%u\n",words,mismatches);free(candidate_delay_ring);free(dring);free(ring);free(native_ring);return 0;
 }

@@ -1,7 +1,35 @@
 # Delay/Echo audio differential checkpoint — 2026-09-19
 
+## Resolved in the following continuation
+
+Native disassembly established the missing distinction: destination Off replaces
+the notification subject with Off at0x8a394. When leaving Off, the old-type mask
+is clear and the remembered effect receives its init callback at0x8a180, not
+notifySelected at0x8a458. `beat_pair_switch` now preserves these paths.
+
+Verification now passes:
+- `run_beat_pair_audio.py --persistent`:4800 blocks /307200 stereo frames,
+  eight type transitions, independently persistent candidate state and rings;
+  modeled state, PCM and both complete rings match every block.
+- `run_beat_pair_replay.py`: host and ASAN/UBSAN replay pass, comparing state
+  and PCM every block and both full final rings. Pointer-bearing player fixtures
+  serialize only their fixed-width prefix; record ABI is checked before replay.
+- `run_beat_pair_switch.py`:96 direct switches,17184 words, zero mismatches.
+
+The large ARM word count (6,775,233,600) mostly represents repeatedly comparing
+the same rings, not billions of unique samples. The persistent report's
+`persistent_candidate=true` distinguishes it from the per-block reseeded mode;
+its older generic scope sentence describes reseeded mode only. Native records
+and executables remain ignored/private. No Pi or live integration was performed.
+
+Remaining acceptance: varied corpus/round-guard coverage for the combined path,
+then explicit live graph, command/FIFO and reset/resource integration. These
+fixtures are not proof of all BeatFX or AZ effect-ID correspondence.
+
+## Original failing checkpoint (historical)
+
 Run `python3 analysis/dsp-oracle/run_beat_pair_audio.py` from runtime-lab.
-This currently exits **1**, intentionally exposing an unresolved candidate
+This originally exited **1**, intentionally exposing an unresolved candidate
 divergence; it is not a passing integration test.
 
 The new probe executes the original RX3 manager and both original sample loops,

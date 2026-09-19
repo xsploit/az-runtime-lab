@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Run real Echo/quantize routines against explicit player-state fixtures."""
-import hashlib,json,pathlib,struct,subprocess
+import hashlib,json,pathlib,struct,subprocess,sys
 here=pathlib.Path(__file__).resolve().parent;root=here.parents[2]
 data=(root/'rx3-research/pi-runtime/rbp').read_bytes();sha=hashlib.sha256(data).hexdigest()
 assert sha=='60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09'
@@ -45,12 +45,14 @@ asm='.syntax unified\n.arm\n.fpu neon\n.text\n.balign 8\necho_base:\n.incbin "na
 for name,a in [('init',0xb6d40),('keep',0xb6d58),('time',0xb6d64),('on',0xb6d70),('off',0xb6dc4),('depth',0xb6e04)]:asm+=f'.global echo_{name}\n.type echo_{name},%function\n.set echo_{name},echo_base+{a-0xb6d40}\n'
 asm+='.section .note.GNU-stack,"",%progbits\n';(here/'echo-control-native.S').write_text(asm)
 flags=['-std=c11','-O2','-ffp-contract=off','-fno-tree-vectorize','-Wall','-Wextra','-Werror','-DECHO_NATIVE_QUANTIZE','-DECHO_STATUS_ORACLE','-DBEAT_MANAGER_COMPARE_BUILD']
+if '--persistent' in sys.argv: flags.append('-DPAIR_PERSISTENT')
 files=['beat_pair_audio_compare.c','echo_quantize.c','echo_audio.c','echo_control.c','delay_audio.c','delay_quantize.c','delay_control.c','beat-port/beat_pair.c','beat-port/beat_echo.c','beat-port/beat_delay.c']
 gcc=root/'rx3-human-delegation/scratch/debbin/arm-linux-gnueabi-gcc'
 cmd=[str(gcc),*flags,'-static','-mfpu=neon','-mfloat-abi=softfp',*files,'echo-control-native.S','beat-dual-audio-native.S','-lm','-o','beat-pair-audio-arm']
 subprocess.run(cmd,cwd=here,check=True)
 p=subprocess.run(['qemu-arm-static','./beat-pair-audio-arm'],cwd=here,capture_output=True,text=True)
 report={'firmware_sha256':sha,'native_ranges':ranges,'relocations':relocations,'command':cmd,'returncode':p.returncode,'stdout':p.stdout,'stderr':p.stderr,'scope':'Native outer operate with actual Echo and Delay audio loops, independent rings, controls and quantize. Per-block differential reconstruction seeded from native state; PCM, modeled state and full rings checked. Stops at first divergent block; not persistent host trajectory proof.'}
+report['persistent_candidate']='--persistent' in sys.argv
 report['source_hashes']={n:hashlib.sha256((here/n).read_bytes()).hexdigest() for n in files+['run_beat_pair_audio.py','beat_manager_probe.c','echo_quantize_compare.c','echo_audio_compare.c','echo_quantize.h','echo_audio.h','echo_control.h','beat-dual-audio-native.S','beat-port/beat_pair.h','beat-port/beat_echo.h','beat-port/beat_delay.h','delay_audio.h','delay_control.h','delay_quantize.h','beat_manager_echo.h']}
-(here/'beat-pair-audio-results.json').write_text(json.dumps(report,indent=2)+'\n')
+(here/('beat-pair-audio-persistent-results.json' if '--persistent' in sys.argv else 'beat-pair-audio-results.json')).write_text(json.dumps(report,indent=2)+'\n')
 print(p.stdout,p.stderr);raise SystemExit(p.returncode)

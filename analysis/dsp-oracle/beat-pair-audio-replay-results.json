@@ -1,0 +1,78 @@
+{
+  "native_report_sha256": "aec66082f82806c99336ccf596f6a4e7308a1b414f2af8da3c466ace8fc76bc7",
+  "records_sha256": "155f965a3b201eb3f8088b5f3ca0eddae54885392b2a2146cd65f0c99c6e9287",
+  "source_hashes": {
+    "beat_pair_audio_replay.c": "8d49cf63818067af53ded423afd655c7eb6c411cb4c615c397c7d5bafb863098",
+    "echo_audio.c": "9b7a7809acdf13758667e020bc88f8f78977e3478b19301458ac3ef66d5d5caa",
+    "echo_control.c": "c35ffe73ea9617547d19a5a43a41d5706cfdfad618be119bef56ef427397cee6",
+    "echo_quantize.c": "9f926af7e62ea26fdd83c5b9560a344a46ec627c353e3cfae387a28d44806f7f",
+    "delay_audio.c": "702941cd1f31e0f5a863bd4a000dabf04b03f303997699c55c3a12dcc18811c9",
+    "delay_control.c": "1f01fc2b16598261cb5a60c7f70caee43cf86982e1f602d547547beb53bb74c5",
+    "delay_quantize.c": "45747772c32737c45320d4f32a10a8fe146a26c59e329fbff814bb3173990dcc",
+    "beat-port/beat_pair.c": "936dff0c0cd4a69f507831b444d52bedbebfbb287c2f3b597fdc855b211732c3",
+    "beat-port/beat_echo.c": "7b86e38dab56fb74e31f3e0e4d51cdde370a94182a048edbf16475c14b9aac3d",
+    "beat-port/beat_delay.c": "d8fafe4fd50f6b98aa46a2b577352f50f4da654eb36f42bd478822fc4264f191",
+    "run_beat_pair_replay.py": "4206dd7729227024953b5be07213091c1f4b8e56318b26e8bf8cf64c03e9a5d4"
+  },
+  "results": {
+    "host": {
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-ffp-contract=off",
+        "-fno-tree-vectorize",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "beat_pair_audio_replay.c",
+        "echo_audio.c",
+        "echo_control.c",
+        "echo_quantize.c",
+        "delay_audio.c",
+        "delay_control.c",
+        "delay_quantize.c",
+        "beat-port/beat_pair.c",
+        "beat-port/beat_echo.c",
+        "beat-port/beat_delay.c",
+        "-lm",
+        "-o",
+        "beat-pair-audio-host"
+      ],
+      "returncode": 0,
+      "stdout": "PASS persistent host replay: 4800 blocks, state/PCM each block, full final rings\n",
+      "stderr": ""
+    },
+    "asan": {
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-ffp-contract=off",
+        "-fno-tree-vectorize",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "beat_pair_audio_replay.c",
+        "echo_audio.c",
+        "echo_control.c",
+        "echo_quantize.c",
+        "delay_audio.c",
+        "delay_control.c",
+        "delay_quantize.c",
+        "beat-port/beat_pair.c",
+        "beat-port/beat_echo.c",
+        "beat-port/beat_delay.c",
+        "-lm",
+        "-o",
+        "beat-pair-audio-host-asan"
+      ],
+      "returncode": 0,
+      "stdout": "PASS persistent host replay: 4800 blocks, state/PCM each block, full final rings\n",
+      "stderr": ""
+    }
+  },
+  "scope": "Persistent host reconstruction; modeled state and PCM each block, complete final rings. Native ARM comparison separately checks entire rings every block. No Pi/controller or listening acceptance."
+}

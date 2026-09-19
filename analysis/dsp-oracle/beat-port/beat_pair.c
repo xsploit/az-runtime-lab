@@ -68,7 +68,14 @@ void beat_pair_switch(BeatPair *s){
  if((old==0||selected==0)&&*a.beat==*b.beat)*b.time=*a.time;
  unsigned previous=old==0?m->remembered:old;
  m->remembered=selected==0?old:0;m->type=selected;
- if(previous!=selected){if(m->active==1||m->active==5)notify(s,previous);}
+ /* Native 0x8a394 replaces the notification subject with Off when
+  * selecting Off. Returning from Off initializes the remembered processor
+  * (0x8a180), rather than calling notifySelected (0x8a458). */
+ if(selected!=0&&previous!=selected){
+  if(old==1||old==5)notify(s,previous);
+  else if(previous==1)delay_control(&s->delay->control,DELAY_INIT);
+  else if(previous==5)echo_control(&s->echo->control,ECHO_INIT);
+ }
  m->off_time=*b.time;m->off_max_time=b.max_time;m->off_max_beat=b.max_beat;
  setbeat(s,0,*b.beat,m->quantize);
  *b.depth=depth;depth_changed(s,selected);
