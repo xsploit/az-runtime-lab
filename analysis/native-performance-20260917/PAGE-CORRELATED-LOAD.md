@@ -980,3 +980,43 @@ spike went away in B and the load 3 spike did not. Page-response latencies
 unchanged, no underruns. Not enough to promote on its own; it is the
 cheaper of the two priority knobs if either is ever applied, and it is the
 one the trace's mechanism predicts.
+
+## XPutImage volume vs drain rate, 2026-09-19 (`ximage_stats`)
+
+`shims/ximage-stats.so` (first in the preload chain, one line per
+`XPutImage`: start on CLOCK_MONOTONIC, duration through fast24 → present →
+libX11, rectangle, bytes) recorded a whole six-load session under Xwayland
+at default priorities (arm B of `scheduling-aba.sh ximagestats`; the
+session directory `session-20260919-153201` holds `ximage-stats.log`,
+32736 calls over 197 s; capture `multi-load-20260919T153154Z`). Its own
+cost: arm B 7 intervals >25 ms against A1 6 — no obvious perturbation.
+
+| window | calls | bytes | time inside XPutImage | largest single call |
+|--------|-------|-------|---|---|
+| ordinary playback, per second (105 s) | 183 | 25.5 MB | 66 ms | 58 ms (once) |
+| load 1, first 1.0 s | 174 | 24.0 MB | 73 ms | 8.7 ms |
+| load 2 | 149 | 21.9 MB | 59 ms | 8.1 ms |
+| **load 3** | 140 | 17.2 MB | **262 ms** | **52.8 ms** at +0.534 s |
+| load 4 | 165 | 23.8 MB | 64 ms | 8.1 ms |
+| **load 5** | 131 | 15.8 MB | **277 ms** | **77.9 ms** at +0.519 s |
+| load 6 | 159 | 22.3 MB | 67 ms | 7.6 ms |
+
+The spiking loads upload **less**, not more: fewer calls and fewer bytes
+than the quiet loads, on the same rectangles (a full 1280×800 refresh plus
+900×162 / 1030×162 waveform strips). What differs is that one 900×162
+call (437 KB, normally 1–8 ms) takes 53 or 78 ms at +0.52 s, and the next
+one 20–37 ms. That is the same workload draining slowly, not excess
+redraw — the answer to the volume-versus-drain question, in line with the
+scheduler trace (X server starved for ~60 % of the gap by the firmware's
+loader threads). Two similar calls also occurred during the initial
+`load-two` loads before the capture (58 and 46 ms).
+
+What is still track-related is therefore the *loader* work at +0.5 s for
+those tracks (PageFiller0–3 at RR 11 running when X needs the CPU), not
+the drawing. Knobs that follow from this: the X server's priority
+(`xonly`, `joint`, both modest and unapplied), or demoting the loader
+threads below the X server (untested; would need a look at what PageFiller
+latency does to loading). Note the baseline too: the renderer spends ~66
+ms of every second inside `XPutImage` during ordinary two-deck playback at
+25 MB/s of uploads — that is the packed-24 upload path's steady cost,
+independent of the spikes.
