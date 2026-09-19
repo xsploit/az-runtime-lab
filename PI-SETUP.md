@@ -108,6 +108,7 @@ machine running AZ**. No username, Pi hostname or Windows mount is assumed.
 | `xwayland_glamor` | Candidate: `"gl"`, `"es"` or `"off"` passes `-glamor` to Xwayland; `null` (default) leaves the server's own choice |
 | `external_display` | Experiment: `":N"` attaches to an X server that is already running (bare Xorg, no Wayland session needed) instead of spawning Xwayland; `null` (default) |
 | `timer_sites` | Candidate: also set the two extra JUCE timer call sites (KYLE-AZ-60FPS-REVIEW.md) from 33 to 16 ms; default false |
+| `ximage_stats` | Measurement: record every XPutImage (time, duration, size) to `ximage-stats.log` in the session directory; needs `shims/ximage-stats.so`; default false |
 
 Paths with spaces are passed as separate arguments. Do not use `~` or shell
 variables inside JSON; write their expanded absolute paths. Commas, colons,

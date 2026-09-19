@@ -13,5 +13,6 @@
   "share_ipc": false,
   "xwayland_glamor": null,
   "external_display": null,
-  "timer_sites": false
+  "timer_sites": false,
+  "ximage_stats": false
 }

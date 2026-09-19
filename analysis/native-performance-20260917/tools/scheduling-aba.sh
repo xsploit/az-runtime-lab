@@ -8,7 +8,7 @@
 # arm B (isolates the V3D path once X is no longer starved). Everything is
 # reverted on exit; arm rollback-watchdog.sh separately before running.
 set -u
-KNOB=${1:?irq|audio|renderer|joint|xonly|noglamor|jointnoglamor|timersites}; LAB=${AZ_LAB:-$HOME/az-native-lab}; B=$LAB/local/kiosk-swap-backup
+KNOB=${1:?irq|audio|renderer|joint|xonly|noglamor|jointnoglamor|timersites|ximagestats}; LAB=${AZ_LAB:-$HOME/az-native-lab}; B=$LAB/local/kiosk-swap-backup
 # CAPTURE selects the per-arm capture: load-span-capture.sh (one load, stacks)
 # or multi-load-capture.sh (LOADS loads, damage+page only; summarised per load).
 CAPTURE=${CAPTURE:-/tmp/load-span-capture.sh}
@@ -27,7 +27,13 @@ from pathlib import Path
 p=Path("local/session-library.json");c=json.loads(p.read_text());c["timer_sites"]=(sys.argv[1]=="on");p.write_text(json.dumps(c,indent=2))
 EOF
 }
-restore() { for f in pflx-mode-menu pflx-az-session start-pflx-kiosk; do sudo -n install -m 0755 "$B/$f" "/usr/local/bin/$f"; done; echo 3 | sudo -n tee /proc/irq/111/smp_affinity >/dev/null; (cd "$LAB" && setglamor null && settimersites off); echo "restored"; }
+setximagestats() { python3 - "$1" <<'EOF'
+import json,sys
+from pathlib import Path
+p=Path("local/session-library.json");c=json.loads(p.read_text());c["ximage_stats"]=(sys.argv[1]=="on");p.write_text(json.dumps(c,indent=2))
+EOF
+}
+restore() { for f in pflx-mode-menu pflx-az-session start-pflx-kiosk; do sudo -n install -m 0755 "$B/$f" "/usr/local/bin/$f"; done; echo 3 | sudo -n tee /proc/irq/111/smp_affinity >/dev/null; (cd "$LAB" && setglamor null && settimersites off && setximagestats off); echo "restored"; }
 trap restore EXIT INT TERM
 # prio PID: current RT priority of a task ("0" for SCHED_OTHER); want PID N:
 # set RR N unless already there. EP147 re-sets its own main thread (RR 1) some
@@ -52,6 +58,7 @@ arm() {
   label=$1; on=$2
   case $KNOB in noglamor|jointnoglamor) (cd "$LAB" && setglamor "$([ "$on" = on ] && echo off || echo null)");; esac
   [ "$KNOB" = timersites ] && (cd "$LAB" && settimersites "$on")
+  [ "$KNOB" = ximagestats ] && (cd "$LAB" && setximagestats "$on")
   apply "$on" & HOOK=$!
   sh "$CAPTURE" > "/tmp/arm-$label.log" 2>&1; kill $HOOK 2>/dev/null
   OUT=$(cat /tmp/last-capture-dir); echo "=== arm $label knob=$KNOB on=$on"

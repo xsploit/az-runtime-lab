@@ -159,6 +159,14 @@ if os.environ.get('XIMAGE_FAST24'):
  if not os.environ.get('OFFLINE_MIDI'):raise ValueError('XIMAGE_FAST24 requires offline lab launcher')
  if not (base/'shims/ximage-fast24.so').is_file():raise ValueError('Build ximage-fast24.so first')
  args=[a+':/lab-shims/ximage-fast24.so' if a.startswith('LD_PRELOAD=') else a for a in args]
+if os.environ.get('LAB_XIMAGE_STATS'):
+ # Measurement only: ximage-stats.so goes FIRST in LD_PRELOAD so its timing
+ # covers the whole chain (fast24 -> present -> libX11). The log lives in the
+ # sandbox's /tmp, i.e. state/tmp/ximage-stats.log on the host.
+ if os.environ['LAB_XIMAGE_STATS']!='1' or not os.environ.get('OFFLINE_MIDI'):raise ValueError('LAB_XIMAGE_STATS=1 requires the offline lab preload')
+ if not (base/'shims/ximage-stats.so').is_file():raise ValueError('Build shims/ximage-stats.so first')
+ args=[a.replace('LD_PRELOAD=','LD_PRELOAD=/lab-shims/ximage-stats.so:',1) if a.startswith('LD_PRELOAD=') else a for a in args]
+ args[-1:-1]=['-E','LAB_XIMAGE_STATS=/tmp/ximage-stats.log']
 if os.environ.get('LAB_XIMAGE_PRESENT'):
  if os.environ['LAB_XIMAGE_PRESENT'] != '1' or os.environ.get('XIMAGE_FAST24') != '1' or not os.environ.get('OFFLINE_MIDI'):
   raise ValueError('LAB_XIMAGE_PRESENT=1 requires XIMAGE_FAST24=1 and offline lab preload')

@@ -34,6 +34,8 @@ def load_config(path):
     # presentation path). Unverified; default None keeps Xwayland's default.
     c.setdefault('xwayland_glamor',None)
     if c['xwayland_glamor'] not in (None,'gl','es','off'):raise ValueError("xwayland_glamor must be 'gl', 'es', 'off' or null")
+    c.setdefault('ximage_stats',False)
+    if not isinstance(c['ximage_stats'],bool):raise ValueError('ximage_stats must be true or false')
     c.setdefault('timer_sites',False)
     if not isinstance(c['timer_sites'],bool):raise ValueError('timer_sites must be true or false')
     c.setdefault('external_display',None)
@@ -100,6 +102,7 @@ def main():
     fifo=state/'mixed-output.raw'
     if not fifo.exists():os.mkfifo(fifo,0o600)
     if not stat.S_ISFIFO(fifo.stat().st_mode):raise ValueError('Mixed audio path must be a FIFO')
+    (state/'ximage-stats.log').unlink(missing_ok=True)  # one session per log
     # A launcher that died without unwinding leaves its patched executable (tens of
     # MiB) in the temp dir; enough of them fill a tmpfs and every later launch fails
     # with ENOSPC. With no player alive on this host every one of them is stale.
@@ -110,6 +113,7 @@ def main():
     if c['xwayland_glamor']:env['LAB_XWAYLAND_GLAMOR']=c['xwayland_glamor']
     if c['external_display']:env['LAB_EXTERNAL_DISPLAY']=c['external_display']
     if c['timer_sites']:env['LAB_AZ_TIMER_SITES']='1'
+    if c['ximage_stats']:env['LAB_XIMAGE_STATS']='1'
     # No inherited opt-in memory/tracing or competing control experiments.
     for key in ('LAB_AZ_PCM_TEMPLATE','LAB_MAIN_ALLOCATION_TRACE','NATIVE_NAVIGATION','NATIVE_ROUTING','RX_FEEDBACK','AUDIO_CAPTURE','PROFILE','TRACE'):
         env.pop(key,None)
@@ -174,6 +178,7 @@ def main():
         if c['xwayland_glamor']:library+=f', Xwayland -glamor {c["xwayland_glamor"]} (candidate)'
         if c['external_display']:library+=f', attached to X server {c["external_display"]} (experiment)'
         if c['timer_sites']:library+=', two extra 16 ms timer sites (candidate)'
+        if c['ximage_stats']:library+=', XPutImage statistics recorded (measurement)'
         leave='Ctrl+C' if not c['exit_hold'] else f'Ctrl+C, or hold all {len(c["exit_hold"])} mapped exit control(s) together for {c["exit_hold_seconds"]:g}s'
         print(f'AZ session running on {library}. Logs: {out}\n{leave} stops this session. FX tempo is manually set to {c["fx_bpm"]} BPM.',flush=True)
         while all(child.poll() is None for child in children):time.sleep(.5)
@@ -194,5 +199,6 @@ def main():
         for name in ('display-launch.log','mixer-stream.log','xvfb.log'):
             source=BASE/'xdjaz'/name
             if source.is_file():shutil.copy2(source,out/name)
+        if (state/'ximage-stats.log').is_file():shutil.copy2(state/'ximage-stats.log',out/'ximage-stats.log')
 
 if __name__=='__main__':main()
