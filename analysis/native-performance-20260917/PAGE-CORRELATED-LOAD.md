@@ -356,3 +356,51 @@ noted rather than interpreted.
 
 Everything restored: renderer RR 1, irq `3`, audio masks `3`, kiosk files, a
 normal bridge session left running.
+
+### Quantified: the gap is blocked time, not preemption
+
+Reconstructing the renderer's state through each worst window from its own
+switch-outs (`prev_pid`) and switch-ins (`next_pid`), which the filter
+recorded on both sides:
+
+| window | running | blocked (`S`/`D`) | runnable / preempted |
+|---|---|---|---|
+| arm B, renderer RR 12, 59.1 ms | 4.3 ms (7%) | **54.5 ms (92%)** | 0.2 ms (0%) |
+| control A2, renderer RR 1, 49.9 ms | 5.9 ms (12%) | **41.4 ms (83%)** | 2.5 ms (5%) |
+
+The earlier sections counted switch-*outs*, and by count the control arm was
+dominated by preemption (118 of 134). By *time* it is not: preemption cost
+2.5 ms of a 49.9 ms gap. The renderer spends 83–92% of the gap blocked, at
+either priority — which is why three scheduling changes to the renderer's
+side moved nothing. "Blocked" here runs from a `S`/`D` switch-out to the next
+switch-in and so includes wake-to-run latency; at RR 12 that latency is
+negligible and the figure is still 92%, so the waiting is real.
+
+### What is proven and what is not
+
+- **Proven:** the renderer blocks in `poll()` on a Unix *stream* socket and is
+  woken by that socket regaining write space or becoming readable.
+- **Circumstantial, not proven:** that the socket is the X connection to
+  Xwayland. Neither `ss` nor `lsof` is installed on the Pi and
+  `/proc/net/unix` names only bound endpoints, so the peer inode could not be
+  matched. The renderer's only external stream socket is the bind-mounted
+  `/tmp/.X11-unix/X0` (its mixer control socket is datagram), which is why it
+  is the leading explanation. To prove it: install `iproute2` (`ss -xe`) or
+  `lsof`, or attribute the blocking `poll`/`write` to an fd with `strace -f
+  -e trace=poll,write,writev -p MAIN` for a few seconds across a load, then
+  `readlink /proc/MAIN/fd/N`.
+- **Not recorded:** Xwayland's own scheduling. The capture filtered
+  `sched_switch` to `prev_pid==MAIN || next_pid==MAIN`; `-a` does not lift
+  that filter, so Xwayland's switches appear only when the renderer was the
+  other party. A joint capture needs the filter widened to both PIDs.
+
+### Next experiment
+
+1. Prove the peer (above), and in the same capture widen the `sched_switch`
+   filter to the renderer **and** Xwayland so Xwayland's blocked stacks and
+   wakers are available for the same window.
+2. **Schedule the renderer and Xwayland together** — same RR priority above
+   `PageFiller0`, or both given CPU 3 — as one A/B/A with this harness. If the
+   renderer's blocked share drops, the X server was the starved link.
+3. Bare Xorg stays a **separate** experiment (audit item 1).
+Keep the steady-playback build and all scheduling defaults as they are now.
