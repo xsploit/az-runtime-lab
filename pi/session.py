@@ -106,6 +106,15 @@ def main():
     if not fifo.exists():os.mkfifo(fifo,0o600)
     if not stat.S_ISFIFO(fifo.stat().st_mode):raise ValueError('Mixed audio path must be a FIFO')
     (state/'ximage-stats.log').unlink(missing_ok=True)  # one session per log
+    # AZ's own Wi-Fi is meaningless on the Pi (no mlan0; the host owns the radio)
+    # and, once enabled from the player's settings screen, every session spins
+    # wpa_cli from the WifiSetting thread at ~180 forks/s (+12 %core). Keep it off.
+    wifi=Path(c['state'])/'settings/wifi.json'
+    if wifi.is_file():
+        try:w=json.loads(wifi.read_text())
+        except ValueError:w=None
+        if isinstance(w,dict) and str(w.get('start','false')).lower()!='false':
+            w['start']='false';wifi.write_text(json.dumps(w,indent=4));print('AZ Wi-Fi setting was on; turned off for this host',flush=True)
     # A launcher that died without unwinding leaves its patched executable (tens of
     # MiB) in the temp dir; enough of them fill a tmpfs and every later launch fails
     # with ENOSPC. With no player alive on this host every one of them is stale.
