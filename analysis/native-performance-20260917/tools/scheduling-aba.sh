@@ -23,16 +23,21 @@ EOF
 }
 restore() { for f in pflx-mode-menu pflx-az-session start-pflx-kiosk; do sudo -n install -m 0755 "$B/$f" "/usr/local/bin/$f"; done; echo 3 | sudo -n tee /proc/irq/111/smp_affinity >/dev/null; (cd "$LAB" && setglamor null); echo "restored"; }
 trap restore EXIT INT TERM
-apply() {  # $1 = on|off ; applied to fresh processes as they appear
-  on=$1; seen=""; end=$(( $(date +%s) + 200 ))
+# prio PID: current RT priority of a task ("0" for SCHED_OTHER); want PID N:
+# set RR N unless already there. EP147 re-sets its own main thread (RR 1) some
+# time after start, so a one-shot chrt can be overwritten: re-assert every poll.
+prio() { chrt -p "$1" 2>/dev/null | tail -1 | awk '{print $NF}'; }
+want() { [ "$(prio "$1")" = "$2" ] || sudo -n chrt -r -p "$2" "$1" >/dev/null 2>&1; }
+apply() {  # $1 = on|off ; applied (and kept applied) while the arm runs
+  on=$1; seen=""; end=$(( $(date +%s) + 900 ))
   while [ $(date +%s) -lt $end ]; do
     case $KNOB in
       irq) [ "$on" = on ] && echo 8 | sudo -n tee /proc/irq/111/smp_affinity >/dev/null || echo 3 | sudo -n tee /proc/irq/111/smp_affinity >/dev/null; sleep 5; continue;;
       audio) pids=$(pgrep -x aplay; pgrep -x mix-stream); mask=$([ "$on" = on ] && echo 8 || echo 3)
              for p in $pids; do case " $seen " in *" $p "*) ;; *) sudo -n taskset -p $mask $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
-      renderer) for p in $(pgrep -x EP147); do case " $seen " in *" $p "*) ;; *) [ "$on" = on ] && sudo -n chrt -r -p 12 $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
-      joint) for p in $(pgrep -x EP147) $(pgrep -n -x Xwayland); do case " $seen " in *" $p "*) ;; *) [ "$on" = on ] && sudo -n chrt -r -p 12 $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
-      jointnoglamor) for p in $(pgrep -x EP147) $(pgrep -n -x Xwayland); do case " $seen " in *" $p "*) ;; *) sudo -n chrt -r -p 12 $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
+      renderer) [ "$on" = on ] && for p in $(pgrep -x EP147); do want $p 12; done;;
+      joint) [ "$on" = on ] && for p in $(pgrep -x EP147) $(pgrep -n -x Xwayland); do want $p 12; done;;
+      jointnoglamor) for p in $(pgrep -x EP147) $(pgrep -n -x Xwayland); do want $p 12; done;;
     esac; sleep 0.5
   done
 }
