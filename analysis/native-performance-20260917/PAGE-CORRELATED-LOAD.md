@@ -989,7 +989,8 @@ libX11, rectangle, bytes) recorded a whole six-load session under Xwayland
 at default priorities (arm B of `scheduling-aba.sh ximagestats`; the
 session directory `session-20260919-153201` holds `ximage-stats.log`,
 32736 calls over 197 s; capture `multi-load-20260919T153154Z`). Its own
-cost: arm B 7 intervals >25 ms against A1 6 — no obvious perturbation.
+cost: arm B 7 intervals >25 ms against A1 6 and A2 11 — no obvious
+perturbation (which is not proof of none).
 
 | window | calls | bytes | time inside XPutImage | largest single call |
 |--------|-------|-------|---|---|
