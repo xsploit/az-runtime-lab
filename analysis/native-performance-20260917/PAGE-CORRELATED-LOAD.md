@@ -575,3 +575,67 @@ unrecorded and its priority unprinted, so **this run does not yet prove
 whether a prioritised X server still fails to drain**. Harness fixed: the
 relaunch now waits for the old Xwayland to exit, the filter and hook use the
 newest PID, and the arm prints the live PID's priority.
+
+## Joint A/B/A, third run, 2026-09-19 — verified, and the chain closes
+
+The stale-Xwayland fault fixed: each arm waits for the previous session's X
+server to exit, uses the newest PID for both the priority hook and the sched
+filter, and prints the live PID's priority. Arm B: renderer RR 12, Xwayland
+pid 26134 RR 12, one Xwayland alive, same PID in the filter.
+
+| Arm | worst post-LOAD gap | >25 ms | >40 ms | renderer running / blocked / preempted | Xwayland switch-outs in the gap |
+|---|---|---|---|---|---|
+| A1 | 45.8 ms (+0.817 s) | 7 | 1 | 13% / 81% / 7% | **279, all `R`/`R+`** — to `PageFiller0` 130, `FileDataCache` 37, `TrackFileCache` 25, `irq/111` 19, `BufferingSched` 15 |
+| B | 36.0 ms (+0.585 s) | **2** | 0 | 17% / 82% / 1% | **42: `R`/`R+` 25, `S` 10, `D` 7** — to `irq/111` 9, `SendManager`, `sway`, `HuiProcessor` |
+| A2 | 40.2 ms (+0.587 s) | 5 | 1 | 2% / 98% / 0% | **147, all `R`/`R+`** — to `PageFiller0` 54, `FileDataCache` 23, `TrackFileCache` 16, `irq/111` 10 |
+
+Three joint runs now agree: prioritising the pair removes the secondary
+cluster every time (4→1→4, 6→1→7, 7→2→5) and leaves the primary gap inside
+the run-to-run spread.
+
+### What the X server is doing once it is no longer starved
+
+At default priority Xwayland is runnable-but-preempted for the entire gap by
+the firmware's realtime load threads — the scheduling hop, confirmed with the
+live PID. At RR 12 those preemptors are gone and its remaining waits are:
+
+| Xwayland blocked stack (arm B gap) | n |
+|---|---|
+| `do_epoll_wait` (idle, waiting for a client/compositor event) | 9 `S` |
+| **`usleep_range ← v3d_mmu_flush_all_locked ← v3d_mmu_insert_ptes ← v3d_bo_create_finish ← v3d_create_bo_ioctl`** | 3 `D` |
+| `rt_spin_lock` inside `do_epoll_wait` | 2 `D` |
+| `dma_fence_default_wait ← drm_gem_dma_resv_wait ← v3d_wait_bo_ioctl` | 1 `S` |
+| `rt_spin_lock ← folio_lruvec_lock_irqsave ← folio_add_lru` (page allocation) | 1 `D` |
+
+Its wakers in the gap: **EP147 6×** via `sock_def_readable ← unix_stream_sendmsg`
+(the renderer's requests arriving), sway 4×, `irq/163-v3d_core` 1× (a GPU job
+completing), timers. And the renderer's wakers: **Xwayland 6× via
+`unix_write_space ← sock_wfree`** — the same socket, the same backpressure.
+
+The V3D buffer-object creation is **load-specific**: binning Xwayland's
+blocked switch-outs by second relative to LOAD, `v3d_create_bo_ioctl` appears
+5 times in the [0,1) s bin and nowhere else in the 60 s; GPU fence waits show
+5 in that bin, 3 at PLAY (+7 s), and 1–2 scattered. The page change makes the
+X server allocate fresh GPU buffers (glamor pixmaps) and sleep on the V3D MMU
+flush while doing it.
+
+### The chain, with evidence at every link
+
+renderer `poll()` for write space → its X socket → Xwayland, which at default
+priority is **preempted by `PageFiller0`/`FileDataCache`/`TrackFileCache`**
+(scheduling, one hop away) and, once prioritised, is **allocating V3D GPU
+buffers and waiting on GPU fences** for the new page. The stock device has
+neither hop: bare Xorg with EXA on the display, no compositor, no GL.
+
+### What follows
+
+- Joint priority is a real partial lever (secondary cluster) with a known
+  trade-off (Xwayland at RR 12 competes with audio processes); it stays
+  unapplied pending a touch-latency and long-session check.
+- The primary residual is the X server's GPU buffer path, not CPU. The
+  experiment that targets it is an X server without glamor/V3D on the
+  presentation path: bare Xorg (`modesetting`, or `fbdev`-class accel off) —
+  requires packages the user has not approved — or, if this Xwayland build
+  exposes a glamor-off switch, that first, since it needs no packages.
+- Three `D` waits in `folio_add_lru`/rtlock are page-allocation contention on
+  the PREEMPT_RT kernel; noted, not pursued.
