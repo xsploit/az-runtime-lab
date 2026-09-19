@@ -195,3 +195,52 @@ intervals had no page sample and are excluded; one run, no repeats; listening
 not assessed. `next_comm` attribution counts who ran on the same CPU after the
 renderer was switched out, which is direct for `R`/`R+` preemption but says
 nothing about the 15 wakeups or the `D` states.
+
+## One-knob A/B/A, 2026-09-18: irq 111 off the renderer's cores
+
+Only change between arms: `/proc/irq/111/smp_affinity` = `3` (CPUs 0–1, the
+PiFLX default) versus `8` (CPU 3). Everything else as the load-spanning run
+above: fresh launch per arm, the same two tracks verified playing on the
+WAVEFORM page (44 %core, one kiosk shell, frame checked), `LOAD deck 1` at
+~12 s with deck 2 playing, `share_ipc=false`. Affinity was restored to `3` on
+every exit path and confirmed afterwards. Per-CPU interrupt counters prove
+the move took effect: ~920k hits on CPU 0 in the control arms, ~907k on CPU 3
+and **zero** on CPU 0 in arm B.
+
+| Arm | irq 111 on | worst post-LOAD WAVEFORM gap | >25 ms | >40 ms | renderer preempted by irq/111 in the 1.5 s after LOAD | underruns |
+|---|---|---|---|---|---|---|
+| A1 | CPUs 0–1 | **72.0 ms** (+0.555 s) | 3 | 1 | 564× | 0 |
+| B | CPU 3 | **42.4 ms** (+0.531 s) | 2 | 1 | **0×** | 0 |
+| A2 | CPUs 0–1 | **51.1 ms** (+0.553 s) | 3 | 1 | 455× | 0 |
+| (earlier run) | CPUs 0–1 | 53.7 ms (+0.582 s) | 3 | 1 | 38× in the 54 ms gap | 0 |
+
+Mechanism confirmed: with the IRQ on CPU 3 the touchscreen thread never
+preempts the renderer again, and the largest post-load gap fell below the
+whole control range (51–72 ms → 42 ms) with one fewer interval over 25 ms.
+Temperatures 59–60 °C throughout.
+
+What it does **not** do: the dominant preemptor in every arm is the
+firmware's own `PageFiller0` (RR 11; 660–777 switch-ins during the 1.5 s
+after LOAD), followed by `Xwayland`, `BufferingSched` (RR 44) and `JUCE
+Timer` (RR 33); in arm B `mix-stream` (ours, RR 8) moved up the list. Those
+share the renderer's two cores and outrank its RR 1, so the ~40 ms residue
+remains. The knob removes one contributor; it does not fix the load.
+
+### Verdict
+
+Direction consistent on every metric, magnitude ~10–30 ms off the worst gap,
+**one B trial** against a control spread of 51–72 ms. That is a promising
+candidate, not repeated-trial proof, and is **not applied**: the affinity is
+back to `3`. Before promoting: B/A/B repeats with the same harness, a check
+that touch input latency is unaffected with the IRQ on CPU 3, and a look at
+whether `pflx-tune`/`BACKGROUND_CPUS=0,1` should own this setting so it
+survives reboot and applies to BiteDJ consistently.
+
+Next candidate, separate experiment: relieve the renderer of `PageFiller0`
+and our RT audio processes — either widen the renderer's mask to include CPU 3
+or move `mix-stream`/`aplay` off CPUs 0–1 — one knob at a time, with recovery.
+Firmware thread priorities stay untouched.
+
+Housekeeping: each session leaves a `/run/user/1000/az-display-clock-*` and a
+`/tmp/az-live-mixer-*` directory behind; the launcher should remove its own on
+exit. Dead-session leftovers were cleaned by hand after this run.
