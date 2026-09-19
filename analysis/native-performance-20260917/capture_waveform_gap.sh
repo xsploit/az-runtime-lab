@@ -45,8 +45,9 @@ sudo -n perf record -k CLOCK_MONOTONIC -F 997 -g --call-graph fp -t "$MAIN" -o "
 # 3. off-CPU: switches involving the main thread, with the stack it blocked in
 # EXTRA_PID (e.g. Xwayland) widens the switch/wakeup filters to a second task;
 # -a does not lift a filter, so without this only the renderer's switches exist.
+# EXTRA_PID may list several space-separated PIDs (e.g. Xwayland and sway).
 SW="prev_pid==$MAIN || next_pid==$MAIN"; WK="pid==$MAIN"
-if [ -n "${EXTRA_PID:-}" ]; then SW="$SW || prev_pid==$EXTRA_PID || next_pid==$EXTRA_PID"; WK="$WK || pid==$EXTRA_PID"; fi
+for xp in ${EXTRA_PID:-}; do SW="$SW || prev_pid==$xp || next_pid==$xp"; WK="$WK || pid==$xp"; done
 echo "extra_pid=${EXTRA_PID:-none}" >> "$OUT/meta.txt"
 sudo -n perf record -k CLOCK_MONOTONIC -a -g -e sched:sched_switch --filter "$SW" \
   -e sched:sched_wakeup --filter "$WK" -e block:block_rq_issue -o "$OUT/sched.data" -- sleep "$SECS" >"$OUT/perf-sched.log" 2>&1 & S=$!

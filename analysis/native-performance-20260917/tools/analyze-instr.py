@@ -12,7 +12,12 @@ ev=sorted([e for e in json.loads((d/'events.json').read_text()) if 'kind' in e],
 cmds=[json.loads(l) for l in (d/'commands.json').read_text().splitlines() if l.strip()]
 load=next(c['at'] for c in cmds if c['command'].startswith('load'))
 meta=(d/'meta.txt').read_text();main=re.search(r'main=(\d+)',meta).group(1)
-xp=re.search(r'extra_pid=(\d+)',meta);xp=xp.group(1) if xp else None
+xps=re.search(r'extra_pid=([\d ]+)',meta);xps=xps.group(1).split() if xps else []
+xp=xps[0] if xps else None
+# comm for each extra pid, so the report names them
+names={}
+if (d/'sockets.txt').exists():
+    for m in re.finditer(r'(\w+)=(\d+)',(d/'sockets.txt').read_text()):names[m.group(2)]=m.group(1)
 print("sockets:",(d/'sockets.txt').read_text().strip() if (d/'sockets.txt').exists() else '(none)')
 times=[start+s['local_ms']/1000 for s in dmg['samples']]
 def kinds(a,b):return {e['kind'] for e in ev[bisect.bisect_left(ev_t,a):bisect.bisect_right(ev_t,b)]}
@@ -51,7 +56,7 @@ if (d/'strace.txt').exists():
             e=re.search(r'fd=%s, events=([A-Z|]+)'%xfd,m.group(3));pc[e.group(1) if e else '?']+=1
             r=re.search(r'fd=%s, revents=([A-Z|]+)'%xfd,m.group(4));rc[r.group(1) if r else 'none']+=1
         print(f"--- renderer poll() on fd {xfd}, whole trace: requested",pc.most_common(4),"revents",rc.most_common(4))
-if xp:
+for xp in xps:
     tr={};outs=[];ins=0
     for line in open(d/'sched.txt',errors='ignore'):
         m=re.match(r'^\s*(\d+\.\d+):\s+(\S+):\s*(.*)$',line)
@@ -61,7 +66,7 @@ if xp:
             if f'prev_pid={xp} ' in m.group(3):outs.append(m.group(3))
             if f'next_pid={xp} ' in m.group(3):ins+=1
     st=Counter(re.search(r'prev_state=(\S+)',o).group(1) for o in outs);nxt=Counter(re.search(r'next_comm=(.*?) next_pid',o).group(1) for o in outs)
-    print(f"--- Xwayland ({xp}) in the gap: switch-outs={len(outs)} states={dict(st)} switch-ins={ins}; gave CPU to {nxt.most_common(5)}")
+    print(f"--- {names.get(xp,'extra')} ({xp}) in the gap: switch-outs={len(outs)} states={dict(st)} switch-ins={ins}; gave CPU to {nxt.most_common(5)}")
     st2=defaultdict(list);cur=None
     for line in open(d/'sched-stacks.txt',errors='ignore'):
         m=re.match(r'^\s*(\d+\.\d+):\s+(\S+):',line)
@@ -72,4 +77,4 @@ if xp:
         if 'sched_switch' in k[1] and f'prev_pid={xp} ' in v and re.search(r'prev_state=[SD]',v):
             fr=[(f.split()+['?'])[1] for f in st2.get(k,[])[:14]];fr=[x for x in fr if not re.match(r'(__|_raw|schedule|preempt|el0|el1|ret_|finish_task|__switch)',x)]
             sc[' <- '.join(fr[:6])[:200]]+=1
-    print("  Xwayland blocked stacks:",sc.most_common(4))
+    print(f"  {names.get(xp,'extra')} blocked stacks:",sc.most_common(4))
