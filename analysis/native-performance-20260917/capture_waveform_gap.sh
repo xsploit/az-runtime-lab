@@ -76,6 +76,6 @@ PY
 wait $D $C $S $E
 [ "${SKIP_PERF:-0}" = 1 ] && { echo "done: damage+page only (SKIP_PERF)"; exit 0; }
 sudo -n chown "$(id -u)" "$OUT"/*.data 2>/dev/null
-sudo -n perf script -F time,event,ip,sym,dso -i "$OUT/cpu.data" > "$OUT/cpu.txt" 2>/dev/null
-sudo -n perf script -F time,event,trace -i "$OUT/sched.data" > "$OUT/sched.txt" 2>/dev/null
+sudo -n perf script -f -F time,event,ip,sym,dso -i "$OUT/cpu.data" > "$OUT/cpu.txt" 2>/dev/null
+sudo -n perf script -f -F time,event,trace -i "$OUT/sched.data" > "$OUT/sched.txt" 2>/dev/null
 echo "done: $(wc -l < "$OUT/cpu.txt") cpu lines, $(wc -l < "$OUT/sched.txt") sched lines"
