@@ -2,6 +2,11 @@
   "firmware_sha256": "60bcbd8876116bf09f0d8f747f95d7c7d3081ebd39d6fe14d56005a22f7f3b09",
   "native_ranges": [
     [
+      "direct_delay_execute",
+      746500,
+      747704
+    ],
+    [
       "direct_delay_init",
       745832,
       745856
@@ -133,6 +138,30 @@
     ]
   ],
   "relocations": [
+    {
+      "site": "0xb6504",
+      "replacement": "bl ceil"
+    },
+    {
+      "site": "0xb6710",
+      "replacement": "bl floor"
+    },
+    {
+      "site": "0xb675c",
+      "replacement": "bl native_quantize_check"
+    },
+    {
+      "site": "0xb6790",
+      "replacement": "b native_time_update"
+    },
+    {
+      "site": "0xb6810",
+      "replacement": "bl ceil"
+    },
+    {
+      "site": "0xb6880",
+      "replacement": "bl floor"
+    },
     {
       "site": "0x8a5e0",
       "replacement": "bl native_switch_beat"
@@ -429,49 +458,51 @@
     "-static",
     "-mfpu=neon",
     "-mfloat-abi=softfp",
-    "beat_pair_switch_compare.c",
+    "beat_pair_audio_compare.c",
     "echo_quantize.c",
     "echo_audio.c",
     "echo_control.c",
+    "delay_audio.c",
     "delay_quantize.c",
     "delay_control.c",
     "beat-port/beat_pair.c",
     "beat-port/beat_echo.c",
     "beat-port/beat_delay.c",
     "echo-control-native.S",
-    "beat-pair-switch-native.S",
+    "beat-dual-audio-native.S",
     "-lm",
     "-o",
-    "beat-pair-switch-arm"
+    "beat-pair-audio-arm"
   ],
-  "returncode": 0,
-  "stdout": "[\n{\"from\":5,\"to\":1,\"time_ms\":777,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":778,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":779,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":780,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":781,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":782,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":783,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":784,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":785,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":4000,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":787,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":788,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":789,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":790,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":791,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":792,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":793,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":794,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":795,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":796,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":797,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":798,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":799,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":800,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":801,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":802,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":3773,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":804,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":805,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":3773,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":807,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":808,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":809,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":810,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":811,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":812,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":813,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":814,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":815,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":816,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":817,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":818,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":819,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":820,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":821,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":822,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":3883,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":824,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":825,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":4000,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":827,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":828,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":829,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":830,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":831,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":832,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":833,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":834,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":835,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":836,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":837,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":838,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":839,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":840,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":841,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":842,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":843,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":844,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":845,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":846,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":847,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":848,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":849,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":850,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":851,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":852,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":853,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":854,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":855,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":856,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":857,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":858,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":859,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":860,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":861,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":862,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":4000,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":864,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":865,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":3773,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":867,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":868,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":869,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":870,\"remembered\":0,\"phase\":2},\n{\"from\":5,\"to\":1,\"time_ms\":871,\"remembered\":0,\"phase\":2},\n{\"from\":1,\"to\":5,\"time_ms\":872,\"remembered\":0,\"phase\":2}\n]\n",
-  "stderr": "PASS 96 direct native switches\ncompared_words=17184 mismatches=0\n",
-  "scope": "Actual direct native switch callbacks versus combined candidate manager; complete modeled manager/Delay/Echo/quantization state. No audio-loop transition comparison.",
+  "returncode": 1,
+  "stdout": "[\n{\"block\":2,\"from\":0,\"to\":1,\"phase\":2,\"echo_time\":20,\"delay_time\":20},\n{\"block\":602,\"from\":1,\"to\":5,\"phase\":2,\"echo_time\":20,\"delay_time\":20},\n{\"block\":1202,\"from\":5,\"to\":1,\"phase\":2,\"echo_time\":500,\"delay_time\":20}",
+  "stderr": "audio-delay scenario1802 block0 word2 00000000!=00009600\naudio-delay scenario1802 block0 word5 b7e5f1d0!=bbac755b\naudio-delay scenario1802 block0 word6 b7e5f1d0!=bbac755b\naudio-delay scenario1802 block0 word9 00000000!=3f800000\naudio-delay scenario1802 block0 word10 00000000!=3f800000\naudio-delay scenario1802 block0 word15 37219782!=3abad747\naudio-delay scenario1802 block0 word16 37219782!=3abad747\nFIRST_DIVERGENCE block=1802 mismatches=13\n",
+  "scope": "Native outer operate with actual Echo and Delay audio loops, independent rings, controls and quantize. Per-block differential reconstruction seeded from native state; PCM, modeled state and full rings checked. Stops at first divergent block; not persistent host trajectory proof.",
   "source_hashes": {
-    "beat_pair_switch_compare.c": "2473faa3194ff9476e747bdeac2152538f570b442d8f09b128dd3339ba4f5b94",
+    "beat_pair_audio_compare.c": "f2ad4e8e713298702feea3e87db42fa8a17a9e84ad8e6ff07e74b68b3dc091c5",
     "echo_quantize.c": "9f926af7e62ea26fdd83c5b9560a344a46ec627c353e3cfae387a28d44806f7f",
     "echo_audio.c": "9b7a7809acdf13758667e020bc88f8f78977e3478b19301458ac3ef66d5d5caa",
     "echo_control.c": "c35ffe73ea9617547d19a5a43a41d5706cfdfad618be119bef56ef427397cee6",
+    "delay_audio.c": "702941cd1f31e0f5a863bd4a000dabf04b03f303997699c55c3a12dcc18811c9",
     "delay_quantize.c": "45747772c32737c45320d4f32a10a8fe146a26c59e329fbff814bb3173990dcc",
     "delay_control.c": "1f01fc2b16598261cb5a60c7f70caee43cf86982e1f602d547547beb53bb74c5",
-    "beat-port/beat_pair.c": "3851ac890fbd0d5246fce08b0e9ee03c821a175f932948cfb6b03105c7c24e69",
+    "beat-port/beat_pair.c": "3e329038163cc2a52c3f37c1c3c3b523d1fd42466fefb5e5006ea5e4dcb04b02",
     "beat-port/beat_echo.c": "7b86e38dab56fb74e31f3e0e4d51cdde370a94182a048edbf16475c14b9aac3d",
     "beat-port/beat_delay.c": "d8fafe4fd50f6b98aa46a2b577352f50f4da654eb36f42bd478822fc4264f191",
-    "run_beat_pair_switch.py": "c1630f440af5de740c7d14c2d54bf1cc5ba4558e897017633368a867d910d9a9",
+    "run_beat_pair_audio.py": "2f5467959d3f28c13001652430d24402e5689772b7c6ce993aed5ede025f95bf",
     "beat_manager_probe.c": "93f11ffd30179a171de7caf9cc369ae081dd26021342ed00939f05679f88c907",
     "echo_quantize_compare.c": "f4c67e362e5dee4ff8c25d4163fc490eb68928764e55653ba7ce4ceda36464ec",
     "echo_audio_compare.c": "96bb4fa80fa1b3cb6e94ecc123854096405ead9ed7e57e34b2c96a05fb3d9953",
     "echo_quantize.h": "f6d2265737a7a7b5ad7ffdc4974aac6ef1db981f8f3fdf134595f61950128628",
     "echo_audio.h": "22272c2243ac600260f46a16e4aa6474641a2aad13cde184a1e6b08060cf4576",
     "echo_control.h": "24bffcfcc1df3b0e8afd302c368fc1854872292e08fa7a47192583d2c5554ec0",
-    "beat-pair-switch-native.S": "0edbd36acb70e1de3b6229cf88803c6523d8ff0c2d535e04b37c6ca4c5161426",
+    "beat-dual-audio-native.S": "bbc9bbfeb0684b1d0e47cc939eb191d9c3d0617d648ea83abef3a53449e5aa3e",
     "beat-port/beat_pair.h": "21fd0aef1e504819ce67f5be58fd5b93c970523932459166be28d98f0c919659",
     "beat-port/beat_echo.h": "d892ef0dece65465a685720af111e01fb28de06f99eff8cb94f20905900729ca",
     "beat-port/beat_delay.h": "c4a78819729a8945753c73ff7ae5f02ccdd28fa4c9b4bd5bda0ba59eb74d6711",
-    "delay_quantize.h": "7d040146cbe0e6c6a7ab946fdc637bc47d5fba721ed7c6de05d8b5966107bc03",
-    "delay_control.h": "d0d973327053d78a48a224e31eb7c00f9bee01622aa26253fd01460f750c7771",
     "delay_audio.h": "d17af92925962d4360700760d2a026e412dd0d829eabad8ac86f6e59bac1b09b",
+    "delay_control.h": "d0d973327053d78a48a224e31eb7c00f9bee01622aa26253fd01460f750c7771",
+    "delay_quantize.h": "7d040146cbe0e6c6a7ab946fdc637bc47d5fba721ed7c6de05d8b5966107bc03",
     "beat_manager_echo.h": "0af2abf20ef2bcd282066a9da4954857d0ca469b929a0fcf0d8a33a4a2ee4119"
   }
 }
