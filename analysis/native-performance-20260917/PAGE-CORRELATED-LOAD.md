@@ -284,3 +284,42 @@ Not attempted today.
 
 Everything was restored: irq `3`, audio masks `3`, kiosk files, a normal
 bridge session left running.
+
+## One-knob A/B/A, 2026-09-18: renderer raised above `PageFiller0`
+
+Only change: the EP147 main thread set to **RR 12** (arm B) versus the
+firmware's RR 1, via `chrt` on the live thread right after launch; `PageFiller0`
+is RR 11, so in arm B the renderer outranks it. Audio untouched (JUCE ALSA is
+RR 89 on CPU 2). Same harness and gates; priority verified per arm and back to
+1 afterwards.
+
+| Arm | renderer | worst post-LOAD WAVEFORM gap | >25 ms | >40 ms | `PageFiller0` preempting renderer, 1.5 s after LOAD | underruns |
+|---|---|---|---|---|---|---|
+| A1 | RR 1 | 39.0 ms (+0.553 s) | 2 | 0 | 627× | **1** |
+| B | **RR 12** | **59.1 ms** (+0.514 s) | 5 | 1 | **0×** | 0 |
+| A2 | RR 1 | 49.9 ms (+0.561 s) | 3 | 2 | 606× | 0 |
+
+**The diagnosis was half right.** Outranking `PageFiller0` removes it from the
+renderer's preemptors completely — and the gap does not shrink. In arm B's
+worst window the renderer's switch-outs shifted from `R`/`R+` toward `S` and
+`D` (10 `S`, 1 `D` of 46): it was no longer being starved, it was **waiting**.
+What ran after it was `Xwayland` (RT 1, which cannot preempt RR 12), i.e. the
+renderer *yielded*. So during the first ~0.55 s after LOAD the renderer
+synchronously depends on the load work — a lock, condition or queue owned by
+the loader — and giving it CPU priority only makes it wait with more priority.
+
+Scheduling is therefore **not the root cause** of the load hitch. Three
+scheduling knobs were tested individually today (irq 111 affinity, our audio
+processes' affinity, renderer priority); each removed its target from the
+preemptor list as intended, and none moved the worst gap out of the 39–72 ms
+range seen across all ten load-span arms. The dependency sits inside the
+firmware's load path and is a reversal question: what does the renderer block
+on between LOAD and ~+0.6 s, and can the page be presented before that work
+completes.
+
+Arm A1 logged the only `aplay` underrun of the day, at the firmware's default
+priority. Single event, ~40 s of playback each side, cause not established;
+noted rather than interpreted.
+
+Everything restored: renderer RR 1, irq `3`, audio masks `3`, kiosk files, a
+normal bridge session left running.
