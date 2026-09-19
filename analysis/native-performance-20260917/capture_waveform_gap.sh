@@ -20,7 +20,8 @@ fi
 PP=$LAB:$LAB/analysis:$LAB/mixer
 mkdir -p "$OUT"; cd "$LAB"
 P=$(pgrep -x EP147) || { echo "no EP147"; exit 1; }
-[ "$(ps -eo args | grep -c '[/]bin/sh /usr/local/bin/start-pflx-kiosk')" = 1 ] || { echo "kiosk count != 1"; exit 1; }
+# NO_KIOSK=1: the session was started outside the kiosk loop (bare-Xorg arm).
+[ "${NO_KIOSK:-0}" = 1 ] || [ "$(ps -eo args | grep -c '[/]bin/sh /usr/local/bin/start-pflx-kiosk')" = 1 ] || { echo "kiosk count != 1"; exit 1; }
 MAIN=$(for t in /proc/$P/task/*; do [ "$(cat $t/comm)" = EP147 ] && echo ${t##*/}; done | head -1)
 kind=$(sudo -n env PYTHONPATH=$PP python3 -c "from az_live_view import LiveView;v=LiveView($P);print(v.sample()['kind']);v.close()" 2>/dev/null)
 [ "$kind" = waveform ] || { echo "page is '$kind', need waveform"; exit 1; }
