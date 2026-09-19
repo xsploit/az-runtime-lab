@@ -21,7 +21,16 @@ PATCHES = (
     (0x212f358, 0x52800022, 0x52800002, 'Upload fallback zero ticks'),
 )
 
-def prepare(source, file_cache_mib=None):
+# Two further JUCE Timer::startTimer(33) call sites (both branch straight to
+# startTimer at 0x239cda0), noted in KYLE-AZ-60FPS-REVIEW.md as changed to 16 ms
+# by an external mod. Ownership of the timer objects is not established; opt-in
+# only, to be A/B/A'd separately against the eight-patch baseline.
+EXTRA_TIMER_PATCHES = (
+    (0x24fac4c, 0x52800421, 0x52800201, 'Extra timer site A: startTimer 33 to 16 ms'),
+    (0x24f6b34, 0x52800421, 0x52800201, 'Extra timer site B: startTimer 33 to 16 ms'),
+)
+
+def prepare(source, file_cache_mib=None, extra_timer_sites=False):
     """Return (private temporary-directory owner, executable path, manifest)."""
     source = Path(source)
     data = bytearray(source.read_bytes())
@@ -35,7 +44,8 @@ def prepare(source, file_cache_mib=None):
     manifest = {'source_sha256': SOURCE_SHA256, 'patches': []}
     if file_cache_mib is not None and (type(file_cache_mib) is not int or file_cache_mib not in (32,64,100)):
         raise ValueError('File-cache experiment supports only32,64,100 MiB per cache')
-    for va, before, after, reason in PATCHES:
+    manifest['extra_timer_sites'] = bool(extra_timer_sites)
+    for va, before, after, reason in PATCHES + (EXTRA_TIMER_PATCHES if extra_timer_sites else ()):
         matches = [s for s in segments if s[0] == 1 and s[1] & 1 and s[3] <= va and va + 4 <= s[3] + s[5]]
         if len(matches) != 1:
             raise ValueError(f'Instruction {va:#x} is not uniquely mapped executable file content')

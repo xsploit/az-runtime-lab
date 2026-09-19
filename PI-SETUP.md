@@ -107,6 +107,7 @@ machine running AZ**. No username, Pi hostname or Windows mount is assumed.
 | `share_ipc` | Candidate: share the SysV IPC namespace so AZ can use MIT-SHM instead of packed-24 uploads. Default false; weakens sandbox isolation |
 | `xwayland_glamor` | Candidate: `"gl"`, `"es"` or `"off"` passes `-glamor` to Xwayland; `null` (default) leaves the server's own choice |
 | `external_display` | Experiment: `":N"` attaches to an X server that is already running (bare Xorg, no Wayland session needed) instead of spawning Xwayland; `null` (default) |
+| `timer_sites` | Candidate: also set the two extra JUCE timer call sites (KYLE-AZ-60FPS-REVIEW.md) from 33 to 16 ms; default false |
 
 Paths with spaces are passed as separate arguments. Do not use `~` or shell
 variables inside JSON; write their expanded absolute paths. Commas, colons,

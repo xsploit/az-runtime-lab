@@ -8,7 +8,7 @@
 # arm B (isolates the V3D path once X is no longer starved). Everything is
 # reverted on exit; arm rollback-watchdog.sh separately before running.
 set -u
-KNOB=${1:?irq|audio|renderer|joint|noglamor|jointnoglamor}; LAB=${AZ_LAB:-$HOME/az-native-lab}; B=$LAB/local/kiosk-swap-backup
+KNOB=${1:?irq|audio|renderer|joint|noglamor|jointnoglamor|timersites}; LAB=${AZ_LAB:-$HOME/az-native-lab}; B=$LAB/local/kiosk-swap-backup
 # CAPTURE selects the per-arm capture: load-span-capture.sh (one load, stacks)
 # or multi-load-capture.sh (LOADS loads, damage+page only; summarised per load).
 CAPTURE=${CAPTURE:-/tmp/load-span-capture.sh}
@@ -21,7 +21,13 @@ from pathlib import Path
 p=Path("local/session-library.json");c=json.loads(p.read_text());c["xwayland_glamor"]=(None if sys.argv[1]=="null" else sys.argv[1]);p.write_text(json.dumps(c,indent=2))
 EOF
 }
-restore() { for f in pflx-mode-menu pflx-az-session start-pflx-kiosk; do sudo -n install -m 0755 "$B/$f" "/usr/local/bin/$f"; done; echo 3 | sudo -n tee /proc/irq/111/smp_affinity >/dev/null; (cd "$LAB" && setglamor null); echo "restored"; }
+settimersites() { python3 - "$1" <<'EOF'
+import json,sys
+from pathlib import Path
+p=Path("local/session-library.json");c=json.loads(p.read_text());c["timer_sites"]=(sys.argv[1]=="on");p.write_text(json.dumps(c,indent=2))
+EOF
+}
+restore() { for f in pflx-mode-menu pflx-az-session start-pflx-kiosk; do sudo -n install -m 0755 "$B/$f" "/usr/local/bin/$f"; done; echo 3 | sudo -n tee /proc/irq/111/smp_affinity >/dev/null; (cd "$LAB" && setglamor null && settimersites off); echo "restored"; }
 trap restore EXIT INT TERM
 # prio PID: current RT priority of a task ("0" for SCHED_OTHER); want PID N:
 # set RR N unless already there. EP147 re-sets its own main thread (RR 1) some
@@ -44,9 +50,11 @@ apply() {  # $1 = on|off ; applied (and kept applied) while the arm runs
 arm() {
   label=$1; on=$2
   case $KNOB in noglamor|jointnoglamor) (cd "$LAB" && setglamor "$([ "$on" = on ] && echo off || echo null)");; esac
+  [ "$KNOB" = timersites ] && (cd "$LAB" && settimersites "$on")
   apply "$on" & HOOK=$!
   sh "$CAPTURE" > "/tmp/arm-$label.log" 2>&1; kill $HOOK 2>/dev/null
   OUT=$(cat /tmp/last-capture-dir); echo "=== arm $label knob=$KNOB on=$on"
+  echo "  overlay: $(python3 -c "import json,sys;m=json.load(open(sys.argv[1]));print('patches',len(m['patches']),'extra_timer_sites',m.get('extra_timer_sites'))" $(ls -t /tmp/az-scroll-*/manifest.json 2>/dev/null | head -1) 2>/dev/null)"
   XL=$(pgrep -n -x Xwayland); echo "  xwayland cmdline: $(tr '\0' ' ' < /proc/$XL/cmdline | grep -o -- '-glamor [a-z]*' || echo default)"; echo "  applied: renderer=$(chrt -p $(pgrep -x EP147) 2>/dev/null | tail -1 | awk '{print $NF}') xwayland(pid $XL)=$(chrt -p $XL 2>/dev/null | tail -1 | awk '{print $NF}') n_xwayland=$(pgrep -xc Xwayland) irq111=$(cat /proc/irq/111/smp_affinity) $(grep -o "sched filter extra: .*" /tmp/arm-$label.log)"
   grep -E "player=|before frame|after frame" "/tmp/arm-$label.log" | tr '\n' ' '; echo
   case $CAPTURE in *multi-load*) python3 "$LAB/analysis/attribute_multi_load.py" "$OUT";; *)

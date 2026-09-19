@@ -102,4 +102,10 @@ class ConfigTests(unittest.TestCase):
             self.assertEqual(session.load_config(self.config(root,external_display=':1'))['external_display'],':1')
             for bad in ('1','localhost:1',':one',True):
                 with self.assertRaises(ValueError,msg=str(bad)):session.load_config(self.config(root,external_display=bad))
+    def test_timer_sites_is_off_by_default_and_boolean(self):
+        with tempfile.TemporaryDirectory(prefix='AZ space ') as t:
+            root=Path(t)
+            self.assertFalse(session.load_config(self.config(root))['timer_sites'])
+            self.assertTrue(session.load_config(self.config(root,timer_sites=True))['timer_sites'])
+            with self.assertRaises(ValueError):session.load_config(self.config(root,timer_sites='yes'))
 if __name__=='__main__':unittest.main()

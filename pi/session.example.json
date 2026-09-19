@@ -12,5 +12,6 @@
   "exit_hold_seconds": 2,
   "share_ipc": false,
   "xwayland_glamor": null,
-  "external_display": null
+  "external_display": null,
+  "timer_sites": false
 }

@@ -80,7 +80,7 @@ if os.environ.get('LAB_AZ_SMOOTH_SCROLL'):
  if os.environ.get('LAB_VSYNC_HZ') != '59.24':
   raise ValueError('Smooth-scroll experiment requires LAB_VSYNC_HZ=59.24')
  from az_scroll_overlay import prepare
- scroll_overlay, scroll_executable, scroll_manifest = prepare(root/'home/root/pdj/EP147', file_cache_mib=int(os.environ['LAB_AZ_FILE_CACHE_MIB']) if os.environ.get('LAB_AZ_FILE_CACHE_MIB') else None)
+ scroll_overlay, scroll_executable, scroll_manifest = prepare(root/'home/root/pdj/EP147', file_cache_mib=int(os.environ['LAB_AZ_FILE_CACHE_MIB']) if os.environ.get('LAB_AZ_FILE_CACHE_MIB') else None, extra_timer_sites=os.environ.get('LAB_AZ_TIMER_SITES')=='1')
  print(json.dumps(dict(event='experimental_smooth_scroll', **scroll_manifest)), flush=True)
 rd,wr=os.pipe()
 # LAB_EXTERNAL_DISPLAY=:N attaches to an X server that is already running (the

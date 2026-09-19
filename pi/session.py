@@ -34,6 +34,8 @@ def load_config(path):
     # presentation path). Unverified; default None keeps Xwayland's default.
     c.setdefault('xwayland_glamor',None)
     if c['xwayland_glamor'] not in (None,'gl','es','off'):raise ValueError("xwayland_glamor must be 'gl', 'es', 'off' or null")
+    c.setdefault('timer_sites',False)
+    if not isinstance(c['timer_sites'],bool):raise ValueError('timer_sites must be true or false')
     c.setdefault('external_display',None)
     if c['external_display'] is not None and not re.fullmatch(r':\d+',str(c['external_display'])):raise ValueError("external_display must be ':N' (an already running X server, bare-Xorg experiment) or null")
     c.setdefault('exit_hold_seconds',2.)
@@ -107,6 +109,7 @@ def main():
     if c['share_ipc']:env['LAB_SHARE_IPC']='1'
     if c['xwayland_glamor']:env['LAB_XWAYLAND_GLAMOR']=c['xwayland_glamor']
     if c['external_display']:env['LAB_EXTERNAL_DISPLAY']=c['external_display']
+    if c['timer_sites']:env['LAB_AZ_TIMER_SITES']='1'
     # No inherited opt-in memory/tracing or competing control experiments.
     for key in ('LAB_AZ_PCM_TEMPLATE','LAB_MAIN_ALLOCATION_TRACE','NATIVE_NAVIGATION','NATIVE_ROUTING','RX_FEEDBACK','AUDIO_CAPTURE','PROFILE','TRACE'):
         env.pop(key,None)
@@ -170,6 +173,7 @@ def main():
         if c['share_ipc']:library+=', IPC namespace shared (candidate)'
         if c['xwayland_glamor']:library+=f', Xwayland -glamor {c["xwayland_glamor"]} (candidate)'
         if c['external_display']:library+=f', attached to X server {c["external_display"]} (experiment)'
+        if c['timer_sites']:library+=', two extra 16 ms timer sites (candidate)'
         leave='Ctrl+C' if not c['exit_hold'] else f'Ctrl+C, or hold all {len(c["exit_hold"])} mapped exit control(s) together for {c["exit_hold_seconds"]:g}s'
         print(f'AZ session running on {library}. Logs: {out}\n{leave} stops this session. FX tempo is manually set to {c["fx_bpm"]} BPM.',flush=True)
         while all(child.poll() is None for child in children):time.sleep(.5)
