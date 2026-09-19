@@ -907,29 +907,28 @@ look at what the load 5 track does with a faster timer.
 `tools/bare-xorg/xorg-trace-run.sh`: the six-load protocol on a fresh
 bare-Xorg session with perf attached (renderer on-CPU stacks at 997 Hz;
 sched switches and wakeups for the renderer main thread and Xorg; block
-I/O). Capture `local/multi-load-20260919T150535Z`. Perturbation check
-against the two uninstrumented Xorg arms: 7 intervals >25 ms across six
-loads (uninstrumented 6, 7), renderer 39 %core, load 3 47.7 ms and load 5
-42.4 ms, both at +0.52 s after LOAD — the same signature as untraced.
+I/O). Capture `local/multi-load-20260919T150535Z`. Against the two
+uninstrumented Xorg arms the traced arm looks alike — 7 intervals >25 ms
+across six loads (uninstrumented 6, 7), renderer 39 %core, load 3 47.7 ms
+and load 5 42.4 ms, both at +0.52 s after LOAD — which shows no obvious
+perturbation from recording, not that there was none.
 
-Inside the load 3 gap (47.7 ms), from the scheduler trace
-(`gap_window.py`, constant memory, reads only the window from `sched.data`):
+Inside the gaps, from the scheduler trace (`gap_window.py`, constant
+memory, reads only the window from `sched.data`), accounted as **time**,
+not switch counts — switch-outs are many but mostly short:
 
-| what the renderer main thread was doing | count |
-|---|---|
-| on CPU | 4 of 47 ms (4 samples) |
-| switched out **runnable** (preempted), next task PageFiller0 | 124 |
-| preempted, next task irq/111 (FIFO 50) | 49 |
-| preempted, next task BufferingSched | 31 |
-| preempted, next task mix-stream (RR 8) | 25 |
-| switched out sleeping/blocked (S 13, D 17), next task Xorg | 30 |
-| woken by Xorg | 49 |
-| Xorg context switches in the window | 392 |
-| block I/O issued | 0 |
+| gap | renderer main: running | runnable (preempted) | blocked (S) | X server: running | runnable (starved) | blocked |
+|-----|---|---|---|---|---|---|
+| load 3, 47.7 ms | 2.5 ms (5 %) | 2.2 ms (5 %) | **42.9 ms (90 %)** | 1.2 ms | **29.6 ms** | 16.8 ms |
+| load 5, 42.4 ms | 2.4 ms (6 %) | 0.8 ms (2 %) | **39.2 ms (92 %)** | 0.7 ms | **25.3 ms** | 16.5 ms |
 
-Load 5 (42.4 ms): 3 ms on CPU, 35 switch-outs, R/R+ 24 (SendManager,
-aplay, mix-stream, rcuc, irq/111), S/D 11, 3 wakeups by Xorg. No disk I/O
-in either gap (`read_bytes` 0, no `block_rq_issue`).
+The renderer spends nine tenths of the gap asleep waiting on the X server
+(49 wakeups by Xorg in the load 3 window); its own preemption is a few
+milliseconds. The X server, which runs as SCHED_OTHER, spends most of the
+gap **runnable but not running**: switched out for PageFiller0 (RR 11),
+FileDataCache and TrackFileCache (RR 1), PageFiller(BG), and the renderer
+itself. Xorg had 392 context switches in the window and did about 1 ms of
+work. No disk I/O in either gap (`read_bytes` 0, no `block_rq_issue`).
 
 What the renderer is inside when it blocks, from the on-CPU stacks resolved
 against the firmware rootfs libraries (`nm -D` on the rootfs `libX11` and
@@ -942,15 +941,21 @@ server drains it while both are being preempted by the firmware's own
 real-time threads (PageFiller0–3 at RR 11, HuiProcessor at FIFO 87, aplay
 RR 10, mix-stream RR 8, irq/111 FIFO 50; the renderer main thread is RR 1).
 
-So the spike is not an X-server *type* cost: bare Xorg removes the
-compositor hop and the GPU path (the CPU saving) but the same two
-ingredients remain — the renderer's own RT threads preempting both ends of
-the X connection, and a request burst the server has to process. That is
-why joint priority (renderer + X server at RR 12) is the lever that moved
-the six-load counts most, and why glamor-off and the timer sites did not.
-Track dependence (loads 3 and 5 every arm) is then most simply the size of
-the burst for those tracks (waveform/artwork content), which this trace
-did not measure: the next quantity to record is the number and byte volume
-of `XPutImage` requests in the 0.5 s after LOAD per track (the
-`ximage-present` shim is the place to count them), before any further
-patch is chosen.
+Read: at default priorities, on bare Xorg, the spike is the X server
+being starved by the firmware's own loading threads while the renderer
+waits on it. That is the mechanism behind the joint-priority result, and
+it points at a narrower knob than joint: raising only the X server above
+the loader threads (renderer left at RR 1, so no added competition with
+audio) — tested next as `xonly`. For comparison, a Xwayland capture from
+the joint-priority run (`load-span-20260919T032222Z`, both at RR 12) shows
+a different regime in its 42.9 ms gap: renderer running 9.5 ms, blocked-D
+27.4 ms; Xwayland running 4.2 ms, runnable 0.2 ms, blocked 35.7 ms — once X
+is no longer starved, the wait moves to X's own GPU path, as found before.
+
+What these traces do not establish: whether the X-server choice matters
+once X is not starved (the CPU saving stands either way), and whether the
+track dependence (loads 3 and 5 every arm) is a larger upload burst or the
+same burst drained more slowly. The next quantity to record is per track,
+after LOAD and during ordinary playback: `XPutImage` request count, bytes
+and call duration (lightweight, in the `ximage-present` shim), which
+separates excess redraw volume from slow draining of the same workload.

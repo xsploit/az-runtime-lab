@@ -2,13 +2,13 @@
 # One-knob A/B/A over load-span-capture.sh. KNOB selects what arm B changes;
 # A arms run defaults. Usage: sh scheduling-aba.sh irq|audio|renderer|joint
 # irq: irq 111 -> CPU 3; audio: mix-stream+aplay -> CPU 3; renderer: EP147
-# main RR 12; joint: EP147 main AND Xwayland RR 12; noglamor: session config
+# main RR 12; joint: EP147 main AND Xwayland RR 12; xonly: Xwayland RR 12 only; noglamor: session config
 # xwayland_glamor=off for arm B (Xwayland software rendering, no V3D BOs);
 # jointnoglamor: EP147 main AND Xwayland RR 12 in EVERY arm, glamor off only in
 # arm B (isolates the V3D path once X is no longer starved). Everything is
 # reverted on exit; arm rollback-watchdog.sh separately before running.
 set -u
-KNOB=${1:?irq|audio|renderer|joint|noglamor|jointnoglamor|timersites}; LAB=${AZ_LAB:-$HOME/az-native-lab}; B=$LAB/local/kiosk-swap-backup
+KNOB=${1:?irq|audio|renderer|joint|xonly|noglamor|jointnoglamor|timersites}; LAB=${AZ_LAB:-$HOME/az-native-lab}; B=$LAB/local/kiosk-swap-backup
 # CAPTURE selects the per-arm capture: load-span-capture.sh (one load, stacks)
 # or multi-load-capture.sh (LOADS loads, damage+page only; summarised per load).
 CAPTURE=${CAPTURE:-/tmp/load-span-capture.sh}
@@ -43,6 +43,7 @@ apply() {  # $1 = on|off ; applied (and kept applied) while the arm runs
              for p in $pids; do case " $seen " in *" $p "*) ;; *) sudo -n taskset -p $mask $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
       renderer) [ "$on" = on ] && for p in $(pgrep -x EP147); do want $p 12; done;;
       joint) [ "$on" = on ] && for p in $(pgrep -x EP147) $(pgrep -n -x Xwayland); do want $p 12; done;;
+      xonly) [ "$on" = on ] && for p in $(pgrep -n -x Xwayland); do want $p 12; done;;
       jointnoglamor) for p in $(pgrep -x EP147) $(pgrep -n -x Xwayland); do want $p 12; done;;
     esac; sleep 0.5
   done
