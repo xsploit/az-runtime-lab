@@ -26,8 +26,13 @@ echo "previous Xwayland ($OLDX) gone after ${i}s"
 i=0; while [ $i -lt 60 ]; do sleep 2; pgrep -x EP147 >/dev/null && break; i=$((i+1)); done
 sleep 20
 fi
-# SKIP_LOAD=1: both decks are already playing (a capture that follows another).
-[ "${SKIP_LOAD:-0}" = 1 ] || { sh /tmp/load-two.sh >/dev/null 2>&1; sleep 5; }
+# SKIP_LOAD=1: a capture that follows another on the same session. Deck 2's
+# track may have ended by now (the playback gate then fails at 25 %core), so
+# prime it: one browse -> rotate -> LOAD deck 2 -> PLAY before the capture.
+if [ "${SKIP_LOAD:-0}" = 1 ]; then
+  python3 /tmp/input.py browse; sleep 3; python3 /tmp/input.py rotate 1; sleep 2; python3 /tmp/input.py load 2; sleep 5
+  sudo -n env PYTHONPATH=$PP python3 analysis/send-erp-button.py --button play --group 1 >/dev/null 2>&1; sleep 4
+else sh /tmp/load-two.sh >/dev/null 2>&1; sleep 5; fi
 grim "$OUT/before.png" 2>/dev/null || xwd -display ${AZ_DISPLAY:-:0} -root -silent > "$OUT/before.xwd" 2>/dev/null; echo "before frame: $(stat -c%s "$OUT"/before.* 2>/dev/null | head -1) B"
 stamp() { python3 -c "import time,json,sys;print(json.dumps({'command':sys.argv[1],'at':time.monotonic()}))" "$1" >> "$OUT/commands.json"; }
 erp() { sudo -n env PYTHONPATH=$PP python3 analysis/send-erp-button.py --button "$1" --group "$2" >/dev/null 2>&1; }
