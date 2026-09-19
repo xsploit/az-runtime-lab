@@ -877,3 +877,27 @@ load, renderer 39 %core against 44–45, steady state unchanged); joint
 priority is a comparable lead on the same metric; neither is a default.
 Untested: real touch input (needs a person), joint priority on the bare-Xorg
 baseline, an hour-scale session, and the slow-track loads.
+
+## Extra timer sites from the Kyle review (`timer_sites`), 2026-09-19
+
+`KYLE-AZ-60FPS-REVIEW.md` lists two further `Timer::startTimer(33)` call
+sites (0x24fac4c, 0x24f6b34; both verified in the pinned image, `mov w1,#33`
+straight into startTimer at 0x239cda0) that an external mod sets to 16 ms.
+Added as the opt-in `timer_sites` key (overlay patches 9–10, default off)
+and A/B/A'd on the six-load protocol, Xwayland, default priorities; the
+overlay manifest was printed per arm (8 patches / 10 / 8).
+
+| arm | overlay | intervals >25 ms across six loads | per-load max | whole >25 / >40 | browse→browser | LOAD→waveform | EP147 %core | underruns |
+|-----|---------|---|---|---|---|---|---|---|
+| A1 | 8 patches | 14 | 61.7 ms | 19 / 2 | 224–271 ms | 387–412 ms | 45 | 0 |
+| B  | 10 patches (timer sites 16 ms) | 9 | 110.7 ms | 14 / 3 | 228–269 ms | 363–422 ms | 45 | 1 |
+| A2 | 8 patches | 10 | 62.5 ms | 14 / 2 | 223–251 ms | 358–423 ms | 45 | 0 |
+
+Arm B sits inside the A-arm spread on the count of long intervals (9
+against 10–14), the load 5 spike was the largest seen on any arm (110.7 ms
+against 47–64 ms), one underrun occurred during the B session and none in
+the A arms, and CPU and page-response latencies did not move. One arm, no
+mechanism traced: this is "no benefit shown, one adverse sign", not a
+refutation. Not promoted; the key stays off. If it is revisited, trace the
+two timer objects' owners first (the review does not establish them) and
+look at what the load 5 track does with a faster timer.
