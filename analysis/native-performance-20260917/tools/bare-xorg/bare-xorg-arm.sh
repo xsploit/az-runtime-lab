@@ -11,6 +11,10 @@ CFG=$LAB/local/session-library-xorg.json
 case ${1:?start|stop|session} in
 start)
   sudo -n systemctl stop pflx-session
+  # A kiosk shell orphaned from the unit (an earlier restart) survives the stop
+  # and keeps relaunching sessions with no compositor: end it by exact args.
+  for p in $(ps -eo pid,args | awk '/start-pflx-kiosk|pflx-az-session|pflx-bitedj-supervisor/ && !/awk/{print $1}'); do kill "$p" 2>/dev/null; done
+  for p in $(ps -eo pid,args | awk '/python3 pi\/session.py/ && !/awk/{print $1}'); do kill -TERM "$p" 2>/dev/null; done
   i=0; while [ $i -lt 30 ]; do pgrep -x sway >/dev/null || break; sleep 1; i=$((i+1)); done; echo "sway gone after ${i}s"
   sudo -n rm -f /tmp/.X1-lock /tmp/.X11-unix/X1
   sudo -n nohup setsid /usr/lib/xorg/Xorg $D -config "$CONF" -ac -nolisten tcp -noreset -novtswitch -keeptty vt7 -logfile /tmp/xorg-bare.log >/tmp/xorg-bare.out 2>&1 </dev/null &
@@ -31,5 +35,8 @@ stop)
   sup=$(ps -eo pid,args | awk '/python3 pi\/session.py/ && /session-library-xorg.json/ && !/awk/{print $1; exit}'); [ -n "$sup" ] && kill -TERM "$sup"
   i=0; while [ $i -lt 30 ]; do pgrep -x EP147 >/dev/null || break; sleep 1; i=$((i+1)); done
   for p in $(pgrep -x Xorg); do sudo -n kill -TERM "$p"; done; sleep 3
+  # Xorg leaves VT7 active; sway's logind session is on tty1 and times out
+  # ("Timeout waiting session to become active") until the VT is switched back.
+  sudo -n chvt 1
   sudo -n systemctl start pflx-session; echo "pflx-session restarted";;
 esac
