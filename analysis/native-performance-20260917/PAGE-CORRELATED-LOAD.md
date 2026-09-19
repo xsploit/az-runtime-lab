@@ -747,3 +747,45 @@ about an hour), a real touch measurement (Ilitek `11-0041 ili_v3`, evdev
 timestamps against page changes, needs a person tapping), and the
 track-dependent primary spike, which priority does not touch and which the
 bare-Xorg arm below is the next test for.
+
+## Bare Xorg arm, 2026-09-19: no compositor, no glamor, no V3D in the X path
+
+Packages approved by the user and installed: `xserver-xorg-core`
+(modesetting is built in on this Debian 13 image) and
+`xserver-xorg-input-libinput`. Xwayland untouched (24.1.6). The panel is a
+DSI display on its own KMS device (`drm-rp1-dsi`, card1), separate from V3D
+(card0) and the HDMI vc4 device (card2). `tools/bare-xorg/xorg-bare.conf`
+binds modesetting to card1 with `AccelMethod none`, `ShadowFB`, `AutoAddGPU
+off`; the log confirms "glamor disabled", "ShadowFB enabled", "Output DSI-2".
+`bare-xorg-arm.sh start` stops the sway session unit, starts `Xorg :1`, and
+starts an AZ `--no-controller` session attached to it through the new
+`external_display` key (launcher writes the display number into its own
+handshake pipe instead of spawning Xwayland). Same six-load protocol as the
+joint-priority validation above, `FRESH=1 NO_KIOSK=1 AZ_DISPLAY=:1`.
+Capture `local/multi-load-20260919T040112Z`.
+
+| arm | X server | per-load >25 ms (sum of 6) | per-load max | whole >25 / >40 | browse→browser | LOAD→waveform | EP147 %core | underruns |
+|-----|----------|---|---|---|---|---|---|---|
+| Xwayland defaults (three arms today) | Xwayland under sway | 10, 8, 10 | 55.6–58.0 ms | 12–14 / 1–2 | 218–286 ms | 355–423 ms | 44–45 | 0 |
+| **bare Xorg** defaults | Xorg, DSI KMS, software | **6** (1 per load) | 49.6 ms | 10 / 2 | 222–246 ms | 375–419 ms | **39** | 0 |
+| Xwayland defaults, bracketing arm after Xorg (A2) | Xwayland under sway | 9 | 59.2 ms | 15 / 2 | 237–252 ms | 360–420 ms | 45 | 0 |
+| Xwayland, joint RR 12 | Xwayland under sway | 5 | 62.8 ms | 10 / 1 | 226–279 ms | 360–392 ms | 45 | 0 |
+
+Read, with the bracketing arm in (`local/multi-load-20260919T041910Z`):
+four Xwayland default arms today lost 8–10 frames over 25 ms across six
+loads with a per-load spread of 1–5; the one bare-Xorg arm lost 6, exactly
+one per load, with no load above 1. That puts a compositor-free, GPU-free X
+server at about the joint-priority level at default priorities, with the
+renderer spending ~6 %core less (no compositor-facing copy) and Xorg itself
+averaging ~2 % CPU. The track-dependent spikes on loads 3 and 5 are still
+there (46 and 50 ms against 48–63 ms), so they are not an X-server cost;
+page-response latencies are unchanged. One B arm: the direction is
+consistent across all four A arms, the size is modest, and a second Xorg
+arm plus a long session are needed before it is more than that.
+
+Traps hit on the way, now in the script: a kiosk shell orphaned from the
+session unit survives `systemctl stop` and keeps relaunching sessions with
+no compositor; Xorg on vt7 leaves VT7 active and sway then restart-loops
+("Timeout waiting session to become active") until `chvt 1`; the mode menu
+falls to BiteDJ after its countdown, so "kill the menu" only launches AZ if
+the stub menu is installed before the countdown ends.
