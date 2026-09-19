@@ -794,3 +794,52 @@ no compositor; Xorg on vt7 leaves VT7 active and sway then restart-loops
 ("Timeout waiting session to become active") until `chvt 1`; the mode menu
 falls to BiteDJ after its countdown, so "kill the menu" only launches AZ if
 the stub menu is installed before the countdown ends.
+
+## Second bare-Xorg arm and sustained playback, 2026-09-19 (after the reboot)
+
+Second six-load bare-Xorg arm (`local/multi-load-20260919T125908Z`) and a
+fifth Xwayland default arm (`…132317Z`), same protocol as above:
+
+| arm | intervals >25 ms across six loads | per-load max | EP147 %core |
+|-----|---|---|---|
+| Xwayland defaults, five arms | 10, 8, 10, 9, 8 | 55.6–65.4 ms | 44–45 |
+| bare Xorg, two arms | 6, 7 | 49.6, 63.8 ms | 39, 39 |
+
+Direction repeated; size still modest (7 against a control floor of 8). The
+load 5 spike was 63.8 ms on the second Xorg arm, larger than on the first,
+so that spike is independent of the X server.
+
+**Sustained playback** (`tools/bare-xorg/sustained-run.sh`): one fresh
+session per X server, both decks started, then eight alternating-deck loads
+120 s apart under the damage and page samplers (~16 min each). The two
+captures are directly comparable: same tracks, same timing, and — because
+some tracks take longer than the 5 s the harness allowed between LOAD and
+PLAY, so the PLAY was ignored and the deck stayed silent — the same ~257 s
+of renderer-idle time (main thread asleep in poll, nothing to draw), which
+`summarize_steady.py` now separates from the statistics. Captures
+`…133506Z` (Xwayland) and `…135700Z` (Xorg).
+
+| X server | active waveform intervals | median | p99 | max | >25 ms | >40 ms | >100 ms | underruns |
+|----------|---|---|---|---|---|---|---|---|
+| Xwayland under sway, defaults | 34174 | 16.8 ms | 18.8 ms | 304 ms | 10 | 4 | 2 | 1 mid-session (285 s), 1 at teardown |
+| bare Xorg, defaults | 34175 | 16.7 ms | 18.7 ms | 87.6 ms | 7 | 2 | 0 | 2 at session start (50 s), none after |
+
+Read: over a quarter of an hour of play-and-load cycling neither X server
+produced a freeze — every long interval on either side was the renderer
+idle or the ~300 ms loading-progress cadence right after a LOAD — and the
+steady-state frame cadence is identical (median and p99 within 0.1 ms).
+Bare Xorg had fewer and shorter long intervals (its worst 87.6 ms against
+304 ms), which is the loading cadence being drawn faster, not a different
+steady state. Underrun counts are too few to compare. The slow loads are a
+finding in themselves: the loading cadence lasted 1–4 s after LOAD on
+particular tracks, the same tracks that spike in the six-load arms, which
+is consistent with track-related work (ANLZ or artwork size, or a cache
+miss) rather than presentation; not investigated yet. The harness now waits
+12 s between LOAD and PLAY (`LOAD_WAIT`) and the sustained pair is being
+repeated with it.
+
+Standing: bare Xorg is a repeatable, modest lead (fewer long intervals on
+load, renderer 39 %core against 44–45, steady state unchanged); joint
+priority is a comparable lead on the same metric; neither is a default.
+Untested: real touch input (needs a person), joint priority on the bare-Xorg
+baseline, an hour-scale session, and the slow-track loads.
