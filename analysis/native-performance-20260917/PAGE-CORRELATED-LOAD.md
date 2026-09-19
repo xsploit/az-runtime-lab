@@ -550,3 +550,28 @@ the filters.
 the gap. Two `sudo nsenter ss` invocations per sample cost ~75 ms; and fd 20
 was assumed to be the X socket, which the previous launch showed is not
 stable. The waker evidence supersedes it; the sampler is retired.
+
+## Corrected joint A/B/A, 2026-09-19 — and a second harness fault
+
+Priorities were printed this time: arm B renderer 12, Xwayland 12.
+
+| Arm | worst post-LOAD gap | >25 ms | >40 ms | renderer running / blocked / preempted |
+|---|---|---|---|---|
+| A1 | 32.4 ms (+0.529 s) | 6 | 0 | 15% / 83% / 2% |
+| B | 33.5 ms (+0.548 s) | **1** | 0 | 20% / 79% / 1% |
+| A2 | 50.6 ms (+0.535 s) | 7 | 1 | 9% / 88% / 2% |
+
+Same shape as the first joint run: the secondary cluster collapses (6→1→7,
+earlier 4→1→4), the primary gap at +0.53–0.55 s does not move. In arm B all
+13 of the renderer's blocked switch-outs in that gap were `S` in
+`poll_schedule_timeout ← do_sys_poll` — waiting on the socket, no `D`.
+
+**But the Xwayland in the sched filters was stale.** The previous session's
+Xwayland lingers ~50 s after its `session.py` is killed; `pgrep -x Xwayland |
+head -1` returned it for the filter (0 switch-outs recorded for that PID) and
+for the "applied" line. The priority hook sets every PID it sees, so the live
+Xwayland was very likely at RR 12 as well — but its own states in the gap are
+unrecorded and its priority unprinted, so **this run does not yet prove
+whether a prioritised X server still fails to drain**. Harness fixed: the
+relaunch now waits for the old Xwayland to exit, the filter and hook use the
+newest PID, and the arm prints the live PID's priority.

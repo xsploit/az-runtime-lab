@@ -19,16 +19,15 @@ apply() {  # $1 = on|off ; applied to fresh processes as they appear
       audio) pids=$(pgrep -x aplay; pgrep -x mix-stream); mask=$([ "$on" = on ] && echo 8 || echo 3)
              for p in $pids; do case " $seen " in *" $p "*) ;; *) sudo -n taskset -p $mask $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
       renderer) for p in $(pgrep -x EP147); do case " $seen " in *" $p "*) ;; *) [ "$on" = on ] && sudo -n chrt -r -p 12 $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
-      joint) for p in $(pgrep -x EP147) $(pgrep -x Xwayland); do case " $seen " in *" $p "*) ;; *) [ "$on" = on ] && sudo -n chrt -r -p 12 $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
+      joint) for p in $(pgrep -x EP147) $(pgrep -n -x Xwayland); do case " $seen " in *" $p "*) ;; *) [ "$on" = on ] && sudo -n chrt -r -p 12 $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
     esac; sleep 0.5
   done
 }
 arm() {
   label=$1; on=$2; apply "$on" & HOOK=$!
-  XP="$(pgrep -x Xwayland | head -1) $(pgrep -x sway | head -1)"
-  EXTRA_PID="$XP" sh /tmp/load-span-capture.sh > "/tmp/arm-$label.log" 2>&1; kill $HOOK 2>/dev/null
+  sh /tmp/load-span-capture.sh > "/tmp/arm-$label.log" 2>&1; kill $HOOK 2>/dev/null
   OUT=$(cat /tmp/last-capture-dir); echo "=== arm $label knob=$KNOB on=$on"
-  echo "  applied: renderer=$(chrt -p $(pgrep -x EP147) 2>/dev/null | tail -1 | awk '{print $NF}') xwayland=$(chrt -p $(pgrep -x Xwayland|head -1) 2>/dev/null | tail -1 | awk '{print $NF}') irq111=$(cat /proc/irq/111/smp_affinity) aplay_mask=$(taskset -p $(pgrep -x aplay|head -1) 2>/dev/null | awk '{print $NF}')"
+  XL=$(pgrep -n -x Xwayland); echo "  applied: renderer=$(chrt -p $(pgrep -x EP147) 2>/dev/null | tail -1 | awk '{print $NF}') xwayland(pid $XL)=$(chrt -p $XL 2>/dev/null | tail -1 | awk '{print $NF}') n_xwayland=$(pgrep -xc Xwayland) irq111=$(cat /proc/irq/111/smp_affinity) $(grep -o "sched filter extra: .*" /tmp/arm-$label.log)"
   grep -E "player=|before frame|after frame" "/tmp/arm-$label.log" | tr '\n' ' '; echo
   python3 "$LAB/analysis/attribute_load_span.py" "$OUT" 3 2>/dev/null | python3 -c "
 import json,sys;r=json.load(sys.stdin);w=r.get('waveform_stats',{})
