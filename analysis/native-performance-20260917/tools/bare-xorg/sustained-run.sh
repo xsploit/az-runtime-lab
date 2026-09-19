@@ -19,11 +19,11 @@ i=0; while [ $i -lt 30 ]; do pgrep -x EP147 >/dev/null || break; sleep 1; i=$((i
 i=0; while [ $i -lt 60 ]; do sleep 2; pgrep -x EP147 >/dev/null && break; i=$((i+1)); done; sleep 25
 sudo -n install -m 0755 "$B/pflx-mode-menu" /usr/local/bin/pflx-mode-menu
 echo "## xwayland session: EP147=$(pgrep -xc EP147) Xwayland=$(pgrep -xc Xwayland) prio=$(chrt -p $(pgrep -x EP147) 2>/dev/null | tail -1 | awk '{print $NF}')"
-FRESH=1 ALTERNATE=1 LOADS=8 PERIOD=120 sh /tmp/multi-load-capture.sh | grep -E "outdir|done|need|count|no EP147"; summarise xwayland
+FRESH=1 ALTERNATE=1 LOADS=8 PERIOD=120 LOAD_WAIT=12 sh /tmp/multi-load-capture.sh | grep -E "outdir|done|need|count|no EP147"; summarise xwayland
 sudo -n install -m 0755 "$B/pflx-az-session" /usr/local/bin/pflx-az-session
 # --- bare Xorg: fresh session attached to Xorg :1 ---
 sh /tmp/bare-xorg-arm.sh start | tail -2; sleep 45
 echo "## xorg session: EP147=$(pgrep -xc EP147) Xorg=$(pgrep -xc Xorg) Xwayland=$(pgrep -xc Xwayland)"
-FRESH=1 NO_KIOSK=1 AZ_DISPLAY=:1 ALTERNATE=1 LOADS=8 PERIOD=120 sh /tmp/multi-load-capture.sh | grep -E "outdir|done|need|count|no EP147"; summarise xorg
+FRESH=1 NO_KIOSK=1 AZ_DISPLAY=:1 ALTERNATE=1 LOADS=8 PERIOD=120 LOAD_WAIT=12 sh /tmp/multi-load-capture.sh | grep -E "outdir|done|need|count|no EP147"; summarise xorg
 sh /tmp/bare-xorg-arm.sh stop | tail -1
 echo "## run complete"

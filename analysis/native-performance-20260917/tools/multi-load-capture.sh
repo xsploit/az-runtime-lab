@@ -41,12 +41,15 @@ XP="$(pgrep -n -x Xwayland || pgrep -n -x Xorg) $(pgrep -n -x sway)"; echo "sche
 sleep 10
 # ALTERNATE=1: odd loads go to deck 1, even loads to deck 2 (sustained runs,
 # where a deck's track would otherwise end before it is reloaded).
+# LOAD_WAIT: seconds between LOAD and PLAY (default 5). Some tracks take longer
+# than 5 s to load and a PLAY sent while loading is ignored, leaving the deck
+# silent; sustained runs use 12.
 n=1; while [ $n -le $LOADS ]; do
   deck=1; grp=0; [ "${ALTERNATE:-0}" = 1 ] && [ $((n%2)) = 0 ] && { deck=2; grp=1; }
   stamp browse$n; python3 /tmp/input.py browse;      sleep 4
   stamp rotate$n; python3 /tmp/input.py rotate 1;    sleep 3
-  stamp load$n;   python3 /tmp/input.py load $deck;  sleep 5
-  stamp play$n;   erp play $grp;                      sleep $((PERIOD-12))
+  stamp load$n;   python3 /tmp/input.py load $deck;  sleep "${LOAD_WAIT:-5}"
+  stamp play$n;   erp play $grp;                      sleep $((PERIOD-7-${LOAD_WAIT:-5}))
   n=$((n+1))
 done
 wait $CAP; tail -1 "$OUT/capture.log"

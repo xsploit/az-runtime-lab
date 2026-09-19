@@ -18,8 +18,10 @@ for a,b in zip(times,times[1:]):
     # An interval in which every sample saw the main thread asleep in poll is
     # the renderer with nothing to draw (no deck scrolling, static page), not a
     # hitch. Only intervals with at least one non-sleeping sample count as
-    # 'active'. Short intervals (< 3 samples) cannot be judged and count as active.
-    idle=len(w)>=3 and all(e.get('state')=='S' and e.get('wchan','').startswith('poll') for e in w)
+    # 'active' (timer wakeups without drawing are allowed: 95 % asleep counts as
+    # idle). Short intervals (< 3 samples) cannot be judged and count as active.
+    asleep=sum(1 for e in w if e.get('state')=='S' and e.get('wchan','').startswith('poll'))
+    idle=len(w)>=3 and asleep>=0.95*len(w)
     rows.append(dict(t=a-start,gap=(b-a)*1000,bucket='waveform' if k=={'waveform'} else 'other' if k else 'unsampled',idle=idle))
 wave=[r for r in rows if r['bucket']=='waveform' and not r['idle']]
 idle_ms=sum(r['gap'] for r in rows if r['idle'])
