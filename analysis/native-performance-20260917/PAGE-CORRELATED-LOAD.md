@@ -404,3 +404,30 @@ negligible and the figure is still 92%, so the waiting is real.
    renderer's blocked share drops, the X server was the starved link.
 3. Bare Xorg stays a **separate** experiment (audit item 1).
 Keep the steady-playback build and all scheduling defaults as they are now.
+
+### Socket attribution via strace (steady state, 6 s attach)
+
+`strace -f -tt -e trace=poll,ppoll,write,writev,sendmsg -p MAIN` for 6 s on
+the live session, then `readlink /proc/MAIN/fd/N`:
+
+- The main thread's `poll()` covers exactly two fds every iteration, 1,198
+  iterations in 6 s (~200 Hz): **fd 4 = `socket:[114354]`**, whose partner
+  fd 3 = `socket:[114353]` is the adjacent inode — an internal socketpair used
+  as a wakeup channel — and **fd 20 = `socket:[115999]`**.
+- Xwayland's fd table holds `socket:[116000]`, the inode immediately after
+  115999. Unix stream connections allocate their two endpoint inodes
+  consecutively, so fd 20 ↔ Xwayland's accepted socket. fd 20 is also the only
+  external stream socket the renderer polls; the mixer control socket is
+  datagram and the audio path is a FIFO (fd 18, `/tmp/az-decks.fifo`, written
+  by another thread at 1.63 MB/s — exactly 10 ch × 4 B × 44.1 kHz).
+- Conclusion: the socket the renderer blocks on in the load gap, and whose
+  `unix_write_space`/`sock_def_readable` events wake it, is **the X connection
+  to Xwayland**. This rests on the inode adjacency plus elimination, not on a
+  peer query; `ss -xe` or `lsof` would make it direct.
+- Gap in the trace: no `write`/`writev`/`sendmsg` from the main thread in 6 s
+  of scrolling playback, so the image uploads leave through a syscall not in
+  the set (`send`/`sendto` are the likely ones). Add them before using strace
+  to size the upload stream.
+
+The firmware also logs `HuiProcessor::epoll_wait() failed` repeatedly on a
+side thread; unrelated to the renderer's wait, noted only.
