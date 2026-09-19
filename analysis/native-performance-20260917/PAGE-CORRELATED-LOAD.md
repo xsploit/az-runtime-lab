@@ -831,6 +831,7 @@ LOAD commands issued —
 | Xwayland, first | 872.4 s | 607 s | 256.8 s | 8 | 34174 |
 | bare Xorg | 872.2 s | 607 s | 256.7 s | 8 | 34175 |
 | Xwayland, repeat (12 s wait) | 872.4 s | 608 s | 258.9 s | 8 | 34191 |
+| bare Xorg, repeat (12 s wait) | 872.3 s | 607 s | 258.5 s | 8 | 34173 |
 
 — so the three runs contain the same playback time, the same scrolling
 time and the same load events to within a second, and the idle periods are
@@ -854,9 +855,22 @@ particular tracks, the same tracks that spike in the six-load arms, which
 is consistent with track-related work (ANLZ or artwork size, or a cache
 miss) rather than presentation; not investigated, and — as Codex noted — a
 larger spike on Xorg does not show the X server is uninvolved, only that
-the spike is not removed by changing it. The repeat of the Xwayland half
-with the 12 s wait reproduced the first: 10 active intervals over 25 ms,
-median 16.8 ms, p99 18.8 ms, worst 305 ms (loading cadence), 0 underruns.
+the spike is not removed by changing it. The repeats with the 12 s wait
+(`…141524Z` Xwayland, `…143335Z` Xorg) reproduced both halves:
+
+| X server, run | median | p99 | worst active | >25 ms | >40 ms | >100 ms | underruns | EP147 %core |
+|---|---|---|---|---|---|---|---|---|
+| Xwayland, first | 16.8 | 18.8 | 304 ms | 10 | 4 | 2 | 1 (+1 at teardown) | 45 |
+| Xwayland, repeat | 16.8 | 18.8 | 305 ms | 10 | 3 | 2 | 0 | 45 |
+| bare Xorg, first | 16.7 | 18.7 | 87.6 ms | 7 | 2 | 0 | 2 at session start | 39 |
+| bare Xorg, repeat | 16.7 | 18.7 | 101.5 ms | 9 | 5 | 1 | 0 | 39 |
+
+Sustained verdict: steady state identical on both servers in all four runs;
+the count of long intervals overlaps between servers (7–9 against 10–10,
+>40 ms 2–5 against 3–4), so there is no sustained-playback difference to
+claim beyond the renderer's 39 against 45 %core, which held in all four.
+Bare Xorg's case rests on the six-load arms (6, 7 against 8–10) and the
+CPU, not on sustained smoothness.
 
 Standing: bare Xorg is a repeatable, modest lead (fewer long intervals on
 load, renderer 39 %core against 44–45, steady state unchanged); joint
