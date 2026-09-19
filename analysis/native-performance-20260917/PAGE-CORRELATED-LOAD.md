@@ -474,3 +474,41 @@ is itself runnable-but-preempted on the same two cores. That is scheduling
 one hop away — the review's point — and the joint renderer+Xwayland A/B/A is
 the direct test. Whether the socket is Xwayland's is still inferred; the
 lockstep run is the proof.
+
+## Joint A/B/A, 2026-09-19: renderer **and** Xwayland at RR 12
+
+Only change in arm B: both the EP147 main thread and Xwayland set to RR 12
+via `chrt` on the live processes as each arm's fresh instances appeared
+(`tools/scheduling-aba.sh joint`); A arms at their defaults (renderer RR 1,
+Xwayland normal policy). Same harness and gates. Two limits of this run: the
+capture in these arms did **not** include Xwayland in the sched filters (my
+script passed a no-op variable instead of `EXTRA_PID`), and the arm report
+did not echo Xwayland's priority, so its application is inferred from the
+hook's design, not printed proof.
+
+| Arm | worst post-LOAD gap | >25 ms | >40 ms | next largest | renderer in worst gap: running / blocked / preempted | underruns |
+|---|---|---|---|---|---|---|
+| A1 | 58.9 ms (+0.550 s) | 4 | 1 | 35.1, 30.0 | 7% / **90%** / 3% | 0 |
+| B | 56.1 ms (+0.531 s) | **1** | 1 | 21.1, 20.9 | 18% / **80%** / 1% | 1 |
+| A2 | 60.5 ms (+0.581 s) | 4 | 1 | 31.5, 29.8 | 7% / **89%** / 4% | 1 |
+
+Prioritising the pair gives the renderer more CPU (running 7% → 18%) and
+removes the secondary >25 ms intervals (4 → 1), but the ~56–60 ms gap at
++0.55 s is unchanged and the renderer is still blocked for 80% of it. So
+Xwayland's CPU share was part of the residue, not the core of it: with both
+ends outranking the load-burst threads, the renderer still waits on an X
+server that still is not draining. In the instrumentation arm Xwayland's own
+blocked states were idle `epoll_wait` — waiting on **sway** over its Wayland
+connection — and one `D` wait in `rpi_firmware_property ← clk_prepare`.
+The compositor is the next hop, and neither it nor DRM was in this test.
+
+Single underruns appeared in two arms (one each, in B and A2). Cause not
+established; three so far in the session, all single events, at both
+priorities.
+
+**Verdict:** not promoted. Scheduling the renderer+X pair is a partial
+lever (secondary cluster), not the fix. Next: (1) the peer/lockstep proof
+with the fork-free sampler and **no strace**, filters widened to Xwayland
+**and sway**, so the wait can be followed one more hop; (2) then bare Xorg
+as its own experiment, since it removes the sway hop entirely. All settings
+restored to defaults; a normal bridge session is running.
