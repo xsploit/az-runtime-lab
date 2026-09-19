@@ -34,7 +34,11 @@ p=Path("local/session-library.json");c=json.loads(p.read_text());c["ximage_stats
 EOF
 }
 restore() { for f in pflx-mode-menu pflx-az-session start-pflx-kiosk; do sudo -n install -m 0755 "$B/$f" "/usr/local/bin/$f"; done; echo 3 | sudo -n tee /proc/irq/111/smp_affinity >/dev/null; (cd "$LAB" && setglamor null && settimersites off && setximagestats off); echo "restored"; }
-trap restore EXIT INT TERM
+# On INT/TERM: restore, then EXIT — a handler that only restores would let the
+# script continue into its next arm (which once left a priority hook alive
+# for 15 minutes, contaminating the control arms of the following run).
+restored=; restore_once() { [ -n "$restored" ] && return; restored=1; restore; }
+trap 'restore_once; kill $HOOK 2>/dev/null; exit 130' INT TERM; trap restore_once EXIT
 # prio PID: current RT priority of a task ("0" for SCHED_OTHER); want PID N:
 # set RR N unless already there. EP147 re-sets its own main thread (RR 1) some
 # time after start, so a one-shot chrt can be overwritten: re-assert every poll.

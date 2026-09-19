@@ -5,7 +5,8 @@ set -u
 LAB=${AZ_LAB:-$HOME/az-native-lab}; B=$LAB/local/kiosk-swap-backup; cd "$LAB"; export AZ_LAB=$LAB
 LOG=$LAB/local/sustained-xorg-$(date +%Y%m%dT%H%M%SZ).log; exec >"$LOG" 2>&1; echo "log=$LOG"
 cleanup() { pgrep -x Xorg >/dev/null && sh /tmp/bare-xorg-arm.sh stop; for f in pflx-mode-menu pflx-az-session start-pflx-kiosk; do sudo -n install -m 0755 "$B/$f" "/usr/local/bin/$f"; done; echo "## cleanup done"; }
-trap cleanup EXIT INT TERM
+cleaned=; cleanup_once() { [ -n "$cleaned" ] && return; cleaned=1; cleanup; }
+trap 'cleanup_once; exit 130' INT TERM; trap cleanup_once EXIT
 sh /tmp/bare-xorg-arm.sh start | tail -3; sleep 45
 echo "## xorg session: EP147=$(pgrep -xc EP147) Xorg=$(pgrep -xc Xorg) Xwayland=$(pgrep -xc Xwayland)"
 pgrep -x EP147 >/dev/null || { echo "## no session; abort"; tail -3 "$LAB/local/xorg-session.log"; exit 1; }
