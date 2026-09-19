@@ -37,7 +37,7 @@ restore() { for f in pflx-mode-menu pflx-az-session start-pflx-kiosk; do sudo -n
 # On INT/TERM: restore, then EXIT — a handler that only restores would let the
 # script continue into its next arm (which once left a priority hook alive
 # for 15 minutes, contaminating the control arms of the following run).
-restored=; restore_once() { [ -n "$restored" ] && return; restored=1; restore; }
+HOOK=; restored=; restore_once() { [ -n "$restored" ] && return; restored=1; restore; }
 trap 'restore_once; kill $HOOK 2>/dev/null; exit 130' INT TERM; trap restore_once EXIT
 # prio PID: current RT priority of a task ("0" for SCHED_OTHER); want PID N:
 # set RR N unless already there. EP147 re-sets its own main thread (RR 1) some
