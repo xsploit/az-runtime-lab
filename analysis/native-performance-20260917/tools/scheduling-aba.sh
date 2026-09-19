@@ -25,8 +25,10 @@ apply() {  # $1 = on|off ; applied to fresh processes as they appear
 }
 arm() {
   label=$1; on=$2; apply "$on" & HOOK=$!
-  EXTRA_PID_HOOK=1 sh /tmp/load-span-capture.sh > "/tmp/arm-$label.log" 2>&1; kill $HOOK 2>/dev/null
+  XP="$(pgrep -x Xwayland | head -1) $(pgrep -x sway | head -1)"
+  EXTRA_PID="$XP" sh /tmp/load-span-capture.sh > "/tmp/arm-$label.log" 2>&1; kill $HOOK 2>/dev/null
   OUT=$(cat /tmp/last-capture-dir); echo "=== arm $label knob=$KNOB on=$on"
+  echo "  applied: renderer=$(chrt -p $(pgrep -x EP147) 2>/dev/null | tail -1 | awk '{print $NF}') xwayland=$(chrt -p $(pgrep -x Xwayland|head -1) 2>/dev/null | tail -1 | awk '{print $NF}') irq111=$(cat /proc/irq/111/smp_affinity) aplay_mask=$(taskset -p $(pgrep -x aplay|head -1) 2>/dev/null | awk '{print $NF}')"
   grep -E "player=|before frame|after frame" "/tmp/arm-$label.log" | tr '\n' ' '; echo
   python3 "$LAB/analysis/attribute_load_span.py" "$OUT" 3 2>/dev/null | python3 -c "
 import json,sys;r=json.load(sys.stdin);w=r.get('waveform_stats',{})

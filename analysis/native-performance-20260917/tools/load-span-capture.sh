@@ -13,7 +13,9 @@ sleep 20; sh /tmp/load-two.sh >/dev/null 2>&1; sleep 5
 grim "$OUT/before.png" 2>/dev/null; echo "before frame: $(stat -c%s "$OUT/before.png") B"
 stamp() { python3 -c "import time,json,sys;print(json.dumps({'command':sys.argv[1],'at':time.monotonic()}))" "$1" >> "$OUT/commands.json"; }
 erp() { sudo -n env PYTHONPATH=$PP python3 analysis/send-erp-button.py --button "$1" --group "$2" >/dev/null 2>&1; }
-( sh analysis/capture_waveform_gap.sh "$OUT" 60 > "$OUT/capture.log" 2>&1 ) & CAP=$!
+# Xwayland is per-session: resolve it now (after the fresh launch), not from the caller.
+XP="$(pgrep -x Xwayland | head -1) $(pgrep -x sway | head -1)"
+( EXTRA_PID="${EXTRA_PID:-$XP}" sh analysis/capture_waveform_gap.sh "$OUT" 60 > "$OUT/capture.log" 2>&1 ) & CAP=$!
 sleep 12
 stamp browse;  python3 /tmp/input.py browse;   sleep 4
 stamp rotate3; python3 /tmp/input.py rotate 3; sleep 4

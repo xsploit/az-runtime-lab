@@ -512,3 +512,41 @@ with the fork-free sampler and **no strace**, filters widened to Xwayland
 **and sway**, so the wait can be followed one more hop; (2) then bare Xorg
 as its own experiment, since it removes the sway hop entirely. All settings
 restored to defaults; a normal bridge session is running.
+
+## Clean instrumentation arm, 2026-09-19: the peer is proven, and X is starved
+
+Same load-span harness, **no strace**, `sched_switch`/`sched_wakeup` filters
+covering the renderer, Xwayland **and sway**, fork-free queue sampler. Worst
+post-LOAD WAVEFORM gap **58.3 ms at +0.571 s** — the twelfth run in a row to
+land in 39–72 ms at +0.53…0.58 s.
+
+**Who wakes the renderer inside the gap** (`sched_wakeup` records the waker;
+`perf script -F comm,pid,…`): **Xwayland, pid 8624, 12 times**, from
+`unix_write_space` (6) and its rt-lock form `rt_mutex_slowunlock` (6) — the
+X server freeing the renderer's send buffer. Two more wakeups came from AZ's
+own threads via `futex_wake`. That is direct evidence, independent of inode
+numbers or a later strace: the socket the renderer blocks on is its
+connection to Xwayland, and the wait is write backpressure.
+
+**What Xwayland is doing at that moment:** 235 switch-outs in the 58 ms
+window, **232 of them `R`/`R+` — runnable, preempted** — and it gave the CPU
+to `FileDataCache` (55), `PageFiller0` (50), `TrackFileCache` (35),
+`PageFiller(BG)` (27), `irq/111` (21). Only 2 `S` (`epoll_wait`) and 1 `D`.
+Xwayland runs at normal CFS policy; the firmware's load threads are realtime
+(`FileDataCache` RR 1, `PageFiller0` RR 11) and always win. **sway is not in
+the chain**: 6 switch-outs, mostly idle in `epoll_wait`.
+
+So the load hitch is: renderer → blocked on write space → Xwayland → starved
+of CPU by the firmware's own realtime load burst on the same two cores. This
+is scheduling one hop away, as the review predicted.
+
+**Consequence for the joint A/B/A above:** its null result is not yet
+trustworthy. Those arms never printed Xwayland's priority and did not record
+Xwayland's switches, so whether Xwayland actually ran at RR 12 is unknown.
+The corrected run must print both priorities and keep Xwayland and sway in
+the filters.
+
+**Queue sampler:** 606 samples at ~13/s, all `0 0` on both sides, none inside
+the gap. Two `sudo nsenter ss` invocations per sample cost ~75 ms; and fd 20
+was assumed to be the X socket, which the previous launch showed is not
+stable. The waker evidence supersedes it; the sampler is retired.
