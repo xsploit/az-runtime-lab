@@ -9,6 +9,9 @@
 # reverted on exit; arm rollback-watchdog.sh separately before running.
 set -u
 KNOB=${1:?irq|audio|renderer|joint|noglamor|jointnoglamor}; LAB=${AZ_LAB:-$HOME/az-native-lab}; B=$LAB/local/kiosk-swap-backup
+# CAPTURE selects the per-arm capture: load-span-capture.sh (one load, stacks)
+# or multi-load-capture.sh (LOADS loads, damage+page only; summarised per load).
+CAPTURE=${CAPTURE:-/tmp/load-span-capture.sh}
 printf '#!/bin/sh\necho az\n' > /tmp/stub-menu; sudo -n install -m 0755 /tmp/stub-menu /usr/local/bin/pflx-mode-menu
 sed 's|\$drop python3 pi/session.py "\$config" >>|\$drop python3 pi/session.py "\$config" --no-controller >>|' "$B/pflx-az-session" > /tmp/az-nc; sudo -n install -m 0755 /tmp/az-nc /usr/local/bin/pflx-az-session
 sed 's|mode=bitedj$|mode=az|' "$B/start-pflx-kiosk" > /tmp/kiosk-az; sudo -n install -m 0755 /tmp/kiosk-az /usr/local/bin/start-pflx-kiosk
@@ -37,14 +40,15 @@ arm() {
   label=$1; on=$2
   case $KNOB in noglamor|jointnoglamor) (cd "$LAB" && setglamor "$([ "$on" = on ] && echo off || echo null)");; esac
   apply "$on" & HOOK=$!
-  sh /tmp/load-span-capture.sh > "/tmp/arm-$label.log" 2>&1; kill $HOOK 2>/dev/null
+  sh "$CAPTURE" > "/tmp/arm-$label.log" 2>&1; kill $HOOK 2>/dev/null
   OUT=$(cat /tmp/last-capture-dir); echo "=== arm $label knob=$KNOB on=$on"
   XL=$(pgrep -n -x Xwayland); echo "  xwayland cmdline: $(tr '\0' ' ' < /proc/$XL/cmdline | grep -o -- '-glamor [a-z]*' || echo default)"; echo "  applied: renderer=$(chrt -p $(pgrep -x EP147) 2>/dev/null | tail -1 | awk '{print $NF}') xwayland(pid $XL)=$(chrt -p $XL 2>/dev/null | tail -1 | awk '{print $NF}') n_xwayland=$(pgrep -xc Xwayland) irq111=$(cat /proc/irq/111/smp_affinity) $(grep -o "sched filter extra: .*" /tmp/arm-$label.log)"
   grep -E "player=|before frame|after frame" "/tmp/arm-$label.log" | tr '\n' ' '; echo
+  case $CAPTURE in *multi-load*) python3 "$LAB/analysis/attribute_multi_load.py" "$OUT";; *)
   python3 "$LAB/analysis/attribute_load_span.py" "$OUT" 3 2>/dev/null | python3 -c "
 import json,sys;r=json.load(sys.stdin);w=r.get('waveform_stats',{})
 print(f\"  waveform: n={w.get('n')} max={w.get('max')} over25={w.get('over25')} over40={w.get('over40')}\")
-for g in r.get('largest_waveform',[])[:3]: print(f\"    t={g['t_rel_load']:+7.3f}s gap={g['gap_ms']:5.1f}ms oncpu={g['oncpu']}/{g['expected']} states={g['prev_states']}\")"
+for g in r.get('largest_waveform',[])[:3]: print(f\"    t={g['t_rel_load']:+7.3f}s gap={g['gap_ms']:5.1f}ms oncpu={g['oncpu']}/{g['expected']} states={g['prev_states']}\")";; esac
   s=$(ls -1dt "$LAB"/local/session-* | head -1); echo "  underruns: $(grep -ic underrun "$s/audio-events.jsonl")  temp: $(cat /sys/class/thermal/thermal_zone0/temp)"
 }
 arm A1 off; arm B on; arm A2 off

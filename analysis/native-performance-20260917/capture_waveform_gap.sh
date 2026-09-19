@@ -40,8 +40,10 @@ echo "player=$P main=$MAIN kiosks=1 page=waveform ep147_pct=$busy secs=$SECS" | 
 
 # 1. XDamage notifications
 (DISPLAY=:0 python3 $LAB/analysis/probe-xdamage.py --display :0 --seconds "$SECS" > "$OUT/damage.json" 2>"$OUT/damage.err") & D=$!
+# SKIP_PERF=1 keeps only the damage and page samplers (long captures, many loads).
+C=;S=
 # 2. main-thread on-CPU stacks
-sudo -n perf record -k CLOCK_MONOTONIC -F 997 -g --call-graph fp -t "$MAIN" -o "$OUT/cpu.data" -- sleep "$SECS" >"$OUT/perf-cpu.log" 2>&1 & C=$!
+[ "${SKIP_PERF:-0}" = 1 ] || sudo -n perf record -k CLOCK_MONOTONIC -F 997 -g --call-graph fp -t "$MAIN" -o "$OUT/cpu.data" -- sleep "$SECS" >"$OUT/perf-cpu.log" 2>&1 & C=$!
 # 3. off-CPU: switches involving the main thread, with the stack it blocked in
 # EXTRA_PID (e.g. Xwayland) widens the switch/wakeup filters to a second task;
 # -a does not lift a filter, so without this only the renderer's switches exist.
@@ -49,7 +51,7 @@ sudo -n perf record -k CLOCK_MONOTONIC -F 997 -g --call-graph fp -t "$MAIN" -o "
 SW="prev_pid==$MAIN || next_pid==$MAIN"; WK="pid==$MAIN"
 for xp in ${EXTRA_PID:-}; do SW="$SW || prev_pid==$xp || next_pid==$xp"; WK="$WK || pid==$xp"; done
 echo "extra_pid=${EXTRA_PID:-none}" >> "$OUT/meta.txt"
-sudo -n perf record -k CLOCK_MONOTONIC -a -g -e sched:sched_switch --filter "$SW" \
+[ "${SKIP_PERF:-0}" = 1 ] || sudo -n perf record -k CLOCK_MONOTONIC -a -g -e sched:sched_switch --filter "$SW" \
   -e sched:sched_wakeup --filter "$WK" -e block:block_rq_issue -o "$OUT/sched.data" -- sleep "$SECS" >"$OUT/perf-sched.log" 2>&1 & S=$!
 # 4. page kind + io + ctxt switches, ~10 ms
 sudo -n env PYTHONPATH=$PP python3 - "$P" "$MAIN" "$SECS" > "$OUT/events.json" 2>"$OUT/events.err" <<'PY' & E=$!
@@ -71,6 +73,7 @@ while time.monotonic()<end:
 v.close();print(json.dumps(out))
 PY
 wait $D $C $S $E
+[ "${SKIP_PERF:-0}" = 1 ] && { echo "done: damage+page only (SKIP_PERF)"; exit 0; }
 sudo -n chown "$(id -u)" "$OUT"/*.data 2>/dev/null
 sudo -n perf script -F time,event,ip,sym,dso -i "$OUT/cpu.data" > "$OUT/cpu.txt" 2>/dev/null
 sudo -n perf script -F time,event,trace -i "$OUT/sched.data" > "$OUT/sched.txt" 2>/dev/null
