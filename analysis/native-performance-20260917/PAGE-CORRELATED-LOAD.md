@@ -303,19 +303,52 @@ RR 89 on CPU 2). Same harness and gates; priority verified per arm and back to
 renderer's preemptors completely — and the gap does not shrink. In arm B's
 worst window the renderer's switch-outs shifted from `R`/`R+` toward `S` and
 `D` (10 `S`, 1 `D` of 46): it was no longer being starved, it was **waiting**.
-What ran after it was `Xwayland` (RT 1, which cannot preempt RR 12), i.e. the
-renderer *yielded*. So during the first ~0.55 s after LOAD the renderer
-synchronously depends on the load work — a lock, condition or queue owned by
-the loader — and giving it CPU priority only makes it wait with more priority.
+(To be precise about timing: the ~40–70 ms gap *occurs* about 0.55 s after
+LOAD; nothing freezes for 0.55 s.)
 
-Scheduling is therefore **not the root cause** of the load hitch. Three
-scheduling knobs were tested individually today (irq 111 affinity, our audio
-processes' affinity, renderer priority); each removed its target from the
-preemptor list as intended, and none moved the worst gap out of the 39–72 ms
-range seen across all ten load-span arms. The dependency sits inside the
-firmware's load path and is a reversal question: what does the renderer block
-on between LOAD and ~+0.6 s, and can the page be presented before that work
-completes.
+### What it waits on — from the blocked stacks and wake-up sources
+
+`sched.data` was recorded with call chains, so the kernel stack at each
+switch-out and the waker's stack at each `sched_wakeup` are available. Two
+`perf script` passes (`trace` text and `ip,sym` stacks — `trace` cannot be
+combined with `ip` in one pass) merged on timestamp+event:
+
+| | arm B, RR 12, 59.1 ms window | control A2, RR 1, 49.9 ms window |
+|---|---|---|
+| renderer switch-outs | 46: 25 `R`, 10 `R+`, 10 `S`, 1 `D` | 134: 94 `R`, 24 `R+`, 10 `S`, 6 `D` |
+| preempted by | (higher-RT only) | `PageFiller0` 73, `BufferingSched` 24, `JUCE Timer` 8, `mix-stream` 6 |
+| blocked stacks (`S`/`D`) | **9× `poll_schedule_timeout ← do_sys_poll`**, 1× `futex_wait`, 1× `poll_freewait` rtlock | **9× `poll_schedule_timeout ← do_sys_poll`**, 6× `poll_freewait` rtlock, 1× `futex_wait` |
+| wakers of the renderer | **5× `sock_def_readable ← unix_stream_sendmsg`**, **4× `unix_write_space ← sock_wfree`**, 1× `futex_wake` | **12× `unix_write_space ← sock_wfree`** (6 direct, 6 via `rt_mutex_slowunlock`), 3× `sock_def_readable`, 1× `futex_wake` |
+
+Every blocked wait but one is `poll()` on a Unix-domain socket, and the wakers
+are that socket becoming **readable** (the peer wrote a reply/event) or,
+more often, regaining **write space** (the peer drained the renderer's
+outgoing bytes). The renderer's only Unix socket of consequence is its X
+connection. So in the gap the renderer is **blocked on the X transport to
+Xwayland** — its request stream (uploads and the surrounding protocol) backs
+up until the server consumes it, and it waits for replies. Xwayland runs at
+RT 1 on the same two cores and is itself preempted by the load-burst threads,
+which is why raising only the renderer moved the choke point rather than
+removing it. The single `futex` wait/wake per window is a mutex handoff and
+is not the dominant term.
+
+This is evidence for "the renderer waits on the X server during the load
+burst"; it is **not** evidence of a lock or queue owned by the loader — an
+earlier revision of this section asserted that without the stacks, and it was
+wrong. It is also not yet proof of *what* Xwayland was doing in those
+milliseconds; that needs the same treatment applied to Xwayland's thread.
+
+Scheduling of the *renderer alone* is therefore not the root cause. Three
+knobs were tested individually today (irq 111 affinity, our audio processes'
+affinity, renderer priority); each removed its target from the preemptor list
+as intended, and none moved the worst gap out of the 39–72 ms range seen
+across all ten load-span arms. What remains is the renderer ↔ Xwayland link
+during the load burst: the renderer waits for X to drain and reply while X is
+starved by the same threads. That points back at the audit's first item — the
+compositor path (bare Xorg, or at minimum scheduling the X server together
+with the renderer) — and at the firmware question of whether the page-fill
+work can be deferred so the current waveform keeps drawing. Both remain
+untested; the steady-playback build is untouched.
 
 Arm A1 logged the only `aplay` underrun of the day, at the firmware's default
 priority. Single event, ~40 s of playback each side, cause not established;
