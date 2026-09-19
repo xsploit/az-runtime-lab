@@ -662,8 +662,10 @@ priorities. This does not yet answer the narrower question — the V3D waits
 were observed only once X was *prioritised* — which the `jointnoglamor`
 knob below tests with joint RR 12 in every arm.
 
-Two launch failures preceded this run and were not the launcher patch:
-an `aplay` orphaned mid-launch (still opening the FIFO, `wchan
+Three faults preceded this run, in sequence. First the launcher patch
+itself: the Pi copy had the Xwayland `Popen` outside its `with` block
+(HANDOFF-20260918.md), which broke every launch until it was re-indented.
+Then, with the launcher fixed, an `aplay` orphaned mid-launch (still opening the FIFO, `wchan
 wait_for_partner`, reparented to PID 1) held the FLX6 PCM so every session
 died with "audio open error: Device or resource busy"; after that, `/tmp`
 (2 GB tmpfs) was full — perf script dumps of my own plus fourteen leaked
@@ -687,19 +689,22 @@ verified. Captures `local/load-span-20260919T1016*`–`1024*`.
 | B   | RR 12, -glamor off | 2873 | 38.6 | 2 | 0 | 38.6 ms @ +0.536 s |
 | A2  | RR 12, default | 2963 | 23.1 | 0 | 0 | 23.1 ms @ +0.891 s |
 
-Glamor off is the worst of the three arms; removing V3D buffer objects from
-the X server's path does not shrink the primary gap, prioritised or not.
-**Closed: Xwayland glamor/V3D.** `xwayland_glamor` stays an opt-in key at
-`null`.
+Glamor off is the worst of the three arms; across six arms in two runs it
+showed no consistent benefit, so it is a poor candidate to enable and
+`xwayland_glamor` stays an opt-in key at `null`. That is all these runs
+show: they do not prove the GPU waits seen in the prioritised X server are
+irrelevant to the gap, only that taking the V3D path out of Xwayland did not
+move it in three loads.
 
-What the prioritised A arms show again, now over six arms at RR 12 across
-three runs: the >25 ms count on load is 0–2 per arm versus 3–7 at defaults,
-and A2 here is the first capture with **no** gap over 25 ms across the load.
-The cost is unchanged: A1 logged 2 underruns at session start (Xwayland at
-RR 12 competing with the audio processes), B and A2 none. Joint priority
-remains the only measured lever; it is still unapplied pending a
-touch-latency check and a long session, and a proper home (`pflx-tune`)
-rather than a `chrt` from a script.
+The prioritised A arms are consistent with the earlier joint runs: over
+six arms at RR 12 across three runs the >25 ms count on load is 0–2 per arm
+versus 3–7 at defaults, and A2 here is the first capture with no gap over
+25 ms across the load. That is promising, not validated: every arm is one
+load in one fresh session, and A1 logged 2 underruns at session start
+(Xwayland at RR 12 competes with the audio processes) with no matched
+count for normal startups yet. Before it can change a default it needs
+repeated loads per arm inside one session, a startup-underrun comparison
+against defaults, and a touch-response measurement.
 
 Housekeeping verified in the same runs: with the launcher unwinding on
 SIGTERM, `/tmp/az-scroll-*` held exactly one directory (the live session's)
