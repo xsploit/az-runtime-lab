@@ -26,18 +26,22 @@ echo "previous Xwayland ($OLDX) gone after ${i}s"
 i=0; while [ $i -lt 60 ]; do sleep 2; pgrep -x EP147 >/dev/null && break; i=$((i+1)); done
 sleep 20
 fi
-sh /tmp/load-two.sh >/dev/null 2>&1; sleep 5
+# SKIP_LOAD=1: both decks are already playing (a capture that follows another).
+[ "${SKIP_LOAD:-0}" = 1 ] || { sh /tmp/load-two.sh >/dev/null 2>&1; sleep 5; }
 grim "$OUT/before.png" 2>/dev/null || xwd -display ${AZ_DISPLAY:-:0} -root -silent > "$OUT/before.xwd" 2>/dev/null; echo "before frame: $(stat -c%s "$OUT"/before.* 2>/dev/null | head -1) B"
 stamp() { python3 -c "import time,json,sys;print(json.dumps({'command':sys.argv[1],'at':time.monotonic()}))" "$1" >> "$OUT/commands.json"; }
 erp() { sudo -n env PYTHONPATH=$PP python3 analysis/send-erp-button.py --button "$1" --group "$2" >/dev/null 2>&1; }
 XP="$(pgrep -n -x Xwayland || pgrep -n -x Xorg) $(pgrep -n -x sway)"; echo "sched filter extra: $XP"
 ( SKIP_PERF=${SKIP_PERF:-1} NO_KIOSK=${NO_KIOSK:-0} EXTRA_PID="${EXTRA_PID:-$XP}" sh analysis/capture_waveform_gap.sh "$OUT" "$SECS" > "$OUT/capture.log" 2>&1 ) & CAP=$!
 sleep 10
+# ALTERNATE=1: odd loads go to deck 1, even loads to deck 2 (sustained runs,
+# where a deck's track would otherwise end before it is reloaded).
 n=1; while [ $n -le $LOADS ]; do
-  stamp browse$n; python3 /tmp/input.py browse;   sleep 4
-  stamp rotate$n; python3 /tmp/input.py rotate 1; sleep 3
-  stamp load$n;   python3 /tmp/input.py load 1;   sleep 5
-  stamp play$n;   erp play 0;                      sleep $((PERIOD-12))
+  deck=1; grp=0; [ "${ALTERNATE:-0}" = 1 ] && [ $((n%2)) = 0 ] && { deck=2; grp=1; }
+  stamp browse$n; python3 /tmp/input.py browse;      sleep 4
+  stamp rotate$n; python3 /tmp/input.py rotate 1;    sleep 3
+  stamp load$n;   python3 /tmp/input.py load $deck;  sleep 5
+  stamp play$n;   erp play $grp;                      sleep $((PERIOD-12))
   n=$((n+1))
 done
 wait $CAP; tail -1 "$OUT/capture.log"
