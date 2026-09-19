@@ -16,12 +16,24 @@ P=$(pgrep -x EP147) || { echo "no EP147"; exit 1; }
 MAIN=$(for t in /proc/$P/task/*; do [ "$(cat $t/comm)" = EP147 ] && echo ${t##*/}; done | head -1)
 kind=$(sudo -n env PYTHONPATH=$PP python3 -c "from az_live_view import LiveView;v=LiveView($P);print(v.sample()['kind']);v.close()" 2>/dev/null)
 [ "$kind" = waveform ] || { echo "page is '$kind', need waveform"; exit 1; }
-echo "player=$P main=$MAIN kiosks=1 page=waveform secs=$SECS" | tee "$OUT/meta.txt"
+# Playback gate: two decks scrolling put EP147 well above its ~14 %core idle.
+# This is a proxy, not the LocalPlayer position reader Codex used; a single
+# playing deck or a paused pair can pass it. Verify titles by eye as well.
+busy=$(python3 - "$P" <<'PY2'
+import os,sys,time
+p=sys.argv[1];h=os.sysconf("SC_CLK_TCK")
+def t():
+    s=open(f"/proc/{p}/stat").read();f=s.rsplit(")",1)[1].split();return int(f[11])+int(f[12])
+a=t();time.sleep(3);b=t();print(int(100.0*(b-a)/h/3))
+PY2
+)
+[ "${busy:-0}" -ge 30 ] || { echo "EP147 at ${busy} %core: not two-deck playback (need >=30)"; exit 1; }
+echo "player=$P main=$MAIN kiosks=1 page=waveform ep147_pct=$busy secs=$SECS" | tee "$OUT/meta.txt"
 
 # 1. XDamage notifications
 (DISPLAY=:0 python3 $LAB/analysis/probe-xdamage.py --display :0 --seconds "$SECS" > "$OUT/damage.json" 2>"$OUT/damage.err") & D=$!
 # 2. main-thread on-CPU stacks
-sudo -n perf record -k CLOCK_MONOTONIC -F 2000 -g --call-graph fp -t "$MAIN" -o "$OUT/cpu.data" -- sleep "$SECS" >"$OUT/perf-cpu.log" 2>&1 & C=$!
+sudo -n perf record -k CLOCK_MONOTONIC -F 997 -g --call-graph fp -t "$MAIN" -o "$OUT/cpu.data" -- sleep "$SECS" >"$OUT/perf-cpu.log" 2>&1 & C=$!
 # 3. off-CPU: switches involving the main thread, with the stack it blocked in
 sudo -n perf record -k CLOCK_MONOTONIC -a -g -e sched:sched_switch --filter "prev_pid==$MAIN || next_pid==$MAIN" \
   -e sched:sched_wakeup --filter "pid==$MAIN" -e block:block_rq_issue -o "$OUT/sched.data" -- sleep "$SECS" >"$OUT/perf-sched.log" 2>&1 & S=$!

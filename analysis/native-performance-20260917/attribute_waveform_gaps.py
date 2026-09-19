@@ -43,7 +43,7 @@ for a,b in gaps:
         if m and 'EP147' in s['txt'].split('==>')[0]:blocks.append(m.group(1))
     disk=[s for s in sched if a<=s['t']<=b and 'block_rq_issue' in s['ev']]
     report['waveform_gaps'].append(dict(start_s=round(a-start,3),gap_ms=round((b-a)*1000,1),
-        oncpu_samples=len(on),expected_if_busy=int((b-a)*2000),top_leaf=top,
+        oncpu_samples=len(on),expected_if_busy=int((b-a)*997),top_leaf=top,
         switch_outs=len(sw),prev_states=Counter(blocks).most_common(4),disk_requests=len(disk),io=io_delta(a,b)))
 report['waveform_gaps'].sort(key=lambda g:-g['gap_ms'])
 print(json.dumps(report,indent=1,default=str))
