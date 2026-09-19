@@ -1002,14 +1002,15 @@ perturbation (which is not proof of none).
 | **load 5** | 131 | 15.8 MB | **277 ms** | **77.9 ms** at +0.519 s |
 | load 6 | 159 | 22.3 MB | 67 ms | 7.6 ms |
 
-The spiking loads upload **less**, not more: fewer calls and fewer bytes
-than the quiet loads, on the same rectangles (a full 1280×800 refresh plus
-900×162 / 1030×162 waveform strips). What differs is that one 900×162
-call (437 KB, normally 1–8 ms) takes 53 or 78 ms at +0.52 s, and the next
-one 20–37 ms. That is the same workload draining slowly, not excess
-redraw — the answer to the volume-versus-drain question, in line with the
-scheduler trace (X server starved for ~60 % of the gap by the firmware's
-loader threads). Two similar calls also occurred during the initial
+The spiking loads do not upload more: fewer calls and fewer bytes than
+the quiet loads in the fixed one-second window, on the same rectangles (a
+full 1280×800 refresh plus 900×162 / 1030×162 waveform strips). The lower
+count is not itself evidence — a renderer blocked for 78 ms issues fewer
+calls in that second as a consequence — the evidence is the equal-sized
+call: one 900×162 upload (437 KB, 1–8 ms on every quiet load) takes 53 or
+78 ms at +0.52 s, and the next one 20–37 ms. That is the same workload
+draining slowly, not excess redraw, in line with the scheduler trace (X
+server starved for ~60 % of the gap by the firmware's loader threads). Two similar calls also occurred during the initial
 `load-two` loads before the capture (58 and 46 ms).
 
 What is still track-related is therefore the *loader* work at +0.5 s for
