@@ -15,6 +15,9 @@ start)
   # and keeps relaunching sessions with no compositor: end it by exact args.
   for p in $(ps -eo pid,args | awk '/start-pflx-kiosk|pflx-az-session|pflx-bitedj-supervisor/ && !/awk/{print $1}'); do kill "$p" 2>/dev/null; done
   for p in $(ps -eo pid,args | awk '/python3 pi\/session.py/ && !/awk/{print $1}'); do kill -TERM "$p" 2>/dev/null; done
+  # The old supervisor holds local/session.lock until its cleanup finishes;
+  # starting the next session before that fails with EAGAIN on the lock.
+  i=0; while [ $i -lt 40 ]; do [ "$(ps -eo args | awk '/python3 pi\/session.py/ && !/awk/' | wc -l)" = 0 ] && ! pgrep -x EP147 >/dev/null && break; sleep 1; i=$((i+1)); done; echo "previous session gone after ${i}s"
   i=0; while [ $i -lt 30 ]; do pgrep -x sway >/dev/null || break; sleep 1; i=$((i+1)); done; echo "sway gone after ${i}s"
   sudo -n rm -f /tmp/.X1-lock /tmp/.X11-unix/X1
   sudo -n nohup setsid /usr/lib/xorg/Xorg $D -config "$CONF" -ac -nolisten tcp -noreset -novtswitch -keeptty vt7 -logfile /tmp/xorg-bare.log >/tmp/xorg-bare.out 2>&1 </dev/null &
