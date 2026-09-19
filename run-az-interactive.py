@@ -80,7 +80,11 @@ if os.environ.get('LAB_AZ_SMOOTH_SCROLL'):
  print(json.dumps(dict(event='experimental_smooth_scroll', **scroll_manifest)), flush=True)
 rd,wr=os.pipe()
 with (lab/'xvfb.log').open('w') as log:
- xv=subprocess.Popen(['/usr/bin/Xwayland','-displayfd',str(wr),'-geometry','1280x800','-fullscreen','-nolisten','tcp','-ac'],pass_fds=(wr,),stdout=log,stderr=log)
+ # LAB_XWAYLAND_GLAMOR=gl|es|off selects Xwayland's Glamor backend; 'off' is
+# software rendering into wl_shm buffers (no V3D buffer objects in X).
+if os.environ.get('LAB_XWAYLAND_GLAMOR') not in (None,'gl','es','off'):raise ValueError('LAB_XWAYLAND_GLAMOR must be gl, es or off')
+xwayland_extra=['-glamor',os.environ['LAB_XWAYLAND_GLAMOR']] if os.environ.get('LAB_XWAYLAND_GLAMOR') else []
+xv=subprocess.Popen(['/usr/bin/Xwayland','-displayfd',str(wr),'-geometry','1280x800','-fullscreen','-nolisten','tcp','-ac',*xwayland_extra],pass_fds=(wr,),stdout=log,stderr=log)
 os.close(wr);display=os.fdopen(rd).readline().strip()
 if not display:raise RuntimeError('Xvfb failed')
 sock=f'/tmp/.X11-unix/X{display}'

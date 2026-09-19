@@ -29,6 +29,11 @@ def load_config(path):
     # so EP147's native MIT-SHM path can be probed. Unverified; default off.
     c.setdefault('share_ipc',False)
     if not isinstance(c['share_ipc'],bool):raise ValueError('share_ipc must be true or false')
+    # Opt-in candidate: Xwayland's rendering backend. 'off' makes the X server
+    # draw in software into wl_shm buffers (no V3D buffer objects on the
+    # presentation path). Unverified; default None keeps Xwayland's default.
+    c.setdefault('xwayland_glamor',None)
+    if c['xwayland_glamor'] not in (None,'gl','es','off'):raise ValueError("xwayland_glamor must be 'gl', 'es', 'off' or null")
     c.setdefault('exit_hold_seconds',2.)
     if not .5<=float(c['exit_hold_seconds'])<=10:raise ValueError('exit_hold_seconds must be 0.5..10')
     # Optional: browse the original Rekordbox Device Library export instead of
@@ -87,6 +92,7 @@ def main():
     if not stat.S_ISFIFO(fifo.stat().st_mode):raise ValueError('Mixed audio path must be a FIFO')
     env={k:v for k,v in os.environ.items() if not (k.startswith(('LAB_','AZ_')) or k in ('OFFLINE_MIDI','NULL_AUDIO','PACED_AUDIO','USB_FIXTURE','MIXER_FIXTURE','ERP_FIXTURE','DECK_FIXTURE','MIX_STREAM','DSP_GRAPH','XIMAGE_FAST24','NATIVE_NAVIGATION','NATIVE_ROUTING','RX_FEEDBACK','AUDIO_CAPTURE','PROFILE','TRACE','HEADPHONE_DSP','MAIN_CPU_LIST','AFFINITY_TRACE','NATIVE_ROUTING_STREAM','MIXER_TX_CAPTURE','CDJ_ERP_FIXTURE','MOUNT_TRACE','LOAD_TRACE','FADER_TRACE','ONAIR_TRACE','MIC_CONTROL_TRACE'))};env.update({k:'1' for k in ('OFFLINE_MIDI','NULL_AUDIO','PACED_AUDIO','USB_FIXTURE','MIXER_FIXTURE','ERP_FIXTURE','DECK_FIXTURE','MIX_STREAM','DSP_GRAPH','XIMAGE_FAST24','LAB_XIMAGE_PRESENT','LAB_AZ_SMOOTH_SCROLL','LAB_AZ_FRACTIONAL_GRID','LAB_KEEP_OPEN','LAB_GRID_SPAN_CANDIDATE','LAB_SEM_OWNER_FIX')})
     if c['share_ipc']:env['LAB_SHARE_IPC']='1'
+    if c['xwayland_glamor']:env['LAB_XWAYLAND_GLAMOR']=c['xwayland_glamor']
     # No inherited opt-in memory/tracing or competing control experiments.
     for key in ('LAB_AZ_PCM_TEMPLATE','LAB_MAIN_ALLOCATION_TRACE','NATIVE_NAVIGATION','NATIVE_ROUTING','RX_FEEDBACK','AUDIO_CAPTURE','PROFILE','TRACE'):
         env.pop(key,None)
@@ -138,6 +144,7 @@ def main():
         (out/'session.json').write_text(json.dumps(dict(supervisor=os.getpid(),player=player,launcher=launcher.pid,audio=audio.pid,bridge=bridge.pid if bridge else None,mixer_socket=endpoint,manual_fx_bpm=c['fx_bpm'],library_stage=c['library_stage']),indent=2))
         library='staged legacy Device Library' if c['library_stage'] else 'the USB library as-is'
         if c['share_ipc']:library+=', IPC namespace shared (candidate)'
+        if c['xwayland_glamor']:library+=f', Xwayland -glamor {c["xwayland_glamor"]} (candidate)'
         leave='Ctrl+C' if not c['exit_hold'] else f'Ctrl+C, or hold all {len(c["exit_hold"])} mapped exit control(s) together for {c["exit_hold_seconds"]:g}s'
         print(f'AZ session running on {library}. Logs: {out}\n{leave} stops this session. FX tempo is manually set to {c["fx_bpm"]} BPM.',flush=True)
         while all(child.poll() is None for child in children):time.sleep(.5)
