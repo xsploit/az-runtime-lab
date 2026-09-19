@@ -639,3 +639,68 @@ neither hop: bare Xorg with EXA on the display, no compositor, no GL.
   exposes a glamor-off switch, that first, since it needs no packages.
 - Three `D` waits in `folio_add_lru`/rtlock are page-allocation contention on
   the PREEMPT_RT kernel; noted, not pursued.
+
+## Glamor-off A/B/A, 2026-09-19: Xwayland without V3D buffers, default priorities
+
+`xwayland_glamor=off` (Xwayland 24.1.6 `-glamor off`, software rendering, no
+V3D buffer objects on the presentation path) against the default config, all
+scheduling defaults, three fresh sessions via the kiosk loop, cached-track
+load inside the 60 s window. Arm B's X server was verified from its command
+line (`-glamor off`); the A arms ran the default one. Captures:
+`local/load-span-20260919T1006*`–`1013*` on the Pi.
+
+| arm | Xwayland | n | max ms | >25 ms | >40 ms | primary gap (t after LOAD) |
+|-----|----------|---|--------|--------|--------|----------------------------|
+| A1  | default  | 3052 | 68.6 | 4 | 1 | 68.6 ms @ +0.519 s |
+| B   | -glamor off | 3081 | 55.7 | 5 | 1 | 55.7 ms @ +0.554 s |
+| A2  | default  | 3065 | 29.5 | 3 | 0 | 29.5 ms @ +0.630 s |
+
+The primary +0.5–0.6 s gap is present in all three arms and arm B sits
+inside the A-arm spread (the two A arms differ by 39 ms between themselves).
+Underruns: A1 1, B 0, A2 0. No effect attributable to glamor at default
+priorities. This does not yet answer the narrower question — the V3D waits
+were observed only once X was *prioritised* — which the `jointnoglamor`
+knob below tests with joint RR 12 in every arm.
+
+Two launch failures preceded this run and were not the launcher patch:
+an `aplay` orphaned mid-launch (still opening the FIFO, `wchan
+wait_for_partner`, reparented to PID 1) held the FLX6 PCM so every session
+died with "audio open error: Device or resource busy"; after that, `/tmp`
+(2 GB tmpfs) was full — perf script dumps of my own plus fourteen leaked
+`/tmp/az-scroll-*` dirs (the 56 MB patched executable; the launcher dies in
+place on SIGTERM and never reaches its `finally`) — so `az_scroll_overlay`
+hit ENOSPC. Both are now guarded in `pi/session.py` (stale-overlay sweep
+when no player is alive; children registered with stop signals blocked; the
+aplay error text surfaces in the exception) and the launcher unwinds on
+SIGTERM.
+
+## Glamor-off on the prioritised baseline (`jointnoglamor`), 2026-09-19
+
+Same protocol, but EP147 main **and** Xwayland at RR 12 in every arm (the
+condition under which X's residual waits were V3D buffer creation and GPU
+fence waits); arm B additionally `-glamor off`. All three X command lines
+verified. Captures `local/load-span-20260919T1016*`–`1024*`.
+
+| arm | Xwayland | n | max ms | >25 ms | >40 ms | primary gap (t after LOAD) |
+|-----|----------|---|--------|--------|--------|----------------------------|
+| A1  | RR 12, default | 2959 | 29.6 | 2 | 0 | 29.6 ms @ +0.378 s |
+| B   | RR 12, -glamor off | 2873 | 38.6 | 2 | 0 | 38.6 ms @ +0.536 s |
+| A2  | RR 12, default | 2963 | 23.1 | 0 | 0 | 23.1 ms @ +0.891 s |
+
+Glamor off is the worst of the three arms; removing V3D buffer objects from
+the X server's path does not shrink the primary gap, prioritised or not.
+**Closed: Xwayland glamor/V3D.** `xwayland_glamor` stays an opt-in key at
+`null`.
+
+What the prioritised A arms show again, now over six arms at RR 12 across
+three runs: the >25 ms count on load is 0–2 per arm versus 3–7 at defaults,
+and A2 here is the first capture with **no** gap over 25 ms across the load.
+The cost is unchanged: A1 logged 2 underruns at session start (Xwayland at
+RR 12 competing with the audio processes), B and A2 none. Joint priority
+remains the only measured lever; it is still unapplied pending a
+touch-latency check and a long session, and a proper home (`pflx-tune`)
+rather than a `chrt` from a script.
+
+Housekeeping verified in the same runs: with the launcher unwinding on
+SIGTERM, `/tmp/az-scroll-*` held exactly one directory (the live session's)
+across four session stops, and no `aplay` survived a stop.

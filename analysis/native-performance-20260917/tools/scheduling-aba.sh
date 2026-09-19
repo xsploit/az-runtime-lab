@@ -3,10 +3,12 @@
 # A arms run defaults. Usage: sh scheduling-aba.sh irq|audio|renderer|joint
 # irq: irq 111 -> CPU 3; audio: mix-stream+aplay -> CPU 3; renderer: EP147
 # main RR 12; joint: EP147 main AND Xwayland RR 12; noglamor: session config
-# xwayland_glamor=off for arm B (Xwayland software rendering, no V3D BOs). Everything is reverted on
-# exit; arm rollback-watchdog.sh separately before running.
+# xwayland_glamor=off for arm B (Xwayland software rendering, no V3D BOs);
+# jointnoglamor: EP147 main AND Xwayland RR 12 in EVERY arm, glamor off only in
+# arm B (isolates the V3D path once X is no longer starved). Everything is
+# reverted on exit; arm rollback-watchdog.sh separately before running.
 set -u
-KNOB=${1:?irq|audio|renderer|joint|noglamor}; LAB=${AZ_LAB:-$HOME/az-native-lab}; B=$LAB/local/kiosk-swap-backup
+KNOB=${1:?irq|audio|renderer|joint|noglamor|jointnoglamor}; LAB=${AZ_LAB:-$HOME/az-native-lab}; B=$LAB/local/kiosk-swap-backup
 printf '#!/bin/sh\necho az\n' > /tmp/stub-menu; sudo -n install -m 0755 /tmp/stub-menu /usr/local/bin/pflx-mode-menu
 sed 's|\$drop python3 pi/session.py "\$config" >>|\$drop python3 pi/session.py "\$config" --no-controller >>|' "$B/pflx-az-session" > /tmp/az-nc; sudo -n install -m 0755 /tmp/az-nc /usr/local/bin/pflx-az-session
 sed 's|mode=bitedj$|mode=az|' "$B/start-pflx-kiosk" > /tmp/kiosk-az; sudo -n install -m 0755 /tmp/kiosk-az /usr/local/bin/start-pflx-kiosk
@@ -27,12 +29,13 @@ apply() {  # $1 = on|off ; applied to fresh processes as they appear
              for p in $pids; do case " $seen " in *" $p "*) ;; *) sudo -n taskset -p $mask $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
       renderer) for p in $(pgrep -x EP147); do case " $seen " in *" $p "*) ;; *) [ "$on" = on ] && sudo -n chrt -r -p 12 $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
       joint) for p in $(pgrep -x EP147) $(pgrep -n -x Xwayland); do case " $seen " in *" $p "*) ;; *) [ "$on" = on ] && sudo -n chrt -r -p 12 $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
+      jointnoglamor) for p in $(pgrep -x EP147) $(pgrep -n -x Xwayland); do case " $seen " in *" $p "*) ;; *) sudo -n chrt -r -p 12 $p >/dev/null 2>&1; seen="$seen $p";; esac; done;;
     esac; sleep 0.5
   done
 }
 arm() {
   label=$1; on=$2
-  [ "$KNOB" = noglamor ] && (cd "$LAB" && setglamor "$([ "$on" = on ] && echo off || echo null)")
+  case $KNOB in noglamor|jointnoglamor) (cd "$LAB" && setglamor "$([ "$on" = on ] && echo off || echo null)");; esac
   apply "$on" & HOOK=$!
   sh /tmp/load-span-capture.sh > "/tmp/arm-$label.log" 2>&1; kill $HOOK 2>/dev/null
   OUT=$(cat /tmp/last-capture-dir); echo "=== arm $label knob=$KNOB on=$on"

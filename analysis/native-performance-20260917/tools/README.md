@@ -8,3 +8,7 @@ a fresh launch on the SOURCE page; `view` goes to SOURCE, `browse` opens the
 browser. `rollback-watchdog.sh SECS` is an independent timed rollback; arm it
 before any scheduling experiment. `analyze-instr.py DIR` reads an
 `instrument-arm.sh` capture.
+`scheduling-aba.sh KNOB` runs A/B/A over `load-span-capture.sh`; knobs:
+`irq`, `audio`, `renderer`, `joint` (arm B changes the knob, A arms are
+defaults), `noglamor` (arm B `xwayland_glamor=off`), `jointnoglamor` (joint
+RR 12 in every arm, glamor off only in B). It reverts everything on exit.

@@ -1,7 +1,7 @@
 """Run one native AZ/FLX6 lab session from explicit local configuration."""
 from pathlib import Path
 import argparse, fcntl, hashlib, json, os, platform, signal, socket, stat
-import subprocess, sys, threading, time, shutil
+import subprocess, sys, tempfile, threading, time, shutil
 
 BASE=Path(__file__).resolve().parents[1]
 AZ_HASH='736bdc9322c00e5770af459c92cace33d8680825c07f00f909f74dfc473a77a6'
@@ -44,6 +44,10 @@ def load_config(path):
             raise ValueError('library_stage must be an absolute local path to the staged PIONEER directory')
         if Path(c['library_stage'])==Path(c['usb'])/'PIONEER':raise ValueError('library_stage must be a separate staged directory, not the original USB')
     return c
+
+def comm(proc):
+    try:return (proc/'comm').read_text().strip()
+    except OSError:return ''
 
 def check(c):
     import shutil
@@ -90,6 +94,11 @@ def main():
     fifo=state/'mixed-output.raw'
     if not fifo.exists():os.mkfifo(fifo,0o600)
     if not stat.S_ISFIFO(fifo.stat().st_mode):raise ValueError('Mixed audio path must be a FIFO')
+    # A launcher that died without unwinding leaves its patched executable (tens of
+    # MiB) in the temp dir; enough of them fill a tmpfs and every later launch fails
+    # with ENOSPC. With no player alive on this host every one of them is stale.
+    if not any(comm(proc)=='EP147' for proc in Path('/proc').glob('[0-9]*')):
+        for stale in Path(tempfile.gettempdir()).glob('az-scroll-*'):shutil.rmtree(stale,ignore_errors=True)
     env={k:v for k,v in os.environ.items() if not (k.startswith(('LAB_','AZ_')) or k in ('OFFLINE_MIDI','NULL_AUDIO','PACED_AUDIO','USB_FIXTURE','MIXER_FIXTURE','ERP_FIXTURE','DECK_FIXTURE','MIX_STREAM','DSP_GRAPH','XIMAGE_FAST24','NATIVE_NAVIGATION','NATIVE_ROUTING','RX_FEEDBACK','AUDIO_CAPTURE','PROFILE','TRACE','HEADPHONE_DSP','MAIN_CPU_LIST','AFFINITY_TRACE','NATIVE_ROUTING_STREAM','MIXER_TX_CAPTURE','CDJ_ERP_FIXTURE','MOUNT_TRACE','LOAD_TRACE','FADER_TRACE','ONAIR_TRACE','MIC_CONTROL_TRACE'))};env.update({k:'1' for k in ('OFFLINE_MIDI','NULL_AUDIO','PACED_AUDIO','USB_FIXTURE','MIXER_FIXTURE','ERP_FIXTURE','DECK_FIXTURE','MIX_STREAM','DSP_GRAPH','XIMAGE_FAST24','LAB_XIMAGE_PRESENT','LAB_AZ_SMOOTH_SCROLL','LAB_AZ_FRACTIONAL_GRID','LAB_KEEP_OPEN','LAB_GRID_SPAN_CANDIDATE','LAB_SEM_OWNER_FIX')})
     if c['share_ipc']:env['LAB_SHARE_IPC']='1'
     if c['xwayland_glamor']:env['LAB_XWAYLAND_GLAMOR']=c['xwayland_glamor']
@@ -98,13 +107,20 @@ def main():
         env.pop(key,None)
     env.update(AZ_ROOTFS=c['rootfs'],AZ_CABINET=c['cabinet'],AZ_STATE=c['state'],PLAYER='xdjaz',LAB_PI_JEMALLOC=c['jemalloc'],USB_FIXTURE_PATH=c['usb'],USB_PIONEER_CACHE=str(Path(c['cache'])/'merged'),LAB_VSYNC_HZ='59.24')
     children=[];streams=[];bridge=None
+    def spawn(command,**kwargs):
+        # A stop signal landing between Popen and the append would orphan the child;
+        # an aplay still opening the FIFO then keeps the sound card busy for every
+        # later session. Hold the signals until the child is registered.
+        signal.pthread_sigmask(signal.SIG_BLOCK,{signal.SIGTERM,signal.SIGINT})
+        try:child=subprocess.Popen(command,**kwargs);children.append(child);return child
+        finally:signal.pthread_sigmask(signal.SIG_UNBLOCK,{signal.SIGTERM,signal.SIGINT})
     def start(command,name,**kwargs):
         f=(out/f'{name}.log').open('w');streams.append(f)
-        child=subprocess.Popen(command,cwd=BASE,env=env,stdin=subprocess.DEVNULL,stdout=f,stderr=f,start_new_session=True,**kwargs);children.append(child);return child
+        return spawn(command,cwd=BASE,env=env,stdin=subprocess.DEVNULL,stdout=f,stderr=f,start_new_session=True,**kwargs)
     def stopped(signum,frame):raise KeyboardInterrupt
     signal.signal(signal.SIGTERM,stopped)
     try:
-        audio=subprocess.Popen(['aplay','-q','-D',c['audio_device'],'-t','raw','-f','FLOAT_LE','-c','4','-r','44100','--buffer-time=80000','--period-time=10000',str(fifo)],stderr=subprocess.PIPE,stdout=subprocess.DEVNULL,text=True,start_new_session=True);children.append(audio)
+        audio=spawn(['aplay','-q','-D',c['audio_device'],'-t','raw','-f','FLOAT_LE','-c','4','-r','44100','--buffer-time=80000','--period-time=10000',str(fifo)],stderr=subprocess.PIPE,stdout=subprocess.DEVNULL,text=True,start_new_session=True)
         def observe_audio():
             with (out/'audio-events.jsonl').open('w') as f:
                 f.write(json.dumps(dict(event='audio_started',monotonic=time.monotonic(),wall=time.time(),pid=audio.pid))+'\n');f.flush()
@@ -117,7 +133,10 @@ def main():
         probe="from az_live_view import LiveView; import sys; v=LiveView(int(sys.argv[1])); print(v.sample()['kind']); v.close()"
         pythonpath=os.pathsep.join(str(BASE/x) for x in ('','analysis','mixer'))
         while time.monotonic()<deadline:
-            if launcher.poll() is not None or audio.poll() is not None:raise RuntimeError(f'Player/audio exited; see {out}')
+            if launcher.poll() is not None or audio.poll() is not None:
+                events=(out/'audio-events.jsonl').read_text().splitlines() if audio.poll() is not None else []
+                reason=json.loads(events[-1]).get('text','') if events else 'launcher exited'
+                raise RuntimeError(f'Player/audio exited ({reason or "audio exited"}); see {out}')
             for proc in Path('/proc').glob('[0-9]*'):
                 try:
                     if (proc/'comm').read_text().strip()=='EP147' and os.getpgid(int(proc.name))==launcher.pid:player=int(proc.name)

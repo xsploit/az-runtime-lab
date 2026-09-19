@@ -7,7 +7,11 @@ from az_paths import lab_path, mapping_path
 
 from pathlib import Path
 from display_timing import publish_timing, SyntheticVsync, prepare_native_timing_directory
-import subprocess,os,time,json,tempfile,stat,errno,sys,itertools
+import subprocess,os,time,json,tempfile,stat,errno,sys,itertools,signal
+# The session supervisor stops this launcher with SIGTERM. Default disposition
+# would end the process in place and leak the temp dirs (scroll overlay, mixer,
+# clock) that the finally blocks below remove; unwind instead.
+signal.signal(signal.SIGTERM,lambda signum,frame:sys.exit(128+signum))
 if any(os.environ.get(x) for x in ('NATIVE_NAVIGATION','LAB_GDB','TRACE','MOUNT_TRACE','LOAD_TRACE','FADER_TRACE','ONAIR_TRACE','MIC_CONTROL_TRACE')):raise ValueError('Pi probe does not support QEMU-specific tracing or guest discovery')
 base=Path(__file__).resolve().parent;model=os.environ.get('PLAYER','xdjaz');lab=base/model;lab.mkdir(exist_ok=True);root=lab_path(model+'/rootfs');state=lab_path(model+'/state');state.mkdir(parents=True,exist_ok=True)
 clock_temp,clock_directory=prepare_native_timing_directory(state/'sys/module/rockchipdrm/parameters')
