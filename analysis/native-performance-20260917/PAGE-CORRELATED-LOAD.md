@@ -812,12 +812,16 @@ so that spike is independent of the X server.
 **Sustained playback** (`tools/bare-xorg/sustained-run.sh`): one fresh
 session per X server, both decks started, then eight alternating-deck loads
 120 s apart under the damage and page samplers (~16 min each). The two
-captures are directly comparable: same tracks, same timing, and — because
-some tracks take longer than the 5 s the harness allowed between LOAD and
-PLAY, so the PLAY was ignored and the deck stayed silent — the same ~257 s
-of renderer-idle time (main thread asleep in poll, nothing to draw), which
-`summarize_steady.py` now separates from the statistics. Captures
-`…133506Z` (Xwayland) and `…135700Z` (Xorg).
+captures are directly comparable: same tracks, same timing, and the same
+~257 s of renderer-idle time (both decks silent, main thread asleep in
+poll, nothing to draw), which `summarize_steady.py` separates from the
+statistics. I first attributed the idle stretches to PLAY being sent while
+a slow track was still loading; a repeat with a 12 s LOAD→PLAY wait
+(`…141524Z`) produced the same 259 s of idle time, so that explanation was
+wrong. The idle pattern is deterministic for this track sequence — short
+tracks, or the toggle semantics of LOAD/PLAY on a playing deck — and is a
+harness limitation, not a player fault; it does not affect the comparison.
+Captures `…133506Z` (Xwayland) and `…135700Z` (Xorg).
 
 | X server | active waveform intervals | median | p99 | max | >25 ms | >40 ms | >100 ms | underruns |
 |----------|---|---|---|---|---|---|---|---|
@@ -834,9 +838,11 @@ steady state. Underrun counts are too few to compare. The slow loads are a
 finding in themselves: the loading cadence lasted 1–4 s after LOAD on
 particular tracks, the same tracks that spike in the six-load arms, which
 is consistent with track-related work (ANLZ or artwork size, or a cache
-miss) rather than presentation; not investigated yet. The harness now waits
-12 s between LOAD and PLAY (`LOAD_WAIT`) and the sustained pair is being
-repeated with it.
+miss) rather than presentation; not investigated, and — as Codex noted — a
+larger spike on Xorg does not show the X server is uninvolved, only that
+the spike is not removed by changing it. The repeat of the Xwayland half
+with the 12 s wait reproduced the first: 10 active intervals over 25 ms,
+median 16.8 ms, p99 18.8 ms, worst 305 ms (loading cadence), 0 underruns.
 
 Standing: bare Xorg is a repeatable, modest lead (fewer long intervals on
 load, renderer 39 %core against 44–45, steady state unchanged); joint
