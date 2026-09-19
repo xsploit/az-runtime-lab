@@ -1,7 +1,7 @@
 """Per-load statistics for a multi-load-capture.sh directory.
 
-For every load stamp: XDamage gaps in the 2.5 s after LOAD (max, >25 ms,
->40 ms), and two response latencies measured from the page sampler at ~10 ms
+For every load stamp: waveform-page XDamage gaps in the 2.5 s after the page
+returns to the waveform (max, >25 ms, >40 ms), and two response latencies measured from the page sampler at ~10 ms
 resolution: browse command -> page kind 'browse', LOAD -> page kind
 'waveform'. These are UI-response proxies on the same processing path a touch
 takes after X has delivered the event; they are not touch latency. Prints a
@@ -18,17 +18,20 @@ def first_kind(after,kind,limit=3.0):
         if e['observed_at']-after>limit:return None
         if e['kind']==kind:return round((e['observed_at']-after)*1000,1)
     return None
+def kinds(a,b):return {e['kind'] for e in ev[bisect.bisect_left(ev_t,a):bisect.bisect_right(ev_t,b)]}
 def gaps(a,b):
+    # waveform-page gaps only: the browser->waveform page switch itself is a
+    # legitimate long gap (no damage while the page is built) and is reported
+    # separately as load->waveform latency.
     i=bisect.bisect_left(times,a);j=bisect.bisect_right(times,b);w=times[max(i-1,0):j]
-    return [(y-x)*1000 for x,y in zip(w,w[1:])]
+    return [(y-x)*1000 for x,y in zip(w,w[1:]) if kinds(x,y)=={'waveform'}]
 loads=[c for c in cmds if c['command'].startswith('load')];rows=[]
 for c in loads:
-    n=c['command'][4:];g=gaps(c['at'],c['at']+2.5)
+    n=c['command'][4:];wave_at=first_kind(c['at'],'waveform');t0=c['at']+(wave_at or 0)/1000;g=gaps(t0,t0+2.5)
     br=next((x for x in cmds if x['command']=='browse'+n),None)
     rows.append(dict(load=int(n),max_ms=round(max(g),1) if g else None,over25=sum(x>25 for x in g),over40=sum(x>40 for x in g),
         browse_to_browser_ms=first_kind(br['at'],'browse') if br else None,load_to_waveform_ms=first_kind(c['at'],'waveform')))
 # whole-capture waveform-page gaps (pages sampled as waveform only between the two damage stamps)
-def kinds(a,b):return {e['kind'] for e in ev[bisect.bisect_left(ev_t,a):bisect.bisect_right(ev_t,b)]}
 wave=[(b-a)*1000 for a,b in zip(times,times[1:]) if kinds(a,b)=={'waveform'}]
 tot=dict(loads=len(rows),waveform_gaps=len(wave),max_ms=round(max(wave),1) if wave else None,over25=sum(x>25 for x in wave),over40=sum(x>40 for x in wave),
     per_load_over25=sum(r['over25'] for r in rows),per_load_max_ms=max((r['max_ms'] or 0) for r in rows) if rows else None,

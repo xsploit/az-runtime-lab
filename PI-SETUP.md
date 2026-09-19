@@ -105,6 +105,8 @@ machine running AZ**. No username, Pi hostname or Windows mount is assumed.
 | `exit_hold` | Controller addresses held together to end the session; defaults to both FLX6 Merge FX buttons, `[]` disables |
 | `exit_hold_seconds` | How long that hold must last, 0.5–10 s; default 2 |
 | `share_ipc` | Candidate: share the SysV IPC namespace so AZ can use MIT-SHM instead of packed-24 uploads. Default false; weakens sandbox isolation |
+| `xwayland_glamor` | Candidate: `"gl"`, `"es"` or `"off"` passes `-glamor` to Xwayland; `null` (default) leaves the server's own choice |
+| `external_display` | Experiment: `":N"` attaches to an X server that is already running (bare Xorg, no Wayland session needed) instead of spawning Xwayland; `null` (default) |
 
 Paths with spaces are passed as separate arguments. Do not use `~` or shell
 variables inside JSON; write their expanded absolute paths. Commas, colons,

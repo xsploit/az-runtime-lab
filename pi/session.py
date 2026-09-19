@@ -1,6 +1,6 @@
 """Run one native AZ/FLX6 lab session from explicit local configuration."""
 from pathlib import Path
-import argparse, fcntl, hashlib, json, os, platform, signal, socket, stat
+import argparse, fcntl, hashlib, json, os, platform, re, signal, socket, stat
 import subprocess, sys, tempfile, threading, time, shutil
 
 BASE=Path(__file__).resolve().parents[1]
@@ -34,6 +34,8 @@ def load_config(path):
     # presentation path). Unverified; default None keeps Xwayland's default.
     c.setdefault('xwayland_glamor',None)
     if c['xwayland_glamor'] not in (None,'gl','es','off'):raise ValueError("xwayland_glamor must be 'gl', 'es', 'off' or null")
+    c.setdefault('external_display',None)
+    if c['external_display'] is not None and not re.fullmatch(r':\d+',str(c['external_display'])):raise ValueError("external_display must be ':N' (an already running X server, bare-Xorg experiment) or null")
     c.setdefault('exit_hold_seconds',2.)
     if not .5<=float(c['exit_hold_seconds'])<=10:raise ValueError('exit_hold_seconds must be 0.5..10')
     # Optional: browse the original Rekordbox Device Library export instead of
@@ -55,7 +57,9 @@ def check(c):
     for command in ('python3','cc','bwrap','Xwayland','aplay','sudo','fuse-overlayfs','ffmpeg'):
         if not shutil.which(command):errors.append(f'Install {command}')
     if platform.machine() not in ('aarch64','arm64'):errors.append('Run on native AArch64 Linux (not x86/QEMU)')
-    if not os.environ.get('WAYLAND_DISPLAY') or not os.environ.get('XDG_RUNTIME_DIR'):
+    if c.get('external_display'):
+        if not Path(f"/tmp/.X11-unix/X{c['external_display'].lstrip(':')}").exists():errors.append(f"No X server on {c['external_display']} (external_display)")
+    elif not os.environ.get('WAYLAND_DISPLAY') or not os.environ.get('XDG_RUNTIME_DIR'):
         errors.append('Run inside the user Wayland desktop session')
     executable=Path(c['rootfs'])/'home/root/pdj/EP147'
     if not executable.is_file():errors.append(f'Supply the extracted AZ rootfs: {executable}')
@@ -102,6 +106,7 @@ def main():
     env={k:v for k,v in os.environ.items() if not (k.startswith(('LAB_','AZ_')) or k in ('OFFLINE_MIDI','NULL_AUDIO','PACED_AUDIO','USB_FIXTURE','MIXER_FIXTURE','ERP_FIXTURE','DECK_FIXTURE','MIX_STREAM','DSP_GRAPH','XIMAGE_FAST24','NATIVE_NAVIGATION','NATIVE_ROUTING','RX_FEEDBACK','AUDIO_CAPTURE','PROFILE','TRACE','HEADPHONE_DSP','MAIN_CPU_LIST','AFFINITY_TRACE','NATIVE_ROUTING_STREAM','MIXER_TX_CAPTURE','CDJ_ERP_FIXTURE','MOUNT_TRACE','LOAD_TRACE','FADER_TRACE','ONAIR_TRACE','MIC_CONTROL_TRACE'))};env.update({k:'1' for k in ('OFFLINE_MIDI','NULL_AUDIO','PACED_AUDIO','USB_FIXTURE','MIXER_FIXTURE','ERP_FIXTURE','DECK_FIXTURE','MIX_STREAM','DSP_GRAPH','XIMAGE_FAST24','LAB_XIMAGE_PRESENT','LAB_AZ_SMOOTH_SCROLL','LAB_AZ_FRACTIONAL_GRID','LAB_KEEP_OPEN','LAB_GRID_SPAN_CANDIDATE','LAB_SEM_OWNER_FIX')})
     if c['share_ipc']:env['LAB_SHARE_IPC']='1'
     if c['xwayland_glamor']:env['LAB_XWAYLAND_GLAMOR']=c['xwayland_glamor']
+    if c['external_display']:env['LAB_EXTERNAL_DISPLAY']=c['external_display']
     # No inherited opt-in memory/tracing or competing control experiments.
     for key in ('LAB_AZ_PCM_TEMPLATE','LAB_MAIN_ALLOCATION_TRACE','NATIVE_NAVIGATION','NATIVE_ROUTING','RX_FEEDBACK','AUDIO_CAPTURE','PROFILE','TRACE'):
         env.pop(key,None)
@@ -164,6 +169,7 @@ def main():
         library='staged legacy Device Library' if c['library_stage'] else 'the USB library as-is'
         if c['share_ipc']:library+=', IPC namespace shared (candidate)'
         if c['xwayland_glamor']:library+=f', Xwayland -glamor {c["xwayland_glamor"]} (candidate)'
+        if c['external_display']:library+=f', attached to X server {c["external_display"]} (experiment)'
         leave='Ctrl+C' if not c['exit_hold'] else f'Ctrl+C, or hold all {len(c["exit_hold"])} mapped exit control(s) together for {c["exit_hold_seconds"]:g}s'
         print(f'AZ session running on {library}. Logs: {out}\n{leave} stops this session. FX tempo is manually set to {c["fx_bpm"]} BPM.',flush=True)
         while all(child.poll() is None for child in children):time.sleep(.5)

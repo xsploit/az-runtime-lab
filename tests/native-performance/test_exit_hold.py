@@ -95,4 +95,11 @@ class ConfigTests(unittest.TestCase):
             self.assertEqual(session.load_config(self.config(root,exit_hold_seconds=3.5))['exit_hold_seconds'],3.5)
             for bad in ({'exit_hold':'0x94,0x2e'},{'exit_hold':[148]},{'exit_hold_seconds':0.1},{'exit_hold_seconds':60}):
                 with self.assertRaises(ValueError,msg=str(bad)):session.load_config(self.config(root,**bad))
+    def test_external_display_is_off_by_default_and_must_name_an_x_display(self):
+        with tempfile.TemporaryDirectory(prefix='AZ space ') as t:
+            root=Path(t)
+            self.assertIsNone(session.load_config(self.config(root))['external_display'])
+            self.assertEqual(session.load_config(self.config(root,external_display=':1'))['external_display'],':1')
+            for bad in ('1','localhost:1',':one',True):
+                with self.assertRaises(ValueError,msg=str(bad)):session.load_config(self.config(root,external_display=bad))
 if __name__=='__main__':unittest.main()

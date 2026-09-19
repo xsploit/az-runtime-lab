@@ -11,5 +11,6 @@
   "exit_hold": ["0x94,0x2e", "0x95,0x2e"],
   "exit_hold_seconds": 2,
   "share_ipc": false,
-  "xwayland_glamor": null
+  "xwayland_glamor": null,
+  "external_display": null
 }

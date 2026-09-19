@@ -39,7 +39,7 @@ PY2
 echo "player=$P main=$MAIN kiosks=1 page=waveform ep147_pct=$busy secs=$SECS" | tee "$OUT/meta.txt"
 
 # 1. XDamage notifications
-(DISPLAY=:0 python3 $LAB/analysis/probe-xdamage.py --display :0 --seconds "$SECS" > "$OUT/damage.json" 2>"$OUT/damage.err") & D=$!
+(DISPLAY=${AZ_DISPLAY:-:0} python3 $LAB/analysis/probe-xdamage.py --display ${AZ_DISPLAY:-:0} --seconds "$SECS" > "$OUT/damage.json" 2>"$OUT/damage.err") & D=$!
 # SKIP_PERF=1 keeps only the damage and page samplers (long captures, many loads).
 C=;S=
 # 2. main-thread on-CPU stacks

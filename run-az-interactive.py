@@ -83,12 +83,17 @@ if os.environ.get('LAB_AZ_SMOOTH_SCROLL'):
  scroll_overlay, scroll_executable, scroll_manifest = prepare(root/'home/root/pdj/EP147', file_cache_mib=int(os.environ['LAB_AZ_FILE_CACHE_MIB']) if os.environ.get('LAB_AZ_FILE_CACHE_MIB') else None)
  print(json.dumps(dict(event='experimental_smooth_scroll', **scroll_manifest)), flush=True)
 rd,wr=os.pipe()
+# LAB_EXTERNAL_DISPLAY=:N attaches to an X server that is already running (the
+# bare-Xorg experiment) instead of spawning Xwayland; the rest of the display
+# handshake is unchanged, the number just arrives through the same pipe.
+external_display=os.environ.get('LAB_EXTERNAL_DISPLAY');xv=None
 with (lab/'xvfb.log').open('w') as log:
   # LAB_XWAYLAND_GLAMOR=gl|es|off selects Xwayland's Glamor backend; 'off' is
  # software rendering into wl_shm buffers (no V3D buffer objects in X).
  if os.environ.get('LAB_XWAYLAND_GLAMOR') not in (None,'gl','es','off'):raise ValueError('LAB_XWAYLAND_GLAMOR must be gl, es or off')
  xwayland_extra=['-glamor',os.environ['LAB_XWAYLAND_GLAMOR']] if os.environ.get('LAB_XWAYLAND_GLAMOR') else []
- xv=subprocess.Popen(['/usr/bin/Xwayland','-displayfd',str(wr),'-geometry','1280x800','-fullscreen','-nolisten','tcp','-ac',*xwayland_extra],pass_fds=(wr,),stdout=log,stderr=log)
+ if external_display:os.write(wr,(external_display.lstrip(':')+'\n').encode())
+ else:xv=subprocess.Popen(['/usr/bin/Xwayland','-displayfd',str(wr),'-geometry','1280x800','-fullscreen','-nolisten','tcp','-ac',*xwayland_extra],pass_fds=(wr,),stdout=log,stderr=log)
 os.close(wr);display=os.fdopen(rd).readline().strip()
 if not display:raise RuntimeError('Xvfb failed')
 sock=f'/tmp/.X11-unix/X{display}'
@@ -406,5 +411,5 @@ finally:
  if mixlog is not None:mixlog.close()
  if mixtemp is not None:mixtemp.cleanup()
  if 'sampler' in locals() and sampler is not None: sampler.wait(timeout=25)
- xv.terminate();xv.wait(timeout=5)
+ if xv is not None:xv.terminate();xv.wait(timeout=5)
  if clock_temp is not None:clock_temp.cleanup()
