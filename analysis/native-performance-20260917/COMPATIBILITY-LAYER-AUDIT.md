@@ -103,17 +103,29 @@ stand in for hardware the Pi does not have.
 
 Avoidable, and worth testing individually against the baseline, in this order:
 
-1. **Bare Xorg instead of sway + Xwayland.** The single largest measured
-   overhead attributable to our setup (~16.6 %core), and it is exactly how the
-   recovered runtime presents. Needs a kiosk mode switch that stops sway.
+1. **Bare Xorg instead of sway + Xwayland.** The ~16.6 %core is what the
+   current compositor path *costs*, not what a replacement *saves*: a bare X
+   server still spends CPU on the same uploads and scanout. The saving is the
+   measured difference between the two, and could be small. It is exactly how
+   the recovered runtime presents. Needs a kiosk mode switch that stops sway.
 2. **Native XShm under bare Xorg.** Cost-neutral under Xwayland; retest once
    (1) exists, since the neutral result may be Xwayland's doing.
-3. **The real device's system tuning**, item by item.
+3. **The real device's system tuning**, item by item — never wholesale.
+   `sched_rt_runtime_us=-1` removes the kernel's realtime throttle, and RT
+   priorities plus CPU pinning can starve the audio path or the compositor on a
+   4-core Pi that is not the 6-core RK3399 those scripts assume. One knob per
+   trial, with the controller-exit gesture and SSH confirmed working first so
+   a bad setting can be undone.
 4. **Direct ALSA from `mix-stream`, smaller buffer**, with a measured latency
    before and after — the current 80 ms figure has never been justified.
 5. **Remove `sem-owner` under shared IPC** to confirm it is only compensating
    for the sandbox.
 6. **NEON `mix-stream`** as a separate build, reference tests unchanged.
+
+Keep the waveform-gap capture (`capture_waveform_gap.sh`) and the bare-Xorg
+experiment as **separate runs on the unchanged baseline**. Attributing the
+61.7 ms outlier and measuring a transport change at the same time would leave
+no way to say which one moved a number.
 
 Each test: one change, the pinned baseline as control, A/B/A, the guards from
 `RESULTS.md` (one kiosk shell, non-blank frame, verified loaded state), CPU by
