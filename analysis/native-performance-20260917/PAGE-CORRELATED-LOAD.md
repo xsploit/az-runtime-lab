@@ -338,7 +338,7 @@ earlier revision of this section asserted that without the stacks, and it was
 wrong. It is also not yet proof of *what* Xwayland was doing in those
 milliseconds; that needs the same treatment applied to Xwayland's thread.
 
-Scheduling of the *renderer alone* is therefore not the root cause. Three
+Scheduling of the *renderer alone* is therefore not the lever. That does not rule out scheduling: a renderer blocked on an X server that is itself starved of CPU is still a scheduling problem, one hop away — which is what the joint renderer+Xwayland test must establish. Three
 knobs were tested individually today (irq 111 affinity, our audio processes'
 affinity, renderer priority); each removed its target from the preemptor list
 as intended, and none moved the worst gap out of the 39–72 ms range seen
@@ -420,10 +420,12 @@ the live session, then `readlink /proc/MAIN/fd/N`:
   external stream socket the renderer polls; the mixer control socket is
   datagram and the audio path is a FIFO (fd 18, `/tmp/az-decks.fifo`, written
   by another thread at 1.63 MB/s — exactly 10 ch × 4 B × 44.1 kHz).
-- Conclusion: the socket the renderer blocks on in the load gap, and whose
-  `unix_write_space`/`sock_def_readable` events wake it, is **the X connection
-  to Xwayland**. This rests on the inode adjacency plus elimination, not on a
-  peer query; `ss -xe` or `lsof` would make it direct.
+- Working identification, **not proof**: adjacent inode numbers do not
+  establish that two sockets are peers, and a trace taken later does not
+  identify the fd involved in an earlier capture. `ss -xe` (installed after
+  this) reports `peer 0` for both ends because the renderer's socket lives in
+  its `--unshare-net` namespace. The test that settles it is dynamic: sample
+  both sockets' Recv-Q/Send-Q across a real load and look for lockstep.
 - Gap in the trace: no `write`/`writev`/`sendmsg` from the main thread in 6 s
   of scrolling playback, so the image uploads leave through a syscall not in
   the set (`send`/`sendto` are the likely ones). Add them before using strace

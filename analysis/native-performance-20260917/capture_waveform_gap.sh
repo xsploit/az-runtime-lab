@@ -43,8 +43,13 @@ echo "player=$P main=$MAIN kiosks=1 page=waveform ep147_pct=$busy secs=$SECS" | 
 # 2. main-thread on-CPU stacks
 sudo -n perf record -k CLOCK_MONOTONIC -F 997 -g --call-graph fp -t "$MAIN" -o "$OUT/cpu.data" -- sleep "$SECS" >"$OUT/perf-cpu.log" 2>&1 & C=$!
 # 3. off-CPU: switches involving the main thread, with the stack it blocked in
-sudo -n perf record -k CLOCK_MONOTONIC -a -g -e sched:sched_switch --filter "prev_pid==$MAIN || next_pid==$MAIN" \
-  -e sched:sched_wakeup --filter "pid==$MAIN" -e block:block_rq_issue -o "$OUT/sched.data" -- sleep "$SECS" >"$OUT/perf-sched.log" 2>&1 & S=$!
+# EXTRA_PID (e.g. Xwayland) widens the switch/wakeup filters to a second task;
+# -a does not lift a filter, so without this only the renderer's switches exist.
+SW="prev_pid==$MAIN || next_pid==$MAIN"; WK="pid==$MAIN"
+if [ -n "${EXTRA_PID:-}" ]; then SW="$SW || prev_pid==$EXTRA_PID || next_pid==$EXTRA_PID"; WK="$WK || pid==$EXTRA_PID"; fi
+echo "extra_pid=${EXTRA_PID:-none}" >> "$OUT/meta.txt"
+sudo -n perf record -k CLOCK_MONOTONIC -a -g -e sched:sched_switch --filter "$SW" \
+  -e sched:sched_wakeup --filter "$WK" -e block:block_rq_issue -o "$OUT/sched.data" -- sleep "$SECS" >"$OUT/perf-sched.log" 2>&1 & S=$!
 # 4. page kind + io + ctxt switches, ~10 ms
 sudo -n env PYTHONPATH=$PP python3 - "$P" "$MAIN" "$SECS" > "$OUT/events.json" 2>"$OUT/events.err" <<'PY' & E=$!
 import json,sys,time
