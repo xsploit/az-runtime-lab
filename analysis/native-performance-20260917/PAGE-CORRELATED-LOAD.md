@@ -959,3 +959,24 @@ same burst drained more slowly. The next quantity to record is per track,
 after LOAD and during ordinary playback: `XPutImage` request count, bytes
 and call duration (lightweight, in the `ximage-present` shim), which
 separates excess redraw volume from slow draining of the same workload.
+
+## X server priority alone (`xonly`), 2026-09-19
+
+The trace above says the X server is starved during the spike while the
+renderer waits on it, so the narrower knob is the X server alone at RR 12
+with the renderer left at RR 1 (no added competition with the audio
+threads). Six-load protocol, Xwayland, priorities re-asserted and verified
+per arm (`applied: renderer=1 xwayland=12` in B).
+
+| arm | Xwayland | intervals >25 ms across six loads | load 3 max | load 5 max | whole >25 / >40 | underruns |
+|-----|----------|---|---|---|---|---|
+| A1 | default | 9 | 57.8 ms | 53.4 ms | 13 / 2 | 0 |
+| B  | RR 12 | 6 | 53.7 ms | **24.1 ms** | 10 / 1 | 0 |
+| A2 | default | 7 | 59.3 ms | 51.5 ms | 11 / 2 | 0 |
+
+One run: B is at the lower edge of the control spread (6 against 7–9), the
+same size of effect as joint priority (5 against 8–10 in its run); the load 5
+spike went away in B and the load 3 spike did not. Page-response latencies
+unchanged, no underruns. Not enough to promote on its own; it is the
+cheaper of the two priority knobs if either is ever applied, and it is the
+one the trace's mechanism predicts.
