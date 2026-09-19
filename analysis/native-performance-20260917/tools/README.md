@@ -12,3 +12,13 @@ before any scheduling experiment. `analyze-instr.py DIR` reads an
 `irq`, `audio`, `renderer`, `joint` (arm B changes the knob, A arms are
 defaults), `noglamor` (arm B `xwayland_glamor=off`), `jointnoglamor` (joint
 RR 12 in every arm, glamor off only in B). It reverts everything on exit.
+`multi-load-capture.sh` (LOADS, PERIOD, FRESH=1 to use the running fresh
+session, SKIP_LOAD=1 when both decks already play, ALTERNATE=1 to alternate
+decks, NO_KIOSK=1 / AZ_DISPLAY=:1 for bare Xorg) is analysed by
+`attribute_multi_load.py DIR`; any capture is summarised over time by
+`summarize_steady.py DIR SESSIONDIR`. `input.py` is the FIFO navigation
+helper (`--no-controller` only). `bare-xorg/` holds the Xorg config for the
+DSI panel, `bare-xorg-arm.sh start|session|stop`, and
+`xorg-vs-xwayland-run.sh`, the unattended comparison (logs under
+`local/xorg-vs-xwayland-*.log`, summary lines prefixed `##`). Everything in
+`/tmp` on the Pi is gone after a reboot: re-stage from here.
