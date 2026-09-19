@@ -539,9 +539,9 @@ user's to give and were not assessed here.
 
 While validating the X-server priority a fresh renderer baseline came in at
 57 %core instead of the 44–45 measured all day. Cause: `settings/wifi.json`
-in the lab state directory had acquired `"start": "true"` (the player's own
-Wi-Fi switch, most likely toggled by automated navigation that landed on
-the settings screen), and with it every session's `WifiSetting` thread
+in the lab state directory had acquired `"start": "true"` — the player's
+own Wi-Fi switch, which the user had tapped by accident on the settings
+screen — and with it every session's `WifiSetting` thread
 spawned `sh -c wpa_cli …` at ~180 forks/s (490 forks/s system-wide, load
 average 4) because `wpa_supplicant` cannot start in the sandbox (no
 `mlan0`). Switching the setting back to `false` returned a fresh session to
