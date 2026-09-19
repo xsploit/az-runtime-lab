@@ -820,8 +820,22 @@ a slow track was still loading; a repeat with a 12 s LOAD→PLAY wait
 (`…141524Z`) produced the same 259 s of idle time, so that explanation was
 wrong. The idle pattern is deterministic for this track sequence — short
 tracks, or the toggle semantics of LOAD/PLAY on a playing deck — and is a
-harness limitation, not a player fault; it does not affect the comparison.
-Captures `…133506Z` (Xwayland) and `…135700Z` (Xorg).
+harness limitation, not a player fault. Whether it affects the comparison
+is a matter of measurement, not assumption: `summarize_steady.py` reports
+per capture the seconds with a scrolling waveform (≥45 damage
+notifications in the second), the renderer-idle seconds, and the number of
+LOAD commands issued —
+
+| capture | window | scrolling | idle | loads | active intervals |
+|---------|--------|-----------|------|-------|------------------|
+| Xwayland, first | 872.4 s | 607 s | 256.8 s | 8 | 34174 |
+| bare Xorg | 872.2 s | 607 s | 256.7 s | 8 | 34175 |
+| Xwayland, repeat (12 s wait) | 872.4 s | 608 s | 258.9 s | 8 | 34191 |
+
+— so the three runs contain the same playback time, the same scrolling
+time and the same load events to within a second, and the idle periods are
+reported separately rather than folded in. Captures `…133506Z`
+(Xwayland), `…135700Z` (Xorg), `…141524Z` (Xwayland repeat).
 
 | X server | active waveform intervals | median | p99 | max | >25 ms | >40 ms | >100 ms | underruns |
 |----------|---|---|---|---|---|---|---|---|
