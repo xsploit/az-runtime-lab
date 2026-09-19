@@ -103,3 +103,95 @@ Instrumentation note: the first attribution pass counted every sched_switch
 that *named* `EP147` on the outgoing side, which also matches unnamed firmware
 threads that inherit the process comm, and it widened each window by 10 ms.
 It now matches `prev_pid` of the main thread inside the gap only.
+
+## Load-spanning capture, 2026-09-18: the stall is renderer preemption
+
+Separate run from the steady-state capture above, same pinned baseline,
+`share_ipc=false`, fresh launch, `Doctor_P_-_Tetris` and `No Stress (Tokez
+VIP)` playing on the two-deck WAVEFORM page (44 %core, one kiosk shell, frame
+verified by eye). During the 60 s window the FIFO helpers issued `browse`
+(−9.14 s), `rotate 3` (−4.55 s), **`LOAD deck 1` (t=0)** and `PLAY` (+6.59 s),
+each stamped on CLOCK_MONOTONIC. Afterwards deck 1 showed `Pirates (Tokez VIP)`
+Fm playing while deck 2 had kept playing throughout — so this measures a load
+onto one deck with the other deck already playing. No bridge was present;
+nothing else was injected. `attribute_load_span.py` splits every interval by
+the page kinds sampled inside it.
+
+| Bucket | n | max | >25 ms | >40 ms | where |
+|---|---|---|---|---|---|
+| BROWSE only | 395 | **287.5 ms** | 22 | 18 | all before LOAD (−8.4, −4.9, −4.0, −1.0, −0.5 s) |
+| transition | 1 | 33.5 ms | 1 | 0 | +0.375 s, browse→waveform page construction |
+| WAVEFORM only | 3048 | **53.7 ms** | 3 | 1 | **+0.582, +0.739, +0.980 s after LOAD** |
+| unsampled | 1173 | — | — | — | no 10 ms page sample fell inside; excluded |
+
+The browser gaps are idle, not stalls: across the 287 ms intervals the main
+thread was on-CPU 12–14 of ~286 expected samples (~5%) and its switch-outs
+were 52% `S` (sleeping) — a static list that is not repainting, as Codex
+concluded. The load itself produced one 33.5 ms page-construction interval and
+then a **cluster of 53.7 / 30.6 / 25.1 / 23.2 ms intervals within the first
+second on the WAVEFORM page** — that is the hitch the user sees, ~3 frames at
+its worst, while the other deck is playing. No reported underrun.
+
+### What the renderer was doing in the 53.7 ms gap: nothing — it was preempted
+
+Main thread switch-outs in that window: 110, of which **95 were `R`/`R+`
+(runnable, preempted)**, 8 `S`, 7 `D`. It held the CPU for 5 of ~53 samples.
+Who took it, from `sched_switch next_comm` (kernel prio in parentheses;
+kernel 98 = RT 1, lower number = higher priority):
+
+| took the CPU | times | thread | RT priority | ours? |
+|---|---|---|---|---|
+| `irq/111-1f00080000.i2c` | **38** | touchscreen I²C IRQ thread | 50 | kernel |
+| `PageFiller0` | 24 | AZ load/page thread | 11 | firmware |
+| `JUCE Timer` | 14 | firmware | 33 | firmware |
+| `mix-stream` | 4 | host mixer | 8 | ours |
+| `Xwayland` | 4 | X server | 1 | ours |
+| `BufferingSched` | 3 | firmware | 44 | firmware |
+
+Four `block_rq_issue` reads (512 KB, 1 MB readahead on `sda`, the USB) were
+issued by `FileDataCache` in the same window — the new track being read — but
+the main thread's own `read_bytes` stayed 0. The 30.6 ms gap is the same
+pattern with `PageFiller0` first (53) and the IRQ thread second (29).
+
+The same preemption happens in steady state (a 54 ms control window at +30 s
+shows 177 switch-outs, IRQ thread 45×, Xwayland 40×) and produces no dropped
+frame; the difference at load is `PageFiller0`, `BufferingSched` and
+`FileDataCache` bursting at the same moment.
+
+### Why it can starve: priority and affinity map (live session)
+
+| thread | CPU mask | policy |
+|---|---|---|
+| **EP147 main (renderer)** | `3` (CPUs 0–1) | **RR 1 — lowest RT priority in the process** |
+| FileDataCache ×5 | `3` | RR 1 |
+| JUCE Timer | `3` | RR 33 |
+| PageFiller0 | `b` (0,1,3) | RR 11 |
+| BufferingSched | `b` | RR 44 |
+| JUCE ALSA (audio callback) | `4` (CPU 2 alone) | RR 89 |
+| `aplay` (ours) | `3` | RR 10 |
+| `mix-stream` (ours) | — | RR 8 |
+| `irq/111` I²C thread | ran on CPUs 0 and 1 in the window | RT 50 |
+
+The renderer is confined to CPUs 0–1 at the lowest realtime priority, and
+those two cores are shared with the ~6 kHz touchscreen IRQ thread at RT 50, the
+firmware's load-time threads, and our own RT audio processes. The stock device
+has six cores with X on its own core; the firmware's masks were not written
+for four. The earlier "unexplained 6,000 interrupts/s on the I²C line" now has
+a measured consequence: that IRQ thread is the single largest preemptor of the
+renderer during the stall, and it is not part of AZ at all.
+
+### Candidate, one knob, reversible
+
+Move the I²C IRQ (`/proc/irq/111/smp_affinity`) off CPUs 0–1 onto CPU 3, where
+only `PageFiller0`/`BufferingSched` occasionally run. Runtime-only, reverts on
+reboot, SSH unaffected. Test as its own A/B/A with this exact load-span
+harness, comparing the post-LOAD WAVEFORM cluster (max, >25 ms count) and the
+steady-state distribution, with underrun logs. Not applied yet. Widening the
+renderer's mask or touching firmware thread priorities is a separate, later
+experiment.
+
+**Limits:** XDamage intervals are notification gaps, not scanout; 1,173
+intervals had no page sample and are excluded; one run, no repeats; listening
+not assessed. `next_comm` attribution counts who ran on the same CPU after the
+renderer was switched out, which is direct for `R`/`R+` preemption but says
+nothing about the 15 wakeups or the `D` states.
