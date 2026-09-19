@@ -433,3 +433,44 @@ the live session, then `readlink /proc/MAIN/fd/N`:
 
 The firmware also logs `HuiProcessor::epoll_wait() failed` repeatedly on a
 side thread; unrelated to the renderer's wait, noted only.
+
+## Instrumentation arm, 2026-09-18/19: what the wait is, on both ends
+
+One load-span run with three extra recorders attached (so **not a benchmark**:
+`strace` alone shows up as a CPU consumer and the worst gap was 133 ms). The
+`sched_switch`/`sched_wakeup` filters included Xwayland (`extra_pid` in
+`meta.txt`); an strace of the renderer with `send/sendto/recv*` in the set;
+a queue sampler on both sockets. The Pi was later rebooted by its hardware
+watchdog when the first analysis pass loaded a 918 MB stack file into RAM;
+the analysis now streams. Results:
+
+- **The X socket was fd 18 in this launch** (fd 20 in the earlier one). fd
+  numbers are per-launch; the earlier strace attribution to "fd 20" was only
+  valid for its own session, as the review said. The X fd is now derived from
+  the trace: the fd the main thread polls that also carries its outbound
+  bytes — **237.7 MB out in 45 s** through it, so the uploads are visible once
+  `send`/`sendto` are traced.
+- **Write backpressure, not readability.** Over the whole trace the main
+  thread polled that fd 6,813 times, requesting `POLLIN|POLLOUT` 6,424 times
+  and plain `POLLIN` 389 times; revents were `POLLOUT` 2,642 and *nothing*
+  4,171 (timed-out waits). xcb only asks for `POLLOUT` when it has bytes it
+  could not write. This is the syscall-level counterpart of the
+  `unix_write_space` wakeups: the renderer is mostly waiting for Xwayland to
+  drain its request stream. (Whole-trace figures; strace wall-clock stamps
+  were not aligned to the gap window.)
+- **Xwayland in the worst gap: preempted, not idle.** 29 switch-outs, 22 of
+  them `R`/`R+`, the CPU going to `irq/111` (6), `strace` (4), `ktimers`,
+  `kworker/u16`, `sway` (3). Six were idle `epoll_wait` and **one was a `D`
+  wait in `rpi_firmware_property ← clk_prepare`** — a VC4 firmware-mailbox
+  round trip on the X server's path. One occurrence; noted as a candidate
+  latency source on this SoC, not a finding.
+- **Queue lockstep test failed to sample:** the sampler forked python three
+  times per sample and produced one sample inside the gap. Rewritten
+  fork-free; the peer proof still has to be re-run.
+
+Taken together with the earlier blocked-time reconstruction: the renderer
+spends the gap waiting for write space on its connection to an X server that
+is itself runnable-but-preempted on the same two cores. That is scheduling
+one hop away — the review's point — and the joint renderer+Xwayland A/B/A is
+the direct test. Whether the socket is Xwayland's is still inferred; the
+lockstep run is the proof.
