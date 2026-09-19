@@ -1,0 +1,32 @@
+{
+  "results": {
+    "host": {
+      "returncode": 0,
+      "stdout": "PASS commands/routing/reset/source isolation; delay tail=1 master echo tail=1.96078 bytes=5645744\n",
+      "stderr": ""
+    },
+    "sanitized": {
+      "returncode": 0,
+      "stdout": "PASS commands/routing/reset/source isolation; delay tail=1 master echo tail=1.96078 bytes=5645744\n",
+      "stderr": ""
+    }
+  },
+  "source_hashes": {
+    "beat-port/test_pair_runtime.c": "baef0fc1cd1e180a79b2729233052a6a01b4c7ebe4da6052322dfa09cf20e730",
+    "beat-port/pair_runtime.c": "639be7024cebe0c63e29b2ec0f7c2bd3289117f376fcbb1b6ecdadb77b059743",
+    "beat-port/beat_pair.c": "936dff0c0cd4a69f507831b444d52bedbebfbb287c2f3b597fdc855b211732c3",
+    "beat-port/beat_grid.c": "def8fc8ab4a6426285bc898044e37e7e1b258f8e11ade9a978476cbd7fda8198",
+    "beat-port/beat_echo.c": "7b86e38dab56fb74e31f3e0e4d51cdde370a94182a048edbf16475c14b9aac3d",
+    "beat-port/beat_delay.c": "d8fafe4fd50f6b98aa46a2b577352f50f4da654eb36f42bd478822fc4264f191",
+    "beat_manager_echo.c": "3ea01f15e39ca53d9ee079f4b6c98f7e4e9746ecf01c92e96497acc70a0229bb",
+    "echo_audio.c": "9b7a7809acdf13758667e020bc88f8f78977e3478b19301458ac3ef66d5d5caa",
+    "echo_control.c": "c35ffe73ea9617547d19a5a43a41d5706cfdfad618be119bef56ef427397cee6",
+    "echo_quantize.c": "9f926af7e62ea26fdd83c5b9560a344a46ec627c353e3cfae387a28d44806f7f",
+    "delay_audio.c": "702941cd1f31e0f5a863bd4a000dabf04b03f303997699c55c3a12dcc18811c9",
+    "delay_control.c": "1f01fc2b16598261cb5a60c7f70caee43cf86982e1f602d547547beb53bb74c5",
+    "delay_quantize.c": "45747772c32737c45320d4f32a10a8fe146a26c59e329fbff814bb3173990dcc",
+    "beat-port/pair_runtime.h": "c4913d8d8af82a7364579f5cc785cfc685769ed9840f2358a851b150b987d66c",
+    "run_pair_runtime.py": "aa4461e14605d382a260417bd3df9d52464ec52d01f6930a45b72810e4d03d15"
+  },
+  "scope": "Experimental fixed64-frame44.1kHz host wrapper: input rejection, per-round target offers, deck/master delayed output, independent instances, source/grid invalidation, command validation and reset. Not live AZ/FIFO/controller or native constructor equivalence."
+}

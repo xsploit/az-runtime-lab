@@ -14,3 +14,6 @@ replay also pass. See `../PAIR-AUDIO-GAP.md` and the pair-audio result reports.
 Mix-ramp advancement remains once-per-block, matching the original branch.
 This is one deterministic fixture corpus, not universal parity or live graph
 acceptance. Do not enable Delay in production without command/routing tests.
+
+2026-09-19: offline command/routing/grid/reset wrapper and sanitizer checks are
+now available; see `PAIR-RUNTIME.md`. Production graph activation remains pending.
