@@ -34,6 +34,9 @@ def load_config(path):
     # presentation path). Unverified; default None keeps Xwayland's default.
     c.setdefault('xwayland_glamor',None)
     if c['xwayland_glamor'] not in (None,'gl','es','off'):raise ValueError("xwayland_glamor must be 'gl', 'es', 'off' or null")
+    c.setdefault('x_server_priority',None)
+    if c['x_server_priority'] is not None and not (isinstance(c['x_server_priority'],int) and not isinstance(c['x_server_priority'],bool) and 1<=c['x_server_priority']<=20):
+        raise ValueError('x_server_priority must be an integer 1-20 (SCHED_RR priority for the X server) or null')
     c.setdefault('ximage_stats',False)
     if not isinstance(c['ximage_stats'],bool):raise ValueError('ximage_stats must be true or false')
     c.setdefault('timer_sites',False)
@@ -162,6 +165,18 @@ def main():
                 if ready.returncode==0:break
             time.sleep(.5)
         else:raise RuntimeError(f'AZ did not become ready; see {out}')
+        x_server=None
+        if c['x_server_priority']:
+            # The X server is the launcher's Xwayland child; raising it above
+            # the firmware's loader threads is the measured lever for the
+            # post-load hitch (PAGE-CORRELATED-LOAD.md, xonly). One shot is
+            # enough: unlike the player, Xwayland never re-sets its own policy.
+            for proc in Path('/proc').glob('[0-9]*'):
+                try:
+                    if comm(proc)=='Xwayland' and int((proc/'stat').read_text().rsplit(')',1)[1].split()[1])==launcher.pid:x_server=int(proc.name)
+                except (FileNotFoundError,PermissionError,ProcessLookupError,ValueError):pass
+            if not x_server:raise RuntimeError('x_server_priority set but no Xwayland child of the launcher was found')
+            subprocess.run(['sudo','-n','chrt','-r','-p',str(c['x_server_priority']),str(x_server)],check=True)
         for proc in Path('/proc').glob('[0-9]*'):
             try:
                 if (proc/'cmdline').read_bytes().split(b'\0')[0]==str(Path(endpoint).parent/'mix-stream').encode():
@@ -172,13 +187,14 @@ def main():
         hold=[x for address in c['exit_hold'] for x in ('--exit-hold-address',address)]
         if hold:hold+=['--exit-hold-seconds',str(c['exit_hold_seconds']),'--exit-signal-pid',str(os.getpid())]
         if not a.no_controller:bridge=start(['sudo','-n','env','PYTHONPATH='+pythonpath,sys.executable,str(BASE/'analysis/run_pi_flx6_controls.py'),str(player),'--mapping',c['mapping'],'--state',str(state),'--encoder-counter','0','--mixer-socket',endpoint,'--dsp-graph','--fx-bpm',str(c['fx_bpm']),*hold],'controls')
-        (out/'session.json').write_text(json.dumps(dict(supervisor=os.getpid(),player=player,launcher=launcher.pid,audio=audio.pid,bridge=bridge.pid if bridge else None,mixer_socket=endpoint,manual_fx_bpm=c['fx_bpm'],library_stage=c['library_stage']),indent=2))
+        (out/'session.json').write_text(json.dumps(dict(supervisor=os.getpid(),player=player,launcher=launcher.pid,audio=audio.pid,bridge=bridge.pid if bridge else None,mixer_socket=endpoint,manual_fx_bpm=c['fx_bpm'],library_stage=c['library_stage'],x_server=x_server,x_server_priority=c['x_server_priority']),indent=2))
         library='staged legacy Device Library' if c['library_stage'] else 'the USB library as-is'
         if c['share_ipc']:library+=', IPC namespace shared (candidate)'
         if c['xwayland_glamor']:library+=f', Xwayland -glamor {c["xwayland_glamor"]} (candidate)'
         if c['external_display']:library+=f', attached to X server {c["external_display"]} (experiment)'
         if c['timer_sites']:library+=', two extra 16 ms timer sites (candidate)'
         if c['ximage_stats']:library+=', XPutImage statistics recorded (measurement)'
+        if c['x_server_priority']:library+=f', X server at SCHED_RR {c["x_server_priority"]}'
         leave='Ctrl+C' if not c['exit_hold'] else f'Ctrl+C, or hold all {len(c["exit_hold"])} mapped exit control(s) together for {c["exit_hold_seconds"]:g}s'
         print(f'AZ session running on {library}. Logs: {out}\n{leave} stops this session. FX tempo is manually set to {c["fx_bpm"]} BPM.',flush=True)
         while all(child.poll() is None for child in children):time.sleep(.5)

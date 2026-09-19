@@ -114,4 +114,11 @@ class ConfigTests(unittest.TestCase):
             self.assertFalse(session.load_config(self.config(root))['ximage_stats'])
             self.assertTrue(session.load_config(self.config(root,ximage_stats=True))['ximage_stats'])
             with self.assertRaises(ValueError):session.load_config(self.config(root,ximage_stats=1))
+    def test_x_server_priority_is_off_by_default_and_bounded(self):
+        with tempfile.TemporaryDirectory(prefix='AZ space ') as t:
+            root=Path(t)
+            self.assertIsNone(session.load_config(self.config(root))['x_server_priority'])
+            self.assertEqual(session.load_config(self.config(root,x_server_priority=12))['x_server_priority'],12)
+            for bad in (0,21,'12',True,12.5):
+                with self.assertRaises(ValueError,msg=str(bad)):session.load_config(self.config(root,x_server_priority=bad))
 if __name__=='__main__':unittest.main()
