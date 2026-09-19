@@ -729,11 +729,12 @@ Captures `local/multi-load-20260919T1046*`–`1056*`.
 | A2 | defaults | 8 | 55.6 ms | 12 / 2 | 225–271 ms | 382–423 ms | 0 |
 | (A, earlier, discarded run's valid default arm) | defaults | 10 | 58.0 ms | 14 / 1 | 218–286 ms | 361–412 ms | 0 |
 
-Per load, arm B had 0–1 gaps over 25 ms on every load; the default arms had
-1–5. That is the same direction as the four single-load runs, now over six
-loads each: joint priority roughly halves the number of frames lost across a
-load. It does **not** remove the largest per-load spike: load 5 hit 55–63 ms
-in every arm (same track in the same position each arm, so track-dependent),
+Per load, arm B had 0–1 intervals over 25 ms on every load; the default
+arms had 1–5. That is the same direction as the four single-load runs, now
+over six loads each: joint priority roughly halves the number of long
+damage intervals across a load. It does **not** remove the largest per-load
+spike: load 5 hit 55–63 ms in every arm (same track in the same position
+each arm, which suggests track-related work without showing its cause),
 and load 3 was 48–56 ms in both default arms and 24.8 ms in B. Page-response
 latencies (browser opening, waveform returning after LOAD) are unchanged
 within run-to-run spread. No underruns in any arm (sessions of ~4 min with
@@ -772,13 +773,17 @@ Capture `local/multi-load-20260919T040112Z`.
 | Xwayland, joint RR 12 | Xwayland under sway | 5 | 62.8 ms | 10 / 1 | 226–279 ms | 360–392 ms | 45 | 0 |
 
 Read, with the bracketing arm in (`local/multi-load-20260919T041910Z`):
-four Xwayland default arms today lost 8–10 frames over 25 ms across six
-loads with a per-load spread of 1–5; the one bare-Xorg arm lost 6, exactly
-one per load, with no load above 1. That puts a compositor-free, GPU-free X
+four Xwayland default arms today had 8–10 XDamage intervals over 25 ms
+across six loads with a per-load spread of 1–5; the one bare-Xorg arm had 6,
+exactly one per load, with no load above 1. (These are long intervals
+between damage notifications, not a count of dropped frames.) That puts a compositor-free, GPU-free X
 server at about the joint-priority level at default priorities, with the
-renderer spending ~6 %core less (no compositor-facing copy) and Xorg itself
-averaging ~2 % CPU. The track-dependent spikes on loads 3 and 5 are still
-there (46 and 50 ms against 48–63 ms), so they are not an X-server cost;
+renderer at 39 %core against 44–45 (a 12–13 % relative reduction; the
+likely mechanism is the missing compositor-facing copy, not shown) and Xorg
+itself averaging ~2 % CPU. The spikes on loads 3 and 5 recur on the same
+tracks under every condition (46 and 50 ms against 48–63 ms); that points
+at track-related work rather than the X server, but does not show what that
+work is;
 page-response latencies are unchanged. One B arm: the direction is
 consistent across all four A arms, the size is modest, and a second Xorg
 arm plus a long session are needed before it is more than that.
