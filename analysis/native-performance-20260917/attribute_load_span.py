@@ -11,10 +11,12 @@ import bisect,json,re,sys
 from collections import Counter
 from pathlib import Path
 d=Path(sys.argv[1]);top=int(sys.argv[2]) if len(sys.argv)>2 else 6
+# --load N: attribute around the Nth load stamp of a multi-load capture ('loadN') instead of the first load.
+which=sys.argv[sys.argv.index('--load')+1] if '--load' in sys.argv else None
 dmg=json.loads((d/'damage.json').read_text());start=dmg['start_monotonic']
 ev=[e for e in json.loads((d/'events.json').read_text()) if 'kind' in e]
 cmds=[json.loads(l) for l in (d/'commands.json').read_text().splitlines() if l.strip()]
-load=next((c['at'] for c in cmds if c['command'].startswith('load')),None)
+load=next((c['at'] for c in cmds if c['command']==('load'+which if which else c['command']) and c['command'].startswith('load')),None)
 meta=(d/'meta.txt').read_text() if (d/'meta.txt').exists() else ''
 main=re.search(r'main=(\d+)',meta).group(1) if re.search(r'main=(\d+)',meta) else '0'
 times=[start+s['local_ms']/1000 for s in dmg['samples']]
