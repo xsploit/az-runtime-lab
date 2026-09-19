@@ -8,6 +8,8 @@ import json,re,sys
 from collections import Counter
 from pathlib import Path
 d=Path(sys.argv[1]);thresh=float(sys.argv[2]) if len(sys.argv)>2 else 25.
+meta=(d/'meta.txt').read_text() if (d/'meta.txt').exists() else ''
+meta_main=re.search(r'main=(\d+)',meta).group(1) if re.search(r'main=(\d+)',meta) else '0'
 dmg=json.loads((d/'damage.json').read_text());start=dmg['start_monotonic']
 ev=json.loads((d/'events.json').read_text())
 times=[start+s['local_ms']/1000 for s in dmg['samples']]
@@ -36,11 +38,14 @@ report=dict(threshold_ms=thresh,total_intervals=len(times)-1,waveform_gaps=[])
 for a,b in gaps:
     on=[s for s in cpu if a<=s['t']<=b]
     top=Counter(fr.split()[-1] if fr.split() else '?' for s in on for fr in s['frames'][:1]).most_common(6)
-    sw=[s for s in sched if a-.005<=s['t']<=b+.005 and 'sched_switch' in s['ev']]
+    # Only the main thread's own switch-OUTS, inside the gap exactly. Several
+    # firmware threads keep the comm 'EP147', so match on prev_pid, not comm.
+    main=meta_main
+    sw=[s for s in sched if a<=s['t']<=b and 'sched_switch' in s['ev'] and f'prev_pid={main} ' in s['txt']]
     blocks=[]
     for s in sw:
         m=re.search(r'prev_state=(\S+)',s['txt'])
-        if m and 'EP147' in s['txt'].split('==>')[0]:blocks.append(m.group(1))
+        if m:blocks.append(m.group(1))
     disk=[s for s in sched if a<=s['t']<=b and 'block_rq_issue' in s['ev']]
     report['waveform_gaps'].append(dict(start_s=round(a-start,3),gap_ms=round((b-a)*1000,1),
         oncpu_samples=len(on),expected_if_busy=int((b-a)*997),top_leaf=top,

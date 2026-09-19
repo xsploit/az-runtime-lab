@@ -63,3 +63,43 @@ Next: attribute the waveform-only outlier and page-construction transition using
 matched navigation-only versus cached-load events, with verified advancing
 sources. Do not optimize a browser's absence of redraws as if it were dropped
 waveform frames, and do not rerun the rejected shared-IPC A/B/A.
+
+## Steady-state capture, 2026-09-18: no outlier
+
+`capture_waveform_gap.sh` on the pinned baseline, `share_ipc=false`, 60 s with
+**no inputs sent**, both decks verified on the two-deck WAVEFORM page by eye
+(`Doctor_P_-_Tetris` F#m, `No Stress (Tokez VIP)` Em) with EP147 at 44 %core
+and one kiosk shell. The controller bridge was absent for this run, because
+the tracks were loaded by the FIFO helpers; nothing was injected during the
+window. All recorders shared CLOCK_MONOTONIC.
+
+| Metric | Value |
+|---|---|
+| XDamage notifications | 4,991 |
+| median / p95 / max interval | 15.80 / 17.88 / **20.58 ms** |
+| intervals over 25 ms / 40 ms | **0 / 0** |
+| page samples during window | WAVEFORM only (5,222 samples) |
+| `read_bytes` delta | 0 |
+| reported underruns | 0 |
+| temperature / throttling | 59.5 °C / 0x0 |
+
+Against a 16.88 ms frame at 59.24 Hz the worst interval is ~1.2 frames; no
+interval reached two. **The 61.67 ms waveform-only outlier from the 2026-09-17
+run did not reproduce in steady state**, and that run's window contained a
+browse-and-load sequence, so the outlier is best treated as part of the load
+transition rather than a playback stall.
+
+In the largest ~20 ms intervals the main thread held the CPU for only about a
+quarter of the window (5 of ~20 expected samples at 997 Hz) and otherwise sat
+in `poll_schedule_timeout` (state S) or was preempted; no `block_rq_issue`
+occurred anywhere in the 60 s. Over the window the main thread took 53,829
+voluntary and 113,875 involuntary context switches (≈2,800/s). Its kernel
+priority in the sched trace is 98, i.e. realtime priority 1, below the host
+mixer (RR 8) and `aplay` (RR 10). Whether that preemption pattern matters for
+the load transition is the next question; it does not produce a visible gap
+in steady state.
+
+Instrumentation note: the first attribution pass counted every sched_switch
+that *named* `EP147` on the outgoing side, which also matches unnamed firmware
+threads that inherit the process comm, and it widened each window by 10 ms.
+It now matches `prev_pid` of the main thread inside the gap only.
