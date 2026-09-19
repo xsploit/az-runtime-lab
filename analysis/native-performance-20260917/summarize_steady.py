@@ -36,8 +36,16 @@ if len(sys.argv)>2:
     evs=[json.loads(l) for l in (Path(sys.argv[2])/'audio-events.jsonl').read_text().splitlines() if l.strip()]
     t0=next((e['monotonic'] for e in evs if e.get('event')=='audio_started'),None)
     under=[round(e['monotonic']-t0,1) for e in evs if 'underrun' in e.get('text','')]
-out=dict(duration_s=round(rows[-1]['t'],1) if rows else 0,idle_s=round(idle_ms/1000,1),waveform=stats(wave),buckets=dict(Counter(r['bucket'] for r in rows)),per_minute=per_min,underruns=under,largest=[dict(t=round(r['t'],1),gap=round(r['gap'],1)) for r in sorted(wave,key=lambda r:-r['gap'])[:8]])
+# Comparability of two captures: how much of the window actually had a deck
+# advancing (seconds with >=45 damage notifications, i.e. a scrolling waveform),
+# how much was renderer-idle, and how many LOAD commands were issued.
+per_sec={}
+for t in times:per_sec[int(t-start)]=per_sec.get(int(t-start),0)+1
+scrolling_s=sum(1 for v in per_sec.values() if v>=45)
+loads=0
+if (d/'commands.json').exists():loads=sum(1 for l in (d/'commands.json').read_text().splitlines() if '"load' in l)
+out=dict(duration_s=round(rows[-1]['t'],1) if rows else 0,idle_s=round(idle_ms/1000,1),scrolling_s=scrolling_s,loads=loads,waveform=stats(wave),buckets=dict(Counter(r['bucket'] for r in rows)),per_minute=per_min,underruns=under,largest=[dict(t=round(r['t'],1),gap=round(r['gap'],1)) for r in sorted(wave,key=lambda r:-r['gap'])[:8]])
 if '--json' in sys.argv:print(json.dumps(out,indent=1));sys.exit()
-w=out['waveform'];print(f"  {out['duration_s']}s (renderer idle {out['idle_s']}s excluded) active waveform intervals n={w['n']} median={w['median']} p99={w['p99']} max={w['max']} >25={w['over25']} >40={w['over40']} >100={w['over100']} | underruns={len(under)} at {under[:6]}")
+w=out['waveform'];print(f"  {out['duration_s']}s: scrolling {out['scrolling_s']}s, renderer idle {out['idle_s']}s (excluded), loads {out['loads']} | active waveform intervals n={w['n']} median={w['median']} p99={w['p99']} max={w['max']} >25={w['over25']} >40={w['over40']} >100={w['over100']} | underruns={len(under)} at {under[:6]}")
 print("  per minute >25/>40/max: "+" ".join(f"{p['minute']}:{p['over25']}/{p['over40']}/{p['max']}" for p in per_min))
 print("  largest: "+" ".join(f"{l['gap']}ms@{l['t']}s" for l in out['largest']))
