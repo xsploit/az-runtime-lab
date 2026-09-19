@@ -244,3 +244,43 @@ Firmware thread priorities stay untouched.
 Housekeeping: each session leaves a `/run/user/1000/az-display-clock-*` and a
 `/tmp/az-live-mixer-*` directory behind; the launcher should remove its own on
 exit. Dead-session leftovers were cleaned by hand after this run.
+
+## One-knob A/B/A, 2026-09-18: our RT audio processes off the renderer's cores
+
+Only change: `mix-stream` (RR 8) and `aplay` (RR 10) pinned to CPU 3 (mask
+`8`) in arm B versus their default mask `3` (CPUs 0–1). irq 111 stayed at `3`.
+Same harness and gates as above; the pin was applied to each arm's fresh
+processes before the window and verified after.
+
+| Arm | audio on | worst post-LOAD WAVEFORM gap | >25 ms | >40 ms | renderer preempted by `mix-stream` in the 1.5 s after LOAD | underruns |
+|---|---|---|---|---|---|---|
+| A1 | CPUs 0–1 | 59.5 ms (+0.551 s) | 6 | 1 | 264× | 0 |
+| B | CPU 3 | **69.9 ms** (+0.548 s) | 1 | 1 | **0×** (gone from the list) | 0 |
+| A2 | CPUs 0–1 | 50.0 ms (+0.533 s) | 3 | 1 | 270× | 0 |
+
+**No benefit.** The mechanism worked — our mixer no longer preempts the
+renderer — and the worst gap did not move (69.9 inside a control spread of
+50–72 ms across all runs today). The >25 ms count fell, but it varies 3–6
+between control arms, so it is not evidence. Zero underruns with the audio
+processes on CPU 3.
+
+Across all seven load-span arms today the worst post-LOAD gap always sits at
++0.53…+0.58 s and always shows the same shape: renderer runnable-but-preempted
+for ~90% of the window, `PageFiller0` first (600–780 switch-ins per 1.5 s),
+then `Xwayland`, `BufferingSched`, `JUCE Timer`. Removing the IRQ thread or our
+audio changes who is second; it does not change who is first.
+
+### Where this leaves the load hitch
+
+The floor (~40–50 ms) is set by the firmware's own load-time threads
+outranking its own renderer on the two cores the firmware confines it to.
+The remaining levers touch firmware-chosen scheduling and are a separate
+decision, not a launcher tweak: widen the renderer's affinity to CPU 3, or
+raise its RR priority above `PageFiller0`'s 11. Both are runtime-only via
+`taskset`/`chrt` on the live thread, reversible, and testable with this
+harness — but they change how Pioneer's threads share the machine, so they
+should be tried one at a time with the exit gesture and SSH confirmed first.
+Not attempted today.
+
+Everything was restored: irq `3`, audio masks `3`, kiosk files, a normal
+bridge session left running.
