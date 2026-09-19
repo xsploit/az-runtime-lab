@@ -709,3 +709,41 @@ against defaults, and a touch-response measurement.
 Housekeeping verified in the same runs: with the launcher unwinding on
 SIGTERM, `/tmp/az-scroll-*` held exactly one directory (the live session's)
 across four session stops, and no `aplay` survived a stop.
+
+## Joint priority over repeated loads, 2026-09-19 (validation, not one load)
+
+`tools/multi-load-capture.sh` (`CAPTURE=` on `scheduling-aba.sh joint`,
+`LOADS=6`): one fresh session per arm, two decks playing, then six
+browse → rotate 1 → LOAD deck 1 → PLAY cycles 18 s apart, damage and page
+samplers only. Priorities re-asserted every 0.5 s for the whole arm and
+verified after it (an earlier attempt lost the race with the firmware's own
+`sched_setscheduler` on its main thread and was discarded). Per-load figures
+are waveform-page XDamage gaps in the 2.5 s after the page returns to the
+waveform; the browser→waveform switch is reported separately as latency.
+Captures `local/multi-load-20260919T1046*`–`1056*`.
+
+| arm | priorities | per-load >25 ms (sum of 6) | per-load max | whole-capture >25 / >40 | browse→browser | LOAD→waveform | underruns |
+|-----|-----------|---|---|---|---|---|---|
+| A1 | defaults | 10 | 58.0 ms | 14 / 2 | 237–262 ms | 355–419 ms | 0 |
+| B  | EP147 main + Xwayland RR 12 | 5 | 62.8 ms | 10 / 1 | 226–279 ms | 360–392 ms | 0 |
+| A2 | defaults | 8 | 55.6 ms | 12 / 2 | 225–271 ms | 382–423 ms | 0 |
+| (A, earlier, discarded run's valid default arm) | defaults | 10 | 58.0 ms | 14 / 1 | 218–286 ms | 361–412 ms | 0 |
+
+Per load, arm B had 0–1 gaps over 25 ms on every load; the default arms had
+1–5. That is the same direction as the four single-load runs, now over six
+loads each: joint priority roughly halves the number of frames lost across a
+load. It does **not** remove the largest per-load spike: load 5 hit 55–63 ms
+in every arm (same track in the same position each arm, so track-dependent),
+and load 3 was 48–56 ms in both default arms and 24.8 ms in B. Page-response
+latencies (browser opening, waveform returning after LOAD) are unchanged
+within run-to-run spread. No underruns in any arm (sessions of ~4 min with
+six loads); the earlier "2 underruns" on a joint arm were at 161 s, during
+the harness's post-capture `perf script`, and no session in either
+condition has had one in its first 30 s.
+
+Status: joint priority is a consistent, modest lever (fewer secondary gaps),
+still not a default. Missing: a long session (the 4-minute arms say nothing
+about an hour), a real touch measurement (Ilitek `11-0041 ili_v3`, evdev
+timestamps against page changes, needs a person tapping), and the
+track-dependent primary spike, which priority does not touch and which the
+bare-Xorg arm below is the next test for.
