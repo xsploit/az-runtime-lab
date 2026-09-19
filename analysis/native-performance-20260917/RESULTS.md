@@ -534,3 +534,20 @@ its exact event and blocking component remain unassigned.
 
 Still outstanding: listening and visible-smoothness acceptance, which are the
 user's to give and were not assessed here.
+
+## Correction to the per-component baseline, 2026-09-19: AZ's Wi-Fi setting
+
+While validating the X-server priority a fresh renderer baseline came in at
+57 %core instead of the 44–45 measured all day. Cause: `settings/wifi.json`
+in the lab state directory had acquired `"start": "true"` (the player's own
+Wi-Fi switch, most likely toggled by automated navigation that landed on
+the settings screen), and with it every session's `WifiSetting` thread
+spawned `sh -c wpa_cli …` at ~180 forks/s (490 forks/s system-wide, load
+average 4) because `wpa_supplicant` cannot start in the sandbox (no
+`mlan0`). Switching the setting back to `false` returned a fresh session to
+13 forks/s and the usual CPU. `pi/session.py` now forces the setting off at
+every start (AZ's Wi-Fi is meaningless on the Pi; the host owns the radio).
+Runs between ~23:06 and ~23:20 UTC on 2026-09-19 (the first
+`xonly-validation` attempt) ran under this condition and were discarded.
+If the renderer ever reads well above 45 %core with two decks playing,
+check `xdjaz/state/settings/wifi.json` and the fork rate first.

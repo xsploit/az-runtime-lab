@@ -60,35 +60,59 @@ The `-like topology` wording is deliberate: it records native structure without 
 
 ## Post-HUI operation path
 
-The six HUI IDs map through explicit records to six operation IDs. The sole registered generic observer is identified by native type information as:
+The six HUI IDs map through explicit records to six operation IDs. Native type information identifies the observer as:
 
 ```text
 midi_adapter::MixerOperatorHandler
 ```
 
-Its float callback performs:
+`midi_adapter::MixerOperators` has separate button and continuous-operation maps. Its interface vtable uses:
+
+```text
++0x10 -> button/bool lookup at 0x721320
++0x18 -> continuous/float lookup at 0x720eb8
+```
+
+The six Sound Color operation IDs are registered in the button map, not the continuous map. Each registration constructs a `midi_adapter::OperationDataServerButton` with the same operation ID in both component-ID fields and `OperatorGroup` 5. No operation-ID permutation occurs during registration.
+
+`MixerOperatorHandler` also has separate event overloads. Button press and release use the button lookup and pass `true` and `false`, respectively:
 
 ```text
 HUI ID
 -> exact mapped operation ID
--> midi_adapter::IMixerOperatorsByID exact lookup
--> returned operation object
--> operation object's virtual float handler
+-> button-map lookup at 0x721320
+-> OperationDataServerButton
+-> unchanged operation ID, OperatorGroup 5 and bool state
+-> midi_adapter::SendManager::send(...)
 ```
 
-The callback preserves all six Sound Color operation IDs. Its only special operation-ID substitution concerns a different, unrelated ID. No six-way Sound Color permutation exists in this generic observer.
+The float callback uses the separate continuous map and does not resolve these button-only Sound Color entries.
 
-Native component/type strings place this observer under the MIDI HID adapter's mixer-operator family, alongside mixer Beat FX and Beat FX selection adapters. That is evidence about software ownership, but it does not yet prove whether each Sound Color operation object is a hardware-selection command, a MIDI/reporting operation, GUI state, or a compatibility path. The concrete returned operation handlers remain the next trace boundary.
+## MIDI/HID route classification
 
-## Remaining contradiction
+`OperationDataServerButton::send(bool)` forwards into the native `MidiHidSendManager` family. The generic send task invokes both the `HidSend` and `MidiSend` branches when their output objects are present, so class ownership alone was not enough to classify these six operations.
 
-For the four HUI states sharing exact raw panel bits with selector inputs, operation/MIDI metadata implies:
+The bounded native table and dispatch trace now separates the branches:
+
+- the six operation IDs are absent from all three file-backed `HidSend` mapping-record families;
+- they are absent from the two-ID `HidSend` pre-handler index;
+- a bounded whole-executable MOVZ/MOVK scan found the six exact IDs only at their `MixerOperators` registrations;
+- none is one of the hard-coded `HidSend` exception IDs;
+- generic `HidSend` record dispatch supports operator groups `0..3`, `0x10` and `0xff`, but has no group-5 case, so an unhandled group-5 operation returns without modifying a HID report;
+- all six IDs are present in the native `MidiSend` group-5 records as MIDI type `0x0b`, status `0xb0`, and CC values `0x69`, `0x6b`, `0x56`, `0x6a`, `0x55` and `0x57`;
+- the button path supplies MIDI values `0x7f` for press and `0x00` for release.
+
+Therefore these six concrete operation objects form a MIDI publication/compatibility path and are HID-inert in the inspected implementation. Live MIDI transmission still depends on the runtime output object, connection and mode state; this is a static route-ownership result, not a physical-output claim.
+
+## Evidence boundary after route classification
+
+For the four HUI states sharing exact raw panel bits with selector inputs, operation/MIDI metadata still assigns:
 
 ```text
-selector 4 -> Sweep label
-selector 2 -> Filter label
-selector 3 -> Space label
-selector 6 -> Crush label
+selector-source bit for selector 4 -> Sweep MIDI label
+selector-source bit for selector 2 -> Filter MIDI label
+selector-source bit for selector 3 -> Space MIDI label
+selector-source bit for selector 6 -> Crush MIDI label
 ```
 
 Native selected-output DSP structure implies:
@@ -100,7 +124,9 @@ selector 3 -> Filter-like topology
 selector 6 -> Sweep-like topology
 ```
 
-The following explanations are now ruled out for the inspected 1.30 release:
+This is no longer an unresolved hardware-command routing question. The first table belongs to a MIDI-only compatibility/reporting path; the second belongs to the independent mixer-packet/DSP-selection path. Sharing a raw source bit proves simultaneous observation, not that a MIDI CC label names the selected DSP route.
+
+The following explanations are ruled out for the inspected 1.30 release:
 
 - mixer scan-order or packet-field renumbering;
 - SPI staging reorder;
@@ -110,7 +136,8 @@ The following explanations are now ruled out for the inspected 1.30 release:
 - HUI-to-operation record direction;
 - MIDI CC byte alignment;
 - a generic post-HUI six-way operation-ID permutation;
+- a hidden group-5 HID hardware-selection command in the inspected `HidSend` tables or dispatch;
 - topology belonging only to an unrelated tail or route;
 - EP147 and mixer/DSP payloads coming from different releases.
 
-The unresolved question is now the semantic role of the concrete MIDI-adapter operation objects. Until that path is classified and all six identities independently agree with native DSP evidence, runtime behavior remains observation-only unless an operator supplies an explicit complete lab policy.
+The remaining identity task is to find native control-label evidence tied to the direct mixer-selector path rather than reusing MIDI compatibility labels. Until all six such identities independently agree with native DSP evidence, runtime behavior remains observation-only unless an operator supplies an explicit complete lab policy.
