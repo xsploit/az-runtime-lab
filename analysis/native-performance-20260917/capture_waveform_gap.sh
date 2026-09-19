@@ -8,8 +8,16 @@
 #   sh capture_waveform_gap.sh OUTDIR [SECONDS]
 set -u
 OUT=${1:?outdir}; SECS=${2:-60}
-# The checkout this script lives in, unless AZ_LAB points elsewhere.
-LAB=${AZ_LAB:-$(cd "$(dirname "$0")/../.." && pwd)}; PP=$LAB:$LAB/analysis:$LAB/mixer
+# The checkout this script lives in, unless AZ_LAB points elsewhere. Walk up
+# until pi/session.py is found so the script works from any staging depth.
+LAB=${AZ_LAB:-}
+if [ -z "$LAB" ]; then
+  d=$(cd "$(dirname "$0")" && pwd)
+  while [ "$d" != / ] && [ ! -f "$d/pi/session.py" ]; do d=$(dirname "$d"); done
+  LAB=$d
+fi
+[ -f "$LAB/pi/session.py" ] || { echo "cannot locate the lab checkout; set AZ_LAB"; exit 1; }
+PP=$LAB:$LAB/analysis:$LAB/mixer
 mkdir -p "$OUT"; cd "$LAB"
 P=$(pgrep -x EP147) || { echo "no EP147"; exit 1; }
 [ "$(ps -eo args | grep -c '[/]bin/sh /usr/local/bin/start-pflx-kiosk')" = 1 ] || { echo "kiosk count != 1"; exit 1; }
