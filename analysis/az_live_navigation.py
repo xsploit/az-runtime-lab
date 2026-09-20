@@ -19,7 +19,8 @@ class LiveNavigation:
   if pressed and addr not in nav.down and nav.bindings.get(addr) in ('view','back'):
    sample=self.observer.sample()
    if not 0<=self.clock()-sample['observed_at']<=self.max_age:raise ViewUnavailable('Page observation expired')
-   if sample['kind']=='browse':visible=True
-   elif sample['kind'] in ('source','waveform'):visible=False
-   else:raise ViewUnavailable('Preferred navigation unverified on this native page')
+   # On settings/modal/PC pages send the native Back key instead of refusing
+   # the user's escape action. Only Waveform keeps the preferred open-browser
+   # Back shortcut. View always sends the native Browse toggle.
+   visible=sample['kind']!='waveform' if nav.bindings[addr]=='back' else False
   return nav.message(status,control,value,browser_visible=visible)

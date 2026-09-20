@@ -15,7 +15,7 @@ class Tests(unittest.TestCase):
  def test_view_and_back(self):
   self.assertTrue(self.a.message(0x96,0x7a,127)[32]&64)
   self.a.message(0x96,0x7a,0);self.o.kind='browse'
-  self.assertIsNone(self.a.message(0x96,0x7a,127));self.a.message(0x96,0x7a,0)
+  self.assertTrue(self.a.message(0x96,0x7a,127)[32]&64);self.a.message(0x96,0x7a,0)
   self.assertTrue(self.a.message(0x96,0x65,127)[33]&128)
  def test_release_when_unavailable(self):
   self.a.message(0x96,0x7a,127);self.o.fail=True
@@ -23,10 +23,17 @@ class Tests(unittest.TestCase):
   self.assertFalse(self.a.message(0x86,0x7a,64)[32]&64)
   self.assertEqual(self.o.reads,1)
  def test_stale_and_unknown_do_not_press(self):
-  for kind,stamp in [('browse',9),('browse',11),('pc_control',10),('other',10)]:
+  for kind,stamp in [('browse',9),('browse',11)]:
    self.o.kind=kind;self.o.observed_at=stamp
    with self.assertRaises(ViewUnavailable):self.a.message(0x96,0x65,127)
    self.assertEqual(self.n.down,{})
+ def test_escape_pages(self):
+  for kind in ('source','browse','pc_control','other'):
+   self.o.kind=kind
+   self.assertTrue(self.a.message(0x96,0x65,127)[33]&128)
+   self.assertFalse(self.a.message(0x86,0x65,64)[33]&128)
+   self.assertTrue(self.a.message(0x96,0x7a,127)[32]&64)
+   self.assertFalse(self.a.message(0x96,0x7a,0)[32]&64)
  def test_rotation_needs_no_page(self):
   self.o.fail=True
   self.assertEqual(self.a.message(0xb6,0x40,1)[34:36],b'\x01\x00')

@@ -41,8 +41,8 @@ class Navigation:
    if addr in self.down:return None
    if action in ('back','view'):
     if type(browser_visible) is not bool:raise ValueError('Fresh browser visibility required for preferred View/Back behavior')
-    if action=='view' and browser_visible:target=None
-    else:target=(33,7) if action=='back' and browser_visible else (32,6)
+    # View is a real Browse/Waveform toggle, including when Browse is open.
+    target=(33,7) if action=='back' and browser_visible else (32,6)
    elif action=='enter':target=(31,0)
    else:target=(33,4-int(action[-1]))
    self.down[addr]=target

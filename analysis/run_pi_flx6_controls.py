@@ -210,8 +210,10 @@ def run(a):
                         # The physical browse encoder must never adjust waveform zoom.
                         if nav.bindings.get((status,control))=='rotate' and value:
                             sample=view.sample()
-                            if sample['kind']!='browse':
-                                if sample['kind'] not in ('source','waveform'):raise ViewUnavailable('Browse rotation unsupported on this page')
+                            # Only Waveform needs Browse opened to avoid zoom.
+                            # Source/settings/modal pages own their native rotary
+                            # input; rejecting it makes those menus unusable.
+                            if sample['kind']=='waveform':
                                 original=nav.frame[32];nav.frame[32]|=64;send('mixer',nav.packet());time.sleep(.03)
                                 nav.frame[32]=original;send('mixer',nav.packet())
                                 deadline=time.monotonic()+.5

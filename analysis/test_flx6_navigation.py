@@ -16,8 +16,8 @@ for deck in range(4):
 try:n.message(0x96,0x7a,127)
 except ValueError:pass
 else:raise AssertionError('Unknown UI state accepted')
-assert n.message(0x96,0x7a,127,browser_visible=True) is None
-assert n.message(0x96,0x7a,0) is None
+assert n.message(0x96,0x7a,127,browser_visible=True)[32]&64
+assert not n.message(0x96,0x7a,0)[32]&64
 p=n.message(0x96,0x7a,127,browser_visible=False);assert p[32]&64
 p=n.message(0x96,0x7a,0);assert not p[32]&64
 p=n.message(0x96,0x65,127,browser_visible=True);assert p[33]&128
