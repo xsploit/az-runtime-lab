@@ -161,6 +161,12 @@ suffix 0/1 owner fields +0x1d8/+0x1e0   <- frame[23] bits 2/1
 
 The test-mode labels therefore name the already classified HUI family; they do not form a selector-value table and do not repair the HUI/DSP disagreement. No selector identity is accepted from them.
 
+## Selector feedback output check
+
+A separate trace now follows the selected value back toward the panel rather than through EP147. Mixer updater `0x9e8c` maps selected values `1..6` through an explicit six-entry address table into feedback bytes `0x20026f92`, `0x20026f93`, `0x20026f95`, `0x20026f96`, `0x20026f94` and `0x20026f97`. Mixer packet builder `0x22c2` transports those bytes at panel-packet offsets `0x18`, `0x19`, `0x1c`, `0x1a`, `0x1b` and `0x1d`. Panel decoder `0x3fee` maps them into staged output entries `0`, `1`, `3`, `4`, `2` and `5`; commit routine `0x41ec` activates them, and output builder `0x38e8` serializes active entries `0..5` into six distinct output bits.
+
+This proves dedicated panel feedback-output ownership for all six anonymous selector values and rules out a hidden permutation in the mixer-to-panel return path. It does not identify the physical load, pair an output with a labeled button, or provide a semantic name. A bounded rootfs search for resources containing the complete six-name family found no second candidate beyond the already disqualified EP147TestMode HUI table, including common ASCII and UTF-16 encodings.
+
 ## Evidence boundary after route classification
 
 For the four HUI states sharing exact raw panel bits with selector inputs, operation/MIDI metadata still assigns:

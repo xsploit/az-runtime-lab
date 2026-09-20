@@ -41,6 +41,25 @@ Scanner `0x2520` dispatches phases `0..7` through its `TBH` table at `0x2554`. P
 
 This establishes a phase-indexed three-by-two logical scan arrangement. It does not establish which phase is physically top/middle/bottom, which pin is physically left/right, or which printed label belongs to a coordinate. Those joins require a separately proved row-drive, output/LED or native resource association.
 
+## Selector feedback output path
+
+The mixer-to-panel builder at `0x22c2` constructs a `0x3e`-byte packet in `0x20027a48`. It writes magic bytes `ef be` at offsets `4..5`, copies mixer output state into offsets `8..0x3b`, and stores the CRC over the first `0x3c` bytes at offsets `0x3c..0x3d`. The panel receiver validates the same magic, length and CRC before calling decoder `0x3fee`.
+
+The selector feedback updater at `0x9e8c` owns six mixer output bytes at `0x20026f92..0x20026f97`. Its explicit selected-value jump table is:
+
+| Selected value | Mixer feedback byte | Mixer-to-panel offset | Panel staged output |
+|---:|---:|---:|---:|
+| 1 | `0x20026f92` | `0x18` | `0x20009a78 + 0` |
+| 2 | `0x20026f93` | `0x19` | `0x20009a78 + 1` |
+| 3 | `0x20026f95` | `0x1c` | `0x20009a78 + 3` |
+| 4 | `0x20026f96` | `0x1a` | `0x20009a78 + 4` |
+| 5 | `0x20026f94` | `0x1b` | `0x20009a78 + 2` |
+| 6 | `0x20026f97` | `0x1d` | `0x20009a78 + 5` |
+
+Panel commit routine `0x41ec` copies those staged bytes to active outputs `0x20009a8c + 0..5`. Output builder `0x38e8` then packs active entries `0..5` into serial-output bits `6..1`, respectively. This proves that the anonymous selected value controls one of six dedicated panel feedback outputs through an explicit mixer jump table; it also proves the packet permutation shown above.
+
+The path still does not identify the physical load driven by each serial bit, prove that an output is paired with the input at the same apparent logical coordinate, establish panel orientation, or supply a semantic control label. In particular, it does not make the disqualified EP147 HUI suffix labels authoritative for these outputs.
+
 ## Mixer MCU six-route selection
 
 Function `0x9ddc`, gated by helper `0x18ba4`, reads only states `0x20026f46..0x20026f4b`. It updates shift histories at base `0x20028344`; low two history bits equal to 1 identify a rising edge. The subsequent scan visits six history slots in an order that rearranges parser storage. Therefore selected values `1..6` correspond to raw `MPNLRX[9]` bits **1,4,3,5,0,2**.
