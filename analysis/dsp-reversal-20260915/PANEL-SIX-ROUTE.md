@@ -56,9 +56,9 @@ The selector feedback updater at `0x9e8c` owns six mixer output bytes at `0x2002
 | 5 | `0x20026f94` | `0x1b` | `0x20009a78 + 2` |
 | 6 | `0x20026f97` | `0x1d` | `0x20009a78 + 5` |
 
-Panel commit routine `0x41ec` copies those staged bytes to active outputs `0x20009a8c + 0..5`. Output builder `0x38e8` then packs active entries `0..5` into serial-output bits `6..1`, respectively. This proves that the anonymous selected value controls one of six dedicated panel feedback outputs through an explicit mixer jump table; it also proves the packet permutation shown above.
+Panel commit routine `0x41ec` copies those staged bytes to active outputs `0x20009a8c + 0..5`. Output builder `0x38e8` then packs active entries `0..5` into bits `6..1` of the second transfer byte, respectively. Transfer buffer `0x200002cc` is sent by `0xc56a` through peripheral `0x4039c000` using descriptor `0x20000100`. A companion sender at `0xc766` uses peripheral `0x403a0000` and descriptor `0x200001a4` for the other output pair/table path. This proves that the anonymous selected value controls one of six dedicated serialized feedback outputs through an explicit mixer jump table; it also proves the packet permutation shown above.
 
-The path still does not identify the physical load driven by each serial bit, prove that an output is paired with the input at the same apparent logical coordinate, establish panel orientation, or supply a semantic control label. In particular, it does not make the disqualified EP147 HUI suffix labels authoritative for these outputs.
+The button-input side is direct scanning of GPIO module `0x401bc000`; the feedback side is the distinct serialized peripheral path above. No panel-MCU table, shared GPIO route, or firmware cross-reference electrically pairs the six output bits with the six scanned contacts. The only software-level button-to-feedback association is the selected-value return map. The path still does not identify the physical load driven by each bit, establish panel orientation, or supply a semantic control label. Even if a later PCB trace established electrical contact/load pairing, that pairing would not identify a printed effect name. In particular, it does not make the disqualified EP147 HUI suffix labels authoritative for these outputs.
 
 ## Mixer MCU six-route selection
 
@@ -123,6 +123,18 @@ No inspected software copy or mirror connects either pair. Mixer parser states `
 
 The six-route selector instead stores at `0x20028368` and never reads `0x20026f5a/5b` in the inspected path. Conversely, selector states 1 and 5 at `0x20026f46/48` have separate feedback slots `0x20026f92/94`. The eight-input machine has additional special output values `7`, `9` and `10` whose semantics remain unnamed; their existence does not connect that machine to six-route DSP selection.
 
+## Bounded native label search
+
+No independent native printed-label association was found after the control-path trace was exhausted:
+
+- all 3,865 PNG files under the installed native player image were inventoried;
+- 940 likely text/label assets were OCRed as a focused pass;
+- all 3,865 PNGs were then OCRed after ImageMagick preprocessing;
+- no complete six-name Sound Color family was found in raster resources;
+- the only contiguous six-label native resource remains the EP147TestMode HUI table, whose direct references identify suffixes `...f600..f605`, not anonymous selector values `1..6`.
+
+The scanned-contact and serialized-feedback trace likewise contains no label table or independent semantic association. This is the stopping boundary for native name chasing: selectors remain `1..6` with qualified topology descriptions.
+
 ## Software boundary
 
 `analysis/az_mixer_packet.py` now exposes two separate fields:
@@ -134,4 +146,4 @@ The six-route selector instead stores at `0x20028368` and never reads `0x20026f5
 
 ## Evidence limits
 
-The static chain establishes panel packed bits, mixer MCU state machines, EP147 host-frame decoding and anonymous AZ DSP dispatch. It does **not** establish physical electrical aliasing, paired contacts, button labels, algorithm identities, equivalence to RX3 enums, transfer curves, audio output or listening behavior. Host tests validate only the new decoder/state/transport software. The separate 2026-09-16 Pi result in `NATIVE-CFX-CHECK-20260916.md` validates synthetic AArch64 execution of that software; it did not execute EP147, use the physical controller/audio path, or perform listening.
+The static chain establishes panel packed bits, mixer MCU state machines, EP147 host-frame decoding and anonymous AZ DSP dispatch. It does **not** establish physical electrical aliasing, paired contacts, button labels, algorithm identities, equivalence to RX3 enums, transfer curves, audio output or listening behavior. Host tests validate only the decoder/state/transport software. The separate 2026-09-16 Pi result in `NATIVE-CFX-CHECK-20260916.md` validates synthetic AArch64 execution of that software; it did not execute EP147, use the physical controller/audio path, or perform listening. Per-route native/comparative/software readiness and the remaining executable-test gaps are recorded in `AZ-CFX-IMPLEMENTATION-READINESS-20260919.md`. No default semantic selector map follows from either document.

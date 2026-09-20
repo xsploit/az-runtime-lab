@@ -169,7 +169,11 @@ The test-mode labels therefore name the already classified HUI family; they do n
 
 A separate trace now follows the selected value back toward the panel rather than through EP147. Mixer updater `0x9e8c` maps selected values `1..6` through an explicit six-entry address table into feedback bytes `0x20026f92`, `0x20026f93`, `0x20026f95`, `0x20026f96`, `0x20026f94` and `0x20026f97`. Mixer packet builder `0x22c2` transports those bytes at panel-packet offsets `0x18`, `0x19`, `0x1c`, `0x1a`, `0x1b` and `0x1d`. Panel decoder `0x3fee` maps them into staged output entries `0`, `1`, `3`, `4`, `2` and `5`; commit routine `0x41ec` activates them, and output builder `0x38e8` serializes active entries `0..5` into six distinct output bits.
 
-This proves dedicated panel feedback-output ownership for all six anonymous selector values and rules out a hidden permutation in the mixer-to-panel return path. It does not identify the physical load, pair an output with a labeled button, or provide a semantic name. A bounded rootfs search for resources containing the complete six-name family found no second candidate beyond the already disqualified EP147TestMode HUI table, including common ASCII and UTF-16 encodings.
+This proves dedicated panel feedback-output ownership for all six anonymous selector values and rules out a hidden permutation in the mixer-to-panel return path. The bounded matrix trace then separates the two electrical interfaces: button records are debounced reads from GPIO module `0x401bc000`, pins 31 and 29 over three phases, while feedback entries are packed by `0x38e8` into transfer buffer `0x200002cc` and sent by `0xc56a` through peripheral `0x4039c000` with descriptor `0x20000100`. No panel-MCU table, shared GPIO path or firmware cross-reference pairs the six serialized bits with the six scanned contacts. The only software association is the selected-value return map.
+
+This still does not identify the physical load, pair an output with a labeled button, or provide a semantic name. Electrical pairing by a later PCB trace would not by itself establish printed effect names.
+
+A bounded rootfs search found no second complete six-name family beyond the disqualified EP147TestMode HUI table. It covered common ASCII/UTF-16 encodings and native raster resources: all 3,865 PNG files were inventoried, 940 likely text/label assets received a focused OCR pass, and all 3,865 images received a second preprocessed OCR pass. No independent selector-label resource was found.
 
 ## Evidence boundary after route classification
 
@@ -207,4 +211,6 @@ The following explanations are ruled out for the inspected 1.30 release:
 - topology belonging only to an unrelated tail or route;
 - EP147 and mixer/DSP payloads coming from different releases.
 
-The remaining identity task is to find native control-label evidence tied to the direct mixer-selector path rather than reusing MIDI compatibility labels. Until all six such identities independently agree with native DSP evidence, runtime behavior remains observation-only unless an operator supplies an explicit complete lab policy.
+The bounded search for native control-label evidence tied to the direct mixer-selector path is now exhausted. Firmware supplies no independent label association after the HUI/MIDI route, feedback return, GPIO/matrix trace, native string search and native raster search are separated. Name chasing stops at this boundary.
+
+Selectors therefore remain anonymous values `1..6`, with the qualified topology descriptions above. Runtime behavior remains observation-only unless an operator supplies an explicit complete lab policy; no default mapping may be inferred by expected order or elimination. Route contracts, comparative RX3 executable coverage, current software-mixer coverage and remaining AZ-specific gaps are recorded in `AZ-CFX-IMPLEMENTATION-READINESS-20260919.md`.

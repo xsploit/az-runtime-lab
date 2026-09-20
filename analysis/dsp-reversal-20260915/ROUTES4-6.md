@@ -10,6 +10,16 @@ Selector 6's body is larger and reads B14 word 218 plus halfword 516 at entry. I
 
 The selector-6 helper `0x118147f4` has a recoverable effect, but **no coefficient arithmetic**. It executes `ZERO.L1 A1:A0`, then `STDW` to `*A4[0]` through `*A4[11]`, including stores in the `BNOP.S2 B3,0` branch-delay packets. Its formula is `for j=0..11: *(uint64_t*)(A4 + 8j) = 0`. Calls at `0x80016f94` and `0x80016fa4` via stub `0x800187f0` clear two distinct 96-byte spans: `0x11838840..0x1183889f` and `0x118386c0..0x1183871f`. The A4 inputs come from stack slots B15[10] and B15[11]. Critically, stores to those slots at `0x80016bd0` and `0x80016b3a` share execute packets with `MV` updates to A3, so each store reads the **pre-packet** A3: B9 (`0x11838840`) for slot10 and A7 (`0x118386c0`) for slot11. Reading the listing sequentially would assign the wrong pointers. This establishes static reset writes to two state regions; it does not identify their downstream coefficient interpretation.
 
+## Later topology and selected-output closure
+
+The numeric-signature pass above was intentionally preliminary. Subsequent bounded helper/dataflow tracing established stronger route descriptions and selected-output ownership:
+
+- selector 4 calls PRNG initialization helper `0x1181f358` and generator helper `0x1181f2e0`; persistent additive/Fibonacci-like state is reduced through signed high-word extraction and approximately `1/32768` scaling, then recursively filtered through `0x1181c72c`; the generated/filtered signal is written into the common selected-output arrays;
+- selector 6 maintains moving low/high filter bounds, persistent coefficient arrays and bounded direction-reversing ramps across multiple filter passes; its moving-filter result is written into the common selected-output arrays;
+- helper `0x118147f4` remains the proved 96-byte clear primitive described above and forms part of selector 6's reset/state lifecycle.
+
+These results support the qualified descriptions **Noise-like topology** for selector 4 and **Sweep-like topology** for selector 6. They do not establish printed effect names, RX3 identity, exact wet/dry laws, complete reset/bypass behavior, or bit-accurate executable parity. `SELECTOR-IDENTITY-CHECK-20260919.md` records the cross-route ownership conclusion, and `AZ-CFX-IMPLEMENTATION-READINESS-20260919.md` records the remaining contract/test gaps.
+
 [`b14_typed_addresses.py`](b14_typed_addresses.py) calculates scaled B14 addresses from the actual memory mnemonic (`LDHU`/`STH` two bytes, `LDW`/`STW` four bytes, and so on). The listed B14 sites for these two routes and every typed absolute claim in the JSON ledger now pass its audit.
 
 The `CALLP` calls to the `0x80018760`–`0x80018800` stub table are direct static edges, but those stubs use `B.S2 B31` to branch into separately loaded code. The ledger resolves their immediate absolute destinations; it does not assume the stubs return like ordinary local functions or that all helper effects have been traced. These routes are distinct sizeable processing structures, but neither a selector number nor an arithmetic motif supplies a justified RX3 FX name. This remains PC-only static analysis, without DSP execution, rendered-audio comparison, or live-player behavior.
