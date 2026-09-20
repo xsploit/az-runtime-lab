@@ -15,5 +15,6 @@
   "external_display": null,
   "timer_sites": false,
   "ximage_stats": false,
-  "x_server_priority": null
+  "x_server_priority": null,
+  "keep_wifi_setting": false
 }

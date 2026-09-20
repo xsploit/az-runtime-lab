@@ -100,6 +100,7 @@ sock=f'/tmp/.X11-unix/X{display}'
 args=['bwrap','--unshare-all','--die-with-parent','--ro-bind',str(root),'/', '--proc','/proc','--dev','/dev','--bind',str(state/'tmp'),'/tmp','--dir','/tmp/.X11-unix','--ro-bind',sock,sock,'--bind',str(state/'settings'),'/home/root/settings','--ro-bind',str(lab_path('private/cabinet-extracted')),'/home/root/settings/cabinet','--bind',str(state/'mnt'),'/mnt','--ro-bind',str(state/'sys'),'/sys','--tmpfs','/run','--chdir','/home/root/pdj','--setenv','HOME','/home/root','--setenv','PATH','/usr/sbin:/usr/bin:/sbin:/bin','--setenv','DISPLAY',':'+display,'/home/root/pdj/'+('EP145' if model=='cdj3000x' else 'EP147')]
 if scroll_executable is not None:
  args[args.index('--chdir'):args.index('--chdir')] = ['--ro-bind', str(scroll_executable), '/home/root/pdj/EP147']
+args[args.index('--chdir'):args.index('--chdir')]=['--ro-bind',str(base/'shims/wpa_cli-fixture'),'/usr/sbin/wpa_cli']  # see shims/wpa_cli-fixture: the player's Wi-Fi manager must fail slowly
 args[args.index('--chdir'):args.index('--chdir')]=['--ro-bind',str(base/'shims'/('fw_printenv-cdj3000x' if model=='cdj3000x' else 'fw_printenv')),'/usr/sbin/fw_printenv','--ro-bind',str(base/'shims'/('fw_printenv-cdj3000x' if model=='cdj3000x' else 'fw_printenv')),'/sbin/fw_printenv']
 if os.environ.get('LAB_PI_JEMALLOC'):
  allocator=Path(os.environ['LAB_PI_JEMALLOC']).resolve()

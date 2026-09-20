@@ -121,4 +121,10 @@ class ConfigTests(unittest.TestCase):
             self.assertEqual(session.load_config(self.config(root,x_server_priority=12))['x_server_priority'],12)
             for bad in (0,21,'12',True,12.5):
                 with self.assertRaises(ValueError,msg=str(bad)):session.load_config(self.config(root,x_server_priority=bad))
+    def test_keep_wifi_setting_is_off_by_default_and_boolean(self):
+        with tempfile.TemporaryDirectory(prefix='AZ space ') as t:
+            root=Path(t)
+            self.assertFalse(session.load_config(self.config(root))['keep_wifi_setting'])
+            self.assertTrue(session.load_config(self.config(root,keep_wifi_setting=True))['keep_wifi_setting'])
+            with self.assertRaises(ValueError):session.load_config(self.config(root,keep_wifi_setting='no'))
 if __name__=='__main__':unittest.main()

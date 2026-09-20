@@ -37,6 +37,8 @@ def load_config(path):
     c.setdefault('x_server_priority',None)
     if c['x_server_priority'] is not None and not (isinstance(c['x_server_priority'],int) and not isinstance(c['x_server_priority'],bool) and 1<=c['x_server_priority']<=20):
         raise ValueError('x_server_priority must be an integer 1-20 (SCHED_RR priority for the X server) or null')
+    c.setdefault('keep_wifi_setting',False)
+    if not isinstance(c['keep_wifi_setting'],bool):raise ValueError('keep_wifi_setting must be true or false')
     c.setdefault('ximage_stats',False)
     if not isinstance(c['ximage_stats'],bool):raise ValueError('ximage_stats must be true or false')
     c.setdefault('timer_sites',False)
@@ -110,7 +112,7 @@ def main():
     # and, once enabled from the player's settings screen, every session spins
     # wpa_cli from the WifiSetting thread at ~180 forks/s (+12 %core). Keep it off.
     wifi=Path(c['state'])/'settings/wifi.json'
-    if wifi.is_file():
+    if wifi.is_file() and not c['keep_wifi_setting']:
         try:w=json.loads(wifi.read_text())
         except ValueError:w=None
         if isinstance(w,dict) and str(w.get('start','false')).lower()!='false':

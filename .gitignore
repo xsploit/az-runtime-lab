@@ -22,6 +22,7 @@
 !.gitignore
 !/shims/fw_printenv
 !/shims/fw_printenv-cdj3000x
+!/shims/wpa_cli-fixture
 /originals/
 /private/
 /tools/

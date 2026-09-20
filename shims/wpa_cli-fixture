@@ -1,0 +1,9 @@
+#!/bin/sh
+# Stand-in for /usr/sbin/wpa_cli inside the AZ sandbox. There is no mlan0 and
+# no wpa_supplicant there, so the real wpa_cli fails instantly and the player's
+# WifiSetting thread retries without pause (~180 sh+wpa_cli forks per second,
+# +12 %core) whenever its Wi-Fi switch is on. Failing slowly keeps that loop at
+# about one attempt per second. Network for streaming, if ever wanted, has to
+# come from the host, not from the player's own Wi-Fi manager.
+sleep 1
+exit 1
