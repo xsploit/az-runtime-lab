@@ -1022,3 +1022,43 @@ latency does to loading). Note the baseline too: the renderer spends ~66
 ms of every second inside `XPutImage` during ordinary two-deck playback at
 25 MB/s of uploads — that is the packed-24 upload path's steady cost,
 independent of the spikes.
+
+## The gate: X-server-only RR 12, repeated and sustained, 2026-09-19/20
+
+`tools/xonly-validation.sh`, clean conditions (Wi-Fi switch off for this
+run, no stray hooks, X server verified SCHED_OTHER in every control arm
+and RR 12 in every B arm; captures `local/multi-load-20260919T1636*`–
+`1722*`). Two earlier attempts were discarded (Wi-Fi fork storm; a stray
+priority hook from a killed run).
+
+Six-load A/B/A (this run, plus the earlier clean run for context):
+
+| arm | X server | intervals >25 ms across six loads | load 3 max | load 5 max | underruns |
+|-----|----------|---|---|---|---|
+| A1 | default | 9 | 51.2 ms | 61.9 ms | 0 |
+| B  | RR 12 | 7 | 43.1 ms | 24.1 ms | 1 |
+| A2 | default | 10 | 57.7 ms | 47.0 ms | 0 |
+| earlier run A1 / B / A2 | | 9 / 6 / 7 | | | 0 / 0 / 0 |
+
+Sustained A/B/A (8 alternating-deck loads 120 s apart, 12 s LOAD→PLAY,
+~16 min per arm; comparability per arm: scrolling 607–608 s, idle 256–257 s,
+8 loads):
+
+| arm | X server | active waveform intervals >25 / >40 / >100 ms | worst active | per-load intervals >25 ms (8 loads) | median / p99 | underruns |
+|-----|----------|---|---|---|---|---|
+| A1 | default | 9 / 3 / 1 | 304.8 ms (loading cadence) | 21 | 16.8 / 18.7 ms | 0 |
+| B  | RR 12 | 10 / 4 / 1 | 115.2 ms | 20 | 16.8 / 18.9 ms | 0 |
+| A2 | default | 12 / 5 / 1 | 115.1 ms | 21 | 16.8 / 18.7 ms | 0 |
+
+Load→waveform latencies 361–426 ms in all three arms; no arm slower.
+
+**Verdict: parked.** On loads, B arms (6, 7) sit at the lower edge of the
+controls (7, 9, 9, 10) and overlap them; over sustained playback with
+loads there is no difference at all (20 against 21 and 21; steady-state
+median and p99 identical). No audio cost was seen in the sustained arms
+(one underrun in one six-load B arm, none in seven other arms). The
+mechanism is real and measured (X server starved during the post-load
+upload burst) and the knob does remove the load 5 spike consistently, but
+it does not clear the user's bar of a *clear* improvement. The
+`x_server_priority` session key stays at `null`; the mechanism write-up
+stands for whoever reopens this after real DJ use.
