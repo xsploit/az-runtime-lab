@@ -25,6 +25,19 @@ Route 2 starts with state halfword 516 and a boundary conversion: `0x11805030-0x
 
 The packet helper separates the early route-2 `LDHU state[516]` at `0x11805800` from `STW state[218]` at `0x1180580c` and `STW state[175]` at `0x11805810`; it also separates route-1 `STW state[218]` at `0x11806cb8` from the subsequent `LDW state[217]` at `0x11806cc0`. At `0x11805980`, route 2's `SPKERNEL` and two typed stores are in **one execute packet**; the listing does not establish a serial A-store then B-store. Likewise loop arithmetic and compares in parallel packets use their incoming operand values. Any reconstruction that simulates packet instructions in printed line order risks wrong feedback and ramp-limit behavior.
 
+## Route-1 selected-output ownership
+
+The route-1 tail explicitly joins its processed samples to the paired buffers consumed after selector dispatch. Setup at `0x118071d4-0x118071f0` stores absolute bases `0x118390d0` and `0x11838f70` in stack pointer slots 50 and 49. The channel offset in slot 37 starts at zero at `0x11806d78-0x11806d80` and advances by `0x58` bytes at `0x11807dc4-0x11807dcc` across the four outer iterations.
+
+The final software-pipelined copy/mix at `0x11807c6c-0x11807ca8` loads those two bases and the current offset, reads route-owned final work buffers rooted at `0x1183be70` and `0x1183bec8`, doubles each single-precision result, and stores the pair into:
+
+```text
+0x11838f70 + channel_offset
+0x118390d0 + channel_offset
+```
+
+After the selected route returns, the caller at `0x118190f0-0x11819118` indexes those same two bases in `0x58`-byte strides and passes them to common converter `0x1180f428`. Its first software loop loads one word from each route buffer and converts both from single to double precision. Route 1 therefore owns selected audio delivered to the common output path; its internal delay/all-pass/feedback structure is not merely adjacent state or an unconsumed tail.
+
 ## Limits and next evidence needed
 
-These code regions demonstrate two substantial, different single-precision DSP processing routes with stateful initialization and bounded sample/buffer loops. The mapped B14 fields and global buffer addresses are hard static evidence; exact semantic parameter names, output channel layout, every conditional path, mathematical equations, and audible quality are unresolved. The anonymous MCU selector provenance and host control names belong to the separate traces. No DSP code was executed, no Pi used, and no feature or output firmware was built.
+These code regions demonstrate two substantial, different single-precision DSP processing routes with stateful initialization and bounded sample/buffer loops. Both routes now have explicit pointer provenance into the common selected-output conversion path. The mapped B14 fields and global buffer addresses are hard static evidence; exact semantic parameter names, every conditional path, complete mathematical equations, and audible quality remain unresolved. The anonymous MCU selector provenance and host control names belong to the separate traces. No DSP code was executed, no Pi used, and no feature or output firmware was built.

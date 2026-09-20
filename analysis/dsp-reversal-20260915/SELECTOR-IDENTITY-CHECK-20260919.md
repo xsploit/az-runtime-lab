@@ -38,12 +38,16 @@ There is no byte, halfword, 32-byte-block or selector permutation in this transf
 
 The topology classifications are attached to selected-effect output, not merely adjacent tail or modulation state:
 
+- selector 1 writes its final delay/all-pass/feedback work-buffer pair into `0x11838f70` and `0x118390d0` channel slices consumed by the common output converter;
 - selector 2 writes its fractional-delay/feedback result into route-owned paired buffers consumed by the common output converter;
 - selector 3 writes its filtered result directly into the common output arrays;
 - selector 4 writes its generated and recursively filtered PRNG signal directly into the common output arrays;
+- selector 5 writes its bit-reduction/sample-hold/post-filter result into the same paired channel slices consumed by the common output converter;
 - selector 6 writes its moving-filter result directly into the common output arrays.
 
-Selectors 1 and 5 have not yet received the same explicit selected-output ownership trace. Their Space- and Crush-like topology classifications remain supported by their internal state and processing laws, but they are not part of the four-route output-ownership result above.
+For selector 1, setup at `0x118071d4-0x118071f0` records paired bases `0x118390d0` and `0x11838f70`; the final loop at `0x11807c6c-0x11807ca8` combines each base with a channel offset advancing by `0x58` and stores the route's final paired samples. For selector 5, `0x11808294-0x118082ba` records the same bases, and the post-filter weighted loop at `0x11808a18-0x11808a84` stores its paired results at the corresponding offset. After either route returns, caller `0x118190f0-0x11819118` indexes those exact buffers in `0x58`-byte slices and invokes converter `0x1180f428`, which reads both route outputs and converts their single-precision samples into the common double-precision output path.
+
+Selected-output ownership is therefore explicit for all six native targets. This closes the remaining DSP ownership gap but supplies no semantic control label.
 
 The current native DSP classifications remain:
 
