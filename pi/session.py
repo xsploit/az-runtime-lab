@@ -37,8 +37,8 @@ def load_config(path):
     c.setdefault('x_server_priority',None)
     if c['x_server_priority'] is not None and not (isinstance(c['x_server_priority'],int) and not isinstance(c['x_server_priority'],bool) and 1<=c['x_server_priority']<=20):
         raise ValueError('x_server_priority must be an integer 1-20 (SCHED_RR priority for the X server) or null')
-    c.setdefault('keep_wifi_setting',False)
-    if not isinstance(c['keep_wifi_setting'],bool):raise ValueError('keep_wifi_setting must be true or false')
+    c.setdefault('force_wifi_off',False)
+    if not isinstance(c['force_wifi_off'],bool):raise ValueError('force_wifi_off must be true or false')
     c.setdefault('ximage_stats',False)
     if not isinstance(c['ximage_stats'],bool):raise ValueError('ximage_stats must be true or false')
     c.setdefault('timer_sites',False)
@@ -108,11 +108,13 @@ def main():
     if not fifo.exists():os.mkfifo(fifo,0o600)
     if not stat.S_ISFIFO(fifo.stat().st_mode):raise ValueError('Mixed audio path must be a FIFO')
     (state/'ximage-stats.log').unlink(missing_ok=True)  # one session per log
-    # AZ's own Wi-Fi is meaningless on the Pi (no mlan0; the host owns the radio)
-    # and, once enabled from the player's settings screen, every session spins
-    # wpa_cli from the WifiSetting thread at ~180 forks/s (+12 %core). Keep it off.
+    # The player's Wi-Fi switch is the user's setting and is left alone. With it
+    # on, the WifiSetting thread retries wpa_cli forever (no mlan0 in the
+    # sandbox); the wpa_cli stand-in bound by the launcher makes each retry take
+    # a second instead of spinning at ~180 forks/s. force_wifi_off is an escape
+    # hatch for a checkout without that stand-in.
     wifi=Path(c['state'])/'settings/wifi.json'
-    if wifi.is_file() and not c['keep_wifi_setting']:
+    if wifi.is_file() and c['force_wifi_off']:
         try:w=json.loads(wifi.read_text())
         except ValueError:w=None
         if isinstance(w,dict) and str(w.get('start','false')).lower()!='false':
