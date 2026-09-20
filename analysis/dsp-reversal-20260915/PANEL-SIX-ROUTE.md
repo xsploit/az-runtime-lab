@@ -16,6 +16,31 @@ host frame[23] = MPNLRX[11]
 
 No HUI inference is needed to recover the six selector inputs from the player receive frame.
 
+## Panel debounce and scan coordinates
+
+The panel application executes from its decompressed ITCM image, not directly from the packed flash payload. With the release's own relocation metadata applied, the relevant runtime addresses are scanner `0x2520`, packed-byte builder `0x3528` and frame builder `0x45f2`.
+
+Builder `0x3528` sources all six selector bits from the following debounce records at base `0x20008e70`:
+
+| Selected value | `MPNLRX[9]` bit | Debounce state | Record index |
+|---:|---:|---:|---:|
+| 1 | 1 | `0x20008e89` | 5 |
+| 2 | 4 | `0x20008eb1` | 13 |
+| 3 | 3 | `0x20008e8e` | 6 |
+| 4 | 5 | `0x20008eb6` | 14 |
+| 5 | 0 | `0x20008ed9` | 21 |
+| 6 | 2 | `0x20008ede` | 22 |
+
+Scanner `0x2520` dispatches phases `0..7` through its `TBH` table at `0x2554`. Phases `0/4`, `1/5`, `2/6` and `3/7` share four case bodies. In the first three case bodies, the six selector records occupy the same two GPIO inputs on three distinct scan phases:
+
+| Scan phase | GPIO `0x401bc000` pin 31 | GPIO `0x401bc000` pin 29 |
+|---:|---:|---:|
+| 0 | selector 1, record 5 | selector 3, record 6 |
+| 1 | selector 2, record 13 | selector 4, record 14 |
+| 2 | selector 5, record 21 | selector 6, record 22 |
+
+This establishes a phase-indexed three-by-two logical scan arrangement. It does not establish which phase is physically top/middle/bottom, which pin is physically left/right, or which printed label belongs to a coordinate. Those joins require a separately proved row-drive, output/LED or native resource association.
+
 ## Mixer MCU six-route selection
 
 Function `0x9ddc`, gated by helper `0x18ba4`, reads only states `0x20026f46..0x20026f4b`. It updates shift histories at base `0x20028344`; low two history bits equal to 1 identify a rising edge. The subsequent scan visits six history slots in an order that rearranges parser storage. Therefore selected values `1..6` correspond to raw `MPNLRX[9]` bits **1,4,3,5,0,2**.
@@ -45,6 +70,15 @@ EP147 constructs six sequential IDs at `0x2156280`, assigning suffixes 0 through
 | 3 | `+0x1f0` | `frame[21] bit 4` | `MPNLRX[9] bit 4` |
 | 4 | `+0x1f8` | `frame[21] bit 3` | `MPNLRX[9] bit 3` |
 | 5 | `+0x200` | `frame[21] bit 2` | `MPNLRX[9] bit 2` |
+
+The same parser does observe the two remaining direct selector bits, but not as suffixes 6 and 7 of this family:
+
+| Direct source | Owner field | Separate HUI ID | Native HUI diagnostic identity |
+|---|---:|---:|---|
+| `MPNLRX[9] bit 1` / selector 1 | `+0x208` | `0x027a9bd941754000` | `Mixer::MicPanel<0>::eqHi()` |
+| `MPNLRX[9] bit 0` / selector 5 | `+0x210` | `0x444b11a9298c5100` | `Mixer::MicPanel<0>::eqMid()` |
+
+These IDs publish through group-5 MIDI operations using CC `0x1e` and `0x62`, respectively. The official XDJ-AZ MIDI list names those CCs `MIC 1 EQ HI` and `MIC 1 EQ MID`, not Sound Color controls. This confirms that EP147 observes the bits while also demonstrating that this HUI/MIDI identity layer cannot safely name the direct selector/DSP routes.
 
 This proves only the following HUI/selector overlap:
 

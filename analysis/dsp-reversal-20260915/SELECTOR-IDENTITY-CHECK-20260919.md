@@ -104,6 +104,63 @@ The bounded native table and dispatch trace now separates the branches:
 
 Therefore these six concrete operation objects form a MIDI publication/compatibility path and are HID-inert in the inspected implementation. Live MIDI transmission still depends on the runtime output object, connection and mode state; this is a static route-ownership result, not a physical-output claim.
 
+## Separate observations for selector bits 1 and 0
+
+The EP147 receive parser continues after the four `frame[21]` bits assigned to HUI suffixes 2 through 5:
+
+```text
+frame[21] bit 1 -> owner field +0x208
+frame[21] bit 0 -> owner field +0x210
+```
+
+The subclass constructor initializes those fields individually rather than extending the six-ID loop:
+
+```text
++0x208 -> HUI 0x027a9bd941754000
++0x210 -> HUI 0x444b11a9298c5100
+```
+
+Native diagnostics identify the two HUI IDs as `Mixer::MicPanel<0>::eqHi()` and `Mixer::MicPanel<0>::eqMid()`. Their exact adapter and MIDI records are:
+
+```text
+selector-1 source bit
+-> HUI 0x027a9bd941754000
+-> operation 0x5976df6d12f7af00
+-> OperatorGroup 5, MIDI CC 0x1e
+-> official label MIC 1 EQ HI
+
+selector-5 source bit
+-> HUI 0x444b11a9298c5100
+-> operation 0xf652995807011800
+-> OperatorGroup 5, MIDI CC 0x62
+-> official label MIC 1 EQ MID
+```
+
+Thus selectors 1 and 5 are not hidden suffixes 6 and 7, and their separate EP147 observations do not provide Sound Color names. Instead, they add another concrete example of direct panel bits being published under unrelated compatibility identities.
+
+## EP147TestMode label-table check
+
+A bounded search of the same release's native test-mode executable found a contiguous six-label resource:
+
+```text
+SCFX NOISE
+SCFX DUB ECHO
+SCFX SWEEP
+SCFX FILTER
+SCFX SPACE
+SCFX CRUSH
+```
+
+This initially looked like a possible direct control-label table. Direct code references rule that out. The six label blocks compare the incoming identity against HUI IDs `0xc4bddb099942f600` through `...f605` in suffix order and assign local item numbers 1 through 6. The test-mode receive parser independently reproduces the normal application's source mapping:
+
+```text
+suffix 2..5 owner fields +0x1e8..+0x200 <- frame[21] bits 5..2
+separate owner fields +0x208/+0x210      <- frame[21] bits 1/0
+suffix 0/1 owner fields +0x1d8/+0x1e0   <- frame[23] bits 2/1
+```
+
+The test-mode labels therefore name the already classified HUI family; they do not form a selector-value table and do not repair the HUI/DSP disagreement. No selector identity is accepted from them.
+
 ## Evidence boundary after route classification
 
 For the four HUI states sharing exact raw panel bits with selector inputs, operation/MIDI metadata still assigns:
